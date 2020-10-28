@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 
-namespace Aiursoft.Colossus.Models.DashboardViewModels
+namespace AiurDrive.Models.DashboardViewModels
 {
     public class NewFolderViewModel : LayoutViewModel
     {

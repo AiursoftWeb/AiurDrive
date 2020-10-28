@@ -1,6 +1,6 @@
-﻿using Aiursoft.Archon.SDK.Services;
-using Aiursoft.Colossus.Models;
-using Aiursoft.Colossus.Models.DashboardViewModels;
+﻿using AiurDrive.Models;
+using AiurDrive.Models.DashboardViewModels;
+using Aiursoft.Archon.SDK.Services;
 using Aiursoft.Handler.Attributes;
 using Aiursoft.Handler.Exceptions;
 using Aiursoft.Handler.Models;
@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Aiursoft.Colossus.Controllers
+namespace AiurDrive.Controllers
 {
     [LimitPerMin]
     [AiurForceAuth]

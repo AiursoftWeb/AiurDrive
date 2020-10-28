@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace Aiursoft.Colossus.Migrations
+namespace AiurDrive.Migrations
 {
     public partial class Init : Migration
     {

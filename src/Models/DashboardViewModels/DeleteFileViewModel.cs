@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Aiursoft.Colossus.Models.DashboardViewModels
+namespace AiurDrive.Models.DashboardViewModels
 {
     public class DeleteFileViewModel : LayoutViewModel
     {

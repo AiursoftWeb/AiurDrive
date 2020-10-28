@@ -1,11 +1,11 @@
-﻿using Aiursoft.Archon.SDK.Services;
-using Aiursoft.Colossus.Data;
+﻿using AiurDrive.Data;
+using Aiursoft.Archon.SDK.Services;
 using Aiursoft.Probe.SDK;
 using Aiursoft.SDK;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace Aiursoft.Colossus
+namespace AiurDrive
 {
     public class Program
     {

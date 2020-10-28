@@ -1,6 +1,6 @@
-﻿using Aiursoft.Archon.SDK.Services;
-using Aiursoft.Colossus.Data;
-using Aiursoft.Colossus.Models;
+﻿using AiurDrive.Data;
+using AiurDrive.Models;
+using Aiursoft.Archon.SDK.Services;
 using Aiursoft.Identity;
 using Aiursoft.SDK;
 using Microsoft.AspNetCore.Builder;
@@ -10,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Aiursoft.Colossus
+namespace AiurDrive
 {
     public class Startup
     {

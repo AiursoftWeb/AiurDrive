@@ -1,6 +1,6 @@
 ﻿using Aiursoft.Gateway.SDK.Models;
 
-namespace Aiursoft.Colossus.Models
+namespace AiurDrive.Models
 {
     public enum SiteType
     {

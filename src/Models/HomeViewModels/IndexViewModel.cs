@@ -1,4 +1,4 @@
-﻿namespace Aiursoft.Colossus.Models.HomeViewModels
+﻿namespace AiurDrive.Models.HomeViewModels
 {
     public class IndexViewModel
     {

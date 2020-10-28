@@ -1,4 +1,4 @@
-﻿using Aiursoft.Colossus.Models;
+﻿using AiurDrive.Models;
 using Aiursoft.Gateway.SDK.Models.ForApps.AddressModels;
 using Aiursoft.Handler.Attributes;
 using Aiursoft.Identity.Attributes;
@@ -7,7 +7,7 @@ using Aiursoft.SDK;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace Aiursoft.Colossus.Controllers
+namespace AiurDrive.Controllers
 {
     [LimitPerMin]
     public class AuthController : Controller

@@ -1,8 +1,8 @@
-﻿using Aiursoft.Colossus.Models;
+﻿using AiurDrive.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Aiursoft.Colossus.Data
+namespace AiurDrive.Data
 {
     public class ColossusDbContext : IdentityDbContext<ColossusUser>
     {

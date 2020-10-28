@@ -9,7 +9,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Aiursoft.Colossus.Services
+namespace AiurDrive.Services
 {
     public class TimedCleaner : IHostedService, IDisposable, ISingletonDependency
     {

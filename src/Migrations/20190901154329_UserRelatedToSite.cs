@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Aiursoft.Colossus.Migrations
+namespace AiurDrive.Migrations
 {
     public partial class UserRelatedToSite : Migration
     {

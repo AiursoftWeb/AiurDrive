@@ -1,5 +1,5 @@
-﻿using Aiursoft.Colossus.Models;
-using Aiursoft.Colossus.Models.HomeViewModels;
+﻿using AiurDrive.Models;
+using AiurDrive.Models.HomeViewModels;
 using Aiursoft.Gateway.SDK.Services;
 using Aiursoft.Handler.Attributes;
 using Aiursoft.Identity;
@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace Aiursoft.Colossus.Controllers
+namespace AiurDrive.Controllers
 {
     [LimitPerMin]
     public class HomeController : Controller

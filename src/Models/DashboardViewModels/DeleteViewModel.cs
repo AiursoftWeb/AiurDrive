@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Aiursoft.Colossus.Models.DashboardViewModels
+namespace AiurDrive.Models.DashboardViewModels
 {
     public class DeleteViewModel : LayoutViewModel
     {
