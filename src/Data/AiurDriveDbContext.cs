@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AiurDrive.Data
 {
-    public class ColossusDbContext : IdentityDbContext<ColossusUser>
+    public class AiurDriveDbContext : IdentityDbContext<AiurDriveUser>
     {
-        public ColossusDbContext(DbContextOptions<ColossusDbContext> options)
+        public AiurDriveDbContext(DbContextOptions<AiurDriveDbContext> options)
             : base(options)
         {
 

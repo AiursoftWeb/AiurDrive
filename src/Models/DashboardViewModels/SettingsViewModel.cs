@@ -8,8 +8,8 @@ namespace AiurDrive.Models.DashboardViewModels
     {
         [Obsolete(message: "This method is only for framework", error: true)]
         public SettingsViewModel() { }
-        public SettingsViewModel(ColossusUser user) : base(user, "Settings") { }
-        public void Recover(ColossusUser user)
+        public SettingsViewModel(AiurDriveUser user) : base(user, "Settings") { }
+        public void Recover(AiurDriveUser user)
         {
             RootRecover(user, "Settings");
         }

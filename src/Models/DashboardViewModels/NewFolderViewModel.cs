@@ -8,8 +8,8 @@ namespace AiurDrive.Models.DashboardViewModels
     {
         [Obsolete(message: "This method is only for framework", error: true)]
         public NewFolderViewModel() { }
-        public NewFolderViewModel(ColossusUser user) : base(user, "Create new folder") { }
-        public void Recover(ColossusUser user)
+        public NewFolderViewModel(AiurDriveUser user) : base(user, "Create new folder") { }
+        public void Recover(AiurDriveUser user)
         {
             RootRecover(user, "Create new folder");
         }

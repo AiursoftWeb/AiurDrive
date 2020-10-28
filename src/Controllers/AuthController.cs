@@ -12,9 +12,9 @@ namespace AiurDrive.Controllers
     [LimitPerMin]
     public class AuthController : Controller
     {
-        private readonly AuthService<ColossusUser> _authService;
+        private readonly AuthService<AiurDriveUser> _authService;
         public AuthController(
-            AuthService<ColossusUser> authService)
+            AuthService<AiurDriveUser> authService)
         {
             _authService = authService;
         }

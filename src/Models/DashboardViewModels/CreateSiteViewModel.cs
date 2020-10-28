@@ -11,11 +11,11 @@ namespace AiurDrive.Models.DashboardViewModels
         {
         }
 
-        public CreateSiteViewModel(ColossusUser user) : base(user, "Quick upload")
+        public CreateSiteViewModel(AiurDriveUser user) : base(user, "Quick upload")
         {
         }
 
-        public void Recover(ColossusUser user)
+        public void Recover(AiurDriveUser user)
         {
             RootRecover(user, "Quick upload");
         }

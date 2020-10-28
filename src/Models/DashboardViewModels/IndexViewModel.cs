@@ -9,7 +9,7 @@ namespace AiurDrive.Models.DashboardViewModels
         {
         }
 
-        public IndexViewModel(ColossusUser user) : base(user, "Quick upload")
+        public IndexViewModel(AiurDriveUser user) : base(user, "Quick upload")
         {
 
         }

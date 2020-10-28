@@ -7,7 +7,7 @@ using System;
 
 namespace AiurDrive.Migrations
 {
-    [DbContext(typeof(ColossusDbContext))]
+    [DbContext(typeof(AiurDriveDbContext))]
     class ColossusDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

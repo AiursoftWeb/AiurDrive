@@ -8,7 +8,7 @@ namespace AiurDrive.Models
         FileBrowser
     }
 
-    public class ColossusUser : AiurUserBase
+    public class AiurDriveUser : AiurUserBase
     {
         public string SiteName { get; set; }
         public SiteType SiteType { get; set; }

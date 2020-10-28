@@ -7,7 +7,7 @@ namespace AiurDrive.Models.DashboardViewModels
     {
         [Obsolete(message: "This method is only for framework", error: true)]
         public ViewFilesViewModel() { }
-        public ViewFilesViewModel(ColossusUser user) : base(user, "View files") { }
+        public ViewFilesViewModel(AiurDriveUser user) : base(user, "View files") { }
 
         public Folder Folder { get; set; }
         public string Path { get; set; }

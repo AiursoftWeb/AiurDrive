@@ -8,7 +8,7 @@ using System;
 
 namespace AiurDrive.Migrations
 {
-    [DbContext(typeof(ColossusDbContext))]
+    [DbContext(typeof(AiurDriveDbContext))]
     [Migration("20180703150854_Init")]
     partial class Init
     {

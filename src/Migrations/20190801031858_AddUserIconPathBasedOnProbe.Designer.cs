@@ -8,7 +8,7 @@ using System;
 
 namespace AiurDrive.Migrations
 {
-    [DbContext(typeof(ColossusDbContext))]
+    [DbContext(typeof(AiurDriveDbContext))]
     [Migration("20190801031858_AddUserIconPathBasedOnProbe")]
     partial class AddUserIconPathBasedOnProbe
     {

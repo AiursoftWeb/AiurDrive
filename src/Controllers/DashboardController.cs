@@ -22,7 +22,7 @@ namespace AiurDrive.Controllers
     {
         private readonly SitesService _sitesService;
         private readonly AppsContainer _appsContainer;
-        private readonly UserManager<ColossusUser> _userManager;
+        private readonly UserManager<AiurDriveUser> _userManager;
         private readonly FoldersService _foldersService;
         private readonly FilesService _filesService;
         private readonly AiurCache _cache;
@@ -32,7 +32,7 @@ namespace AiurDrive.Controllers
         public DashboardController(
             SitesService sitesService,
             AppsContainer appsContainer,
-            UserManager<ColossusUser> userManager,
+            UserManager<AiurDriveUser> userManager,
             FoldersService foldersService,
             FilesService filesService,
             AiurCache cache)
@@ -348,7 +348,7 @@ namespace AiurDrive.Controllers
             }
         }
 
-        private async Task<ColossusUser> GetCurrentUserAsync()
+        private async Task<AiurDriveUser> GetCurrentUserAsync()
         {
             return await _userManager.GetUserAsync(User);
         }

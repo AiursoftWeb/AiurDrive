@@ -14,12 +14,12 @@ namespace AiurDrive.Controllers
     [LimitPerMin]
     public class HomeController : Controller
     {
-        private readonly SignInManager<ColossusUser> _signInManager;
+        private readonly SignInManager<AiurDriveUser> _signInManager;
         private readonly GatewayLocator _gatewayLocator;
         private const int DefaultSize = 30 * 1024 * 1024;
 
         public HomeController(
-            SignInManager<ColossusUser> signInManager,
+            SignInManager<AiurDriveUser> signInManager,
             GatewayLocator gatewayLocator)
         {
             _signInManager = signInManager;

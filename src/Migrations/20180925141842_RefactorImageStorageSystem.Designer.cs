@@ -8,7 +8,7 @@ using System;
 
 namespace AiurDrive.Migrations
 {
-    [DbContext(typeof(ColossusDbContext))]
+    [DbContext(typeof(AiurDriveDbContext))]
     [Migration("20180925141842_RefactorImageStorageSystem")]
     partial class RefactorImageStorageSystem
     {

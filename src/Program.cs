@@ -13,7 +13,7 @@ namespace AiurDrive
         {
             CreateHostBuilder(args)
                 .Build()
-                .MigrateDbContext<ColossusDbContext>()
+                .MigrateDbContext<AiurDriveDbContext>()
                 .InitSite<AppsContainer>(c => c["ColossusPublicSiteName"], a => a.AccessToken())
                 .Run();
         }

@@ -6,12 +6,12 @@ namespace AiurDrive.Models.DashboardViewModels
     {
         [Obsolete(message: "This method is only for framework", error: true)]
         public DeleteViewModel() { }
-        public DeleteViewModel(ColossusUser user) : base(user, "Delete site")
+        public DeleteViewModel(AiurDriveUser user) : base(user, "Delete site")
         {
 
         }
 
-        public void Recover(ColossusUser user)
+        public void Recover(AiurDriveUser user)
         {
             RootRecover(user, "Delete site");
         }

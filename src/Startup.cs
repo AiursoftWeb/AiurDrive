@@ -19,21 +19,21 @@ namespace AiurDrive
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            AppsContainer.CurrentAppId = configuration["ColossusAppId"];
-            AppsContainer.CurrentAppSecret = configuration["ColossusAppSecret"];
+            AppsContainer.CurrentAppId = configuration["AiurDriveAppId"];
+            AppsContainer.CurrentAppSecret = configuration["AiurDriveAppSecret"];
         }
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContextWithCache<ColossusDbContext>(Configuration.GetConnectionString("DatabaseConnection"));
+            services.AddDbContextWithCache<AiurDriveDbContext>(Configuration.GetConnectionString("DatabaseConnection"));
 
-            services.AddIdentity<ColossusUser, IdentityRole>()
-                .AddEntityFrameworkStores<ColossusDbContext>()
+            services.AddIdentity<AiurDriveUser, IdentityRole>()
+                .AddEntityFrameworkStores<AiurDriveDbContext>()
                 .AddDefaultTokenProviders();
 
             services.AddAiurMvc();
 
-            services.AddAiurDependenciesWithIdentity<ColossusUser>(
+            services.AddAiurDependenciesWithIdentity<AiurDriveUser>(
                 archonEndpoint: Configuration.GetConnectionString("ArchonConnection"),
                 observerEndpoint: Configuration.GetConnectionString("ObserverConnection"),
                 probeEndpoint: Configuration.GetConnectionString("ProbeConnection"),

@@ -6,14 +6,14 @@ namespace AiurDrive.Models.DashboardViewModels
     {
         [Obsolete(error: true, message: "This method is only for framework!")]
         public LayoutViewModel() { }
-        public LayoutViewModel(ColossusUser user, string title)
+        public LayoutViewModel(AiurDriveUser user, string title)
         {
             RootRecover(user, title);
         }
 
         public bool JustHaveUpdated { get; set; } = false;
 
-        public void RootRecover(ColossusUser user, string title)
+        public void RootRecover(AiurDriveUser user, string title)
         {
             UserName = user.NickName;
             EmailConfirmed = user.EmailConfirmed;
