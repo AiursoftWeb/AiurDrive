@@ -4,14 +4,16 @@ using AiurDrive.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AiurDrive.Migrations
 {
     [DbContext(typeof(AiurDriveDbContext))]
-    partial class ColossusDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201028104856_RenameProject")]
+    partial class RenameProject
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
