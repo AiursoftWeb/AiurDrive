@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Colossus helps you share any file. Upload your file and share the link anywhere!" xml:space="preserve">
+  <data name="AiurDrive helps you share any file. Upload your file and share the link anywhere!" xml:space="preserve">
     <value>巨像可以帮助您共享任何文件。上传您的文件, 并在任何地方分享链接!</value>
   </data>
-  <data name="Sign in to Colossus" xml:space="preserve">
+  <data name="Sign in to AiurDrive" xml:space="preserve">
     <value>登录巨像</value>
   </data>
   <data name="Try now!" xml:space="preserve">

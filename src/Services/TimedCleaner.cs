@@ -58,7 +58,7 @@ namespace AiurDrive.Services
             try
             {
                 var deadline = DateTime.UtcNow - TimeSpan.FromDays(30);
-                var publicSite = _configuration["ColossusPublicSiteName"];
+                var publicSite = _configuration["AiurDrivePublicSiteName"];
                 var accessToken = await _appsContainer.AccessToken();
                 var rootFolders = await foldersService.ViewContentAsync(accessToken, publicSite, string.Empty);
                 foreach (var folder in rootFolders.Value.SubFolders)
