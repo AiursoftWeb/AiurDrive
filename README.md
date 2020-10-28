@@ -1,6 +1,6 @@
 # AiurDrive
 
-[![Build status](https://dev.azure.com/aiursoft/Star/_apis/build/status/AiurDrive%20Build)](https://dev.azure.com/aiursoft/Star/_build/latest?definitionId=1)
+[![Build status](https://dev.azure.com/aiursoft/Star/_apis/build/status/AiurDrive%20Build)](https://dev.azure.com/aiursoft/Star/_build/latest?definitionId=15)
 
 A file store for all kinds of users
 
