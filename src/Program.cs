@@ -4,6 +4,7 @@ using Aiursoft.Probe.SDK;
 using Aiursoft.SDK;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using static Aiursoft.WebTools.Extends;
 
 namespace AiurDrive
 {
@@ -11,17 +12,16 @@ namespace AiurDrive
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args)
-                .Build()
-                .MigrateDbContext<AiurDriveDbContext>()
+            App<Startup>(args)
+                .Update<AiurDriveDbContext>()
                 .InitSite<AppsContainer>(c => c["AiurDrivePublicSiteName"], a => a.AccessToken())
                 .Run();
         }
 
+        // For EF
         public static IHostBuilder CreateHostBuilder(string[] args)
         {
-            return Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>());
+            return BareApp<Startup>(args);
         }
     }
 }

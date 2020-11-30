@@ -33,7 +33,7 @@ namespace AiurDrive
 
             services.AddAiurMvc();
 
-            services.AddAiurDependenciesWithIdentity<AiurDriveUser>(
+            services.AddAiursoftIdentity<AiurDriveUser>(
                 archonEndpoint: Configuration.GetConnectionString("ArchonConnection"),
                 observerEndpoint: Configuration.GetConnectionString("ObserverConnection"),
                 probeEndpoint: Configuration.GetConnectionString("ProbeConnection"),
