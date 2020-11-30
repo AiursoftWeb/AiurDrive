@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
+﻿using Microsoft.Extensions.Hosting;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -14,8 +13,6 @@ namespace AiurDrive.Tests
         private const int _port = 15999;
         private IHost _server;
         private HttpClient _http;
-        private ServiceCollection _services;
-        private ServiceProvider _serviceProvider;
 
         [TestInitialize]
         public async Task CreateServer()
@@ -25,10 +22,7 @@ namespace AiurDrive.Tests
             {
                 AllowAutoRedirect = false
             });
-            _services = new ServiceCollection();
-            _services.AddHttpClient();
             await _server.StartAsync();
-            _serviceProvider = _services.BuildServiceProvider();
         }
 
         [TestCleanup]
