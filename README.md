@@ -2,6 +2,7 @@
 
 [![Build status](https://dev.azure.com/aiursoft/Star/_apis/build/status/AiurDrive%20Build)](https://dev.azure.com/aiursoft/Star/_build/latest?definitionId=15)
 ![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/aiursoft/Star/15)
+![Website](https://img.shields.io/website?url=https%3A%2F%2Fdrive.aiursoft.com%2F%3Fshow%3Ddirect)
 
 A file store for all kinds of users
 
