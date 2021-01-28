@@ -1,6 +1,8 @@
 # AiurDrive
 
 [![Build status](https://dev.azure.com/aiursoft/Star/_apis/build/status/AiurDrive%20Build)](https://dev.azure.com/aiursoft/Star/_build/latest?definitionId=15)
+![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/aiursoft/Star/15)
+![Website](https://img.shields.io/website?url=https%3A%2F%2Fdrive.aiursoft.com%2F%3Fshow%3Ddirect)
 
 A file store for all kinds of users
 
@@ -28,11 +30,11 @@ $ curl -sL https://github.com/AiursoftWeb/AiurDrive/raw/master/install.sh | sudo
 
 Requirements about how to run
 
-* [.NET Core runtime 3.1.0 or later](https://github.com/dotnet/core/tree/master/release-notes)
+* [.NET Core runtime 5.0 or later](https://github.com/dotnet/core/tree/master/release-notes)
 
-Requirements about how to develop
+Requirements about how to develope
 
-* [.NET Core SDK 3.1.0 or later](https://github.com/dotnet/core/tree/master/release-notes)
+* [.NET Core SDK 5.0 or later](https://github.com/dotnet/core/tree/master/release-notes)
 * [VS Code](https://code.visualstudio.com) (Strongly suggest)
 
 1. Excute `dotnet restore` to restore all dotnet requirements
