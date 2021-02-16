@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using Aiursoft.XelNaga.Tools;
+using Microsoft.Extensions.Hosting;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -9,10 +10,16 @@ namespace AiurDrive.Tests
     [TestClass]
     public class BasicTests
     {
-        private readonly string _endpointUrl = $"http://localhost:{_port}";
-        private const int _port = 15999;
+        private readonly string _endpointUrl;
+        private readonly int _port;
         private IHost _server;
         private HttpClient _http;
+
+        public BasicTests()
+        {
+            _port = Network.GetAvailablePort();
+            _endpointUrl = $"http://localhost:{_port}";
+        }
 
         [TestInitialize]
         public async Task CreateServer()
@@ -39,7 +46,7 @@ namespace AiurDrive.Tests
             var location = response.Headers.Location.ToString();
 
             Assert.AreEqual(
-                "https://gateway.aiursoft.com/oauth/authorize?try-auth=True&appid=aaaaa&redirect_uri=http%3A%2F%2Flocalhost%3A15999%2FAuth%2FAuthResult&state=%2FDashboard%2FIndex",
+                $"https://gateway.aiursoft.com/oauth/authorize?try-auth=True&appid=aaaaa&redirect_uri=http%3A%2F%2Flocalhost%3A{_port}%2FAuth%2FAuthResult&state=%2FDashboard%2FIndex",
                 location);
         }
     }
