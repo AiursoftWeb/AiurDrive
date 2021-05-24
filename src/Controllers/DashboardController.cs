@@ -242,7 +242,7 @@ namespace AiurDrive.Controllers
         }
 
 
-        [Route("DeleteFile/{**path}")]
+        [Route("RenameFile/{**path}")]
         public async Task<IActionResult> RenameFile([FromRoute] string path)
         {
             var user = await GetCurrentUserAsync();
