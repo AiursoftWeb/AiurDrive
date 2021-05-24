@@ -1,6 +1,6 @@
-﻿@model AiurDrive.Models.DashboardViewModels.DeleteFileViewModel
+﻿@model AiurDrive.Models.DashboardViewModels.RenameFileViewModel
 @{
-    ViewData["Title"] = "Delete File - " + Model.Path;
+    ViewData["Title"] = "Rename File - " + Model.Path;
     string currentPath = "";
 }
 
@@ -22,7 +22,7 @@
             </li>
         }
         <li class="breadcrumb-item active">
-            Delete file
+            Rename file
         </li>
     </ol>
 
@@ -36,17 +36,17 @@
 
     <div class="alert alert-danger alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button>
-        <strong>@Localizer["Caution!"]</strong> You are about to delete file "@Model.Path"? If you are confirmed to continue, you will lose it. @Localizer["and this process is not recoverable!"]
+        <strong>@Localizer["Caution!"]</strong> You are about to rename file "@Model.Path"? If you are confirmed to continue, the old link will not be accessiable. @Localizer["and this process is not recoverable!"]
     </div>
 
     <div class="card mb-3">
         <div class="card-header">
             <i class="fas fa-trash-alt ico"></i>
-            @Localizer["Delete File"]
+            @Localizer["Rename File"]
         </div>
         <div class="card-body">
             <div class="col-12">
-                <form asp-controller="Dashboard" asp-action="DeleteFile" method="post">
+                <form asp-controller="Dashboard" asp-action="RenameFile" method="post">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
@@ -55,9 +55,16 @@
                             </div>
                         </div>
 
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="NewFileName"></label>
+                                <input asp-for="NewFileName" type="text" class="form-control">
+                            </div>
+                        </div>
+
                         <div class="col-md-12 margin-top-30">
                             <a class="btn btn-success" asp-controller="Dashboard" asp-action="ViewFiles" asp-route-path="@Model.Path.DetachPath()">@Localizer["Back to Folder"]</a>
-                            <button class="btn btn-danger" data-disable-with="Deleting..." type="submit">@Localizer["Confirm to delete"]</button>
+                            <button class="btn btn-danger" data-disable-with="Deleting..." type="submit">@Localizer["Confirm to rename"]</button>
                         </div>
                     </div>
                 </form>

@@ -241,6 +241,42 @@ namespace AiurDrive.Controllers
             }
         }
 
+
+        [Route("DeleteFile/{**path}")]
+        public async Task<IActionResult> RenameFile([FromRoute] string path)
+        {
+            var user = await GetCurrentUserAsync();
+            var model = new RenameFileViewModel(user)
+            {
+                Path = path
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Route("RenameFile/{**path}")]
+        public async Task<IActionResult> RenameFile(RenameFileViewModel model)
+        {
+            var user = await GetCurrentUserAsync();
+            if (!ModelState.IsValid)
+            {
+                model.Recover(user);
+                return View(model);
+            }
+            try
+            {
+                await _filesService.RenameFileAsync(await AccessToken, user.SiteName, model.Path, model.NewFileName);
+                return RedirectToAction(nameof(ViewFiles), new { path = model.Path.DetachPath() });
+            }
+            catch (AiurUnexpectedResponse e)
+            {
+                ModelState.AddModelError(string.Empty, e.Response.Message);
+                model.Recover(user);
+                return View(model);
+            }
+        }
+
         [Route("CloneFile/{**path}")]
         public async Task<IActionResult> CloneFile([FromRoute] string path)
         {
