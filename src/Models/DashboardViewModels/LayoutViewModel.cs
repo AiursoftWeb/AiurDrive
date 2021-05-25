@@ -11,7 +11,7 @@ namespace AiurDrive.Models.DashboardViewModels
             RootRecover(user, title);
         }
 
-        public bool JustHaveUpdated { get; set; } = false;
+        public bool JustHaveUpdated { get; set; }
 
         public void RootRecover(AiurDriveUser user, string title)
         {

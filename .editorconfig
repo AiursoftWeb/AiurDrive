@@ -24,3 +24,6 @@ resharper_inconsistent_naming_highlighting=suggestion
 
 # Allow unused auto property get.
 resharper_unused_auto_property_accessor_global_highlighting=suggestion
+
+# Allow view render global var.
+resharper_access_to_modified_closure_highlighting=suggestion
