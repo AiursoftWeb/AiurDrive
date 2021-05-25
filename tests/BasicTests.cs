@@ -43,7 +43,7 @@ namespace AiurDrive.Tests
         public async Task GetHome()
         {
             var response = await _http.GetAsync(_endpointUrl);
-            var location = response.Headers.Location.ToString();
+            var location = response.Headers.Location?.ToString();
 
             Assert.AreEqual(
                 $"https://gateway.aiursoft.com/oauth/authorize?try-auth=True&appid=aaaaa&redirect_uri=http%3A%2F%2Flocalhost%3A{_port}%2FAuth%2FAuthResult&state=%2FDashboard%2FIndex",

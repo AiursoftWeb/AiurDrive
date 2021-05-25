@@ -46,17 +46,6 @@ Requirements about how to develope
 1. Open the `.sln` file in the project path.
 2. Press `F5`.
 
-## Run in docker
-
-Just install docker and docker-compose. Execute the following command.
-
-```bash
-$ docker build -t=aiurdrive .
-$ docker run -d -p 8080:80 aiurdrive
-```
-
-That will start a web server at `http://localhost:8080` and you can test the app.
-
 ## How to contribute
 
 There are many ways to contribute to the project: logging bugs, submitting pull requests, reporting issues, and creating suggestions.
