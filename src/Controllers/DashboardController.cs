@@ -111,7 +111,7 @@ namespace AiurDrive.Controllers
         }
 
         [Route("ViewFiles/{**path}")]
-        public async Task<IActionResult> ViewFiles(string path, bool justHaveUpdated)
+        public async Task<IActionResult> ViewFiles(bool justHaveUpdated, string path)
         {
             var user = await GetCurrentUserAsync();
             if (string.IsNullOrWhiteSpace(user.SiteName))
