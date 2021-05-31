@@ -248,7 +248,8 @@ namespace AiurDrive.Controllers
             var user = await GetCurrentUserAsync();
             var model = new RenameFileViewModel(user)
             {
-                Path = path
+                Path = path,
+                NewFileName = path.Split('/').LastOrDefault()
             };
             return View(model);
         }
