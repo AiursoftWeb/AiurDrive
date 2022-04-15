@@ -11,7 +11,7 @@
         @{
             var description = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyDescriptionAttribute>()?.Description;
         }
-        <p>@Localizer[description]</p>
+        <p>@Localizer[description ?? string.Empty]</p>
         <div class="btn-group" role="group">
             <a class="btn btn-primary btn-lg" asp-controller="Dashboard" asp-action="Index" role="button">
                 <i class="fas fa-pencil-alt"></i>
