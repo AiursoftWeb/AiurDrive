@@ -27,3 +27,6 @@ resharper_unused_auto_property_accessor_global_highlighting=suggestion
 
 # Allow view render global var.
 resharper_access_to_modified_closure_highlighting=suggestion
+
+# Suppress id not resolved because resharper can't understand
+resharper_html_id_not_resolved_highlighting=suggestion
