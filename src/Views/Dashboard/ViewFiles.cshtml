@@ -119,7 +119,9 @@
                                         </div>
                                     </td>
                                     <td data-order="@file.FileSize">@file.FileSize.HumanReadableSize()</td>
-                                    <td data-order="@file.UploadTime.Ticks" data-utc-time="@file.UploadTime"></td>
+                                    <td data-order="@file.UploadTime.Ticks">
+                                        <label data-utc-time="@file.UploadTime"></label>
+                                    </td>
                                     <td>
                                         <div class="dropdown">
                                             <button class="btn btn-light dropdown-toggle p-1 pl-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
