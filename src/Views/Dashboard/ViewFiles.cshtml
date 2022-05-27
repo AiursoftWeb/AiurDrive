@@ -120,7 +120,7 @@
                                     </td>
                                     <td data-order="@file.FileSize">@file.FileSize.HumanReadableSize()</td>
                                     <td data-order="@file.UploadTime.Ticks">
-                                        <label data-utc-time="@file.UploadTime"></label>
+                                        <label data-utc-time="@file.UploadTime.ToHtmlDateTime()"></label>
                                     </td>
                                     <td>
                                         <div class="dropdown">
