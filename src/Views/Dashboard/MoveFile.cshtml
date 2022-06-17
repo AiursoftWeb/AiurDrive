@@ -54,12 +54,12 @@
                 <div class="col-12 p-0">
                     <ol class="breadcrumb rounded-0">
                         @{
-                            var paths = Model.NewFolderPath?.Split('/') ?? new string[0];
+                            var paths = Model.NewFolderPath.Split('/');
                             var lastPath = paths.LastOrDefault();
                         }
                         @foreach (var path in paths)
                         {
-                            <li class="breadcrumb-item@(lastPath.Equals(path,StringComparison.InvariantCulture)?" active":string.Empty)">@path</li>
+                            <li class="breadcrumb-item@(lastPath.Equals(path,StringComparison.InvariantCulture) ? " active" : string.Empty)">@path</li>
                         }
                     </ol>
                 </div>
@@ -91,7 +91,7 @@
                                                     <i class="fas fa-2x fa-folder text-azure"></i>
                                                 </div>
                                                 <div class="ml-3 pt-1">
-                                                    <a asp-controller="Dashboard" asp-action="MoveFile" asp-route-path="@Model.Path" asp-route-newFolderPath=@Model.NewFolderPath.AppendPath(folder.FolderName)>
+                                                    <a asp-controller="Dashboard" asp-action="MoveFile" asp-route-path="@Model.Path" asp-route-newFolderPath=@(Model.NewFolderPath?.AppendPath(folder.FolderName) ?? folder.FolderName)>
                                                         @folder.FolderName
                                                     </a>
                                                 </div>

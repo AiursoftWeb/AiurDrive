@@ -1,5 +1,4 @@
 ﻿using Aiursoft.Probe.SDK.Models;
-using Aiursoft.SDKTools.Attributes;
 using System;
 using System.ComponentModel.DataAnnotations;
 
