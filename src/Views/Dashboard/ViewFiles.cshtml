@@ -177,6 +177,10 @@
                                                     <i class="fa fa-copy"></i>
                                                     Copy
                                                 </a>
+                                                <a class="dropdown-item" asp-controller="Dashboard" asp-action="MoveFile" asp-route-path="@Model.Path.AppendPath(file.FileName)" asp-route-newFolderPath="@Model.Path">
+                                                    <i class="fa fa-cut"></i>
+                                                    Move
+                                                </a>
                                                 <a class="dropdown-item" asp-controller="Dashboard" asp-action="RenameFile" asp-route-path="@Model.Path.AppendPath(file.FileName)">
                                                     <i class="fas fa-edit"></i>
                                                     Rename
