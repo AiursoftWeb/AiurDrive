@@ -45,8 +45,6 @@
                     Up
                 </a>
             }
-            <div class="d-inline-block">
-            </div>
         </div>
         <div class="card-body p-0">
             @if (Model.NewFolderPath != null)
@@ -59,7 +57,7 @@
                         }
                         @foreach (var path in paths)
                         {
-                            <li class="breadcrumb-item@(lastPath.Equals(path,StringComparison.InvariantCulture) ? " active" : string.Empty)">@path</li>
+                            <li class="breadcrumb-item@(path.Equals(lastPath,StringComparison.InvariantCulture) ? " active" : string.Empty)">@path</li>
                         }
                     </ol>
                 </div>
