@@ -51,7 +51,7 @@
         </div>
         <div class="card-body p-0">
             <div class="col-12 p-0">
-                <div class="table-responsive">
+                <div class="table-responsive" style="overflow-x:unset">
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -87,7 +87,7 @@
                                                 Action
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item" asp-controller="Dashboard" asp-action="DeleteFolder" asp-route-path="@Model.Path.AppendPath(folder.FolderName)">
+                                                <a class="dropdown-item text-danger" asp-controller="Dashboard" asp-action="DeleteFolder" asp-route-path="@Model.Path.AppendPath(folder.FolderName)">
                                                     <i class="fas fa-trash-alt"></i>
                                                     Delete
                                                 </a>
@@ -150,8 +150,8 @@
                                                             Copy player link
                                                         </a>
                                                     }
+                                                    <div class="dropdown-divider"></div>
                                                 }
-                                                <div class="dropdown-divider"></div>
                                                 <a class="dropdown-item" href="@ProbeLocator.GetProbeDownloadAddress(Model.SiteName, Model.Path, file.FileName)">
                                                     <i class="fa fa-download"></i>
                                                     Download
@@ -169,7 +169,7 @@
                                                 Action
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item" asp-controller="Dashboard" asp-action="DeleteFile" asp-route-path="@Model.Path.AppendPath(file.FileName)">
+                                                <a class="dropdown-item text-danger" asp-controller="Dashboard" asp-action="DeleteFile" asp-route-path="@Model.Path.AppendPath(file.FileName)">
                                                     <i class="fas fa-trash-alt"></i>
                                                     Delete
                                                 </a>
