@@ -105,7 +105,7 @@
                                                 <i class="fas fa-2x fa-file-alt text-azure"></i>
                                             </div>
                                             <div class="ml-3 pt-1">
-                                                @{ 
+                                                @{
                                                     var link = ProbeLocator.GetProbeOpenAddress(Model.SiteName, Model.Path, file.FileName);
                                                     @if(MIME.IsVideo(file.FileName))
                                                     {
@@ -129,7 +129,7 @@
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                 @if(MIME.CanHandle(file.FileName))
-                                                { 
+                                                {
                                                     <a class="dropdown-item" href="@ProbeLocator.GetProbeOpenAddress(Model.SiteName, Model.Path, file.FileName)" target="_blank">
                                                         <i class="fa fa-window-maximize"></i>
                                                         Open in browser
@@ -173,14 +173,20 @@
                                                     <i class="fas fa-trash-alt"></i>
                                                     Delete
                                                 </a>
+                                                <div class="dropdown-divider"></div>
                                                 <a class="dropdown-item" asp-controller="Dashboard" asp-action="CloneFile" asp-route-path="@Model.Path.AppendPath(file.FileName)">
                                                     <i class="fa fa-copy"></i>
                                                     Copy
+                                                </a>
+                                                <a class="dropdown-item" asp-controller="Dashboard" asp-action="MoveFile" asp-route-path="@Model.Path.AppendPath(file.FileName)" asp-route-newFolderPath="@Model.Path" asp-route-deleteSource="false">
+                                                    <i class="fa fa-copy"></i>
+                                                    Copy to ...
                                                 </a>
                                                 <a class="dropdown-item" asp-controller="Dashboard" asp-action="MoveFile" asp-route-path="@Model.Path.AppendPath(file.FileName)" asp-route-newFolderPath="@Model.Path">
                                                     <i class="fa fa-cut"></i>
                                                     Move
                                                 </a>
+                                                <div class="dropdown-divider"></div>
                                                 <a class="dropdown-item" asp-controller="Dashboard" asp-action="RenameFile" asp-route-path="@Model.Path.AppendPath(file.FileName)">
                                                     <i class="fas fa-edit"></i>
                                                     Rename
