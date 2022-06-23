@@ -23,5 +23,6 @@ namespace AiurDrive.Models.DashboardViewModels
         public string Path { get; set; }
 
         public string NewFolderPath { get; set; }
+        public bool DeleteSource { get; set; }
     }
 }

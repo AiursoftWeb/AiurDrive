@@ -279,7 +279,7 @@ namespace AiurDrive.Controllers
         }
 
         [Route("MoveFile/{**path}")]
-        public async Task<IActionResult> MoveFile([FromRoute] string path, string newFolderPath = null)
+        public async Task<IActionResult> MoveFile([FromRoute] string path, string newFolderPath = null, bool deleteSource = true)
         {
             var user = await GetCurrentUserAsync();
 
@@ -288,7 +288,8 @@ namespace AiurDrive.Controllers
                 var model = new MoveFileViewModel(user)
                 {
                     Path = path,
-                    NewFolderPath = newFolderPath
+                    NewFolderPath = newFolderPath,
+                    DeleteSource = deleteSource
                 };
                 var data = await _foldersService.ViewContentAsync(await AccessToken, user.SiteName, model.NewFolderPath);
                 model.Folder = data.Value;
@@ -310,7 +311,10 @@ namespace AiurDrive.Controllers
             try
             {
                 await _filesService.CopyFileAsync(await AccessToken, user.SiteName, model.Path, user.SiteName, model.NewFolderPath);
-                await _filesService.DeleteFileAsync(await AccessToken, user.SiteName, model.Path);
+                if (model.DeleteSource)
+                {
+                    await _filesService.DeleteFileAsync(await AccessToken, user.SiteName, model.Path);
+                }
                 return RedirectToAction(nameof(ViewFiles), new { path = model.NewFolderPath });
             }
             catch (AiurUnexpectedResponse e)
