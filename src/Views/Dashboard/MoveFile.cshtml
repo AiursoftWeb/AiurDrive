@@ -1,0 +1,141 @@
+﻿@model AiurDrive.Models.DashboardViewModels.MoveFileViewModel
+@{
+    var type = Model.DeleteSource ? "Move" : "Copy";
+    ViewData["Title"] = $"{type} File - " + Model.Path;
+    string currentPath = "";
+}
+
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a asp-controller="Dashboard" asp-action="Index">@Localizer["Dashboard"]</a>
+        </li>
+        @foreach (var path in Model.Path?.Split('/') ?? new string[0])
+        {
+            <li class="breadcrumb-item">
+                @{
+                    currentPath = currentPath + path;
+                    <a asp-controller="Dashboard" asp-action="ViewFiles" asp-route-path="@currentPath">
+                        @path
+                    </a>
+                    currentPath = currentPath + "/";
+                }
+            </li>
+        }
+        <li class="breadcrumb-item active">
+            @type file
+        </li>
+    </ol>
+
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger" role="alert">
+            <strong>@Localizer["Invalid Input!"]</strong>
+            <div asp-validation-summary="All"></div>
+        </div>
+    }
+
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-cut ico"></i>
+            @Localizer[$"{type} File"]
+            @if (Model.NewFolderPath != null)
+            {
+                <a asp-controller="Dashboard" asp-action="MoveFile" asp-route-path="@Model.Path" asp-route-newFolderPath="@Model.NewFolderPath.DetachPath()" asp-route-deleteSource="@Model.DeleteSource" class="btn btn-sm btn-secondary ml-2 mr-2">
+                    <i class="fa fa-arrow-up"></i>
+                    Up
+                </a>
+            }
+        </div>
+        <div class="card-body p-0">
+            @if (Model.NewFolderPath != null)
+            {
+                <div class="col-12 p-0">
+                    <ol class="breadcrumb rounded-0">
+                        @{
+                            var paths = Model.NewFolderPath.Split('/');
+                            var lastPath = paths.LastOrDefault();
+                        }
+                        @foreach (var path in paths)
+                        {
+                            <li class="breadcrumb-item@(path.Equals(lastPath,StringComparison.InvariantCulture) ? " active" : string.Empty)">@path</li>
+                        }
+                    </ol>
+                </div>
+            }
+            <div class="col-12 p-0">
+                <div class="table-responsive">
+                    @if (!Model.Folder.SubFolders.Any())
+                    {
+                        <div class="text-center w-100 pt-5 pb-5">
+                            <i class="fa fa-5x fa-folder" style="color: #99cde9!important"></i>
+                            <h5>No sub folder in here.</h5>
+                        </div>
+                    }
+                    else
+                    {
+                        <table class="table table-hover mb-0">
+                            <thead>
+                                <tr>
+                                    <th class="pl-4">@Localizer["Name"]</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var folder in Model.Folder.SubFolders)
+                                {
+                                    <tr>
+                                        <td class="pl-4">
+                                            <div class="row mr-0">
+                                                <div class="pl-3">
+                                                    <i class="fas fa-2x fa-folder text-azure"></i>
+                                                </div>
+                                                <div class="ml-3 pt-1">
+                                                    <a asp-controller="Dashboard" asp-action="MoveFile" asp-route-path="@Model.Path" asp-route-deleteSource="@Model.DeleteSource" asp-route-newFolderPath=@(Model.NewFolderPath?.AppendPath(folder.FolderName) ?? folder.FolderName)>
+                                                        @folder.FolderName
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="col-12 p-0">
+                <form asp-controller="Dashboard" asp-action="MoveFile" method="post">
+                    <div class="row">
+                        <div class="col-md-4 d-none">
+                            <div class="form-group">
+                                <label asp-for="Path"></label>
+                                <input asp-for="Path" type="text" class="form-control" readonly="readonly">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 d-none">
+                            <div class="form-group">
+                                <label asp-for="NewFolderPath"></label>
+                                <input asp-for="NewFolderPath" type="text" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 d-none">
+                            <div class="form-group">
+                                <label asp-for="DeleteSource"></label>
+                                <input asp-for="DeleteSource" type="text" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 margin-top-30">
+                            <a class="btn btn-success" asp-controller="Dashboard" asp-action="ViewFiles" asp-route-path="@Model.Path.DetachPath()">@Localizer["Back to Folder"]</a>
+                            <button class="btn btn-primary" data-disable-with="Moving..." type="submit">@Localizer[$"Confirm {type} to Here"]</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
