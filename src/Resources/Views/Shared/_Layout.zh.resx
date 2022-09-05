@@ -60,7 +60,7 @@
   </resheader>
   <data name="Dashboard" xml:space="preserve"><value>仪表板</value></data>
 <data name="Price" xml:space="preserve"><value>价格</value></data>
-<data name="API" xml:space="preserve"><value>Api</value></data>
+<data name="API" xml:space="preserve"><value>API</value></data>
 <data name="Settings" xml:space="preserve"><value>设置</value></data>
 <data name="Sign out" xml:space="preserve"><value>注销</value></data>
 <data name="Sign in" xml:space="preserve"><value>登录</value></data>
