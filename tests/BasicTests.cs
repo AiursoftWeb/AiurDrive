@@ -35,8 +35,11 @@ namespace AiurDrive.Tests
         [TestCleanup]
         public async Task CleanServer()
         {
-            await _server.StopAsync();
-            _server.Dispose();
+            if (_server != null)
+            {
+                await _server.StopAsync();
+                _server.Dispose();
+            }
         }
 
         [TestMethod]
