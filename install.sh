@@ -17,4 +17,5 @@ install_aiurdrive()
     rm ./AiurDrive -rf
 }
 
+# Example: install_aiurdrive http://aiurdrive.local
 install_aiurdrive "$@"
