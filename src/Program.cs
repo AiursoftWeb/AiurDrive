@@ -13,7 +13,7 @@ namespace AiurDrive
         {
             App<Startup>(args)
                 .Update<AiurDriveDbContext>()
-                .InitSite<AppsContainer>(c => c["AiurDrivePublicSiteName"], a => a.AccessToken())
+                .InitSite<AppsContainer>(c => c["AiurDrivePublicSiteName"], a => a.AccessTokenAsync())
                 .Run();
         }
 

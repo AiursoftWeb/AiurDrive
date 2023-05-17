@@ -27,7 +27,7 @@ namespace AiurDrive.Controllers
         private readonly FilesService _filesService;
         private readonly AiurCache _cache;
 
-        private Task<string> AccessToken => _appsContainer.AccessToken();
+        private Task<string> AccessToken => _appsContainer.AccessTokenAsync();
 
         public DashboardController(
             SitesService sitesService,
@@ -415,7 +415,7 @@ namespace AiurDrive.Controllers
             }
             try
             {
-                var token = await _appsContainer.AccessToken();
+                var token = await _appsContainer.AccessTokenAsync();
                 await _sitesService.UpdateSiteInfoAsync(token, model.OldSiteName, model.NewSiteName, model.OpenToUpload, model.OpenToDownload);
                 user.SiteName = model.NewSiteName;
                 await _userManager.UpdateAsync(user);
