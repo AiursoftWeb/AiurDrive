@@ -1,6 +1,5 @@
 ﻿using AiurDrive.Data;
 using AiurDrive.Models;
-using Aiursoft.Gateway.SDK.Services;
 using Aiursoft.Identity;
 using Aiursoft.SDK;
 using Microsoft.AspNetCore.Builder;
@@ -19,8 +18,6 @@ namespace AiurDrive
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            AppsContainer.CurrentAppId = configuration["AiurDriveAppId"];
-            AppsContainer.CurrentAppSecret = configuration["AiurDriveAppSecret"];
         }
 
         public void ConfigureServices(IServiceCollection services)
