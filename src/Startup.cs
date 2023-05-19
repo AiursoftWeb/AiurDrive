@@ -34,7 +34,6 @@ namespace AiurDrive
             services.AddAiurMvc();
 
             services.AddAiursoftIdentity<AiurDriveUser>(
-                archonEndpoint: Configuration.GetConnectionString("ArchonConnection"),
                 observerEndpoint: Configuration.GetConnectionString("ObserverConnection"),
                 probeEndpoint: Configuration.GetConnectionString("ProbeConnection"),
                 gateEndpoint: Configuration.GetConnectionString("GatewayConnection"));
