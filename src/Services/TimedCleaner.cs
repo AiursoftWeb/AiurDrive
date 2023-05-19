@@ -1,6 +1,4 @@
-﻿using Aiursoft.Archon.SDK.Services;
-using Aiursoft.Probe.SDK.Services.ToProbeServer;
-using Aiursoft.Scanner.Interfaces;
+﻿using Aiursoft.Probe.SDK.Services.ToProbeServer;
 using Aiursoft.XelNaga.Tools;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -10,6 +8,8 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Aiursoft.Gateway.SDK.Services;
+using Aiursoft.Scanner.Abstract;
 
 namespace AiurDrive.Services
 {
