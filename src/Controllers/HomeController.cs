@@ -1,6 +1,5 @@
 ﻿using AiurDrive.Models;
 using AiurDrive.Models.HomeViewModels;
-using Aiursoft.Gateway.SDK.Services;
 using Aiursoft.Handler.Attributes;
 using Aiursoft.Identity;
 using Aiursoft.Identity.Attributes;
@@ -8,6 +7,8 @@ using Aiursoft.XelNaga.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using Aiursoft.Directory.SDK.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace AiurDrive.Controllers
 {
@@ -15,15 +16,15 @@ namespace AiurDrive.Controllers
     public class HomeController : Controller
     {
         private readonly SignInManager<AiurDriveUser> _signInManager;
-        private readonly GatewayLocator _gatewayLocator;
+        private readonly DirectoryConfiguration _directoryLocator;
         private const int DefaultSize = 30 * 1024 * 1024;
 
         public HomeController(
             SignInManager<AiurDriveUser> signInManager,
-            GatewayLocator gatewayLocator)
+            IOptions<DirectoryConfiguration> DirectoryLocator)
         {
             _signInManager = signInManager;
-            _gatewayLocator = gatewayLocator;
+            _directoryLocator = DirectoryLocator.Value;
         }
 
         [AiurForceAuth(preferController: "Dashboard", preferAction: "Index", justTry: true)]
@@ -40,7 +41,7 @@ namespace AiurDrive.Controllers
         public async Task<IActionResult> LogOff()
         {
             await _signInManager.SignOutAsync();
-            return this.SignOutRootServer(_gatewayLocator.Endpoint, new AiurUrl(string.Empty, "Home", nameof(Index), new { }));
+            return this.SignOutRootServer(_directoryLocator.Instance, new AiurUrl(string.Empty, "Home", nameof(Index), new { }));
         }
     }
 }

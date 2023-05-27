@@ -1,5 +1,5 @@
 ﻿using AiurDrive.Data;
-using Aiursoft.Gateway.SDK.Services;
+using Aiursoft.Directory.SDK.Services;
 using Aiursoft.Probe.SDK;
 using Aiursoft.SDK;
 using Microsoft.Extensions.Hosting;
@@ -13,7 +13,7 @@ namespace AiurDrive
         {
             App<Startup>(args)
                 .Update<AiurDriveDbContext>()
-                .InitSite<AppsContainer>(c => c["AiurDrivePublicSiteName"], a => a.AccessTokenAsync())
+                .InitSite<AppsContainer>(c => c["AiurDrivePublicSiteName"], a => a.GetAccessTokenAsync())
                 .Run();
         }
 

@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Aiursoft.Gateway.SDK.Services;
+using Aiursoft.Directory.SDK.Services;
 using Aiursoft.Scanner.Abstract;
 
 namespace AiurDrive.Services
@@ -69,7 +69,7 @@ namespace AiurDrive.Services
             {
                 var deadline = DateTime.UtcNow - TimeSpan.FromDays(30);
                 var publicSite = _configuration["AiurDrivePublicSiteName"];
-                var accessToken = await _appsContainer.AccessTokenAsync();
+                var accessToken = await _appsContainer.GetAccessTokenAsync();
                 var rootFolders = await foldersService.ViewContentAsync(accessToken, publicSite, string.Empty);
                 foreach (var folder in rootFolders.Value.SubFolders)
                 {

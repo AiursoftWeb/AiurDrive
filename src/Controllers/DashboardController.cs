@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using System.Threading.Tasks;
-using Aiursoft.Gateway.SDK.Services;
+using Aiursoft.Directory.SDK.Services;
 
 namespace AiurDrive.Controllers
 {
@@ -27,7 +27,7 @@ namespace AiurDrive.Controllers
         private readonly FilesService _filesService;
         private readonly AiurCache _cache;
 
-        private Task<string> AccessToken => _appsContainer.AccessTokenAsync();
+        private Task<string> AccessToken => _appsContainer.GetAccessTokenAsync();
 
         public DashboardController(
             SitesService sitesService,
@@ -415,7 +415,7 @@ namespace AiurDrive.Controllers
             }
             try
             {
-                var token = await _appsContainer.AccessTokenAsync();
+                var token = await AccessToken;
                 await _sitesService.UpdateSiteInfoAsync(token, model.OldSiteName, model.NewSiteName, model.OpenToUpload, model.OpenToDownload);
                 user.SiteName = model.NewSiteName;
                 await _userManager.UpdateAsync(user);

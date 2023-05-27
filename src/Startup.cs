@@ -31,9 +31,9 @@ namespace AiurDrive
             services.AddAiurMvc();
 
             services.AddAiursoftIdentity<AiurDriveUser>(
-                observerEndpoint: Configuration.GetConnectionString("ObserverConnection"),
-                probeEndpoint: Configuration.GetConnectionString("ProbeConnection"),
-                gateEndpoint: Configuration.GetConnectionString("GatewayConnection"));
+                probeConfig: Configuration.GetSection("AiursoftProbe"),
+                authenticationConfig: Configuration.GetSection("AiursoftAuthentication"),
+                observerConfig: Configuration.GetSection("AiursoftObserver"));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
