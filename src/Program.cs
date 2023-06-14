@@ -1,4 +1,5 @@
-﻿using AiurDrive.Data;
+﻿using System.Threading.Tasks;
+using AiurDrive.Data;
 using Aiursoft.Directory.SDK.Services;
 using Aiursoft.Probe.SDK;
 using Aiursoft.SDK;
@@ -9,12 +10,12 @@ namespace AiurDrive
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
-            App<Startup>(args)
+            await (await App<Startup>(args)
                 .Update<AiurDriveDbContext>()
-                .InitSite<AppsContainer>(c => c["AiurDrivePublicSiteName"], a => a.GetAccessTokenAsync())
-                .Run();
+                .InitSite<AppsContainer>(c => c["AiurDrivePublicSiteName"], a => a.GetAccessTokenAsync()))
+                .RunAsync();
         }
 
         // For EF
