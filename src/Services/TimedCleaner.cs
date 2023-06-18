@@ -18,14 +18,14 @@ namespace AiurDrive.Services
         private readonly ILogger _logger;
         private Timer _timer;
         private readonly IServiceScopeFactory _scopeFactory;
-        private readonly AppsContainer _appsContainer;
+        private readonly DirectoryAppTokenService _appsContainer;
         private readonly IConfiguration _configuration;
         private readonly IWebHostEnvironment _env;
 
         public TimedCleaner(
             ILogger<TimedCleaner> logger,
             IServiceScopeFactory scopeFactory,
-            AppsContainer appsContainer,
+            DirectoryAppTokenService appsContainer,
             IConfiguration configuration,
             IWebHostEnvironment env)
         {
@@ -40,10 +40,10 @@ namespace AiurDrive.Services
         {
             if (_env.IsDevelopment() || !EntryExtends.IsProgramEntry())
             {
-                _logger.LogInformation("Skip cleaner in development environment.");
+                _logger.LogInformation("Skip cleaner in development environment");
                 return Task.CompletedTask;
             }
-            _logger.LogInformation("Timed Background Service is starting.");
+            _logger.LogInformation("Timed Background Service is starting");
             _timer = new Timer(DoWork, null, TimeSpan.FromSeconds(5), TimeSpan.FromMinutes(10));
             return Task.CompletedTask;
         }
@@ -59,7 +59,7 @@ namespace AiurDrive.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "An error occurred.");
+                _logger.LogError(ex, "An error occurred");
             }
         }
 
@@ -67,7 +67,7 @@ namespace AiurDrive.Services
         {
             try
             {
-                var deadline = DateTime.UtcNow - TimeSpan.FromDays(30);
+                var deadline = DateTime.UtcNow - TimeSpan.FromDays(90);
                 var publicSite = _configuration["AiurDrivePublicSiteName"];
                 var accessToken = await _appsContainer.GetAccessTokenAsync();
                 var rootFolders = await foldersService.ViewContentAsync(accessToken, publicSite, string.Empty);
@@ -93,13 +93,13 @@ namespace AiurDrive.Services
             }
             catch (Exception e)
             {
-                _logger.LogCritical(e.Message);
+                _logger.LogCritical(e, "Crashed while cleaning old public files");
             }
         }
 
         public Task StopAsync(CancellationToken cancellationToken)
         {
-            _logger.LogInformation("Timed Background Service is stopping.");
+            _logger.LogInformation("Timed Background Service is stopping");
             _timer?.Change(Timeout.Infinite, 0);
             return Task.CompletedTask;
         }

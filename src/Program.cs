@@ -12,16 +12,10 @@ namespace AiurDrive
     {
         public static async Task Main(string[] args)
         {
-            await (await App<Startup>(args)
-                .Update<AiurDriveDbContext>()
-                .InitSite<AppsContainer>(c => c["AiurDrivePublicSiteName"], a => a.GetAccessTokenAsync()))
-                .RunAsync();
-        }
-
-        // For EF
-        public static IHostBuilder CreateHostBuilder(string[] args)
-        {
-            return BareApp<Startup>(args);
+            var app = App<Startup>(args);
+            await app.UpdateDbAsync<AiurDriveDbContext>();
+            await app.InitSiteAsync<DirectoryAppTokenService>(c => c["AiurDrivePublicSiteName"], a => a.GetAccessTokenAsync());
+            await app.RunAsync();
         }
     }
 }

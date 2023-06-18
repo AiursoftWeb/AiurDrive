@@ -5,12 +5,12 @@ using Aiursoft.Handler.Exceptions;
 using Aiursoft.Handler.Models;
 using Aiursoft.Identity.Attributes;
 using Aiursoft.Probe.SDK.Services.ToProbeServer;
-using Aiursoft.XelNaga.Services;
 using Aiursoft.XelNaga.Tools;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using System.Threading.Tasks;
+using Aiursoft.Canon;
 using Aiursoft.Directory.SDK.Services;
 
 namespace AiurDrive.Controllers
@@ -21,21 +21,21 @@ namespace AiurDrive.Controllers
     public class DashboardController : Controller
     {
         private readonly SitesService _sitesService;
-        private readonly AppsContainer _appsContainer;
+        private readonly DirectoryAppTokenService _appsContainer;
         private readonly UserManager<AiurDriveUser> _userManager;
         private readonly FoldersService _foldersService;
         private readonly FilesService _filesService;
-        private readonly AiurCache _cache;
+        private readonly CacheService _cache;
 
         private Task<string> AccessToken => _appsContainer.GetAccessTokenAsync();
 
         public DashboardController(
             SitesService sitesService,
-            AppsContainer appsContainer,
+            DirectoryAppTokenService appsContainer,
             UserManager<AiurDriveUser> userManager,
             FoldersService foldersService,
             FilesService filesService,
-            AiurCache cache)
+            CacheService cache)
         {
             _sitesService = sitesService;
             _appsContainer = appsContainer;
@@ -50,7 +50,7 @@ namespace AiurDrive.Controllers
         {
             var user = await GetCurrentUserAsync();
             var sites = await _sitesService.ViewMySitesAsync(await AccessToken);
-            if (string.IsNullOrEmpty(user.SiteName) || !sites.Sites.Any(t => t.SiteName == user.SiteName))
+            if (string.IsNullOrEmpty(user.SiteName) || sites.Sites.All(t => t.SiteName != user.SiteName))
             {
                 return RedirectToAction(nameof(CreateSite));
             }
