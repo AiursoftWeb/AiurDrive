@@ -1,6 +1,5 @@
 ﻿using AiurDrive.Models;
 using Aiursoft.Directory.SDK.Models.ForApps.AddressModels;
-using Aiursoft.Handler.Attributes;
 using Aiursoft.Identity.Attributes;
 using Aiursoft.Identity.Services;
 using Aiursoft.WebTools;
@@ -9,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace AiurDrive.Controllers
 {
-    [LimitPerMin]
     public class AuthController : Controller
     {
         private readonly AuthService<AiurDriveUser> _authService;

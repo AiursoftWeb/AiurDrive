@@ -1,8 +1,10 @@
-﻿using Aiursoft.XelNaga.Tools;
-using Microsoft.Extensions.Hosting;
+﻿using Microsoft.Extensions.Hosting;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Net.Http;
 using System.Threading.Tasks;
+using AiurDrive.Data;
+using Aiursoft.CSTools.Tools;
+using Aiursoft.DbTools;
 using static Aiursoft.WebTools.Extends;
 
 namespace AiurDrive.Tests
@@ -24,7 +26,7 @@ namespace AiurDrive.Tests
         [TestInitialize]
         public async Task CreateServer()
         {
-            _server = App<Startup>(port: _port);
+            _server = await App<Startup>(port: _port).UpdateDbAsync<AiurDriveDbContext>(UpdateMode.RecreateThenUse);
             _http = new HttpClient(new HttpClientHandler
             {
                 AllowAutoRedirect = false

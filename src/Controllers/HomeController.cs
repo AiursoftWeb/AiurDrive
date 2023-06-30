@@ -1,9 +1,7 @@
 ﻿using AiurDrive.Models;
 using AiurDrive.Models.HomeViewModels;
-using Aiursoft.Handler.Attributes;
 using Aiursoft.Identity;
 using Aiursoft.Identity.Attributes;
-using Aiursoft.XelNaga.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -12,7 +10,6 @@ using Microsoft.Extensions.Options;
 
 namespace AiurDrive.Controllers
 {
-    [LimitPerMin]
     public class HomeController : Controller
     {
         private readonly SignInManager<AiurDriveUser> _signInManager;
@@ -41,7 +38,7 @@ namespace AiurDrive.Controllers
         public async Task<IActionResult> LogOff()
         {
             await _signInManager.SignOutAsync();
-            return this.SignOutRootServer(_directoryLocator.Instance, new AiurUrl(string.Empty, "Home", nameof(Index), new { }));
+            return this.SignOutRootServer(_directoryLocator.Instance, $"Home/{nameof(Index)}");
         }
     }
 }

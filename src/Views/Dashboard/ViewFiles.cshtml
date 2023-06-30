@@ -107,7 +107,7 @@
                                             <div class="ml-3 pt-1">
                                                 @{
                                                     var link = await ProbeLocator.GetProbeOpenAddressAsync(Model.SiteName, Model.Path, file.FileName);
-                                                    @if(MIME.IsVideo(file.FileName))
+                                                    @if(Mime.IsVideo(file.FileName))
                                                     {
                                                         link = await ProbeLocator.GetProbePlayerAddressAsync(Model.SiteName, Model.Path, file.FileName);
                                                     }
@@ -128,7 +128,7 @@
                                                 Open & Download
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                @if(MIME.CanHandle(file.FileName))
+                                                @if(Mime.CanHandle(file.FileName))
                                                 {
                                                     <a class="dropdown-item" href="@await ProbeLocator.GetProbeOpenAddressAsync(Model.SiteName, Model.Path, file.FileName)" target="_blank">
                                                         <i class="fa fa-window-maximize"></i>
@@ -138,7 +138,7 @@
                                                         <i class="fa fa-clipboard"></i>
                                                         Copy link
                                                     </a>
-                                                    @if(MIME.IsVideo(file.FileName))
+                                                    @if(Mime.IsVideo(file.FileName))
                                                     {
                                                         <div class="dropdown-divider"></div>
                                                         <a class="dropdown-item" href="@await ProbeLocator.GetProbePlayerAddressAsync(Model.SiteName, Model.Path, file.FileName)" target="_blank">

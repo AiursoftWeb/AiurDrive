@@ -1,5 +1,4 @@
 ﻿using Aiursoft.Probe.SDK.Services.ToProbeServer;
-using Aiursoft.XelNaga.Tools;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -8,8 +7,9 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Aiursoft.CSTools.Tools;
 using Aiursoft.Directory.SDK.Services;
-using Aiursoft.Scanner.Abstract;
+using Aiursoft.Scanner.Abstractions;
 
 namespace AiurDrive.Services
 {
@@ -18,20 +18,17 @@ namespace AiurDrive.Services
         private readonly ILogger _logger;
         private Timer _timer;
         private readonly IServiceScopeFactory _scopeFactory;
-        private readonly DirectoryAppTokenService _appsContainer;
         private readonly IConfiguration _configuration;
         private readonly IWebHostEnvironment _env;
 
         public TimedCleaner(
             ILogger<TimedCleaner> logger,
             IServiceScopeFactory scopeFactory,
-            DirectoryAppTokenService appsContainer,
             IConfiguration configuration,
             IWebHostEnvironment env)
         {
             _logger = logger;
             _scopeFactory = scopeFactory;
-            _appsContainer = appsContainer;
             _configuration = configuration;
             _env = env;
         }
@@ -55,7 +52,8 @@ namespace AiurDrive.Services
                 _logger.LogInformation("Cleaner task started!");
                 using var scope = _scopeFactory.CreateScope();
                 var foldersService = scope.ServiceProvider.GetRequiredService<FoldersService>();
-                await AllClean(foldersService);
+                var appsContainer = scope.ServiceProvider.GetRequiredService<DirectoryAppTokenService>();
+                await AllClean(foldersService, appsContainer);
             }
             catch (Exception ex)
             {
@@ -63,13 +61,13 @@ namespace AiurDrive.Services
             }
         }
 
-        public async Task AllClean(FoldersService foldersService)
+        public async Task AllClean(FoldersService foldersService, DirectoryAppTokenService appsContainer)
         {
             try
             {
                 var deadline = DateTime.UtcNow - TimeSpan.FromDays(90);
                 var publicSite = _configuration["AiurDrivePublicSiteName"];
-                var accessToken = await _appsContainer.GetAccessTokenAsync();
+                var accessToken = await appsContainer.GetAccessTokenAsync();
                 var rootFolders = await foldersService.ViewContentAsync(accessToken, publicSite, string.Empty);
                 foreach (var folder in rootFolders.Value.SubFolders)
                 {

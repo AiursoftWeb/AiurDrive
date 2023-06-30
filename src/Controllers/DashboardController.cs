@@ -1,21 +1,18 @@
 ﻿using AiurDrive.Models;
 using AiurDrive.Models.DashboardViewModels;
-using Aiursoft.Handler.Attributes;
-using Aiursoft.Handler.Exceptions;
-using Aiursoft.Handler.Models;
 using Aiursoft.Identity.Attributes;
 using Aiursoft.Probe.SDK.Services.ToProbeServer;
-using Aiursoft.XelNaga.Tools;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using System.Threading.Tasks;
+using Aiursoft.AiurProtocol;
 using Aiursoft.Canon;
+using Aiursoft.CSTools.Tools;
 using Aiursoft.Directory.SDK.Services;
 
 namespace AiurDrive.Controllers
 {
-    [LimitPerMin]
     [AiurForceAuth]
     [Route("Dashboard")]
     public class DashboardController : Controller
@@ -102,9 +99,9 @@ namespace AiurDrive.Controllers
                 await _userManager.UpdateAsync(user);
                 return RedirectToAction(nameof(Index));
             }
-            catch (AiurUnexpectedResponse e)
+            catch (AiurServerException e)
             {
-                ModelState.AddModelError(string.Empty, e.Response.Message);
+                ModelState.AddModelError(string.Empty, e.Response.Message!);
                 model.Recover(user);
                 return View(model);
             }
@@ -130,7 +127,7 @@ namespace AiurDrive.Controllers
                 };
                 return View(model);
             }
-            catch (AiurUnexpectedResponse e) when (e.Code == ErrorType.NotFound)
+            catch (AiurServerException e) when (e.Response.Code == Code.NotFound)
             {
                 return NotFound();
             }
@@ -163,9 +160,9 @@ namespace AiurDrive.Controllers
                 await _foldersService.CreateNewFolderAsync(await AccessToken, user.SiteName, model.Path, model.NewFolderName, false);
                 return RedirectToAction(nameof(ViewFiles), new { path = model.Path });
             }
-            catch (AiurUnexpectedResponse e)
+            catch (AiurServerException e)
             {
-                ModelState.AddModelError(string.Empty, e.Response.Message);
+                ModelState.AddModelError(string.Empty, e.Response.Message!);
                 model.Recover(user);
                 return View(model);
             }
@@ -198,9 +195,9 @@ namespace AiurDrive.Controllers
                 await _foldersService.DeleteFolderAsync(await AccessToken, user.SiteName, model.Path);
                 return RedirectToAction(nameof(ViewFiles), new { path = model.Path.DetachPath() });
             }
-            catch (AiurUnexpectedResponse e)
+            catch (AiurUnexpectedServerResponseException e)
             {
-                ModelState.AddModelError(string.Empty, e.Response.Message);
+                ModelState.AddModelError(string.Empty, e.Response.Message!);
                 model.Recover(user);
                 return View(model);
             }
@@ -233,9 +230,9 @@ namespace AiurDrive.Controllers
                 await _filesService.DeleteFileAsync(await AccessToken, user.SiteName, model.Path);
                 return RedirectToAction(nameof(ViewFiles), new { path = model.Path.DetachPath() });
             }
-            catch (AiurUnexpectedResponse e)
+            catch (AiurUnexpectedServerResponseException e)
             {
-                ModelState.AddModelError(string.Empty, e.Response.Message);
+                ModelState.AddModelError(string.Empty, e.Response.Message!);
                 model.Recover(user);
                 return View(model);
             }
@@ -270,9 +267,9 @@ namespace AiurDrive.Controllers
                 await _filesService.RenameFileAsync(await AccessToken, user.SiteName, model.Path, model.NewFileName);
                 return RedirectToAction(nameof(ViewFiles), new { path = model.Path.DetachPath() });
             }
-            catch (AiurUnexpectedResponse e)
+            catch (AiurUnexpectedServerResponseException e)
             {
-                ModelState.AddModelError(string.Empty, e.Response.Message);
+                ModelState.AddModelError(string.Empty, e.Response.Message!);
                 model.Recover(user);
                 return View(model);
             }
@@ -295,7 +292,7 @@ namespace AiurDrive.Controllers
                 model.Folder = data.Value;
                 return View(model);
             }
-            catch (AiurUnexpectedResponse e) when (e.Code == ErrorType.NotFound)
+            catch (AiurUnexpectedServerResponseException e) when (e.Response.Code == Code.NotFound)
             {
                 return NotFound();
             }
@@ -317,10 +314,10 @@ namespace AiurDrive.Controllers
                 }
                 return RedirectToAction(nameof(ViewFiles), new { path = model.NewFolderPath });
             }
-            catch (AiurUnexpectedResponse e)
+            catch (AiurUnexpectedServerResponseException e)
             {
                 model.Recover(user);
-                ModelState.AddModelError(string.Empty, e.Response.Message);
+                ModelState.AddModelError(string.Empty, e.Response.Message!);
                 return View(model);
             }
         }
@@ -362,9 +359,9 @@ namespace AiurDrive.Controllers
                 await _userManager.UpdateAsync(user);
                 return RedirectToAction(nameof(CreateSite));
             }
-            catch (AiurUnexpectedResponse e)
+            catch (AiurUnexpectedServerResponseException e)
             {
-                ModelState.AddModelError(string.Empty, e.Response.Message);
+                ModelState.AddModelError(string.Empty, e.Response.Message!);
                 model.Recover(user);
                 return View(model);
             }
@@ -423,9 +420,9 @@ namespace AiurDrive.Controllers
                 _cache.Clear($"site-public-status-{model.NewSiteName}");
                 return RedirectToAction(nameof(Settings), "Dashboard", new { JustHaveUpdated = true });
             }
-            catch (AiurUnexpectedResponse e)
+            catch (AiurUnexpectedServerResponseException e)
             {
-                ModelState.AddModelError(string.Empty, e.Response.Message);
+                ModelState.AddModelError(string.Empty, e.Response.Message!);
                 model.Recover(user);
                 model.NewSiteName = model.OldSiteName;
                 return View(model);

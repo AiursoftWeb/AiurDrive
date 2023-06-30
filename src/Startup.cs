@@ -1,5 +1,6 @@
 ﻿using AiurDrive.Data;
 using AiurDrive.Models;
+using Aiursoft.DbTools;
 using Aiursoft.Identity;
 using Aiursoft.SDK;
 using Microsoft.AspNetCore.Builder;
@@ -22,7 +23,7 @@ namespace AiurDrive
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContextWithCache<AiurDriveDbContext>(Configuration.GetConnectionString("DatabaseConnection"));
+            services.AddDbContextForInfraApps<AiurDriveDbContext>(Configuration.GetConnectionString("DatabaseConnection"));
 
             services.AddIdentity<AiurDriveUser, IdentityRole>()
                 .AddEntityFrameworkStores<AiurDriveDbContext>()
