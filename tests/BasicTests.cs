@@ -51,7 +51,7 @@ namespace AiurDrive.Tests
             var location = response.Headers.Location?.ToString();
 
             Assert.AreEqual(
-                $"https://directory.aiursoft.com/oauth/authorize?force-confirm=&try-auth=True&redirect_uri=http%3A%2F%2Flocalhost%3A{_port}%2FAuth%2FAuthResult&state=%2FDashboard%2FIndex",
+                $"https://directory.aiursoft.com/oauth/authorize?try-auth=True&appid=sample-app&redirect_uri=http%3A%2F%2Flocalhost%3A{_port}%2FAuth%2FAuthResult&state=%2FDashboard%2FIndex",
                 location);
         }
     }
