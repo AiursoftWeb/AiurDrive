@@ -4,8 +4,6 @@ using Aiursoft.Identity.Attributes;
 using Aiursoft.Probe.SDK.Services.ToProbeServer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
-using System.Threading.Tasks;
 using Aiursoft.AiurProtocol;
 using Aiursoft.Canon;
 using Aiursoft.CSTools.Tools;

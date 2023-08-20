@@ -1,7 +1,5 @@
 ﻿using Microsoft.Extensions.Hosting;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Net.Http;
-using System.Threading.Tasks;
 using Aiursoft.AiurDrive.Data;
 using Aiursoft.CSTools.Tools;
 using Aiursoft.DbTools;

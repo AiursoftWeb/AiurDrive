@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Aiursoft.AiurDrive.Models.DashboardViewModels
+﻿namespace Aiursoft.AiurDrive.Models.DashboardViewModels
 {
     public class LayoutViewModel
     {

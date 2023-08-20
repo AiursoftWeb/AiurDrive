@@ -1,9 +1,7 @@
-﻿using System.Threading.Tasks;
-using Aiursoft.AiurDrive.Data;
+﻿using Aiursoft.AiurDrive.Data;
 using Aiursoft.DbTools;
 using Aiursoft.Directory.SDK.Services;
 using Aiursoft.Probe.SDK;
-using Microsoft.Extensions.Hosting;
 using static Aiursoft.WebTools.Extends;
 
 namespace Aiursoft.AiurDrive

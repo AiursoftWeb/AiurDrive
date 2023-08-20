@@ -1,5 +1,4 @@
 ﻿using Aiursoft.Probe.SDK.Models;
-using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Aiursoft.AiurDrive.Models.DashboardViewModels

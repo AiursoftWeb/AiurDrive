@@ -4,7 +4,6 @@ using Aiursoft.Identity;
 using Aiursoft.Identity.Attributes;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 using Aiursoft.Directory.SDK.Configuration;
 using Microsoft.Extensions.Options;
 
