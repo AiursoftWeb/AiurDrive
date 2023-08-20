@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace AiurDrive.Models.DashboardViewModels
+namespace Aiursoft.AiurDrive.Models.DashboardViewModels
 {
     public class MoveFileViewModel : LayoutViewModel
     {

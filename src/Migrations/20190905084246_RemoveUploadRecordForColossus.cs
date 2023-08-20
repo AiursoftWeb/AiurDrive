@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace AiurDrive.Migrations
+namespace Aiursoft.AiurDrive.Migrations
 {
     public partial class RemoveUploadRecordForColossus : Migration
     {

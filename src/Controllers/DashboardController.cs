@@ -1,5 +1,5 @@
-﻿using AiurDrive.Models;
-using AiurDrive.Models.DashboardViewModels;
+﻿using Aiursoft.AiurDrive.Models;
+using Aiursoft.AiurDrive.Models.DashboardViewModels;
 using Aiursoft.Identity.Attributes;
 using Aiursoft.Probe.SDK.Services.ToProbeServer;
 using Microsoft.AspNetCore.Identity;
@@ -11,7 +11,7 @@ using Aiursoft.Canon;
 using Aiursoft.CSTools.Tools;
 using Aiursoft.Directory.SDK.Services;
 
-namespace AiurDrive.Controllers
+namespace Aiursoft.AiurDrive.Controllers
 {
     [AiurForceAuth]
     [Route("Dashboard")]

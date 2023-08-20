@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace AiurDrive.Migrations
+namespace Aiursoft.AiurDrive.Migrations
 {
     public partial class CreateSourceNameForColossus : Migration
     {

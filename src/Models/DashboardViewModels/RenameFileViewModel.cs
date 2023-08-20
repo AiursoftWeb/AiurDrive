@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Aiursoft.CSTools.Attributes;
 
-namespace AiurDrive.Models.DashboardViewModels
+namespace Aiursoft.AiurDrive.Models.DashboardViewModels
 {
     public class RenameFileViewModel : LayoutViewModel
     {

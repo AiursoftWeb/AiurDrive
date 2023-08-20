@@ -1,4 +1,4 @@
-﻿using AiurDrive.Models;
+﻿using Aiursoft.AiurDrive.Models;
 using Aiursoft.Directory.SDK.Models.ForApps.AddressModels;
 using Aiursoft.Identity.Attributes;
 using Aiursoft.Identity.Services;
@@ -6,7 +6,7 @@ using Aiursoft.WebTools;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace AiurDrive.Controllers
+namespace Aiursoft.AiurDrive.Controllers
 {
     public class AuthController : Controller
     {

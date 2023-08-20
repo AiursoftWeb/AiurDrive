@@ -1,6 +1,6 @@
 ﻿using Aiursoft.Directory.SDK.Models;
 
-namespace AiurDrive.Models
+namespace Aiursoft.AiurDrive.Models
 {
     public enum SiteType
     {

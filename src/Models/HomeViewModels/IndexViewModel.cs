@@ -1,4 +1,4 @@
-﻿namespace AiurDrive.Models.HomeViewModels
+﻿namespace Aiursoft.AiurDrive.Models.HomeViewModels
 {
     public class IndexViewModel
     {

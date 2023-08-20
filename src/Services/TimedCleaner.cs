@@ -11,7 +11,7 @@ using Aiursoft.CSTools.Tools;
 using Aiursoft.Directory.SDK.Services;
 using Aiursoft.Scanner.Abstractions;
 
-namespace AiurDrive.Services
+namespace Aiursoft.AiurDrive.Services
 {
     public class TimedCleaner : IHostedService, IDisposable, ISingletonDependency
     {

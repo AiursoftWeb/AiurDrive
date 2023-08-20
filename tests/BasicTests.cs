@@ -2,12 +2,12 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Net.Http;
 using System.Threading.Tasks;
-using AiurDrive.Data;
+using Aiursoft.AiurDrive.Data;
 using Aiursoft.CSTools.Tools;
 using Aiursoft.DbTools;
 using static Aiursoft.WebTools.Extends;
 
-namespace AiurDrive.Tests
+namespace Aiursoft.AiurDrive.Tests
 {
     [TestClass]
     public class BasicTests

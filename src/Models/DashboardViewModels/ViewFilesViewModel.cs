@@ -1,7 +1,7 @@
 ﻿using Aiursoft.Probe.SDK.Models;
 using System;
 
-namespace AiurDrive.Models.DashboardViewModels
+namespace Aiursoft.AiurDrive.Models.DashboardViewModels
 {
     public class ViewFilesViewModel : LayoutViewModel
     {

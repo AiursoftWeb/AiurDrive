@@ -1,4 +1,4 @@
-@model AiurDrive.Models.HomeViewModels.IndexViewModel
+@model Aiursoft.AiurDrive.Models.HomeViewModels.IndexViewModel
 @using Microsoft.Extensions.Configuration
 @using System.Reflection
 @inject IConfiguration Configuration
@@ -7,7 +7,7 @@
 }
 <div class="jumbotron">
     <div class="container">
-        <h3>Welcome to AiurDrive</h3>
+        <h3>Welcome to Aiursoft.AiurDrive</h3>
         @{
             var description = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyDescriptionAttribute>()?.Description;
         }

@@ -1,8 +1,8 @@
-﻿using AiurDrive.Models;
+﻿using Aiursoft.AiurDrive.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace AiurDrive.Data
+namespace Aiursoft.AiurDrive.Data
 {
     public class AiurDriveDbContext : IdentityDbContext<AiurDriveUser>
     {

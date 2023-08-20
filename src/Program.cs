@@ -1,12 +1,12 @@
 ﻿using System.Threading.Tasks;
-using AiurDrive.Data;
+using Aiursoft.AiurDrive.Data;
 using Aiursoft.DbTools;
 using Aiursoft.Directory.SDK.Services;
 using Aiursoft.Probe.SDK;
 using Microsoft.Extensions.Hosting;
 using static Aiursoft.WebTools.Extends;
 
-namespace AiurDrive
+namespace Aiursoft.AiurDrive
 {
     public class Program
     {

@@ -16,7 +16,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\src\AiurDrive.csproj" />
+		<ProjectReference Include="..\src\Aiursoft.AiurDrive.csproj" />
 	</ItemGroup>
 
 </Project>

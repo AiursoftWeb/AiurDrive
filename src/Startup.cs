@@ -1,5 +1,5 @@
-﻿using AiurDrive.Data;
-using AiurDrive.Models;
+﻿using Aiursoft.AiurDrive.Data;
+using Aiursoft.AiurDrive.Models;
 using Aiursoft.Identity;
 using Aiursoft.SDK;
 using Microsoft.AspNetCore.Builder;
@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace AiurDrive
+namespace Aiursoft.AiurDrive
 {
     public class Startup
     {

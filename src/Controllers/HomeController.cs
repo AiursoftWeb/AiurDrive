@@ -1,5 +1,5 @@
-﻿using AiurDrive.Models;
-using AiurDrive.Models.HomeViewModels;
+﻿using Aiursoft.AiurDrive.Models;
+using Aiursoft.AiurDrive.Models.HomeViewModels;
 using Aiursoft.Identity;
 using Aiursoft.Identity.Attributes;
 using Microsoft.AspNetCore.Identity;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Aiursoft.Directory.SDK.Configuration;
 using Microsoft.Extensions.Options;
 
-namespace AiurDrive.Controllers
+namespace Aiursoft.AiurDrive.Controllers
 {
     public class HomeController : Controller
     {
