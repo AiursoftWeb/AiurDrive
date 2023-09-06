@@ -24,7 +24,7 @@ namespace Aiursoft.AiurDrive.Tests
         [TestInitialize]
         public async Task CreateServer()
         {
-            _server = await App<Startup>(port: _port).UpdateDbAsync<AiurDriveDbContext>(UpdateMode.RecreateThenUse);
+            _server = await App<Startup>(Array.Empty<string>(), port: _port).UpdateDbAsync<AiurDriveDbContext>(UpdateMode.RecreateThenUse);
             _http = new HttpClient(new HttpClientHandler
             {
                 AllowAutoRedirect = false
