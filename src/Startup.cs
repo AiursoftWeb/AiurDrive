@@ -17,7 +17,7 @@ namespace Aiursoft.AiurDrive
                 .AddEntityFrameworkStores<AiurDriveDbContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddAiurosftWebFeatures();
+            services.AddAiursoftWebFeatures();
 
             services.AddAiursoftIdentity<AiurDriveUser>(
                 probeConfig: configuration.GetSection("AiursoftProbe"),
