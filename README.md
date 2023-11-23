@@ -3,7 +3,7 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://gitlab.aiursoft.cn/aiursoft/aiurdrive/-/blob/master/LICENSE)
 [![Pipeline stat](https://gitlab.aiursoft.cn/aiursoft/aiurdrive/badges/master/pipeline.svg)](https://gitlab.aiursoft.cn/aiursoft/aiurdrive/-/pipelines)
 [![Test Coverage](https://gitlab.aiursoft.cn/aiursoft/aiurdrive/badges/master/coverage.svg)](https://gitlab.aiursoft.cn/aiursoft/aiurdrive/-/pipelines)
-[![ManHours](https://manhours.aiursoft.cn/gitlab/gitlab.aiursoft.cn/aiursoft/aiurdrive)](https://gitlab.aiursoft.cn/aiursoft/aiurdrive/-/commits/master?ref_type=heads)
+[![ManHours](https://manhours.aiursoft.cn/gitlab/gitlab.aiursoft.cn/aiursoft/aiurdrive.svg)](https://gitlab.aiursoft.cn/aiursoft/aiurdrive/-/commits/master?ref_type=heads)
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fdrive.aiursoft.com%2F%3Fshow%3Ddirect)](https://drive.aiursoft.com)
 
 A file store for all kinds of users
