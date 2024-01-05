@@ -10,6 +10,6 @@
     <Description>AiurDrive is a file store for all kinds of users.</Description>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Aiursoft.Identity" Version="7.0.30" />
+    <PackageReference Include="Aiursoft.Identity" Version="7.0.31" />
   </ItemGroup>
 </Project>
