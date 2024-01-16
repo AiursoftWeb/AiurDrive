@@ -26,7 +26,7 @@
             <h2>@Localizer["Try now!"]</h2>
             <h3 id="uploadTitle">@Localizer["Upload your file here to share it."]</h3>
             <div>
-                <vc:aiur-uploader asp-for="file" site-name="@Configuration["AiurDrivePublicSiteName"]" path="@DateTime.UtcNow.Date.ToString("yyyy-MM-dd")" size-in-mb="@Model.SizeInMB" allowed-extensions="" default-file=""></vc:aiur-uploader>
+                <vc:aiur-uploader asp-for="file" site-name="@Configuration["AiurDrivePublicSiteName"]!" path="@DateTime.UtcNow.Date.ToString("yyyy-MM-dd")" size-in-mb="@Model.SizeInMB" allowed-extensions="" default-file=""></vc:aiur-uploader>
                 <div class="mt-2">
                     <a class="btn btn-success" asp-controller="Dashboard" asp-action="Index">
                         <i class="fa fa-upload"></i>
