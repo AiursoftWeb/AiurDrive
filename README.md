@@ -26,7 +26,7 @@ curl -sL https://gitlab.aiursoft.cn/aiursoft/aiurdrive/-/raw/master/install.sh |
 
 Requirements about how to run
 
-1. [.NET 7 SDK](http://dot.net/)
+1. [.NET 8 SDK](http://dot.net/)
 2. Execute `dotnet run` to run the app
 3. Use your browser to view [http://localhost:5000](http://localhost:5000)
 
