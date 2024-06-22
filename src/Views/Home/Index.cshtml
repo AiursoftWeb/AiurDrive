@@ -5,17 +5,7 @@
 <div class="jumbotron">
     <div class="container">
         <h3>Welcome to Aiursoft.AiurDrive</h3>
-        @{
-            var description = "aaaa";
-            // try
-            // {
-            //     description = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyDescriptionAttribute>()?.Description;
-            // }
-            // catch (Exception e)
-            // {
-            // }
-        }
-        <p>@description</p>
+        <p>AAAAAAAAAAAAAAAAAA</p>
         <div class="btn-group" role="group">
             <a class="btn btn-primary btn-lg" href="#" role="button">
                 <i class="fas fa-pencil-alt"></i>
@@ -59,7 +49,7 @@
             </div>
             <div class="modal-body">
                 @*TODO: Developer will be merged to Directory!*@
-                <img class="img-fluid" id="qr-img" data-developer="https://developer.aiursoft.com" src="/qrcode-build"/>
+                <img class="img-fluid" id="qr-img" src="/qrcode-build"/>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
@@ -69,13 +59,12 @@
 </div>
 
 
-@section js{
+@section scripts{
     <script>
         var copyButton = $('#copyButton');
         var openButton = $('#openButton');
         var codeButton = $('#codeButton');
         var qrImage = $('#qr-img');
-        var developer = qrImage.attr('data-developer');
 
         var updateButtons = function () {
             var value = $("[name=file]").attr('data-internet-path');
@@ -85,7 +74,7 @@
                 codeButton.show();
                 copyButton.attr('data-clipboard-text', value);
                 openButton.attr('href', value);
-                qrImage.attr('src', developer + '/qrcode-build?source=' + encodeURI(value));
+                qrImage.attr('src', '/qrcode-build?source=' + encodeURI(value));
             } else {
                 copyButton.hide();
                 openButton.hide();

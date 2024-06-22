@@ -1,11 +1,14 @@
 {
   "name": "wwwroot",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "description": "This is a server side application. This package is used to host the static files.",
+  "author": "Anduin Xue",
+  "license": "MIT",
+  "dependencies": {
+    "@aiursoft/autodark.js": "^1.2.0",
+    "jquery-validation": "^1.19.5",
+    "jquery-validation-unobtrusive": "^3.2.12",
+    "@fortawesome/fontawesome-free": "^6.5.1",
+    "clipboard": "^2.0.11"
+  }
 }
