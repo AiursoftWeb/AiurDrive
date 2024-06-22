@@ -6,7 +6,7 @@ namespace Aiursoft.AiurDrive.Services
     public class TimedCleaner : IHostedService, IDisposable, ISingletonDependency
     {
         private readonly ILogger _logger;
-        private Timer _timer;
+        private Timer? _timer;
         private readonly IServiceScopeFactory _scopeFactory;
         private readonly IWebHostEnvironment _env;
 
@@ -32,7 +32,7 @@ namespace Aiursoft.AiurDrive.Services
             return Task.CompletedTask;
         }
 
-        private async void DoWork(object state)
+        private async void DoWork(object? state)
         {
             try
             {

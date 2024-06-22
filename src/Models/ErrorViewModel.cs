@@ -1,8 +1,8 @@
 ﻿namespace Aiursoft.AiurDrive.Models;
 
-public class ErrorViewModel
+public class ErrorViewModel(string requestId)
 {
-    public string RequestId { get; set; }
+    public string RequestId { get; set; } = requestId;
 
     public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
 }
