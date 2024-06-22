@@ -10,6 +10,22 @@
     <Description>AiurDrive is a file store for all kinds of users.</Description>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Aiursoft.Identity" Version="7.0.31" />
+    <PackageReference Include="Aiursoft.DbTools.Sqlite" Version="8.0.11" />
+    <PackageReference Include="Aiursoft.WebTools" Version="8.0.20" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.6" />
+  </ItemGroup>
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Dashboard\CreateSite.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Dashboard\Delete.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Dashboard\DeleteFile.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Dashboard\DeleteFolder.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Dashboard\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Dashboard\MoveFile.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Dashboard\NewFolder.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Dashboard\RenameFile.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Dashboard\Settings.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Dashboard\ViewFiles.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Dashboard\_Layout.cshtml" />
   </ItemGroup>
 </Project>

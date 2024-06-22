@@ -1,7 +1,4 @@
 @model Aiursoft.AiurDrive.Models.HomeViewModels.IndexViewModel
-@using Microsoft.Extensions.Configuration
-@using System.Reflection
-@inject IConfiguration Configuration
 @{
     ViewData["Title"] = "Home";
 }
@@ -9,13 +6,20 @@
     <div class="container">
         <h3>Welcome to Aiursoft.AiurDrive</h3>
         @{
-            var description = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyDescriptionAttribute>()?.Description;
+            var description = "aaaa";
+            // try
+            // {
+            //     description = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyDescriptionAttribute>()?.Description;
+            // }
+            // catch (Exception e)
+            // {
+            // }
         }
-        <p>@Localizer[description ?? string.Empty]</p>
+        <p>@description</p>
         <div class="btn-group" role="group">
-            <a class="btn btn-primary btn-lg" asp-controller="Dashboard" asp-action="Index" role="button">
+            <a class="btn btn-primary btn-lg" href="#" role="button">
                 <i class="fas fa-pencil-alt"></i>
-                @Localizer["Sign in to your personal storage"]
+                Sign in to your personal storage
             </a>
         </div>
     </div>
@@ -23,140 +27,25 @@
 <main role="main" class="container">
     <div class="row">
         <div class="col-md-12 mt-5">
-            <h2>@Localizer["Try now!"]</h2>
-            <h3 id="uploadTitle">@Localizer["Upload your file here to share it."]</h3>
+            <h2>Try now!</h2>
+            <h3 id="uploadTitle">Upload your file here to share it.</h3>
             <div>
-                <vc:aiur-uploader asp-for="file" site-name="@Configuration["AiurDrivePublicSiteName"]!" path="@DateTime.UtcNow.Date.ToString("yyyy-MM-dd")" size-in-mb="@Model.SizeInMB" allowed-extensions="" default-file=""></vc:aiur-uploader>
+                @* <vc:aiur-uploader asp-for="file" site-name="" path="@DateTime.UtcNow.Date.ToString("yyyy-MM-dd")" size-in-mb="@Model.SizeInMB" allowed-extensions="" default-file=""></vc:aiur-uploader> *@
                 <div class="mt-2">
                     <a class="btn btn-success" asp-controller="Dashboard" asp-action="Index">
                         <i class="fa fa-upload"></i>
-                        @Localizer["Sign in to enjoy 2000MB max file size!"]
+                        Sign in to enjoy 2000MB max file size!
                     </a>
-                    <a id="copyButton" class="btn btn-warning text-white" data-toggle="tooltip" data-original-title="copied!" data-trigger="click" data-clipboard-text="error">@Localizer["Copy Link"]</a>
-                    <a id="openButton" class="btn btn-primary" href="#" target="_blank">@Localizer["Open in new page"]</a>
-                    <a id="codeButton" class="btn btn-primary ml-2" data-toggle="modal" data-target="#qr-modal">@Localizer["QR Code"]</a>
+                    <a id="copyButton" class="btn btn-warning text-white" data-toggle="tooltip" data-original-title="copied!" data-trigger="click" data-clipboard-text="error">Copy Link</a>
+                    <a id="openButton" class="btn btn-primary" href="#" target="_blank">Open in new page</a>
+                    <a id="codeButton" class="btn btn-primary ml-2" data-toggle="modal" data-target="#qr-modal">QR Code</a>
                 </div>
             </div>
             <label class="w-100 mt-3 mb-0">
-                @Localizer["By uploading, you agree to our "]
-                <a href="@(ServiceLocation.WWW + Values.TermsAfterWWW)" target="_blank">
-                    @Localizer["Terms"].
-                </a>
+                By uploading, you agree to our terms
             </label>
         </div>
     </div>
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h1 class="display-4">@Localizer["Pricing"]</h1>
-        <p class="lead">@Localizer["Quickly upload anything to share it with anyone. Create a one-time link to share a secret file and view log to statistic file download times."]</p>
-    </div>
-    <div class="card-deck mb-3 text-center">
-        <div class="card mb-4 box-shadow">
-            <div class="card-header">
-                <h4 class="my-0 font-weight-normal">@Localizer["Everyone"]</h4>
-            </div>
-            <div class="card-body">
-                <h1 class="card-title pricing-card-title">@Localizer["$0"]</h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                    <li>
-                        <i class="fa fa-check text-success"></i>
-                        @Localizer["30Mb file size limit"]
-                    </li>
-                    <li>
-                        <i class="fa fa-times text-danger"></i>
-                        @Localizer["30 days limit"]
-                    </li>
-                    <li>
-                        <i class="fa fa-times text-danger"></i>
-                        @Localizer["All files public"]
-                    </li>
-                    <li>
-                        <i class="fa fa-times text-danger"></i>
-                        @Localizer["No download log"]
-                    </li>
-                    <li>
-                        <i class="fa fa-times text-danger"></i>
-                        @Localizer["No custom domain"]
-                    </li>
-                    <li>
-                        <i class="fa fa-times text-danger"></i>
-                        @Localizer["Shared storage with others"]
-                    </li>
-                </ul>
-                <button onclick="$('html, body').animate({ scrollTop: 0 }, 1000, 'easeInOutExpo');" class="btn btn-lg btn-block btn-outline-primary">@Localizer["Upload now"]</button>
-            </div>
-        </div>
-        <div class="card mb-4 box-shadow">
-            <div class="card-header">
-                <h4 class="my-0 font-weight-normal">@Localizer["Basic"]</h4>
-            </div>
-            <div class="card-body">
-                <h1 class="card-title pricing-card-title">@Localizer["$0"]</h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                    <li>
-                        <i class="fa fa-check text-success"></i>
-                        @Localizer["2Gb file size limit"]
-                    </li>
-                    <li>
-                        <i class="fa fa-check text-success"></i>
-                        @Localizer["365 days limit"]
-                    </li>
-                    <li>
-                        <i class="fa fa-check text-success"></i>
-                        @Localizer["Private site supported"]
-                    </li>
-                    <li>
-                        <i class="fa fa-times text-danger"></i>
-                        @Localizer["No download log"]
-                    </li>
-                    <li>
-                        <i class="fa fa-times text-danger"></i>
-                        @Localizer["No custom domain"]
-                    </li>
-                    <li>
-                        <i class="fa fa-times text-danger"></i>
-                        @Localizer["Your personal storage"]
-                    </li>
-                </ul>
-                <a asp-controller="Dashboard" asp-action="Index" class="btn btn-lg btn-block btn-secondary">@Localizer["Sign in"]</a>
-            </div>
-        </div>
-        <div class="card mb-4 box-shadow">
-            <div class="card-header">
-                <h4 class="my-0 font-weight-normal">@Localizer["Developer"]</h4>
-            </div>
-            <div class="card-body">
-                <h1 class="card-title pricing-card-title">@Localizer["$0.1"] <small class="text-muted">@Localizer["/ mo / GB"]</small></h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                    <li>
-                        <i class="fa fa-check text-success"></i>
-                        @Localizer["2Gb file size limit"]
-                    </li>
-                    <li>
-                        <i class="fa fa-check text-success"></i>
-                        @Localizer["No time limit"]
-                    </li>
-                    <li>
-                        <i class="fa fa-check text-success"></i>
-                        @Localizer["Private site supported"]
-                    </li>
-                    <li>
-                        <i class="fa fa-check text-success"></i>
-                        @Localizer["Download logs"]
-                    </li>
-                    <li>
-                        <i class="fa fa-check text-success"></i>
-                        @Localizer["Custom domain supported"]
-                    </li>
-                    <li>
-                        <i class="fa fa-check text-success"></i>
-                        @Localizer["Multiple customizable storage"]
-                    </li>
-                </ul>
-                <a href="@ServiceLocation.Wiki/Integrated%20Website/Getting%20Started.md" class="btn btn-lg btn-block btn-success">@Localizer["Get started"]</a>
-            </div>
-        </div>
-    </div>
-
 </main>
 
 <div class="modal fade" id="qr-modal" tabindex="-1" role="dialog" aria-labelledby="qrModalLabel" aria-hidden="true">

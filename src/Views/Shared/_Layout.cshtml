@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <vc:aiur-header></vc:aiur-header>
     <title>@ViewData["Title"] - Aiursoft.AiurDrive</title>
@@ -9,15 +9,13 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-light bg-white fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="@ServiceLocation.WWW">@Values.ProjectName</a>
+            <a class="navbar-brand" href="/">Aiursoft AiurDrive</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active"><a class="nav-link" asp-controller="Dashboard" asp-action="Index">@Localizer["Dashboard"]</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">@Localizer["Price"]</a></li>
-                    <li class="nav-item"><a class="nav-link" href="@ServiceLocation.Wiki">@Localizer["API"]</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#">Dashboard</a></li>
                 </ul>
                 <div class="form-inline">
                     <ul class="navbar-nav mr-auto">
@@ -30,25 +28,25 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    @await UserImageGenerator.RenderUserImageAsync(User)
+                                    @User.Identity?.Name
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdown02">
-                                    <a class="dropdown-item" asp-controller="Dashboard" asp-action="Index">@Localizer["Dashboard"]</a>
-                                    <a class="dropdown-item" href="@ServiceLocation.Account">@Localizer["Settings"]</a>
-                                    <a class="dropdown-item" data-toggle="modal" data-target="#exampleModal">@Localizer["Sign out"]</a>
+                                    <a class="dropdown-item" href="#">Dashboard</a>
+                                    <a class="dropdown-item" href="#">Settings</a>
+                                    <a class="dropdown-item" data-toggle="modal" data-target="#exampleModal">Sign out</a>
                                 </div>
                             </li>
                         }
                         else
                         {
                             <li class="nav-item active">
-                                <a class="nav-link" asp-controller="Auth" asp-action="GoAuth">
-                                    @Localizer["Sign in"]
+                                <a class="nav-link" href="#">
+                                    Sign in
                                 </a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" asp-controller="Auth" asp-action="GoRegister">
-                                    @Localizer["Sign up"]
+                                <a class="nav-link" href="#">
+                                    Sign up
                                 </a>
                             </li>
                         }
@@ -64,8 +62,7 @@
                 <vc:aiur-footer template="li" item-class=""></vc:aiur-footer>
             </ul>
             <p>
-                &copy; @DateTime.Now.Year - @Values.ProjectName
-                <vc:china-register></vc:china-register>
+                &copy; @DateTime.Now.Year - Aiursoft
             </p>
         </div>
     </footer>
