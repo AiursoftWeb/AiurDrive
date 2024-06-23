@@ -9,12 +9,17 @@ public class DownloadController(StorageService storage) : Controller
     [Route("{**FolderNames}")]
     public IActionResult Index(string folderNames)
     {
-       var physicalPath = storage.GetFilePhysicalPath(folderNames);
-       if (!System.IO.File.Exists(physicalPath))
-       {
-           return NotFound();
-       }
+        if (folderNames.Contains(".."))
+        {
+            return BadRequest("Invalid path!");
+        }
+        
+        var physicalPath = storage.GetFilePhysicalPath(folderNames);
+        if (!System.IO.File.Exists(physicalPath))
+        {
+            return NotFound();
+        }
        
-       return this.WebFile(physicalPath);
+        return this.WebFile(physicalPath);
     }
 }
