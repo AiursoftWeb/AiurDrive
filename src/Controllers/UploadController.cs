@@ -30,10 +30,22 @@ public class UploadController(StorageService storage) : Controller
             return BadRequest("Invalid file name!");
         }
         
-        await storage.Save(file.FileName, file);
+        var storePath = Path.Combine(
+            DateTime.UtcNow.Year.ToString("D4"), 
+            DateTime.UtcNow.Month.ToString("D2"), 
+            DateTime.UtcNow.Day.ToString("D2"),
+            file.FileName);
+        var relativePath = await storage.Save(storePath, file);
+        var urlPath = Uri.EscapeDataString(relativePath)
+            .Replace("%5C", "/")
+            .Replace("%5c", "/")
+            .Replace("%2F", "/")
+            .Replace("%2f", "/")
+            .TrimStart('/');
+
         return Ok(new
         {
-            InternetPath = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/download/{file.FileName}"
+            InternetPath = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/download/{urlPath}",
         });
     }    
 }
