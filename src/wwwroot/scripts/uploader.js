@@ -1,33 +1,50 @@
 ﻿class Uploader {
-    constructor(name, sizeInMb, validExtensions, uploadUrl) {
-        this.name = name;
+    constructor({
+                    fileInput,
+                    progress,
+                    progressbar,
+                    addressInput,
+                    sizeInMb,
+                    validExtensions,
+                    uploadUrl,
+                    onFile = function () {
+                    },
+                    onUploaded = function () {
+                    },
+                    onReset = function () {
+                    }
+                } = {}) {
+        this.fileInput = fileInput;
+        this.progress = progress;
+        this.progressbar = progressbar;
+        this.addressInput = addressInput;
         this.sizeInMb = sizeInMb;
         this.validExtensions = validExtensions;
         this.uploadUrl = uploadUrl;
-
-        this.fileInput = $(`#${name}-file-input`);
-        this.progress = $(`#progress-${name}`);
-        this.progressbar = $(`#progressbar-${name}`);
-        this.addressInput = $(`[name=${name}]`);
+        this.onFile = onFile;
+        this.onUploaded = onUploaded;
+        this.onReset = onReset;
+        this.onbeforeunloadBackup = window.onbeforeunload;
     }
 
     getExtension(filename) {
-        var parts = filename.split('.');
+        const parts = filename.split('.');
         return (parts[parts.length - 1]).toLowerCase();
     }
 
     reset(that) {
         that.addressInput.val("");
-        that.addressInput.attr('data-internet-path', "");
         that.progressbar.css('width', '0%');
-        this.progress.addClass('d-none');
-        window.onbeforeunload = function () { };
+        that.progress.addClass('d-none');
+        window.onbeforeunload = that.onbeforeunloadBackup;
+        that.onReset(that);
     }
 
-    onFile(that) {
-        var file = that.fileInput.prop("files")[0];
-        var ext = that.getExtension(file.name);
+    tryUpload(that) {
+        that.onFile(that);
 
+        const file = that.fileInput.prop("files")[0];
+        const ext = that.getExtension(file.name);
         if (that.validExtensions.length > 0 && that.validExtensions.indexOf(ext) === -1) {
             return;
         }
@@ -40,15 +57,13 @@
             return "Your file is still uploading. Are you sure to quit?";
         };
 
-        var formData = new FormData();
-
         that.progress.removeClass('d-none');
         that.progressbar.css('width', '0%');
         that.progressbar.removeClass('bg-success');
         that.progressbar.addClass('progress-bar-animated');
 
+        const formData = new FormData();
         formData.append("file", file);
-        formData.append("recursiveCreate", true);
 
         $.ajax({
             url: that.uploadUrl,
@@ -59,7 +74,7 @@
             contentType: false,
             processData: false,
             xhr: function () {
-                var myXhr = $.ajaxSettings.xhr();
+                const myXhr = $.ajaxSettings.xhr();
                 if (myXhr.upload) {
                     myXhr.upload.addEventListener('progress', function (e) {
                         if (e.lengthComputable) {
@@ -70,25 +85,25 @@
                 return myXhr;
             },
             success: function (data) {
-                window.onbeforeunload = function () { };
+                window.onbeforeunload = that.onbeforeunloadBackup;
                 that.addressInput.val(data.internetPath);
-                that.addressInput.attr('data-internet-path', data.internetPath);
                 that.progressbar.addClass('bg-success');
                 that.progressbar.removeClass('progress-bar-animated');
                 that.progressbar.css('width', '100%');
+                that.onUploaded(data);
             },
             error: that.reset
         });
     }
 
     init() {
-        var that = this;
-        this.fileInput.unbind('change');
-        this.fileInput.on('change', function() {
-            that.onFile(that);
+        const that = this;
+        that.fileInput.unbind('change');
+        that.fileInput.on('change', function () {
+            that.tryUpload(that);
         });
-        var dropi = this.fileInput.dropify();
-        dropi.on('dropify.afterClear', function() {
+        const dropify = that.fileInput.dropify();
+        dropify.on('dropify.afterClear', function () {
             that.reset(that);
         });
     }

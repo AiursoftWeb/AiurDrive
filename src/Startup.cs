@@ -29,6 +29,7 @@ namespace Aiursoft.AiurDrive
                 .AddEntityFrameworkStores<AiurDriveDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddTransient<StorageService>();
             services.AddControllersWithViews().AddApplicationPart(typeof(Startup).Assembly);
         }
 
