@@ -7,7 +7,9 @@
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fdrive.aiursoft.cn%2F)](https://drive.aiursoft.cn)
 [![Docker](https://img.shields.io/badge/docker-latest-blue?logo=docker)](https://hub.aiursoft.cn/#!/taglist/aiursoft/aiurdrive)
 
-AiurDrive is a file store for all kinds of users that helps you transfer files between devices. AiurDrive is a free and open-source project. You can use AiurDrive to store your files, share files with others, and even use AiurDrive as a CDN for your website.
+AiurDrive is a free file sharing service. You can upload your files here and share them with others.
+
+![overview](./screenshot.png)
 
 ## Try
 

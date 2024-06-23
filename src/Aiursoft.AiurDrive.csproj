@@ -8,7 +8,7 @@
     <IsPackable>false</IsPackable>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Description>AiurDrive is a file store for all kinds of users.</Description>
+    <Description>AiurDrive is a free file sharing service. You can upload your files here and share them with others.</Description>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Aiursoft.DbTools.Sqlite" Version="8.0.11" />
