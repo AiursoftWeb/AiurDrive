@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using System.Net;
+using Microsoft.Extensions.Hosting;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Aiursoft.AiurDrive.Data;
 using Aiursoft.CSTools.Tools;
@@ -24,7 +25,7 @@ namespace Aiursoft.AiurDrive.Tests
         [TestInitialize]
         public async Task CreateServer()
         {
-            _server = await App<Startup>(Array.Empty<string>(), port: _port).UpdateDbAsync<AiurDriveDbContext>(UpdateMode.RecreateThenUse);
+            _server = await (await AppAsync<Startup>([], port: _port)).UpdateDbAsync<AiurDriveDbContext>(UpdateMode.RecreateThenUse);
             _http = new HttpClient(new HttpClientHandler
             {
                 AllowAutoRedirect = false
@@ -46,11 +47,7 @@ namespace Aiursoft.AiurDrive.Tests
         public async Task GetHome()
         {
             var response = await _http.GetAsync(_endpointUrl);
-            var location = response.Headers.Location?.ToString();
-
-            Assert.AreEqual(
-                $"https://directory.aiursoft.com/oauth/authorize?try-auth=True&appid=sample-app&redirect_uri=http%3A%2F%2Flocalhost%3A{_port}%2FAuth%2FAuthResult&state=%2FDashboard%2FIndex",
-                location);
+            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
         }
     }
 }
