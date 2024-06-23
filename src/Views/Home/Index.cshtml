@@ -20,7 +20,12 @@
             <h2>Try now!</h2>
             <h3 id="uploadTitle">Upload your file here to share it.</h3>
             <div>
-                @* <vc:aiur-uploader asp-for="file" site-name="" path="@DateTime.UtcNow.Date.ToString("yyyy-MM-dd")" size-in-mb="@Model.SizeInMB" allowed-extensions="" default-file=""></vc:aiur-uploader> *@
+                <input type="file" id="main-file-file-input" class="dropify" data-max-file-size="30M"/>
+                <input type="hidden" name="main-file" data-internet-path=""/>
+                <div id="progress-main-file" class="progress mb-3 mt-3 d-none">
+                    <div id="progressbar-main-file" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"></div>
+                </div>
+
                 <div class="mt-2">
                     <a class="btn btn-success" href="#">
                         <i class="fa fa-upload"></i>
@@ -32,7 +37,7 @@
                 </div>
             </div>
             <label class="w-100 mt-3 mb-0">
-                By uploading, you agree to our terms
+                By uploading, you agree to our terms.
             </label>
         </div>
     </div>
@@ -61,10 +66,10 @@
 
 @section scripts{
     <script>
-        var copyButton = $('#copyButton');
-        var openButton = $('#openButton');
-        var codeButton = $('#codeButton');
-        var qrImage = $('#qr-img');
+        const copyButton = $('#copyButton');
+        const openButton = $('#openButton');
+        const codeButton = $('#codeButton');
+        const qrImage = $('#qr-img');
 
         var updateButtons = function () {
             var value = $("[name=file]").attr('data-internet-path');
@@ -87,5 +92,9 @@
             setTimeout(loopRenderJobs, 100);
         };
         loopRenderJobs();
+    </script>
+    <script type="module">
+        import Uploader from "/scripts/uploader.js";
+        new Uploader('main-file', 30, '', '').init();
     </script>
 }
