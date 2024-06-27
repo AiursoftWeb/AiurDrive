@@ -5,7 +5,7 @@
 /// </summary>
 public class StorageService(IConfiguration configuration)
 {
-    private readonly string _workspaceFolder = configuration["Storage:Path"]!;
+    private readonly string _workspaceFolder = Path.Combine(configuration["Storage:Path"]!, "Workspace");
     // Async lock.
     private readonly SemaphoreSlim _lock = new SemaphoreSlim(1, 1);
 
@@ -54,6 +54,6 @@ public class StorageService(IConfiguration configuration)
     
     public string GetFilePhysicalPath(string fileName)
     {
-        return Path.Combine(_workspaceFolder, fileName);
+        return Path.Combine(_workspaceFolder, "Workspace", fileName);
     }
 }

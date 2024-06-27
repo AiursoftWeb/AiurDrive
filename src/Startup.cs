@@ -4,6 +4,7 @@ using Aiursoft.AiurDrive.Services;
 using Aiursoft.WebTools.Abstractions.Models;
 using Microsoft.AspNetCore.Identity;
 using Aiursoft.DbTools.Sqlite;
+using Microsoft.AspNetCore.Http.Features;
 
 namespace Aiursoft.AiurDrive
 {
@@ -11,6 +12,14 @@ namespace Aiursoft.AiurDrive
     {
         public void ConfigureServices(IConfiguration configuration, IWebHostEnvironment environment, IServiceCollection services)
         {
+            // Configure big file upload.
+            services.Configure<FormOptions>(options =>
+            {
+                options.ValueLengthLimit = int.MaxValue;
+                options.MultipartBodyLengthLimit = int.MaxValue;
+                options.MultipartHeadersLengthLimit = int.MaxValue;
+            });
+            
             var connectionString = configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
             services.AddMemoryCache();
