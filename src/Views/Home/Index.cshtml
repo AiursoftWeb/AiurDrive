@@ -195,7 +195,7 @@
                 openButton.show();
                 codeButton.show();
                 openButton.attr('href', downloadPath);
-                qrImage.attr('src', '/qrcode-build?source=' + encodeURI(downloadPath));
+                qrImage.attr('src', '/download/qrcode?path=' + encodeURIComponent(downloadPath));
             } else {
                 copyButton.hide();
                 openButton.hide();

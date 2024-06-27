@@ -4,6 +4,7 @@ using Aiursoft.AiurDrive.Services;
 using Aiursoft.WebTools.Abstractions.Models;
 using Microsoft.AspNetCore.Identity;
 using Aiursoft.DbTools.Sqlite;
+using Aiursoft.WebTools.Services;
 using Microsoft.AspNetCore.Http.Features;
 
 namespace Aiursoft.AiurDrive
@@ -25,6 +26,7 @@ namespace Aiursoft.AiurDrive
             services.AddMemoryCache();
             services.AddAiurSqliteWithCache<AiurDriveDbContext>(connectionString);
             services.AddSingleton<IHostedService, TimedCleaner>();
+            services.AddTransient<QRCodeService>();
 
             services.AddIdentity<AiurDriveUser, IdentityRole>(options => options.Password = new PasswordOptions
                 {

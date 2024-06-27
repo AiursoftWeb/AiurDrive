@@ -1,10 +1,11 @@
 ﻿using Aiursoft.AiurDrive.Services;
+using Aiursoft.WebTools.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Aiursoft.AiurDrive.Controllers;
 
 [Route("download")]
-public class DownloadController(StorageService storage) : Controller
+public class DownloadController(StorageService storage, QRCodeService qrCodeService) : Controller
 {
     [Route("{**FolderNames}")]
     public IActionResult Index(string folderNames)
@@ -21,5 +22,12 @@ public class DownloadController(StorageService storage) : Controller
         }
        
         return this.WebFile(physicalPath);
+    }
+    
+    [Route("qrcode")]
+    public IActionResult QrCode([FromQuery]string path)
+    {
+        var qrcodeXml = qrCodeService.ToQRCodeSvgXml(path);
+        return Content(qrcodeXml, "image/svg+xml");
     }
 }
