@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Aiursoft.AiurDrive.Controllers;
 
 [Route("download")]
-public class DownloadController(StorageService storage, QRCodeService qrCodeService) : Controller
+public class DownloadController(StorageService storage, QRCodeService qrCodeService) : ControllerBase
 {
     [Route("{**FolderNames}")]
     public IActionResult Index(string folderNames)

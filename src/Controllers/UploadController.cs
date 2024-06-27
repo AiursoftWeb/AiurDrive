@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Aiursoft.AiurDrive.Controllers;
 
 [Route("upload")]
-public class UploadController(StorageService storage) : Controller
+public class UploadController(StorageService storage) : ControllerBase
 {
     public async Task<IActionResult> Index()
     {
