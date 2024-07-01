@@ -21,6 +21,7 @@ install()
     echo "Installing $app_name... to port $port"
 
     # Install prerequisites    
+    aiur install/docker
     aiur install/dotnet
     aiur install/node
 
@@ -38,6 +39,7 @@ install()
     aiur dotnet/publish "/tmp/repo/$proj_path" "/opt/apps/$app_name"
     
     # Register the service
+    usermod -aG docker www-data
     dll_name=$(get_dll_name)
     aiur services/register_aspnet_service $app_name $port "/opt/apps/$app_name" $dll_name
 

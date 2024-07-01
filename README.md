@@ -37,10 +37,13 @@ It will install the app as a systemd service, and start it automatically. Binary
 
 Requirements about how to run
 
-1. Install [.NET 8 SDK](http://dot.net/) and [Node.js](https://nodejs.org/).
+1. Install [Docker](https://www.docker.com/)
+2. Install [.NET 8 SDK](http://dot.net/) and [Node.js](https://nodejs.org/).
 2. Execute `npm install` at `wwwroot` folder to install the dependencies.
-3. Execute `dotnet run` to run the app.
-4. Use your browser to view [http://localhost:5000](http://localhost:5000).
+3. Configure `www-data` user in your host machine to allow access to Docker with: `sudo usermod -aG docker www-data`
+4. Add `www-data` home: `sudo mkdir /var/www && sudo chown www-data:www-data /var/www`
+5. Execute `dotnet run` to run the app.
+6. Use your browser to view [http://localhost:5000](http://localhost:5000).
 
 ## Run in Microsoft Visual Studio
 
@@ -57,7 +60,7 @@ Then run the following commands in a Linux shell:
 image=hub.aiursoft.cn/aiursoft/aiurdrive
 appName=aiurdrive
 docker pull $image
-docker run -d --name $appName --restart unless-stopped -p 5000:5000 -v /var/www/$appName:/data $image
+docker run -d --name $appName --restart unless-stopped -p 5000:5000 -v /var/www/$appName:/data -v /tmp:/tmp -v /var/run/docker.sock:/var/run/docker.sock $image
 ```
 
 That will start a web server at `http://localhost:5000` and you can test the app.
@@ -68,9 +71,11 @@ The docker image has the following context:
 |-------------|------------------------------------|
 | Image       | hub.aiursoft.cn/aiursoft/aiurdrive |
 | Ports       | 5000                               |
-| Binary path | /app                               |
-| Data path   | /data                              |
-| Config path | /data/appsettings.json             |
+| Binary path | /app                                           |
+| Data path   | /data                                          |
+| Config path | /data/appsettings.json                         |
+| Passthrough | /var/run/docker.sock (For Docker)              |
+| Passthrough | /tmp (For saving the unprocessed images)       |
 
 ## How to contribute
 

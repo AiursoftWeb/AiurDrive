@@ -7,6 +7,7 @@ public class StorageService(IConfiguration configuration)
 {
     private readonly string _workspaceFolder = Path.Combine(configuration["Storage:Path"]!, "Workspace");
     public readonly string HyperScaleFolder = Path.Combine(configuration["Storage:Path"]!, "HyperScaled");
+    
     // Async lock.
     private readonly SemaphoreSlim _lock = new(1, 1);
 

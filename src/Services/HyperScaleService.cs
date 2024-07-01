@@ -22,8 +22,8 @@ public class HyperScaleService(
 
         logger.LogInformation("Build ID: {BuildId}", buildId);
         // Copy the input image to the folder.
-        var sourceExtension = Path.GetExtension(inputImage);
-        File.Copy(inputImage, Path.Combine(buildInputFolder, $"input{sourceExtension}"));
+        var sourceFileName = Path.GetFileName(inputImage);
+        File.Copy(inputImage, Path.Combine(buildInputFolder, sourceFileName));
 
         // Run the hyper-scale image.
         try
@@ -53,8 +53,8 @@ public class HyperScaleService(
 
             // Copy the output image to the output folder.
             var outputImage = Directory.EnumerateFiles(buildOutputFolder).First();
-            var outputExtension = Path.GetExtension(outputImage);
-            var finalOutputPath = Path.Combine(outputPath, $"{buildId}{outputExtension}");
+            var outputImageName = Path.GetFileName(outputImage);
+            var finalOutputPath = Path.Combine(outputPath, outputImageName);
             if (!Directory.Exists(outputPath))
             {
                 Directory.CreateDirectory(outputPath);
