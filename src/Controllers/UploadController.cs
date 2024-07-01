@@ -37,18 +37,11 @@ public class UploadController(
             DateTime.UtcNow.Day.ToString("D2"),
             file.FileName);
         var relativePath = await storage.Save(storePath, file);
-        var urlPath = Uri.EscapeDataString(relativePath)
-            .Replace("%5C", "/")
-            .Replace("%5c", "/")
-            .Replace("%2F", "/")
-            .Replace("%2f", "/")
-            .TrimStart('/');
+        var uriPath = storage.RelativePathToUriPath(relativePath);
 
         return Ok(new
         {
-            InternetPath = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/download/{urlPath}",
+            InternetPath = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/download/{uriPath}",
         });
     } 
-    
-
 }

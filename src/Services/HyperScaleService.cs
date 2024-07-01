@@ -1,5 +1,7 @@
 using Aiursoft.Canon;
 using Aiursoft.CSTools.Services;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Formats.Jpeg;
 
 namespace Aiursoft.AiurDrive.Services;
 
@@ -8,7 +10,24 @@ public class HyperScaleService(
     ILogger<HyperScaleService> logger,
     CommandService commandService)
 {
-    private readonly string _tempFolder = Path.Combine(Path.GetTempPath(), "aiurdrive", "hyper-scale");
+    private readonly string _tempFolder = Path.Combine(Path.GetTempPath(), "aiurdrive-tmp", "hyper-scale");
+    
+    public async Task<bool> IsSupportedImageFileAsync(string filePath)
+    {
+        var extension = Path.GetExtension(filePath);
+        if (extension != ".jpg" && extension != ".jpeg" && extension != ".png" && extension != ".bmp") return false;
+        try
+        {
+            using var image = await Image.LoadAsync(filePath);
+            return true;
+        }
+        catch (UnknownImageFormatException e)
+        {
+            logger.LogError(e, "Failed to load image file {FilePath}", filePath);
+        }
+
+        return false;
+    }
     
     public async Task<string> HyperScaleImage(string inputImage, string outputPath)
     {
@@ -51,8 +70,11 @@ public class HyperScaleService(
                 throw new InvalidOperationException(message);
             }
 
-            // Copy the output image to the output folder.
+            // Convert the output image to JPG format.
             var outputImage = Directory.EnumerateFiles(buildOutputFolder).First();
+            outputImage = await ConvertPhotoToJpg(outputImage, buildOutputFolder);
+            
+            // Copy the output image to the output folder.
             var outputImageName = Path.GetFileName(outputImage);
             var finalOutputPath = Path.Combine(outputPath, outputImageName);
             if (!Directory.Exists(outputPath))
@@ -97,5 +119,19 @@ public class HyperScaleService(
                 return Task.CompletedTask;
             });
         }
+    }
+
+    private async Task<string> ConvertPhotoToJpg(string inputImage, string outputPath)
+    {
+        if (Path.GetExtension(inputImage) == ".jpg")
+        {
+            return inputImage;
+        }
+        
+        var jpgFileOutputPath = Path.Combine(outputPath, Path.GetFileNameWithoutExtension(inputImage) + ".jpg");
+        using Image image = await Image.LoadAsync(inputImage);
+        // 将图片保存为 JPG 格式
+        await image.SaveAsync(jpgFileOutputPath, new JpegEncoder());
+        return jpgFileOutputPath;
     }
 }
