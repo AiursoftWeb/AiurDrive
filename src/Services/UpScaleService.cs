@@ -48,7 +48,7 @@ public class UpScaleService(
         try
         {
             var command =
-                $"run --rm --name {buildId} --gpus all --cpus=16 --memory=4096m -it -v {buildInputFolder}:/app/input -v {buildOutputFolder}:/app/results/swinir_real_sr_x4_large hub.aiursoft.cn/aiursoft/internalimages/swinir";
+                $"run --rm --name {buildId} --gpus all --cpus=16 --memory=4096m -v {buildInputFolder}:/app/input -v {buildOutputFolder}:/app/results/swinir_real_sr_x4_large hub.aiursoft.cn/aiursoft/internalimages/swinir";
             var (resultCode, output, error) = await commandService.RunCommandAsync(
                 bin: "docker",
                 arg: command,
