@@ -26,13 +26,18 @@
                 </div>
 
                 <div class="mt-2">
-                    <a class="btn btn-success" href="#">
-                        <i class="fa fa-upload"></i>
-                        Sign in to enjoy 2GB max file size!
-                    </a>
+                    @* <a class="btn btn-success" href="#"> *@
+                    @*     <i class="fa fa-upload"></i> *@
+                    @*     Sign in to enjoy 2GB max file size! *@
+                    @* </a> *@
                     <a id="copyButton" class="btn btn-warning text-white" data-toggle="tooltip" data-original-title="copied!" data-trigger="click" data-clipboard-target="#main-file" data-clipboard-action="copy">Copy Link</a>
                     <a id="openButton" class="btn btn-primary" href="#" target="_blank">Open in new page</a>
+                    <a id="upscaleButton" class="btn btn-secondary" target="_blank">Upscale the image</a>
                     <a id="codeButton" class="btn btn-primary ml-2" data-toggle="modal" data-target="#qr-modal">QR Code</a>
+                </div>
+
+                <div id="progress-main-upscale" class="progress mb-3 mt-3 d-none">
+                    <div id="progressbar-main-upscale" class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 100%"></div>
                 </div>
             </div>
             <label class="w-100 mt-3 mb-0">
@@ -48,11 +53,33 @@
             <div class="modal-header">
                 <h5 class="modal-title">QR Code</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">?</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <img class="img-fluid" id="qr-img" src="/qrcode-build" alt="qr code"/>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="upscaled-modal" tabindex="-1" role="dialog" aria-labelledby="upscaledModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Up scale image</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <a href="#" id="upscale-img-link" target="_blank">
+                    <img class="img-fluid" id="upscale-img" src="/favicon.ico" alt="qr code"/>
+                </a>
+                @* <img class="img-fluid" id="upscale-img" src="/favicon.ico" alt="qr code"/> *@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
@@ -186,19 +213,68 @@
         const copyButton = $('#copyButton');
         const openButton = $('#openButton');
         const codeButton = $('#codeButton');
+        const upscaleButton = $('#upscaleButton');
         const qrImage = $('#qr-img');
+        const upscaleImage = $('#upscale-img');
+        const upscaleLink = $('#upscale-img-link');
         const updateButtons = function () {
-            var downloadPath = $("[name=main-file]").attr('value');
+            const downloadPath = $("[name=main-file]").attr('value');
+            const relativePath = downloadPath.split('/').slice(4).join('/');
+            
             if (downloadPath && downloadPath.length > 0) {
                 copyButton.show();
                 openButton.show();
                 codeButton.show();
                 openButton.attr('href', downloadPath);
                 qrImage.attr('src', '/download/qrcode?path=' + encodeURIComponent(downloadPath));
+                
+                // if the file is an image, show the upscale button.
+                if (
+                    downloadPath.toLowerCase().endsWith('.png') ||
+                    downloadPath.toLowerCase().endsWith('.bmp') ||
+                    downloadPath.toLowerCase().endsWith('.jpg') || 
+                    downloadPath.toLowerCase().endsWith('.jpeg')) {
+                    upscaleButton.show();
+                    
+                    const progress = $(`#progress-main-upscale`);
+                    
+                    // If clicked upscale button, call the upscale API.
+                    upscaleButton.click(function () {
+                        // Disable the button to prevent multiple clicks.
+                        upscaleButton.addClass('disabled');
+                        upscaleButton.text('Upscaling...(ETA 30s)');
+                        
+                        // Show progress with unknown progress:
+                        progress.removeClass('d-none');
+                        $.ajax({
+                            url: '/upscale/' + relativePath,
+                            type: 'GET',
+                            success: function (data) {
+                                console.log(data);
+                                upscaleImage.attr('src', data);
+                                upscaleLink.attr('href', data);
+                                progress.addClass('d-none');
+                                upscaleButton.removeClass('disabled');
+                                upscaleButton.text('Upscale the image');
+                                $('#upscaled-modal').modal('show');
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                console.error("Error during upscaling: ", textStatus, errorThrown);
+                                progress.addClass('d-none');
+                                upscaleButton.removeClass('disabled');
+                                upscaleButton.text('Upscale the image');
+                                alert("Failed to upscale the image. Please try again later.");
+                            }
+                        });
+                    });
+                } else {
+                    upscaleButton.hide();
+                }
             } else {
                 copyButton.hide();
                 openButton.hide();
                 codeButton.hide();
+                upscaleButton.hide();
             }
         };
         updateButtons();

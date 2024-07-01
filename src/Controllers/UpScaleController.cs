@@ -9,7 +9,7 @@ public class UpScaleController(
     StorageService storage, 
     UpScaleService upScale) : ControllerBase
 {
-    [LimitPerMin(5)]
+    [LimitPerMin(15)]
     [Route("{**FolderNames}")]
     public async Task<IActionResult> TriggerUpScale(string folderNames)
     {

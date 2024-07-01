@@ -10,6 +10,7 @@ public abstract class Program
     {
         var app = await AppAsync<Startup>(args);
         await app.UpdateDbAsync<AiurDriveDbContext>(UpdateMode.MigrateThenUse);
+        await app.PullContainersAsync();
         await app.RunAsync();
     }
 }
