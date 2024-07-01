@@ -33,6 +33,14 @@ COPY --from=build-env /app .
 # Install wget and curl
 RUN apt update; DEBIAN_FRONTEND=noninteractive apt install -y wget curl
 
+# Install Docker
+RUN curl -fsSL https://get.docker.com -o get-docker.sh
+ENV CHANNEL=stable
+RUN sh get-docker.sh
+RUN usermod -aG docker root
+RUN rm get-docker.sh
+
+
 # Edit appsettings.json
 RUN sed -i 's/DataSource=app.db/DataSource=\/data\/app.db/g' appsettings.json
 RUN sed -i 's/\/tmp\/data/\/data/g' appsettings.json
