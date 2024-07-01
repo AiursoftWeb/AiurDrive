@@ -1,6 +1,8 @@
 ﻿using Aiursoft.AiurDrive.Data;
 using Aiursoft.AiurDrive.Models;
 using Aiursoft.AiurDrive.Services;
+using Aiursoft.Canon;
+using Aiursoft.CSTools.Services;
 using Aiursoft.WebTools.Abstractions.Models;
 using Microsoft.AspNetCore.Identity;
 using Aiursoft.DbTools.Sqlite;
@@ -40,6 +42,10 @@ namespace Aiursoft.AiurDrive
                 .AddEntityFrameworkStores<AiurDriveDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddTaskCanon();
+            services.AddScoped<HyperScaleService>();
+            services.AddScoped<CommandService>();
+            
             services.AddTransient<StorageService>();
             services.AddControllersWithViews().AddApplicationPart(typeof(Startup).Assembly);
         }
