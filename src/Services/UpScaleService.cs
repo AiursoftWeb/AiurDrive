@@ -5,9 +5,9 @@ using SixLabors.ImageSharp.Formats.Jpeg;
 
 namespace Aiursoft.AiurDrive.Services;
 
-public class HyperScaleService(
+public class UpScaleService(
     CanonQueue queue,
-    ILogger<HyperScaleService> logger,
+    ILogger<UpScaleService> logger,
     CommandService commandService)
 {
     private readonly string _tempFolder = Path.Combine(Path.GetTempPath(), "aiurdrive-tmp", "hyper-scale");
@@ -29,7 +29,7 @@ public class HyperScaleService(
         return false;
     }
     
-    public async Task<string> HyperScaleImage(string inputImage, string outputPath)
+    public async Task<string> UpScaleImage(string inputImage, string outputPath)
     {
         var buildId = Guid.NewGuid().ToString("N");
         var buildFolder = Path.Combine(_tempFolder, buildId);
@@ -44,7 +44,7 @@ public class HyperScaleService(
         var sourceFileName = Path.GetFileName(inputImage);
         File.Copy(inputImage, Path.Combine(buildInputFolder, sourceFileName));
 
-        // Run the hyper-scale image.
+        // Run the up-scale image.
         try
         {
             var command =
@@ -58,8 +58,8 @@ public class HyperScaleService(
 
             if (resultCode != 0)
             {
-                var message = $"Failed to run hyper-scale image: {output}, {error}";
-                logger.LogError("Failed to run hyper-scale image: {Out}, {Error}", output, error);
+                var message = $"Failed to run up-scale image: {output}, {error}";
+                logger.LogError("Failed to run up-scale image: {Out}, {Error}", output, error);
                 throw new InvalidOperationException(message);
             }
 

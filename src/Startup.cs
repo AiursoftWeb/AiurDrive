@@ -43,7 +43,7 @@ namespace Aiursoft.AiurDrive
                 .AddDefaultTokenProviders();
 
             services.AddTaskCanon();
-            services.AddScoped<HyperScaleService>();
+            services.AddScoped<UpScaleService>();
             services.AddScoped<CommandService>();
             
             services.AddTransient<StorageService>();

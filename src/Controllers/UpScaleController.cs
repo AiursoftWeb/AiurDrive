@@ -4,15 +4,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Aiursoft.AiurDrive.Controllers;
 
-[Route("hyperscale")]
-public class HyperScaleController(
+[Route("upscale")]
+public class UpScaleController(
     StorageService storage, 
-    HyperScaleService hyperScale) : ControllerBase
+    UpScaleService upScale) : ControllerBase
 {
-        
     [LimitPerMin(5)]
     [Route("{**FolderNames}")]
-    public async Task<IActionResult> DownloadHyperScaled(string folderNames)
+    public async Task<IActionResult> TriggerUpScale(string folderNames)
     {
         if (folderNames.Contains(".."))
         {
@@ -20,7 +19,9 @@ public class HyperScaleController(
         }
         
         var physicalPath = storage.GetFilePhysicalPath(folderNames);
-        var possibleScaledPath = GetPossibleHyperScaledFilePath(folderNames);
+        
+        // In case we have already up scaled this photo, directly return the path.
+        var possibleScaledPath = GetPossibleUpScaledFilePath(folderNames);
         if (System.IO.File.Exists(possibleScaledPath))
         {
             var cachedUriPath = storage.RelativePathToUriPath(storage.AbsolutePathToRelativePath(possibleScaledPath));
@@ -32,26 +33,26 @@ public class HyperScaleController(
             return NotFound();
         }
         
-        if (!await hyperScale.IsSupportedImageFileAsync(physicalPath))
+        if (!await upScale.IsSupportedImageFileAsync(physicalPath))
         {
             return BadRequest("Unsupported file type!");
         }
         
-        var hyperScaledPath = await hyperScale.HyperScaleImage(physicalPath,
-            outputPath: Path.Combine(storage.WorkspaceFolder, "HyperScaled", Path.GetDirectoryName(folderNames)!));
-        var uriPath = storage.RelativePathToUriPath(storage.AbsolutePathToRelativePath(hyperScaledPath));
+        var upScaledPath = await upScale.UpScaleImage(physicalPath,
+            outputPath: Path.Combine(storage.WorkspaceFolder, "UpScaled", Path.GetDirectoryName(folderNames)!));
+        var uriPath = storage.RelativePathToUriPath(storage.AbsolutePathToRelativePath(upScaledPath));
         return Ok($"{Request.Scheme}://{Request.Host}/download/{uriPath}");
     }
     
-    private string GetPossibleHyperScaledFilePath(string sourceFileFolderNames)
+    private string GetPossibleUpScaledFilePath(string sourceFileFolderNames)
     {
         var relativePath = Path.GetDirectoryName(sourceFileFolderNames)!;
         var physicalPath = storage.GetFilePhysicalPath(sourceFileFolderNames);
         var physicalFileName = Path.GetFileName(physicalPath);
         var physicalFileNameWithoutExtension = Path.GetFileNameWithoutExtension(physicalFileName);
-        var physicalExtension = ".jpg"; // All hyperscaled images are jpg.
+        var physicalExtension = ".jpg"; // All up scaled images are jpg.
         var scaledFileName =$"{physicalFileNameWithoutExtension}_SwinIR{physicalExtension}";
-        var scaledPath = Path.Combine(storage.WorkspaceFolder, "HyperScaled", relativePath, scaledFileName);
+        var scaledPath = Path.Combine(storage.WorkspaceFolder, "UpScaled", relativePath, scaledFileName);
         return scaledPath;
     }
 }
