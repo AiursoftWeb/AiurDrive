@@ -35,7 +35,7 @@ public class UpScaleController(
         
         if (!await upScale.IsSupportedImageFileAsync(physicalPath))
         {
-            return BadRequest("Unsupported file type!");
+            return BadRequest("Unsupported file type. Please try a smaller photo.");
         }
         
         var upScaledPath = await upScale.UpScaleImage(physicalPath,

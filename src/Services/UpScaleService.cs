@@ -16,6 +16,10 @@ public class UpScaleService(
     {
         var extension = Path.GetExtension(filePath);
         if (extension != ".jpg" && extension != ".jpeg" && extension != ".png" && extension != ".bmp") return false;
+        if (File.Exists(filePath) == false) return false;
+        // If more than 1.5MB, return false.
+        if (new FileInfo(filePath).Length > 1.5 * 1024 * 1024) return false;
+        
         try
         {
             using var image = await Image.LoadAsync(filePath);

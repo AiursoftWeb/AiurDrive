@@ -262,10 +262,11 @@
                             },
                             error: function (jqXHR, textStatus, errorThrown) {
                                 console.error("Error during upscaling: ", textStatus, errorThrown);
+                                console.error("Response body: ", jqXHR.responseText);
                                 progress.addClass('d-none');
                                 upscaleButton.removeClass('disabled');
                                 upscaleButton.text('Upscale the image');
-                                alert("Failed to upscale the image. Please try again later.");
+                                alert("Failed to upscale the image. " + jqXHR.responseText);
                             }
                         });
                     });
