@@ -10,7 +10,7 @@ public class HyperScaleService(
 {
     private readonly string _tempFolder = Path.Combine(Path.GetTempPath(), "aiurdrive", "hyper-scale");
     
-    public async Task<string> HyperScaleImage(string inputImage)
+    public async Task<string> HyperScaleImage(string inputImage, string outputPath)
     {
         var buildId = Guid.NewGuid().ToString("N");
         var buildFolder = Path.Combine(_tempFolder, buildId);
@@ -29,12 +29,12 @@ public class HyperScaleService(
         try
         {
             var command =
-                $"run --gpus all -it -v {buildInputFolder}:/app/input -v {buildOutputFolder}:/app/results/swinir_real_sr_x4_large hub.aiursoft.cn/aiursoft/internalimages/swinir";
+                $"run --gpus all --cpus=16 --memory=4096m -it -v {buildInputFolder}:/app/input -v {buildOutputFolder}:/app/results/swinir_real_sr_x4_large hub.aiursoft.cn/aiursoft/internalimages/swinir";
             var (resultCode, output, error) = await commandService.RunCommandAsync(
                 bin: "docker",
                 arg: command,
                 path: _tempFolder,
-                timeout: TimeSpan.FromSeconds(300),
+                timeout: TimeSpan.FromSeconds(500),
                 killTimeoutProcess: true);
 
             if (resultCode != 0)
@@ -46,13 +46,27 @@ public class HyperScaleService(
 
             if (!Directory.EnumerateFiles(buildOutputFolder).Any())
             {
-                var message = "No output file generated!";
+                const string message = "No output file generated!";
                 logger.LogError("No output file generated!");
                 throw new InvalidOperationException(message);
             }
 
+            // Copy the output image to the output folder.
             var outputImage = Directory.EnumerateFiles(buildOutputFolder).First();
-            return outputImage;
+            var outputExtension = Path.GetExtension(outputImage);
+            var finalOutputPath = Path.Combine(outputPath, $"{buildId}{outputExtension}");
+            if (!Directory.Exists(outputPath))
+            {
+                Directory.CreateDirectory(outputPath);
+            }
+            if (File.Exists(finalOutputPath))
+            {
+                File.Delete(finalOutputPath);
+            }
+            File.Copy(outputImage, finalOutputPath);
+            
+            // Return the final output path.
+            return finalOutputPath;
         }
         catch (TimeoutException e)
         {

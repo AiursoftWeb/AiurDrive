@@ -6,8 +6,7 @@ namespace Aiursoft.AiurDrive.Controllers;
 
 [Route("upload")]
 public class UploadController(
-    StorageService storage,
-    HyperScaleService hyperScale) : ControllerBase
+    StorageService storage) : ControllerBase
 {
     public async Task<IActionResult> Index()
     {
@@ -51,16 +50,5 @@ public class UploadController(
         });
     } 
     
-    [Route("hyperscale")]
-    public async Task<IActionResult> HyperScale()
-    {
-        var testImage =
-            @"/home/anduin/Pictures/4K Stogram/anduin1442/2019-04-11 23.01.43 2020007690109330835_314289429.jpg";
-        if (System.IO.File.Exists(testImage))
-        {
-            var url = await hyperScale.HyperScaleImage(testImage);
-            return Ok(url);
-        }
-        throw new FileNotFoundException("Test image not found!");
-    }
+
 }
