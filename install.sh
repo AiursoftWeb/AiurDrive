@@ -41,7 +41,7 @@ install()
     # Register the service
     usermod -aG docker www-data
     dll_name=$(get_dll_name)
-    aiur services/register_aspnet_service $app_name $port "/opt/apps/$app_name" $dll_name
+    aiur services/register_aspnet_service $app_name $port "/opt/apps/$app_name" $dll_name $true # Run as root
 
     # Clean up
     echo "Install $app_name finished! Please open http://$(hostname):$port to try!"
