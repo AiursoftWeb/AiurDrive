@@ -1,8 +1,8 @@
-namespace Aiursoft.AiurDrive;
-
 using System.Diagnostics.CodeAnalysis;
 using Aiursoft.Canon;
 using Aiursoft.CSTools.Services;
+
+namespace Aiursoft.AiurDrive;
 
 public static class ProgramExtends
 {

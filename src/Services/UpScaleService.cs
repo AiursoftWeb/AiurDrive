@@ -53,7 +53,7 @@ public class UpScaleService(
                 bin: "docker",
                 arg: command,
                 path: _tempFolder,
-                timeout: TimeSpan.FromSeconds(200),
+                timeout: TimeSpan.FromSeconds(300),
                 killTimeoutProcess: true);
 
             if (resultCode != 0)
