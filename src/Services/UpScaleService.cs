@@ -12,6 +12,9 @@ public class UpScaleService(
 {
     private readonly string _tempFolder = Path.Combine(Path.GetTempPath(), "aiurdrive-tmp", "hyper-scale");
     
+    // Async lock
+    private static readonly SemaphoreSlim Lock = new(1, 1);
+    
     public async Task<bool> IsSupportedImageFileAsync(string filePath)
     {
         var extension = Path.GetExtension(filePath);
@@ -23,7 +26,7 @@ public class UpScaleService(
         
         try
         {
-            using var image = await Image.LoadAsync(filePath);
+            using var _ = await Image.LoadAsync(filePath);
             return true;
         }
         catch (UnknownImageFormatException e)
@@ -53,7 +56,9 @@ public class UpScaleService(
         try
         {
             var command =
-                $"run --rm --name {buildId} --gpus all --cpus=16 --memory=4096m -v {buildInputFolder}:/app/input -v {buildOutputFolder}:/app/results/swinir_real_sr_x4_large hub.aiursoft.cn/aiursoft/internalimages/swinir";
+                $"run --rm --name {buildId} --gpus all -v {buildInputFolder}:/app/input -v {buildOutputFolder}:/app/results/swinir_real_sr_x4_large hub.aiursoft.cn/aiursoft/internalimages/swinir";
+            
+            await Lock.WaitAsync();
             var (resultCode, output, error) = await commandService.RunCommandAsync(
                 bin: "docker",
                 arg: command,
@@ -102,6 +107,7 @@ public class UpScaleService(
         }
         finally
         {
+            Lock.Release();
             // Kill and remove the container.
             logger.LogInformation("Killing container {Build}", buildId);
             _ = await commandService.RunCommandAsync(
