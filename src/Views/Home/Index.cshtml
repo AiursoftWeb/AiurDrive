@@ -239,6 +239,8 @@
                     const progress = $(`#progress-main-upscale`);
                     
                     // If clicked upscale button, call the upscale API.
+                    // Clear existing events for upscale button.
+                    upscaleButton.off('click');
                     upscaleButton.click(function () {
                         // Disable the button to prevent multiple clicks.
                         upscaleButton.addClass('disabled');
@@ -275,6 +277,9 @@
                 openButton.hide();
                 codeButton.hide();
                 upscaleButton.hide();
+                upscaleButton.on('click', function () {
+                    alert('Please upload a image file to use this feature.');
+                });
             }
         };
         updateButtons();
