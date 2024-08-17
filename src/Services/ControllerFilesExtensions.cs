@@ -16,7 +16,7 @@ public static class ControllerFilesExtensions
     public static IActionResult WebFile(this ControllerBase controller, string path)
     {
         var (etag, length) = GetFileHttpProperties(path);
-        
+
         // Handle etag
         controller.Response.Headers.Append("ETag", etag);
         if (controller.Request.Headers.Keys.Contains("If-None-Match"))
@@ -27,11 +27,15 @@ public static class ControllerFilesExtensions
             }
         }
 
-        controller.Response.Headers.Append("Content-Disposition", $"inline; filename=\"{Path.GetFileName(path)}\"");
+        var fileName = Path.GetFileName(path);
+        var asciiFileName = Uri.EscapeDataString(fileName); // Ensuring ASCII encoding
+
+        controller.Response.Headers.Append("Content-Disposition", $"inline; filename*=UTF-8''{asciiFileName}");
         controller.Response.Headers.Append("Content-Length", length.ToString());
         controller.Response.Headers.Append("Cache-Control", $"public, max-age={TimeSpan.FromDays(7).TotalSeconds}");
-        
+
         var extension = Path.GetExtension(path).TrimStart('.');
         return controller.PhysicalFile(path, Mime.GetContentType(extension), true);
     }
+
 }
