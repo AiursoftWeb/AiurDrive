@@ -1,5 +1,6 @@
 using Aiursoft.Canon;
 using Aiursoft.CSTools.Services;
+using Aiursoft.CSTools.Tools;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Formats.Jpeg;
 
@@ -126,7 +127,7 @@ public class UpScaleService(
             logger.LogInformation("Removing folder {Build}", buildId);
             queue.QueueNew(() =>
             {
-                CSTools.Tools.FolderDeleter.DeleteByForce(buildFolder);
+                FolderDeleter.DeleteByForce(buildFolder);
                 return Task.CompletedTask;
             });
         }
