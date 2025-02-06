@@ -5,7 +5,7 @@
 [![Test Coverage](https://gitlab.aiursoft.cn/aiursoft/aiurdrive/badges/master/coverage.svg)](https://gitlab.aiursoft.cn/aiursoft/aiurdrive/-/pipelines)
 [![ManHours](https://manhours.aiursoft.cn/r/gitlab.aiursoft.cn/aiursoft/aiurdrive.svg)](https://gitlab.aiursoft.cn/aiursoft/aiurdrive/-/commits/master?ref_type=heads)
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fdrive.aiursoft.cn%2F)](https://drive.aiursoft.cn)
-[![Docker](https://img.shields.io/badge/docker-latest-blue?logo=docker)](https://hub.aiursoft.cn/#!/taglist/aiursoft/aiurdrive)
+[![Docker](https://img.shields.io/docker/pulls/aiursoft/aiurdrive.svg)](https://hub.docker.com/r/aiursoft/aiurdrive)
 
 AiurDrive is a free file sharing service. You can upload your files here and share them with others.
 
@@ -54,7 +54,7 @@ First, install Docker [here](https://docs.docker.com/get-docker/).
 Then run the following commands in a Linux shell:
 
 ```bash
-image=hub.aiursoft.cn/aiursoft/aiurdrive
+image=aiursoft/aiurdrive
 appName=aiurdrive
 sudo docker pull $image
 sudo docker run -d --name $appName --restart unless-stopped -p 5000:5000 -v /var/www/$appName:/data $image
@@ -66,7 +66,7 @@ The docker image has the following context:
 
 | Properties  | Value                              |
 |-------------|------------------------------------|
-| Image       | hub.aiursoft.cn/aiursoft/aiurdrive |
+| Image       | aiursoft/aiurdrive |
 | Ports       | 5000                               |
 | Binary path | /app                                           |
 | Data path   | /data                                          |
