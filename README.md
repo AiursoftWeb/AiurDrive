@@ -37,15 +37,10 @@ It will install the app as a systemd service, and start it automatically. Binary
 
 Requirements about how to run
 
-1. Install [.NET 9 SDK](http://dot.net/) and [Node.js](https://nodejs.org/).
-2. Execute `npm install` at `wwwroot` folder to install the dependencies.
-3. Execute `dotnet run` to run the app.
-4. Use your browser to view [http://localhost:5000](http://localhost:5000).
-
-## Run in Microsoft Visual Studio
-
-1. Open the `.sln` file in the project path.
-2. Press `F5`.
+1. Install [Docker](https://www.docker.com/)
+2. Run `sudo docker build -t debug .` in the project path to build the image from source.
+3. Run `sudo docker run -it -p 5000:5000 -v /tmp:/tmp -v /var/run/docker.sock:/var/run/docker.sock debug` in the project path.
+4. Open `http://localhost:5000` in your browser to test the app.
 
 ## Run in Docker
 
