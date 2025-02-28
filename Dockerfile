@@ -1,4 +1,4 @@
-ARG CSPROJ_PATH="./src"
+ARG CSPROJ_PATH="./src/Aiursoft.AiurDrive"
 ARG PROJ_NAME="Aiursoft.AiurDrive"
 ARG FRONT_END_PATH="${CSPROJ_PATH}/wwwroot"
 
