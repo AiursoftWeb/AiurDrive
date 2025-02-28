@@ -3,16 +3,19 @@ using System;
 using Aiursoft.AiurDrive.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Aiursoft.AiurDrive.Migrations
+namespace Aiursoft.AiurDrive.Sqlite.Migrations
 {
     [DbContext(typeof(SqliteContext))]
-    partial class AiurDriveDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250228145034_InitAgain")]
+    partial class InitAgain
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.2");
