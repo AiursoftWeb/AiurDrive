@@ -1,17 +1,18 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <OutputType>Library</OutputType>
     <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>Aiursoft.AiurDrive.MySql</AssemblyName>
+    <RootNamespace>Aiursoft.AiurDrive.MySql</RootNamespace>
+    <IsTestProject>false</IsTestProject>
+    <IsPackable>false</IsPackable>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Aiursoft.AiurDrive.Entities\Aiursoft.AiurDrive.Entities.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Aiursoft.DbTools.MySql" Version="9.0.11" />
   </ItemGroup>
-
 </Project>
