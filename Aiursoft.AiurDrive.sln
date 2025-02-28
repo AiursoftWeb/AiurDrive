@@ -12,6 +12,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aiursoft.AiurDrive.Entities", "src\Aiursoft.AiurDrive.Entities\Aiursoft.AiurDrive.Entities.csproj", "{682AD3A8-4A84-4054-87FC-31485E3437EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aiursoft.AiurDrive.InMemory", "src\Aiursoft.AiurDrive.InMemory\Aiursoft.AiurDrive.InMemory.csproj", "{26440831-DE70-459E-BC91-E2E0C6D856D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aiursoft.AiurDrive.MySql", "src\Aiursoft.AiurDrive.MySql\Aiursoft.AiurDrive.MySql.csproj", "{F5AB2451-69DD-4395-A7F0-63F6BACCBD67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aiursoft.AiurDrive.Sqlite", "src\Aiursoft.AiurDrive.Sqlite\Aiursoft.AiurDrive.Sqlite.csproj", "{710C61FE-2D3D-45D5-8583-D185CFDD57EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +34,22 @@ Global
 		{9A46BCEE-7074-4B4F-BE91-2DACD66AF961}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A46BCEE-7074-4B4F-BE91-2DACD66AF961}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A46BCEE-7074-4B4F-BE91-2DACD66AF961}.Release|Any CPU.Build.0 = Release|Any CPU
+		{682AD3A8-4A84-4054-87FC-31485E3437EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{682AD3A8-4A84-4054-87FC-31485E3437EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{682AD3A8-4A84-4054-87FC-31485E3437EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{682AD3A8-4A84-4054-87FC-31485E3437EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26440831-DE70-459E-BC91-E2E0C6D856D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26440831-DE70-459E-BC91-E2E0C6D856D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26440831-DE70-459E-BC91-E2E0C6D856D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26440831-DE70-459E-BC91-E2E0C6D856D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5AB2451-69DD-4395-A7F0-63F6BACCBD67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5AB2451-69DD-4395-A7F0-63F6BACCBD67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5AB2451-69DD-4395-A7F0-63F6BACCBD67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5AB2451-69DD-4395-A7F0-63F6BACCBD67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{710C61FE-2D3D-45D5-8583-D185CFDD57EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{710C61FE-2D3D-45D5-8583-D185CFDD57EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{710C61FE-2D3D-45D5-8583-D185CFDD57EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{710C61FE-2D3D-45D5-8583-D185CFDD57EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

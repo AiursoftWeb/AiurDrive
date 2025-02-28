@@ -22,4 +22,9 @@
     </PackageReference>
     <PackageReference Include="SixLabors.ImageSharp" Version="3.1.6" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aiursoft.AiurDrive.InMemory\Aiursoft.AiurDrive.InMemory.csproj" />
+    <ProjectReference Include="..\Aiursoft.AiurDrive.MySql\Aiursoft.AiurDrive.MySql.csproj" />
+    <ProjectReference Include="..\Aiursoft.AiurDrive.Sqlite\Aiursoft.AiurDrive.Sqlite.csproj" />
+  </ItemGroup>
 </Project>
