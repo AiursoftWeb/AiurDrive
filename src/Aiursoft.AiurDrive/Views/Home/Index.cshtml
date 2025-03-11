@@ -1,4 +1,8 @@
+@using Aiursoft.AiurDrive
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.Extensions.Options
 @model Aiursoft.AiurDrive.Models.HomeViewModels.IndexViewModel
+@inject IOptions<AiFeaturesSettings> aiFeatures
 @{
     ViewData["Title"] = "Home";
 }
@@ -66,27 +70,30 @@
     </div>
 </div>
 
-<div class="modal fade" id="upscaled-modal" tabindex="-1" role="dialog" aria-labelledby="upscaledModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Up scale image</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <a href="#" id="upscale-img-link" target="_blank">
-                    <img class="img-fluid" id="upscale-img" src="/favicon.ico" alt="qr code"/>
-                </a>
-                @* <img class="img-fluid" id="upscale-img" src="/favicon.ico" alt="qr code"/> *@
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+@if (aiFeatures.Value.HyperScaling)
+{
+    <div class="modal fade" id="upscaled-modal" tabindex="-1" role="dialog" aria-labelledby="upscaledModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Up scale image</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <a href="#" id="upscale-img-link" target="_blank">
+                        <img class="img-fluid" id="upscale-img" src="/favicon.ico" alt="qr code"/>
+                    </a>
+                    @* <img class="img-fluid" id="upscale-img" src="/favicon.ico" alt="qr code"/> *@
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+}
 
 <div class="container mt-5">
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
@@ -210,6 +217,7 @@
     <script type="module">
         import Uploader from "/scripts/uploader.js";
 
+        const aiFeaturesEnabled = @aiFeatures.Value.HyperScaling.ToString().ToLower();
         const copyButton = $('#copyButton');
         const openButton = $('#openButton');
         const codeButton = $('#codeButton');
@@ -220,24 +228,27 @@
         const updateButtons = function () {
             const downloadPath = $("[name=main-file]").attr('value');
             const relativePath = downloadPath.split('/').slice(4).join('/');
-            
+
             if (downloadPath && downloadPath.length > 0) {
                 copyButton.show();
                 openButton.show();
                 codeButton.show();
                 openButton.attr('href', downloadPath);
                 qrImage.attr('src', '/download/qrcode?path=' + encodeURIComponent(downloadPath));
-                
+
                 // if the file is an image, show the upscale button.
                 if (
                     downloadPath.toLowerCase().endsWith('.png') ||
                     downloadPath.toLowerCase().endsWith('.bmp') ||
-                    downloadPath.toLowerCase().endsWith('.jpg') || 
+                    downloadPath.toLowerCase().endsWith('.jpg') ||
                     downloadPath.toLowerCase().endsWith('.jpeg')) {
-                    upscaleButton.show();
-                    
+
+                    if (aiFeaturesEnabled) {
+                        upscaleButton.show();
+                    }
+
                     const progress = $(`#progress-main-upscale`);
-                    
+
                     // If clicked upscale button, call the upscale API.
                     // Clear existing events for upscale button.
                     upscaleButton.off('click');
@@ -245,7 +256,7 @@
                         // Disable the button to prevent multiple clicks.
                         upscaleButton.addClass('disabled');
                         upscaleButton.text('Upscaling...(ETA 30s)');
-                        
+
                         // Show progress with unknown progress:
                         progress.removeClass('d-none');
                         $.ajax({
@@ -284,7 +295,7 @@
             }
         };
         updateButtons();
-        
+
         const fileInput = $(`#main-file-file-input`);
         const progress = $(`#progress-main-file`);
         const progressbar = $(`#progressbar-main-file`);

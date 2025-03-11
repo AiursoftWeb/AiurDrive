@@ -14,6 +14,11 @@ using Microsoft.AspNetCore.Http.Features;
 
 namespace Aiursoft.AiurDrive
 {
+    public class AiFeaturesSettings
+    {
+        public required bool HyperScaling { get; init; }
+    }
+
     public class Startup : IWebStartup
     {
         public void ConfigureServices(IConfiguration configuration, IWebHostEnvironment environment, IServiceCollection services)
@@ -25,6 +30,8 @@ namespace Aiursoft.AiurDrive
                 options.MultipartBodyLengthLimit = int.MaxValue;
                 options.MultipartHeadersLengthLimit = int.MaxValue;
             });
+            var aiFeatures = configuration.GetSection("AiFeatures");
+            services.Configure<AiFeaturesSettings>(aiFeatures);
 
             var (connectionString, dbType, allowCache) = configuration.GetDbSettings();
             services.AddSwitchableRelationalDatabase(
