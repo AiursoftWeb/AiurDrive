@@ -44,7 +44,6 @@ namespace Aiursoft.AiurDrive
                     new InMemorySupportedDb()
                 ]);
 
-
             services.AddMemoryCache();
             services.AddSingleton<IHostedService, TimedCleaner>();
             services.AddTransient<QRCodeService>();
