@@ -11,11 +11,11 @@
     <Description>AiurDrive is a free file sharing service. You can upload your files here and share them with others.</Description>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Aiursoft.Canon" Version="9.0.5" />
+    <PackageReference Include="Aiursoft.Canon" Version="9.0.6" />
     <PackageReference Include="Aiursoft.DbTools.Switchable" Version="9.0.15" />
     <PackageReference Include="Aiursoft.WebTools" Version="9.0.3" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="9.0.4" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.4">
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="9.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.5">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
