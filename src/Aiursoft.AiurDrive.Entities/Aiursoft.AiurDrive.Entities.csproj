@@ -11,6 +11,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Aiursoft.DbTools" Version="9.0.16" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.8" />
   </ItemGroup>
 </Project>
