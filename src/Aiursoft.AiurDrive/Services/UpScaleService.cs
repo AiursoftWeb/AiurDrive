@@ -57,7 +57,7 @@ public class UpScaleService(
         try
         {
             var command =
-                $"run --rm --name {buildId} --gpus all -v {buildInputFolder}:/app/input -v {buildOutputFolder}:/app/results/swinir_real_sr_x4_large hub.aiursoft.cn/aiursoft/internalimages/swinir";
+                $"run --rm --name {buildId} --gpus all -v {buildInputFolder}:/app/input -v {buildOutputFolder}:/app/results/swinir_real_sr_x4_large hub.aiursoft.com/aiursoft/internalimages/swinir";
             
             await Lock.WaitAsync();
             var (resultCode, output, error) = await commandService.RunCommandAsync(

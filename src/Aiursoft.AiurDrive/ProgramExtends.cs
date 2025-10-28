@@ -19,7 +19,7 @@ public static class ProgramExtends
 
         if (aiFeatures.Value.HyperScaling)
         {
-            var imageName = "hub.aiursoft.cn/aiursoft/internalimages/swinir";
+            var imageName = "hub.aiursoft.com/aiursoft/internalimages/swinir";
             await retryEngine.RunWithRetry(async _ =>
             {
                 logger.LogInformation("Pulling docker image {Image}", imageName);
