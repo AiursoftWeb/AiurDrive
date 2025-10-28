@@ -1,7 +1,7 @@
-aiur() { arg="$( cut -d ' ' -f 2- <<< "$@" )" && curl -sL https://gitlab.aiursoft.cn/aiursoft/aiurscript/-/raw/master/$1.sh | sudo bash -s $arg; }
+aiur() { arg="$( cut -d ' ' -f 2- <<< "$@" )" && curl -sL https://gitlab.aiursoft.com/aiursoft/aiurscript/-/raw/master/$1.sh | sudo bash -s $arg; }
 
 app_name="aiurdrive"
-repo_path="https://gitlab.aiursoft.cn/aiursoft/aiurdrive"
+repo_path="https://gitlab.aiursoft.com/aiursoft/aiurdrive"
 proj_path="src/Aiursoft.AiurDrive/Aiursoft.AiurDrive.csproj"
 
 get_dll_name()
