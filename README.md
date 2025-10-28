@@ -4,7 +4,7 @@
 [![Pipeline stat](https://gitlab.aiursoft.com/aiursoft/aiurdrive/badges/master/pipeline.svg)](https://gitlab.aiursoft.com/aiursoft/aiurdrive/-/pipelines)
 [![Test Coverage](https://gitlab.aiursoft.com/aiursoft/aiurdrive/badges/master/coverage.svg)](https://gitlab.aiursoft.com/aiursoft/aiurdrive/-/pipelines)
 [![ManHours](https://manhours.aiursoft.com/r/gitlab.aiursoft.com/aiursoft/aiurdrive.svg)](https://gitlab.aiursoft.com/aiursoft/aiurdrive/-/commits/master?ref_type=heads)
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fdrive.aiursoft.cn%2F)](https://drive.aiursoft.cn)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fdrive.aiursoft.com%2F)](https://drive.aiursoft.com)
 [![Docker](https://img.shields.io/docker/pulls/aiursoft/aiurdrive.svg)](https://hub.docker.com/r/aiursoft/aiurdrive)
 
 AiurDrive is a free file sharing service. You can upload your files here and share them with others.
@@ -13,7 +13,7 @@ AiurDrive is a free file sharing service. You can upload your files here and sha
 
 ## Try
 
-Try a running AiurDrive [here](https://drive.aiursoft.cn).
+Try a running AiurDrive [here](https://drive.aiursoft.com).
 
 ## Run in Ubuntu
 
