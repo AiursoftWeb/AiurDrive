@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <AssemblyName>Aiursoft.AiurDrive.Sqlite</AssemblyName>
     <RootNamespace>Aiursoft.AiurDrive.Sqlite</RootNamespace>
     <IsTestProject>false</IsTestProject>
@@ -13,6 +13,6 @@
     <ProjectReference Include="..\Aiursoft.AiurDrive.Entities\Aiursoft.AiurDrive.Entities.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Aiursoft.DbTools.Sqlite" Version="9.0.25" />
+    <PackageReference Include="Aiursoft.DbTools.Sqlite" Version="10.0.1" />
   </ItemGroup>
 </Project>
