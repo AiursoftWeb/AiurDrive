@@ -1,0 +1,355 @@
+@using System.IO
+@using Aiursoft.WebTools
+@model Aiursoft.AiurDrive.Models.DriveViewModels.DriveIndexViewModel
+@inject IViewLocalizer Localizer
+@inject Aiursoft.AiurDrive.Services.DriveFileSystemService FsService
+
+<div class="container-fluid p-0">
+    <h1 class="h3 mb-3">@Localizer["File Manager"]</h1>
+
+    <div class="row">
+        <div class="col-sm-5 col-xl-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-grid mb-3">
+                        <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#uploadModal">
+                            <i data-lucide="upload"></i> @Localizer["Upload File"]
+                        </button>
+                    </div>
+
+                    <ul class="list-group list-group-flush mb-3">
+                        <li class="list-group-item px-2 @(string.IsNullOrEmpty(Model.CurrentPath) ? "active" : "")">
+                            <a asp-controller="Drive" asp-action="Index" class="text-reset">
+                                <i data-lucide="folder" class="me-2"></i>@Localizer["My Files"]
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h6 class="text-uppercase">@Localizer["Storage"]</h6>
+                    <div class="progress progress-sm mb-2">
+                        <div class="progress-bar @(Model.UsedStoragePercentage > 80 ? "bg-danger" : "bg-primary")" 
+                             role="progressbar" 
+                             style="width: @Model.UsedStoragePercentage%" 
+                             aria-valuenow="@Model.UsedStoragePercentage" 
+                             aria-valuemin="0" 
+                             aria-valuemax="100"></div>
+                    </div>
+                    <p class="text-muted font-12 mb-0">@Model.FormattedUsedStorage (@Model.UsedStoragePercentage%) @Localizer["of"] @Model.FormattedTotalStorage @Localizer["used"]</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-7 col-xl-9">
+            <!-- Path Navigation Bar -->
+            <div class="card mb-3">
+                <div class="card-body py-2">
+                    <div class="d-flex align-items-center">
+                        @if (!string.IsNullOrEmpty(Model.CurrentPath))
+                        {
+                            <a asp-controller="Drive" asp-action="Index" asp-route-path="@(string.IsNullOrEmpty(Model.CurrentPath) ? null : System.IO.Path.GetDirectoryName(Model.CurrentPath))" class="btn btn-sm btn-outline-secondary me-2" title="@Localizer["Go Up"]">
+                                <i data-lucide="arrow-up"></i>
+                            </a>
+                        }
+                        <form asp-controller="Drive" asp-action="Index" method="get" class="flex-grow-1">
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-text font-monospace">//drive/@User.Identity!.Name/</span>
+                                <input type="text" name="path" class="form-control font-monospace" value="@Model.CurrentPath" placeholder="@Localizer["Enter path..."]" />
+                                <button type="submit" class="btn btn-outline-secondary">@Localizer["Go"]</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header pb-0">
+                    <div class="float-end fs-5 mt-2">
+                        <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#createFolderModal">
+                            <i data-lucide="folder-plus"></i> @Localizer["New Folder"]
+                        </button>
+                    </div>
+                    <h5 class="card-title mt-2">
+                        @if (!string.IsNullOrEmpty(Model.CurrentPath))
+                        {
+                            @Model.CurrentPath
+                        }
+                        else
+                        {
+                            @Localizer["My Files"]
+                        }
+                    </h5>
+                </div>
+                <div class="card-body pb-0">
+                    @if (Model.Folders.Length > 0)
+                    {
+                        <div class="row">
+                            @foreach (var folder in Model.Folders)
+                            {
+                                var folderPath = string.IsNullOrEmpty(Model.CurrentPath) 
+                                    ? folder.Name 
+                                    : System.IO.Path.Combine(Model.CurrentPath, folder.Name);
+                                
+                                <div class="col-6 col-xxl-3">
+                                    <div class="card shadow-none border">
+                                        <div class="card-body p-3">
+                                            <div class="float-end">
+                                                <div class="dropdown position-relative">
+                                                    <a href="#" data-bs-toggle="dropdown" data-bs-display="static" class="outline-0 text-reset">
+                                                        <i class="align-middle" data-lucide="more-horizontal"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-end">
+                                                        <a class="dropdown-item" href="#" onclick="renameFolder('@folderPath', '@folder.Name')">@Localizer["Rename"]</a>
+                                                        <a class="dropdown-item" href="#" onclick="deleteFolder('@folderPath')">@Localizer["Delete"]</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <i class="align-middle fs-1 mb-3 text-primary" data-lucide="folder"></i>
+                                            <div class="d-flex w-100">
+                                                <div class="overflow-hidden me-auto">
+                                                    <h5 class="mb-1">
+                                                        <a asp-controller="Drive" asp-action="Index" asp-route-path="@folderPath" class="text-body text-truncate">@folder.Name</a>
+                                                    </h5>
+                                                    <p class="text-muted mb-0 text-truncate"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+
+                    @if (Model.Files.Length > 0)
+                    {
+                        <h6 class="mt-3">@Localizer["Files"]</h6>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="w-50">@Localizer["Name"]</th>
+                                        <th>@Localizer["Date Modified"]</th>
+                                        <th>@Localizer["Size"]</th>
+                                        <th class="text-end">@Localizer["Actions"]</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var file in Model.Files)
+                                    {
+                                        var filePath = string.IsNullOrEmpty(Model.CurrentPath) 
+                                            ? file.Name 
+                                            : System.IO.Path.Combine(Model.CurrentPath, file.Name);
+                                        
+                                        <tr>
+                                            <td>
+                                                <i data-lucide="file" class="me-2"></i>
+                                                <a href="/Drive/Download/@filePath">@file.Name</a>
+                                            </td>
+                                            <td>
+                                                <label class="text-muted" data-utc-time="@file.LastWriteTime.ToHtmlDateTime()"></label>
+                                            </td>
+                                            <td>@FormatBytes(file.Length)</td>
+                                            <td class="text-end">
+                                                <button type="button" class="btn btn-sm btn-light" onclick="renameFile('@filePath', '@file.Name')">@Localizer["Rename"]</button>
+                                                <button type="button" class="btn btn-sm btn-danger" onclick="deleteFile('@filePath')">@Localizer["Delete"]</button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    
+                    @if (Model.Folders.Length == 0 && Model.Files.Length == 0)
+                    {
+                        <div class="text-center py-5">
+                            <i data-lucide="folder-open" class="text-muted" style="width: 48px; height: 48px;"></i>
+                            <p class="text-muted mt-3">@Localizer["No files or folders"]</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Create Folder Modal -->
+<div class="modal fade" id="createFolderModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div  class="modal-header">
+                <h5 class="modal-title">@Localizer["Create New Folder"]</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <form asp-controller="Drive" asp-action="CreateFolder" method="post">
+                <div class="modal-body">
+                    <input type="hidden" name="parentPath" value="@Model.CurrentPath" />
+                    <div class="mb-3">
+                        <label class="form-label">@Localizer["Folder Name"]</label>
+                        <input type="text" class="form-control" name="name" required />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@Localizer["Cancel"]</button>
+                    <button type="submit" class="btn btn-primary">@Localizer["Create"]</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Upload File Modal -->
+<div class="modal fade" id="uploadModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@Localizer["Upload File"]</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <form id="uploadForm" asp-controller="Files" asp-action="Index" asp-route-subfolder="drive-files" method="post" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <input type="hidden" id="currentPathHidden" name="currentPath" value="@Model.CurrentPath" />
+                    <input type="hidden" id="uploadedFilePath" name="uploadedPath" />
+                    <input type="hidden" id="originalFileName" name="originalFileName" />
+                    <div class="mb-3">
+                        <label class="form-label">@Localizer["Select File"]</label>
+                        <input type="file" id="fileUploader" class="dropify" data-max-file-size="100M" />
+                    </div>
+                    <p class="text-muted">@Localizer["Files will be uploaded to the current folder"]</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@Localizer["Cancel"]</button>
+                    <button type="button" id="uploadButton" class="btn btn-primary">@Localizer["Upload"]</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@functions {
+    private static string FormatBytes(long bytes)
+    {
+        string[] sizes = [ "B", "KB", "MB", "GB", "TB" ];
+        double len = bytes;
+        int order = 0;
+        while (len >= 1024 && order < sizes.Length - 1)
+        {
+            order++;
+            len /= 1024;
+        }
+        return $"{len:0.#} {sizes[order]}";
+    }
+}
+
+<script>
+    function renameFolder(path, oldName) {
+        const newName = prompt('@Localizer["Enter new folder name"]:', oldName);
+        if (newName && newName !== oldName) {
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = '/Drive/Rename';
+            form.innerHTML = `
+                <input type="hidden" name="path" value="${path}" />
+                <input type="hidden" name="newName" value="${newName}" />
+            `;
+            document.body.appendChild(form);
+            form.submit();
+        }
+    }
+
+    function deleteFolder(path) {
+        if (confirm('@Localizer["Are you sure you want to delete this folder and all its contents?"]')) {
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = '/Drive/Delete';
+            form.innerHTML = `<input type="hidden" name="path" value="${path}" />`;
+            document.body.appendChild(form);
+            form.submit();
+        }
+    }
+
+    function renameFile(path, oldName) {
+        const newName = prompt('@Localizer["Enter new file name"]:', oldName);
+        if (newName && newName !== oldName) {
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = '/Drive/Rename';
+            form.innerHTML = `
+                <input type="hidden" name="path" value="${path}" />
+                <input type="hidden" name="newName" value="${newName}" />
+            `;
+            document.body.appendChild(form);
+            form.submit();
+        }
+    }
+
+    function deleteFile(path) {
+        if (confirm('@Localizer["Are you sure you want to delete this file?"]')) {
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = '/Drive/Delete';
+            form.innerHTML = `<input type="hidden" name="path" value="${path}" />`;
+            document.body.appendChild(form);
+            form.submit();
+        }
+    }
+</script>
+
+@section styles {
+    <link rel="stylesheet" href="~/node_modules/dropify/dist/css/dropify.min.css" />
+    <link rel="stylesheet" href="~/styles/uploader.css" />
+}
+
+@section scripts {
+    <script src="~/node_modules/dropify/dist/js/dropify.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.dropify').dropify();
+            
+            $('#uploadButton').click(async function() {
+                const fileInput = document.getElementById('fileUploader');
+                const file = fileInput.files[0];
+                
+                if (!file) {
+                    alert('@Localizer["Please select a file"]');
+                    return;
+                }
+                
+                // Store original filename
+                $('#originalFileName').val(file.name);
+                
+                const formData = new FormData();
+                formData.append('file', file);
+                
+                // Upload file to FilesController
+                try {
+                    const response = await fetch('/upload/drive-files', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    
+                    if (response.ok) {
+                        const result = await response.json();
+                        // Now save to user's directory via DriveController
+                        const currentPath = $('#currentPathHidden').val();
+                        const originalFileName = $('#originalFileName').val();
+                        const form = document.createElement('form');
+                        form.method = 'POST';
+                        form.action = '/Drive/SaveUploadedFile';
+                        form.innerHTML = `
+                            <input type="hidden" name="filePath" value="${result.Path}" />
+                            <input type="hidden" name="currentPath" value="${currentPath}" />
+                            <input type="hidden" name="originalFileName" value="${originalFileName}" />
+                        `;
+                        document.body.appendChild(form);
+                        form.submit();
+                    } else {
+                        alert('@Localizer["Upload failed"]');
+                    }
+                } catch (error) {
+                    alert('@Localizer["Upload error"]: ' + error.message);
+                }
+            });
+        });
+    </script>
+}

@@ -67,6 +67,9 @@ public class ViewModelArgsInjector(
         _ = localizer["Permissions"];
         _ = localizer["Background Jobs"];
         _ = localizer["Global Settings"];
+    
+        _ = localizer["File Manager"];
+        _ = localizer["My Drive"];
     }
 
     public void InjectSimple(

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Aiursoft.AiurDrive.Sqlite.Migrations
 {
     /// <inheritdoc />
-    public partial class Init : Migration
+    public partial class YourMigrationName : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -30,6 +30,10 @@ namespace Aiursoft.AiurDrive.Sqlite.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
+                    DisplayName = table.Column<string>(type: "TEXT", maxLength: 30, nullable: false),
+                    AvatarRelativePath = table.Column<string>(type: "TEXT", maxLength: 150, nullable: false),
+                    TotalStorageBytes = table.Column<long>(type: "INTEGER", nullable: false),
+                    CreationTime = table.Column<DateTime>(type: "TEXT", nullable: false),
                     UserName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
@@ -48,6 +52,18 @@ namespace Aiursoft.AiurDrive.Sqlite.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "GlobalSettings",
+                columns: table => new
+                {
+                    Key = table.Column<string>(type: "TEXT", nullable: false),
+                    Value = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_GlobalSettings", x => x.Key);
                 });
 
             migrationBuilder.CreateTable(
@@ -211,6 +227,9 @@ namespace Aiursoft.AiurDrive.Sqlite.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "GlobalSettings");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
