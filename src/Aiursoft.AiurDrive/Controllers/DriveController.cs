@@ -32,12 +32,16 @@ public class DriveController(
             return Unauthorized();
         }
 
-        var (folders, files) = fsService.ListDirectory(user.Email!, path);
-        var usedStorage = fsService.CalculateStorageUsage(user.Email!);
+        var (folders, files) = fsService.ListDirectory(user.Id, path);
+        var usedStorage = fsService.CalculateStorageUsage(user.Id);
+
+        // Use user ID for storage path (clean UUID-based structure)
+        var userStoragePath = $"drive/{user.Id}";
 
         var model = new DriveIndexViewModel
         {
             CurrentPath = path,
+            UserStoragePath = userStoragePath,
             Folders = folders,
             Files = files,
             UsedStorageBytes = usedStorage,
@@ -63,7 +67,7 @@ public class DriveController(
 
         try
         {
-            fsService.CreateFolder(user.Email!, parentPath ?? string.Empty, name);
+            fsService.CreateFolder(user.Id, parentPath ?? string.Empty, name);
             return RedirectToAction(nameof(Index), new { path = parentPath });
         }
         catch (InvalidOperationException ex)
@@ -89,7 +93,7 @@ public class DriveController(
 
         try
         {
-            fsService.Rename(user.Email!, path, newName);
+            fsService.Rename(user.Id, path, newName);
             
             // Return to parent directory
             var parentPath = Path.GetDirectoryName(path);
@@ -113,7 +117,7 @@ public class DriveController(
 
         try
         {
-            fsService.Delete(user.Email!, path);
+            fsService.Delete(user.Id, path);
             
             // Return to parent directory
             var parentPath = Path.GetDirectoryName(path);
@@ -137,19 +141,38 @@ public class DriveController(
 
         try
         {
-            // Source file from FilesController upload
-            var sourcePath = Path.Combine("/tmp/data", filePath);
+            // SECURITY: Validate filePath to prevent path traversal
+            // Source file must be within /tmp/data directory (FilesController upload area)
+            var dataRoot = "/tmp/data";
+            var sourcePath = Path.Combine(dataRoot, filePath);
+            var normalizedSource = Path.GetFullPath(sourcePath);
+            
+            if (!normalizedSource.StartsWith(Path.GetFullPath(dataRoot)))
+            {
+                TempData["Error"] = "Invalid file path.";
+                return RedirectToAction(nameof(Index), new { path = currentPath });
+            }
+            
             if (!System.IO.File.Exists(sourcePath))
             {
                 TempData["Error"] = "Uploaded file not found.";
                 return RedirectToAction(nameof(Index), new { path = currentPath });
             }
 
-            // Target directory in user's drive
-            var userRoot = fsService.GetUserRootPath(user.Email!);
+            // SECURITY: Target directory uses fsService which has built-in path validation
+            var userRoot = fsService.GetUserRootPath(user.Id);
             var targetDir = string.IsNullOrEmpty(currentPath) 
                 ? userRoot 
                 : Path.Combine(userRoot, currentPath);
+            
+            // Ensure target is within user's directory
+            var normalizedTarget = Path.GetFullPath(targetDir);
+            if (!normalizedTarget.StartsWith(userRoot))
+            {
+                TempData["Error"] = "Invalid target path.";
+                return RedirectToAction(nameof(Index), new { path = currentPath });
+            }
+            
             Directory.CreateDirectory(targetDir);
 
             // Use original filename instead of the one from path (which may have underscores)
@@ -166,42 +189,7 @@ public class DriveController(
         }
     }
 
-    [HttpGet("Download/{*path}")]
-    public async Task<IActionResult> Download(string path)
-    {
-        var user = await userManager.GetUserAsync(User);
-        if (user == null)
-        {
-            return Unauthorized();
-        }
 
-        try
-        {
-            var userRoot = fsService.GetUserRootPath(user.Email!);
-            var filePath = Path.Combine(userRoot, path);
-
-            // Security check: ensure file is within user's directory
-            var normalizedPath = Path.GetFullPath(filePath);
-            if (!normalizedPath.StartsWith(userRoot))
-            {
-                return Forbid();
-            }
-
-            if (!System.IO.File.Exists(filePath))
-            {
-                return NotFound();
-            }
-
-            var fileName = Path.GetFileName(filePath);
-            var contentType = "application/octet-stream";
-            
-            return PhysicalFile(filePath, contentType, fileName);
-        }
-        catch (Exception)
-        {
-            return NotFound();
-        }
-    }
 
     [HttpGet]
     public async Task<IActionResult> Search(string query)
@@ -217,8 +205,8 @@ public class DriveController(
             return RedirectToAction(nameof(Index));
         }
 
-        var results = fsService.SearchFiles(user.Email!, query);
-        var usedStorage = fsService.CalculateStorageUsage(user.Email!);
+        var results = fsService.SearchFiles(user.Id, query);
+        var usedStorage = fsService.CalculateStorageUsage(user.Id);
 
         var model = new DriveIndexViewModel
         {

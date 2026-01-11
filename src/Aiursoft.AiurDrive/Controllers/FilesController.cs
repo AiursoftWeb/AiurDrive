@@ -4,6 +4,8 @@ using Aiursoft.AiurDrive.Services;
 using Aiursoft.AiurDrive.Services.FileStorage;
 using Aiursoft.WebTools.Attributes;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
+using Aiursoft.AiurDrive.Entities;
 
 namespace Aiursoft.AiurDrive.Controllers;
 
@@ -14,7 +16,8 @@ namespace Aiursoft.AiurDrive.Controllers;
 public class FilesController(
     ImageProcessingService imageCompressor,
     ILogger<FilesController> logger,
-    StorageService storage) : ControllerBase
+    StorageService storage,
+    UserManager<User> userManager) : ControllerBase
 {
     [Route("upload/{subfolder}")]
     public async Task<IActionResult> Index([FromRoute][ValidDomainName] string subfolder)
@@ -82,6 +85,14 @@ public class FilesController(
         {
             return NotFound();
         }
+
+        // SECURITY: Check if user has permission to access drive files
+        var authResult = await ValidateDriveFileAccess(folderNames);
+        if (authResult != null)
+        {
+            return authResult; // Unauthorized or Forbid
+        }
+
         if (physicalPath.IsStaticImage() && await imageCompressor.IsValidImageAsync(physicalPath))
         {
             logger.LogInformation("Processing image compression request for path: {Path}", physicalPath);
@@ -90,6 +101,49 @@ public class FilesController(
 
         logger.LogInformation("Processing file download request for path: {Path}", physicalPath);
         return this.WebFile(physicalPath);
+    }
+
+    /// <summary>
+    /// Validates that the current user has permission to access drive files.
+    /// Returns null if authorized, or an ActionResult (Unauthorized/Forbid) if not.
+    /// </summary>
+    private async Task<IActionResult?> ValidateDriveFileAccess(string relativePath)
+    {
+        // Check if this is a drive file (drive/{userId}/...)
+        if (!relativePath.StartsWith("drive/", StringComparison.OrdinalIgnoreCase))
+        {
+            // Not a drive file, allow access (e.g., Workspace files for avatars)
+            return null;
+        }
+
+        // Extract userId from path: drive/{userId}/...
+        var pathParts = relativePath.Split('/', StringSplitOptions.RemoveEmptyEntries);
+        if (pathParts.Length < 2)
+        {
+            logger.LogWarning("Invalid drive path format: {Path}", relativePath);
+            return BadRequest("Invalid drive path format.");
+        }
+
+        var requestedUserId = pathParts[1]; // drive/{userId}/...
+
+        // Get current user
+        var currentUser = await userManager.GetUserAsync(User);
+        if (currentUser == null)
+        {
+            logger.LogWarning("Unauthenticated access attempt to drive file: {Path}", relativePath);
+            return Unauthorized();
+        }
+
+        // Verify user can only access their own files
+        if (currentUser.Id != requestedUserId)
+        {
+            logger.LogWarning("User {UserId} attempted to access files of user {RequestedUserId}", 
+                currentUser.Id, requestedUserId);
+            return Forbid();
+        }
+
+        // User is authorized
+        return null;
     }
 
     private async Task<IActionResult> FileWithImageCompressor(string path)

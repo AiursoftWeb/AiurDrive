@@ -13,12 +13,11 @@ public class DriveFileSystemService(
 {
     /// <summary>
     /// Get the root directory path for a user's drive.
-    /// Structure: /data/drive/{userEmail}/
+    /// Structure: /data/drive/{userId}/
     /// </summary>
-    public string GetUserRootPath(string userEmail)
+    public string GetUserRootPath(string userId)
     {
-        var safeName = SanitizeEmail(userEmail);
-        var rootPath = Path.Combine(storage.StorageRootFolder, "drive", safeName);
+        var rootPath = Path.Combine(storage.StorageRootFolder, "drive", userId);
         
         // Ensure directory exists
         Directory.CreateDirectory(rootPath);
@@ -29,9 +28,9 @@ public class DriveFileSystemService(
     /// <summary>
     /// List all folders and files in a directory.
     /// </summary>
-    public (DirectoryInfo[] folders, FileInfo[] files) ListDirectory(string userEmail, string? relativePath = null)
+    public (DirectoryInfo[] folders, FileInfo[] files) ListDirectory(string userId, string? relativePath = null)
     {
-        var fullPath = GetFullPath(userEmail, relativePath);
+        var fullPath = GetFullPath(userId, relativePath);
         
         if (!Directory.Exists(fullPath))
         {
@@ -57,9 +56,9 @@ public class DriveFileSystemService(
     /// <summary>
     /// Create a new folder.
     /// </summary>
-    public void CreateFolder(string userEmail, string relativePath, string folderName)
+    public void CreateFolder(string userId, string relativePath, string folderName)
     {
-        var parentPath = GetFullPath(userEmail, relativePath);
+        var parentPath = GetFullPath(userId, relativePath);
         var newFolderPath = Path.Combine(parentPath, SanitizeFolderName(folderName));
 
         if (Directory.Exists(newFolderPath))
@@ -74,9 +73,9 @@ public class DriveFileSystemService(
     /// <summary>
     /// Rename a file or folder.
     /// </summary>
-    public void Rename(string userEmail, string relativePath, string newName)
+    public void Rename(string userId, string relativePath, string newName)
     {
-        var fullPath = GetFullPath(userEmail, relativePath);
+        var fullPath = GetFullPath(userId, relativePath);
         
         if (!File.Exists(fullPath) && !Directory.Exists(fullPath))
         {
@@ -101,9 +100,9 @@ public class DriveFileSystemService(
     /// <summary>
     /// Delete a file or folder (recursive for folders).
     /// </summary>
-    public void Delete(string userEmail, string relativePath)
+    public void Delete(string userId, string relativePath)
     {
-        var fullPath = GetFullPath(userEmail, relativePath);
+        var fullPath = GetFullPath(userId, relativePath);
 
         if (File.Exists(fullPath))
         {
@@ -124,18 +123,18 @@ public class DriveFileSystemService(
     /// <summary>
     /// Calculate total storage usage for a user (recursive).
     /// </summary>
-    public long CalculateStorageUsage(string userEmail)
+    public long CalculateStorageUsage(string userId)
     {
-        var rootPath = GetUserRootPath(userEmail);
+        var rootPath = GetUserRootPath(userId);
         return CalculateDirectorySize(rootPath);
     }
 
     /// <summary>
     /// Search for files by name pattern (recursive).
     /// </summary>
-    public FileInfo[] SearchFiles(string userEmail, string searchPattern)
+    public FileInfo[] SearchFiles(string userId, string searchPattern)
     {
-        var rootPath = GetUserRootPath(userEmail);
+        var rootPath = GetUserRootPath(userId);
         var dirInfo = new DirectoryInfo(rootPath);
 
         try
@@ -156,17 +155,17 @@ public class DriveFileSystemService(
     /// <summary>
     /// Get the relative path from user root to a file/folder.
     /// </summary>
-    public string GetRelativePath(string userEmail, string fullPath)
+    public string GetRelativePath(string userId, string fullPath)
     {
-        var rootPath = GetUserRootPath(userEmail);
+        var rootPath = GetUserRootPath(userId);
         return Path.GetRelativePath(rootPath, fullPath);
     }
 
     // Private helper methods
 
-    private string GetFullPath(string userEmail, string? relativePath)
+    private string GetFullPath(string userId, string? relativePath)
     {
-        var rootPath = GetUserRootPath(userEmail);
+        var rootPath = GetUserRootPath(userId);
         
         if (string.IsNullOrWhiteSpace(relativePath))
         {
@@ -210,12 +209,6 @@ public class DriveFileSystemService(
         }
 
         return size;
-    }
-
-    private static string SanitizeEmail(string email)
-    {
-        // Replace @ and . with underscores for file system safety
-        return email.Replace("@", "_at_").Replace(".", "_");
     }
 
     private static string SanitizeFolderName(string name)

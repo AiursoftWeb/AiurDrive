@@ -3,6 +3,7 @@
 @model Aiursoft.AiurDrive.Models.DriveViewModels.DriveIndexViewModel
 @inject IViewLocalizer Localizer
 @inject Aiursoft.AiurDrive.Services.DriveFileSystemService FsService
+@inject Aiursoft.AiurDrive.Services.FileStorage.StorageService StorageService
 
 <div class="container-fluid p-0">
     <h1 class="h3 mb-3">@Localizer["File Manager"]</h1>
@@ -64,6 +65,14 @@
             <div class="card">
                 <div class="card-header pb-0">
                     <div class="float-end fs-5 mt-2">
+                        <div class="btn-group me-2" role="group" id="viewToggle">
+                            <button type="button" class="btn btn-sm btn-outline-secondary" data-view="grid" title="@Localizer["Grid View"]">
+                                <i data-lucide="grid"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary" data-view="list" title="@Localizer["List View"]">
+                                <i data-lucide="list"></i>
+                            </button>
+                        </div>
                         <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#createFolderModal">
                             <i data-lucide="folder-plus"></i> @Localizer["New Folder"]
                         </button>
@@ -80,17 +89,43 @@
                     </h5>
                 </div>
                 <div class="card-body pb-0">
-                    @if (Model.Folders.Length > 0)
+                    @if (Model.Folders.Length == 0 && Model.Files.Length == 0)
                     {
-                        <div class="row">
-                            @foreach (var folder in Model.Folders)
+                        <div class="text-center py-5">
+                            <i data-lucide="folder-open" class="text-muted" style="width: 48px; height: 48px;"></i>
+                            <p class="text-muted mt-3">@Localizer["No files or folders"]</p>
+                        </div>
+                    }
+                    else
+                    {
+                        // Combine folders and files into a single list
+                        var items = new List<(bool isFolder, string name, string path, DateTime modified, long size)>();
+                        
+                        foreach (var folder in Model.Folders)
+                        {
+                            var folderPath = string.IsNullOrEmpty(Model.CurrentPath) 
+                                ? folder.Name 
+                                : System.IO.Path.Combine(Model.CurrentPath, folder.Name);
+                            items.Add((true, folder.Name, folderPath, folder.LastWriteTime, 0));
+                        }
+                        
+                        foreach (var file in Model.Files)
+                        {
+                            var filePath = string.IsNullOrEmpty(Model.CurrentPath) 
+                                ? file.Name 
+                                : System.IO.Path.Combine(Model.CurrentPath, file.Name);
+                            items.Add((false, file.Name, filePath, file.LastWriteTime, file.Length));
+                        }
+                        
+                        // Sort: folders first, then files, both alphabetically
+                        items = items.OrderByDescending(x => x.isFolder).ThenBy(x => x.name).ToList();
+                        
+                        <!-- Grid View -->
+                        <div id="gridView" class="row">
+                            @foreach (var item in items)
                             {
-                                var folderPath = string.IsNullOrEmpty(Model.CurrentPath) 
-                                    ? folder.Name 
-                                    : System.IO.Path.Combine(Model.CurrentPath, folder.Name);
-                                
-                                <div class="col-6 col-xxl-3">
-                                    <div class="card shadow-none border">
+                                <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                                    <div class="card shadow-none border mb-3">
                                         <div class="card-body p-3">
                                             <div class="float-end">
                                                 <div class="dropdown position-relative">
@@ -98,32 +133,54 @@
                                                         <i class="align-middle" data-lucide="more-horizontal"></i>
                                                     </a>
                                                     <div class="dropdown-menu dropdown-menu-end">
-                                                        <a class="dropdown-item" href="#" onclick="renameFolder('@folderPath', '@folder.Name')">@Localizer["Rename"]</a>
-                                                        <a class="dropdown-item" href="#" onclick="deleteFolder('@folderPath')">@Localizer["Delete"]</a>
+                                                        @if (item.isFolder)
+                                                        {
+                                                            <a class="dropdown-item" href="#" onclick="renameFolder('@item.path', '@item.name')">@Localizer["Rename"]</a>
+                                                            <a class="dropdown-item" href="#" onclick="deleteFolder('@item.path')">@Localizer["Delete"]</a>
+                                                        }
+                                                        else
+                                                        {
+                                                            <a class="dropdown-item" href="#" onclick="renameFile('@item.path', '@item.name')">@Localizer["Rename"]</a>
+                                                            <a class="dropdown-item" href="#" onclick="deleteFile('@item.path')">@Localizer["Delete"]</a>
+                                                        }
                                                     </div>
                                                 </div>
                                             </div>
-                                            <i class="align-middle fs-1 mb-3 text-primary" data-lucide="folder"></i>
-                                            <div class="d-flex w-100">
-                                                <div class="overflow-hidden me-auto">
-                                                    <h5 class="mb-1">
-                                                        <a asp-controller="Drive" asp-action="Index" asp-route-path="@folderPath" class="text-body text-truncate">@folder.Name</a>
-                                                    </h5>
-                                                    <p class="text-muted mb-0 text-truncate"></p>
-                                                </div>
+                                            <div class="text-center mb-2">
+                                                @if (item.isFolder)
+                                                {
+                                                    <i class="align-middle text-primary" data-lucide="folder" style="width: 32px; height: 32px;"></i>
+                                                }
+                                                else
+                                                {
+                                                    <i class="align-middle text-secondary" data-lucide="file" style="width: 32px; height: 32px;"></i>
+                                                }
+                                            </div>
+                                            <div class="text-center">
+                                                @if (item.isFolder)
+                                                {
+                                                    <a asp-controller="Drive" asp-action="Index" asp-route-path="@item.path" class="text-body text-decoration-none">
+                                                        <div class="fw-semibold text-truncate" title="@item.name">@item.name</div>
+                                                    </a>
+                                                }
+                                                else
+                                                {
+                                                    var fileRelativePath = string.IsNullOrEmpty(item.path) ? Model.UserStoragePath : $"{Model.UserStoragePath}/{item.path}";
+                                                    <a href="@StorageService.RelativePathToInternetUrl(fileRelativePath, Context)" class="text-body text-decoration-none">
+                                                        <div class="fw-semibold text-truncate" title="@item.name">@item.name</div>
+                                                    </a>
+                                                }
+                                                <small class="text-muted">@(item.isFolder ? "" : FormatBytes(item.size))</small>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             }
                         </div>
-                    }
-
-                    @if (Model.Files.Length > 0)
-                    {
-                        <h6 class="mt-3">@Localizer["Files"]</h6>
-                        <div class="table-responsive">
-                            <table class="table">
+                        
+                        <!-- List View -->
+                        <div id="listView" class="table-responsive" style="display: none;">
+                            <table class="table table-hover">
                                 <thead>
                                     <tr>
                                         <th class="w-50">@Localizer["Name"]</th>
@@ -133,37 +190,42 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach (var file in Model.Files)
+                                    @foreach (var item in items)
                                     {
-                                        var filePath = string.IsNullOrEmpty(Model.CurrentPath) 
-                                            ? file.Name 
-                                            : System.IO.Path.Combine(Model.CurrentPath, file.Name);
-                                        
                                         <tr>
                                             <td>
-                                                <i data-lucide="file" class="me-2"></i>
-                                                <a href="/Drive/Download/@filePath">@file.Name</a>
+                                                @if (item.isFolder)
+                                                {
+                                                    <i data-lucide="folder" class="me-2 text-primary"></i>
+                                                    <a asp-controller="Drive" asp-action="Index" asp-route-path="@item.path">@item.name</a>
+                                                }
+                                                else
+                                                {
+                                                    var fileRelativePath = string.IsNullOrEmpty(item.path) ? Model.UserStoragePath : $"{Model.UserStoragePath}/{item.path}";
+                                                    <i data-lucide="file" class="me-2 text-secondary"></i>
+                                                    <a href="@StorageService.RelativePathToInternetUrl(fileRelativePath, Context)">@item.name</a>
+                                                }
                                             </td>
                                             <td>
-                                                <label class="text-muted" data-utc-time="@file.LastWriteTime.ToHtmlDateTime()"></label>
+                                                <label class="text-muted" data-utc-time="@item.modified.ToHtmlDateTime()"></label>
                                             </td>
-                                            <td>@FormatBytes(file.Length)</td>
+                                            <td>@(item.isFolder ? "-" : FormatBytes(item.size))</td>
                                             <td class="text-end">
-                                                <button type="button" class="btn btn-sm btn-light" onclick="renameFile('@filePath', '@file.Name')">@Localizer["Rename"]</button>
-                                                <button type="button" class="btn btn-sm btn-danger" onclick="deleteFile('@filePath')">@Localizer["Delete"]</button>
+                                                @if (item.isFolder)
+                                                {
+                                                    <button type="button" class="btn btn-sm btn-light" onclick="renameFolder('@item.path', '@item.name')">@Localizer["Rename"]</button>
+                                                    <button type="button" class="btn btn-sm btn-danger" onclick="deleteFolder('@item.path')">@Localizer["Delete"]</button>
+                                                }
+                                                else
+                                                {
+                                                    <button type="button" class="btn btn-sm btn-light" onclick="renameFile('@item.path', '@item.name')">@Localizer["Rename"]</button>
+                                                    <button type="button" class="btn btn-sm btn-danger" onclick="deleteFile('@item.path')">@Localizer["Delete"]</button>
+                                                }
                                             </td>
                                         </tr>
                                     }
                                 </tbody>
                             </table>
-                        </div>
-                    }
-                    
-                    @if (Model.Folders.Length == 0 && Model.Files.Length == 0)
-                    {
-                        <div class="text-center py-5">
-                            <i data-lucide="folder-open" class="text-muted" style="width: 48px; height: 48px;"></i>
-                            <p class="text-muted mt-3">@Localizer["No files or folders"]</p>
                         </div>
                     }
                 </div>
@@ -293,6 +355,41 @@
             form.submit();
         }
     }
+    
+    // View toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const gridView = document.getElementById('gridView');
+        const listView = document.getElementById('listView');
+        const toggleButtons = document.querySelectorAll('#viewToggle button');
+        
+        // Get saved view preference or default to grid
+        const savedView = localStorage.getItem('fileManagerView') || 'grid';
+        
+        function setView(viewType) {
+            if (viewType === 'grid') {
+                gridView.style.display = '';
+                listView.style.display = 'none';
+                toggleButtons[0].classList.add('active');
+                toggleButtons[1].classList.remove('active');
+            } else {
+                gridView.style.display = 'none';
+                listView.style.display = 'block';
+                toggleButtons[0].classList.remove('active');
+                toggleButtons[1].classList.add('active');
+            }
+            localStorage.setItem('fileManagerView', viewType);
+        }
+        
+        // Set initial view
+        setView(savedView);
+        
+        // Add click handlers
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                setView(this.getAttribute('data-view'));
+            });
+        });
+    });
 </script>
 
 @section styles {

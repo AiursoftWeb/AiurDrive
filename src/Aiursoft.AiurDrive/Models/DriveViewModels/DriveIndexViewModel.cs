@@ -10,6 +10,7 @@ public class DriveIndexViewModel : UiStackLayoutViewModel
     }
 
     public string? CurrentPath { get; init; }
+    public string UserStoragePath { get; init; } = string.Empty;
     public DirectoryInfo[] Folders { get; init; } = Array.Empty<DirectoryInfo>();
     public FileInfo[] Files { get; init; } = Array.Empty<FileInfo>();
     public long UsedStorageBytes { get; init; }
