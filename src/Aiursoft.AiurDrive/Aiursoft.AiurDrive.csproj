@@ -14,8 +14,8 @@
     <PackageReference Include="Aiursoft.Canon" Version="10.0.1" />
     <PackageReference Include="Aiursoft.DbTools.Switchable" Version="10.0.4" />
     <PackageReference Include="Aiursoft.WebTools" Version="10.0.6" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="10.0.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.1">
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="10.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.2">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
