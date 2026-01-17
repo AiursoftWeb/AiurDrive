@@ -1,0 +1,28 @@
+@model Aiursoft.AiurDrive.Models.DashboardViewModels.CreateSiteViewModel
+<div class="container-fluid">
+    <div class="row position-relative">
+        <div class="col-md-4 offset-md-4">
+            <div class="card p-3">
+                <h2 class="card-title">@Localizer["Create New Site"]</h2>
+                <form asp-controller="Dashboard" asp-action="CreateSite" method="post" class="mt-3">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="mb-3">
+                        <label asp-for="SiteName" class="form-label"></label>
+                        <div class="input-group">
+                            <input asp-for="SiteName" class="form-control" placeholder="my-site" />
+                            <span class="input-group-text">.aiur.site</span>
+                        </div>
+                        <span asp-validation-for="SiteName" class="text-danger"></span>
+                        <div class="form-text">
+                            @Localizer["Only lowercase letters, numbers and hyphens are allowed."]
+                        </div>
+                    </div>
+                
+                    <div class="d-grid mt-3">
+                        <button type="submit" class="btn btn-primary">@Localizer["Create Site"]</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
