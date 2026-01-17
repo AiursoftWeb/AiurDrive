@@ -10,14 +10,13 @@
                         <label asp-for="SiteName" class="form-label"></label>
                         <div class="input-group">
                             <input asp-for="SiteName" class="form-control" placeholder="my-site" />
-                            <span class="input-group-text">.aiur.site</span>
                         </div>
                         <span asp-validation-for="SiteName" class="text-danger"></span>
                         <div class="form-text">
                             @Localizer["Only lowercase letters, numbers and hyphens are allowed."]
                         </div>
                     </div>
-                    
+
                     <div class="mb-3">
                         <label asp-for="OpenToUpload" class="form-label"></label>
                         <select asp-for="OpenToUpload" class="form-select">
@@ -26,7 +25,7 @@
                         </select>
                         <span asp-validation-for="OpenToUpload" class="text-danger"></span>
                     </div>
-                
+
                     <div class="d-grid mt-3">
                         <button type="submit" class="btn btn-primary">@Localizer["Create Site"]</button>
                     </div>

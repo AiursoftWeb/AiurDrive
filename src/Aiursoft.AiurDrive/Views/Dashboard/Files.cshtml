@@ -6,7 +6,7 @@
     string GetFileIcon(string filename)
     {
         var extension = System.IO.Path.GetExtension(filename).TrimStart('.');
-        var contentType = Aiursoft.CSTools.Models.Mime.GetContentType(extension);
+        var contentType = Aiursoft.AiurDrive.Services.Mime.GetContentType(extension);
         var iconName = contentType.Replace("/", "-");
         return $"/images/mimetypes/{iconName}.svg";
     }
