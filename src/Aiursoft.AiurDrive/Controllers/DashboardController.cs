@@ -158,6 +158,8 @@ public class DashboardController(
 
     [HttpPost]
     [Route("Dashboard/Upload/{siteName}/{**path}")]
+    [DisableRequestSizeLimit]
+    [RequestFormLimits(MultipartBodyLengthLimit = long.MaxValue, ValueLengthLimit = int.MaxValue)]
     public async Task<IActionResult> Upload(string siteName, string? path)
     {
         var user = await dbContext.Users
