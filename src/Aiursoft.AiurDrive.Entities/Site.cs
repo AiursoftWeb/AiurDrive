@@ -1,4 +1,3 @@
-using System.ComponentModel.DataAnnotations;
 using Aiursoft.CSTools.Attributes;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -19,4 +18,11 @@ public class Site
     
     [JsonIgnore]
     public User? AppUser { get; set; }
+
+    /// <summary>
+    /// If true, the site is public (Workspace storage).
+    /// If false, the site is private (Vault storage).
+    /// Default is true to maintain backward compatibility.
+    /// </summary>
+    public bool OpenToUpload { get; set; } = true;
 }

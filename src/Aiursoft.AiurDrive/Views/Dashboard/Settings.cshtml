@@ -1,0 +1,43 @@
+@model Aiursoft.AiurDrive.Models.DashboardViewModels.SettingsViewModel
+<div class="container-fluid">
+    <div class="row position-relative">
+        <div class="col-md-6 offset-md-3">
+            <div class="card p-3">
+                <h2 class="card-title">@Localizer["Site Settings"]</h2>
+                
+                <div class="mt-3">
+                    <div class="mb-3">
+                        <label class="form-label">@Localizer["Site Name"]</label>
+                        <input type="text" class="form-control" value="@Model.SiteName" readonly disabled />
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">@Localizer["Storage Type"]</label>
+                         @if (Model.OpenToUpload)
+                        {
+                            <input type="text" class="form-control" value="@Localizer["Public (Workspace)"]" readonly disabled />
+                        }
+                        else
+                        {
+                            <input type="text" class="form-control" value="@Localizer["Private (Vault)"]" readonly disabled />
+                        }
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class="d-grid gap-2">
+                    <a asp-controller="Dashboard" asp-action="Files" asp-route-siteName="@Model.SiteName" class="btn btn-secondary">@Localizer["Back to Files"]</a>
+                    
+                    <div class="alert alert-danger mt-3">
+                        <h4 class="alert-heading">@Localizer["Danger Zone"]</h4>
+                        <p>@Localizer["Deleting a site is irreversible. All files and folders within this site will be permanently deleted."]</p>
+                        <form asp-controller="Dashboard" asp-action="DeleteSite" asp-route-siteName="@Model.SiteName" method="post" onsubmit="return confirm('@Localizer["Are you absolutely sure you want to delete this site? This action cannot be undone."]');">
+                            <button type="submit" class="btn btn-danger w-100">@Localizer["Delete Site"]</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

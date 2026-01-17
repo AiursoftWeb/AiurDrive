@@ -9,5 +9,5 @@ public class IndexViewModel : UiStackLayoutViewModel
         PageTitle = "Dashboard";
     }
 
-    public IEnumerable<Aiursoft.AiurDrive.Entities.Site> Sites { get; set; } = new List<Aiursoft.AiurDrive.Entities.Site>();
+    public IEnumerable<Entities.Site> Sites { get; set; } = new List<Entities.Site>();
 }

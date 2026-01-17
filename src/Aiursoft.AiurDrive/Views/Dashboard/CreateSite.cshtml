@@ -17,6 +17,15 @@
                             @Localizer["Only lowercase letters, numbers and hyphens are allowed."]
                         </div>
                     </div>
+                    
+                    <div class="mb-3">
+                        <label asp-for="OpenToUpload" class="form-label"></label>
+                        <select asp-for="OpenToUpload" class="form-select">
+                            <option value="true">@Localizer["Public (Workspace) - Files are publicly accessible via URL"]</option>
+                            <option value="false">@Localizer["Private (Vault) - Files require an access token"]</option>
+                        </select>
+                        <span asp-validation-for="OpenToUpload" class="text-danger"></span>
+                    </div>
                 
                     <div class="d-grid mt-3">
                         <button type="submit" class="btn btn-primary">@Localizer["Create Site"]</button>

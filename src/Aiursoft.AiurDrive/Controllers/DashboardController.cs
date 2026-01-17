@@ -5,7 +5,6 @@ using Aiursoft.WebTools.Attributes;
 using Microsoft.AspNetCore.Mvc;
 using Aiursoft.AiurDrive.Entities;
 using Microsoft.EntityFrameworkCore;
-using Aiursoft.UiStack.Layout;
 using Microsoft.AspNetCore.Authorization;
 using Aiursoft.AiurDrive.Services.FileStorage;
 
@@ -70,7 +69,8 @@ public class DashboardController(
         var newSite = new Site
         {
             SiteName = model.SiteName!.ToLower(),
-            AppUserId = user.Id
+            AppUserId = user.Id,
+            OpenToUpload = model.OpenToUpload
         };
 
         try
@@ -88,7 +88,7 @@ public class DashboardController(
     }
 
     [Route("Dashboard/Files/{siteName}/{**path}")]
-    public async Task<IActionResult> Files(string siteName, string path)
+    public async Task<IActionResult> Files(string siteName, string? path)
     {
         var user = await dbContext.Users
             .Include(u => u.Sites)
@@ -102,7 +102,7 @@ public class DashboardController(
         var logicalPath = Path.Combine(siteName, path);
         
         // Ensure the folder exists
-        var physicalPath = storage.GetFilePhysicalPath(logicalPath);
+        var physicalPath = storage.GetFilePhysicalPath(logicalPath, !site.OpenToUpload);
         if (!Directory.Exists(physicalPath))
         {
              Directory.CreateDirectory(physicalPath);
@@ -125,7 +125,7 @@ public class DashboardController(
 
     [HttpPost]
     [Route("Dashboard/Upload/{siteName}/{**path}")]
-    public async Task<IActionResult> Upload(string siteName, string path)
+    public async Task<IActionResult> Upload(string siteName, string? path)
     {
         var user = await dbContext.Users
             .Include(u => u.Sites)
@@ -145,20 +145,21 @@ public class DashboardController(
 
         var file = HttpContext.Request.Form.Files.First();
         var logicalPath = Path.Combine(siteName, path, file.FileName);
+        var isVault = !site.OpenToUpload;
 
         // This will save the file using StorageService, handling conflicts
-        var savedLogicalPath = await storage.Save(logicalPath, file);
+        var savedLogicalPath = await storage.Save(logicalPath, file, isVault);
 
         return Ok(new
         {
             Path = savedLogicalPath,
-            InternetPath = storage.RelativePathToInternetUrl(savedLogicalPath, HttpContext)
+            InternetPath = storage.RelativePathToInternetUrl(savedLogicalPath, HttpContext, isVault)
         });
     }
 
     [HttpPost]
     [Route("Dashboard/Delete/{siteName}/{**path}")]
-    public async Task<IActionResult> Delete(string siteName, string path)
+    public async Task<IActionResult> Delete(string siteName, string? path)
     {
          var user = await dbContext.Users
             .Include(u => u.Sites)
@@ -173,7 +174,7 @@ public class DashboardController(
         var logicalPath = Path.Combine(siteName, path);
         try 
         {
-            var physicalPath = storage.GetFilePhysicalPath(logicalPath);
+            var physicalPath = storage.GetFilePhysicalPath(logicalPath, !site.OpenToUpload);
             if (System.IO.File.Exists(physicalPath))
             {
                 System.IO.File.Delete(physicalPath);
@@ -195,5 +196,58 @@ public class DashboardController(
         // Redirect back to the parent folder
         var parentPath = Path.GetDirectoryName(path)?.Replace("\\", "/");
         return RedirectToAction(nameof(Files), new { siteName, path = parentPath });
+    }
+
+    [Route("Dashboard/Settings/{siteName}")]
+    public async Task<IActionResult> Settings(string siteName)
+    {
+        var user = await dbContext.Users
+            .Include(u => u.Sites)
+            .SingleOrDefaultAsync(u => u.UserName == User.Identity!.Name);
+
+        if (user == null) return NotFound();
+        var site = user.Sites.FirstOrDefault(s => s.SiteName == siteName);
+        if (site == null) return NotFound();
+
+        var model = new SettingsViewModel
+        {
+            SiteName = site.SiteName,
+            OpenToUpload = site.OpenToUpload
+        };
+        return this.StackView(model);
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    [Route("Dashboard/DeleteSite/{siteName}")]
+    public async Task<IActionResult> DeleteSite(string siteName)
+    {
+        var user = await dbContext.Users
+            .Include(u => u.Sites)
+            .SingleOrDefaultAsync(u => u.UserName == User.Identity!.Name);
+
+        if (user == null) return NotFound();
+        var site = user.Sites.FirstOrDefault(s => s.SiteName == siteName);
+        if (site == null) return NotFound();
+
+        // 1. Delete physical folder
+        try 
+        {
+            storage.DeleteSiteFolder(site.SiteName);
+        }
+        catch (Exception e)
+        {
+            // Log error but continue to delete DB record? Or fail?
+            // For now, let's assume if deletion fails we might want to stop, 
+            // but usually we want to clear the DB record anyway if the folder is gone or partially gone.
+            // Let's just proceed.
+            Console.WriteLine($"Error deleting folder: {e.Message}");
+        }
+
+        // 2. Delete from DB
+        dbContext.Sites.Remove(site);
+        await dbContext.SaveChangesAsync();
+
+        return RedirectToAction(nameof(Index));
     }
 }

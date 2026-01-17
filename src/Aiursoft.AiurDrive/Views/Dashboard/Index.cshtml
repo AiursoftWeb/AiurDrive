@@ -30,9 +30,20 @@
                         <div class="card-body">
                             <h5 class="card-title">@site.SiteName</h5>
                             <p class="card-text text-muted">@Localizer["Created at"]: @site.CreationTime.ToLocalTime()</p>
+                            <p class="card-text">
+                                @if (site.OpenToUpload)
+                                {
+                                    <span class="badge bg-success">@Localizer["Public"]</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">@Localizer["Private"]</span>
+                                }
+                            </p>
                         </div>
                         <div class="card-footer bg-transparent border-top-0">
                             <a asp-controller="Dashboard" asp-action="Files" asp-route-siteName="@site.SiteName" class="btn btn-sm btn-outline-primary">@Localizer["Manage"]</a>
+                            <a asp-controller="Dashboard" asp-action="Settings" asp-route-siteName="@site.SiteName" class="btn btn-sm btn-outline-secondary">@Localizer["Settings"]</a>
                         </div>
                     </div>
                 </div>

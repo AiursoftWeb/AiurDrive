@@ -151,4 +151,21 @@ public class StorageService(
         }
         return $"/download/{RelativePathToUriPath(relativePath)}";
     }
+
+    public void DeleteSiteFolder(string siteName)
+    {
+        // Check Workspace
+        var workspacePath = Path.Combine(folders.GetWorkspaceFolder(), siteName);
+        if (Directory.Exists(workspacePath))
+        {
+            Directory.Delete(workspacePath, true);
+        }
+
+        // Check Vault
+        var vaultPath = Path.Combine(folders.GetVaultFolder(), siteName);
+        if (Directory.Exists(vaultPath))
+        {
+            Directory.Delete(vaultPath, true);
+        }
+    }
 }
