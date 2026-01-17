@@ -62,7 +62,15 @@
 
             sizeInMb: @Model.MaxSizeInMb,
             validExtensions: ('@Model.AllowedExtensions' || '').split(' ').filter(Boolean),
-            uploadUrl: '@Model.UploadEndpoint'
+            uploadUrl: '@Model.UploadEndpoint',
+            onUploaded: (data) => {
+                @if (!string.IsNullOrEmpty(Model.OnUploadSuccess))
+                {
+                    @: if (typeof window['@Model.OnUploadSuccess'] === 'function') {
+                    @:     window['@Model.OnUploadSuccess'](data);
+                    @: }
+                }
+            }
         }).init({
             messages: {
                 'default': @Json.Serialize(Localizer["Drag and drop a file here or click"].Value),

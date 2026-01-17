@@ -115,6 +115,7 @@ public class DashboardController(
         var model = new FileManagerViewModel
         {
             SiteName = siteName,
+            OpenToUpload = site.OpenToUpload,
             Path = path.Replace("\\", "/"),
             Files = files,
             Folders = folders,

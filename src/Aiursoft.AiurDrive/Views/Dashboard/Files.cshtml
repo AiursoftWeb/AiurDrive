@@ -30,7 +30,8 @@
                             asp-for="UploadedFilePath"
                             upload-endpoint="@Url.Action("Upload", "Dashboard", new { siteName = Model.SiteName, path = Model.Path })"
                             allowed-extensions=""
-                            max-size-in-mb="1024">
+                            max-size-in-mb="1024"
+                            on-upload-success="reloadPage">
                         </vc:file-upload>
                         <small class="text-muted text-center mt-2">@Localizer["Files are saved immediately upon upload."]</small>
                          <a href="javascript:location.reload();" class="btn btn-secondary mt-2"><i class="fas fa-sync"></i> Refresh List</a>
@@ -85,7 +86,7 @@
                             @foreach (var file in Model.Files)
                             {
                                 var logicalPath = System.IO.Path.Combine(Model.SiteName, Model.Path, file.Name).Replace("\\", "/");
-                                var directUrl = Storage.RelativePathToInternetUrl(logicalPath);
+                                var directUrl = Storage.RelativePathToInternetUrl(logicalPath, !Model.OpenToUpload);
                                 <tr>
                                     <td>
                                         <a href="@directUrl" target="_blank" class="text-reset">
@@ -131,5 +132,9 @@
             // but standard dropify just shows the file.
             // We provided a Refresh button for now.
         });
+
+        function reloadPage() {
+            location.reload();
+        }
     </script>
 }

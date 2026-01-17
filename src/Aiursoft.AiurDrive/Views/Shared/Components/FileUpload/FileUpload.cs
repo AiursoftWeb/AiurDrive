@@ -10,7 +10,8 @@ public class FileUpload : ViewComponent
         string uploadEndpoint,
         int maxSizeInMb = 2000,
         string? allowedExtensions = null,
-        bool isVault = false)
+        bool isVault = false,
+        string? onUploadSuccess = null)
     {
         return View(new FileUploadViewModel
         {
@@ -18,7 +19,8 @@ public class FileUpload : ViewComponent
             UploadEndpoint = uploadEndpoint,
             MaxSizeInMb = maxSizeInMb,
             AllowedExtensions = allowedExtensions,
-            IsVault = isVault
+            IsVault = isVault,
+            OnUploadSuccess = onUploadSuccess
         });
     }
 }
