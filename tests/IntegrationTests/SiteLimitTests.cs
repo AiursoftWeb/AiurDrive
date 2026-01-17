@@ -1,7 +1,6 @@
 using System.Net;
 using Aiursoft.AiurDrive.Configuration;
 using Aiursoft.AiurDrive.Services;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Aiursoft.AiurDrive.Tests.IntegrationTests;
 
