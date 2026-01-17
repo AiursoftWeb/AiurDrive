@@ -35,6 +35,12 @@ public class GlobalSettingsService(TemplateDbContext dbContext, IConfiguration c
         return bool.TryParse(value, out var result) && result;
     }
 
+    public async Task<int> GetIntSettingAsync(string key)
+    {
+        var value = await GetSettingValueAsync(key);
+        return int.TryParse(value, out var result) ? result : 0;
+    }
+
     public bool IsOverriddenByConfig(string key)
     {
         return !string.IsNullOrWhiteSpace(configuration[$"GlobalSettings:{key}"]) || 

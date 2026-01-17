@@ -10,4 +10,6 @@ public class IndexViewModel : UiStackLayoutViewModel
     }
 
     public IEnumerable<Entities.Site> Sites { get; set; } = new List<Entities.Site>();
+    public int MaxSites { get; set; }
+    public int CurrentSitesCount { get; set; }
 }
