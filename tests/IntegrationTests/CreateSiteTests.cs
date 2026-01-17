@@ -1,6 +1,3 @@
-using System.Net;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 namespace Aiursoft.AiurDrive.Tests.IntegrationTests;
 
 [TestClass]
