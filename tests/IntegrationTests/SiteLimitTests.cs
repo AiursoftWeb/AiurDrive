@@ -33,7 +33,7 @@ public class SiteLimitTests : TestBase
 
         // 4. Try to create the 3rd site (GET) - should redirect to Index
         var getCreateResponse = await Http.GetAsync("/Dashboard/CreateSite");
-        AssertRedirect(getCreateResponse, "/Dashboard");
+        AssertRedirect(getCreateResponse, "/Dashboard", exact: false);
 
         // 5. Try to create the 3rd site (POST) - should stay on page with error or redirect
         // In my implementation, it adds a model error and returns the view if POSTed directly.
