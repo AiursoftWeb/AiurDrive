@@ -86,7 +86,7 @@ public class DashboardController(
             return this.StackView(model);
         }
 
-        return RedirectToAction(nameof(Index));
+        return RedirectToAction(nameof(Files), new { siteName = newSite.SiteName });
     }
 
     [Route("Dashboard/Files/{siteName}/{**path}")]
