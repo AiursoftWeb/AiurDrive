@@ -4,8 +4,8 @@
 [![Pipeline stat](https://gitlab.aiursoft.com/aiursoft/aiurDrive/badges/master/pipeline.svg)](https://gitlab.aiursoft.com/aiursoft/aiurDrive/-/pipelines)
 [![Test Coverage](https://gitlab.aiursoft.com/aiursoft/aiurDrive/badges/master/coverage.svg)](https://gitlab.aiursoft.com/aiursoft/aiurDrive/-/pipelines)
 [![Man hours](https://manhours.aiursoft.com/r/gitlab.aiursoft.com/aiursoft/aiurDrive.svg)](https://manhours.aiursoft.com/r/gitlab.aiursoft.com/aiursoft/aiurDrive.html)
-[![Website](https://img.shields.io/website?url=https%3A%2F%2FaiurDrive.aiursoft.com)](https://aiurDrive.aiursoft.com)
-[![Docker](https://img.shields.io/docker/pulls/aiursoft/aiurDrive.svg)](https://hub.docker.com/r/aiursoft/aiurDrive)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2FaiurDrive.aiursoft.com)](https://drive.aiursoft.com)
+[![Docker](https://img.shields.io/docker/pulls/aiursoft/aiurDrive.svg)](https://hub.docker.com/r/aiursoft/aiurdrive)
 
 A free, flexible file sharing center designed for local deployment.
 
