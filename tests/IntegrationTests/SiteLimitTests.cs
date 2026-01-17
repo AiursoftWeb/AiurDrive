@@ -28,7 +28,7 @@ public class SiteLimitTests : TestBase
                 { "SiteName", $"test-site-{i}" },
                 { "OpenToUpload", "true" }
             });
-            AssertRedirect(createResponse, "/Dashboard");
+            AssertRedirect(createResponse, $"/Dashboard/Files/test-site-{i}");
         }
 
         // 4. Try to create the 3rd site (GET) - should redirect to Index
@@ -62,6 +62,6 @@ public class SiteLimitTests : TestBase
             { "SiteName", "test-site-3" },
             { "OpenToUpload", "true" }
         });
-        AssertRedirect(finalCreateResponse, "/Dashboard");
+        AssertRedirect(finalCreateResponse, "/Dashboard/Files/test-site-3");
     }
 }
