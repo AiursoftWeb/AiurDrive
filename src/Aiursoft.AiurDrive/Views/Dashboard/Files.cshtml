@@ -3,6 +3,13 @@
 @using Aiursoft.CSTools.Tools
 @{
     ViewData["Title"] = "File Manager - " + Model.SiteName;
+    string GetFileIcon(string filename)
+    {
+        var extension = System.IO.Path.GetExtension(filename).TrimStart('.');
+        var contentType = Aiursoft.CSTools.Models.Mime.GetContentType(extension);
+        var iconName = contentType.Replace("/", "-");
+        return $"/images/mimetypes/{iconName}.svg";
+    }
 }
 
 <div class="container-fluid p-0">
@@ -262,7 +269,7 @@
                                             }
                                             else
                                             {
-                                                <i class="fas fa-file fa-3x text-primary mb-2"></i>
+                                                <img src="@GetFileIcon(file.Name)" class="img-fluid mb-2" style="max-height: 80px;" alt="@file.Name" />
                                             }
                                             <span class="text-truncate w-100" title="@file.Name">@file.Name</span>
                                         </a>
@@ -387,18 +394,18 @@
             // We provided a Refresh button for now.
         });
 
-        window.reloadPage = function() {
+        function reloadPage() {
             location.reload();
         }
 
-        window.openRenameModal = function(currentName, currentPath) {
+        function openRenameModal(currentName, currentPath) {
             document.getElementById('renamePath').value = currentPath;
             document.getElementById('newName').value = currentName;
             var renameModal = new bootstrap.Modal(document.getElementById('renameModal'));
             renameModal.show();
         }
 
-        window.cutItem = function(siteName, path, name) {
+        function cutItem(siteName, path, name) {
             sessionStorage.setItem('clipboard', JSON.stringify({
                 siteName: siteName,
                 path: path,
@@ -407,12 +414,12 @@
             checkClipboard();
         }
 
-        window.cancelCut = function() {
+        function cancelCut() {
             sessionStorage.removeItem('clipboard');
             checkClipboard();
         }
 
-        window.checkClipboard = function() {
+        function checkClipboard() {
             var clipboard = sessionStorage.getItem('clipboard');
             var pasteForm = document.getElementById('pasteForm');
             var pasteSourcePath = document.getElementById('pasteSourcePath');
@@ -435,7 +442,7 @@
         // View Toggle Logic
         var currentView = localStorage.getItem('fileManagerView') || 'list';
 
-        window.updateView = function() {
+        function updateView() {
             if (currentView === 'grid') {
                 $('#listView').addClass('d-none');
                 $('#gridView').removeClass('d-none');
@@ -449,7 +456,7 @@
             }
         }
 
-        window.toggleView = function() {
+        function toggleView() {
             currentView = currentView === 'list' ? 'grid' : 'list';
             localStorage.setItem('fileManagerView', currentView);
             updateView();
