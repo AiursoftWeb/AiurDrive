@@ -150,7 +150,8 @@ public class DashboardController(
             Folders = folders,
             PageTitle = "File Manager",
             UsedSpaceInBytes = storage.GetSiteSize(siteName),
-            TotalSpaceInGB = maxSpaceGB
+            TotalSpaceInGB = maxSpaceGB,
+            AllowImagePreview = await globalSettings.GetBoolSettingAsync(SettingsMap.AllowImagePreview)
         };
         return this.StackView(model);
     }

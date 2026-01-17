@@ -1,5 +1,6 @@
 using Aiursoft.CSTools.Attributes;
 using Aiursoft.CSTools.Tools;
+using Aiursoft.AiurDrive.Configuration;
 using Aiursoft.AiurDrive.Services;
 using Aiursoft.AiurDrive.Services.FileStorage;
 using Aiursoft.WebTools.Attributes;
@@ -14,7 +15,8 @@ namespace Aiursoft.AiurDrive.Controllers;
 public class FilesController(
     ImageProcessingService imageCompressor,
     ILogger<FilesController> logger,
-    StorageService storage) : ControllerBase
+    StorageService storage,
+    GlobalSettingsService globalSettings) : ControllerBase
 {
     [Route("upload/{subfolder}")]
     public async Task<IActionResult> Index(
@@ -106,7 +108,9 @@ public class FilesController(
 
         // 2. Image Processing (using logical path)
         // If it is an image, we enforce privacy protection (ClearExif) or resizing
-        if (physicalPath.IsStaticImage() && await imageCompressor.IsValidImageAsync(physicalPath))
+        if (physicalPath.IsStaticImage() && 
+            await imageCompressor.IsValidImageAsync(physicalPath) && 
+            await globalSettings.GetBoolSettingAsync(SettingsMap.AllowImagePreview))
         {
             logger.LogInformation("Processing image compression/clearing request for logical path: {Path}", folderNames);
             return await FileWithImageCompressor(folderNames, isVault);

@@ -20,4 +20,5 @@ public class FileManagerViewModel : UiStackLayoutViewModel
 
     public long UsedSpaceInBytes { get; set; }
     public long TotalSpaceInGB { get; set; }
+    public bool AllowImagePreview { get; set; }
 }
