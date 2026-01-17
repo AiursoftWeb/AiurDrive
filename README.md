@@ -7,25 +7,15 @@
 [![Website](https://img.shields.io/website?url=https%3A%2F%2FaiurDrive.aiursoft.com)](https://aiurDrive.aiursoft.com)
 [![Docker](https://img.shields.io/docker/pulls/aiursoft/aiurDrive.svg)](https://hub.docker.com/r/aiursoft/aiurDrive)
 
-AiurDrive is a sample project.
+A free, flexible file sharing center designed for local deployment.
 
 ![screenshot](./screenshot.png)
 
 Default user name is `admin@default.com` and default password is `admin123`.
 
-## Projects using Aiursoft AiurDrive
-
-* [Stathub](https://gitlab.aiursoft.com/aiursoft/stathub)
-* [MarkToHtml](https://gitlab.aiursoft.com/aiursoft/marktohtml)
-* [MusicTools](https://gitlab.aiursoft.com/aiursoft/musictools)
-* [AnduinOS Home](https://gitlab.aiursoft.com/anduin/AnduinOS-Home)
-* [Manhours](https://gitlab.aiursoft.com/aiursoft/manhours)
-* [Tracer](https://gitlab.aiursoft.com/aiursoft/tracer)
-* [Warp](https://gitlab.aiursoft.com/aiursoft/warp)
-
 ## Try
 
-Try a running AiurDrive [here](https://aiurDrive.aiursoft.com).
+Try a running AiurDrive [here](https://drive.aiursoft.com).
 
 ## Run in Ubuntu
 
@@ -34,13 +24,13 @@ The following script will install\update this app on your Ubuntu server. Support
 On your Ubuntu server, run the following command:
 
 ```bash
-curl -sL https://gitlab.aiursoft.com/aiursoft/aiurDrive/-/raw/master/install.sh | sudo bash
+curl -sL https://gitlab.aiursoft.com/aiursoft/aiurdrive/-/raw/master/install.sh | sudo bash
 ```
 
 Of course it is suggested that append a custom port number to the command:
 
 ```bash
-curl -sL https://gitlab.aiursoft.com/aiursoft/aiurDrive/-/raw/master/install.sh | sudo bash -s 8080
+curl -sL https://gitlab.aiursoft.com/aiursoft/aiurdrive/-/raw/master/install.sh | sudo bash -s 8080
 ```
 
 It will install the app as a systemd service, and start it automatically. Binary files will be located at `/opt/apps`. Service files will be located at `/etc/systemd/system`.
@@ -66,8 +56,8 @@ First, install Docker [here](https://docs.docker.com/get-docker/).
 Then run the following commands in a Linux shell:
 
 ```bash
-image=aiursoft/aiurDrive
-appName=aiurDrive
+image=aiursoft/aiurdrive
+appName=aiurdrive
 sudo docker pull $image
 sudo docker run -d --name $appName --restart unless-stopped -p 5000:5000 -v /var/www/$appName:/data $image
 ```
@@ -78,7 +68,7 @@ The docker image has the following context:
 
 | Properties  | Value                           |
 |-------------|---------------------------------|
-| Image       | aiursoft/aiurDrive               |
+| Image       | aiursoft/aiurdrive              |
 | Ports       | 5000                            |
 | Binary path | /app                            |
 | Data path   | /data                           |
