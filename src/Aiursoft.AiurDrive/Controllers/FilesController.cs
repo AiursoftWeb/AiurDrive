@@ -18,7 +18,10 @@ public class FilesController(
     StorageService storage,
     GlobalSettingsService globalSettings) : ControllerBase
 {
+    [HttpPost]
     [Route("upload/{subfolder}")]
+    [DisableRequestSizeLimit]
+    [RequestFormLimits(MultipartBodyLengthLimit = long.MaxValue, ValueLengthLimit = int.MaxValue)]
     public async Task<IActionResult> Index(
         [FromRoute][ValidDomainName] string subfolder,
         [FromQuery] bool useVault = false)
