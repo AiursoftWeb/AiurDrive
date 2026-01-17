@@ -6,18 +6,37 @@
 <div class="container-fluid">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">@Localizer["Dashboard"]</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <span class="text-muted">
+                <i class="fas fa-layer-group me-1"></i>
+                @Localizer["Sites"]: @Model.CurrentSitesCount / @Model.MaxSites
+            </span>
+        </div>
     </div>
 
     <div class="row">
         <div class="col-md-3 mb-3">
-            <a asp-controller="Dashboard" asp-action="CreateSite" class="text-decoration-none">
-                <div class="card h-100 border-dashed shadow-none text-center d-flex justify-content-center align-items-center" style="border-style: dashed; border-width: 2px; min-height: 200px;">
+            @if (Model.CurrentSitesCount < Model.MaxSites)
+            {
+                <a asp-controller="Dashboard" asp-action="CreateSite" class="text-decoration-none">
+                    <div class="card h-100 border-dashed shadow-none text-center d-flex justify-content-center align-items-center site-create-card" style="border-style: dashed; border-width: 2px; min-height: 200px;">
+                        <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                            <i class="fas fa-plus fa-3x text-muted mb-3"></i>
+                            <h5 class="card-title text-muted">@Localizer["Create New Site"]</h5>
+                        </div>
+                    </div>
+                </a>
+            }
+            else
+            {
+                <div class="card h-100 border-dashed shadow-none text-center d-flex justify-content-center align-items-center" style="border-style: dashed; border-width: 2px; min-height: 200px; opacity: 0.6; cursor: not-allowed;" title="@Localizer["You have reached the maximum number of sites."] (@Model.MaxSites)">
                     <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                        <i class="fas fa-plus fa-3x text-muted mb-3"></i>
-                        <h5 class="card-title text-muted">@Localizer["Create New Site"]</h5>
+                        <i class="fas fa-ban fa-3x text-danger mb-3"></i>
+                        <h5 class="card-title text-muted">@Localizer["Limit Reached"]</h5>
+                        <p class="small text-muted mb-0">@Model.MaxSites @Localizer["sites max"]</p>
                     </div>
                 </div>
-            </a>
+            }
         </div>
 
         @if (Model.Sites.Any())
@@ -57,10 +76,10 @@
 @* ReSharper disable once Razor.SectionNotResolved *@
 @section styles {
     <style>
-        .site-card {
+        .site-card, .site-create-card {
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
-        .site-card:hover {
+        .site-card:hover, .site-create-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
         }

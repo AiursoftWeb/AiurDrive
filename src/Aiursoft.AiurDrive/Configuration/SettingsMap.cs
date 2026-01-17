@@ -6,6 +6,7 @@ public static class SettingsMap
 {
     public const string AllowUserAdjustNickname = "Allow_User_Adjust_Nickname";
     public const string MaxSiteStorageInGB = "Max_Site_Storage_In_GB";
+    public const string MaxSitesPerPerson = "Max_Sites_Per_Person";
 
     public static readonly List<GlobalSettingDefinition> Definitions = new()
     {
@@ -22,6 +23,13 @@ public static class SettingsMap
             Description = "Max storage size for each site in GB.",
             Type = SettingType.Number,
             DefaultValue = "10"
+        },
+        new GlobalSettingDefinition
+        {
+            Key = MaxSitesPerPerson,
+            Description = "Maximum number of sites each user can create.",
+            Type = SettingType.Number,
+            DefaultValue = "5"
         }
     };
 }

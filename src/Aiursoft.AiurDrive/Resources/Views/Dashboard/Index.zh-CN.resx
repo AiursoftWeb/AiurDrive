@@ -171,5 +171,16 @@
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>为何选择 Aiursoft 模板？</value>
   </data>
-
+  <data name="Sites" xml:space="preserve">
+    <value>站点</value>
+  </data>
+  <data name="You have reached the maximum number of sites ({0})." xml:space="preserve">
+    <value>您已达到最大站点数量（{0}）。</value>
+  </data>
+  <data name="Limit Reached" xml:space="preserve">
+    <value>已达上限</value>
+  </data>
+  <data name="sites max" xml:space="preserve">
+    <value>个站点上限</value>
+  </data>
 </root>

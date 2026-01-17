@@ -16,7 +16,8 @@ namespace Aiursoft.AiurDrive.Controllers;
 public class DashboardController(
     TemplateDbContext dbContext,
     StorageService storage,
-    GlobalSettingsService globalSettings) : Controller
+    GlobalSettingsService globalSettings,
+    Microsoft.Extensions.Localization.IStringLocalizer<DashboardController> localizer) : Controller
 {
     [RenderInNavBar(
         NavGroupName = "Features",
@@ -34,21 +35,37 @@ public class DashboardController(
             
         if (user == null) return NotFound();
 
-        if (!user.Sites.Any())
+        var maxSites = await globalSettings.GetIntSettingAsync(SettingsMap.MaxSitesPerPerson);
+
+        if (!user.Sites.Any() && maxSites > 0)
         {
             return RedirectToAction(nameof(CreateSite));
         }
 
         var model = new IndexViewModel
         {
-            Sites = user.Sites
+            Sites = user.Sites,
+            MaxSites = maxSites,
+            CurrentSitesCount = user.Sites.Count()
         };
         return this.StackView(model);
     }
 
     [HttpGet]
-    public IActionResult CreateSite()
+    public async Task<IActionResult> CreateSite()
     {
+        var user = await dbContext.Users
+            .Include(u => u.Sites)
+            .SingleOrDefaultAsync(u => u.UserName == User.Identity!.Name);
+
+        if (user == null) return NotFound();
+
+        var maxSites = await globalSettings.GetIntSettingAsync(SettingsMap.MaxSitesPerPerson);
+        if (user.Sites.Count() >= maxSites)
+        {
+            return RedirectToAction(nameof(Index));
+        }
+
         var model = new CreateSiteViewModel();
         return this.StackView(model);
     }
@@ -68,6 +85,13 @@ public class DashboardController(
 
         if (user == null) return NotFound();
 
+        var maxSites = await globalSettings.GetIntSettingAsync(SettingsMap.MaxSitesPerPerson);
+        if (user.Sites.Count() >= maxSites)
+        {
+            ModelState.AddModelError(string.Empty, localizer["You have reached the maximum number of sites ({0}).", maxSites]);
+            return this.StackView(model);
+        }
+
         var newSite = new Site
         {
             SiteName = model.SiteName!.ToLower(),
@@ -82,7 +106,7 @@ public class DashboardController(
         }
         catch (DbUpdateException)
         {
-            ModelState.AddModelError(nameof(model.SiteName), "This site name is already taken.");
+            ModelState.AddModelError(nameof(model.SiteName), localizer["This site name is already taken."]);
             return this.StackView(model);
         }
 
