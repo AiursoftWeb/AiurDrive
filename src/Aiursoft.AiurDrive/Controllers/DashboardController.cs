@@ -251,4 +251,100 @@ public class DashboardController(
 
         return RedirectToAction(nameof(Index));
     }
+
+    [HttpPost]
+    [Route("Dashboard/CreateFolder/{siteName}/{**path}")]
+    public async Task<IActionResult> CreateFolder(string siteName, string? path, string newFolderName)
+    {
+        var user = await dbContext.Users
+            .Include(u => u.Sites)
+            .SingleOrDefaultAsync(u => u.UserName == User.Identity!.Name);
+
+        if (user == null) return Unauthorized();
+        var site = user.Sites.FirstOrDefault(s => s.SiteName == siteName);
+        if (site == null) return NotFound();
+
+        if (string.IsNullOrWhiteSpace(newFolderName)) return BadRequest("Folder name cannot be empty.");
+        if (newFolderName.Any(c => Path.GetInvalidFileNameChars().Contains(c))) return BadRequest("Invalid folder name.");
+
+        path ??= string.Empty;
+        var logicalPath = Path.Combine(siteName, path, newFolderName);
+
+        try 
+        {
+            var physicalPath = storage.GetFilePhysicalPath(logicalPath, !site.OpenToUpload);
+            if (Directory.Exists(physicalPath) || System.IO.File.Exists(physicalPath))
+            {
+                return BadRequest("File or folder already exists.");
+            }
+            Directory.CreateDirectory(physicalPath);
+        }
+        catch (Exception e)
+        {
+             return BadRequest(e.Message);
+        }
+
+        return RedirectToAction(nameof(Files), new { siteName, path });
+    }
+
+    [HttpPost]
+    [Route("Dashboard/Rename/{siteName}/{**path}")]
+    public async Task<IActionResult> Rename(string siteName, string path, string newName)
+    {
+        var user = await dbContext.Users
+            .Include(u => u.Sites)
+            .SingleOrDefaultAsync(u => u.UserName == User.Identity!.Name);
+
+        if (user == null) return Unauthorized();
+        var site = user.Sites.FirstOrDefault(s => s.SiteName == siteName);
+        if (site == null) return NotFound();
+
+        if (string.IsNullOrWhiteSpace(path)) return BadRequest("Cannot rename root.");
+        if (string.IsNullOrWhiteSpace(newName)) return BadRequest("New name cannot be empty.");
+        if (newName.Any(c => Path.GetInvalidFileNameChars().Contains(c))) return BadRequest("Invalid file name.");
+
+        var logicalPath = Path.Combine(siteName, path);
+        
+        try 
+        {
+            var oldPhysicalPath = storage.GetFilePhysicalPath(logicalPath, !site.OpenToUpload);
+            var parentPhysicalPath = Directory.GetParent(oldPhysicalPath)?.FullName;
+            if (parentPhysicalPath == null) return BadRequest("Cannot find parent directory.");
+
+            // Security check: ensure new path is still valid within the storage root
+            // We can do this by converting back to logical path or checking prefix, 
+            // but calling GetFilePhysicalPath with the reconstructed logical path is safer.
+            
+            var parentLogicalPath = Path.GetDirectoryName(path); // relative to site
+            var newLogicalPath = Path.Combine(siteName, parentLogicalPath ?? string.Empty, newName);
+            
+            // This throws if traversal detected
+            var validatedNewPhysicalPath = storage.GetFilePhysicalPath(newLogicalPath, !site.OpenToUpload); 
+
+            if (System.IO.File.Exists(validatedNewPhysicalPath) || Directory.Exists(validatedNewPhysicalPath))
+            {
+                return BadRequest("Target already exists.");
+            }
+
+            if (System.IO.File.Exists(oldPhysicalPath))
+            {
+                System.IO.File.Move(oldPhysicalPath, validatedNewPhysicalPath);
+            }
+            else if (Directory.Exists(oldPhysicalPath))
+            {
+                Directory.Move(oldPhysicalPath, validatedNewPhysicalPath);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+
+        var parentPath = Path.GetDirectoryName(path)?.Replace("\\", "/");
+        return RedirectToAction(nameof(Files), new { siteName, path = parentPath });
+    }
 }

@@ -5,8 +5,38 @@
 }
 
 <div class="container-fluid p-0">
+    <!-- Breadcrumb & Toolbar -->
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">@Localizer["File Manager"] - @Model.SiteName</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item">
+                    <a asp-action="Files" asp-route-siteName="@Model.SiteName" asp-route-path="">
+                        <i class="fas fa-home"></i> @Model.SiteName
+                    </a>
+                </li>
+                @if (!string.IsNullOrEmpty(Model.Path))
+                {
+                    var parts = Model.Path.Split('/');
+                    for (int i = 0; i < parts.Length; i++)
+                    {
+                        var part = parts[i];
+                        var currentPath = string.Join("/", parts.Take(i + 1));
+                        
+                        if (i == parts.Length - 1)
+                        {
+                            <li class="breadcrumb-item active" aria-current="page">@part</li>
+                        }
+                        else
+                        {
+                            <li class="breadcrumb-item">
+                                <a asp-action="Files" asp-route-siteName="@Model.SiteName" asp-route-path="@currentPath">@part</a>
+                            </li>
+                        }
+                    }
+                }
+            </ol>
+        </nav>
+
         <div class="btn-toolbar mb-2 mb-md-0">
              @if (!string.IsNullOrEmpty(Model.Path))
              {
@@ -35,6 +65,12 @@
                         </vc:file-upload>
                         <small class="text-muted text-center mt-2">@Localizer["Files are saved immediately upon upload."]</small>
                          <a href="javascript:location.reload();" class="btn btn-secondary mt-2"><i class="fas fa-sync"></i> Refresh List</a>
+                    </div>
+                    
+                    <div class="d-grid mb-3">
+                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#createFolderModal">
+                            <i class="fas fa-folder-plus"></i> @Localizer["New Folder"]
+                        </button>
                     </div>
 
                     <h6 class="text-uppercase mt-4">@Localizer["Current Location"]</h6>
@@ -67,16 +103,20 @@
                         <tbody>
                             @foreach (var folder in Model.Folders)
                             {
+                                var currentRelativePath = string.IsNullOrEmpty(Model.Path) ? folder : Model.Path + "/" + folder;
                                 <tr>
                                     <td>
-                                        <a asp-action="Files" asp-route-siteName="@Model.SiteName" asp-route-path="@(string.IsNullOrEmpty(Model.Path) ? folder : Model.Path + "/" + folder)" class="text-reset fw-bold">
+                                        <a asp-action="Files" asp-route-siteName="@Model.SiteName" asp-route-path="@currentRelativePath" class="text-reset fw-bold">
                                             <i class="fas fa-folder text-warning me-2"></i>@folder
                                         </a>
                                     </td>
                                     <td>-</td>
                                     <td>-</td>
                                     <td class="text-end">
-                                        <form asp-action="Delete" asp-route-siteName="@Model.SiteName" asp-route-path="@(string.IsNullOrEmpty(Model.Path) ? folder : Model.Path + "/" + folder)" method="post" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this folder and all its contents?');">
+                                        <button type="button" class="btn btn-sm btn-light text-primary" onclick="openRenameModal('@folder', '@currentRelativePath')">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <form asp-action="Delete" asp-route-siteName="@Model.SiteName" asp-route-path="@currentRelativePath" method="post" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this folder and all its contents?');">
                                             <button type="submit" class="btn btn-sm btn-light text-danger"><i class="fas fa-trash"></i></button>
                                         </form>
                                     </td>
@@ -86,6 +126,7 @@
                             @foreach (var file in Model.Files)
                             {
                                 var logicalPath = System.IO.Path.Combine(Model.SiteName, Model.Path, file.Name).Replace("\\", "/");
+                                var currentRelativePath = string.IsNullOrEmpty(Model.Path) ? file.Name : Model.Path + "/" + file.Name;
                                 var directUrl = Storage.RelativePathToInternetUrl(logicalPath, !Model.OpenToUpload);
                                 <tr>
                                     <td>
@@ -97,7 +138,10 @@
                                     <td>@((file.Length / 1024.0).ToString("N0")) KB</td>
                                     <td class="text-end">
                                         <a href="@directUrl" target="_blank" class="btn btn-sm btn-light"><i class="fas fa-download"></i></a>
-                                        <form asp-action="Delete" asp-route-siteName="@Model.SiteName" asp-route-path="@(string.IsNullOrEmpty(Model.Path) ? file.Name : Model.Path + "/" + file.Name)" method="post" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this file?');">
+                                        <button type="button" class="btn btn-sm btn-light text-primary" onclick="openRenameModal('@file.Name', '@currentRelativePath')">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <form asp-action="Delete" asp-route-siteName="@Model.SiteName" asp-route-path="@currentRelativePath" method="post" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this file?');">
                                             <button type="submit" class="btn btn-sm btn-light text-danger"><i class="fas fa-trash"></i></button>
                                         </form>
                                     </td>
@@ -114,6 +158,55 @@
                     </table>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<!-- Create Folder Modal -->
+<div class="modal fade" id="createFolderModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="CreateFolder" asp-route-siteName="@Model.SiteName" asp-route-path="@Model.Path" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title">@Localizer["New Folder"]</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="newFolderName" class="form-label">@Localizer["Folder Name"]</label>
+                        <input type="text" class="form-control" id="newFolderName" name="newFolderName" required pattern="[^\\/:*?&quot;<>|]+" title="Invalid characters">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@Localizer["Cancel"]</button>
+                    <button type="submit" class="btn btn-primary">@Localizer["Create"]</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Rename Modal -->
+<div class="modal fade" id="renameModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="Rename" asp-route-siteName="@Model.SiteName" method="post" id="renameForm">
+                <input type="hidden" name="path" id="renamePath" />
+                <div class="modal-header">
+                    <h5 class="modal-title">@Localizer["Rename"]</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="newName" class="form-label">@Localizer["New Name"]</label>
+                        <input type="text" class="form-control" id="newName" name="newName" required pattern="[^\\/:*?&quot;<>|]+" title="Invalid characters">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@Localizer["Cancel"]</button>
+                    <button type="submit" class="btn btn-primary">@Localizer["Rename"]</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -135,6 +228,13 @@
 
         function reloadPage() {
             location.reload();
+        }
+
+        function openRenameModal(currentName, currentPath) {
+            document.getElementById('renamePath').value = currentPath;
+            document.getElementById('newName').value = currentName;
+            var renameModal = new bootstrap.Modal(document.getElementById('renameModal'));
+            renameModal.show();
         }
     </script>
 }
