@@ -360,7 +360,7 @@ public class DashboardController(
 
     [HttpPost]
     [Route("Dashboard/Move/{siteName}")]
-    public async Task<IActionResult> Move(string siteName, string sourcePath, string targetPath)
+    public async Task<IActionResult> Move(string siteName, string sourcePath, string? targetPath)
     {
         var user = await dbContext.Users
             .Include(u => u.Sites)
@@ -375,7 +375,7 @@ public class DashboardController(
         // Prevent moving into itself
         // Normalizing paths for comparison
         var normalizedSource = sourcePath.Replace("\\", "/").Trim('/');
-        var normalizedTarget = targetPath.Replace("\\", "/").Trim('/');
+        var normalizedTarget = (targetPath ?? string.Empty).Replace("\\", "/").Trim('/');
         
         // Check if target is same as source (useless move)
         if (string.Equals(Path.GetDirectoryName(normalizedSource)?.Replace("\\", "/"), normalizedTarget, StringComparison.OrdinalIgnoreCase))
