@@ -347,4 +347,83 @@ public class DashboardController(
         var parentPath = Path.GetDirectoryName(path)?.Replace("\\", "/");
         return RedirectToAction(nameof(Files), new { siteName, path = parentPath });
     }
+
+    [HttpPost]
+    [Route("Dashboard/Move/{siteName}")]
+    public async Task<IActionResult> Move(string siteName, string sourcePath, string targetPath)
+    {
+        var user = await dbContext.Users
+            .Include(u => u.Sites)
+            .SingleOrDefaultAsync(u => u.UserName == User.Identity!.Name);
+
+        if (user == null) return Unauthorized();
+        var site = user.Sites.FirstOrDefault(s => s.SiteName == siteName);
+        if (site == null) return NotFound();
+
+        if (string.IsNullOrWhiteSpace(sourcePath)) return BadRequest("Source path cannot be empty.");
+        targetPath ??= string.Empty;
+
+        // Prevent moving into itself
+        // Normalizing paths for comparison
+        var normalizedSource = sourcePath.Replace("\\", "/").Trim('/');
+        var normalizedTarget = targetPath.Replace("\\", "/").Trim('/');
+        targetPath ??= string.Empty;
+
+        // Prevent moving into itself
+        // Normalizing paths for comparison
+        var normalizedSource = sourcePath.Replace("\\", "/").Trim('/');
+        var normalizedTarget = targetPath.Replace("\\", "/").Trim('/');
+        
+        // Check if target is same as source (useless move)
+        if (string.Equals(Path.GetDirectoryName(normalizedSource)?.Replace("\\", "/"), normalizedTarget, StringComparison.OrdinalIgnoreCase))
+        {
+             return RedirectToAction(nameof(Files), new { siteName, path = normalizedTarget });
+        }
+
+        // Check for recursive move: Target starts with Source
+        // e.g. Source: A, Target: A/B.  normalizedTarget (A/B) starts with normalizedSource (A)
+        // Need to ensure we match directory boundaries, e.g. "Folder" starts with "Fold" is false positive.
+        if (normalizedTarget.StartsWith(normalizedSource + "/", StringComparison.OrdinalIgnoreCase) || 
+            string.Equals(normalizedTarget, normalizedSource, StringComparison.OrdinalIgnoreCase))
+        {
+            return BadRequest("Cannot move a folder into itself or its subfolder.");
+        }
+
+        var fileName = Path.GetFileName(normalizedSource);
+        var logicalDestPath = Path.Combine(normalizedTarget, fileName).Replace("\\", "/");
+
+        try 
+        {
+            var physicalSource = storage.GetFilePhysicalPath(normalizedSource, !site.OpenToUpload);
+            // We use GetFilePhysicalPath for destination too to ensure it resolves to a safe path inside the site
+            // However, GetFilePhysicalPath usually checks for existence? 
+            // Wait, looking at StorageService.GetFilePhysicalPath: it only checks "StartsWith root". It does NOT check File.Exists.
+            // So it's safe to use for a non-existent target as long as it's valid.
+            var physicalDest = storage.GetFilePhysicalPath(logicalDestPath, !site.OpenToUpload);
+
+            if (System.IO.File.Exists(physicalDest) || Directory.Exists(physicalDest))
+            {
+                return BadRequest("Destination file or folder already exists.");
+            }
+
+            if (System.IO.File.Exists(physicalSource))
+            {
+                System.IO.File.Move(physicalSource, physicalDest);
+            }
+            else if (Directory.Exists(physicalSource))
+            {
+                Directory.Move(physicalSource, physicalDest);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+
+        return RedirectToAction(nameof(Files), new { siteName, path = targetPath });
+    }
 }

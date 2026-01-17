@@ -38,6 +38,17 @@
         </nav>
 
         <div class="btn-toolbar mb-2 mb-md-0">
+             <form asp-action="Move" asp-route-siteName="@Model.SiteName" method="post" id="pasteForm" class="d-none me-2">
+                 <input type="hidden" name="sourcePath" id="pasteSourcePath" />
+                 <input type="hidden" name="targetPath" value="@Model.Path" />
+                 <button type="submit" class="btn btn-sm btn-outline-success">
+                     <i class="fas fa-paste"></i> <span id="pasteButtonText">@Localizer["Paste"]</span>
+                 </button>
+                 <button type="button" class="btn btn-sm btn-outline-danger" onclick="cancelCut()">
+                     <i class="fas fa-times"></i>
+                 </button>
+             </form>
+
              @if (!string.IsNullOrEmpty(Model.Path))
              {
                 var parentPath = System.IO.Path.GetDirectoryName(Model.Path)?.Replace("\\", "/");
@@ -113,6 +124,9 @@
                                     <td>-</td>
                                     <td>-</td>
                                     <td class="text-end">
+                                        <button type="button" class="btn btn-sm btn-light text-secondary" onclick="cutItem('@Model.SiteName', '@currentRelativePath', '@folder')">
+                                            <i class="fas fa-cut"></i>
+                                        </button>
                                         <button type="button" class="btn btn-sm btn-light text-primary" onclick="openRenameModal('@folder', '@currentRelativePath')">
                                             <i class="fas fa-edit"></i>
                                         </button>
@@ -138,6 +152,9 @@
                                     <td>@((file.Length / 1024.0).ToString("N0")) KB</td>
                                     <td class="text-end">
                                         <a href="@directUrl" target="_blank" class="btn btn-sm btn-light"><i class="fas fa-download"></i></a>
+                                        <button type="button" class="btn btn-sm btn-light text-secondary" onclick="cutItem('@Model.SiteName', '@currentRelativePath', '@file.Name')">
+                                            <i class="fas fa-cut"></i>
+                                        </button>
                                         <button type="button" class="btn btn-sm btn-light text-primary" onclick="openRenameModal('@file.Name', '@currentRelativePath')">
                                             <i class="fas fa-edit"></i>
                                         </button>
@@ -236,5 +253,53 @@
             var renameModal = new bootstrap.Modal(document.getElementById('renameModal'));
             renameModal.show();
         }
+
+        function cutItem(siteName, path, name) {
+            sessionStorage.setItem('clipboard', JSON.stringify({
+                siteName: siteName,
+                path: path,
+                name: name
+            }));
+            checkClipboard();
+        }
+
+        function cancelCut() {
+            sessionStorage.removeItem('clipboard');
+            checkClipboard();
+        }
+
+        function checkClipboard() {
+            var clipboard = sessionStorage.getItem('clipboard');
+            var pasteForm = document.getElementById('pasteForm');
+            var pasteSourcePath = document.getElementById('pasteSourcePath');
+            var pasteButtonText = document.getElementById('pasteButtonText');
+
+            if (clipboard) {
+                var data = JSON.parse(clipboard);
+                if (data.siteName === '@Model.SiteName') {
+                    pasteForm.classList.remove('d-none');
+                    pasteSourcePath.value = data.path;
+                    pasteButtonText.innerText = '@Localizer["Paste"] ' + data.name;
+                } else {
+                    pasteForm.classList.add('d-none');
+                }
+            } else {
+                pasteForm.classList.add('d-none');
+            }
+        }
+
+        $(document).ready(function() {
+            // Check clipboard on load
+            checkClipboard();
+
+            // Clear clipboard after successful paste (the form submit will reload page, 
+            // but we can't easily hook into success unless we use AJAX or check logic on server.
+            // Actually, if we submit form, the page reloads. If the move is successful, the item is gone.
+            // But we should probably clear the clipboard on the next page load if the item is gone?
+            // Or just clear it manually in the 'onsubmit'.
+            $('#pasteForm').on('submit', function() {
+                sessionStorage.removeItem('clipboard');
+            });
+        });
     </script>
 }
