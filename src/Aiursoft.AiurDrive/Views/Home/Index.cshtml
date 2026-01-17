@@ -21,7 +21,7 @@
                 </p>
                 <div class="my-4">
                     <a asp-controller="Dashboard" asp-action="Index" class="btn btn-primary btn-lg btn-pill">
-                        <i class="align-middle" data-lucide="rocket"></i> @Localizer["Get Started"]
+                        <i class="align-middle" data-lucide="rocket"></i> @Localizer["Try our public instance"]
                     </a>
                     <a href="https://github.com/AiursoftWeb/AiurDrive" class="btn btn-outline-primary btn-lg btn-pill">
                         <i class="align-middle" data-lucide="github"></i> @Localizer["View on GitHub"]
@@ -141,6 +141,10 @@
                 <a asp-controller="Dashboard" asp-action="Index" class="btn btn-primary btn-pill btn-lg">
                     <i class="align-middle me-1" data-lucide="layout-dashboard"></i>
                     <span>@Localizer["Enter Dashboard"]</span>
+                </a>
+                <a asp-controller="Home" asp-action="SelfHost" class="btn btn-outline-primary btn-pill btn-lg">
+                    <i class="align-middle me-1" data-lucide="server"></i>
+                    <span>@Localizer["Self Host"]</span>
                 </a>
             </div>
         </div>

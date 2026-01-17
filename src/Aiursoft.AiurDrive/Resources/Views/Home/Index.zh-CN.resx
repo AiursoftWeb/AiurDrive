@@ -103,4 +103,10 @@
   <data name="Enter Dashboard" xml:space="preserve">
     <value>进入控制面板</value>
   </data>
+  <data name="Try our public instance" xml:space="preserve">
+    <value>尝试我们的公共实例</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>私有化部署</value>
+  </data>
 </root>

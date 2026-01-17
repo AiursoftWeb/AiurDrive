@@ -12,4 +12,9 @@ public class HomeController : Controller
     {
         return this.SimpleView(new IndexViewModel());
     }
+
+    public IActionResult SelfHost()
+    {
+        return this.SimpleView(new IndexViewModel());
+    }
 }
