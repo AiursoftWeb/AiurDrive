@@ -30,6 +30,9 @@
   <data name="A complete solution for user authentication and profile management." xml:space="preserve">
     <value>Solusi lengkap untuk otentikasi pengguna dan manajemen profil.</value>
   </data>
+  <data name="A free, flexible file sharing center designed for local deployment." xml:space="preserve">
+    <value>Pusat berbagi file yang gratis dan fleksibel, dirancang untuk penempatan lokal.</value>
+  </data>
   <data name="A fully responsive layout that looks great on both desktop and mobile devices." xml:space="preserve">
     <value>Tata letak yang sepenuhnya responsif dan terlihat bagus di perangkat desktop maupun seluler.</value>
   </data>
@@ -38,6 +41,9 @@
   </data>
   <data name="Achieve more with Aiursoft Template" xml:space="preserve">
     <value>Raih lebih banyak dengan Aiursoft Template</value>
+  </data>
+  <data name="Advanced Privacy &amp; Security" xml:space="preserve">
+    <value>Privasi &amp; Keamanan Lanjutan</value>
   </data>
   <data name="AI-Powered Translations" xml:space="preserve">
     <value>Terjemahan Berbasis AI</value>
@@ -66,6 +72,9 @@
   <data name="Automatic, AI-driven translation into 28 languages." xml:space="preserve">
     <value>Terjemahan otomatis, didorong oleh AI ke dalam 28 bahasa.</value>
   </data>
+  <data name="Automatically clear EXIF metadata from uploaded images to prevent accidental leakage of GPS and device information." xml:space="preserve">
+    <value>Secara otomatis hapus metadata EXIF dari gambar yang diunggah untuk mencegah kebocoran informasi GPS dan perangkat secara tidak sengaja.</value>
+  </data>
   <data name="Background Job Processing" xml:space="preserve">
     <value>Pemrosesan Tugas Latar Belakang</value>
   </data>
@@ -87,6 +96,12 @@
   <data name="Consistency Validation" xml:space="preserve">
     <value>Validasi Konsistensi</value>
   </data>
+  <data name="Control storage consumption with global site capacity limits, featuring real-time usage monitoring." xml:space="preserve">
+    <value>Kendalikan penggunaan penyimpanan dengan batas kapasitas situs global, dilengkapi pemantauan penggunaan secara real-time.</value>
+  </data>
+  <data name="Core Values" xml:space="preserve">
+    <value>Nilai Inti</value>
+  </data>
   <data name="Dashboard Website" xml:space="preserve">
     <value>Situs Web Dashboard</value>
   </data>
@@ -95,6 +110,9 @@
   </data>
   <data name="Discussions page" xml:space="preserve">
     <value>Halaman Diskusi</value>
+  </data>
+  <data name="Dockerized architecture means you can get up and running in seconds. Low maintenance, high reliability." xml:space="preserve">
+    <value>Arsitektur Dockerized berarti Anda bisa langsung berjalan dalam hitungan detik. Perawatan rendah, keandalan tinggi.</value>
   </data>
   <data name="Dockerized for Deployment" xml:space="preserve">
     <value>Terdockerisasi untuk Deployment</value>
@@ -111,8 +129,14 @@
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>Dengan mudah beralih di antara penyedia seperti SQLite, MySQL, SQL Server, dan database dalam memori untuk pengujian.</value>
   </data>
+  <data name="Easy to Deploy" xml:space="preserve">
+    <value>Mudah Dideploy</value>
+  </data>
   <data name="Effortlessly write integration tests using in-memory databases, temporary file systems, built-in mocking, and real-world HTTP request simulation." xml:space="preserve">
     <value>Tulis tes integrasi dengan mudah menggunakan basis data di memori, sistem file sementara, mocking bawaan, dan simulasi permintaan HTTP dunia nyata.</value>
+  </data>
+  <data name="Enter Dashboard" xml:space="preserve">
+    <value>Masuk ke Dasbor</value>
   </data>
   <data name="FAQ" xml:space="preserve">
     <value>FAQ</value>
@@ -129,14 +153,23 @@
   <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
     <value>Fitur sistem manajemen file bawaan dengan kompresi avatar otomatis.</value>
   </data>
+  <data name="Flexible" xml:space="preserve">
+    <value>Fleksibel</value>
+  </data>
   <data name="for any inquiries or to report issues." xml:space="preserve">
     <value>untuk pertanyaan apa pun atau untuk melaporkan masalah.</value>
   </data>
   <data name="Free" xml:space="preserve">
     <value>Gratis</value>
   </data>
+  <data name="Freedom" xml:space="preserve">
+    <value>Kebebasan</value>
+  </data>
   <data name="Frequently asked questions" xml:space="preserve">
     <value>Pertanyaan yang Sering Diajukan</value>
+  </data>
+  <data name="Fully open-source and MIT licensed. No vendor lock-in, no hidden costs. Your server, your rules." xml:space="preserve">
+    <value>Sepenuhnya sumber terbuka dan berlisensi MIT. Tidak ada keterikatan vendor, tidak ada biaya tersembunyi. Server Anda, aturan Anda.</value>
   </data>
   <data name="Go to dashboard" xml:space="preserve">
     <value>Buka dasbor</value>
@@ -174,6 +207,9 @@
   <data name="Join our community and start building today!" xml:space="preserve">
     <value>Bergabunglah dengan komunitas kami dan mulailah membangun hari ini!</value>
   </data>
+  <data name="Join thousands of users who trust AiurDrive for their local file management needs." xml:space="preserve">
+    <value>Gabungkan ribuan pengguna yang mempercayai AiurDrive untuk kebutuhan manajemen file lokal mereka.</value>
+  </data>
   <data name="Markdown To HTML" xml:space="preserve">
     <value>Markdown ke HTML</value>
   </data>
@@ -198,11 +234,26 @@
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>Integrasi OpenID Connect</value>
   </data>
+  <data name="Physically isolated storage modes (Workspace &amp; Vault), automatic image optimization, and robust path traversal protection." xml:space="preserve">
+    <value>Mode penyimpanan terpisah secara fisik (Workspace &amp; Vault), optimasi gambar otomatis, dan perlindungan perjalanan jalur yang kuat.</value>
+  </data>
+  <data name="Powerful" xml:space="preserve">
+    <value>Canggih</value>
+  </data>
+  <data name="Privacy by Default" xml:space="preserve">
+    <value>Privasi Secara Bawaan</value>
+  </data>
+  <data name="Quota Management" xml:space="preserve">
+    <value>Manajemen Kuota</value>
+  </data>
   <data name="RBAC Authorization" xml:space="preserve">
     <value>Otorisasi RBAC</value>
   </data>
   <data name="Read the document" xml:space="preserve">
     <value>Baca dokumen</value>
+  </data>
+  <data name="Ready to own your cloud?" xml:space="preserve">
+    <value>Siap menguasai cloud Anda?</value>
   </data>
   <data name="Responsive Design" xml:space="preserve">
     <value>Desain Responsif</value>
@@ -219,6 +270,15 @@
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Terintegrasi dengan mulus bersama penyedia OpenID Connect apa pun, dengan sinkronisasi peran otomatis.</value>
   </data>
+  <data name="Secure your sensitive documents in an isolated area accessible only via time-limited, cryptographically signed tokens." xml:space="preserve">
+    <value>Simpan dokumen sensitif Anda di area terisolasi yang hanya dapat diakses melalui token yang ditandatangani secara kriptografis dan berlaku selama waktu terbatas.</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Sendiri Host</value>
+  </data>
+  <data name="Self-Hosted" xml:space="preserve">
+    <value>Self-Hosted</value>
+  </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>Opsi Pengaturan Cerdas</value>
   </data>
@@ -231,8 +291,14 @@
   <data name="Start a new project" xml:space="preserve">
     <value>Mulai proyek baru</value>
   </data>
+  <data name="Support for SQLite, MySQL, and SQL Server. Switch between List and Grid views to manage your files comfortably." xml:space="preserve">
+    <value>Dukungan untuk SQLite, MySQL, dan SQL Server. Beralih antara tampilan Daftar dan Grid untuk mengelola file Anda dengan nyaman.</value>
+  </data>
   <data name="Supports both environment variables and database-backed settings, with automatic priority given to environment variables for seamless overrides." xml:space="preserve">
     <value>Mendukung kedua variabel lingkungan dan pengaturan berbasis database, dengan prioritas otomatis diberikan kepada variabel lingkungan untuk pembaruan yang mulus.</value>
+  </data>
+  <data name="Take full control of your data with industry-grade security and modern management features." xml:space="preserve">
+    <value>Ambil kendali penuh atas data Anda dengan keamanan tingkat industri dan fitur manajemen modern.</value>
   </data>
   <data name="Technical Lead" xml:space="preserve">
     <value>Pemimpin Teknis</value>
@@ -243,17 +309,29 @@
   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>Template ini dibangun untuk kemudahan penerapan. Template ini mencakup dukungan Docker penuh, sehingga Anda dapat meng-container-kan aplikasi Anda dan menjalankannya di mana saja. Anda juga dapat menerapkannya langsung ke IIS, Azure App Service, atau server apa pun yang mendukung ASP.NET Core.</value>
   </data>
+  <data name="The ultimate solution for personal and enterprise file distribution." xml:space="preserve">
+    <value>Solusi terbaik untuk distribusi file pribadi dan perusahaan.</value>
+  </data>
   <data name="This is a template project" xml:space="preserve">
     <value>Ini adalah proyek templat</value>
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Ini adalah proyek templat, tempat kami memulai perjalanan...</value>
   </data>
+  <data name="Try our public instance" xml:space="preserve">
+    <value>Coba instance publik kami</value>
+  </data>
   <data name="Usage" xml:space="preserve">
     <value>Penggunaan</value>
   </data>
   <data name="Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless." xml:space="preserve">
     <value>Gunakan sebagai fondasi untuk SaaS Anda, backend untuk aplikasi seluler Anda, situs web perusahaan, atau blog pribadi. Kemungkinannya tidak terbatas.</value>
+  </data>
+  <data name="Vault Storage" xml:space="preserve">
+    <value>Penyimpanan Vault</value>
+  </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>Lihat di GitHub</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Selamat datang</value>
@@ -263,6 +341,9 @@
   </data>
   <data name="What our developers say" xml:space="preserve">
     <value>Apa Kata Developer Kami</value>
+  </data>
+  <data name="Why Choose AiurDrive?" xml:space="preserve">
+    <value>Mengapa Memilih AiurDrive?</value>
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Mengapa Menggunakan Template Aiursoft?</value>
@@ -275,6 +356,9 @@
   </data>
   <data name="You&apos;ll need the .NET 10 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
     <value>Anda akan memerlukan .NET 10 SDK, npm, dan IDE favorit Anda, seperti Visual Studio atau JetBrains Rider. Anda dapat menemukan panduan penyiapan lengkap di dokumentasi kami.</value>
+  </data>
+  <data name="Your Private Cloud" xml:space="preserve">
+    <value>Awan Pribadi Anda</value>
   </data>
 
 </root>

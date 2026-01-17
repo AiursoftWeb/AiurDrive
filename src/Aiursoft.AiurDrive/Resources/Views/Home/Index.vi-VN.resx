@@ -30,6 +30,9 @@
   <data name="A complete solution for user authentication and profile management." xml:space="preserve">
     <value>Một giải pháp toàn diện cho xác thực người dùng và quản lý hồ sơ.</value>
   </data>
+  <data name="A free, flexible file sharing center designed for local deployment." xml:space="preserve">
+    <value>Một trung tâm chia sẻ tệp linh hoạt, miễn phí, được thiết kế cho triển khai cục bộ.</value>
+  </data>
   <data name="A fully responsive layout that looks great on both desktop and mobile devices." xml:space="preserve">
     <value>Bố cục hoàn toàn thích ứng, hiển thị đẹp mắt trên cả thiết bị máy tính để bàn và thiết bị di động.</value>
   </data>
@@ -38,6 +41,9 @@
   </data>
   <data name="Achieve more with Aiursoft Template" xml:space="preserve">
     <value>Đạt được nhiều hơn với Aiursoft Template</value>
+  </data>
+  <data name="Advanced Privacy &amp; Security" xml:space="preserve">
+    <value>Bảo mật và riêng tư nâng cao</value>
   </data>
   <data name="AI-Powered Translations" xml:space="preserve">
     <value>Dịch Thuật Hỗ Trợ Bởi AI</value>
@@ -66,6 +72,9 @@
   <data name="Automatic, AI-driven translation into 28 languages." xml:space="preserve">
     <value>Dịch tự động, được điều khiển bởi AI sang 28 ngôn ngữ.</value>
   </data>
+  <data name="Automatically clear EXIF metadata from uploaded images to prevent accidental leakage of GPS and device information." xml:space="preserve">
+    <value>Tự động xóa dữ liệu EXIF từ các hình ảnh đã tải lên để ngăn rò rỉ vô tình thông tin GPS và thiết bị.</value>
+  </data>
   <data name="Background Job Processing" xml:space="preserve">
     <value>Xử lý công việc nền</value>
   </data>
@@ -87,6 +96,12 @@
   <data name="Consistency Validation" xml:space="preserve">
     <value>Xác thực tính nhất quán</value>
   </data>
+  <data name="Control storage consumption with global site capacity limits, featuring real-time usage monitoring." xml:space="preserve">
+    <value>Kiểm soát việc sử dụng bộ nhớ với giới hạn dung lượng trang web toàn cầu, kèm theo chức năng giám sát sử dụng theo thời gian thực.</value>
+  </data>
+  <data name="Core Values" xml:space="preserve">
+    <value>Giá Trị Cốt Lõi</value>
+  </data>
   <data name="Dashboard Website" xml:space="preserve">
     <value>Trang Tổng quan</value>
   </data>
@@ -95,6 +110,9 @@
   </data>
   <data name="Discussions page" xml:space="preserve">
     <value>Trang Thảo luận</value>
+  </data>
+  <data name="Dockerized architecture means you can get up and running in seconds. Low maintenance, high reliability." xml:space="preserve">
+    <value>Kiến trúc Docker hóa có nghĩa là bạn có thể khởi động và hoạt động trong vài giây. Dễ bảo trì, độ tin cậy cao.</value>
   </data>
   <data name="Dockerized for Deployment" xml:space="preserve">
     <value>Đã được Docker hóa để Triển khai</value>
@@ -111,8 +129,14 @@
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>Dễ dàng chuyển đổi giữa các nhà cung cấp như SQLite, MySQL, SQL Server và cơ sở dữ liệu trong bộ nhớ để kiểm thử.</value>
   </data>
+  <data name="Easy to Deploy" xml:space="preserve">
+    <value>Dễ dàng triển khai</value>
+  </data>
   <data name="Effortlessly write integration tests using in-memory databases, temporary file systems, built-in mocking, and real-world HTTP request simulation." xml:space="preserve">
     <value>Viết các bài kiểm thử tích hợp một cách dễ dàng bằng cách sử dụng cơ sở dữ liệu trong bộ nhớ, hệ thống tệp tạm thời, mô phỏng tích hợp sẵn và mô phỏng yêu cầu HTTP thực tế.</value>
+  </data>
+  <data name="Enter Dashboard" xml:space="preserve">
+    <value>Vào bảng điều khiển</value>
   </data>
   <data name="FAQ" xml:space="preserve">
     <value>Câu hỏi thường gặp</value>
@@ -129,14 +153,23 @@
   <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
     <value>Tích hợp hệ thống quản lý tập tin với tính năng nén ảnh đại diện tự động.</value>
   </data>
+  <data name="Flexible" xml:space="preserve">
+    <value>Linh hoạt</value>
+  </data>
   <data name="for any inquiries or to report issues." xml:space="preserve">
     <value>để có bất kỳ thắc mắc nào hoặc để báo cáo sự cố.</value>
   </data>
   <data name="Free" xml:space="preserve">
     <value>Miễn phí</value>
   </data>
+  <data name="Freedom" xml:space="preserve">
+    <value>Tự do</value>
+  </data>
   <data name="Frequently asked questions" xml:space="preserve">
     <value>Các câu hỏi thường gặp</value>
+  </data>
+  <data name="Fully open-source and MIT licensed. No vendor lock-in, no hidden costs. Your server, your rules." xml:space="preserve">
+    <value>Hoàn toàn mã nguồn mở và cấp phép MIT. Không bị khóa vào nhà cung cấp, không có chi phí ẩn. Máy chủ của bạn, quy tắc của bạn.</value>
   </data>
   <data name="Go to dashboard" xml:space="preserve">
     <value>Truy cập bảng điều khiển</value>
@@ -174,6 +207,9 @@
   <data name="Join our community and start building today!" xml:space="preserve">
     <value>Hãy tham gia cộng đồng của chúng tôi và bắt đầu xây dựng ngay hôm nay!</value>
   </data>
+  <data name="Join thousands of users who trust AiurDrive for their local file management needs." xml:space="preserve">
+    <value>Tham gia hàng ngàn người dùng tin tưởng AiurDrive để quản lý tệp tin cục bộ của họ.</value>
+  </data>
   <data name="Markdown To HTML" xml:space="preserve">
     <value>Chuyển Đổi Markdown Sang HTML</value>
   </data>
@@ -198,11 +234,26 @@
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>Tích hợp OpenID Connect</value>
   </data>
+  <data name="Physically isolated storage modes (Workspace &amp; Vault), automatic image optimization, and robust path traversal protection." xml:space="preserve">
+    <value>Các chế độ lưu trữ tách biệt về mặt vật lý (Workspace &amp; Vault), tối ưu hóa hình ảnh tự động, và bảo vệ chống đi vòng đường dẫn mạnh mẽ.</value>
+  </data>
+  <data name="Powerful" xml:space="preserve">
+    <value>Mạnh mẽ</value>
+  </data>
+  <data name="Privacy by Default" xml:space="preserve">
+    <value>Bảo mật theo mặc định</value>
+  </data>
+  <data name="Quota Management" xml:space="preserve">
+    <value>Quota Management</value>
+  </data>
   <data name="RBAC Authorization" xml:space="preserve">
     <value>Ủy quyền RBAC</value>
   </data>
   <data name="Read the document" xml:space="preserve">
     <value>Đọc tài liệu</value>
+  </data>
+  <data name="Ready to own your cloud?" xml:space="preserve">
+    <value>Sẵn sàng sở hữu đám mây của bạn?</value>
   </data>
   <data name="Responsive Design" xml:space="preserve">
     <value>Thiết kế đáp ứng</value>
@@ -219,6 +270,15 @@
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Tích hợp liền mạch với bất kỳ nhà cung cấp OpenID Connect nào, đồng thời tự động đồng bộ hóa vai trò.</value>
   </data>
+  <data name="Secure your sensitive documents in an isolated area accessible only via time-limited, cryptographically signed tokens." xml:space="preserve">
+    <value>Bảo vệ các tài liệu nhạy cảm của bạn trong một khu vực tách biệt, chỉ có thể truy cập thông qua các token được ký mã hóa và có thời hạn.</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Tự host</value>
+  </data>
+  <data name="Self-Hosted" xml:space="preserve">
+    <value>Tự lưu trữ</value>
+  </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>Ghi đè cấu hình thông minh</value>
   </data>
@@ -231,8 +291,14 @@
   <data name="Start a new project" xml:space="preserve">
     <value>Bắt đầu một dự án mới</value>
   </data>
+  <data name="Support for SQLite, MySQL, and SQL Server. Switch between List and Grid views to manage your files comfortably." xml:space="preserve">
+    <value>Hỗ trợ SQLite, MySQL và SQL Server. Chuyển đổi giữa chế độ danh sách và lưới để quản lý tập tin của bạn một cách thoải mái.</value>
+  </data>
   <data name="Supports both environment variables and database-backed settings, with automatic priority given to environment variables for seamless overrides." xml:space="preserve">
     <value>Hỗ trợ cả biến môi trường và cài đặt dựa trên cơ sở dữ liệu, với ưu tiên tự động cho biến môi trường để ghi đè một cách liền mạch.</value>
+  </data>
+  <data name="Take full control of your data with industry-grade security and modern management features." xml:space="preserve">
+    <value>Thuê trọn vẹn quyền kiểm soát dữ liệu của bạn với bảo mật cấp ngành và các tính năng quản lý hiện đại.</value>
   </data>
   <data name="Technical Lead" xml:space="preserve">
     <value>Trưởng nhóm Kỹ thuật</value>
@@ -243,17 +309,29 @@
   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>Mẫu này được xây dựng để triển khai dễ dàng. Nó bao gồm hỗ trợ Docker đầy đủ, vì vậy bạn có thể đóng gói ứng dụng của mình và chạy nó ở bất cứ đâu. Bạn cũng có thể triển khai trực tiếp lên IIS, Azure App Service hoặc bất kỳ máy chủ nào hỗ trợ ASP.NET Core.</value>
   </data>
+  <data name="The ultimate solution for personal and enterprise file distribution." xml:space="preserve">
+    <value>Giải pháp tối ưu cho việc phân phối tập tin cá nhân và doanh nghiệp.</value>
+  </data>
   <data name="This is a template project" xml:space="preserve">
     <value>Đây là một dự án mẫu</value>
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Đây là một dự án mẫu, nơi chúng ta bắt đầu hành trình khám phá...</value>
   </data>
+  <data name="Try our public instance" xml:space="preserve">
+    <value>Thử phiên bản công khai của chúng tôi</value>
+  </data>
   <data name="Usage" xml:space="preserve">
     <value>Cách sử dụng</value>
   </data>
   <data name="Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless." xml:space="preserve">
     <value>Hãy sử dụng nó làm nền tảng cho SaaS của bạn, backend cho ứng dụng di động, trang web doanh nghiệp, hoặc blog cá nhân. Các khả năng là vô tận.</value>
+  </data>
+  <data name="Vault Storage" xml:space="preserve">
+    <value>Kho lưu trữ Khoá</value>
+  </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>Xem trên GitHub</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Chào mừng</value>
@@ -263,6 +341,9 @@
   </data>
   <data name="What our developers say" xml:space="preserve">
     <value>Những gì nhà phát triển của chúng tôi nói</value>
+  </data>
+  <data name="Why Choose AiurDrive?" xml:space="preserve">
+    <value>Tại sao chọn AiurDrive?</value>
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Tại sao nên sử dụng Mẫu Aiursoft?</value>
@@ -275,6 +356,9 @@
   </data>
   <data name="You&apos;ll need the .NET 10 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
     <value>Bạn sẽ cần .NET 10 SDK, npm và IDE yêu thích của bạn, như Visual Studio hoặc JetBrains Rider. Bạn có thể tìm thấy hướng dẫn thiết lập đầy đủ trong tài liệu của chúng tôi.</value>
+  </data>
+  <data name="Your Private Cloud" xml:space="preserve">
+    <value>Đám mây riêng tư của bạn</value>
   </data>
 
 </root>

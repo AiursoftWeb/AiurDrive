@@ -30,6 +30,9 @@
   <data name="A complete solution for user authentication and profile management." xml:space="preserve">
     <value>A complete solution for user authentication and profile management.</value>
   </data>
+  <data name="A free, flexible file sharing center designed for local deployment." xml:space="preserve">
+    <value>A free, flexible file sharing centre designed for local deployment.</value>
+  </data>
   <data name="A fully responsive layout that looks great on both desktop and mobile devices." xml:space="preserve">
     <value>A fully responsive layout that looks great on both desktop and mobile devices.</value>
   </data>
@@ -38,6 +41,9 @@
   </data>
   <data name="Achieve more with Aiursoft Template" xml:space="preserve">
     <value>Achieve more with Aiursoft Template</value>
+  </data>
+  <data name="Advanced Privacy &amp; Security" xml:space="preserve">
+    <value>Advanced Privacy &amp; Security</value>
   </data>
   <data name="AI-Powered Translations" xml:space="preserve">
     <value>AI-Powered Translations</value>
@@ -66,6 +72,9 @@
   <data name="Automatic, AI-driven translation into 28 languages." xml:space="preserve">
     <value>Automatic, AI-driven translation into 28 languages.</value>
   </data>
+  <data name="Automatically clear EXIF metadata from uploaded images to prevent accidental leakage of GPS and device information." xml:space="preserve">
+    <value>Automatically clear EXIF metadata from uploaded images to prevent accidental leakage of GPS and device information.</value>
+  </data>
   <data name="Background Job Processing" xml:space="preserve">
     <value>Background Job Processing</value>
   </data>
@@ -87,6 +96,12 @@
   <data name="Consistency Validation" xml:space="preserve">
     <value>Consistency Validation</value>
   </data>
+  <data name="Control storage consumption with global site capacity limits, featuring real-time usage monitoring." xml:space="preserve">
+    <value>Control storage consumption with global site capacity limits, featuring real-time usage monitoring.</value>
+  </data>
+  <data name="Core Values" xml:space="preserve">
+    <value>Core Values</value>
+  </data>
   <data name="Dashboard Website" xml:space="preserve">
     <value>Control Panel Website</value>
   </data>
@@ -95,6 +110,9 @@
   </data>
   <data name="Discussions page" xml:space="preserve">
     <value>Discussions page</value>
+  </data>
+  <data name="Dockerized architecture means you can get up and running in seconds. Low maintenance, high reliability." xml:space="preserve">
+    <value>Dockerized architecture means you can get up and running in seconds. Low maintenance, high reliability.</value>
   </data>
   <data name="Dockerized for Deployment" xml:space="preserve">
     <value>Dockerised for Deployment</value>
@@ -111,8 +129,14 @@
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>Easily switch between providers such as SQLite, MySQL, SQL Server, and an in-memory database for testing.</value>
   </data>
+  <data name="Easy to Deploy" xml:space="preserve">
+    <value>Easy to Deploy</value>
+  </data>
   <data name="Effortlessly write integration tests using in-memory databases, temporary file systems, built-in mocking, and real-world HTTP request simulation." xml:space="preserve">
     <value>Effortlessly write integration tests using in-memory databases, temporary file systems, built-in mocking, and real-world HTTP request simulation.</value>
+  </data>
+  <data name="Enter Dashboard" xml:space="preserve">
+    <value>Enter Dashboard</value>
   </data>
   <data name="FAQ" xml:space="preserve">
     <value>Frequently Asked Questions</value>
@@ -129,14 +153,23 @@
   <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
     <value>Features a built-in file management system with automatic profile picture compression.</value>
   </data>
+  <data name="Flexible" xml:space="preserve">
+    <value>Flexible</value>
+  </data>
   <data name="for any inquiries or to report issues." xml:space="preserve">
     <value>for any enquiries or to report issues.</value>
   </data>
   <data name="Free" xml:space="preserve">
     <value>Free</value>
   </data>
+  <data name="Freedom" xml:space="preserve">
+    <value>Freedom</value>
+  </data>
   <data name="Frequently asked questions" xml:space="preserve">
     <value>Frequently asked questions</value>
+  </data>
+  <data name="Fully open-source and MIT licensed. No vendor lock-in, no hidden costs. Your server, your rules." xml:space="preserve">
+    <value>Fully open-source and MIT licensed. No vendor lock-in, no hidden costs. Your server, your rules.</value>
   </data>
   <data name="Go to dashboard" xml:space="preserve">
     <value>Go to dashboard</value>
@@ -174,6 +207,9 @@
   <data name="Join our community and start building today!" xml:space="preserve">
     <value>Join our community and start building today!</value>
   </data>
+  <data name="Join thousands of users who trust AiurDrive for their local file management needs." xml:space="preserve">
+    <value>Join thousands of users who trust AiurDrive for their local file management needs.</value>
+  </data>
   <data name="Markdown To HTML" xml:space="preserve">
     <value>Markdown to HTML</value>
   </data>
@@ -198,11 +234,26 @@
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>OpenID Connect Integration</value>
   </data>
+  <data name="Physically isolated storage modes (Workspace &amp; Vault), automatic image optimization, and robust path traversal protection." xml:space="preserve">
+    <value>Physically isolated storage modes (Workspace &amp; Vault), automatic image optimization, and robust path traversal protection.</value>
+  </data>
+  <data name="Powerful" xml:space="preserve">
+    <value>Powerful</value>
+  </data>
+  <data name="Privacy by Default" xml:space="preserve">
+    <value>Privacy by Default</value>
+  </data>
+  <data name="Quota Management" xml:space="preserve">
+    <value>Quota Management</value>
+  </data>
   <data name="RBAC Authorization" xml:space="preserve">
     <value>RBAC Authorisation</value>
   </data>
   <data name="Read the document" xml:space="preserve">
     <value>Read the documentation</value>
+  </data>
+  <data name="Ready to own your cloud?" xml:space="preserve">
+    <value>Ready to own your cloud?</value>
   </data>
   <data name="Responsive Design" xml:space="preserve">
     <value>Responsive Design</value>
@@ -219,6 +270,15 @@
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Seamlessly integrate with any OpenID Connect provider, with automatic role synchronisation.</value>
   </data>
+  <data name="Secure your sensitive documents in an isolated area accessible only via time-limited, cryptographically signed tokens." xml:space="preserve">
+    <value>Secure your sensitive documents in an isolated area accessible only via time-limited, cryptographically signed tokens.</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Self Host</value>
+  </data>
+  <data name="Self-Hosted" xml:space="preserve">
+    <value>Self-Hosted</value>
+  </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>Smart Configuration Overrides</value>
   </data>
@@ -231,8 +291,14 @@
   <data name="Start a new project" xml:space="preserve">
     <value>Start a new project</value>
   </data>
+  <data name="Support for SQLite, MySQL, and SQL Server. Switch between List and Grid views to manage your files comfortably." xml:space="preserve">
+    <value>Support for SQLite, MySQL, and SQL Server. Switch between List and Grid views to manage your files comfortably.</value>
+  </data>
   <data name="Supports both environment variables and database-backed settings, with automatic priority given to environment variables for seamless overrides." xml:space="preserve">
     <value>Supports both environment variables and database-backed settings, with automatic priority given to environment variables for seamless overrides.</value>
+  </data>
+  <data name="Take full control of your data with industry-grade security and modern management features." xml:space="preserve">
+    <value>Take full control of your data with industry-grade security and modern management features.</value>
   </data>
   <data name="Technical Lead" xml:space="preserve">
     <value>Technical Lead</value>
@@ -243,17 +309,29 @@
   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>The template is designed for straightforward deployment. It includes comprehensive Docker support, allowing you to containerise your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core.</value>
   </data>
+  <data name="The ultimate solution for personal and enterprise file distribution." xml:space="preserve">
+    <value>The ultimate solution for personal and enterprise file distribution.</value>
+  </data>
   <data name="This is a template project" xml:space="preserve">
     <value>This is a template project</value>
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>This is a template project, where we begin the voyage...</value>
   </data>
+  <data name="Try our public instance" xml:space="preserve">
+    <value>Try our public instance</value>
+  </data>
   <data name="Usage" xml:space="preserve">
     <value>Usage</value>
   </data>
   <data name="Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless." xml:space="preserve">
     <value>Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless.</value>
+  </data>
+  <data name="Vault Storage" xml:space="preserve">
+    <value>Vault Storage</value>
+  </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>View on GitHub</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Welcome</value>
@@ -263,6 +341,9 @@
   </data>
   <data name="What our developers say" xml:space="preserve">
     <value>What our developers say</value>
+  </data>
+  <data name="Why Choose AiurDrive?" xml:space="preserve">
+    <value>Why Choose AiurDrive?</value>
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Why use the Aiursoft Template?</value>
@@ -275,6 +356,9 @@
   </data>
   <data name="You&apos;ll need the .NET 10 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
     <value>You&apos;ll need the .NET 10 SDK, npm and your favourite IDE, such as Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation.</value>
+  </data>
+  <data name="Your Private Cloud" xml:space="preserve">
+    <value>Your Private Cloud</value>
   </data>
 
 </root>

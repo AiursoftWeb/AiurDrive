@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Actions" xml:space="preserve">
+    <value>Acciones</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Crear</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Cortar</value>
+  </data>
+  <data name="Date Modified" xml:space="preserve">
+    <value>Fecha de modificación</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="Delete some files to free up space." xml:space="preserve">
+    <value>Elimine algunos archivos para liberar espacio.</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>Archivos</value>
+  </data>
+  <data name="Folder is empty." xml:space="preserve">
+    <value>La carpeta está vacía.</value>
+  </data>
+  <data name="Folder Name" xml:space="preserve">
+    <value>Nombre de carpeta</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="New Folder" xml:space="preserve">
+    <value>Nueva carpeta</value>
+  </data>
+  <data name="New Name" xml:space="preserve">
+    <value>Nuevo nombre</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>Pegar</value>
+  </data>
+  <data name="Private" xml:space="preserve">
+    <value>Privado</value>
+  </data>
+  <data name="Public" xml:space="preserve">
+    <value>Público</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Renombrar</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Tamaño</value>
+  </data>
+  <data name="Storage Full" xml:space="preserve">
+    <value>Almacenamiento completo</value>
+  </data>
+  <data name="Storage Usage" xml:space="preserve">
+    <value>Uso de almacenamiento</value>
+  </data>
+  <data name="Switch to Grid View" xml:space="preserve">
+    <value>Cambiar a vista de cuadrícula</value>
+  </data>
+  <data name="Switch to List View" xml:space="preserve">
+    <value>Cambiar a vista de lista</value>
+  </data>
+  <data name="Toggle View" xml:space="preserve">
+    <value>Alternar vista</value>
+  </data>
+  <data name="Up Level" xml:space="preserve">
+    <value>Nivel superior</value>
+  </data>
+  <data name="Upload File" xml:space="preserve">
+    <value>Subir archivo</value>
+  </data>
+
+</root>

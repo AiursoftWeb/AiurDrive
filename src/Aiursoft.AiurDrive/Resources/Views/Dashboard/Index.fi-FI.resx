@@ -75,6 +75,18 @@
   <data name="Consistency Validation" xml:space="preserve">
     <value>Konsistenssitarkistus</value>
   </data>
+  <data name="Create New Site" xml:space="preserve">
+    <value>Luo uusi sivusto</value>
+  </data>
+  <data name="Created at" xml:space="preserve">
+    <value>Luotu klo</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Ohjainpaneeli</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>Poista sivu</value>
+  </data>
   <data name="Develop exclusively in UTC while the system automatically converts and displays dates in the user&apos;s local time zone." xml:space="preserve">
     <value>Kehitä vain UTC:ssä, kunnes järjestelmä muuntaa ja näyttää päivämäärät käyttäjän paikalliseen aikavyöhön automaattisesti.</value>
   </data>
@@ -114,6 +126,9 @@
   <data name="Integrated File Management" xml:space="preserve">
     <value>Integroitu tiedostonhallinta</value>
   </data>
+  <data name="Limit Reached" xml:space="preserve">
+    <value>Raja saavutettu</value>
+  </data>
   <data name="Models are validated on both client and server sides based on data annotations." xml:space="preserve">
     <value>Mallit tarkistetaan molemmilla puolilla, asiakas- ja palvelinpuolella, tietojen annotaatioiden perusteella.</value>
   </data>
@@ -125,6 +140,12 @@
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>OpenID Connect -integraatio</value>
+  </data>
+  <data name="Private" xml:space="preserve">
+    <value>Yksityinen</value>
+  </data>
+  <data name="Public" xml:space="preserve">
+    <value>Julkinen</value>
   </data>
   <data name="RBAC Authorization" xml:space="preserve">
     <value>RBAC-valtuutus</value>
@@ -143,6 +164,12 @@
   </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Saatonta integrointi minkä tahansa OpenID Connect -palveluntarjoajan kanssa, automaattisella roolisynkronoinnilla.</value>
+  </data>
+  <data name="Sites" xml:space="preserve">
+    <value>Sivut</value>
+  </data>
+  <data name="sites max" xml:space="preserve">
+    <value>sivustoa enintään</value>
   </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>Älykäs asetusten ohittaminen</value>
@@ -170,6 +197,9 @@
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Miksi käyttää Aiursoft Templatea?</value>
+  </data>
+  <data name="You have reached the maximum number of sites." xml:space="preserve">
+    <value>Olet saavuttanut sivustojen maksimimäärän.</value>
   </data>
 
 </root>

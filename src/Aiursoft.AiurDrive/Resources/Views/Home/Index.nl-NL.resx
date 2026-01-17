@@ -30,6 +30,9 @@
   <data name="A complete solution for user authentication and profile management." xml:space="preserve">
     <value>Een complete oplossing voor gebruikersverificatie en profielbeheer.</value>
   </data>
+  <data name="A free, flexible file sharing center designed for local deployment." xml:space="preserve">
+    <value>Een gratis, flexibele centrale voor bestand delen, ontworpen voor lokale implementatie.</value>
+  </data>
   <data name="A fully responsive layout that looks great on both desktop and mobile devices." xml:space="preserve">
     <value>Een volledig responsieve lay-out die er geweldig uitziet op zowel desktop- als mobiele apparaten.</value>
   </data>
@@ -38,6 +41,9 @@
   </data>
   <data name="Achieve more with Aiursoft Template" xml:space="preserve">
     <value>Bereik meer met Aiursoft Template</value>
+  </data>
+  <data name="Advanced Privacy &amp; Security" xml:space="preserve">
+    <value>Geavanceerde Privacy &amp; Beveiliging</value>
   </data>
   <data name="AI-Powered Translations" xml:space="preserve">
     <value>AI-aangedreven vertalingen</value>
@@ -66,6 +72,9 @@
   <data name="Automatic, AI-driven translation into 28 languages." xml:space="preserve">
     <value>Automatische, AI-gevoede vertaling in 28 talen.</value>
   </data>
+  <data name="Automatically clear EXIF metadata from uploaded images to prevent accidental leakage of GPS and device information." xml:space="preserve">
+    <value>EXIF-metadata automatisch verwijderen uit geüploade afbeeldingen om onbedoeld vrijgeven van GPS- en apparaatgegevens te voorkomen.</value>
+  </data>
   <data name="Background Job Processing" xml:space="preserve">
     <value>Achtergrondtaakverwerking</value>
   </data>
@@ -87,6 +96,12 @@
   <data name="Consistency Validation" xml:space="preserve">
     <value>Consistency Validatie</value>
   </data>
+  <data name="Control storage consumption with global site capacity limits, featuring real-time usage monitoring." xml:space="preserve">
+    <value>Beheer de opslagverbruik met globale sitecapaciteitslimieten, inclusief realtime gebruiksgeschiedenis.</value>
+  </data>
+  <data name="Core Values" xml:space="preserve">
+    <value>Kernwaarden</value>
+  </data>
   <data name="Dashboard Website" xml:space="preserve">
     <value>Dashboardwebsite</value>
   </data>
@@ -95,6 +110,9 @@
   </data>
   <data name="Discussions page" xml:space="preserve">
     <value>Discussiespagina</value>
+  </data>
+  <data name="Dockerized architecture means you can get up and running in seconds. Low maintenance, high reliability." xml:space="preserve">
+    <value>Docker-gebaseerde architectuur betekent dat u binnen seconden kunt beginnen. Weinig onderhoud, hoge betrouwbaarheid.</value>
   </data>
   <data name="Dockerized for Deployment" xml:space="preserve">
     <value>Gedockeriseerd voor implementatie</value>
@@ -111,8 +129,14 @@
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>Schakel eenvoudig tussen providers zoals SQLite, MySQL, SQL Server en een in-memory database voor testen.</value>
   </data>
+  <data name="Easy to Deploy" xml:space="preserve">
+    <value>Gemakkelijk te implementeren</value>
+  </data>
   <data name="Effortlessly write integration tests using in-memory databases, temporary file systems, built-in mocking, and real-world HTTP request simulation." xml:space="preserve">
     <value>Schrijf integratietests zonder moeite met in-memory databases, tijdelijke bestandssystemen, ingebouwde mocking en simulatie van werkelijke HTTP-verzoeken.</value>
+  </data>
+  <data name="Enter Dashboard" xml:space="preserve">
+    <value>Dashboard binnenkomen</value>
   </data>
   <data name="FAQ" xml:space="preserve">
     <value>Veelgestelde vragen</value>
@@ -129,14 +153,23 @@
   <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
     <value>Beschikt over een ingebouwd bestandsbeheersysteem met automatische avatarcompressie.</value>
   </data>
+  <data name="Flexible" xml:space="preserve">
+    <value>Flexibel</value>
+  </data>
   <data name="for any inquiries or to report issues." xml:space="preserve">
     <value>voor vragen of om problemen te melden.</value>
   </data>
   <data name="Free" xml:space="preserve">
     <value>Gratis</value>
   </data>
+  <data name="Freedom" xml:space="preserve">
+    <value>Vrijheid</value>
+  </data>
   <data name="Frequently asked questions" xml:space="preserve">
     <value>Veelgestelde vragen</value>
+  </data>
+  <data name="Fully open-source and MIT licensed. No vendor lock-in, no hidden costs. Your server, your rules." xml:space="preserve">
+    <value>Volledig open-source en onder de MIT-licentie. Geen leveranciersbindende afhankelijkheid, geen verborgen kosten. Jouw server, jouw regels.</value>
   </data>
   <data name="Go to dashboard" xml:space="preserve">
     <value>Ga naar dashboard</value>
@@ -174,6 +207,9 @@
   <data name="Join our community and start building today!" xml:space="preserve">
     <value>Word lid van onze community en begin vandaag nog met bouwen!</value>
   </data>
+  <data name="Join thousands of users who trust AiurDrive for their local file management needs." xml:space="preserve">
+    <value>Sluit je aan bij duizenden gebruikers die vertrouwen op AiurDrive voor hun lokale bestandsbeheerbehoeften.</value>
+  </data>
   <data name="Markdown To HTML" xml:space="preserve">
     <value>Markdown naar HTML</value>
   </data>
@@ -198,11 +234,26 @@
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>OpenID Connect-integratie</value>
   </data>
+  <data name="Physically isolated storage modes (Workspace &amp; Vault), automatic image optimization, and robust path traversal protection." xml:space="preserve">
+    <value>Fysiek geïsoleerde opslagmodi (Workspace &amp; Vault), automatische afbeeldingsoptimalisatie en robuuste bescherming tegen padtraversatie</value>
+  </data>
+  <data name="Powerful" xml:space="preserve">
+    <value>Krachtig</value>
+  </data>
+  <data name="Privacy by Default" xml:space="preserve">
+    <value>Privacy by Default</value>
+  </data>
+  <data name="Quota Management" xml:space="preserve">
+    <value>Quota-beheer</value>
+  </data>
   <data name="RBAC Authorization" xml:space="preserve">
     <value>RBAC-autorisatie</value>
   </data>
   <data name="Read the document" xml:space="preserve">
     <value>Lees het document</value>
+  </data>
+  <data name="Ready to own your cloud?" xml:space="preserve">
+    <value>Bereid om je eigen cloud te bezitten?</value>
   </data>
   <data name="Responsive Design" xml:space="preserve">
     <value>Responsief Ontwerp</value>
@@ -219,6 +270,15 @@
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Integreer naadloos met elke OpenID Connect-provider, met automatische rollensynchronisatie.</value>
   </data>
+  <data name="Secure your sensitive documents in an isolated area accessible only via time-limited, cryptographically signed tokens." xml:space="preserve">
+    <value>Bewaar je gevoelige documenten op een afgeschermd gebied dat alleen toegankelijk is via tijdelijke, cryptografisch ondertekende tokens.</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Zelf hosten</value>
+  </data>
+  <data name="Self-Hosted" xml:space="preserve">
+    <value>Zelf-hosten</value>
+  </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>Slimme configuratie-overschrijvingen</value>
   </data>
@@ -231,8 +291,14 @@
   <data name="Start a new project" xml:space="preserve">
     <value>Start een nieuw project</value>
   </data>
+  <data name="Support for SQLite, MySQL, and SQL Server. Switch between List and Grid views to manage your files comfortably." xml:space="preserve">
+    <value>Ondersteuning voor SQLite, MySQL en SQL Server. Wissel tussen lijst- en rasterweergave om uw bestanden comfortabel te beheren.</value>
+  </data>
   <data name="Supports both environment variables and database-backed settings, with automatic priority given to environment variables for seamless overrides." xml:space="preserve">
     <value>Ondersteunt zowel omgevingsvariabelen als database-gebaseerde instellingen, met automatische prioriteit voor omgevingsvariabelen voor naadloze overschrijvingen.</value>
+  </data>
+  <data name="Take full control of your data with industry-grade security and modern management features." xml:space="preserve">
+    <value>Neem volledige controle over uw gegevens met veiligheid op industrieel niveau en moderne beheerfuncties.</value>
   </data>
   <data name="Technical Lead" xml:space="preserve">
     <value>Technisch Leider</value>
@@ -243,17 +309,29 @@
   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>De template is gebouwd voor eenvoudige implementatie. Het bevat volledige Docker-ondersteuning, zodat je je app kunt containeriseren en overal kunt uitvoeren. Je kunt het ook direct implementeren naar IIS, Azure App Service of elke server die ASP.NET Core ondersteunt.</value>
   </data>
+  <data name="The ultimate solution for personal and enterprise file distribution." xml:space="preserve">
+    <value>De ultieme oplossing voor persoonlijke en zakelijke bestandsdistributie.</value>
+  </data>
   <data name="This is a template project" xml:space="preserve">
     <value>Dit is een sjabloonproject</value>
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Dit is een templateproject, waar we de verkenning beginnen...</value>
   </data>
+  <data name="Try our public instance" xml:space="preserve">
+    <value>Probeer onze openbare instantie</value>
+  </data>
   <data name="Usage" xml:space="preserve">
     <value>Gebruik</value>
   </data>
   <data name="Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless." xml:space="preserve">
     <value>Gebruik het als basis voor je SaaS, als backend voor je mobiele app, als bedrijfswebsite of als persoonlijke blog. De mogelijkheden zijn eindeloos.</value>
+  </data>
+  <data name="Vault Storage" xml:space="preserve">
+    <value>Vaultopslag</value>
+  </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>Bekijk op GitHub</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Welkom</value>
@@ -263,6 +341,9 @@
   </data>
   <data name="What our developers say" xml:space="preserve">
     <value>Wat onze ontwikkelaars zeggen</value>
+  </data>
+  <data name="Why Choose AiurDrive?" xml:space="preserve">
+    <value>Waarom AiurDrive kiezen?</value>
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Waarom de Aiursoft Template gebruiken?</value>
@@ -275,6 +356,9 @@
   </data>
   <data name="You&apos;ll need the .NET 10 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
     <value>Je hebt de .NET 10 SDK, npm en je favoriete IDE nodig, zoals Visual Studio of JetBrains Rider. Je kunt de volledige installatiehandleiding in onze documentatie vinden.</value>
+  </data>
+  <data name="Your Private Cloud" xml:space="preserve">
+    <value>Uw Persoonlijke Cloud</value>
   </data>
 
 </root>

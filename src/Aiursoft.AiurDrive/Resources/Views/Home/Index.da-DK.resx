@@ -30,6 +30,9 @@
   <data name="A complete solution for user authentication and profile management." xml:space="preserve">
     <value>En komplet løsning til brugerautentificering og profilhåndtering.</value>
   </data>
+  <data name="A free, flexible file sharing center designed for local deployment." xml:space="preserve">
+    <value>En gratis, fleksibel fildelingscenter designet til lokal installation.</value>
+  </data>
   <data name="A fully responsive layout that looks great on both desktop and mobile devices." xml:space="preserve">
     <value>En fuldt responsiv layout, der ser fantastisk ud på både stationære og mobile enheder.</value>
   </data>
@@ -38,6 +41,9 @@
   </data>
   <data name="Achieve more with Aiursoft Template" xml:space="preserve">
     <value>Opnå mere med Aiursoft Template</value>
+  </data>
+  <data name="Advanced Privacy &amp; Security" xml:space="preserve">
+    <value>Avanceret privatliv &amp; sikkerhed</value>
   </data>
   <data name="AI-Powered Translations" xml:space="preserve">
     <value>AI-drevne oversættelser</value>
@@ -66,6 +72,9 @@
   <data name="Automatic, AI-driven translation into 28 languages." xml:space="preserve">
     <value>Automatisk, AI-drevet oversættelse til 28 sprog.</value>
   </data>
+  <data name="Automatically clear EXIF metadata from uploaded images to prevent accidental leakage of GPS and device information." xml:space="preserve">
+    <value>Rens automatisk EXIF-metadata fra uploadede billeder for at forhindre uheldig afsløring af GPS- og enhedsoplysninger.</value>
+  </data>
   <data name="Background Job Processing" xml:space="preserve">
     <value>Baggrundstaskbehandling</value>
   </data>
@@ -87,6 +96,12 @@
   <data name="Consistency Validation" xml:space="preserve">
     <value>Konsistensvalidering</value>
   </data>
+  <data name="Control storage consumption with global site capacity limits, featuring real-time usage monitoring." xml:space="preserve">
+    <value>Styr lagringsforbrug med globale kapacitetsgrænser for webstedet, med realtidsovervågning af brug.</value>
+  </data>
+  <data name="Core Values" xml:space="preserve">
+    <value>Kerneværdier</value>
+  </data>
   <data name="Dashboard Website" xml:space="preserve">
     <value>Dashboard-websted</value>
   </data>
@@ -95,6 +110,9 @@
   </data>
   <data name="Discussions page" xml:space="preserve">
     <value>Diskussionsside</value>
+  </data>
+  <data name="Dockerized architecture means you can get up and running in seconds. Low maintenance, high reliability." xml:space="preserve">
+    <value>Docker-arkitektur betyder, at du kan være klar til at bruge systemet på sekunder. Lav vedligeholdelse, høj pålidelighed.</value>
   </data>
   <data name="Dockerized for Deployment" xml:space="preserve">
     <value>Dockeriseret til implementering</value>
@@ -111,8 +129,14 @@
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>Skift nemt mellem udbydere som SQLite, MySQL, SQL Server og en hukommelsesdatabase til test.</value>
   </data>
+  <data name="Easy to Deploy" xml:space="preserve">
+    <value>Let bruge nemt</value>
+  </data>
   <data name="Effortlessly write integration tests using in-memory databases, temporary file systems, built-in mocking, and real-world HTTP request simulation." xml:space="preserve">
     <value>Skriv integreringstests let og nemt ved hjælp af i-hukommelsesdatabaser, midlertidige filsystemer, indbygget mockning og simulering af virkelige HTTP-anmodninger.</value>
+  </data>
+  <data name="Enter Dashboard" xml:space="preserve">
+    <value>Gå til instrumentbrættet</value>
   </data>
   <data name="FAQ" xml:space="preserve">
     <value>OFTE STILLEDE SPØRGSMÅL</value>
@@ -129,14 +153,23 @@
   <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
     <value>Har et indbygget filhåndteringssystem med automatisk avatar-komprimering.</value>
   </data>
+  <data name="Flexible" xml:space="preserve">
+    <value>Fleksibel</value>
+  </data>
   <data name="for any inquiries or to report issues." xml:space="preserve">
     <value>for eventuelle henvendelser eller for at rapportere problemer.</value>
   </data>
   <data name="Free" xml:space="preserve">
     <value>Gratis</value>
   </data>
+  <data name="Freedom" xml:space="preserve">
+    <value>Frihed</value>
+  </data>
   <data name="Frequently asked questions" xml:space="preserve">
     <value>Ofte stillede spørgsmål</value>
+  </data>
+  <data name="Fully open-source and MIT licensed. No vendor lock-in, no hidden costs. Your server, your rules." xml:space="preserve">
+    <value>Fuld åben kildekode og MIT licenseret. Ingen leverandørfængsel, ingen skjulte omkostninger. Din server, dine regler.</value>
   </data>
   <data name="Go to dashboard" xml:space="preserve">
     <value>Gå til dashboard</value>
@@ -174,6 +207,9 @@
   <data name="Join our community and start building today!" xml:space="preserve">
     <value>Bliv en del af vores fællesskab og begynd at bygge i dag!</value>
   </data>
+  <data name="Join thousands of users who trust AiurDrive for their local file management needs." xml:space="preserve">
+    <value>Tilslut tusindvis af brugere, der tillid til AiurDrive til deres lokale filhåndtering.</value>
+  </data>
   <data name="Markdown To HTML" xml:space="preserve">
     <value>Markdown til HTML</value>
   </data>
@@ -198,11 +234,26 @@
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>OpenID Connect-integration</value>
   </data>
+  <data name="Physically isolated storage modes (Workspace &amp; Vault), automatic image optimization, and robust path traversal protection." xml:space="preserve">
+    <value>Fysisk isolerede lagringsmodi (Workspace &amp; Vault), automatisk billedoptimering og robust beskyttelse mod sti-traversal</value>
+  </data>
+  <data name="Powerful" xml:space="preserve">
+    <value>Kraftfuld</value>
+  </data>
+  <data name="Privacy by Default" xml:space="preserve">
+    <value>Privatliv ved standard</value>
+  </data>
+  <data name="Quota Management" xml:space="preserve">
+    <value>Kvotehåndtering</value>
+  </data>
   <data name="RBAC Authorization" xml:space="preserve">
     <value>RBAC-godkendelse</value>
   </data>
   <data name="Read the document" xml:space="preserve">
     <value>Læs dokumentationen</value>
+  </data>
+  <data name="Ready to own your cloud?" xml:space="preserve">
+    <value>Klart til at ejer din sky?</value>
   </data>
   <data name="Responsive Design" xml:space="preserve">
     <value>Responsivt Design</value>
@@ -219,6 +270,15 @@
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Integrer problemfrit med enhver OpenID Connect-udbyder med automatisk rolle-synkronisering.</value>
   </data>
+  <data name="Secure your sensitive documents in an isolated area accessible only via time-limited, cryptographically signed tokens." xml:space="preserve">
+    <value>Sikr dine sensible dokumenter i et isoleret område, der kun er tilgængeligt via tidsbegrænsede, kryptografisk signerede token.</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Selvhost</value>
+  </data>
+  <data name="Self-Hosted" xml:space="preserve">
+    <value>Selvhostet</value>
+  </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>Smarte konfigurationsgenveje</value>
   </data>
@@ -231,8 +291,14 @@
   <data name="Start a new project" xml:space="preserve">
     <value>Start et nyt projekt</value>
   </data>
+  <data name="Support for SQLite, MySQL, and SQL Server. Switch between List and Grid views to manage your files comfortably." xml:space="preserve">
+    <value>Støtte til SQLite, MySQL og SQL Server. Skift mellem liste- og gittervisning for at håndtere dine filer bekvemt.</value>
+  </data>
   <data name="Supports both environment variables and database-backed settings, with automatic priority given to environment variables for seamless overrides." xml:space="preserve">
     <value>Støtter både miljøvariabler og databasebaserede indstillinger, med automatisk prioritet til miljøvariabler for smertefri overtagelser.</value>
+  </data>
+  <data name="Take full control of your data with industry-grade security and modern management features." xml:space="preserve">
+    <value>Tag fuld kontrol over dine data med sikkerhed på brancheniveau og moderne administrationsfunktioner.</value>
   </data>
   <data name="Technical Lead" xml:space="preserve">
     <value>Teknisk Lead</value>
@@ -243,17 +309,29 @@
   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>Skabelonen er bygget til nem installation. Den inkluderer fuld Docker-understøttelse, så du kan containerisere din app og køre den hvor som helst. Du kan også installere den direkte på IIS, Azure App Service eller enhver server, der understøtter ASP.NET Core.</value>
   </data>
+  <data name="The ultimate solution for personal and enterprise file distribution." xml:space="preserve">
+    <value>Den ultimative løsning til personlig og virksomhedsvis fildistribution.</value>
+  </data>
   <data name="This is a template project" xml:space="preserve">
     <value>Dette er et skabelonprojekt</value>
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Dette er et skabelonprojekt, hvor vi starter rejsen...</value>
   </data>
+  <data name="Try our public instance" xml:space="preserve">
+    <value>Prøv vores offentlige instans</value>
+  </data>
   <data name="Usage" xml:space="preserve">
     <value>Brug</value>
   </data>
   <data name="Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless." xml:space="preserve">
     <value>Brug den som fundament for din SaaS, som backend til din mobilapp, en virksomhedshjemmeside eller en personlig blog. Mulighederne er uendelige.</value>
+  </data>
+  <data name="Vault Storage" xml:space="preserve">
+    <value>Vault-lager</value>
+  </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>Se på GitHub</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Velkommen</value>
@@ -263,6 +341,9 @@
   </data>
   <data name="What our developers say" xml:space="preserve">
     <value>Hvad vores udviklere siger</value>
+  </data>
+  <data name="Why Choose AiurDrive?" xml:space="preserve">
+    <value>Hvorfor vælge AiurDrive?</value>
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Hvorfor bruge Aiursoft Template?</value>
@@ -275,6 +356,9 @@
   </data>
   <data name="You&apos;ll need the .NET 10 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
     <value>Du skal bruge .NET 10 SDK, npm og din foretrukne IDE, som f.eks. Visual Studio eller JetBrains Rider. Du kan finde den fulde opsætningsvejledning i vores dokumentation.</value>
+  </data>
+  <data name="Your Private Cloud" xml:space="preserve">
+    <value>Din private cloud</value>
   </data>
 
 </root>

@@ -30,6 +30,9 @@
   <data name="A complete solution for user authentication and profile management." xml:space="preserve">
     <value>Μια πλήρης λύση για την πιστοποίηση χρηστών και τη διαχείριση προφίλ.</value>
   </data>
+  <data name="A free, flexible file sharing center designed for local deployment." xml:space="preserve">
+    <value>Ένας δωρεάν, ευέλικτος κέντρος μορφής αρχείων που σχεδιάστηκε για τοπική εγκατάσταση.</value>
+  </data>
   <data name="A fully responsive layout that looks great on both desktop and mobile devices." xml:space="preserve">
     <value>Μια πλήρως ανταποκρινόμενη διάταξη που φαίνεται εξαιρετική τόσο σε επιτραπέζιους υπολογιστές όσο και σε κινητές συσκευές.</value>
   </data>
@@ -38,6 +41,9 @@
   </data>
   <data name="Achieve more with Aiursoft Template" xml:space="preserve">
     <value>Κερδίστε περισσότερα με το Aiursoft Template</value>
+  </data>
+  <data name="Advanced Privacy &amp; Security" xml:space="preserve">
+    <value>Προχωρημένη Ασφάλεια και Προστασία Ιδιωτικότητας</value>
   </data>
   <data name="AI-Powered Translations" xml:space="preserve">
     <value>Μεταφράσεις με Τεχνητή Νοημοσύνη</value>
@@ -66,6 +72,9 @@
   <data name="Automatic, AI-driven translation into 28 languages." xml:space="preserve">
     <value>Αυτόματη, AI-οδηγούμενη μετάφραση σε 28 γλώσσες.</value>
   </data>
+  <data name="Automatically clear EXIF metadata from uploaded images to prevent accidental leakage of GPS and device information." xml:space="preserve">
+    <value>Αυτόματη διαγραφή των μεταδεδομένων EXIF από τις μεταφορτωμένες εικόνες για να αποτραπεί η ακούσια διαρροή πληροφοριών GPS και συσκευής.</value>
+  </data>
   <data name="Background Job Processing" xml:space="preserve">
     <value>Επεξεργασία Υπόβαθρο Εργασίας</value>
   </data>
@@ -87,6 +96,12 @@
   <data name="Consistency Validation" xml:space="preserve">
     <value>Έλεγχος Συνοχής</value>
   </data>
+  <data name="Control storage consumption with global site capacity limits, featuring real-time usage monitoring." xml:space="preserve">
+    <value>Ελέγξτε την κατανάλωση αποθήκευσης με παγκόσμια όρια χωρητικότητας ιστότοπου, με πραγματικό χρόνο παρακολούθηση χρήσης.</value>
+  </data>
+  <data name="Core Values" xml:space="preserve">
+    <value>Κύριε Αξίες</value>
+  </data>
   <data name="Dashboard Website" xml:space="preserve">
     <value>Ιστοσελίδα Πίνακα Ελέγχου</value>
   </data>
@@ -95,6 +110,9 @@
   </data>
   <data name="Discussions page" xml:space="preserve">
     <value>Σελίδα Συζητήσεων</value>
+  </data>
+  <data name="Dockerized architecture means you can get up and running in seconds. Low maintenance, high reliability." xml:space="preserve">
+    <value>Η δοκιμασμένη αρχιτεκτονική σημαίνει ότι μπορείτε να είστε έτοιμοι σε δευτερόλεπτα. Χαμηλή συντήρηση, υψηλή εμπιστοσύνη.</value>
   </data>
   <data name="Dockerized for Deployment" xml:space="preserve">
     <value>Σε Docker για Ανάπτυξη</value>
@@ -111,8 +129,14 @@
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>Εύκολη εναλλαγή μεταξύ παρόχων όπως SQLite, MySQL, SQL Server και μιας βάσης δεδομένων στη μνήμη για δοκιμές.</value>
   </data>
+  <data name="Easy to Deploy" xml:space="preserve">
+    <value>Εύκολη Εγκατάσταση</value>
+  </data>
   <data name="Effortlessly write integration tests using in-memory databases, temporary file systems, built-in mocking, and real-world HTTP request simulation." xml:space="preserve">
     <value>Εύκολα γράψτε δοκιμές ενοποίησης χρησιμοποιώντας βάσεις δεδομένων στη μνήμη, προσωρινά συστήματα αρχείων, ενσωματωμένη μοκινγκ και πραγματικές εξελίξεις HTTP αιτήσεων.</value>
+  </data>
+  <data name="Enter Dashboard" xml:space="preserve">
+    <value>Εισέλθετε στον Πίνακα Ελέγχου</value>
   </data>
   <data name="FAQ" xml:space="preserve">
     <value>Συχνές Ερωτήσεις</value>
@@ -129,14 +153,23 @@
   <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
     <value>Διαθέτει ενσωματωμένο σύστημα διαχείρισης αρχείων με αυτόματη συμπίεση avatar.</value>
   </data>
+  <data name="Flexible" xml:space="preserve">
+    <value>Ευέλικτο</value>
+  </data>
   <data name="for any inquiries or to report issues." xml:space="preserve">
     <value>για οποιαδήποτε ερώτηση ή για να αναφέρετε προβλήματα.</value>
   </data>
   <data name="Free" xml:space="preserve">
     <value>Δωρεάν</value>
   </data>
+  <data name="Freedom" xml:space="preserve">
+    <value>Ελευθερία</value>
+  </data>
   <data name="Frequently asked questions" xml:space="preserve">
     <value>Συχνές ερωτήσεις</value>
+  </data>
+  <data name="Fully open-source and MIT licensed. No vendor lock-in, no hidden costs. Your server, your rules." xml:space="preserve">
+    <value>Πλήρως ανοιχτού κώδικα και άδεια MIT. Κανένας εξαρτημένος προμηθευτής, κανένα κρυφό κόστος. Ο δικός σας διακομιστής, οι δικοί σας κανόνες.</value>
   </data>
   <data name="Go to dashboard" xml:space="preserve">
     <value>Μετάβαση στον πίνακα ελέγχου</value>
@@ -174,6 +207,9 @@
   <data name="Join our community and start building today!" xml:space="preserve">
     <value>Γίνετε μέλος της κοινότητάς μας και ξεκινήστε να χτίζετε σήμερα!</value>
   </data>
+  <data name="Join thousands of users who trust AiurDrive for their local file management needs." xml:space="preserve">
+    <value>Συνδεθείτε με χιλιάδες χρήστες που εμπιστεύονται το AiurDrive για τις ανάγκες διαχείρισης των τοπικών αρχείων τους.</value>
+  </data>
   <data name="Markdown To HTML" xml:space="preserve">
     <value>Markdown σε HTML</value>
   </data>
@@ -198,11 +234,26 @@
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>Ενσωμάτωση OpenID Connect</value>
   </data>
+  <data name="Physically isolated storage modes (Workspace &amp; Vault), automatic image optimization, and robust path traversal protection." xml:space="preserve">
+    <value>Φυσικά απομονωμένες λειτουργίες αποθήκευσης (Workspace &amp; Vault), αυτόματη βελτιστοποίηση εικόνας και ισχυρή προστασία από εξαπάτηση διαδρομής</value>
+  </data>
+  <data name="Powerful" xml:space="preserve">
+    <value>Ισχυρός</value>
+  </data>
+  <data name="Privacy by Default" xml:space="preserve">
+    <value>Προστασία ιδιωτικότητας προεπιλογή</value>
+  </data>
+  <data name="Quota Management" xml:space="preserve">
+    <value>Διαχείριση Χωρητικότητας</value>
+  </data>
   <data name="RBAC Authorization" xml:space="preserve">
     <value>Εξουσιοδότηση RBAC</value>
   </data>
   <data name="Read the document" xml:space="preserve">
     <value>Διαβάστε το έγγραφο</value>
+  </data>
+  <data name="Ready to own your cloud?" xml:space="preserve">
+    <value>Έτοιμοι να κατακτήσετε το δικό σας νέφος;</value>
   </data>
   <data name="Responsive Design" xml:space="preserve">
     <value>Αποκρισιμό Σχεδιασμό</value>
@@ -219,6 +270,15 @@
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Απολαύστε απρόσκοπτη ενσωμάτωση με οποιονδήποτε πάροχο OpenID Connect, με αυτόματο συγχρονισμό ρόλων.</value>
   </data>
+  <data name="Secure your sensitive documents in an isolated area accessible only via time-limited, cryptographically signed tokens." xml:space="preserve">
+    <value>Ασφαλίστε τα ευαίσθητα έγγραφά σας σε ένα απομονωμένο περιβάλλον προσβάσιμο μόνο μέσω περιορισμένου χρόνου, κρυπτογραφικά υπογεγραμμένων τόκεν.</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Αυτοδιαχείριση</value>
+  </data>
+  <data name="Self-Hosted" xml:space="preserve">
+    <value>Εγκατεστημένο από τον χρήστη</value>
+  </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>Έξυπνες Υπερκαλύψεις Ρυθμίσεων</value>
   </data>
@@ -231,8 +291,14 @@
   <data name="Start a new project" xml:space="preserve">
     <value>Ξεκινήστε ένα νέο έργο</value>
   </data>
+  <data name="Support for SQLite, MySQL, and SQL Server. Switch between List and Grid views to manage your files comfortably." xml:space="preserve">
+    <value>Υποστήριξη για SQLite, MySQL και SQL Server. Μεταβείτε ανάμεσα στις προβολές Λίστας και Δικτύου για να διαχειρίζεστε τα αρχεία σας άνετα.</value>
+  </data>
   <data name="Supports both environment variables and database-backed settings, with automatic priority given to environment variables for seamless overrides." xml:space="preserve">
     <value>Υποστηρίζει και τις δύο μεταβλητές περιβάλλοντος και ρυθμίσεις που βασίζονται σε βάση δεδομένων, με αυτόματη προτεραιότητα προς τις μεταβλητές περιβάλλοντος για ομαλή αντικατάσταση.</value>
+  </data>
+  <data name="Take full control of your data with industry-grade security and modern management features." xml:space="preserve">
+    <value>Πάρτε πλήρη έλεγχο των δεδομένων σας με ασφάλεια επιπέδου βιομηχανίας και σύγχρονες δυνατότητες διαχείρισης.</value>
   </data>
   <data name="Technical Lead" xml:space="preserve">
     <value>Τεχνικός Υπεύθυνος</value>
@@ -243,17 +309,29 @@
   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>Το πρότυπο είναι κατασκευασμένο για εύκολη ανάπτυξη. Περιλαμβάνει πλήρη υποστήριξη Docker, ώστε να μπορείτε να συσκευάσετε την εφαρμογή σας σε containers και να την εκτελέσετε οπουδήποτε. Μπορείτε επίσης να την αναπτύξετε απευθείας στο IIS, στο Azure App Service ή σε οποιονδήποτε διακομιστή που υποστηρίζει ASP.NET Core.</value>
   </data>
+  <data name="The ultimate solution for personal and enterprise file distribution." xml:space="preserve">
+    <value>Η τελειοποιημένη λύση για τη διανομή αρχείων για προσωπική και επιχειρησιακή χρήση.</value>
+  </data>
   <data name="This is a template project" xml:space="preserve">
     <value>Αυτό είναι ένα πρότυπο έργο</value>
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Αυτό είναι ένα πρότυπο έργο, από όπου ξεκινάμε το ταξίδι...</value>
   </data>
+  <data name="Try our public instance" xml:space="preserve">
+    <value>Δοκιμάστε τη δημόσια μας εκτέλεση</value>
+  </data>
   <data name="Usage" xml:space="preserve">
     <value>Χρήση</value>
   </data>
   <data name="Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless." xml:space="preserve">
     <value>Χρησιμοποιήστε το ως θεμέλιο για το SaaS σας, ως backend για την εφαρμογή του κινητού σας, ως εταιρική ιστοσελίδα ή ως προσωπικό ιστολόγιο. Οι δυνατότητες είναι ατελείωτες.</value>
+  </data>
+  <data name="Vault Storage" xml:space="preserve">
+    <value>Αποθήκευση Ασφαλείας</value>
+  </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>Προβολή στο GitHub</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Καλώς ήρθατε</value>
@@ -263,6 +341,9 @@
   </data>
   <data name="What our developers say" xml:space="preserve">
     <value>Τι λένε οι προγραμματιστές μας</value>
+  </data>
+  <data name="Why Choose AiurDrive?" xml:space="preserve">
+    <value>Γιατί να επιλέξετε το AiurDrive;</value>
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Γιατί να χρησιμοποιήσετε το Πρότυπο Aiursoft;</value>
@@ -275,6 +356,9 @@
   </data>
   <data name="You&apos;ll need the .NET 10 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
     <value>Θα χρειαστείτε το .NET 10 SDK, το npm και το αγαπημένο σας περιβάλλον ανάπτυξης (IDE), όπως το Visual Studio ή το JetBrains Rider. Μπορείτε να βρείτε τον πλήρη οδηγό ρύθμισης στην τεκμηρίωσή μας.</value>
+  </data>
+  <data name="Your Private Cloud" xml:space="preserve">
+    <value>Το Προσωπικό Σύννεφό σας</value>
   </data>
 
 </root>

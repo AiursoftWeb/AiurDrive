@@ -75,6 +75,18 @@
   <data name="Consistency Validation" xml:space="preserve">
     <value>일관성 검증</value>
   </data>
+  <data name="Create New Site" xml:space="preserve">
+    <value>새 사이트 만들기</value>
+  </data>
+  <data name="Created at" xml:space="preserve">
+    <value>생성일시</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>대시보드</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>사이트 삭제</value>
+  </data>
   <data name="Develop exclusively in UTC while the system automatically converts and displays dates in the user&apos;s local time zone." xml:space="preserve">
     <value>UTC에서만 개발하고 시스템이 사용자의 로컬 시간대에 맞게 날짜를 자동으로 변환하여 표시합니다.</value>
   </data>
@@ -114,6 +126,9 @@
   <data name="Integrated File Management" xml:space="preserve">
     <value>통합 파일 관리</value>
   </data>
+  <data name="Limit Reached" xml:space="preserve">
+    <value>한도 도달</value>
+  </data>
   <data name="Models are validated on both client and server sides based on data annotations." xml:space="preserve">
     <value>모델은 데이터 주석에 기반하여 클라이언트 및 서버 양쪽에서 검증됩니다.</value>
   </data>
@@ -125,6 +140,12 @@
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>OpenID Connect 연동</value>
+  </data>
+  <data name="Private" xml:space="preserve">
+    <value>비공개</value>
+  </data>
+  <data name="Public" xml:space="preserve">
+    <value>공개</value>
   </data>
   <data name="RBAC Authorization" xml:space="preserve">
     <value>RBAC 인증</value>
@@ -143,6 +164,12 @@
   </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>어떤 OpenID Connect 공급자와도 원활하게 통합되며, 자동 역할 동기화를 지원합니다.</value>
+  </data>
+  <data name="Sites" xml:space="preserve">
+    <value>사이트</value>
+  </data>
+  <data name="sites max" xml:space="preserve">
+    <value>사이트 최대 수</value>
   </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>스마트 설정 오버라이드</value>
@@ -170,6 +197,9 @@
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Aiursoft 템플릿을 사용하는 이유는 무엇인가요?</value>
+  </data>
+  <data name="You have reached the maximum number of sites." xml:space="preserve">
+    <value>사이트 수의 최대치에 도달했습니다.</value>
   </data>
 
 </root>

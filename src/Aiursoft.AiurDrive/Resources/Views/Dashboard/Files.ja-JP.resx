@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Actions" xml:space="preserve">
+    <value>操作</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>作成</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>カット</value>
+  </data>
+  <data name="Date Modified" xml:space="preserve">
+    <value>日付が変更されました</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="Delete some files to free up space." xml:space="preserve">
+    <value>スペースを空けるために、いくつかのファイルを削除してください。</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>ファイル</value>
+  </data>
+  <data name="Folder is empty." xml:space="preserve">
+    <value>フォルダーは空です。</value>
+  </data>
+  <data name="Folder Name" xml:space="preserve">
+    <value>フォルダ名</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名前</value>
+  </data>
+  <data name="New Folder" xml:space="preserve">
+    <value>新しいフォルダー</value>
+  </data>
+  <data name="New Name" xml:space="preserve">
+    <value>新しい名前</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>貼り付け</value>
+  </data>
+  <data name="Private" xml:space="preserve">
+    <value>プライベート</value>
+  </data>
+  <data name="Public" xml:space="preserve">
+    <value>パブリック</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>名前の変更</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>サイズ</value>
+  </data>
+  <data name="Storage Full" xml:space="preserve">
+    <value>ストレージが満杯です</value>
+  </data>
+  <data name="Storage Usage" xml:space="preserve">
+    <value>ストレージ使用量</value>
+  </data>
+  <data name="Switch to Grid View" xml:space="preserve">
+    <value>グリッド表示に切り替え</value>
+  </data>
+  <data name="Switch to List View" xml:space="preserve">
+    <value>リスト表示に切り替え</value>
+  </data>
+  <data name="Toggle View" xml:space="preserve">
+    <value>ビューの切り替え</value>
+  </data>
+  <data name="Up Level" xml:space="preserve">
+    <value>上位レベル</value>
+  </data>
+  <data name="Upload File" xml:space="preserve">
+    <value>ファイルをアップロード</value>
+  </data>
+
+</root>
