@@ -1,4 +1,4 @@
-# AiurDrive - A sample project
+# AiurDrive
 
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://gitlab.aiursoft.com/aiursoft/aiurDrive/-/blob/master/LICENSE)
 [![Pipeline stat](https://gitlab.aiursoft.com/aiursoft/aiurDrive/badges/master/pipeline.svg)](https://gitlab.aiursoft.com/aiursoft/aiurDrive/-/pipelines)
