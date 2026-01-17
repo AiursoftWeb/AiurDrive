@@ -1,0 +1,24 @@
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+
+namespace Aiursoft.AiurDrive.Views.Shared.Components.FileUpload;
+
+public class FileUpload : ViewComponent
+{
+    public IViewComponentResult Invoke(
+        ModelExpression aspFor,
+        string uploadEndpoint,
+        int maxSizeInMb = 2000,
+        string? allowedExtensions = null,
+        bool isVault = false)
+    {
+        return View(new FileUploadViewModel
+        {
+            AspFor = aspFor,
+            UploadEndpoint = uploadEndpoint,
+            MaxSizeInMb = maxSizeInMb,
+            AllowedExtensions = allowedExtensions,
+            IsVault = isVault
+        });
+    }
+}
