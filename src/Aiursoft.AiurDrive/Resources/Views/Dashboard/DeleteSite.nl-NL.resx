@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Are you sure?" xml:space="preserve">
+    <value>Weet je zeker?</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Annuleren</value>
+  </data>
+  <data name="Creation Time" xml:space="preserve">
+    <value>Aanmaaktijd</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>Site verwijderen</value>
+  </data>
+  <data name="Site Name" xml:space="preserve">
+    <value>Site naam</value>
+  </data>
+  <data name="This action is irreversible. You are about to permanently delete the following site:" xml:space="preserve">
+    <value>Deze actie is onomkeerbaar. U staat op het punt de volgende site permanent te verwijderen:</value>
+  </data>
+  <data name="Yes, delete this site" xml:space="preserve">
+    <value>Ja, verwijder deze site</value>
+  </data>
+
+</root>

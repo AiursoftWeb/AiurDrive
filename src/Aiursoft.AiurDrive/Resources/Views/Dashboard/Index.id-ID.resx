@@ -75,6 +75,18 @@
   <data name="Consistency Validation" xml:space="preserve">
     <value>Validasi Konsistensi</value>
   </data>
+  <data name="Create New Site" xml:space="preserve">
+    <value>Buat Situs Baru</value>
+  </data>
+  <data name="Created at" xml:space="preserve">
+    <value>Dibuat pada</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Dasbor</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>Hapus Situs</value>
+  </data>
   <data name="Develop exclusively in UTC while the system automatically converts and displays dates in the user&apos;s local time zone." xml:space="preserve">
     <value>Kembangkan secara eksklusif dalam UTC sementara sistem secara otomatis mengonversi dan menampilkan tanggal dalam zona waktu lokal pengguna.</value>
   </data>
@@ -114,6 +126,9 @@
   <data name="Integrated File Management" xml:space="preserve">
     <value>Manajemen File Terintegrasi</value>
   </data>
+  <data name="Limit Reached" xml:space="preserve">
+    <value>Batas Tercapai</value>
+  </data>
   <data name="Models are validated on both client and server sides based on data annotations." xml:space="preserve">
     <value>Model divalidasi di sisi klien dan server berdasarkan anotasi data.</value>
   </data>
@@ -125,6 +140,12 @@
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>Integrasi OpenID Connect</value>
+  </data>
+  <data name="Private" xml:space="preserve">
+    <value>Pribadi</value>
+  </data>
+  <data name="Public" xml:space="preserve">
+    <value>Publik</value>
   </data>
   <data name="RBAC Authorization" xml:space="preserve">
     <value>Otorisasi RBAC</value>
@@ -143,6 +164,12 @@
   </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Terintegrasi dengan mulus bersama penyedia OpenID Connect apa pun, dengan sinkronisasi peran otomatis.</value>
+  </data>
+  <data name="Sites" xml:space="preserve">
+    <value>Situs</value>
+  </data>
+  <data name="sites max" xml:space="preserve">
+    <value>situs maks</value>
   </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>Penggantian Konfigurasi Cerdas</value>
@@ -170,6 +197,9 @@
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Menggunakan Template Aiursoft?</value>
+  </data>
+  <data name="You have reached the maximum number of sites." xml:space="preserve">
+    <value>Anda telah mencapai jumlah maksimum situs.</value>
   </data>
 
 </root>

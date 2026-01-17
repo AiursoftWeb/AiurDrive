@@ -1,53 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <root>
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:element name="root" msdata:IsDataSet="true">
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>1.3</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <data name="Open Source" xml:space="preserve">
-    <value>开源</value>
-  </data>
-  <data name="Self-Hosted" xml:space="preserve">
-    <value>私有化部署</value>
-  </data>
-  <data name="MIT Licence" xml:space="preserve">
-    <value>MIT 许可证</value>
-  </data>
-  <data name="Your Private Cloud" xml:space="preserve">
-    <value>您的私有云</value>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="A free, flexible file sharing center designed for local deployment." xml:space="preserve">
+    <value>一个免费、灵活的文件共享中心，专为本地部署而设计。</value>
   </data>
   <data name="A free, powerful, and flexible file sharing center designed for local deployment." xml:space="preserve">
     <value>一个免费、强大且灵活的文件共享中心，专为本地部署而设计。</value>
   </data>
-  <data name="Take full control of your data with industry-grade security and modern management features." xml:space="preserve">
-    <value>凭借工业级的安全性和现代化的管理功能，完全掌控您的数据。</value>
+  <data name="Advanced Privacy &amp; Security" xml:space="preserve">
+    <value>高级隐私与安全</value>
   </data>
-  <data name="Get Started" xml:space="preserve">
-    <value>立即开始</value>
+  <data name="Automatically clear EXIF metadata from uploaded images to prevent accidental leakage of GPS and device information." xml:space="preserve">
+    <value>自动清除上传图像中的 EXIF 元数据，防止 GPS 和设备信息意外泄露。</value>
   </data>
-  <data name="View on GitHub" xml:space="preserve">
-    <value>在 GitHub 上查看</value>
+  <data name="Control storage consumption with global site capacity limits, featuring real-time usage monitoring." xml:space="preserve">
+    <value>通过全局站点容量限制控制存储消耗，具有实时使用情况监控功能。</value>
   </data>
   <data name="Core Values" xml:space="preserve">
     <value>核心价值</value>
   </data>
-  <data name="Why Choose AiurDrive?" xml:space="preserve">
-    <value>为什么选择 AiurDrive？</value>
+  <data name="Dockerized architecture means you can get up and running in seconds. Low maintenance, high reliability." xml:space="preserve">
+    <value>容器化架构意味着您可以在几秒钟内启动并运行。低维护，高可靠。</value>
   </data>
-  <data name="The ultimate solution for personal and enterprise file distribution." xml:space="preserve">
-    <value>个人和企业文件分发的终极解决方案。</value>
+  <data name="Easy to Deploy" xml:space="preserve">
+    <value>方便部署</value>
+  </data>
+  <data name="Enter Dashboard" xml:space="preserve">
+    <value>进入控制面板</value>
+  </data>
+  <data name="Flexible" xml:space="preserve">
+    <value>灵活</value>
   </data>
   <data name="Freedom" xml:space="preserve">
     <value>自由</value>
@@ -55,58 +54,65 @@
   <data name="Fully open-source and MIT licensed. No vendor lock-in, no hidden costs. Your server, your rules." xml:space="preserve">
     <value>完全开源并采用 MIT 许可。无供应商锁定，无隐藏成本。您的服务器，您的规则。</value>
   </data>
-  <data name="Powerful" xml:space="preserve">
-    <value>强大</value>
-  </data>
-  <data name="Physically isolated storage modes (Workspace &amp; Vault), automatic image optimization, and robust path traversal protection." xml:space="preserve">
-    <value>物理隔离的存储模式（Workspace &amp; Vault）、自动图像优化和强大的路径遍历保护。</value>
-  </data>
-  <data name="Flexible" xml:space="preserve">
-    <value>灵活</value>
-  </data>
-  <data name="Support for SQLite, MySQL, and SQL Server. Switch between List and Grid views to manage your files comfortably." xml:space="preserve">
-    <value>支持 SQLite、MySQL 和 SQL Server。在列表和网格视图之间切换，舒适地管理您的文件。</value>
-  </data>
-  <data name="Easy to Deploy" xml:space="preserve">
-    <value>方便部署</value>
-  </data>
-  <data name="Dockerized architecture means you can get up and running in seconds. Low maintenance, high reliability." xml:space="preserve">
-    <value>容器化架构意味着您可以在几秒钟内启动并运行。低维护，高可靠。</value>
-  </data>
-  <data name="Advanced Privacy &amp; Security" xml:space="preserve">
-    <value>高级隐私与安全</value>
-  </data>
-  <data name="Vault Storage" xml:space="preserve">
-    <value>保险库存储</value>
-  </data>
-  <data name="Secure your sensitive documents in an isolated area accessible only via time-limited, cryptographically signed tokens." xml:space="preserve">
-    <value>将您的敏感文档存储在隔离区域中，仅可通过限时的、经过加密签名的令牌访问。</value>
-  </data>
-  <data name="Privacy by Default" xml:space="preserve">
-    <value>默认隐私保护</value>
-  </data>
-  <data name="Automatically clear EXIF metadata from uploaded images to prevent accidental leakage of GPS and device information." xml:space="preserve">
-    <value>自动清除上传图像中的 EXIF 元数据，防止 GPS 和设备信息意外泄露。</value>
-  </data>
-  <data name="Quota Management" xml:space="preserve">
-    <value>配额管理</value>
-  </data>
-  <data name="Control storage consumption with global site capacity limits, featuring real-time usage monitoring." xml:space="preserve">
-    <value>通过全局站点容量限制控制存储消耗，具有实时使用情况监控功能。</value>
-  </data>
-  <data name="Ready to own your cloud?" xml:space="preserve">
-    <value>准备好拥有您自己的云了吗？</value>
+  <data name="Get Started" xml:space="preserve">
+    <value>立即开始</value>
   </data>
   <data name="Join thousands of users who trust AiurDrive for their local file management needs." xml:space="preserve">
     <value>加入成千上万信任 AiurDrive 处理本地文件管理需求的用户行列。</value>
   </data>
-  <data name="Enter Dashboard" xml:space="preserve">
-    <value>进入控制面板</value>
+  <data name="MIT Licence" xml:space="preserve">
+    <value>MIT 许可证</value>
   </data>
-  <data name="Try our public instance" xml:space="preserve">
-    <value>尝试我们的公共实例</value>
+  <data name="Open Source" xml:space="preserve">
+    <value>开源</value>
+  </data>
+  <data name="Physically isolated storage modes (Workspace &amp; Vault), automatic image optimization, and robust path traversal protection." xml:space="preserve">
+    <value>物理隔离的存储模式（Workspace &amp; Vault）、自动图像优化和强大的路径遍历保护。</value>
+  </data>
+  <data name="Powerful" xml:space="preserve">
+    <value>强大</value>
+  </data>
+  <data name="Privacy by Default" xml:space="preserve">
+    <value>默认隐私保护</value>
+  </data>
+  <data name="Quota Management" xml:space="preserve">
+    <value>配额管理</value>
+  </data>
+  <data name="Ready to own your cloud?" xml:space="preserve">
+    <value>准备好拥有您自己的云了吗？</value>
+  </data>
+  <data name="Secure your sensitive documents in an isolated area accessible only via time-limited, cryptographically signed tokens." xml:space="preserve">
+    <value>将您的敏感文档存储在隔离区域中，仅可通过限时的、经过加密签名的令牌访问。</value>
   </data>
   <data name="Self Host" xml:space="preserve">
     <value>私有化部署</value>
   </data>
+  <data name="Self-Hosted" xml:space="preserve">
+    <value>私有化部署</value>
+  </data>
+  <data name="Support for SQLite, MySQL, and SQL Server. Switch between List and Grid views to manage your files comfortably." xml:space="preserve">
+    <value>支持 SQLite、MySQL 和 SQL Server。在列表和网格视图之间切换，舒适地管理您的文件。</value>
+  </data>
+  <data name="Take full control of your data with industry-grade security and modern management features." xml:space="preserve">
+    <value>凭借工业级的安全性和现代化的管理功能，完全掌控您的数据。</value>
+  </data>
+  <data name="The ultimate solution for personal and enterprise file distribution." xml:space="preserve">
+    <value>个人和企业文件分发的终极解决方案。</value>
+  </data>
+  <data name="Try our public instance" xml:space="preserve">
+    <value>尝试我们的公共实例</value>
+  </data>
+  <data name="Vault Storage" xml:space="preserve">
+    <value>保险库存储</value>
+  </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>在 GitHub 上查看</value>
+  </data>
+  <data name="Why Choose AiurDrive?" xml:space="preserve">
+    <value>为什么选择 AiurDrive？</value>
+  </data>
+  <data name="Your Private Cloud" xml:space="preserve">
+    <value>您的私有云</value>
+  </data>
+
 </root>

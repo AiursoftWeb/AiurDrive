@@ -75,6 +75,18 @@
   <data name="Consistency Validation" xml:space="preserve">
     <value>التحقق من الاتساق</value>
   </data>
+  <data name="Create New Site" xml:space="preserve">
+    <value>إنشاء موقع جديد</value>
+  </data>
+  <data name="Created at" xml:space="preserve">
+    <value>تم الإنشاء في</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>لوحة التحكم</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>حذف الموقع</value>
+  </data>
   <data name="Develop exclusively in UTC while the system automatically converts and displays dates in the user&apos;s local time zone." xml:space="preserve">
     <value>طور بشكل حصري باستخدام التوقيت العالمي الموحد (UTC) بينما يقوم النظام تلقائيًا بتحويل وتظهر التواريخ بالتوقيت المحلي للمستخدم.</value>
   </data>
@@ -114,6 +126,9 @@
   <data name="Integrated File Management" xml:space="preserve">
     <value>إدارة الملفات المتكاملة</value>
   </data>
+  <data name="Limit Reached" xml:space="preserve">
+    <value>الحد الأقصى تم الوصول إليه</value>
+  </data>
   <data name="Models are validated on both client and server sides based on data annotations." xml:space="preserve">
     <value>تتم مصادقة النماذج على الطرفين العميل والخادم بناءً على ملاحظات البيانات.</value>
   </data>
@@ -125,6 +140,12 @@
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>دمج OpenID Connect</value>
+  </data>
+  <data name="Private" xml:space="preserve">
+    <value>خاص</value>
+  </data>
+  <data name="Public" xml:space="preserve">
+    <value>عام</value>
   </data>
   <data name="RBAC Authorization" xml:space="preserve">
     <value>الترخيص القائم على الأدوار (RBAC)</value>
@@ -143,6 +164,12 @@
   </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>التكامل السلس مع أي موفر OpenID Connect، مع مزامنة تلقائية للأدوار.</value>
+  </data>
+  <data name="Sites" xml:space="preserve">
+    <value>المواقع</value>
+  </data>
+  <data name="sites max" xml:space="preserve">
+    <value>المواقع الحد الأقصى</value>
   </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>الإعادة تعيين الإعدادات الذكية</value>
@@ -170,6 +197,9 @@
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>لماذا نستخدم قالب Aiursoft؟</value>
+  </data>
+  <data name="You have reached the maximum number of sites." xml:space="preserve">
+    <value>لقد وصلت إلى الحد الأقصى لعدد المواقع.</value>
   </data>
 
 </root>

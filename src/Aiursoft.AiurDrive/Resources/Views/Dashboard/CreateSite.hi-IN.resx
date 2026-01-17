@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Create New Site" xml:space="preserve">
+    <value>नया साइट बनाएं</value>
+  </data>
+  <data name="Create Site" xml:space="preserve">
+    <value>साइट बनाएं</value>
+  </data>
+  <data name="Only lowercase letters, numbers and hyphens are allowed." xml:space="preserve">
+    <value>केवल छोटे अक्षर, संख्याएँ और हाइफ़न की अनुमति है।</value>
+  </data>
+  <data name="Private - Only invited people can browse or manage the files. Used for team collaboration or personal storage." xml:space="preserve">
+    <value>निजी - केवल आमंत्रित लोग ही फ़ाइलों को ब्राउज़ या प्रबंधित कर सकते हैं। टीम सहयोग या व्यक्तिगत भंडारण के लिए उपयोग किया जाता है।</value>
+  </data>
+  <data name="Public - Anyone can browse the files without authentication. Used for public sharing." xml:space="preserve">
+    <value>सार्वजनिक - किसी भी व्यक्ति को प्रमाणीकरण के बिना फ़ाइलों का ब्राउज़ करने की अनुमति है। सार्वजनिक साझाकरण के लिए उपयोग किया जाता है।</value>
+  </data>
+
+</root>

@@ -75,6 +75,18 @@
   <data name="Consistency Validation" xml:space="preserve">
     <value>Convalida della coerenza</value>
   </data>
+  <data name="Create New Site" xml:space="preserve">
+    <value>Crea un nuovo sito</value>
+  </data>
+  <data name="Created at" xml:space="preserve">
+    <value>Creato il</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>Elimina sito</value>
+  </data>
   <data name="Develop exclusively in UTC while the system automatically converts and displays dates in the user&apos;s local time zone." xml:space="preserve">
     <value>Sviluppa esclusivamente in UTC mentre il sistema converte e visualizza automaticamente le date nell&apos;ora locale dell&apos;utente.</value>
   </data>
@@ -114,6 +126,9 @@
   <data name="Integrated File Management" xml:space="preserve">
     <value>Gestione File Integrata</value>
   </data>
+  <data name="Limit Reached" xml:space="preserve">
+    <value>Limite raggiunto</value>
+  </data>
   <data name="Models are validated on both client and server sides based on data annotations." xml:space="preserve">
     <value>I modelli vengono convalidati sia lato client che lato server in base alle annotazioni dei dati.</value>
   </data>
@@ -125,6 +140,12 @@
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>Integrazione OpenID Connect</value>
+  </data>
+  <data name="Private" xml:space="preserve">
+    <value>Privato</value>
+  </data>
+  <data name="Public" xml:space="preserve">
+    <value>Pubblico</value>
   </data>
   <data name="RBAC Authorization" xml:space="preserve">
     <value>Autorizzazione RBAC</value>
@@ -143,6 +164,12 @@
   </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Integrazione perfetta con qualsiasi provider OpenID Connect, con sincronizzazione automatica dei ruoli.</value>
+  </data>
+  <data name="Sites" xml:space="preserve">
+    <value>Siti</value>
+  </data>
+  <data name="sites max" xml:space="preserve">
+    <value>siti massimo</value>
   </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>Sovrascrizioni Intelligenti alla Configurazione</value>
@@ -170,6 +197,9 @@
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Perché usare il Template Aiursoft?</value>
+  </data>
+  <data name="You have reached the maximum number of sites." xml:space="preserve">
+    <value>Hai raggiunto il numero massimo di siti.</value>
   </data>
 
 </root>

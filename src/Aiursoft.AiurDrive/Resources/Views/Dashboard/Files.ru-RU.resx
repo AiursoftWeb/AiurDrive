@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Actions" xml:space="preserve">
+    <value>Действия</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Вырезать</value>
+  </data>
+  <data name="Date Modified" xml:space="preserve">
+    <value>Дата изменения</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="Delete some files to free up space." xml:space="preserve">
+    <value>Удалите некоторые файлы, чтобы освободить место.</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>Файлы</value>
+  </data>
+  <data name="Folder is empty." xml:space="preserve">
+    <value>Папка пуста.</value>
+  </data>
+  <data name="Folder Name" xml:space="preserve">
+    <value>Имя папки</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="New Folder" xml:space="preserve">
+    <value>Новая папка</value>
+  </data>
+  <data name="New Name" xml:space="preserve">
+    <value>Новое имя</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>Вставить</value>
+  </data>
+  <data name="Private" xml:space="preserve">
+    <value>Приватный</value>
+  </data>
+  <data name="Public" xml:space="preserve">
+    <value>Общественный</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Переименовать</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Размер</value>
+  </data>
+  <data name="Storage Full" xml:space="preserve">
+    <value>Хранилище заполнено</value>
+  </data>
+  <data name="Storage Usage" xml:space="preserve">
+    <value>Использование хранилища</value>
+  </data>
+  <data name="Switch to Grid View" xml:space="preserve">
+    <value>Переключиться на сетку просмотра</value>
+  </data>
+  <data name="Switch to List View" xml:space="preserve">
+    <value>Переключиться на список</value>
+  </data>
+  <data name="Toggle View" xml:space="preserve">
+    <value>Переключить вид</value>
+  </data>
+  <data name="Up Level" xml:space="preserve">
+    <value>На уровень выше</value>
+  </data>
+  <data name="Upload File" xml:space="preserve">
+    <value>Загрузить файл</value>
+  </data>
+
+</root>

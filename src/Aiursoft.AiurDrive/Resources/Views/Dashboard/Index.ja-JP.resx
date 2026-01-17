@@ -75,6 +75,18 @@
   <data name="Consistency Validation" xml:space="preserve">
     <value>整合性検証</value>
   </data>
+  <data name="Create New Site" xml:space="preserve">
+    <value>新しいサイトを作成</value>
+  </data>
+  <data name="Created at" xml:space="preserve">
+    <value>作成日時</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>ダッシュボード</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>サイトを削除</value>
+  </data>
   <data name="Develop exclusively in UTC while the system automatically converts and displays dates in the user&apos;s local time zone." xml:space="preserve">
     <value>UTCで専用に開発し、システムが自動的に日付をユーザーのローカルタイムゾーンに変換して表示します。</value>
   </data>
@@ -114,6 +126,9 @@
   <data name="Integrated File Management" xml:space="preserve">
     <value>統合ファイル管理</value>
   </data>
+  <data name="Limit Reached" xml:space="preserve">
+    <value>上限に達しました</value>
+  </data>
   <data name="Models are validated on both client and server sides based on data annotations." xml:space="preserve">
     <value>モデルはデータ注釈に基づいて、クライアントおよびサーバーの両方で検証されます。</value>
   </data>
@@ -125,6 +140,12 @@
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>OpenID Connect連携</value>
+  </data>
+  <data name="Private" xml:space="preserve">
+    <value>非公開</value>
+  </data>
+  <data name="Public" xml:space="preserve">
+    <value>パブリック</value>
   </data>
   <data name="RBAC Authorization" xml:space="preserve">
     <value>RBAC認可</value>
@@ -143,6 +164,12 @@
   </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>あらゆるOpenID Connectプロバイダーとシームレスに統合し、ロールの自動同期を実現します。</value>
+  </data>
+  <data name="Sites" xml:space="preserve">
+    <value>サイト</value>
+  </data>
+  <data name="sites max" xml:space="preserve">
+    <value>サイトの上限</value>
   </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>スマート設定オーバーライド</value>
@@ -170,6 +197,9 @@
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Aiursoftテンプレートを使用する理由</value>
+  </data>
+  <data name="You have reached the maximum number of sites." xml:space="preserve">
+    <value>サイトの最大数に達しました。</value>
   </data>
 
 </root>

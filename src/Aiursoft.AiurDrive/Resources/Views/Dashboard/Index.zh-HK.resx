@@ -75,6 +75,18 @@
   <data name="Consistency Validation" xml:space="preserve">
     <value>一致性驗證</value>
   </data>
+  <data name="Create New Site" xml:space="preserve">
+    <value>建立新網站</value>
+  </data>
+  <data name="Created at" xml:space="preserve">
+    <value>建立於</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>儀表板</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>刪除網站</value>
+  </data>
   <data name="Develop exclusively in UTC while the system automatically converts and displays dates in the user&apos;s local time zone." xml:space="preserve">
     <value>在開發時一律使用 UTC，系統會自動將日期轉換並以用戶的本地時間顯示。</value>
   </data>
@@ -114,6 +126,9 @@
   <data name="Integrated File Management" xml:space="preserve">
     <value>整合式檔案管理</value>
   </data>
+  <data name="Limit Reached" xml:space="preserve">
+    <value>上限已達</value>
+  </data>
   <data name="Models are validated on both client and server sides based on data annotations." xml:space="preserve">
     <value>模型會根據資料註解，在客戶端及伺服器端同時進行驗證。</value>
   </data>
@@ -125,6 +140,12 @@
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>OpenID Connect 整合</value>
+  </data>
+  <data name="Private" xml:space="preserve">
+    <value>私人</value>
+  </data>
+  <data name="Public" xml:space="preserve">
+    <value>公開</value>
   </data>
   <data name="RBAC Authorization" xml:space="preserve">
     <value>基於角色的存取控制授權</value>
@@ -143,6 +164,12 @@
   </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>無縫整合任何 OpenID Connect 供應商，並自動同步角色權限。</value>
+  </data>
+  <data name="Sites" xml:space="preserve">
+    <value>網站</value>
+  </data>
+  <data name="sites max" xml:space="preserve">
+    <value>最多網站數量</value>
   </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>智能設定覆蓋</value>
@@ -170,6 +197,9 @@
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>點解要使用 Aiursoft 模板？</value>
+  </data>
+  <data name="You have reached the maximum number of sites." xml:space="preserve">
+    <value>您已達到最多網站數量。</value>
   </data>
 
 </root>

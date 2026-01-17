@@ -75,6 +75,18 @@
   <data name="Consistency Validation" xml:space="preserve">
     <value>Έλεγχος Συνοχής</value>
   </data>
+  <data name="Create New Site" xml:space="preserve">
+    <value>Δημιουργία Νέου Ιστότοπου</value>
+  </data>
+  <data name="Created at" xml:space="preserve">
+    <value>Δημιουργήθηκε στις</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Πίνακας Ελέγχου</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>Διαγραφή Ιστοσελίδας</value>
+  </data>
   <data name="Develop exclusively in UTC while the system automatically converts and displays dates in the user&apos;s local time zone." xml:space="preserve">
     <value>Αναπτύξτε αποκλειστικά στο UTC, ενώ το σύστημα μετατρέπει και εμφανίζει αυτόματα τις ημερομηνίες στην τοπική ώρα του χρήστη.</value>
   </data>
@@ -114,6 +126,9 @@
   <data name="Integrated File Management" xml:space="preserve">
     <value>Ενσωματωμένη Διαχείριση Αρχείων</value>
   </data>
+  <data name="Limit Reached" xml:space="preserve">
+    <value>Όριο Επιτεύχθηκε</value>
+  </data>
   <data name="Models are validated on both client and server sides based on data annotations." xml:space="preserve">
     <value>Τα μοντέλα ελέγχονται σε επίπεδο πελάτη και εξυπηρετητή βάσει σημειώσεων δεδομένων.</value>
   </data>
@@ -125,6 +140,12 @@
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>Ενσωμάτωση OpenID Connect</value>
+  </data>
+  <data name="Private" xml:space="preserve">
+    <value>Ιδιωτικό</value>
+  </data>
+  <data name="Public" xml:space="preserve">
+    <value>Δημόσιο</value>
   </data>
   <data name="RBAC Authorization" xml:space="preserve">
     <value>Εξουσιοδότηση RBAC</value>
@@ -143,6 +164,12 @@
   </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Απρόσκοπτη ενσωμάτωση με οποιονδήποτε πάροχο OpenID Connect, με αυτόματο συγχρονισμό ρόλων.</value>
+  </data>
+  <data name="Sites" xml:space="preserve">
+    <value>Ιστότοποι</value>
+  </data>
+  <data name="sites max" xml:space="preserve">
+    <value>στοιχεία μέγιστο</value>
   </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>Έξυπνες Αντικαταστάσεις Ρυθμίσεων</value>
@@ -170,6 +197,9 @@
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Γιατί να χρησιμοποιήσετε το Πρότυπο Aiursoft;</value>
+  </data>
+  <data name="You have reached the maximum number of sites." xml:space="preserve">
+    <value>Έχετε φτάσει στο μέγιστο αριθμό ιστοτόπων.</value>
   </data>
 
 </root>

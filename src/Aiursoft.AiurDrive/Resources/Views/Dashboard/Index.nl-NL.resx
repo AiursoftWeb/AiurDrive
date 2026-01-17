@@ -75,6 +75,18 @@
   <data name="Consistency Validation" xml:space="preserve">
     <value>Consistentievalidatie</value>
   </data>
+  <data name="Create New Site" xml:space="preserve">
+    <value>Nieuwe site maken</value>
+  </data>
+  <data name="Created at" xml:space="preserve">
+    <value>Aangemaakt op</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>Site verwijderen</value>
+  </data>
   <data name="Develop exclusively in UTC while the system automatically converts and displays dates in the user&apos;s local time zone." xml:space="preserve">
     <value>Ontwikkel uitsluitend in UTC terwijl het systeem data automatisch converteert en weergeeft in de lokale tijdzone van de gebruiker.</value>
   </data>
@@ -114,6 +126,9 @@
   <data name="Integrated File Management" xml:space="preserve">
     <value>Geïntegreerd Bestandsbeheer</value>
   </data>
+  <data name="Limit Reached" xml:space="preserve">
+    <value>Limiet bereikt</value>
+  </data>
   <data name="Models are validated on both client and server sides based on data annotations." xml:space="preserve">
     <value>Modellen worden gevalideerd aan zowel de client- als de serverside op basis van dataannotaties.</value>
   </data>
@@ -125,6 +140,12 @@
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>OpenID Connect-integratie</value>
+  </data>
+  <data name="Private" xml:space="preserve">
+    <value>Privé</value>
+  </data>
+  <data name="Public" xml:space="preserve">
+    <value>Openbaar</value>
   </data>
   <data name="RBAC Authorization" xml:space="preserve">
     <value>RBAC-autorisatie</value>
@@ -143,6 +164,12 @@
   </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Integreer naadloos met elke OpenID Connect-provider, met automatische rol-synchronisatie.</value>
+  </data>
+  <data name="Sites" xml:space="preserve">
+    <value>Sites</value>
+  </data>
+  <data name="sites max" xml:space="preserve">
+    <value>sites max</value>
   </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>Slimme configuratie-overschrijvingen</value>
@@ -170,6 +197,9 @@
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Waarom de Aiursoft Template gebruiken?</value>
+  </data>
+  <data name="You have reached the maximum number of sites." xml:space="preserve">
+    <value>U heeft het maximum aantal sites bereikt.</value>
   </data>
 
 </root>

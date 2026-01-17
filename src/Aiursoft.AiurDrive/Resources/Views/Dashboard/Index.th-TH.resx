@@ -75,6 +75,18 @@
   <data name="Consistency Validation" xml:space="preserve">
     <value>การตรวจสอบความสอดคล้อง</value>
   </data>
+  <data name="Create New Site" xml:space="preserve">
+    <value>สร้างเว็บไซต์ใหม่</value>
+  </data>
+  <data name="Created at" xml:space="preserve">
+    <value>สร้างเมื่อ</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>แดชบอร์ด</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>ลบไซต์</value>
+  </data>
   <data name="Develop exclusively in UTC while the system automatically converts and displays dates in the user&apos;s local time zone." xml:space="preserve">
     <value>พัฒนาเฉพาะในเวลา UTC โดยระบบจะแปลงและแสดงวันที่โดยอัตโนมัติเป็นเขตเวลาท้องถิ่นของผู้ใช้</value>
   </data>
@@ -114,6 +126,9 @@
   <data name="Integrated File Management" xml:space="preserve">
     <value>การจัดการไฟล์แบบบูรณาการ</value>
   </data>
+  <data name="Limit Reached" xml:space="preserve">
+    <value>จำนวนสูงสุดถึงแล้ว</value>
+  </data>
   <data name="Models are validated on both client and server sides based on data annotations." xml:space="preserve">
     <value>โมเดลจะได้รับการตรวจสอบความถูกต้องทั้งในด้านไคลเอนต์และเซิร์ฟเวอร์ตามการตั้งค่าข้อมูล</value>
   </data>
@@ -125,6 +140,12 @@
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>การผสานรวม OpenID Connect</value>
+  </data>
+  <data name="Private" xml:space="preserve">
+    <value>ส่วนตัว</value>
+  </data>
+  <data name="Public" xml:space="preserve">
+    <value>สาธารณะ</value>
   </data>
   <data name="RBAC Authorization" xml:space="preserve">
     <value>การอนุญาตตามบทบาท RBAC</value>
@@ -143,6 +164,12 @@
   </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>ผสานรวมได้อย่างราบรื่นกับผู้ให้บริการ OpenID Connect ใดก็ได้ พร้อมการซิงโครไนซ์บทบาทอัตโนมัติ</value>
+  </data>
+  <data name="Sites" xml:space="preserve">
+    <value>ไซต์</value>
+  </data>
+  <data name="sites max" xml:space="preserve">
+    <value>สูงสุด {sites}</value>
   </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>การแทนที่การตั้งค่าอัจฉริยะ</value>
@@ -170,6 +197,9 @@
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>ทำไมต้องใช้ Aiursoft Template?</value>
+  </data>
+  <data name="You have reached the maximum number of sites." xml:space="preserve">
+    <value>คุณได้ถึงจำนวนไซต์สูงสุดแล้ว</value>
   </data>
 
 </root>

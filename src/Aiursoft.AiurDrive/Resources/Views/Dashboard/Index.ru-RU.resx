@@ -75,6 +75,18 @@
   <data name="Consistency Validation" xml:space="preserve">
     <value>Проверка согласованности</value>
   </data>
+  <data name="Create New Site" xml:space="preserve">
+    <value>Создать новый сайт</value>
+  </data>
+  <data name="Created at" xml:space="preserve">
+    <value>Создано</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Панель управления</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>Удалить сайт</value>
+  </data>
   <data name="Develop exclusively in UTC while the system automatically converts and displays dates in the user&apos;s local time zone." xml:space="preserve">
     <value>Разрабатывайте исключительно в UTC, а система автоматически преобразует и отображает даты в часовом поясе пользователя.</value>
   </data>
@@ -114,6 +126,9 @@
   <data name="Integrated File Management" xml:space="preserve">
     <value>Встроенная система управления файлами</value>
   </data>
+  <data name="Limit Reached" xml:space="preserve">
+    <value>Лимит превышен</value>
+  </data>
   <data name="Models are validated on both client and server sides based on data annotations." xml:space="preserve">
     <value>Модели проверяются на стороне клиента и сервера на основе аннотаций данных.</value>
   </data>
@@ -125,6 +140,12 @@
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>Интеграция OpenID Connect</value>
+  </data>
+  <data name="Private" xml:space="preserve">
+    <value>Приватный</value>
+  </data>
+  <data name="Public" xml:space="preserve">
+    <value>Общедоступный</value>
   </data>
   <data name="RBAC Authorization" xml:space="preserve">
     <value>Авторизация RBAC</value>
@@ -143,6 +164,12 @@
   </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Беспрепятственная интеграция с любым провайдером OpenID Connect с автоматической синхронизацией ролей.</value>
+  </data>
+  <data name="Sites" xml:space="preserve">
+    <value>Сайты</value>
+  </data>
+  <data name="sites max" xml:space="preserve">
+    <value>сайтов макс</value>
   </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>Умные переопределения конфигурации</value>
@@ -170,6 +197,9 @@
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Зачем использовать шаблон Aiursoft?</value>
+  </data>
+  <data name="You have reached the maximum number of sites." xml:space="preserve">
+    <value>Вы достигли максимального количества сайтов.</value>
   </data>
 
 </root>

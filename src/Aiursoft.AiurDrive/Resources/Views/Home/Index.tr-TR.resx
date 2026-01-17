@@ -30,6 +30,9 @@
   <data name="A complete solution for user authentication and profile management." xml:space="preserve">
     <value>Kullanıcı kimlik doğrulama ve profil yönetimi için tam bir çözüm.</value>
   </data>
+  <data name="A free, flexible file sharing center designed for local deployment." xml:space="preserve">
+    <value>Yerel dağıtım için tasarlanmış, ücretsiz ve esnek bir dosya paylaşma merkezi.</value>
+  </data>
   <data name="A fully responsive layout that looks great on both desktop and mobile devices." xml:space="preserve">
     <value>Hem masaüstü hem de mobil cihazlarda harika görünen tamamen duyarlı bir düzen.</value>
   </data>
@@ -38,6 +41,9 @@
   </data>
   <data name="Achieve more with Aiursoft Template" xml:space="preserve">
     <value>Aiursoft Template ile daha fazlasını başarın</value>
+  </data>
+  <data name="Advanced Privacy &amp; Security" xml:space="preserve">
+    <value>Gelişmiş Gizlilik ve Güvenlik</value>
   </data>
   <data name="AI-Powered Translations" xml:space="preserve">
     <value>Yapay Zeka Destekli Çeviriler</value>
@@ -66,6 +72,9 @@
   <data name="Automatic, AI-driven translation into 28 languages." xml:space="preserve">
     <value>28 dilde otomatik, yapay zeka destekli çeviri.</value>
   </data>
+  <data name="Automatically clear EXIF metadata from uploaded images to prevent accidental leakage of GPS and device information." xml:space="preserve">
+    <value>Yüklenen resimlerden otomatik olarak EXIF meta verilerini temizleyerek GPS ve cihaz bilgilerinin istemsiz bir şekilde sızmasını önlemek.</value>
+  </data>
   <data name="Background Job Processing" xml:space="preserve">
     <value>Arka Plan İşlem İşleme</value>
   </data>
@@ -87,6 +96,12 @@
   <data name="Consistency Validation" xml:space="preserve">
     <value>Tutarlılık Doğrulama</value>
   </data>
+  <data name="Control storage consumption with global site capacity limits, featuring real-time usage monitoring." xml:space="preserve">
+    <value>Kullanım miktarını kontrol edin, genel site kapasite sınırlarıyla birlikte gerçek zamanlı kullanım izleme özelliğine sahip.</value>
+  </data>
+  <data name="Core Values" xml:space="preserve">
+    <value>Temel Değerler</value>
+  </data>
   <data name="Dashboard Website" xml:space="preserve">
     <value>Kontrol Paneli Web Sitesi</value>
   </data>
@@ -95,6 +110,9 @@
   </data>
   <data name="Discussions page" xml:space="preserve">
     <value>Tartışmalar sayfası</value>
+  </data>
+  <data name="Dockerized architecture means you can get up and running in seconds. Low maintenance, high reliability." xml:space="preserve">
+    <value>Dockerize mimari, saniyeler içinde çalıştırılabilmenizi sağlar. Düşük bakım, yüksek güvenilirlik.</value>
   </data>
   <data name="Dockerized for Deployment" xml:space="preserve">
     <value>Docker ile Dağıtıma Hazır</value>
@@ -111,8 +129,14 @@
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>SQLite, MySQL, SQL Server gibi sağlayıcılar ile testler için kullanılan bellek içi veritabanı arasında kolayca geçiş yapın.</value>
   </data>
+  <data name="Easy to Deploy" xml:space="preserve">
+    <value>Kolay Dağıtım</value>
+  </data>
   <data name="Effortlessly write integration tests using in-memory databases, temporary file systems, built-in mocking, and real-world HTTP request simulation." xml:space="preserve">
     <value>Anımsatmadan entegrasyon testleri yazın, bellek içi veritabanları, geçici dosya sistemleri, yerleşik mocklama ve gerçek dünya HTTP isteği simülasyonu kullanarak.</value>
+  </data>
+  <data name="Enter Dashboard" xml:space="preserve">
+    <value>Kontrol Paneline Gir</value>
   </data>
   <data name="FAQ" xml:space="preserve">
     <value>SSS</value>
@@ -129,14 +153,23 @@
   <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
     <value>Otomatik avatar sıkıştırmalı, dahili bir dosya yönetim sistemi özelliği sunar.</value>
   </data>
+  <data name="Flexible" xml:space="preserve">
+    <value>Esnek</value>
+  </data>
   <data name="for any inquiries or to report issues." xml:space="preserve">
     <value>her türlü soru veya sorun bildirimi için.</value>
   </data>
   <data name="Free" xml:space="preserve">
     <value>Ücretsiz</value>
   </data>
+  <data name="Freedom" xml:space="preserve">
+    <value>Serbestlik</value>
+  </data>
   <data name="Frequently asked questions" xml:space="preserve">
     <value>Sıkça Sorulan Sorular</value>
+  </data>
+  <data name="Fully open-source and MIT licensed. No vendor lock-in, no hidden costs. Your server, your rules." xml:space="preserve">
+    <value>Tamamen açık kaynak kodlu ve MIT lisanslı. Herhangi bir tedarikçi kilitlenmesi yok, gizli maliyetler yok. Sunucunuz, kurallarınız.</value>
   </data>
   <data name="Go to dashboard" xml:space="preserve">
     <value>Panele git</value>
@@ -174,6 +207,9 @@
   <data name="Join our community and start building today!" xml:space="preserve">
     <value>Topluluğumuza katılın ve hemen bugün inşa etmeye başlayın!</value>
   </data>
+  <data name="Join thousands of users who trust AiurDrive for their local file management needs." xml:space="preserve">
+    <value>Binlerce kullanıcıya katılmak için AiurDrive&apos;ın yerel dosya yönetimi ihtiyaçlarınız için güvenilir bir çözüm olduğunu düşünün.</value>
+  </data>
   <data name="Markdown To HTML" xml:space="preserve">
     <value>Markdown&apos;dan HTML&apos;e</value>
   </data>
@@ -198,11 +234,26 @@
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>OpenID Connect Entegrasyonu</value>
   </data>
+  <data name="Physically isolated storage modes (Workspace &amp; Vault), automatic image optimization, and robust path traversal protection." xml:space="preserve">
+    <value>Fiziksel olarak izole edilmiş depolama modları (Workspace &amp; Vault), otomatik görüntü optimizasyonu ve güçlü yol geçiş koruması.</value>
+  </data>
+  <data name="Powerful" xml:space="preserve">
+    <value>Güçlü</value>
+  </data>
+  <data name="Privacy by Default" xml:space="preserve">
+    <value>Varsayılan Olarak Gizlilik</value>
+  </data>
+  <data name="Quota Management" xml:space="preserve">
+    <value>Kota Yönetimi</value>
+  </data>
   <data name="RBAC Authorization" xml:space="preserve">
     <value>RBAC Yetkilendirmesi</value>
   </data>
   <data name="Read the document" xml:space="preserve">
     <value>Belgeyi okuyun</value>
+  </data>
+  <data name="Ready to own your cloud?" xml:space="preserve">
+    <value>Bulutunu kendi kontrolünde mi tutmak istiyorsun?</value>
   </data>
   <data name="Responsive Design" xml:space="preserve">
     <value>Duyarlı Tasarım</value>
@@ -219,6 +270,15 @@
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Herhangi bir OpenID Connect sağlayıcısıyla sorunsuz bir şekilde entegre olun, otomatik rol senkronizasyonu ile.</value>
   </data>
+  <data name="Secure your sensitive documents in an isolated area accessible only via time-limited, cryptographically signed tokens." xml:space="preserve">
+    <value>Zaman sınırlı, kriptografik olarak imzalı tokenlarla erişilebilen, yalıtılmış bir alana hassas belgelerinizi güvenli hale getirin.</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Kendi Sunucunuzda Barındır</value>
+  </data>
+  <data name="Self-Hosted" xml:space="preserve">
+    <value>Kendi Sunucunuzda Barındırılan</value>
+  </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>Akıllı Yapılandırma Geçersiz Kılma</value>
   </data>
@@ -231,8 +291,14 @@
   <data name="Start a new project" xml:space="preserve">
     <value>Yeni bir proje başlat</value>
   </data>
+  <data name="Support for SQLite, MySQL, and SQL Server. Switch between List and Grid views to manage your files comfortably." xml:space="preserve">
+    <value>SQLite, MySQL ve SQL Server desteklenir. Dosyalarınızı rahat bir şekilde yönetmek için Liste ve Grid görünümü arasında geçiş yapın.</value>
+  </data>
   <data name="Supports both environment variables and database-backed settings, with automatic priority given to environment variables for seamless overrides." xml:space="preserve">
     <value>Ortam değişkenleri ve veritabanı tabanlı ayarlar destekler, sorunsuz geçişler için ortam değişkenlerine otomatik öncelik verilir.</value>
+  </data>
+  <data name="Take full control of your data with industry-grade security and modern management features." xml:space="preserve">
+    <value>Verilerinizin tam kontrolünü sağlayın endüstri standartlarında güvenlik ve modern yönetim özelliklerine sahip olarak.</value>
   </data>
   <data name="Technical Lead" xml:space="preserve">
     <value>Teknik Lider</value>
@@ -243,17 +309,29 @@
   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>Şablon, kolay dağıtım için oluşturulmuştur. Tam Docker desteği içerir, böylece uygulamanızı konteynerleştirip her yerde çalıştırabilirsiniz. Ayrıca doğrudan IIS, Azure App Service veya ASP.NET Core destekleyen herhangi bir sunucuya dağıtabilirsiniz.</value>
   </data>
+  <data name="The ultimate solution for personal and enterprise file distribution." xml:space="preserve">
+    <value>Kişisel ve kurumsal dosya dağıtım için son çözüm.</value>
+  </data>
   <data name="This is a template project" xml:space="preserve">
     <value>Bu bir şablon projedir</value>
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Bu, yolculuğa başladığımız bir şablon projedir...</value>
   </data>
+  <data name="Try our public instance" xml:space="preserve">
+    <value>Kamu sunucumuzu deneyin</value>
+  </data>
   <data name="Usage" xml:space="preserve">
     <value>Kullanım</value>
   </data>
   <data name="Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless." xml:space="preserve">
     <value>Onu SaaS&apos;ınız için bir temel, mobil uygulamanız için bir arka uç, bir kurumsal web sitesi veya kişisel bir blog olarak kullanın. Olanaklar sonsuzdur.</value>
+  </data>
+  <data name="Vault Storage" xml:space="preserve">
+    <value>Vault Depolama</value>
+  </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>GitHub&apos;da Görüntüle</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Hoş Geldiniz</value>
@@ -263,6 +341,9 @@
   </data>
   <data name="What our developers say" xml:space="preserve">
     <value>Geliştiricilerimizin Görüşleri</value>
+  </data>
+  <data name="Why Choose AiurDrive?" xml:space="preserve">
+    <value>AiurDrive’i Neden Seçmelisiniz?</value>
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Neden Aiursoft Template Kullanmalısınız?</value>
@@ -275,6 +356,9 @@
   </data>
   <data name="You&apos;ll need the .NET 10 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
     <value>.NET 10 SDK&apos;ye, npm&apos;ye ve Visual Studio veya JetBrains Rider gibi favori IDE&apos;nize ihtiyacınız olacak. Tüm kurulum kılavuzunu belgelerimizde bulabilirsiniz.</value>
+  </data>
+  <data name="Your Private Cloud" xml:space="preserve">
+    <value>Your Private Cloud</value>
   </data>
 
 </root>

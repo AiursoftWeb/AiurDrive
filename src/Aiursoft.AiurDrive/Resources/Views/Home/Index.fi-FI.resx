@@ -30,6 +30,9 @@
   <data name="A complete solution for user authentication and profile management." xml:space="preserve">
     <value>Täydellinen ratkaisu käyttäjäauthentikaatioon ja profiilin hallintaan.</value>
   </data>
+  <data name="A free, flexible file sharing center designed for local deployment." xml:space="preserve">
+    <value>Ilmainen ja joustava tiedostojen jakamiseen tarkoitettu keskus, joka on suunniteltu paikalliseen käyttöön.</value>
+  </data>
   <data name="A fully responsive layout that looks great on both desktop and mobile devices." xml:space="preserve">
     <value>Täysin responsiivinen ulkoasu, joka näyttää erinomaiselta sekä työpöytä- että mobiililaitteilla.</value>
   </data>
@@ -38,6 +41,9 @@
   </data>
   <data name="Achieve more with Aiursoft Template" xml:space="preserve">
     <value>Saavuta enemmän Aiursoft Templatella</value>
+  </data>
+  <data name="Advanced Privacy &amp; Security" xml:space="preserve">
+    <value>Edistynyt yksityisyys ja turvallisuus</value>
   </data>
   <data name="AI-Powered Translations" xml:space="preserve">
     <value>Tehokäännökset tekoälyllä</value>
@@ -66,6 +72,9 @@
   <data name="Automatic, AI-driven translation into 28 languages." xml:space="preserve">
     <value>Automaattinen, tekoälypohjainen käännös 28 kielelle.</value>
   </data>
+  <data name="Automatically clear EXIF metadata from uploaded images to prevent accidental leakage of GPS and device information." xml:space="preserve">
+    <value>Tyhjennä automaattisesti EXIF-tiedot ladatuista kuvista estääksesi satunnaisen GPS- ja laitteetiedon paljastumisen.</value>
+  </data>
   <data name="Background Job Processing" xml:space="preserve">
     <value>Taustakäyttöön prosessointi</value>
   </data>
@@ -87,6 +96,12 @@
   <data name="Consistency Validation" xml:space="preserve">
     <value>Johdonmukaisuustarkistus</value>
   </data>
+  <data name="Control storage consumption with global site capacity limits, featuring real-time usage monitoring." xml:space="preserve">
+    <value>Hallitse tallennustilan käyttöä yleisillä sivuston kapasiteettirajoilla, joiden mukana tulee reaaliaikainen käyttötilasto.</value>
+  </data>
+  <data name="Core Values" xml:space="preserve">
+    <value>Ydinte arvot</value>
+  </data>
   <data name="Dashboard Website" xml:space="preserve">
     <value>Kojelauta-sivusto</value>
   </data>
@@ -95,6 +110,9 @@
   </data>
   <data name="Discussions page" xml:space="preserve">
     <value>Keskustelusivu</value>
+  </data>
+  <data name="Dockerized architecture means you can get up and running in seconds. Low maintenance, high reliability." xml:space="preserve">
+    <value>Docker-arkkitehtuuri tarkoittaa, että voit käynnistää palvelun sekunnin kuluessa. Vähän huoltamista, korkea luotettavuus.</value>
   </data>
   <data name="Dockerized for Deployment" xml:space="preserve">
     <value>Dockeröity käyttöönottoa varten</value>
@@ -111,8 +129,14 @@
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>Vaihda helposti tietokantapalveluntarjoajien, kuten SQLite, MySQL, SQL Server ja testaukseen tarkoitetun muistissa olevan tietokannan, välillä.</value>
   </data>
+  <data name="Easy to Deploy" xml:space="preserve">
+    <value>Helppo asentaa</value>
+  </data>
   <data name="Effortlessly write integration tests using in-memory databases, temporary file systems, built-in mocking, and real-world HTTP request simulation." xml:space="preserve">
     <value>Kirjoita integraatiotestejä helposti käyttämällä muistin tietokantoja, väliaikaisia tiedostojärjestelmiä, sisäänrakennettua mockausta ja todellisia HTTP-pyyntösimulaatioita.</value>
+  </data>
+  <data name="Enter Dashboard" xml:space="preserve">
+    <value>Mene hallintapaneeliin</value>
   </data>
   <data name="FAQ" xml:space="preserve">
     <value>UKK</value>
@@ -129,14 +153,23 @@
   <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
     <value>Sisältää sisäänrakennetun tiedostonhallintajärjestelmän automaattisella avatar-pakkauksella.</value>
   </data>
+  <data name="Flexible" xml:space="preserve">
+    <value>Mukautuva</value>
+  </data>
   <data name="for any inquiries or to report issues." xml:space="preserve">
     <value>kaikkiin kyselyihin tai ongelmien ilmoittamiseen.</value>
   </data>
   <data name="Free" xml:space="preserve">
     <value>Ilmainen</value>
   </data>
+  <data name="Freedom" xml:space="preserve">
+    <value>Vapaus</value>
+  </data>
   <data name="Frequently asked questions" xml:space="preserve">
     <value>Usein kysytyt kysymykset</value>
+  </data>
+  <data name="Fully open-source and MIT licensed. No vendor lock-in, no hidden costs. Your server, your rules." xml:space="preserve">
+    <value>Täysin avoimen lähdekoodin ja MIT-lisensoidun. Ei valmistajan sidottua, ei piilokustannuksia. Palvelimesi, sääntösi.</value>
   </data>
   <data name="Go to dashboard" xml:space="preserve">
     <value>Siirry kojelautaan</value>
@@ -174,6 +207,9 @@
   <data name="Join our community and start building today!" xml:space="preserve">
     <value>Liity yhteisöömme ja aloita rakentaminen tänään!</value>
   </data>
+  <data name="Join thousands of users who trust AiurDrive for their local file management needs." xml:space="preserve">
+    <value>Liity tuhansiin käyttäjiin, jotka luottavat AiurDriveen paikallisten tiedostojen hallinnan tarpeisiinsa.</value>
+  </data>
   <data name="Markdown To HTML" xml:space="preserve">
     <value>Markdownista HTML:ksi</value>
   </data>
@@ -198,11 +234,26 @@
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>OpenID Connect -integraatio</value>
   </data>
+  <data name="Physically isolated storage modes (Workspace &amp; Vault), automatic image optimization, and robust path traversal protection." xml:space="preserve">
+    <value>Fyysisesti eristetyt tallennustilat (Workspace &amp; Vault), automaattinen kuvan optimointi sekä vahva polun kulkemisen suojaus.</value>
+  </data>
+  <data name="Powerful" xml:space="preserve">
+    <value>Voimakas</value>
+  </data>
+  <data name="Privacy by Default" xml:space="preserve">
+    <value>Oletusarvoisen yksityisyyden turvaus</value>
+  </data>
+  <data name="Quota Management" xml:space="preserve">
+    <value>Käyttörajojen hallinta</value>
+  </data>
   <data name="RBAC Authorization" xml:space="preserve">
     <value>RBAC-valtuutus</value>
   </data>
   <data name="Read the document" xml:space="preserve">
     <value>Lue dokumentti</value>
+  </data>
+  <data name="Ready to own your cloud?" xml:space="preserve">
+    <value>Valmis omistamaan pilvisiäsi?</value>
   </data>
   <data name="Responsive Design" xml:space="preserve">
     <value>Responsiivinen suunnittelu</value>
@@ -219,6 +270,15 @@
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Saatumattomasti integroi minkä tahansa OpenID Connect -palveluntarjoajan kanssa, automaattisen roolisynkronoinnin avulla.</value>
   </data>
+  <data name="Secure your sensitive documents in an isolated area accessible only via time-limited, cryptographically signed tokens." xml:space="preserve">
+    <value>Suojaile arkaluonteiset asiakirjasi eristetyssä alueella, johon pääsy on mahdollista vain ajoitettujen, kryptografisesti allekirjoitettujen tunnusten avulla.</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Omistuspalvelu</value>
+  </data>
+  <data name="Self-Hosted" xml:space="preserve">
+    <value>Omavalvoinnin</value>
+  </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>Älykäs asetusten ohjaus</value>
   </data>
@@ -231,8 +291,14 @@
   <data name="Start a new project" xml:space="preserve">
     <value>Aloita uusi projekti</value>
   </data>
+  <data name="Support for SQLite, MySQL, and SQL Server. Switch between List and Grid views to manage your files comfortably." xml:space="preserve">
+    <value>Tuki SQLite-, MySQL- ja SQL Server -tietokantojen käytölle. Vaihda luettelomuodon ja ruudukkomuodon välillä tiedostojen hallinnointiin mukavasti.</value>
+  </data>
   <data name="Supports both environment variables and database-backed settings, with automatic priority given to environment variables for seamless overrides." xml:space="preserve">
     <value>Tukee sekä ympäristömuuttujia että tietokantaperustaisia asetuksia, ja ympäristömuuttujilla on automaattinen etusija, jolloin korvaaminen on sujuvaa.</value>
+  </data>
+  <data name="Take full control of your data with industry-grade security and modern management features." xml:space="preserve">
+    <value>Ota täysi hallinta tietojasi teollisuustasoisella turvallisuudella ja nykyaikaisilla hallintatunnuksilla.</value>
   </data>
   <data name="Technical Lead" xml:space="preserve">
     <value>Tekninen Päällikkö</value>
@@ -243,17 +309,29 @@
   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>Malli on suunniteltu helppokäyttöiseksi käyttöönottoa varten. Se sisältää täyden Docker-tuen, joten voit konttipohjata sovelluksesi ja ajaa sitä missä tahansa. Voit myös ottaa sen käyttöön suoraan IIS:ään, Azure App Serviceen tai mihin tahansa palvelimeen, joka tukee ASP.NET Corea.</value>
   </data>
+  <data name="The ultimate solution for personal and enterprise file distribution." xml:space="preserve">
+    <value>Suurin ratkaisu henkilökohtaiseen ja yrityksen tiedostojen jakamiseen.</value>
+  </data>
   <data name="This is a template project" xml:space="preserve">
     <value>Tämä on malliprojekti</value>
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Tämä on malliprojekti, josta aloitamme matkan...</value>
   </data>
+  <data name="Try our public instance" xml:space="preserve">
+    <value>Kokeile julkista instanssimme</value>
+  </data>
   <data name="Usage" xml:space="preserve">
     <value>Käyttö</value>
   </data>
   <data name="Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless." xml:space="preserve">
     <value>Käytä sitä perustana SaaS-palvelullesi, mobiilisovelluksesi taustajärjestelmänä, yrityssivustona tai henkilökohtaisena blogina. Mahdollisuudet ovat rajattomat.</value>
+  </data>
+  <data name="Vault Storage" xml:space="preserve">
+    <value>Lukitusvarasto</value>
+  </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>Näytä GitHubissa</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Tervetuloa</value>
@@ -263,6 +341,9 @@
   </data>
   <data name="What our developers say" xml:space="preserve">
     <value>Mitä kehittäjämme sanovat</value>
+  </data>
+  <data name="Why Choose AiurDrive?" xml:space="preserve">
+    <value>Miksi valita AiurDrive?</value>
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Miksi käyttää Aiursoft Templatea?</value>
@@ -275,6 +356,9 @@
   </data>
   <data name="You&apos;ll need the .NET 10 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
     <value>Tarvitset .NET 10 SDK:n, npm:n ja suosikki-IDE:si, kuten Visual Studion tai JetBrains Riderin. Löydät täydellisen asennusoppaan dokumentaatiostamme.</value>
+  </data>
+  <data name="Your Private Cloud" xml:space="preserve">
+    <value>Oma pilvisiitäsi</value>
   </data>
 
 </root>

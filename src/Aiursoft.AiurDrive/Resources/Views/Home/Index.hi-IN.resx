@@ -30,6 +30,9 @@
   <data name="A complete solution for user authentication and profile management." xml:space="preserve">
     <value>उपयोगकर्ता प्रमाणीकरण और प्रोफ़ाइल प्रबंधन के लिए एक पूर्ण समाधान।</value>
   </data>
+  <data name="A free, flexible file sharing center designed for local deployment." xml:space="preserve">
+    <value>स्थानीय डेप्लॉयमेंट के लिए डिज़ाइन किया गया एक मुफ्त, लचीला फ़ाइल शेयरिंग केंद्र।</value>
+  </data>
   <data name="A fully responsive layout that looks great on both desktop and mobile devices." xml:space="preserve">
     <value>एक पूरी तरह से उत्तरदायी लेआउट जो डेस्कटॉप और मोबाइल डिवाइस दोनों पर शानदार दिखता है।</value>
   </data>
@@ -38,6 +41,9 @@
   </data>
   <data name="Achieve more with Aiursoft Template" xml:space="preserve">
     <value>Aiursoft टेम्पलेट के साथ और अधिक हासिल करें</value>
+  </data>
+  <data name="Advanced Privacy &amp; Security" xml:space="preserve">
+    <value>उन्नत गोपनीयता और सुरक्षा</value>
   </data>
   <data name="AI-Powered Translations" xml:space="preserve">
     <value>AI-संचालित अनुवाद</value>
@@ -66,6 +72,9 @@
   <data name="Automatic, AI-driven translation into 28 languages." xml:space="preserve">
     <value>28 भाषाओं में स्वचालित, एआई-चालित अनुवाद</value>
   </data>
+  <data name="Automatically clear EXIF metadata from uploaded images to prevent accidental leakage of GPS and device information." xml:space="preserve">
+    <value>अपलोड किए गए छवियों से स्वचालित रूप से EXIF मेटाडेटा साफ करें ताकि जीपीएस और डिवाइस की जानकारी के अनजाने लीक होने से बचा जा सके।</value>
+  </data>
   <data name="Background Job Processing" xml:space="preserve">
     <value>बैकग्राउंड जॉब प्रोसेसिंग</value>
   </data>
@@ -87,6 +96,12 @@
   <data name="Consistency Validation" xml:space="preserve">
     <value>सांतत्य जाँच</value>
   </data>
+  <data name="Control storage consumption with global site capacity limits, featuring real-time usage monitoring." xml:space="preserve">
+    <value>सभी साइट क्षमता सीमाओं के साथ स्टोरेज उपभोग को नियंत्रित करें, जिसमें वास्तविक समय में उपयोग निगरानी शामिल है।</value>
+  </data>
+  <data name="Core Values" xml:space="preserve">
+    <value>मूल मूल्य</value>
+  </data>
   <data name="Dashboard Website" xml:space="preserve">
     <value>डैशबोर्ड वेबसाइट</value>
   </data>
@@ -95,6 +110,9 @@
   </data>
   <data name="Discussions page" xml:space="preserve">
     <value>चर्चा पृष्ठ</value>
+  </data>
+  <data name="Dockerized architecture means you can get up and running in seconds. Low maintenance, high reliability." xml:space="preserve">
+    <value>डॉकराइज्ड आर्किटेक्चर का मतलब है कि आप केवल सेकंड में शुरू कर सकते हैं। कम रखरखाव, उच्च विश्वसनीयता।</value>
   </data>
   <data name="Dockerized for Deployment" xml:space="preserve">
     <value>डॉकराइज्ड डिप्लॉयमेंट के लिए</value>
@@ -111,8 +129,14 @@
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>SQLite, MySQL, SQL Server जैसे प्रदाताओं और परीक्षण के लिए इन-मेमोरी डेटाबेस के बीच आसानी से स्विच करें।</value>
   </data>
+  <data name="Easy to Deploy" xml:space="preserve">
+    <value>स्थापित करना आसान</value>
+  </data>
   <data name="Effortlessly write integration tests using in-memory databases, temporary file systems, built-in mocking, and real-world HTTP request simulation." xml:space="preserve">
     <value>आसानी से इंटीग्रेशन टेस्ट लिखें इन-मेमोरी डेटाबेस, अस्थायी फाइल सिस्टम, बिल्ट-इन मॉकिंग, और वास्तविक दुनिया के HTTP रिक्वेस्ट सिमुलेशन का उपयोग करके।</value>
+  </data>
+  <data name="Enter Dashboard" xml:space="preserve">
+    <value>डैशबोर्ड में प्रवेश करें</value>
   </data>
   <data name="FAQ" xml:space="preserve">
     <value>अक्सर पूछे जाने वाले प्रश्न</value>
@@ -129,14 +153,23 @@
   <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
     <value>स्वचालित अवतार संपीड़न के साथ एक अंतर्निहित फ़ाइल प्रबंधन प्रणाली की सुविधा।</value>
   </data>
+  <data name="Flexible" xml:space="preserve">
+    <value>लचीला</value>
+  </data>
   <data name="for any inquiries or to report issues." xml:space="preserve">
     <value>किसी भी जानकारी के लिए या समस्याओं की रिपोर्ट करने के लिए।</value>
   </data>
   <data name="Free" xml:space="preserve">
     <value>मुफ़्त</value>
   </data>
+  <data name="Freedom" xml:space="preserve">
+    <value>स्वतंत्रता</value>
+  </data>
   <data name="Frequently asked questions" xml:space="preserve">
     <value>अक्सर पूछे जाने वाले प्रश्न</value>
+  </data>
+  <data name="Fully open-source and MIT licensed. No vendor lock-in, no hidden costs. Your server, your rules." xml:space="preserve">
+    <value>पूरी तरह से ओपन-सोर्स और MIT लाइसेंस वाला। कोई वेंडर लॉक-इन नहीं, कोई छुपी लागत नहीं। आपका सर्वर, आपके नियम।</value>
   </data>
   <data name="Go to dashboard" xml:space="preserve">
     <value>डैशबोर्ड पर जाएं</value>
@@ -174,6 +207,9 @@
   <data name="Join our community and start building today!" xml:space="preserve">
     <value>हमारे समुदाय से जुड़ें और आज ही निर्माण शुरू करें!</value>
   </data>
+  <data name="Join thousands of users who trust AiurDrive for their local file management needs." xml:space="preserve">
+    <value>हजारों उपयोगकर्ताओं के साथ जुड़ें जो अपनी स्थानीय फ़ाइल प्रबंधन की ज़रूरतों के लिए AiurDrive पर भरोसा करते हैं।</value>
+  </data>
   <data name="Markdown To HTML" xml:space="preserve">
     <value>मार्कडाउन से एचटीएमएल</value>
   </data>
@@ -198,11 +234,26 @@
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>ओपनआईडी कनेक्ट एकीकरण</value>
   </data>
+  <data name="Physically isolated storage modes (Workspace &amp; Vault), automatic image optimization, and robust path traversal protection." xml:space="preserve">
+    <value>शारीरिक रूप से अलगाव वाले स्टोरेज मोड (वर्कस्पेस और वॉल्ट), स्वचालित इमेज ऑप्टिमाइज़ेशन, और बलवान पाथ ट्रैवर्सल सुरक्षा।</value>
+  </data>
+  <data name="Powerful" xml:space="preserve">
+    <value>शक्तिशाली</value>
+  </data>
+  <data name="Privacy by Default" xml:space="preserve">
+    <value>डिफ़ॉल्ट रूप से गोपनीयता</value>
+  </data>
+  <data name="Quota Management" xml:space="preserve">
+    <value>क्वोटा प्रबंधन</value>
+  </data>
   <data name="RBAC Authorization" xml:space="preserve">
     <value>RBAC प्राधिकरण</value>
   </data>
   <data name="Read the document" xml:space="preserve">
     <value>दस्तावेज़ पढ़ें</value>
+  </data>
+  <data name="Ready to own your cloud?" xml:space="preserve">
+    <value>अपने क्लाउड को अपने हाथ में लेने के लिए तैयार हैं?</value>
   </data>
   <data name="Responsive Design" xml:space="preserve">
     <value>उत्तरदायी डिज़ाइन</value>
@@ -219,6 +270,15 @@
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>किसी भी OpenID Connect प्रदाता के साथ सहज एकीकरण, स्वचालित भूमिका सिंक्रनाइज़ेशन के साथ।</value>
   </data>
+  <data name="Secure your sensitive documents in an isolated area accessible only via time-limited, cryptographically signed tokens." xml:space="preserve">
+    <value>सुरक्षित अपने संवेदनशील दस्तावेज़ एक सुरक्षित क्षेत्र में जहाँ केवल समय-सीमित, क्रिप्टोग्राफिक रूप से हस्ताक्षरित टोकन के माध्यम से पहुँच उपलब्ध है।</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>सेल्फ होस्ट</value>
+  </data>
+  <data name="Self-Hosted" xml:space="preserve">
+    <value>स्व-होस्टेड</value>
+  </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>स्मार्ट कॉन्फ़िगरेशन ओवरराइड्स</value>
   </data>
@@ -231,8 +291,14 @@
   <data name="Start a new project" xml:space="preserve">
     <value>एक नया प्रोजेक्ट शुरू करें</value>
   </data>
+  <data name="Support for SQLite, MySQL, and SQL Server. Switch between List and Grid views to manage your files comfortably." xml:space="preserve">
+    <value>SQLite, MySQL, और SQL Server के लिए समर्थन। अपनी फ़ाइलों को आराम से प्रबंधित करने के लिए सूची और ग्रिड दृश्यों के बीच स्विच करें।</value>
+  </data>
   <data name="Supports both environment variables and database-backed settings, with automatic priority given to environment variables for seamless overrides." xml:space="preserve">
     <value>पर्यावरण चर और डेटाबेस-आधारित सेटिंग्स दोनों का समर्थन करता है, जिसमें पर्यावरण चरों को बिना किसी दिक्कत के अपडेट करने के लिए स्वचालित प्राथमिकता दी जाती है।</value>
+  </data>
+  <data name="Take full control of your data with industry-grade security and modern management features." xml:space="preserve">
+    <value>अपने डेटा पर पूर्ण नियंत्रण प्राप्त करें उद्योग-ग्रेड सुरक्षा और आधुनिक प्रबंधन विशेषताओं के साथ।</value>
   </data>
   <data name="Technical Lead" xml:space="preserve">
     <value>तकनीकी लीड</value>
@@ -243,17 +309,29 @@
   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>यह टेम्पलेट आसान डेप्लॉयमेंट के लिए बनाया गया है। इसमें पूर्ण Docker सपोर्ट शामिल है, जिससे आप अपने ऐप को कंटेनराइज़ करके कहीं भी चला सकते हैं। आप इसे सीधे IIS, Azure App Service, या किसी भी सर्वर पर डेप्लॉय कर सकते हैं जो ASP.NET Core को सपोर्ट करता है।</value>
   </data>
+  <data name="The ultimate solution for personal and enterprise file distribution." xml:space="preserve">
+    <value>व्यक्तिगत और उद्यमी फ़ाइल वितरण के लिए अंतिम समाधान।</value>
+  </data>
   <data name="This is a template project" xml:space="preserve">
     <value>यह एक टेम्पलेट प्रोजेक्ट है</value>
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>यह एक टेम्पलेट प्रोजेक्ट है, जहाँ से हम वॉयजर की शुरुआत करते हैं...</value>
   </data>
+  <data name="Try our public instance" xml:space="preserve">
+    <value>हमारे सार्वजनिक उदाहरण का प्रयास करें</value>
+  </data>
   <data name="Usage" xml:space="preserve">
     <value>प्रयोग</value>
   </data>
   <data name="Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless." xml:space="preserve">
     <value>इसे अपने SaaS की नींव के रूप में, अपने मोबाइल ऐप के लिए बैकएंड के रूप में, एक कॉर्पोरेट वेबसाइट के रूप में, या एक व्यक्तिगत ब्लॉग के रूप में उपयोग करें। संभावनाएं अनंत हैं।</value>
+  </data>
+  <data name="Vault Storage" xml:space="preserve">
+    <value>वॉल्ट स्टोरेज</value>
+  </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>GitHub पर देखें</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>स्वागत है</value>
@@ -263,6 +341,9 @@
   </data>
   <data name="What our developers say" xml:space="preserve">
     <value>हमारे डेवलपर्स क्या कहते हैं</value>
+  </data>
+  <data name="Why Choose AiurDrive?" xml:space="preserve">
+    <value>AiurDrive क्यों चुनें?</value>
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Aiursoft टेम्पलेट का उपयोग क्यों करें?</value>
@@ -275,6 +356,9 @@
   </data>
   <data name="You&apos;ll need the .NET 10 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
     <value>आपको .NET 10 SDK, npm और अपना पसंदीदा IDE, जैसे Visual Studio या JetBrains Rider की आवश्यकता होगी। आप हमारे दस्तावेज़ीकरण में पूर्ण सेटअप गाइड पा सकते हैं।</value>
+  </data>
+  <data name="Your Private Cloud" xml:space="preserve">
+    <value>आपका निजी क्लाउड</value>
   </data>
 
 </root>

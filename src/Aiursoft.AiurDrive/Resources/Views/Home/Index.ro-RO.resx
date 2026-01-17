@@ -30,6 +30,9 @@
   <data name="A complete solution for user authentication and profile management." xml:space="preserve">
     <value>O soluție completă pentru autentificarea utilizatorilor și gestionarea profilurilor.</value>
   </data>
+  <data name="A free, flexible file sharing center designed for local deployment." xml:space="preserve">
+    <value>Un centru gratuit și flexibil de partajare de fișiere conceput pentru implementare locală.</value>
+  </data>
   <data name="A fully responsive layout that looks great on both desktop and mobile devices." xml:space="preserve">
     <value>Un layout complet responsive care arată excelent atât pe dispozitive desktop, cât și pe mobile.</value>
   </data>
@@ -38,6 +41,9 @@
   </data>
   <data name="Achieve more with Aiursoft Template" xml:space="preserve">
     <value>Realizați mai multe cu Aiursoft Template</value>
+  </data>
+  <data name="Advanced Privacy &amp; Security" xml:space="preserve">
+    <value>Securitate și confidențialitate avansate</value>
   </data>
   <data name="AI-Powered Translations" xml:space="preserve">
     <value>Traduceri alimentate de IA</value>
@@ -66,6 +72,9 @@
   <data name="Automatic, AI-driven translation into 28 languages." xml:space="preserve">
     <value>Traducere automată, alimentată de inteligență artificială, în 28 de limbi.</value>
   </data>
+  <data name="Automatically clear EXIF metadata from uploaded images to prevent accidental leakage of GPS and device information." xml:space="preserve">
+    <value>Șterge automat metadatele EXIF din imagini încărcate pentru a preveni eliberarea accidentala a informațiilor de GPS și ale dispozitivului.</value>
+  </data>
   <data name="Background Job Processing" xml:space="preserve">
     <value>Procesare sarcini în fundal</value>
   </data>
@@ -87,6 +96,12 @@
   <data name="Consistency Validation" xml:space="preserve">
     <value>Validare de coerentă</value>
   </data>
+  <data name="Control storage consumption with global site capacity limits, featuring real-time usage monitoring." xml:space="preserve">
+    <value>Controlează consumul de stocare cu limite globale de capacitate site, cu monitorizare în timp real a utilizării.</value>
+  </data>
+  <data name="Core Values" xml:space="preserve">
+    <value>Valori esențiale</value>
+  </data>
   <data name="Dashboard Website" xml:space="preserve">
     <value>Site-ul Panoului de Control</value>
   </data>
@@ -95,6 +110,9 @@
   </data>
   <data name="Discussions page" xml:space="preserve">
     <value>Pagina de discuții</value>
+  </data>
+  <data name="Dockerized architecture means you can get up and running in seconds. Low maintenance, high reliability." xml:space="preserve">
+    <value>Arhitectură Dockerizată înseamnă că poți începe să lucrezi în câteva secunde. Menținere scăzută, înaltă fiabilitate.</value>
   </data>
   <data name="Dockerized for Deployment" xml:space="preserve">
     <value>Containerizat pentru Implementare</value>
@@ -111,8 +129,14 @@
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>Comută cu ușurință între furnizori precum SQLite, MySQL, SQL Server și o bază de date în memorie pentru testare.</value>
   </data>
+  <data name="Easy to Deploy" xml:space="preserve">
+    <value>Ușor de implementat</value>
+  </data>
   <data name="Effortlessly write integration tests using in-memory databases, temporary file systems, built-in mocking, and real-world HTTP request simulation." xml:space="preserve">
     <value>Scrieți testele de integrare fără efort folosind baze de date în memorie, sisteme de fișiere temporare, mocking integrat și simularea cererilor HTTP din lumea reală.</value>
+  </data>
+  <data name="Enter Dashboard" xml:space="preserve">
+    <value>Accesează Panou</value>
   </data>
   <data name="FAQ" xml:space="preserve">
     <value>Întrebări frecvente</value>
@@ -129,14 +153,23 @@
   <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
     <value>Include un sistem integrat de gestionare a fișierelor cu compresie automată a avatarurilor.</value>
   </data>
+  <data name="Flexible" xml:space="preserve">
+    <value>Flexibil</value>
+  </data>
   <data name="for any inquiries or to report issues." xml:space="preserve">
     <value>pentru orice întrebări sau pentru a raporta probleme.</value>
   </data>
   <data name="Free" xml:space="preserve">
     <value>Gratuit</value>
   </data>
+  <data name="Freedom" xml:space="preserve">
+    <value>Libertate</value>
+  </data>
   <data name="Frequently asked questions" xml:space="preserve">
     <value>Întrebări frecvente</value>
+  </data>
+  <data name="Fully open-source and MIT licensed. No vendor lock-in, no hidden costs. Your server, your rules." xml:space="preserve">
+    <value>Total deschis și licențiat sub MIT. Fără blocare de furnizor, fără costuri ascunse. Serverul tău, regulile tale.</value>
   </data>
   <data name="Go to dashboard" xml:space="preserve">
     <value>Accesează panoul de control</value>
@@ -174,6 +207,9 @@
   <data name="Join our community and start building today!" xml:space="preserve">
     <value>Alăturați-vă comunității noastre și începeți să construiți astăzi!</value>
   </data>
+  <data name="Join thousands of users who trust AiurDrive for their local file management needs." xml:space="preserve">
+    <value>Alăturați-vă mii de utilizatori care își încredințează AiurDrive pentru nevoile lor de gestionare locală a fișierelor.</value>
+  </data>
   <data name="Markdown To HTML" xml:space="preserve">
     <value>Markdown în HTML</value>
   </data>
@@ -198,11 +234,26 @@
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>Integrare OpenID Connect</value>
   </data>
+  <data name="Physically isolated storage modes (Workspace &amp; Vault), automatic image optimization, and robust path traversal protection." xml:space="preserve">
+    <value>Moduri de stocare fizic izolate (Workspace &amp; Vault), optimizare automată a imaginilor și protecție robustă împotriva traversării căilor.</value>
+  </data>
+  <data name="Powerful" xml:space="preserve">
+    <value>Puternic</value>
+  </data>
+  <data name="Privacy by Default" xml:space="preserve">
+    <value>Confidențialitate implicită</value>
+  </data>
+  <data name="Quota Management" xml:space="preserve">
+    <value>Gestionarea cotelor</value>
+  </data>
   <data name="RBAC Authorization" xml:space="preserve">
     <value>Autorizare RBAC</value>
   </data>
   <data name="Read the document" xml:space="preserve">
     <value>Citește documentația</value>
+  </data>
+  <data name="Ready to own your cloud?" xml:space="preserve">
+    <value>Gata să-ți iei controlul asupra cloud-ului?</value>
   </data>
   <data name="Responsive Design" xml:space="preserve">
     <value>Design Responsiv</value>
@@ -219,6 +270,15 @@
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Integrați fără probleme cu orice furnizor OpenID Connect, cu sincronizare automată a rolurilor.</value>
   </data>
+  <data name="Secure your sensitive documents in an isolated area accessible only via time-limited, cryptographically signed tokens." xml:space="preserve">
+    <value>Păstrați documentele sensibile într-o zonă izolată accesibilă doar prin tokenuri cu semnătură criptografică și limită de timp.</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Auto-găzduire</value>
+  </data>
+  <data name="Self-Hosted" xml:space="preserve">
+    <value>Auto-găzduit</value>
+  </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>Supraîncărcări de Configurații Inteligente</value>
   </data>
@@ -231,8 +291,14 @@
   <data name="Start a new project" xml:space="preserve">
     <value>Începe un proiect nou</value>
   </data>
+  <data name="Support for SQLite, MySQL, and SQL Server. Switch between List and Grid views to manage your files comfortably." xml:space="preserve">
+    <value>Suport pentru SQLite, MySQL și SQL Server. Treceti între vizualizarea Listă și Grid pentru a gestiona fișierele confortabil.</value>
+  </data>
   <data name="Supports both environment variables and database-backed settings, with automatic priority given to environment variables for seamless overrides." xml:space="preserve">
     <value>Suportă atât variabilele de mediu, cât și setările stocate în baza de date, cu prioritate automată acordată variabilelor de mediu pentru actualizări fără probleme.</value>
+  </data>
+  <data name="Take full control of your data with industry-grade security and modern management features." xml:space="preserve">
+    <value>Luați controlul complet asupra datelor dvs. cu securitate de nivel industrial și funcții moderne de gestionare.</value>
   </data>
   <data name="Technical Lead" xml:space="preserve">
     <value>Conducător Tehnic</value>
@@ -243,17 +309,29 @@
   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>Șablonul este construit pentru o implementare ușoară. Include suport complet pentru Docker, astfel încât poți containeriza aplicația și să o rulezi oriunde. De asemenea, îl poți implementa direct pe IIS, Azure App Service sau pe orice server care suportă ASP.NET Core.</value>
   </data>
+  <data name="The ultimate solution for personal and enterprise file distribution." xml:space="preserve">
+    <value>Soluția definitivă pentru distribuția fișierelor personale și enterprise.</value>
+  </data>
   <data name="This is a template project" xml:space="preserve">
     <value>Acesta este un proiect tip</value>
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Acesta este un proiect tipic, de unde începem călătoria...</value>
   </data>
+  <data name="Try our public instance" xml:space="preserve">
+    <value>Încearcă instanța noastră publică</value>
+  </data>
   <data name="Usage" xml:space="preserve">
     <value>Utilizare</value>
   </data>
   <data name="Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless." xml:space="preserve">
     <value>Folosește-l ca fundație pentru SaaS-ul tău, ca backend pentru aplicația ta mobilă, ca site corporativ sau ca blog personal. Posibilitățile sunt nelimitate.</value>
+  </data>
+  <data name="Vault Storage" xml:space="preserve">
+    <value>Stocare Vault</value>
+  </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>Vizualizează pe GitHub</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Bun venit</value>
@@ -263,6 +341,9 @@
   </data>
   <data name="What our developers say" xml:space="preserve">
     <value>Ce spun dezvoltatorii noștri</value>
+  </data>
+  <data name="Why Choose AiurDrive?" xml:space="preserve">
+    <value>De ce alegi AiurDrive?</value>
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>De ce să folosești Șablonul Aiursoft?</value>
@@ -275,6 +356,9 @@
   </data>
   <data name="You&apos;ll need the .NET 10 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
     <value>Vei avea nevoie de .NET 10 SDK, npm și IDE-ul tău preferat, cum ar fi Visual Studio sau JetBrains Rider. Poți găsi ghidul complet de configurare în documentația noastră.</value>
+  </data>
+  <data name="Your Private Cloud" xml:space="preserve">
+    <value>Cloud-ul tău privat</value>
   </data>
 
 </root>

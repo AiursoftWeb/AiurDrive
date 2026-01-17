@@ -30,6 +30,9 @@
   <data name="A complete solution for user authentication and profile management." xml:space="preserve">
     <value>Повне рішення для автентифікації користувачів та управління профілями.</value>
   </data>
+  <data name="A free, flexible file sharing center designed for local deployment." xml:space="preserve">
+    <value>Безкоштовний, гнучкий центр обміну файлами, призначений для локального розгортання.</value>
+  </data>
   <data name="A fully responsive layout that looks great on both desktop and mobile devices." xml:space="preserve">
     <value>Адаптивний макет, який чудово виглядає як на настільних комп&apos;ютерах, так і на мобільних пристроях.</value>
   </data>
@@ -38,6 +41,9 @@
   </data>
   <data name="Achieve more with Aiursoft Template" xml:space="preserve">
     <value>Досягайте більшого з Aiursoft Template</value>
+  </data>
+  <data name="Advanced Privacy &amp; Security" xml:space="preserve">
+    <value>Розширені приватність та безпека</value>
   </data>
   <data name="AI-Powered Translations" xml:space="preserve">
     <value>Переклади на основі ШІ</value>
@@ -66,6 +72,9 @@
   <data name="Automatic, AI-driven translation into 28 languages." xml:space="preserve">
     <value>Автоматичний переклад із використанням штучного інтелекту на 28 мовах.</value>
   </data>
+  <data name="Automatically clear EXIF metadata from uploaded images to prevent accidental leakage of GPS and device information." xml:space="preserve">
+    <value>Автоматично очищайте метадані EXIF з завантажених зображень, щоб уникнути ненавмисного розголошення GPS та інформації про пристрій.</value>
+  </data>
   <data name="Background Job Processing" xml:space="preserve">
     <value>Обробка фонових завдань</value>
   </data>
@@ -87,6 +96,12 @@
   <data name="Consistency Validation" xml:space="preserve">
     <value>Перевірка узгодженості</value>
   </data>
+  <data name="Control storage consumption with global site capacity limits, featuring real-time usage monitoring." xml:space="preserve">
+    <value>Керуйте використанням місця за допомогою загальних обмежень місткості сайту з реалізацією моніторингу використання в режимі реального часу.</value>
+  </data>
+  <data name="Core Values" xml:space="preserve">
+    <value>Основні цінності</value>
+  </data>
   <data name="Dashboard Website" xml:space="preserve">
     <value>Веб-сайт панелі керування</value>
   </data>
@@ -95,6 +110,9 @@
   </data>
   <data name="Discussions page" xml:space="preserve">
     <value>Сторінка обговорень</value>
+  </data>
+  <data name="Dockerized architecture means you can get up and running in seconds. Low maintenance, high reliability." xml:space="preserve">
+    <value>Архітектура на основі Docker дозволяє швидко запустити систему. Низький рівень обслуговування, висока надійність.</value>
   </data>
   <data name="Dockerized for Deployment" xml:space="preserve">
     <value>Підготовлено для розгортання в Docker</value>
@@ -111,8 +129,14 @@
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>Легко перемикайтеся між провайдерами, такими як SQLite, MySQL, SQL Server, та оперативною пам&apos;яттю для тестування.</value>
   </data>
+  <data name="Easy to Deploy" xml:space="preserve">
+    <value>Просто увімкнути</value>
+  </data>
   <data name="Effortlessly write integration tests using in-memory databases, temporary file systems, built-in mocking, and real-world HTTP request simulation." xml:space="preserve">
     <value>Легко створюйте інтеграційні тести, використовуючи бази даних у пам&apos;яті, тимчасові файлові системи, вбудоване мокування та симуляцію реальних HTTP-запитів.</value>
+  </data>
+  <data name="Enter Dashboard" xml:space="preserve">
+    <value>Увійти в панель керування</value>
   </data>
   <data name="FAQ" xml:space="preserve">
     <value>Часті питання</value>
@@ -129,14 +153,23 @@
   <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
     <value>Містить вбудовану систему керування файлами з автоматичним стисненням аватарів.</value>
   </data>
+  <data name="Flexible" xml:space="preserve">
+    <value>Гнучкість</value>
+  </data>
   <data name="for any inquiries or to report issues." xml:space="preserve">
     <value>для будь-яких запитів або повідомлення про проблеми.</value>
   </data>
   <data name="Free" xml:space="preserve">
     <value>Безкоштовно</value>
   </data>
+  <data name="Freedom" xml:space="preserve">
+    <value>Вільна</value>
+  </data>
   <data name="Frequently asked questions" xml:space="preserve">
     <value>Часті запитання</value>
+  </data>
+  <data name="Fully open-source and MIT licensed. No vendor lock-in, no hidden costs. Your server, your rules." xml:space="preserve">
+    <value>Повністю відкритий код і ліцензія MIT. Жодного в’язання з постачальником, жодних прихованих витрат. Ваш сервер — ваші правила.</value>
   </data>
   <data name="Go to dashboard" xml:space="preserve">
     <value>Перейти до панелі керування</value>
@@ -174,6 +207,9 @@
   <data name="Join our community and start building today!" xml:space="preserve">
     <value>Приєднуйтесь до нашої спільноти та почніть створювати вже сьогодні!</value>
   </data>
+  <data name="Join thousands of users who trust AiurDrive for their local file management needs." xml:space="preserve">
+    <value>Приєднуйтесь до тисяч користувачів, які довіряють AiurDrive для управління локальними файлами.</value>
+  </data>
   <data name="Markdown To HTML" xml:space="preserve">
     <value>Markdown у HTML</value>
   </data>
@@ -198,11 +234,26 @@
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>Інтеграція OpenID Connect</value>
   </data>
+  <data name="Physically isolated storage modes (Workspace &amp; Vault), automatic image optimization, and robust path traversal protection." xml:space="preserve">
+    <value>Фізично ізольовані режими зберігання (Робоча станція та Сховище), автоматична оптимізація зображень та надійна захист від обходу шляхів.</value>
+  </data>
+  <data name="Powerful" xml:space="preserve">
+    <value>Потужний</value>
+  </data>
+  <data name="Privacy by Default" xml:space="preserve">
+    <value>Приватність за замовчуванням</value>
+  </data>
+  <data name="Quota Management" xml:space="preserve">
+    <value>Керування квотами</value>
+  </data>
   <data name="RBAC Authorization" xml:space="preserve">
     <value>Авторизація RBAC</value>
   </data>
   <data name="Read the document" xml:space="preserve">
     <value>Прочитати документацію</value>
+  </data>
+  <data name="Ready to own your cloud?" xml:space="preserve">
+    <value>Готові власноруч керувати своїм хмарним простором?</value>
   </data>
   <data name="Responsive Design" xml:space="preserve">
     <value>Адаптивний дизайн</value>
@@ -219,6 +270,15 @@
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Безперешкодна інтеграція з будь-яким постачальником OpenID Connect із автоматичною синхронізацією ролей.</value>
   </data>
+  <data name="Secure your sensitive documents in an isolated area accessible only via time-limited, cryptographically signed tokens." xml:space="preserve">
+    <value>Зберігайте свої конфіденційні документи у ізольованій області, доступ до якої можливий лише за допомогою тимчасових токенів із криптографічним підписом.</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Власне хостинг</value>
+  </data>
+  <data name="Self-Hosted" xml:space="preserve">
+    <value>Самостійне розгортання</value>
+  </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>Розумні перевизначення конфігурації</value>
   </data>
@@ -231,8 +291,14 @@
   <data name="Start a new project" xml:space="preserve">
     <value>Розпочати новий проєкт</value>
   </data>
+  <data name="Support for SQLite, MySQL, and SQL Server. Switch between List and Grid views to manage your files comfortably." xml:space="preserve">
+    <value>Підтримка SQLite, MySQL і SQL Server. Перемикайтеся між режимами списку та сітки для зручного керування файлами.</value>
+  </data>
   <data name="Supports both environment variables and database-backed settings, with automatic priority given to environment variables for seamless overrides." xml:space="preserve">
     <value>Підтримує як змінні середовища, так і налаштування, зберігаються у базі даних, з автоматичним пріоритетом для змінних середовища для безперервного перекриття.</value>
+  </data>
+  <data name="Take full control of your data with industry-grade security and modern management features." xml:space="preserve">
+    <value>Керуйте своїми даними в повному обсязі завдяки промисловому рівню безпеки та сучасним функціям управління.</value>
   </data>
   <data name="Technical Lead" xml:space="preserve">
     <value>Технічний лідер</value>
@@ -243,17 +309,29 @@
   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>Цей шаблон створено для простоти розгортання. Він включає повну підтримку Docker, тому ви можете контейнеризувати ваш додаток і запускати його де завгодно. Ви також можете розгорнути його безпосередньо в IIS, Azure App Service або на будь-якому сервері, що підтримує ASP.NET Core.</value>
   </data>
+  <data name="The ultimate solution for personal and enterprise file distribution." xml:space="preserve">
+    <value>Найкраще рішення для особистого та корпоративного розподілу файлів.</value>
+  </data>
   <data name="This is a template project" xml:space="preserve">
     <value>Це шаблонний проєкт</value>
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Це шаблонний проект, з якого ми починаємо нашу подорож...</value>
   </data>
+  <data name="Try our public instance" xml:space="preserve">
+    <value>Спробуйте наш публічний екземпляр</value>
+  </data>
   <data name="Usage" xml:space="preserve">
     <value>Використання</value>
   </data>
   <data name="Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless." xml:space="preserve">
     <value>Використовуйте його як основу для вашого SaaS, бекенд для вашого мобільного додатку, корпоративний веб-сайт або особистий блог. Можливості нескінченні.</value>
+  </data>
+  <data name="Vault Storage" xml:space="preserve">
+    <value>Сховище Vault</value>
+  </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>Переглянути на GitHub</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Ласкаво просимо</value>
@@ -263,6 +341,9 @@
   </data>
   <data name="What our developers say" xml:space="preserve">
     <value>Що кажуть наші розробники</value>
+  </data>
+  <data name="Why Choose AiurDrive?" xml:space="preserve">
+    <value>Чому варто обрати AiurDrive?</value>
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Чому варто використовувати шаблон Aiursoft?</value>
@@ -275,6 +356,9 @@
   </data>
   <data name="You&apos;ll need the .NET 10 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
     <value>Вам знадобиться .NET 10 SDK, npm та ваше улюблене середовище розробки, наприклад Visual Studio або JetBrains Rider. Повний посібник із налаштування ви знайдете в нашій документації.</value>
+  </data>
+  <data name="Your Private Cloud" xml:space="preserve">
+    <value>Ваш приватний хмарний сервіс</value>
   </data>
 
 </root>

@@ -30,6 +30,9 @@
   <data name="A complete solution for user authentication and profile management." xml:space="preserve">
     <value>用戶身分驗證和個人資料管理的完整解決方案。</value>
   </data>
+  <data name="A free, flexible file sharing center designed for local deployment." xml:space="preserve">
+    <value>一個免費、彈性的檔案分享中心，專為本地部署而設計。</value>
+  </data>
   <data name="A fully responsive layout that looks great on both desktop and mobile devices." xml:space="preserve">
     <value>完全響應式佈局，在桌面和行動裝置上都能呈現絕佳外觀。</value>
   </data>
@@ -38,6 +41,9 @@
   </data>
   <data name="Achieve more with Aiursoft Template" xml:space="preserve">
     <value>使用 Aiursoft Template 成就更多</value>
+  </data>
+  <data name="Advanced Privacy &amp; Security" xml:space="preserve">
+    <value>進階隱私與安全</value>
   </data>
   <data name="AI-Powered Translations" xml:space="preserve">
     <value>AI 驅動翻譯</value>
@@ -66,6 +72,9 @@
   <data name="Automatic, AI-driven translation into 28 languages." xml:space="preserve">
     <value>自動、由AI驅動的翻譯，支援28種語言。</value>
   </data>
+  <data name="Automatically clear EXIF metadata from uploaded images to prevent accidental leakage of GPS and device information." xml:space="preserve">
+    <value>上傳圖片時自動清除 EXIF 元數據，以防止 GPS 與裝置資訊意外外洩。</value>
+  </data>
   <data name="Background Job Processing" xml:space="preserve">
     <value>背景工作處理</value>
   </data>
@@ -87,6 +96,12 @@
   <data name="Consistency Validation" xml:space="preserve">
     <value>一致性驗證</value>
   </data>
+  <data name="Control storage consumption with global site capacity limits, featuring real-time usage monitoring." xml:space="preserve">
+    <value>透過全域網站容量限制控制儲存空間使用量，並具備即時用量監控功能。</value>
+  </data>
+  <data name="Core Values" xml:space="preserve">
+    <value>核心價值</value>
+  </data>
   <data name="Dashboard Website" xml:space="preserve">
     <value>儀表板網站</value>
   </data>
@@ -95,6 +110,9 @@
   </data>
   <data name="Discussions page" xml:space="preserve">
     <value>討論頁面</value>
+  </data>
+  <data name="Dockerized architecture means you can get up and running in seconds. Low maintenance, high reliability." xml:space="preserve">
+    <value>Docker 化架構表示您可在數秒內完成設定並開始使用。維護成本低，可靠性高。</value>
   </data>
   <data name="Dockerized for Deployment" xml:space="preserve">
     <value>容器化部署</value>
@@ -111,8 +129,14 @@
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>可輕鬆切換不同的資料庫供應商，例如 SQLite、MySQL、SQL Server 以及用於測試的記憶體資料庫。</value>
   </data>
+  <data name="Easy to Deploy" xml:space="preserve">
+    <value>輕鬆部署</value>
+  </data>
   <data name="Effortlessly write integration tests using in-memory databases, temporary file systems, built-in mocking, and real-world HTTP request simulation." xml:space="preserve">
     <value>輕鬆撰寫整合測試，使用記憶體資料庫、暫存檔案系統、內建模擬以及真實世界的 HTTP 請求模擬。</value>
+  </data>
+  <data name="Enter Dashboard" xml:space="preserve">
+    <value>進入儀表板</value>
   </data>
   <data name="FAQ" xml:space="preserve">
     <value>常見問題</value>
@@ -129,14 +153,23 @@
   <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
     <value>具備內建檔案管理系統，並支援自動頭像壓縮功能。</value>
   </data>
+  <data name="Flexible" xml:space="preserve">
+    <value>彈性</value>
+  </data>
   <data name="for any inquiries or to report issues." xml:space="preserve">
     <value>如有任何疑問或回報問題。</value>
   </data>
   <data name="Free" xml:space="preserve">
     <value>免費</value>
   </data>
+  <data name="Freedom" xml:space="preserve">
+    <value>自由</value>
+  </data>
   <data name="Frequently asked questions" xml:space="preserve">
     <value>常見問題</value>
+  </data>
+  <data name="Fully open-source and MIT licensed. No vendor lock-in, no hidden costs. Your server, your rules." xml:space="preserve">
+    <value>完全開源且採用 MIT 授權。無供應商綁定，無隱藏成本。你的伺服器，你的規則。</value>
   </data>
   <data name="Go to dashboard" xml:space="preserve">
     <value>前往儀表板</value>
@@ -174,6 +207,9 @@
   <data name="Join our community and start building today!" xml:space="preserve">
     <value>加入我們的社群，立即開始建構！</value>
   </data>
+  <data name="Join thousands of users who trust AiurDrive for their local file management needs." xml:space="preserve">
+    <value>加入數千名信賴 AiurDrive 管理本地檔案的使用者行列。</value>
+  </data>
   <data name="Markdown To HTML" xml:space="preserve">
     <value>Markdown 轉 HTML</value>
   </data>
@@ -198,11 +234,26 @@
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>OpenID Connect 整合</value>
   </data>
+  <data name="Physically isolated storage modes (Workspace &amp; Vault), automatic image optimization, and robust path traversal protection." xml:space="preserve">
+    <value>實體隔離儲存模式（工作區與保險庫）、自動影像優化，以及強大的路徑遍歷防護。</value>
+  </data>
+  <data name="Powerful" xml:space="preserve">
+    <value>強大</value>
+  </data>
+  <data name="Privacy by Default" xml:space="preserve">
+    <value>預設隱私保護</value>
+  </data>
+  <data name="Quota Management" xml:space="preserve">
+    <value>配額管理</value>
+  </data>
   <data name="RBAC Authorization" xml:space="preserve">
     <value>RBAC 授權</value>
   </data>
   <data name="Read the document" xml:space="preserve">
     <value>閱讀文件</value>
+  </data>
+  <data name="Ready to own your cloud?" xml:space="preserve">
+    <value>準備好擁有屬於你的雲端空間了嗎？</value>
   </data>
   <data name="Responsive Design" xml:space="preserve">
     <value>響應式設計</value>
@@ -219,6 +270,15 @@
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>無縫整合任何 OpenID Connect 提供者，並自動同步角色權限。</value>
   </data>
+  <data name="Secure your sensitive documents in an isolated area accessible only via time-limited, cryptographically signed tokens." xml:space="preserve">
+    <value>將您的敏感文件儲存在僅能透過時間有限、經密碼學簽署的權杖存取的隔離區域中。</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>自行主機</value>
+  </data>
+  <data name="Self-Hosted" xml:space="preserve">
+    <value>自行主機</value>
+  </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>智慧型設定覆蓋</value>
   </data>
@@ -231,8 +291,14 @@
   <data name="Start a new project" xml:space="preserve">
     <value>開始新專案</value>
   </data>
+  <data name="Support for SQLite, MySQL, and SQL Server. Switch between List and Grid views to manage your files comfortably." xml:space="preserve">
+    <value>支援 SQLite、MySQL 與 SQL Server。可在清單與格狀檢視之間切換，輕鬆管理您的檔案。</value>
+  </data>
   <data name="Supports both environment variables and database-backed settings, with automatic priority given to environment variables for seamless overrides." xml:space="preserve">
     <value>支援環境變數和資料庫支援的設定，並自動優先使用環境變數以實現無縫覆蓋。</value>
+  </data>
+  <data name="Take full control of your data with industry-grade security and modern management features." xml:space="preserve">
+    <value>完全掌控您的資料，享受業界級的安全性與現代化管理功能。</value>
   </data>
   <data name="Technical Lead" xml:space="preserve">
     <value>技術負責人</value>
@@ -243,17 +309,29 @@
   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>此模板專為簡化部署流程而設計。它提供完整的 Docker 支援，讓您能將應用程式容器化並隨處執行。您也可以直接部署到 IIS、Azure App Service 或任何支援 ASP.NET Core 的伺服器。</value>
   </data>
+  <data name="The ultimate solution for personal and enterprise file distribution." xml:space="preserve">
+    <value>個人與企業檔案傳輸的最終解決方案。</value>
+  </data>
   <data name="This is a template project" xml:space="preserve">
     <value>這是一個範本專案</value>
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>這是一個模板專案，我們從這裡開啟航程...</value>
   </data>
+  <data name="Try our public instance" xml:space="preserve">
+    <value>試用我們的公開實例</value>
+  </data>
   <data name="Usage" xml:space="preserve">
     <value>使用方式</value>
   </data>
   <data name="Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless." xml:space="preserve">
     <value>無論是作為您 SaaS 的基礎架構、行動應用程式的後端、企業網站或個人部落格，都能完美適用。可能性永無止境。</value>
+  </data>
+  <data name="Vault Storage" xml:space="preserve">
+    <value>保險庫儲存</value>
+  </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>檢視 GitHub</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>歡迎</value>
@@ -263,6 +341,9 @@
   </data>
   <data name="What our developers say" xml:space="preserve">
     <value>我們的開發者怎麼說</value>
+  </data>
+  <data name="Why Choose AiurDrive?" xml:space="preserve">
+    <value>為什麼選擇 AiurDrive？</value>
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>為什麼使用 Aiursoft 模板？</value>
@@ -275,6 +356,9 @@
   </data>
   <data name="You&apos;ll need the .NET 10 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
     <value>您需要安裝 .NET 10 SDK、npm 以及您喜愛的 IDE，例如 Visual Studio 或 JetBrains Rider。您可以在我們的文件中找到完整的設定指南。</value>
+  </data>
+  <data name="Your Private Cloud" xml:space="preserve">
+    <value>你的私人雲端</value>
   </data>
 
 </root>

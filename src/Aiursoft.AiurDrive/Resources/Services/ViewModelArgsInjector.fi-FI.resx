@@ -24,6 +24,12 @@
   <data name="Administration" xml:space="preserve">
     <value>Hallinto</value>
   </data>
+  <data name="AiurDrive" xml:space="preserve">
+    <value>AiurDrive</value>
+  </data>
+  <data name="Aiursoft AiurDrive" xml:space="preserve">
+    <value>Aiursoft AiurDrive</value>
+  </data>
   <data name="Aiursoft Template" xml:space="preserve">
     <value>Aiursoft-malli</value>
   </data>
