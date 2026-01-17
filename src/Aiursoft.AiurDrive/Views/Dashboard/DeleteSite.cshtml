@@ -1,0 +1,52 @@
+@model Aiursoft.AiurDrive.Models.DashboardViewModels.DeleteSiteViewModel
+@{
+    ViewData["Title"] = Localizer["Delete Site"] + " - " + Model.SiteName;
+}
+
+<div class="container-fluid">
+    <h1 class="h3 mb-3">@Localizer["Delete Site"]</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-8">
+            <div class="card">
+                <div class="card-header text-center">
+                    <i class="fas fa-exclamation-triangle text-danger" style="font-size: 48px;"></i>
+                </div>
+                <div class="card-body">
+                    <div class="text-center">
+                        <h2 class="h4 card-title fw-bold">@Localizer["Are you sure?"]</h2>
+                        <p class="mb-3 text-muted">@Localizer["This action is irreversible. You are about to permanently delete the following site:"]</p>
+                    </div>
+
+                    <div class="list-group list-group-flush my-4">
+                        <div class="list-group-item">
+                            <div class="row">
+                                <strong class="col-sm-3">@Localizer["Site Name"]</strong>
+                                <div class="col-sm-9">
+                                    @Model.SiteName
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item">
+                            <div class="row">
+                                <strong class="col-sm-3">@Localizer["Creation Time"]</strong>
+                                <div class="col-sm-9">
+                                    <label class="text-monospace">@Model.CreationTime.ToLocalTime()</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <form class="d-inline-block" asp-controller="Dashboard" asp-action="DeleteSite" asp-route-siteName="@Model.SiteName" method="post">
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fas fa-trash-alt me-2"></i> @Localizer["Yes, delete this site"]
+                            </button>
+                        </form>
+                        <a class="btn btn-light" asp-controller="Dashboard" asp-action="Index">@Localizer["Cancel"]</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

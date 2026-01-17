@@ -7,6 +7,7 @@ using Aiursoft.AiurDrive.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using Aiursoft.AiurDrive.Services.FileStorage;
+using Aiursoft.AiurDrive.Configuration;
 
 namespace Aiursoft.AiurDrive.Controllers;
 
@@ -14,7 +15,8 @@ namespace Aiursoft.AiurDrive.Controllers;
 [Authorize]
 public class DashboardController(
     TemplateDbContext dbContext,
-    StorageService storage) : Controller
+    StorageService storage,
+    GlobalSettingsService globalSettings) : Controller
 {
     [RenderInNavBar(
         NavGroupName = "Features",
@@ -112,6 +114,9 @@ public class DashboardController(
         var files = directoryInfo.GetFiles().OrderByDescending(f => f.LastWriteTime).ToList();
         var folders = directoryInfo.GetDirectories().OrderBy(f => f.Name).Select(f => f.Name).ToList();
 
+        var maxSpaceString = await globalSettings.GetSettingValueAsync(SettingsMap.MaxSiteStorageInGB);
+        long.TryParse(maxSpaceString, out var maxSpaceGB);
+
         var model = new FileManagerViewModel
         {
             SiteName = siteName,
@@ -119,7 +124,9 @@ public class DashboardController(
             Path = path.Replace("\\", "/"),
             Files = files,
             Folders = folders,
-            PageTitle = "File Manager"
+            PageTitle = "File Manager",
+            UsedSpaceInBytes = storage.GetSiteSize(siteName),
+            TotalSpaceInGB = maxSpaceGB
         };
         return this.StackView(model);
     }
@@ -199,8 +206,9 @@ public class DashboardController(
         return RedirectToAction(nameof(Files), new { siteName, path = parentPath });
     }
 
-    [Route("Dashboard/Settings/{siteName}")]
-    public async Task<IActionResult> Settings(string siteName)
+    [HttpGet]
+    [Route("Dashboard/DeleteSite/{siteName}")]
+    public async Task<IActionResult> DeleteSite(string siteName)
     {
         var user = await dbContext.Users
             .Include(u => u.Sites)
@@ -210,10 +218,11 @@ public class DashboardController(
         var site = user.Sites.FirstOrDefault(s => s.SiteName == siteName);
         if (site == null) return NotFound();
 
-        var model = new SettingsViewModel
+        var model = new DeleteSiteViewModel
         {
             SiteName = site.SiteName,
-            OpenToUpload = site.OpenToUpload
+            OpenToUpload = site.OpenToUpload,
+            CreationTime = site.CreationTime
         };
         return this.StackView(model);
     }
@@ -221,7 +230,8 @@ public class DashboardController(
     [HttpPost]
     [ValidateAntiForgeryToken]
     [Route("Dashboard/DeleteSite/{siteName}")]
-    public async Task<IActionResult> DeleteSite(string siteName)
+    [ActionName("DeleteSite")] // Ensures the form with asp-action="DeleteSite" posts here
+    public async Task<IActionResult> DeleteSiteConfirmed(string siteName)
     {
         var user = await dbContext.Users
             .Include(u => u.Sites)
@@ -361,13 +371,6 @@ public class DashboardController(
         if (site == null) return NotFound();
 
         if (string.IsNullOrWhiteSpace(sourcePath)) return BadRequest("Source path cannot be empty.");
-        targetPath ??= string.Empty;
-
-        // Prevent moving into itself
-        // Normalizing paths for comparison
-        var normalizedSource = sourcePath.Replace("\\", "/").Trim('/');
-        var normalizedTarget = targetPath.Replace("\\", "/").Trim('/');
-        targetPath ??= string.Empty;
 
         // Prevent moving into itself
         // Normalizing paths for comparison
@@ -390,11 +393,12 @@ public class DashboardController(
         }
 
         var fileName = Path.GetFileName(normalizedSource);
-        var logicalDestPath = Path.Combine(normalizedTarget, fileName).Replace("\\", "/");
+        var logicalDestPath = Path.Combine(siteName, normalizedTarget, fileName).Replace("\\", "/");
+        var logicalSourcePath = Path.Combine(siteName, normalizedSource).Replace("\\", "/");
 
         try 
         {
-            var physicalSource = storage.GetFilePhysicalPath(normalizedSource, !site.OpenToUpload);
+            var physicalSource = storage.GetFilePhysicalPath(logicalSourcePath, !site.OpenToUpload);
             // We use GetFilePhysicalPath for destination too to ensure it resolves to a safe path inside the site
             // However, GetFilePhysicalPath usually checks for existence? 
             // Wait, looking at StorageService.GetFilePhysicalPath: it only checks "StartsWith root". It does NOT check File.Exists.

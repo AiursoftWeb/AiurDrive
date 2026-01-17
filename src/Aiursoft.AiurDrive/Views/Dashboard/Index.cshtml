@@ -6,44 +6,46 @@
 <div class="container-fluid">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">@Localizer["Dashboard"]</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
-            <a asp-controller="Dashboard" asp-action="CreateSite" class="btn btn-sm btn-outline-secondary">
-                <i class="fas fa-plus"></i> @Localizer["Create New Site"]
-            </a>
-        </div>
     </div>
 
     <div class="row">
-        @if (!Model.Sites.Any())
-        {
-            <div class="col-12 text-center mt-5">
-                <h3>@Localizer["You don't have any sites yet."]</h3>
-                <a asp-controller="Dashboard" asp-action="CreateSite" class="btn btn-primary mt-3">@Localizer["Create Your First Site"]</a>
-            </div>
-        }
-        else
+        <div class="col-md-4 mb-4">
+            <a asp-controller="Dashboard" asp-action="CreateSite" class="text-decoration-none">
+                <div class="card h-100 border-dashed shadow-none text-center d-flex justify-content-center align-items-center" style="border-style: dashed; border-width: 2px; min-height: 200px;">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                        <i class="fas fa-plus fa-3x text-muted mb-3"></i>
+                        <h5 class="card-title text-muted">@Localizer["Create New Site"]</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        @if (Model.Sites.Any())
         {
             @foreach (var site in Model.Sites)
             {
                 <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">@site.SiteName</h5>
-                            <p class="card-text text-muted">@Localizer["Created at"]: @site.CreationTime.ToLocalTime()</p>
-                            <p class="card-text">
-                                @if (site.OpenToUpload)
-                                {
-                                    <span class="badge bg-success">@Localizer["Public"]</span>
-                                }
-                                else
-                                {
-                                    <span class="badge bg-secondary">@Localizer["Private"]</span>
-                                }
-                            </p>
-                        </div>
-                        <div class="card-footer bg-transparent border-top-0">
-                            <a asp-controller="Dashboard" asp-action="Files" asp-route-siteName="@site.SiteName" class="btn btn-sm btn-outline-primary">@Localizer["Manage"]</a>
-                            <a asp-controller="Dashboard" asp-action="Settings" asp-route-siteName="@site.SiteName" class="btn btn-sm btn-outline-secondary">@Localizer["Settings"]</a>
+                    <div class="card h-100 site-card">
+                        <a asp-controller="Dashboard" asp-action="Files" asp-route-siteName="@site.SiteName" class="text-decoration-none text-reset stretched-link">
+                            <div class="card-body">
+                                <h5 class="card-title">@site.SiteName</h5>
+                                <p class="card-text text-muted">@Localizer["Created at"]: @site.CreationTime.ToLocalTime()</p>
+                                <p class="card-text">
+                                    @if (site.OpenToUpload)
+                                    {
+                                        <span class="badge bg-success">@Localizer["Public"]</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-secondary">@Localizer["Private"]</span>
+                                    }
+                                </p>
+                            </div>
+                        </a>
+                        <div class="card-footer bg-transparent border-top-0 d-flex justify-content-end align-items-center">
+                            <a asp-controller="Dashboard" asp-action="DeleteSite" asp-route-siteName="@site.SiteName" class="text-danger position-relative z-index-2" title="@Localizer["Delete Site"]" style="z-index: 2;">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -51,3 +53,15 @@
         }
     </div>
 </div>
+
+@section styles {
+    <style>
+        .site-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .site-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+    </style>
+}

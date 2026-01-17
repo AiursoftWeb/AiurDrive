@@ -168,4 +168,43 @@ public class StorageService(
             Directory.Delete(vaultPath, true);
         }
     }
+
+    public long GetSiteSize(string siteName)
+    {
+        long size = 0;
+        
+        // Workspace
+        var workspacePath = Path.Combine(folders.GetWorkspaceFolder(), siteName);
+        if (Directory.Exists(workspacePath))
+        {
+            size += GetDirectorySize(new DirectoryInfo(workspacePath));
+        }
+
+        // Vault
+        var vaultPath = Path.Combine(folders.GetVaultFolder(), siteName);
+        if (Directory.Exists(vaultPath))
+        {
+            size += GetDirectorySize(new DirectoryInfo(vaultPath));
+        }
+
+        return size;
+    }
+
+    private static long GetDirectorySize(DirectoryInfo d)
+    {
+        long size = 0;
+        // Add file sizes.
+        FileInfo[] fis = d.GetFiles();
+        foreach (FileInfo fi in fis)
+        {
+            size += fi.Length;
+        }
+        // Add subdirectory sizes.
+        DirectoryInfo[] dis = d.GetDirectories();
+        foreach (DirectoryInfo di in dis)
+        {
+            size += GetDirectorySize(di);
+        }
+        return size;
+    }
 }

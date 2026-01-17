@@ -3,7 +3,7 @@ using Aiursoft.UiStack.Layout;
 
 namespace Aiursoft.AiurDrive.Models.DashboardViewModels;
 
-public class SettingsViewModel : UiStackLayoutViewModel
+public class DeleteSiteViewModel : UiStackLayoutViewModel
 {
     [Display(Name = "Site Name")]
     public string? SiteName { get; set; }
@@ -11,8 +11,11 @@ public class SettingsViewModel : UiStackLayoutViewModel
     [Display(Name = "Storage Type")]
     public bool OpenToUpload { get; set; }
 
-    public SettingsViewModel()
+    [Display(Name = "Creation Time")]
+    public DateTime CreationTime { get; set; }
+
+    public DeleteSiteViewModel()
     {
-        PageTitle = "Site Settings";
+        PageTitle = "Delete Site";
     }
 }

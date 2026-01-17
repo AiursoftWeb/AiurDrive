@@ -17,4 +17,7 @@ public class FileManagerViewModel : UiStackLayoutViewModel
     public List<FileInfo> Files { get; set; }
     public List<string> Folders { get; set; }
     public string? UploadedFilePath { get; set; }
+
+    public long UsedSpaceInBytes { get; set; }
+    public long TotalSpaceInGB { get; set; }
 }
