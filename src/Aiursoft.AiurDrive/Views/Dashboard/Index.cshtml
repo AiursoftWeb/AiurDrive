@@ -32,7 +32,7 @@
                             <p class="card-text text-muted">@Localizer["Created at"]: @site.CreationTime.ToLocalTime()</p>
                         </div>
                         <div class="card-footer bg-transparent border-top-0">
-                            <a href="#" class="btn btn-sm btn-outline-primary">@Localizer["Manage"]</a>
+                            <a asp-controller="Dashboard" asp-action="Files" asp-route-siteName="@site.SiteName" class="btn btn-sm btn-outline-primary">@Localizer["Manage"]</a>
                         </div>
                     </div>
                 </div>
