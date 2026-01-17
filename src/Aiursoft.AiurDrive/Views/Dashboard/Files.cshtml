@@ -184,13 +184,13 @@
 
                     <!-- List View -->
                     <div id="listView">
-                        <table class="table table-hover">
+                        <table class="table table-hover" id="fileTable">
                             <thead>
                                 <tr>
                                     <th class="w-50">@Localizer["Name"]</th>
                                     <th>@Localizer["Date Modified"]</th>
                                     <th>@Localizer["Size"]</th>
-                                    <th class="text-end">@Localizer["Actions"]</th>
+                                    <th class="text-end" data-orderable="false">@Localizer["Actions"]</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -198,13 +198,13 @@
                                 {
                                     var currentRelativePath = string.IsNullOrEmpty(Model.Path) ? folder : Model.Path + "/" + folder;
                                     <tr>
-                                        <td>
+                                        <td data-sort="0_@folder">
                                             <a asp-action="Files" asp-route-siteName="@Model.SiteName" asp-route-path="@currentRelativePath" class="text-reset fw-bold">
                                                 <i class="fas fa-folder text-warning me-2"></i>@folder
                                             </a>
                                         </td>
-                                        <td>-</td>
-                                        <td>-</td>
+                                        <td data-sort="0">-</td>
+                                        <td data-sort="-1">-</td>
                                         <td class="text-end">
                                             <button type="button" class="btn btn-sm btn-light text-secondary" onclick="cutItem('@Model.SiteName', '@currentRelativePath', '@folder')">
                                                 <i class="fas fa-cut"></i>
@@ -225,13 +225,13 @@
                                     var currentRelativePath = string.IsNullOrEmpty(Model.Path) ? file.Name : Model.Path + "/" + file.Name;
                                     var directUrl = Storage.RelativePathToInternetUrl(logicalPath, !Model.OpenToUpload);
                                     <tr>
-                                        <td>
+                                        <td data-sort="1_@file.Name">
                                             <a href="@directUrl" target="_blank" class="text-reset">
                                                 <i class="fas fa-file text-primary me-2"></i>@file.Name
                                             </a>
                                         </td>
-                                        <td>@file.LastWriteTime.ToString("g")</td>
-                                        <td>@((file.Length / 1024.0).ToString("N0")) KB</td>
+                                        <td data-sort="@file.LastWriteTime.Ticks">@file.LastWriteTime.ToString("g")</td>
+                                        <td data-sort="@file.Length">@((file.Length / 1024.0).ToString("N0")) KB</td>
                                         <td class="text-end">
                                             <a href="@directUrl" target="_blank" class="btn btn-sm btn-light"><i class="fas fa-download"></i></a>
                                             <button type="button" class="btn btn-sm btn-light text-secondary" onclick="cutItem('@Model.SiteName', '@currentRelativePath', '@file.Name')">
@@ -244,13 +244,6 @@
                                                 <button type="submit" class="btn btn-sm btn-light text-danger"><i class="fas fa-trash"></i></button>
                                             </form>
                                         </td>
-                                    </tr>
-                                }
-
-                                @if (!Model.Files.Any() && !Model.Folders.Any())
-                                {
-                                    <tr>
-                                        <td colspan="4" class="text-center text-muted">@Localizer["Folder is empty."]</td>
                                     </tr>
                                 }
                             </tbody>
@@ -425,9 +418,15 @@
     <script src="~/node_modules/dropify/dist/js/dropify.min.js"></script>
     <script>
         $(document).ready(function() {
-            // Optional: Auto-refresh on upload completion if dropify supports events easily,
-            // but standard dropify just shows the file.
-            // We provided a Refresh button for now.
+            $('#fileTable').DataTable({
+                "destroy": true,
+                "responsive": true,
+                "paging": true,
+                "pageLength": 25,
+                "searching": true,
+                "info": false,
+                "order": [[0, "asc"]]
+            });
         });
 
         function reloadPage() {
