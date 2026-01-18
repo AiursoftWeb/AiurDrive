@@ -5,46 +5,8 @@
     ViewData["Title"] = "File Manager - " + Model.SiteName;
     string GetFileIcon(string filename)
     {
-        var extension = System.IO.Path.GetExtension(filename).TrimStart('.');
-        var contentType = Aiursoft.CSTools.Models.Mime.GetContentType(extension);
-        var iconName = contentType switch
-        {
-            "text/plain" => "text-x-generic",
-            "image/jpeg" => "application-image-jpg",
-            "image/png" => "image-x-generic",
-            "image/gif" => "application-image-gif",
-            "image/bmp" => "application-image-bmp",
-            "image/x-icon" => "application-image-ico",
-            "application/zip" => "application-x-zip",
-            "application/gzip" => "application-x-gzip",
-            "application/vnd.rar" => "application-x-rar",
-            "application/x-7z-compressed" => "application-x-zip",
-            "audio/mpeg" => "audio-x-generic",
-            "audio/wav" => "audio-x-generic",
-            "audio/ogg" => "application-ogg",
-            "video/mp4" => "video-x-generic",
-            "video/x-matroska" => "video-x-generic",
-            "video/x-msvideo" => "video-x-generic",
-            "video/quicktime" => "video-x-generic",
-            "application/msword" => "application-vnd.ms-word",
-            "application/vnd.openxmlformats-officedocument.wordprocessingml.document" => "application-vnd.ms-word",
-            "application/vnd.ms-excel" => "application-vnd.ms-excel",
-            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" => "application-vnd.ms-excel",
-            "application/vnd.ms-powerpoint" => "application-vnd.ms-powerpoint",
-            "application/vnd.openxmlformats-officedocument.presentationml.presentation" => "application-vnd.ms-powerpoint",
-            "text/javascript" => "text-x-javascript",
-            "text/typescript" => "text-x-typescript",
-            "application/x-sh" => "application-x-shellscript",
-            "text/x-c++src" => "text-x-cpp",
-            "text/x-csrc" => "text-x-c",
-            "text/x-java-source" => "text-x-java",
-            "application/vnd.android.package-archive" => "application-apk",
-            "application/x-msdownload" => "application-x-ms-dos-executable",
-            "application/vnd.debian.binary-package" => "application-x-deb",
-            "text/x-dockerfile" => "text-dockerfile",
-            _ => contentType.Replace("/", "-")
-        };
-        return $"/images/mimetypes/{iconName}.svg";
+        var icon = Aiursoft.CSTools.Models.Mime.GetIcon(filename);
+        return $"/images/mimetypes/{icon}";
     }
 }
 
