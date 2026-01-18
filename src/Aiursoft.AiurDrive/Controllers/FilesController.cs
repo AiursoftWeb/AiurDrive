@@ -17,21 +17,21 @@ public class FilesController(
     StorageService storage) : ControllerBase
 {
     [HttpPost]
-    [Route("upload/{subfolder}")]
+    [Route("upload/{**subfolder}")]
     [DisableRequestSizeLimit]
     [RequestFormLimits(MultipartBodyLengthLimit = long.MaxValue, ValueLengthLimit = int.MaxValue)]
     public async Task<IActionResult> Upload(
-        [FromRoute][ValidDomainName] string subfolder)
+        [FromRoute] string subfolder)
     {
         return await ProcessUpload(subfolder, isVault: false);
     }
 
     [HttpPost]
-    [Route("upload-private/{subfolder}")]
+    [Route("upload-private/{**subfolder}")]
     [DisableRequestSizeLimit]
     [RequestFormLimits(MultipartBodyLengthLimit = long.MaxValue, ValueLengthLimit = int.MaxValue)]
     public async Task<IActionResult> UploadPrivate(
-        [FromRoute][ValidDomainName] string subfolder,
+        [FromRoute] string subfolder,
         [FromQuery] string token)
     {
         if (!storage.ValidateToken(subfolder, token, FilePermission.Upload))
