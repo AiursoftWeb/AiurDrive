@@ -1,18 +1,19 @@
+using Aiursoft.AiurDrive.Services.FileStorage;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace Aiursoft.AiurDrive.Views.Shared.Components.FileUpload;
 
-public class FileUpload : ViewComponent
+public class FileUpload(StorageService storage) : ViewComponent
 {
     public IViewComponentResult Invoke(
         ModelExpression aspFor,
-        string uploadEndpoint,
+        string subfolder,
         int maxSizeInMb = 2000,
         string? allowedExtensions = null,
-        bool isVault = false,
-        string? onUploadSuccess = null)
+        bool isVault = false)
     {
+        var uploadEndpoint = storage.GetUploadUrl(subfolder, isVault);
         return View(new FileUploadViewModel
         {
             AspFor = aspFor,

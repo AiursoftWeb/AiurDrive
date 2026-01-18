@@ -45,7 +45,7 @@ Use the `vc:file-upload` component in your `.cshtml` pages.
     <label>Upload Avatar</label>
     <vc:file-upload 
         asp-for="IconPath" 
-        upload-endpoint="/upload/avatar" 
+        subfolder="avatar" 
         allowed-extensions="jpg png"
         max-size-in-mb="5">
     </vc:file-upload>
@@ -66,14 +66,14 @@ Use the `vc:file-upload` component in your `.cshtml` pages.
 
 **Scenario B: Private Files (e.g., Contracts)**
 
-> **⚠️ Critical Correction**: You must append `?useVault=true` to the `upload-endpoint` to inform the API to store the file in the Vault, **AND** set the component attribute `is-vault="true"`. Otherwise, the image preview will fail (403 Forbidden) during record editing.
+> **⚠️ Critical Correction**: You must set `is-vault="true"` AND provide a `subfolder`. The system will automatically generate a secure, time-limited upload token.
 
 ```html
 <form asp-action="UpdateContract" method="post">
     <label>Upload Confidential Contract</label>
     <vc:file-upload 
         asp-for="ContractPath" 
-        upload-endpoint="/upload/contract?useVault=true" 
+        subfolder="contract" 
         is-vault="true"
         allowed-extensions="pdf docx">
     </vc:file-upload>
@@ -297,4 +297,4 @@ A: To implement **Bucket Isolation**. Frontend specifies `/upload/avatar`, and t
 A: Yes. The system detects MIME types and file headers. Non-image files like PDFs or ZIPs are streamed directly without processing.
 
 **Q: How do I change the token expiration time?**
-A: In the `StorageService.GetDownloadToken` method, simply modify the `TimeSpan.FromMinutes(60)` value.
+A: In the `StorageService.GetToken` method, simply modify the `TimeSpan.FromMinutes(60)` value.

@@ -1,6 +1,5 @@
 using Aiursoft.CSTools.Attributes;
 using Aiursoft.CSTools.Tools;
-using Aiursoft.AiurDrive.Configuration;
 using Aiursoft.AiurDrive.Services;
 using Aiursoft.AiurDrive.Services.FileStorage;
 using Aiursoft.WebTools.Attributes;
@@ -15,16 +14,34 @@ namespace Aiursoft.AiurDrive.Controllers;
 public class FilesController(
     ImageProcessingService imageCompressor,
     ILogger<FilesController> logger,
-    StorageService storage,
-    GlobalSettingsService globalSettings) : ControllerBase
+    StorageService storage) : ControllerBase
 {
     [HttpPost]
     [Route("upload/{subfolder}")]
     [DisableRequestSizeLimit]
     [RequestFormLimits(MultipartBodyLengthLimit = long.MaxValue, ValueLengthLimit = int.MaxValue)]
-    public async Task<IActionResult> Index(
+    public async Task<IActionResult> Upload(
+        [FromRoute][ValidDomainName] string subfolder)
+    {
+        return await ProcessUpload(subfolder, isVault: false);
+    }
+
+    [HttpPost]
+    [Route("upload-private/{subfolder}")]
+    [DisableRequestSizeLimit]
+    [RequestFormLimits(MultipartBodyLengthLimit = long.MaxValue, ValueLengthLimit = int.MaxValue)]
+    public async Task<IActionResult> UploadPrivate(
         [FromRoute][ValidDomainName] string subfolder,
-        [FromQuery] bool useVault = false)
+        [FromQuery] string token)
+    {
+        if (!storage.ValidateToken(subfolder, token, FilePermission.Upload))
+        {
+            return Unauthorized("Invalid or expired token.");
+        }
+        return await ProcessUpload(subfolder, isVault: true);
+    }
+
+    private async Task<IActionResult> ProcessUpload(string subfolder, bool isVault)
     {
         if (!ModelState.IsValid)
         {
@@ -58,13 +75,13 @@ public class FilesController(
             DateTime.UtcNow.Month.ToString("D2"),
             DateTime.UtcNow.Day.ToString("D2"),
             file.FileName);
-        
+
         // Save returns the logical path (e.g. avatar/2026/01/14/logo.png)
-        var relativePath = await storage.Save(storePath, file, useVault);
+        var relativePath = await storage.Save(storePath, file, isVault);
         return Ok(new
         {
             Path = relativePath,
-            InternetPath = storage.RelativePathToInternetUrl(relativePath, HttpContext, useVault)
+            InternetPath = storage.RelativePathToInternetUrl(relativePath, HttpContext, isVault)
         });
     }
 
@@ -77,7 +94,7 @@ public class FilesController(
     [Route("download-private/{**folderNames}")]
     public async Task<IActionResult> DownloadPrivate([FromRoute] string folderNames, [FromQuery] string token)
     {
-        if (!storage.ValidateDownloadToken(folderNames, token))
+        if (!storage.ValidateToken(folderNames, token, requiredPermission: FilePermission.Download))
         {
             return Unauthorized("Invalid or expired token.");
         }
@@ -103,7 +120,6 @@ public class FilesController(
         {
             return BadRequest("Attempted to access a restricted path.");
         }
-        
         if (!System.IO.File.Exists(physicalPath))
         {
             return NotFound();
@@ -111,9 +127,7 @@ public class FilesController(
 
         // 2. Image Processing (using logical path)
         // If it is an image, we enforce privacy protection (ClearExif) or resizing
-        if (physicalPath.IsStaticImage() && 
-            await imageCompressor.IsValidImageAsync(physicalPath) && 
-            await globalSettings.GetBoolSettingAsync(SettingsMap.AllowImagePreview))
+        if (physicalPath.IsStaticImage() && await imageCompressor.IsValidImageAsync(physicalPath))
         {
             logger.LogInformation("Processing image compression/clearing request for logical path: {Path}", folderNames);
             return await FileWithImageCompressor(folderNames, isVault);

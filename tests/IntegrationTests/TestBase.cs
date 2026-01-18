@@ -120,4 +120,10 @@ public abstract class TestBase
 
         return (email, password);
     }
+
+    protected T GetService<T>() where T : notnull
+    {
+        if (Server == null) throw new InvalidOperationException("Server is not started.");
+        return Server.Services.GetRequiredService<T>();
+    }
 }
