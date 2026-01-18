@@ -73,6 +73,7 @@ public class FilesController(
             subfolder,
             file.FileName);
 
+        // Save returns the logical path (e.g. avatar/2026/01/14/logo.png)
         var relativePath = await storage.Save(storePath, file, isVault);
         return Ok(new
         {

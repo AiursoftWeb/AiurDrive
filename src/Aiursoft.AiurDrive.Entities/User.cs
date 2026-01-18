@@ -15,6 +15,7 @@ public class User : IdentityUser
     [MaxLength(150)] [MinLength(2)] public string AvatarRelativePath { get; set; } = DefaultAvatarPath;
 
     public DateTime CreationTime { get; init; } = DateTime.UtcNow;
+    
     [InverseProperty(nameof(Site.AppUser))]
     public IEnumerable<Site> Sites { get; set; } = new List<Site>();
 }

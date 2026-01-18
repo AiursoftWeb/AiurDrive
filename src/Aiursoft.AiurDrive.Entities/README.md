@@ -4,7 +4,7 @@
 
 1.  **DbSet Dictatorship**: Data creation, update, and deletion (CUD) must be performed through `DbContext.DbSet<T>`.
 2.  **Explicit Loading**: Implicit behaviors (such as lazy loading) are prohibited; data must be explicitly `Include`d.
-3.  **Compile-Time Contract**: Leverage C# type system (Type System) to expose potential errors at compile time, rather than deferring them to runtime.
+3.  **Compile-time Contracts**: Leverage C# type system (Type System) to expose potential errors at compile time, rather than deferring them to runtime.
 4.  **Table Visibility**: All entity classes must clearly express their data columns and relationships, avoiding implicit conventions. All entity classes must appear in `DbContext` as `public DbSet<Repo> Repos => Set<Repo>();`, and table names must be the plural form of the entity class name (e.g., `User` corresponds to `Users` table).
 
 -----
@@ -36,27 +36,34 @@ The primary key of all entity classes must be `{ get; init; }` (immutable after 
 **2.1 Pair Definition**
 All foreign key relationships must be explicitly defined with two properties: the **foreign key ID** and the **navigation reference**.
 
-**2.2 Foreign Key ID Nullability**
+**2.2 Foreign Key ID Requirement**
 
-  * **Required Relationship**: The foreign key ID must be `Guid` (or `int`), and the property must be `required`.
-  * **Optional Relationship**: The foreign key ID must be `Guid?` (or `int?`), and the property must be `required` (explicitly assign `null` when needed).
+  * **Required relationships**: The foreign key ID must be `Guid`, `string`, or `int`, and the property must be `required`. In this case, the foreign key is non-nullable.
+  * **Optional relationships**: The foreign key ID must be `Guid?`, `string?`, or `int?`, and the property must be `required`. In this case, the foreign key is nullable. During initialization, it **must be explicitly assigned a value of `null`**.
 
-**2.3 Navigational References Must Be Nullable**
-All **navigational reference properties** must be declared as **nullable types** (e.g., `User?`).
+**2.3 Nullability of Navigation References**
 
-  * *Reason*: When creating a new `Entity()`, we typically only assign the ID without assigning the object. Declaring them as nullable satisfies C# compiler initialization checks and avoids false warnings.
+All **navigation reference properties** must be declared as nullable types (e.g., `User?`), even if they are designed to never be null. This is because it's impossible to have a reasonable value when instantiating the object, so the property must be nullable. In practice, if this navigation property is not nullable, it will never return null.
 
-**2.4 Navigational Properties Must Be NotNull**
-All **navigational reference properties** must be annotated with `[NotNull]`.
+  * *Reason*: When using `new Entity()`, we typically only assign the ID and not the object. Declaring it as nullable satisfies the C# compiler's initialization checks and avoids false warnings.
 
-**2.5 Serialization Masking**
-All **navigational reference properties** must be annotated with `[Newtonsoft.Json.JsonIgnore]` (to prevent infinite loops).
+**2.4 Navigation Properties Must Be NotNull**
+
+All **navigation reference properties** that are guaranteed to never be null must be annotated with `[NotNull]`; otherwise, `[NotNull]` must not be used.
+
+  * *Purpose*: To prevent null reference warnings from the compiler when using navigation properties.
+  * *Note*: Even when `[NotNull]` is applied, the property type must still be a nullable type (e.g., `User?`).
+
+**2.5 Serialization Ignoring**
+
+All **navigation reference properties** must be annotated with `[Newtonsoft.Json.JsonIgnore]` (to prevent infinite loops).
 
 **2.6 No Virtual (No Lazy Loading)**
-All navigational properties **must not** use the `virtual` keyword.
 
-  * *Consequence*: Completely disables Lazy Loading Proxy.
-  * *Requirement*: When querying related data, explicitly call `.Include()` and `.ThenInclude()`.
+All navigation properties **must not** use the `virtual` keyword.
+
+  * *Consequence*: Lazy Loading Proxy is completely disabled.
+  * *Requirement*: When querying related data, `.Include()` and `.ThenInclude()` must be explicitly called.
 
 > **Example:**
 >
@@ -64,11 +71,11 @@ All navigational properties **must not** use the `virtual` keyword.
 > // Foreign key ID (required)
 > public required Guid UserId { get; set; }
 >
-> // Navigational reference (must be nullable, must be NotNull, no virtual)
+> // Navigation reference (must be nullable, must be NotNull,禁止 virtual)
 > [JsonIgnore]
 > [ForeignKey(nameof(UserId))]
-> [NotNull]
-> public User? User { get; set; }
+> [NotNull] // Non-nullable, add [NotNull]
+> public User? User { get; set; } // Non-nullable, also add question mark.
 > ```
 
 -----
@@ -76,21 +83,21 @@ All navigational properties **must not** use the `virtual` keyword.
 ## 3. Collections & Dictatorship
 
 **3.1 Type Restrictions**
-All reverse navigational collections must be declared as `IEnumerable<T>` type.
+All reverse navigation collections must be declared as `IEnumerable<T>` type.
 
-  * *Purpose*: Compile-time removal of `.Add()` and `.Remove()` methods from the collection.
+  * *Purpose*: Strip `.Add()` and `.Remove()` methods from collections at compile time.
 
 **3.2 Initialization**
 All collection properties must be initialized to `new List<T>()` to prevent null reference exceptions.
 
 **3.3 Explicit Association**
-All collection properties must be annotated with `[InverseProperty]`.
+All collection properties must be decorated with `[InverseProperty]`.
 
 **3.4 Dictatorship Modification Principle**
 Prohibit casting `IEnumerable` to `List` for data manipulation.
 
-  * **Add child item**: A new object must be created and `_dbContext.Add(newItem)`.
-  * **Remove child item**: The object must be queried and `_dbContext.Remove(item)`.
+  * **Add child item**: Must create a new object and `_dbContext.Add(newItem)`.
+  * **Remove child item**: Must query the object and `_dbContext.Remove(item)`.
 
 > **Example:**
 >
@@ -101,18 +108,18 @@ Prohibit casting `IEnumerable` to `List` for data manipulation.
 
 -----
 
-## 4. Data Column Standards (Data Columns)
+## 4. Data Columns
 
 **4.1 Length Constraints**
-All columns of type `string` or `byte[]` must be constrained by `[MaxLength]`.
+All `string` or `byte[]` columns must be annotated with `[MaxLength]`.
 
-**4.2 Nullability Semantics**
+**4.2 Null Semantics**
 
-  * **Non-nullable columns**: Use non-nullable types (e.g., `string`), and never use `[NotNull]` on nullable types.
-  * **Nullable columns**: Use nullable types (e.g., `string?`), and must document in XML comments what business state **null represents**.
+  * **Non-nullable Column**: Use non-nullable types (e.g. `string`), and never use `[NotNull]` on nullable types.
+  * **Nullable Column**: Use nullable types (e.g. `string?`), and must specify in XML comments what **business state null represents**.
 
 **4.3 Immutable Properties**
-All properties that are not editable in business terms (e.g., `CreationTime`) must be `{ get; init; }`.
+All business properties that are not editable (e.g. `CreationTime`) must be `{ get; init; }`.
 
 -----
 
@@ -159,6 +166,17 @@ public class AiurDriveEntity
     [ForeignKey(nameof(ParentId))]
     [NotNull]
     public ParentEntity? Parent { get; set; }
+
+    // ================= 关联关系，可空的 ================
+
+    // [规则 2.2] 可选外键ID：required Guid? (实例化时，必须显式赋值 null)
+    public required Guid? OptionalParentId { get; set; }
+
+    // [规则 2.3, 2.4, 2.5, 2.6] 可选导航引用：Type?, JsonIgnore, ForeignKey
+    // 严禁 NotNull (因为是可选的)，严禁 virtual
+    [JsonIgnore]
+    [ForeignKey(nameof(OptionalParentId))]
+    public ParentEntity? OptionalParent { get; set; }
 
     // [规则 3.1, 3.2, 3.3] 
     // 集合：IEnumerable (独裁模式), InverseProperty, new List()

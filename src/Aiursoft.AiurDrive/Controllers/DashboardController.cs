@@ -34,7 +34,6 @@ public class DashboardController(
             .SingleOrDefaultAsync(u => u.UserName == User.Identity!.Name);
             
         if (user == null) return NotFound();
-
         var maxSites = await globalSettings.GetIntSettingAsync(SettingsMap.MaxSitesPerPerson);
 
         if (!user.Sites.Any() && maxSites > 0)
