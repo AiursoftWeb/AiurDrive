@@ -233,9 +233,21 @@
                                     var currentRelativePath = string.IsNullOrEmpty(Model.Path) ? file.Name : Model.Path + "/" + file.Name;
                                     var directUrl = Storage.RelativePathToInternetUrl(logicalPath, !Model.OpenToUpload);
                                     <tr>
+                                @{
+                                    var isImageInList = file.Name.IsStaticImage();
+                                }
                                         <td data-sort="1_@file.Name">
                                             <a href="@directUrl" target="_blank" class="text-reset">
-                                                <i class="fas fa-file text-primary me-2"></i>@file.Name
+                                                @if (isImageInList && Model.AllowImagePreview)
+                                                {
+                                                    var thumbUrlList = directUrl + (directUrl.Contains("?") ? "&" : "?") + "w=200";
+                                                    <img src="@thumbUrlList" class="me-2" style="max-height: 24px; vertical-align: middle;" alt="@file.Name" />
+                                                }
+                                                else
+                                                {
+                                                    <i class="fas fa-file text-primary me-2"></i>
+                                                }
+                                                @file.Name
                                             </a>
                                         </td>
                                         <td data-sort="@file.LastWriteTime.Ticks">@file.LastWriteTime.ToString("g")</td>
