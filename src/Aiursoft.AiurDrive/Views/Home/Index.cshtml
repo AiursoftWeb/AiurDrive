@@ -23,6 +23,9 @@
                     <a asp-controller="Dashboard" asp-action="Index" class="btn btn-primary btn-lg btn-pill">
                         <i class="align-middle" data-lucide="rocket"></i> @Localizer["Try our public instance"]
                     </a>
+                    <a asp-controller="Explore" asp-action="Index" class="btn btn-outline-info btn-lg btn-pill">
+                        <i class="align-middle" data-lucide="compass"></i> @Localizer["Explore"]
+                    </a>
                     <a href="https://github.com/AiursoftWeb/AiurDrive" class="btn btn-outline-primary btn-lg btn-pill">
                         <i class="align-middle" data-lucide="github"></i> @Localizer["View on GitHub"]
                     </a>
@@ -141,6 +144,10 @@
                 <a asp-controller="Dashboard" asp-action="Index" class="btn btn-primary btn-pill btn-lg">
                     <i class="align-middle me-1" data-lucide="layout-dashboard"></i>
                     <span>@Localizer["Enter Dashboard"]</span>
+                </a>
+                <a asp-controller="Explore" asp-action="Index" class="btn btn-info btn-pill btn-lg">
+                    <i class="align-middle me-1" data-lucide="compass"></i>
+                    <span>@Localizer["Explore"]</span>
                 </a>
                 <a asp-controller="Home" asp-action="SelfHost" class="btn btn-outline-primary btn-pill btn-lg">
                     <i class="align-middle me-1" data-lucide="server"></i>
