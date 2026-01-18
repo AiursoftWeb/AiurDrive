@@ -1,6 +1,5 @@
 using Aiursoft.AiurDrive.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using System.Net;
 
 namespace Aiursoft.AiurDrive.Tests.IntegrationTests;
@@ -15,14 +14,14 @@ public class ExploreTests : TestBase
         var response = await Http.GetAsync("/Explore");
         response.EnsureSuccessStatusCode();
         var content = await response.Content.ReadAsStringAsync();
-        Assert.IsTrue(content.Contains("Explore Public Sites"));
+        StringAssert.Contains(content, "Explore Public Sites");
     }
 
     [TestMethod]
     public async Task TestSharedViewAccess()
     {
         // 1. Create a public site manually in DB
-        using (var scope = Server.Services.CreateScope())
+        using (var scope = Server!.Services.CreateScope())
         {
             var db = scope.ServiceProvider.GetRequiredService<TemplateDbContext>();
             var user = await db.Users.FirstAsync();
@@ -40,15 +39,15 @@ public class ExploreTests : TestBase
         var response = await Http.GetAsync("/SharedView/Index/public-test-site");
         response.EnsureSuccessStatusCode();
         var content = await response.Content.ReadAsStringAsync();
-        Assert.IsTrue(content.Contains("Shared - public-test-site"));
-        Assert.IsTrue(content.Contains("Site Information"));
+        StringAssert.Contains(content, "Shared - public-test-site");
+        StringAssert.Contains(content, "Site Information");
     }
 
     [TestMethod]
     public async Task TestPrivateSiteInSharedView()
     {
         // 1. Create a private site manually in DB
-        using (var scope = Server.Services.CreateScope())
+        using (var scope = Server!.Services.CreateScope())
         {
             var db = scope.ServiceProvider.GetRequiredService<TemplateDbContext>();
             var user = await db.Users.FirstAsync();
