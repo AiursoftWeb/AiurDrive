@@ -121,7 +121,8 @@
                              <h6 class="card-title">@Localizer["Upload File"]</h6>
                              <vc:file-upload
                                 asp-for="UploadedFilePath"
-                                upload-endpoint="@Url.Action("Upload", "Dashboard", new { siteName = Model.SiteName, path = Model.Path })"
+                                subfolder="@(Model.SiteName + "/" + Model.Path)"
+                                is-vault="@(!Model.OpenToUpload)"
                                 allowed-extensions=""
                                 max-size-in-mb="1024"
                                 on-upload-success="reloadPage">

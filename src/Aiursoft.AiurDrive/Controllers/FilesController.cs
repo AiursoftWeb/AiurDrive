@@ -71,12 +71,8 @@ public class FilesController(
 
         var storePath = Path.Combine(
             subfolder,
-            DateTime.UtcNow.Year.ToString("D4"),
-            DateTime.UtcNow.Month.ToString("D2"),
-            DateTime.UtcNow.Day.ToString("D2"),
             file.FileName);
 
-        // Save returns the logical path (e.g. avatar/2026/01/14/logo.png)
         var relativePath = await storage.Save(storePath, file, isVault);
         return Ok(new
         {

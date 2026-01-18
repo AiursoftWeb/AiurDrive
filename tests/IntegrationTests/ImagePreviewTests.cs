@@ -29,16 +29,24 @@ public class ImagePreviewTests : TestBase
         var multipartContent = new MultipartFormDataContent();
         multipartContent.Add(fileContent, "file", "test.png");
 
-        var uploadResponse = await Http.PostAsync($"/Dashboard/Upload/{siteName}", multipartContent);
+        var uploadResponse = await Http.PostAsync($"/upload/{siteName}", multipartContent);
         uploadResponse.EnsureSuccessStatusCode();
         var uploadResult = await uploadResponse.Content.ReadFromJsonAsync<UploadResult>();
         Assert.IsNotNull(uploadResult);
 
+
         // 4. Default state: AllowImagePreview is True
-        // Verify view has <img> tag
-        var filesViewResponse = await Http.GetAsync($"/Dashboard/Files/{siteName}");
+        // The file was uploaded to a path like "previewtestsite/2026/01/18/test.png"
+        // Note: StorageService may rename the file if there's a collision (adds _ prefix)
+        var uploadedPath = uploadResult.Path; // Use the actual path returned
+        var subdirectory = Path.GetDirectoryName(uploadedPath)?.Replace("\\", "/").Replace($"{siteName}/", ""); // e.g., "2026/01/18"
+        
+        // Verify view has <img> tag in the subdirectory where the file was uploaded
+        var filesViewResponse = await Http.GetAsync($"/Dashboard/Files/{siteName}/{subdirectory}");
         var filesViewHtml = await filesViewResponse.Content.ReadAsStringAsync();
-        Assert.Contains("<img src=\"/download/previewtestsite/test.png?w=200\"", filesViewHtml);
+        
+        var expectedThumbPath = $"<img src=\"/download/{uploadedPath}?w=200\"";
+        Assert.Contains(expectedThumbPath, filesViewHtml);
 
         // Verify controller returns compressed image
         var compressedResponse = await Http.GetAsync(uploadResult.InternetPath + "?w=100");
@@ -57,10 +65,11 @@ public class ImagePreviewTests : TestBase
             await settingsService.UpdateSettingAsync(SettingsMap.AllowImagePreview, "False");
         }
 
+
         // 6. Verify view does NOT have <img> tag for the image, instead uses icon
-        filesViewResponse = await Http.GetAsync($"/Dashboard/Files/{siteName}");
+        filesViewResponse = await Http.GetAsync($"/Dashboard/Files/{siteName}/{subdirectory}");
         filesViewHtml = await filesViewResponse.Content.ReadAsStringAsync();
-        Assert.DoesNotContain("<img src=\"/download/previewtestsite/test.png?w=200\"", filesViewHtml);
+        Assert.DoesNotContain(expectedThumbPath, filesViewHtml);
         Assert.Contains("/images/mimetypes/image-x-generic.svg", filesViewHtml);
 
         // 7. Verify controller returns ORIGINAL image even with ?w=100

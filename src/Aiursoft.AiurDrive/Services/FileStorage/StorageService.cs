@@ -122,7 +122,7 @@ public class StorageService(
             if (authorizedPermission != requiredPermission) return false;
 
             // Verify the token authorizes access to the requested path
-            return requestPath.StartsWith(authorizedPath, StringComparison.OrdinalIgnoreCase);
+            return requestPath.StartsWith(authorizedPath.TrimEnd('/'), StringComparison.OrdinalIgnoreCase);
         }
         catch
         {
@@ -173,5 +173,54 @@ public class StorageService(
             return $"/upload-private/{subfolder}?token={token}";
         }
         return $"/upload/{subfolder}";
+    }
+
+    public void DeleteSiteFolder(string siteName)
+    {
+        // Check Workspace
+        var workspacePath = Path.Combine(folders.GetWorkspaceFolder(), siteName);
+        if (Directory.Exists(workspacePath))
+        {
+            Directory.Delete(workspacePath, true);
+        }
+
+        // Check Vault
+        var vaultPath = Path.Combine(folders.GetVaultFolder(), siteName);
+        if (Directory.Exists(vaultPath))
+        {
+            Directory.Delete(vaultPath, true);
+        }
+    }
+
+    public long GetSiteSize(string siteName)
+    {
+        long size = 0;
+
+        // Workspace
+        var workspacePath = Path.Combine(folders.GetWorkspaceFolder(), siteName);
+        if (Directory.Exists(workspacePath))
+        {
+            size += GetDirectorySize(new DirectoryInfo(workspacePath));
+        }
+
+        // Vault
+        var vaultPath = Path.Combine(folders.GetVaultFolder(), siteName);
+        if (Directory.Exists(vaultPath))
+        {
+            size += GetDirectorySize(new DirectoryInfo(vaultPath));
+        }
+
+        return size;
+    }
+
+    private static long GetDirectorySize(DirectoryInfo d)
+    {
+        // Add file sizes.
+        var fis = d.GetFiles();
+        var size = fis.Sum(fi => fi.Length);
+        // Add subdirectory sizes.
+        var dis = d.GetDirectories();
+        size += dis.Sum(GetDirectorySize);
+        return size;
     }
 }

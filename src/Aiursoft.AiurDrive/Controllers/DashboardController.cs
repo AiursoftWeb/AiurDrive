@@ -156,41 +156,7 @@ public class DashboardController(
         return this.StackView(model);
     }
 
-    [HttpPost]
-    [Route("Dashboard/Upload/{siteName}/{**path}")]
-    [DisableRequestSizeLimit]
-    [RequestFormLimits(MultipartBodyLengthLimit = long.MaxValue, ValueLengthLimit = int.MaxValue)]
-    public async Task<IActionResult> Upload(string siteName, string? path)
-    {
-        var user = await dbContext.Users
-            .Include(u => u.Sites)
-            .SingleOrDefaultAsync(u => u.UserName == User.Identity!.Name);
 
-        if (user == null) return Unauthorized();
-        var site = user.Sites.FirstOrDefault(s => s.SiteName == siteName);
-        if (site == null) return Unauthorized();
-
-        path ??= string.Empty;
-        
-        // Validation
-        if (HttpContext.Request.Form.Files.Count < 1)
-        {
-            return BadRequest(new { message = "No file uploaded!" });
-        }
-
-        var file = HttpContext.Request.Form.Files.First();
-        var logicalPath = Path.Combine(siteName, path, file.FileName);
-        var isVault = !site.OpenToUpload;
-
-        // This will save the file using StorageService, handling conflicts
-        var savedLogicalPath = await storage.Save(logicalPath, file, isVault);
-
-        return Ok(new
-        {
-            Path = savedLogicalPath,
-            InternetPath = storage.RelativePathToInternetUrl(savedLogicalPath, HttpContext, isVault)
-        });
-    }
 
     [HttpPost]
     [Route("Dashboard/Delete/{siteName}/{**path}")]
