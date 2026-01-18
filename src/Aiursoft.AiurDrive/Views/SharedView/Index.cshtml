@@ -1,0 +1,269 @@
+@model Aiursoft.AiurDrive.Models.SharedViewModels.SharedViewModel
+@inject Aiursoft.AiurDrive.Services.FileStorage.StorageService Storage
+@using Aiursoft.CSTools.Tools
+@{
+    ViewData["Title"] = "Shared - " + Model.Site.SiteName;
+    string GetFileIcon(string filename)
+    {
+        var icon = Aiursoft.CSTools.Models.Mime.GetIcon(filename);
+        return $"/images/mimetypes/{icon}";
+    }
+}
+
+<div class="container-fluid p-0">
+    <!-- Breadcrumb -->
+    <div class="pt-3 pb-2 mb-3 border-bottom">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item">
+                    <a asp-controller="SharedView" asp-action="Index" asp-route-siteName="@Model.Site.SiteName" asp-route-path="">
+                        <i class="fas fa-share-alt"></i> @Model.Site.SiteName
+                    </a>
+                </li>
+                @if (!string.IsNullOrEmpty(Model.Path))
+                {
+                    var parts = Model.Path.Split('/');
+                    for (int i = 0; i < parts.Length; i++)
+                    {
+                        var part = parts[i];
+                        var currentPath = string.Join("/", parts.Take(i + 1));
+
+                        if (i == parts.Length - 1)
+                        {
+                            <li class="breadcrumb-item active" aria-current="page">@part</li>
+                        }
+                        else
+                        {
+                            <li class="breadcrumb-item">
+                                <a asp-controller="SharedView" asp-action="Index" asp-route-siteName="@Model.Site.SiteName" asp-route-path="@currentPath">@part</a>
+                            </li>
+                        }
+                    }
+                }
+            </ol>
+        </nav>
+    </div>
+
+    <div class="row">
+        <!-- Sidebar / Site Info -->
+        <div class="col-sm-5 col-xl-3 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@Localizer["Site Information"]</h5>
+                    <p class="card-text"><strong>@Localizer["Name"]:</strong> @Model.Site.SiteName</p>
+                    <hr />
+                    <h5 class="card-title">@Localizer["Author"]</h5>
+                    <div class="d-flex align-items-center mb-3">
+                        @{
+                            var avatarUrl = Storage.RelativePathToInternetUrl(Model.Site.AppUser?.AvatarRelativePath ?? Aiursoft.AiurDrive.Entities.User.DefaultAvatarPath, isVault: false);
+                        }
+                        <img src="@avatarUrl" class="rounded-circle me-2" style="width: 48px; height: 48px; object-fit: cover;" alt="Avatar" />
+                        <div>
+                            <div class="fw-bold">@(Model.Site.AppUser?.DisplayName ?? "Unknown")</div>
+                            <div class="text-muted small">@@@(Model.Site.AppUser?.UserName ?? "unknown")</div>
+                        </div>
+                    </div>
+                    <p class="card-text small"><strong>@Localizer["Created"]:</strong> @Model.Site.CreationTime.ToLocalTime().ToString("d")</p>
+                    <hr />
+                    <p class="text-muted small">@Localizer["This is a public shared folder. You can download or view files but cannot modify them."]</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- File List Container -->
+        <div class="col-sm-7 col-xl-9">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">
+                        @Localizer["Files"]
+                        @if(!string.IsNullOrEmpty(Model.Path)) { <span class="text-muted small">/ @Model.Path</span> }
+                    </h5>
+                    <div class="btn-toolbar">
+                         @if (!string.IsNullOrEmpty(Model.Path))
+                         {
+                             var parentPath = System.IO.Path.GetDirectoryName(Model.Path)?.Replace("\\", "/");
+                             <a asp-controller="SharedView" asp-action="Index" asp-route-siteName="@Model.Site.SiteName" asp-route-path="@parentPath" class="btn btn-sm btn-outline-secondary me-2">
+                                <i class="fas fa-arrow-up"></i> @Localizer["Up Level"]
+                            </a>
+                         }
+
+                         <button class="btn btn-sm btn-outline-secondary" onclick="toggleView()" id="viewToggleBtn" title="@Localizer["Toggle View"]">
+                             <i class="fas fa-th-large" id="viewToggleIcon"></i>
+                         </button>
+                    </div>
+                </div>
+                <div class="card-body">
+
+                    <!-- List View -->
+                    <div id="listView">
+                        <table class="table table-hover" id="fileTable">
+                            <thead>
+                                <tr>
+                                    <th class="w-50">@Localizer["Name"]</th>
+                                    <th>@Localizer["Date Modified"]</th>
+                                    <th>@Localizer["Size"]</th>
+                                    <th class="text-end" data-orderable="false">@Localizer["Actions"]</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var folder in Model.Folders)
+                                {
+                                    var currentRelativePath = string.IsNullOrEmpty(Model.Path) ? folder : Model.Path + "/" + folder;
+                                    <tr>
+                                        <td data-sort="0_@folder">
+                                            <a asp-controller="SharedView" asp-action="Index" asp-route-siteName="@Model.Site.SiteName" asp-route-path="@currentRelativePath" class="text-reset fw-bold">
+                                                <i class="fas fa-folder text-warning me-2"></i>@folder
+                                            </a>
+                                        </td>
+                                        <td data-sort="0">-</td>
+                                        <td data-sort="-1">-</td>
+                                        <td class="text-end">
+                                             <a asp-controller="SharedView" asp-action="Index" asp-route-siteName="@Model.Site.SiteName" asp-route-path="@currentRelativePath" class="btn btn-sm btn-light"><i class="fas fa-folder-open"></i></a>
+                                        </td>
+                                    </tr>
+                                }
+
+                                @foreach (var file in Model.Files)
+                                {
+                                    var logicalPath = System.IO.Path.Combine(Model.Site.SiteName, Model.Path, file.Name).Replace("\\", "/");
+                                    var directUrl = Storage.RelativePathToInternetUrl(logicalPath, isVault: false);
+                                    <tr>
+                                @{
+                                    var isImageInList = file.Name.IsStaticImage();
+                                }
+                                        <td data-sort="1_@file.Name">
+                                            <a href="@directUrl" target="_blank" class="text-reset">
+                                                @if (isImageInList && Model.AllowImagePreview)
+                                                {
+                                                    var thumbUrlList = directUrl + (directUrl.Contains("?") ? "&" : "?") + "w=200";
+                                                    <img src="@thumbUrlList" class="me-2" style="max-height: 24px; vertical-align: middle;" alt="@file.Name" />
+                                                }
+                                                else
+                                                {
+                                                    <i class="fas fa-file text-primary me-2"></i>
+                                                }
+                                                @file.Name
+                                            </a>
+                                        </td>
+                                        <td data-sort="@file.LastWriteTime.Ticks">@file.LastWriteTime.ToString("g")</td>
+                                        <td data-sort="@file.Length">@((file.Length / 1024.0).ToString("N0")) KB</td>
+                                        <td class="text-end">
+                                            <a href="@directUrl" target="_blank" class="btn btn-sm btn-light"><i class="fas fa-download"></i></a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Grid View -->
+                    <div id="gridView" class="d-none">
+                        <div class="row">
+                            @foreach (var folder in Model.Folders)
+                            {
+                                var currentRelativePath = string.IsNullOrEmpty(Model.Path) ? folder : Model.Path + "/" + folder;
+                                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                                    <div class="card h-100 text-center file-grid-card">
+                                        <a asp-controller="SharedView" asp-action="Index" asp-route-siteName="@Model.Site.SiteName" asp-route-path="@currentRelativePath" class="text-decoration-none text-dark flex-grow-1 d-flex flex-column align-items-center justify-content-center p-3">
+                                            <i class="fas fa-folder fa-3x text-warning mb-2"></i>
+                                            <span class="text-truncate w-100" title="@folder">@folder</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            }
+
+                            @foreach (var file in Model.Files)
+                            {
+                                var logicalPath = System.IO.Path.Combine(Model.Site.SiteName, Model.Path, file.Name).Replace("\\", "/");
+                                var directUrl = Storage.RelativePathToInternetUrl(logicalPath, isVault: false);
+                                var isImage = file.Name.IsStaticImage();
+
+                                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                                    <div class="card h-100 text-center file-grid-card">
+                                        <a href="@directUrl" target="_blank" class="text-decoration-none text-dark flex-grow-1 d-flex flex-column align-items-center justify-content-center p-3">
+                                            @if (isImage && Model.AllowImagePreview)
+                                            {
+                                                var thumbUrl = directUrl + (directUrl.Contains("?") ? "&" : "?") + "w=200";
+                                                <img src="@thumbUrl" class="img-fluid mb-2 rounded" style="max-height: 80px; object-fit: contain;" alt="@file.Name" />
+                                            }
+                                            else
+                                            {
+                                                <img src="@GetFileIcon(file.Name)" class="img-fluid mb-2" style="max-height: 80px;" alt="@file.Name" />
+                                            }
+                                            <span class="text-truncate w-100" title="@file.Name">@file.Name</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            }
+
+                            @if (!Model.Files.Any() && !Model.Folders.Any())
+                            {
+                                <div class="col-12 text-center text-muted py-5">
+                                    @Localizer["Folder is empty."]
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* ReSharper disable once Razor.SectionNotResolved *@
+@section styles {
+    <style>
+        .file-grid-card {
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .file-grid-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+    </style>
+}
+@* ReSharper disable once Razor.SectionNotResolved *@
+@section scripts {
+    <script>
+        $(document).ready(function() {
+            $('#fileTable').DataTable({
+                "destroy": true,
+                "responsive": true,
+                "paging": true,
+                "pageLength": 25,
+                "searching": true,
+                "info": false,
+                "order": [[0, "asc"]]
+            });
+        });
+
+        // View Toggle Logic
+        var currentView = localStorage.getItem('fileManagerView') || 'list';
+
+        function updateView() {
+            if (currentView === 'grid') {
+                $('#listView').addClass('d-none');
+                $('#gridView').removeClass('d-none');
+                $('#viewToggleIcon').removeClass('fa-th-large').addClass('fa-list');
+                $('#viewToggleBtn').attr('title', '@Localizer["Switch to List View"]');
+            } else {
+                $('#gridView').addClass('d-none');
+                $('#listView').removeClass('d-none');
+                $('#viewToggleIcon').removeClass('fa-list').addClass('fa-th-large');
+                $('#viewToggleBtn').attr('title', '@Localizer["Switch to Grid View"]');
+            }
+        }
+
+        function toggleView() {
+            currentView = currentView === 'list' ? 'grid' : 'list';
+            localStorage.setItem('fileManagerView', currentView);
+            updateView();
+        }
+
+        $(document).ready(function() {
+            updateView();
+        });
+    </script>
+}

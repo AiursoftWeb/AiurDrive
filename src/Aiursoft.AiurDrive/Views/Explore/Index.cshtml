@@ -1,0 +1,81 @@
+@model Aiursoft.AiurDrive.Models.ExploreViewModels.IndexViewModel
+@inject Aiursoft.AiurDrive.Services.FileStorage.StorageService Storage
+@{
+    ViewData["Title"] = "Explore Public Sites";
+    var currentUserName = User.Identity?.IsAuthenticated == true ? User.Identity.Name : null;
+}
+
+<div class="container-fluid">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">@Localizer["Explore Public Sites"]</h1>
+        <p class="text-muted">@Localizer["Discover what others are sharing."]</p>
+    </div>
+
+    <div class="row">
+        @if (Model.PublicSites.Any())
+        {
+            @foreach (var site in Model.PublicSites)
+            {
+                var isOwner = currentUserName != null && site.AppUser?.UserName == currentUserName;
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100 site-card">
+                        @if (isOwner)
+                        {
+                            <a asp-controller="Dashboard" asp-action="Files" asp-route-siteName="@site.SiteName" class="text-decoration-none text-reset stretched-link">
+                                <div class="card-body">
+                                    <h5 class="card-title">@site.SiteName</h5>
+                                    <div class="d-flex align-items-center mb-2">
+                                         <img src="@Storage.RelativePathToInternetUrl(site.AppUser?.AvatarRelativePath ?? Aiursoft.AiurDrive.Entities.User.DefaultAvatarPath, isVault: false)" class="rounded-circle me-2" style="width: 24px; height: 24px; object-fit: cover;" alt="Avatar" />
+                                         <span class="text-muted small">@(site.AppUser?.DisplayName ?? "Unknown")</span>
+                                    </div>
+                                    <p class="card-text text-muted small">@Localizer["Created"]: @site.CreationTime.ToLocalTime().ToString("d")</p>
+                                    <p class="card-text">
+                                        <span class="badge bg-primary">@Localizer["Your Site"]</span>
+                                    </p>
+                                </div>
+                            </a>
+                        }
+                        else
+                        {
+                            <a asp-controller="SharedView" asp-action="Index" asp-route-siteName="@site.SiteName" class="text-decoration-none text-reset stretched-link">
+                                <div class="card-body">
+                                    <h5 class="card-title">@site.SiteName</h5>
+                                    <div class="d-flex align-items-center mb-2">
+                                         <img src="@Storage.RelativePathToInternetUrl(site.AppUser?.AvatarRelativePath ?? Aiursoft.AiurDrive.Entities.User.DefaultAvatarPath, isVault: false)" class="rounded-circle me-2" style="width: 24px; height: 24px; object-fit: cover;" alt="Avatar" />
+                                         <span class="text-muted small">@(site.AppUser?.DisplayName ?? "Unknown")</span>
+                                    </div>
+                                    <p class="card-text text-muted small">@Localizer["Created"]: @site.CreationTime.ToLocalTime().ToString("d")</p>
+                                    <p class="card-text">
+                                        <span class="badge bg-success">@Localizer["Public"]</span>
+                                    </p>
+                                </div>
+                            </a>
+                        }
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-12 text-center py-5">
+                <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                <h4 class="text-muted">@Localizer["No public sites found."]</h4>
+                <p>@Localizer["Be the first to share something!"]</p>
+                <a asp-controller="Dashboard" asp-action="CreateSite" class="btn btn-primary">@Localizer["Create a Site"]</a>
+            </div>
+        }
+    </div>
+</div>
+
+@* ReSharper disable once Razor.SectionNotResolved *@
+@section styles {
+    <style>
+        .site-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .site-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+    </style>
+}
