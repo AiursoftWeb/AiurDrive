@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Be the first to share something!" xml:space="preserve">
+    <value>Будьте первыми, кто поделится чем-нибудь!</value>
+  </data>
+  <data name="Create a Site" xml:space="preserve">
+    <value>Создать сайт</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>Создано</value>
+  </data>
+  <data name="Discover what others are sharing." xml:space="preserve">
+    <value>Откройте для себя, что делятся другие.</value>
+  </data>
+  <data name="Explore Public Sites" xml:space="preserve">
+    <value>Обзор публичных сайтов</value>
+  </data>
+  <data name="No public sites found." xml:space="preserve">
+    <value>Публичные сайты не найдены.</value>
+  </data>
+  <data name="Public" xml:space="preserve">
+    <value>Общедоступный</value>
+  </data>
+  <data name="Your Site" xml:space="preserve">
+    <value>Ваш сайт</value>
+  </data>
+
+</root>

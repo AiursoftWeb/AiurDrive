@@ -138,6 +138,9 @@
   <data name="Enter Dashboard" xml:space="preserve">
     <value>Accesează Panou</value>
   </data>
+  <data name="Explore" xml:space="preserve">
+    <value>Exploră</value>
+  </data>
   <data name="FAQ" xml:space="preserve">
     <value>Întrebări frecvente</value>
   </data>

@@ -138,6 +138,9 @@
   <data name="Enter Dashboard" xml:space="preserve">
     <value>Увійти в панель керування</value>
   </data>
+  <data name="Explore" xml:space="preserve">
+    <value>Дослідити</value>
+  </data>
   <data name="FAQ" xml:space="preserve">
     <value>Часті питання</value>
   </data>

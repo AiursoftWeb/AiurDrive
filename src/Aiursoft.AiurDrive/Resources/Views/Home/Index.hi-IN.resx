@@ -138,6 +138,9 @@
   <data name="Enter Dashboard" xml:space="preserve">
     <value>डैशबोर्ड में प्रवेश करें</value>
   </data>
+  <data name="Explore" xml:space="preserve">
+    <value>खोजें</value>
+  </data>
   <data name="FAQ" xml:space="preserve">
     <value>अक्सर पूछे जाने वाले प्रश्न</value>
   </data>

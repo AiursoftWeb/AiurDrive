@@ -75,6 +75,9 @@
   <data name="Error" xml:space="preserve">
     <value>Erro</value>
   </data>
+  <data name="Explore" xml:space="preserve">
+    <value>Explorar</value>
+  </data>
   <data name="Features" xml:space="preserve">
     <value>Recursos</value>
   </data>
@@ -110,6 +113,9 @@
   </data>
   <data name="Profile Settings" xml:space="preserve">
     <value>Configurações do Perfil</value>
+  </data>
+  <data name="Public Sites" xml:space="preserve">
+    <value>Sites Públicos</value>
   </data>
   <data name="Register" xml:space="preserve">
     <value>Cadastrar</value>

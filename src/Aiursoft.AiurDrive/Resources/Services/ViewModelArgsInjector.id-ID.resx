@@ -75,6 +75,9 @@
   <data name="Error" xml:space="preserve">
     <value>Kesalahan</value>
   </data>
+  <data name="Explore" xml:space="preserve">
+    <value>Jelajahi</value>
+  </data>
   <data name="Features" xml:space="preserve">
     <value>Fitur</value>
   </data>
@@ -110,6 +113,9 @@
   </data>
   <data name="Profile Settings" xml:space="preserve">
     <value>Pengaturan Profil</value>
+  </data>
+  <data name="Public Sites" xml:space="preserve">
+    <value>Situs Publik</value>
   </data>
   <data name="Register" xml:space="preserve">
     <value>Daftar</value>

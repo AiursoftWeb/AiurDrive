@@ -75,6 +75,9 @@
   <data name="Error" xml:space="preserve">
     <value>Virhe</value>
   </data>
+  <data name="Explore" xml:space="preserve">
+    <value>Selaa</value>
+  </data>
   <data name="Features" xml:space="preserve">
     <value>Ominaisuudet</value>
   </data>
@@ -110,6 +113,9 @@
   </data>
   <data name="Profile Settings" xml:space="preserve">
     <value>Profiilin asetukset</value>
+  </data>
+  <data name="Public Sites" xml:space="preserve">
+    <value>Julkaistut sivut</value>
   </data>
   <data name="Register" xml:space="preserve">
     <value>Rekisteröidy</value>

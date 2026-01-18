@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Actions" xml:space="preserve">
+    <value>操作</value>
+  </data>
+  <data name="Author" xml:space="preserve">
+    <value>作者</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>创建于</value>
+  </data>
+  <data name="Date Modified" xml:space="preserve">
+    <value>最后修改时间</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>文件</value>
+  </data>
+  <data name="Folder is empty." xml:space="preserve">
+    <value>文件夹为空。</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="Site Information" xml:space="preserve">
+    <value>站点信息</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>大小</value>
+  </data>
+  <data name="Switch to Grid View" xml:space="preserve">
+    <value>切换到网格视图</value>
+  </data>
+  <data name="Switch to List View" xml:space="preserve">
+    <value>切换到列表视图</value>
+  </data>
+  <data name="This is a public shared folder. You can download or view files but cannot modify them." xml:space="preserve">
+    <value>这是一个公开共享的文件夹。您可以下载或查看文件，但无法修改它们。</value>
+  </data>
+  <data name="Toggle View" xml:space="preserve">
+    <value>切换视图</value>
+  </data>
+  <data name="Up Level" xml:space="preserve">
+    <value>上一级</value>
+  </data>
+
+</root>

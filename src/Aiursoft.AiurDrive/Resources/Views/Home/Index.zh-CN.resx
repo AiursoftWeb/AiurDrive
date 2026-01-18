@@ -45,6 +45,9 @@
   <data name="Enter Dashboard" xml:space="preserve">
     <value>进入控制面板</value>
   </data>
+  <data name="Explore" xml:space="preserve">
+    <value>探索</value>
+  </data>
   <data name="Flexible" xml:space="preserve">
     <value>灵活</value>
   </data>

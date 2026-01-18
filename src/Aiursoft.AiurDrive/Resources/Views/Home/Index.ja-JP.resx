@@ -138,6 +138,9 @@
   <data name="Enter Dashboard" xml:space="preserve">
     <value>ダッシュボードへ</value>
   </data>
+  <data name="Explore" xml:space="preserve">
+    <value>探検</value>
+  </data>
   <data name="FAQ" xml:space="preserve">
     <value>よくある質問</value>
   </data>

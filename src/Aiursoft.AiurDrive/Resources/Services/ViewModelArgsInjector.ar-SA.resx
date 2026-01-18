@@ -75,6 +75,9 @@
   <data name="Error" xml:space="preserve">
     <value>خطأ</value>
   </data>
+  <data name="Explore" xml:space="preserve">
+    <value>استكشاف</value>
+  </data>
   <data name="Features" xml:space="preserve">
     <value>الميزات</value>
   </data>
@@ -110,6 +113,9 @@
   </data>
   <data name="Profile Settings" xml:space="preserve">
     <value>إعدادات الملف الشخصي</value>
+  </data>
+  <data name="Public Sites" xml:space="preserve">
+    <value>المواقع العامة</value>
   </data>
   <data name="Register" xml:space="preserve">
     <value>تسجيل</value>

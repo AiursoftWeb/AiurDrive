@@ -138,6 +138,9 @@
   <data name="Enter Dashboard" xml:space="preserve">
     <value>Εισέλθετε στον Πίνακα Ελέγχου</value>
   </data>
+  <data name="Explore" xml:space="preserve">
+    <value>Εξερεύνηση</value>
+  </data>
   <data name="FAQ" xml:space="preserve">
     <value>Συχνές Ερωτήσεις</value>
   </data>
