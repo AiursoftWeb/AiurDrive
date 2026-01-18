@@ -75,6 +75,9 @@
   <data name="Error" xml:space="preserve">
     <value>त्रुटि</value>
   </data>
+  <data name="Explore" xml:space="preserve">
+    <value>खोजें</value>
+  </data>
   <data name="Features" xml:space="preserve">
     <value>विशेषताएँ</value>
   </data>
@@ -110,6 +113,9 @@
   </data>
   <data name="Profile Settings" xml:space="preserve">
     <value>प्रोफ़ाइल सेटिंग्स</value>
+  </data>
+  <data name="Public Sites" xml:space="preserve">
+    <value>सार्वजनिक साइट्स</value>
   </data>
   <data name="Register" xml:space="preserve">
     <value>पंजीकरण करें</value>

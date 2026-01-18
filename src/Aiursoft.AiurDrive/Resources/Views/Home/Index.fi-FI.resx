@@ -138,6 +138,9 @@
   <data name="Enter Dashboard" xml:space="preserve">
     <value>Mene hallintapaneeliin</value>
   </data>
+  <data name="Explore" xml:space="preserve">
+    <value>Tutustu</value>
+  </data>
   <data name="FAQ" xml:space="preserve">
     <value>UKK</value>
   </data>

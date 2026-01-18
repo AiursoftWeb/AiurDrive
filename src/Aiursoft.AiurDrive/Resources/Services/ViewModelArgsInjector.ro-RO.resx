@@ -75,6 +75,9 @@
   <data name="Error" xml:space="preserve">
     <value>Eroare</value>
   </data>
+  <data name="Explore" xml:space="preserve">
+    <value>Exploră</value>
+  </data>
   <data name="Features" xml:space="preserve">
     <value>Caracteristici</value>
   </data>
@@ -110,6 +113,9 @@
   </data>
   <data name="Profile Settings" xml:space="preserve">
     <value>Setări Profil</value>
+  </data>
+  <data name="Public Sites" xml:space="preserve">
+    <value>Site-uri publice</value>
   </data>
   <data name="Register" xml:space="preserve">
     <value>Înregistrare</value>

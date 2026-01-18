@@ -78,6 +78,9 @@
   <data name="Error" xml:space="preserve">
     <value>Lỗi</value>
   </data>
+  <data name="Explore" xml:space="preserve">
+    <value>Duyệt</value>
+  </data>
   <data name="Features" xml:space="preserve">
     <value>Tính năng</value>
   </data>
@@ -113,6 +116,9 @@
   </data>
   <data name="Profile Settings" xml:space="preserve">
     <value>Cài đặt Hồ sơ</value>
+  </data>
+  <data name="Public Sites" xml:space="preserve">
+    <value>Các trang web công khai</value>
   </data>
   <data name="Register" xml:space="preserve">
     <value>Đăng ký</value>

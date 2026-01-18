@@ -138,6 +138,9 @@
   <data name="Enter Dashboard" xml:space="preserve">
     <value>Masuk ke Dasbor</value>
   </data>
+  <data name="Explore" xml:space="preserve">
+    <value>Jelajahi</value>
+  </data>
   <data name="FAQ" xml:space="preserve">
     <value>FAQ</value>
   </data>

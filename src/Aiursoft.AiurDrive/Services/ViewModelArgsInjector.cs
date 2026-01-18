@@ -67,6 +67,9 @@ public class ViewModelArgsInjector(
         _ = localizer["Permissions"];
         _ = localizer["Background Jobs"];
         _ = localizer["Global Settings"];
+    
+        _ = localizer["Explore"];
+        _ = localizer["Public Sites"];
     }
 
     public void InjectSimple(

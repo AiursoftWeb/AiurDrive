@@ -138,6 +138,9 @@
   <data name="Enter Dashboard" xml:space="preserve">
     <value>대시보드로 이동</value>
   </data>
+  <data name="Explore" xml:space="preserve">
+    <value>탐색</value>
+  </data>
   <data name="FAQ" xml:space="preserve">
     <value>자주 묻는 질문</value>
   </data>

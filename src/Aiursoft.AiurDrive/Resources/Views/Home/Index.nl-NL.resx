@@ -138,6 +138,9 @@
   <data name="Enter Dashboard" xml:space="preserve">
     <value>Dashboard binnenkomen</value>
   </data>
+  <data name="Explore" xml:space="preserve">
+    <value>Verken</value>
+  </data>
   <data name="FAQ" xml:space="preserve">
     <value>Veelgestelde vragen</value>
   </data>

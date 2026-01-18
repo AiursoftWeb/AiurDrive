@@ -138,6 +138,9 @@
   <data name="Enter Dashboard" xml:space="preserve">
     <value>Gå til instrumentbrættet</value>
   </data>
+  <data name="Explore" xml:space="preserve">
+    <value>Utforsk</value>
+  </data>
   <data name="FAQ" xml:space="preserve">
     <value>OFTE STILLEDE SPØRGSMÅL</value>
   </data>

@@ -138,6 +138,9 @@
   <data name="Enter Dashboard" xml:space="preserve">
     <value>Vào bảng điều khiển</value>
   </data>
+  <data name="Explore" xml:space="preserve">
+    <value>Khám phá</value>
+  </data>
   <data name="FAQ" xml:space="preserve">
     <value>Câu hỏi thường gặp</value>
   </data>

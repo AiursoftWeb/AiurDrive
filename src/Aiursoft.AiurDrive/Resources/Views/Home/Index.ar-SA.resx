@@ -138,6 +138,9 @@
   <data name="Enter Dashboard" xml:space="preserve">
     <value>ادخل لوحة التحكم</value>
   </data>
+  <data name="Explore" xml:space="preserve">
+    <value>استكشاف</value>
+  </data>
   <data name="FAQ" xml:space="preserve">
     <value>الأسئلة الشائعة</value>
   </data>

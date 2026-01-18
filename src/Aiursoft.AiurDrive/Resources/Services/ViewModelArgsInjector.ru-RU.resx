@@ -75,6 +75,9 @@
   <data name="Error" xml:space="preserve">
     <value>Ошибка</value>
   </data>
+  <data name="Explore" xml:space="preserve">
+    <value>Обзор</value>
+  </data>
   <data name="Features" xml:space="preserve">
     <value>Возможности</value>
   </data>
@@ -110,6 +113,9 @@
   </data>
   <data name="Profile Settings" xml:space="preserve">
     <value>Настройки профиля</value>
+  </data>
+  <data name="Public Sites" xml:space="preserve">
+    <value>Общедоступные сайты</value>
   </data>
   <data name="Register" xml:space="preserve">
     <value>Зарегистрироваться</value>
