@@ -23,7 +23,7 @@ public class ExploreTests : TestBase
         // 1. Create a public site manually in DB
         using (var scope = Server!.Services.CreateScope())
         {
-            var db = scope.ServiceProvider.GetRequiredService<TemplateDbContext>();
+            var db = scope.ServiceProvider.GetRequiredService<AiurDriveDbContext>();
             var user = await db.Users.FirstAsync();
             var publicSite = new Site
             {
@@ -49,7 +49,7 @@ public class ExploreTests : TestBase
         // 1. Create a private site manually in DB
         using (var scope = Server!.Services.CreateScope())
         {
-            var db = scope.ServiceProvider.GetRequiredService<TemplateDbContext>();
+            var db = scope.ServiceProvider.GetRequiredService<AiurDriveDbContext>();
             var user = await db.Users.FirstAsync();
             var privateSite = new Site
             {

@@ -32,7 +32,7 @@ public abstract class TestBase
     public virtual async Task CreateServer()
     {
         Server = await AppAsync<Startup>([], port: Port);
-        await Server.UpdateDbAsync<TemplateDbContext>();
+        await Server.UpdateDbAsync<AiurDriveDbContext>();
         await Server.SeedAsync();
         await Server.StartAsync();
     }

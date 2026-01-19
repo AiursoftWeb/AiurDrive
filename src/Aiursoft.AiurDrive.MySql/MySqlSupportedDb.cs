@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 namespace Aiursoft.AiurDrive.MySql;
 
 [ExcludeFromCodeCoverage]
-public class MySqlSupportedDb(bool allowCache, bool splitQuery) : SupportedDatabaseType<TemplateDbContext>
+public class MySqlSupportedDb(bool allowCache, bool splitQuery) : SupportedDatabaseType<AiurDriveDbContext>
 {
     public override string DbType => "MySql";
 
@@ -19,7 +19,7 @@ public class MySqlSupportedDb(bool allowCache, bool splitQuery) : SupportedDatab
             allowCache: allowCache);
     }
 
-    public override TemplateDbContext ContextResolver(IServiceProvider serviceProvider)
+    public override AiurDriveDbContext ContextResolver(IServiceProvider serviceProvider)
     {
         return serviceProvider.GetRequiredService<MySqlContext>();
     }

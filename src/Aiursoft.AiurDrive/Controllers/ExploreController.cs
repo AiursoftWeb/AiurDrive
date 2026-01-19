@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Aiursoft.AiurDrive.Controllers;
 
 [LimitPerMin]
-public class ExploreController(TemplateDbContext dbContext) : Controller
+public class ExploreController(AiurDriveDbContext dbContext) : Controller
 {
     [RenderInNavBar(
         NavGroupName = "Features",

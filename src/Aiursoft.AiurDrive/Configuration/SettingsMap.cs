@@ -13,6 +13,13 @@ public static class SettingsMap
     /// </summary>
     public const string AllowImagePreview = "Allow_Image_Preview";
 
+    public class FakeLocalizer
+    {
+        public string this[string name] => name;
+    }
+
+    private static readonly FakeLocalizer Localizer = new();
+
     public static readonly List<GlobalSettingDefinition> Definitions = new()
     {
         new GlobalSettingDefinition

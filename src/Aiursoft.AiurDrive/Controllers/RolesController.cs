@@ -19,7 +19,7 @@ namespace Aiursoft.AiurDrive.Controllers;
 [LimitPerMin]
 public class RolesController(
     UserManager<User> userManager,
-    TemplateDbContext context,
+    AiurDriveDbContext context,
     RoleManager<IdentityRole> roleManager)
     : Controller
 {

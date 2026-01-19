@@ -14,7 +14,7 @@ namespace Aiursoft.AiurDrive.Controllers;
 [LimitPerMin]
 [Authorize]
 public class DashboardController(
-    TemplateDbContext dbContext,
+    AiurDriveDbContext dbContext,
     StorageService storage,
     GlobalSettingsService globalSettings,
     Microsoft.Extensions.Localization.IStringLocalizer<DashboardController> localizer) : Controller

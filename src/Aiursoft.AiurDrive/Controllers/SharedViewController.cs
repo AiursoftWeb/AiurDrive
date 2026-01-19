@@ -11,7 +11,7 @@ namespace Aiursoft.AiurDrive.Controllers;
 
 [LimitPerMin]
 public class SharedViewController(
-    TemplateDbContext dbContext,
+    AiurDriveDbContext dbContext,
     StorageService storage,
     GlobalSettingsService globalSettings) : Controller
 {

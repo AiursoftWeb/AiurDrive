@@ -6,7 +6,7 @@ namespace Aiursoft.AiurDrive.Sqlite;
 
 [ExcludeFromCodeCoverage]
 
-public class SqliteContext(DbContextOptions<SqliteContext> options) : TemplateDbContext(options)
+public class SqliteContext(DbContextOptions<SqliteContext> options) : AiurDriveDbContext(options)
 {
     public override Task<bool> CanConnectAsync()
     {

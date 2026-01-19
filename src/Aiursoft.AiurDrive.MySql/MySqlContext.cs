@@ -6,4 +6,4 @@ namespace Aiursoft.AiurDrive.MySql;
 
 [ExcludeFromCodeCoverage]
 
-public class MySqlContext(DbContextOptions<MySqlContext> options) : TemplateDbContext(options);
+public class MySqlContext(DbContextOptions<MySqlContext> options) : AiurDriveDbContext(options);
