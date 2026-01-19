@@ -35,14 +35,6 @@ public class BasicTests : TestBase
 
         // Step 2: Log off the user and assert a successful redirect.
         var homePageResponse = await Http.GetAsync("/Manage/Index");
-        if (homePageResponse.StatusCode == HttpStatusCode.Redirect)
-        {
-             var location = homePageResponse.Headers.Location?.ToString();
-             if (!string.IsNullOrEmpty(location))
-             {
-                 homePageResponse = await Http.GetAsync(location);
-             }
-        }
         homePageResponse.EnsureSuccessStatusCode();
         
         var logOffResponse = await Http.GetAsync("/Account/LogOff");
@@ -58,14 +50,6 @@ public class BasicTests : TestBase
 
         // Step 4: Verify the final login state by checking the home page content.
         var finalHomePageResponse = await Http.GetAsync("/dashboard/index");
-        if (finalHomePageResponse.StatusCode == HttpStatusCode.Redirect)
-        {
-             var location = finalHomePageResponse.Headers.Location?.ToString();
-             if (!string.IsNullOrEmpty(location))
-             {
-                 finalHomePageResponse = await Http.GetAsync(location);
-             }
-        }
         finalHomePageResponse.EnsureSuccessStatusCode();
         var finalHtml = await finalHomePageResponse.Content.ReadAsStringAsync();
         Assert.Contains(expectedUserName, finalHtml);
@@ -253,14 +237,6 @@ await PostForm("/Account/LogOff", new Dictionary<string, string>(), includeToken
 
         // Step 4: Visit the home page and verify the new name is displayed.
         var homePageResponse = await Http.GetAsync("/dashboard/index");
-        if (homePageResponse.StatusCode == HttpStatusCode.Redirect)
-        {
-             var location = homePageResponse.Headers.Location?.ToString();
-             if (!string.IsNullOrEmpty(location))
-             {
-                 homePageResponse = await Http.GetAsync(location);
-             }
-        }
         homePageResponse.EnsureSuccessStatusCode();
         var html = await homePageResponse.Content.ReadAsStringAsync();
         Assert.Contains(newUserName, html);
