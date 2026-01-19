@@ -14,6 +14,9 @@ public class CreateSiteViewModel : UiStackLayoutViewModel
     [Display(Name = "Storage Type")]
     public bool OpenToUpload { get; set; } = true;
 
+    [MaxLength(300)]
+    public string? Description { get; set; }
+
     public CreateSiteViewModel()
     {
         PageTitle = "Create New Site";

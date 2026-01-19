@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using Aiursoft.CSTools.Attributes;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -25,4 +26,7 @@ public class Site
     /// Default is true to maintain backward compatibility.
     /// </summary>
     public bool OpenToUpload { get; set; } = true;
+
+    [MaxLength(300)]
+    public string? Description { get; set; }
 }

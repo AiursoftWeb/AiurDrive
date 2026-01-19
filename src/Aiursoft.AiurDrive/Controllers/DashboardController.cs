@@ -95,7 +95,8 @@ public class DashboardController(
         {
             SiteName = model.SiteName!.ToLower(),
             AppUserId = user.Id,
-            OpenToUpload = model.OpenToUpload
+            OpenToUpload = model.OpenToUpload,
+            Description = model.Description
         };
 
         try
@@ -110,6 +111,50 @@ public class DashboardController(
         }
 
         return RedirectToAction(nameof(Files), new { siteName = newSite.SiteName });
+    }
+
+    [HttpGet]
+    [Route("Dashboard/EditSite/{siteName}")]
+    public async Task<IActionResult> EditSite(string siteName)
+    {
+        var user = await dbContext.Users
+            .Include(u => u.Sites)
+            .SingleOrDefaultAsync(u => u.UserName == User.Identity!.Name);
+
+        if (user == null) return NotFound();
+        var site = user.Sites.FirstOrDefault(s => s.SiteName == siteName);
+        if (site == null) return NotFound();
+
+        var model = new EditSiteViewModel
+        {
+            SiteName = site.SiteName,
+            Description = site.Description
+        };
+        return this.StackView(model);
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    [Route("Dashboard/EditSite/{siteName}")]
+    public async Task<IActionResult> EditSite(string siteName, EditSiteViewModel model)
+    {
+        if (!ModelState.IsValid)
+        {
+            return this.StackView(model);
+        }
+
+        var user = await dbContext.Users
+            .Include(u => u.Sites)
+            .SingleOrDefaultAsync(u => u.UserName == User.Identity!.Name);
+
+        if (user == null) return NotFound();
+        var site = user.Sites.FirstOrDefault(s => s.SiteName == siteName);
+        if (site == null) return NotFound();
+
+        site.Description = model.Description;
+        await dbContext.SaveChangesAsync();
+
+        return RedirectToAction(nameof(Index));
     }
 
     [Route("Dashboard/Files/{siteName}/{**path}")]
