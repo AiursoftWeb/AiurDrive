@@ -50,6 +50,10 @@ namespace Aiursoft.AiurDrive.MySql.Migrations
                     b.Property<DateTime>("CreationTime")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<string>("Description")
+                        .HasMaxLength(300)
+                        .HasColumnType("varchar(300)");
+
                     b.Property<bool>("OpenToUpload")
                         .HasColumnType("tinyint(1)");
 
