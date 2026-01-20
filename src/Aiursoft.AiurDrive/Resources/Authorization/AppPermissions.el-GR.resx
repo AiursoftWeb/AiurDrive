@@ -33,6 +33,9 @@
   <data name="Allows modification of user details like email and roles, and can also reset user passwords." xml:space="preserve">
     <value>Επιτρέπει την τροποποίηση λεπτομερειών χρήστη, όπως ηλεκτρονικό ταχυδρομείο και ρόλους, και μπορεί επίσης να επαναφέρει κωδικούς πρόσβασης χρηστών.</value>
   </data>
+  <data name="Allows overriding the storage size limit for any site." xml:space="preserve">
+    <value>Επιτρέπει την επιβολή περιορισμού του μεγέθους αποθήκευσης για οποιοδήποτε ιστοσελίδα.</value>
+  </data>
   <data name="Allows the permanent deletion of roles." xml:space="preserve">
     <value>Επιτρέπει την μόνιμη διαγραφή ρόλων.</value>
   </data>
@@ -83,6 +86,9 @@
   </data>
   <data name="Manage Global Settings" xml:space="preserve">
     <value>Διαχείριση Γενικών Ρυθμίσεων</value>
+  </data>
+  <data name="Override Site Storage Size" xml:space="preserve">
+    <value>Επικάλυψη Μεγέθους Αποθήκευσης Ιστοσελίδας</value>
   </data>
   <data name="Read Permissions" xml:space="preserve">
     <value>Διαβάστε Δικαιώματα</value>

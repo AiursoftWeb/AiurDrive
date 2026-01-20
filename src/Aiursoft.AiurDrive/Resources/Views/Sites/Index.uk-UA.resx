@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Actions" xml:space="preserve">
+    <value>Дії</value>
+  </data>
+  <data name="All Sites" xml:space="preserve">
+    <value>Всі сайти</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>Створено</value>
+  </data>
+  <data name="Edit Limit" xml:space="preserve">
+    <value>Редагувати ліміт</value>
+  </data>
+  <data name="Global" xml:space="preserve">
+    <value>Глобальний</value>
+  </data>
+  <data name="Manage storage limits for all sites." xml:space="preserve">
+    <value>Керування обмеженнями сховища для всіх сайтів.</value>
+  </data>
+  <data name="Overridden" xml:space="preserve">
+    <value>Перевизначено</value>
+  </data>
+  <data name="Owner" xml:space="preserve">
+    <value>Власник</value>
+  </data>
+  <data name="Site Name" xml:space="preserve">
+    <value>Назва сайту</value>
+  </data>
+  <data name="Sites Management" xml:space="preserve">
+    <value>Керування сайтами</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Статус</value>
+  </data>
+  <data name="Storage Usage" xml:space="preserve">
+    <value>Використання місця</value>
+  </data>
+
+</root>

@@ -138,6 +138,9 @@
   <data name="Sign out" xml:space="preserve">
     <value>Выйти</value>
   </data>
+  <data name="Sites Management" xml:space="preserve">
+    <value>Управление сайтами</value>
+  </data>
   <data name="System" xml:space="preserve">
     <value>Система</value>
   </data>

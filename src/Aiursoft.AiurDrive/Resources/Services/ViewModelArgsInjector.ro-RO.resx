@@ -138,6 +138,9 @@
   <data name="Sign out" xml:space="preserve">
     <value>Deconectare</value>
   </data>
+  <data name="Sites Management" xml:space="preserve">
+    <value>Gestionarea site-urilor</value>
+  </data>
   <data name="System" xml:space="preserve">
     <value>Sistem</value>
   </data>

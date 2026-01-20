@@ -73,6 +73,8 @@ public class ViewModelArgsInjector(
     
         _ = localizer["My Drive"];
         _ = localizer["Shared with me"];
+    
+        _ = localizer["Sites Management"];
     }
 
     public void InjectSimple(

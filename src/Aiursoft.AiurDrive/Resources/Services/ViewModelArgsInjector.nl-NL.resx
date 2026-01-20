@@ -138,6 +138,9 @@
   <data name="Sign out" xml:space="preserve">
     <value>Uitloggen</value>
   </data>
+  <data name="Sites Management" xml:space="preserve">
+    <value>Sitesbeheer</value>
+  </data>
   <data name="System" xml:space="preserve">
     <value>Systeem</value>
   </data>

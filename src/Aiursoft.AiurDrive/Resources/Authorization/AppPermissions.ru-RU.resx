@@ -33,6 +33,9 @@
   <data name="Allows modification of user details like email and roles, and can also reset user passwords." xml:space="preserve">
     <value>Разрешает изменение данных пользователя, таких как email и роли, а также позволяет сбрасывать пароли пользователей.</value>
   </data>
+  <data name="Allows overriding the storage size limit for any site." xml:space="preserve">
+    <value>Позволяет переопределить лимит размера хранилища для любого сайта.</value>
+  </data>
   <data name="Allows the permanent deletion of roles." xml:space="preserve">
     <value>Разрешает окончательное удаление ролей.</value>
   </data>
@@ -83,6 +86,9 @@
   </data>
   <data name="Manage Global Settings" xml:space="preserve">
     <value>Управление глобальными настройками</value>
+  </data>
+  <data name="Override Site Storage Size" xml:space="preserve">
+    <value>Переопределить размер хранилища сайта</value>
   </data>
   <data name="Read Permissions" xml:space="preserve">
     <value>Чтение разрешений</value>

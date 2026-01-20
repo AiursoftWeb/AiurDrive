@@ -33,6 +33,9 @@
   <data name="Allows modification of user details like email and roles, and can also reset user passwords." xml:space="preserve">
     <value>Staat aanpassing van gebruikersgegevens zoals e-mailadres en rollen toe, en kan ook gebruikerswachtwoorden opnieuw instellen.</value>
   </data>
+  <data name="Allows overriding the storage size limit for any site." xml:space="preserve">
+    <value>Staats het overschrijven van de opslaglimiet voor elke site toe.</value>
+  </data>
   <data name="Allows the permanent deletion of roles." xml:space="preserve">
     <value>Staat het permanent verwijderen van rollen toe.</value>
   </data>
@@ -83,6 +86,9 @@
   </data>
   <data name="Manage Global Settings" xml:space="preserve">
     <value>Algemene instellingen beheren</value>
+  </data>
+  <data name="Override Site Storage Size" xml:space="preserve">
+    <value>Grootte van site-opslag overschrijven</value>
   </data>
   <data name="Read Permissions" xml:space="preserve">
     <value>Leesmachtigingen</value>

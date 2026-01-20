@@ -33,6 +33,9 @@
   <data name="Allows modification of user details like email and roles, and can also reset user passwords." xml:space="preserve">
     <value>사용자의 이메일 및 역할과 같은 세부 정보 수정을 허용하며, 사용자 비밀번호 재설정도 가능합니다.</value>
   </data>
+  <data name="Allows overriding the storage size limit for any site." xml:space="preserve">
+    <value>모든 사이트에 대한 저장 용량 제한을 무시할 수 있도록 허용합니다.</value>
+  </data>
   <data name="Allows the permanent deletion of roles." xml:space="preserve">
     <value>역할을 영구적으로 삭제할 수 있습니다.</value>
   </data>
@@ -83,6 +86,9 @@
   </data>
   <data name="Manage Global Settings" xml:space="preserve">
     <value>전역 설정 관리</value>
+  </data>
+  <data name="Override Site Storage Size" xml:space="preserve">
+    <value>사이트 저장 용량 재정의</value>
   </data>
   <data name="Read Permissions" xml:space="preserve">
     <value>권한 읽기</value>
