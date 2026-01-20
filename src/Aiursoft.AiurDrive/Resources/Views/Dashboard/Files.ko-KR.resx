@@ -48,6 +48,9 @@
   <data name="Folder Name" xml:space="preserve">
     <value>폴더 이름</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>공유 관리</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>이름</value>
   </data>

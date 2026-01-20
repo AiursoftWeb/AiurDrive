@@ -102,6 +102,9 @@
   <data name="Manage" xml:space="preserve">
     <value>Administrer</value>
   </data>
+  <data name="My Drive" xml:space="preserve">
+    <value>Min enhed</value>
+  </data>
   <data name="Permissions" xml:space="preserve">
     <value>Tilladelser</value>
   </data>
@@ -128,6 +131,9 @@
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Indstillinger</value>
+  </data>
+  <data name="Shared with me" xml:space="preserve">
+    <value>Delte med mig</value>
   </data>
   <data name="Sign out" xml:space="preserve">
     <value>Log ud</value>

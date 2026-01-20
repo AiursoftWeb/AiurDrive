@@ -102,6 +102,9 @@
   <data name="Manage" xml:space="preserve">
     <value>Kelola</value>
   </data>
+  <data name="My Drive" xml:space="preserve">
+    <value>Drive Saya</value>
+  </data>
   <data name="Permissions" xml:space="preserve">
     <value>Izin</value>
   </data>
@@ -128,6 +131,9 @@
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Pengaturan</value>
+  </data>
+  <data name="Shared with me" xml:space="preserve">
+    <value>Dibagikan dengan saya</value>
   </data>
   <data name="Sign out" xml:space="preserve">
     <value>Keluar</value>

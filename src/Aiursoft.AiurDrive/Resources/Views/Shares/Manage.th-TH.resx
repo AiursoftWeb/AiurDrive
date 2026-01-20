@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Actions" xml:space="preserve">
+    <value>การดำเนินการ</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>เพิ่ม</value>
+  </data>
+  <data name="Add New Share" xml:space="preserve">
+    <value>เพิ่มการแชร์ใหม่</value>
+  </data>
+  <data name="An error occurred while processing your request." xml:space="preserve">
+    <value>เกิดข้อผิดพลาดขณะประมวลผลคำขอของคุณ</value>
+  </data>
+  <data name="Are you sure you want to remove this share?" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการลบการแชร์นี้?</value>
+  </data>
+  <data name="Back to Files" xml:space="preserve">
+    <value>กลับไปที่ไฟล์</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>ปิด</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>สร้างเมื่อ</value>
+  </data>
+  <data name="Editable" xml:space="preserve">
+    <value>แก้ไขได้</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>ข้อผิดพลาด</value>
+  </data>
+  <data name="Error searching users" xml:space="preserve">
+    <value>ข้อผิดพลาดในการค้นหาผู้ใช้</value>
+  </data>
+  <data name="Existing Shares" xml:space="preserve">
+    <value>การแชร์ที่มีอยู่</value>
+  </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>จัดการการแชร์</value>
+  </data>
+  <data name="No shares yet. Add one above to share this site." xml:space="preserve">
+    <value>ยังไม่มีการแชร์ใด ๆ เลย โปรดเพิ่มหนึ่งรายการด้านบนเพื่อแชร์เว็บไซต์นี้</value>
+  </data>
+  <data name="No users found" xml:space="preserve">
+    <value>ไม่พบผู้ใช้</value>
+  </data>
+  <data name="Permission" xml:space="preserve">
+    <value>สิทธิ์</value>
+  </data>
+  <data name="Please select a valid user or role." xml:space="preserve">
+    <value>กรุณาเลือกผู้ใช้หรือบทบาทที่ถูกต้อง</value>
+  </data>
+  <data name="Read Only" xml:space="preserve">
+    <value>อ่านอย่างเดียว</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>ลบ</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>บทบาท</value>
+  </data>
+  <data name="Select a role..." xml:space="preserve">
+    <value>เลือกบทบาท...</value>
+  </data>
+  <data name="Share with" xml:space="preserve">
+    <value>แชร์กับ</value>
+  </data>
+  <data name="Shared With" xml:space="preserve">
+    <value>ถูกแชร์ให้</value>
+  </data>
+  <data name="Site:" xml:space="preserve">
+    <value>ไซต์:</value>
+  </data>
+  <data name="Specific User" xml:space="preserve">
+    <value>ผู้ใช้เฉพาะ</value>
+  </data>
+  <data name="This site is Private. Only you and specific users/roles listed below can access it." xml:space="preserve">
+    <value>ไซต์นี้เป็นส่วนตัว คุณและผู้ใช้/บทบาทเฉพาะที่ระบุไว้ด้านล่างเท่านั้นที่สามารถเข้าถึงได้</value>
+  </data>
+  <data name="This site is Public. Anyone can view files." xml:space="preserve">
+    <value>เว็บไซต์นี้เปิดเผยให้ทุกคนเห็น ทุกคนสามารถดูไฟล์ได้</value>
+  </data>
+  <data name="This user or role already has access to this site." xml:space="preserve">
+    <value>ผู้ใช้หรือบทบาทนี้มีสิทธิ์เข้าถึงไซต์นี้แล้ว</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>ประเภท</value>
+  </data>
+  <data name="Type to search users..." xml:space="preserve">
+    <value>พิมพ์เพื่อค้นหาผู้ใช้...</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>ผู้ใช้</value>
+  </data>
+  <data name="Visibility" xml:space="preserve">
+    <value>การเข้าถึง</value>
+  </data>
+
+</root>

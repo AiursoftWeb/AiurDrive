@@ -105,6 +105,9 @@
   <data name="Manage" xml:space="preserve">
     <value>관리</value>
   </data>
+  <data name="My Drive" xml:space="preserve">
+    <value>내 드라이브</value>
+  </data>
   <data name="Permissions" xml:space="preserve">
     <value>권한</value>
   </data>
@@ -131,6 +134,9 @@
   </data>
   <data name="Settings" xml:space="preserve">
     <value>설정</value>
+  </data>
+  <data name="Shared with me" xml:space="preserve">
+    <value>내게 공유된 것들</value>
   </data>
   <data name="Sign out" xml:space="preserve">
     <value>로그아웃</value>

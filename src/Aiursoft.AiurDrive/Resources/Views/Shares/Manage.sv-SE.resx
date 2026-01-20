@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Actions" xml:space="preserve">
+    <value>Åtgärder</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Lägg till</value>
+  </data>
+  <data name="Add New Share" xml:space="preserve">
+    <value>Lägg till ny delning</value>
+  </data>
+  <data name="An error occurred while processing your request." xml:space="preserve">
+    <value>Ett fel uppstod vid bearbetning av din begäran.</value>
+  </data>
+  <data name="Are you sure you want to remove this share?" xml:space="preserve">
+    <value>Är du säker på att du vill ta bort den här delningen?</value>
+  </data>
+  <data name="Back to Files" xml:space="preserve">
+    <value>Tillbaka till filer</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Stäng</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>Skapad</value>
+  </data>
+  <data name="Editable" xml:space="preserve">
+    <value>Redigerbar</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Fel</value>
+  </data>
+  <data name="Error searching users" xml:space="preserve">
+    <value>Fel vid sökning av användare</value>
+  </data>
+  <data name="Existing Shares" xml:space="preserve">
+    <value>Bestående delar</value>
+  </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>Hantera delningar</value>
+  </data>
+  <data name="No shares yet. Add one above to share this site." xml:space="preserve">
+    <value>Ingen delningar än. Lägg till en ovanför för att dela detta webbplats.</value>
+  </data>
+  <data name="No users found" xml:space="preserve">
+    <value>Inga användare hittades</value>
+  </data>
+  <data name="Permission" xml:space="preserve">
+    <value>Behörighet</value>
+  </data>
+  <data name="Please select a valid user or role." xml:space="preserve">
+    <value>Vänligen välj en giltig användare eller roll.</value>
+  </data>
+  <data name="Read Only" xml:space="preserve">
+    <value>Läsa endast</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Ta bort</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Roll</value>
+  </data>
+  <data name="Select a role..." xml:space="preserve">
+    <value>Välj en roll...</value>
+  </data>
+  <data name="Share with" xml:space="preserve">
+    <value>Dela med</value>
+  </data>
+  <data name="Shared With" xml:space="preserve">
+    <value>Delat med</value>
+  </data>
+  <data name="Site:" xml:space="preserve">
+    <value>Plats:</value>
+  </data>
+  <data name="Specific User" xml:space="preserve">
+    <value>Specifik användare</value>
+  </data>
+  <data name="This site is Private. Only you and specific users/roles listed below can access it." xml:space="preserve">
+    <value>Denna webbplats är privat. Endast du och de specifika användare/roller som anges nedan kan komma åt den.</value>
+  </data>
+  <data name="This site is Public. Anyone can view files." xml:space="preserve">
+    <value>Detta webbplats är offentlig. Alla kan visa filer.</value>
+  </data>
+  <data name="This user or role already has access to this site." xml:space="preserve">
+    <value>Denna användare eller roll har redan åtkomst till denna sida.</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Typ</value>
+  </data>
+  <data name="Type to search users..." xml:space="preserve">
+    <value>Skriv för att söka efter användare...</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Användare</value>
+  </data>
+  <data name="Visibility" xml:space="preserve">
+    <value>Synlighet</value>
+  </data>
+
+</root>

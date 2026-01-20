@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Actions" xml:space="preserve">
+    <value>Действия</value>
+  </data>
+  <data name="Directly" xml:space="preserve">
+    <value>Напрямую</value>
+  </data>
+  <data name="Editable" xml:space="preserve">
+    <value>Редактируемый</value>
+  </data>
+  <data name="No sites have been shared with you yet." xml:space="preserve">
+    <value>Сайты пока никем не были поделены с вами.</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
+  <data name="Owner" xml:space="preserve">
+    <value>Владелец</value>
+  </data>
+  <data name="Permission" xml:space="preserve">
+    <value>Разрешение</value>
+  </data>
+  <data name="Read Only" xml:space="preserve">
+    <value>Только для чтения</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Роль</value>
+  </data>
+  <data name="Shared Date" xml:space="preserve">
+    <value>Дата shared</value>
+  </data>
+  <data name="Shared Via" xml:space="preserve">
+    <value>Передано через</value>
+  </data>
+  <data name="Shared with Me" xml:space="preserve">
+    <value>Общие со мной</value>
+  </data>
+  <data name="Site Name" xml:space="preserve">
+    <value>Имя сайта</value>
+  </data>
+  <data name="Sites Shared with You" xml:space="preserve">
+    <value>Сайты, поделённые со мной</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Неизвестно</value>
+  </data>
+
+</root>

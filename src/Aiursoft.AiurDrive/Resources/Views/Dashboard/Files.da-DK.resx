@@ -48,6 +48,9 @@
   <data name="Folder Name" xml:space="preserve">
     <value>Mappe navn</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>Administrer delinger</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Navn</value>
   </data>

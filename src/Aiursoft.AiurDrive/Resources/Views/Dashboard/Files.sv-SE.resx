@@ -48,6 +48,9 @@
   <data name="Folder Name" xml:space="preserve">
     <value>Mappnamn</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>Hantera delningar</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Namn</value>
   </data>

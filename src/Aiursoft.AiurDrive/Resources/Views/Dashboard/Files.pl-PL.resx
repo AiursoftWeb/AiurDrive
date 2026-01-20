@@ -48,6 +48,9 @@
   <data name="Folder Name" xml:space="preserve">
     <value>Nazwa folderu</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>Zarządzaj udostępnieniami</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Nazwa</value>
   </data>

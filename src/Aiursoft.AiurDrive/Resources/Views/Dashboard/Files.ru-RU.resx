@@ -48,6 +48,9 @@
   <data name="Folder Name" xml:space="preserve">
     <value>Имя папки</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>Управление общими папками</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Имя</value>
   </data>

@@ -48,6 +48,9 @@
   <data name="Folder Name" xml:space="preserve">
     <value>Nama Folder</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>Kelola Bagian</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Nama</value>
   </data>
