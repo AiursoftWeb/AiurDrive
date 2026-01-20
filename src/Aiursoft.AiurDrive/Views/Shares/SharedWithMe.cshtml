@@ -1,0 +1,103 @@
+@using Aiursoft.AiurDrive.Entities
+@model Aiursoft.AiurDrive.Models.SharesViewModels.SharedWithMeViewModel
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Aiursoft.AiurDrive.Controllers.SharesController> Localizer
+@inject Aiursoft.AiurDrive.Services.FileStorage.StorageService StorageService
+
+<div class="row mb-3">
+    <div class="col-12">
+        <h3>@Localizer["Shared with Me"]</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">
+                    <i class="align-middle" data-lucide="share-2"></i> @Localizer["Sites Shared with You"]
+                </h5>
+            </div>
+            <div class="card-body">
+                @if (!Model.Shares.Any())
+                {
+                    <div class="text-center text-muted py-5">
+                        <i class="align-middle" data-lucide="inbox" style="width: 48px; height: 48px;"></i>
+                        <p class="mt-3">@Localizer["No sites have been shared with you yet."]</p>
+                    </div>
+                }
+                else
+                {
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0">
+                            <thead>
+                            <tr>
+                                <th>@Localizer["Site Name"]</th>
+                                <th>@Localizer["Owner"]</th>
+                                <th>@Localizer["Permission"]</th>
+                                <th>@Localizer["Shared Via"]</th>
+                                <th>@Localizer["Shared Date"]</th>
+                                <th class="text-end">@Localizer["Actions"]</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach (var share in Model.Shares)
+                            {
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <i class="align-middle me-2 text-primary" data-lucide="folder"></i>
+                                            <strong>@share.Site?.SiteName</strong>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        @if (share.Site?.AppUser != null)
+                                        {
+                                            <div class="d-flex align-items-center">
+                                                <img src="@(StorageService.RelativePathToInternetUrl(share.Site.AppUser.AvatarRelativePath))?w=128&square=true" alt="Avatar" class="rounded-circle me-2" style="width: 32px; height: 32px; object-fit: cover;">
+                                                <span>@share.Site.AppUser.DisplayName</span>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted">@Localizer["Unknown"]</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (share.Permission == SharePermission.ReadOnly)
+                                        {
+                                            <span class="badge bg-secondary">@Localizer["Read Only"]</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-success">@Localizer["Editable"]</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (share.SharedWithUserId != null)
+                                        {
+                                            <span class="badge bg-info">@Localizer["Directly"]</span>
+                                        }
+                                        else if (share.SharedWithRoleId != null)
+                                        {
+                                            var roleName = Model.RoleNames.ContainsKey(share.SharedWithRoleId) ? Model.RoleNames[share.SharedWithRoleId] : share.SharedWithRoleId;
+                                            <span class="badge bg-primary">@Localizer["Role"]: @roleName</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        <label class="text-muted" data-utc-time="@share.CreationTime.ToString("o")"></label>
+                                    </td>
+                                    <td class="text-end">
+                                        <a asp-controller="Dashboard" asp-action="Files" asp-route-siteName="@share.Site?.SiteName" class="btn btn-sm btn-outline-primary">
+                                            <i class="align-middle" data-lucide="folder-open"></i> @Localizer["Open"]
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

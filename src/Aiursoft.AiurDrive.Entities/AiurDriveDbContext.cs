@@ -11,6 +11,7 @@ public abstract class AiurDriveDbContext(DbContextOptions options) : IdentityDbC
 {
     public DbSet<GlobalSetting> GlobalSettings => Set<GlobalSetting>();
     public DbSet<Site> Sites => Set<Site>();
+    public DbSet<SiteShare> SiteShares => Set<SiteShare>();
     public virtual  Task MigrateAsync(CancellationToken cancellationToken) =>
         Database.MigrateAsync(cancellationToken);
 

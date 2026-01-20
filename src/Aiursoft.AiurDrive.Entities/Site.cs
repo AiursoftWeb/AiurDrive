@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Aiursoft.CSTools.Attributes;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -29,4 +30,7 @@ public class Site
 
     [MaxLength(300)]
     public string? Description { get; set; }
+    
+    [InverseProperty(nameof(SiteShare.Site))]
+    public IEnumerable<SiteShare> SiteShares { get; set; } = new List<SiteShare>();
 }

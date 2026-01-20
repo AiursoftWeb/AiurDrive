@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using Aiursoft.AiurDrive.Services.FileStorage;
 using Aiursoft.AiurDrive.Configuration;
+using Microsoft.AspNetCore.Identity;
 
 namespace Aiursoft.AiurDrive.Controllers;
 
@@ -17,6 +18,8 @@ public class DashboardController(
     AiurDriveDbContext dbContext,
     StorageService storage,
     GlobalSettingsService globalSettings,
+    UserManager<User> userManager,
+    RoleManager<IdentityRole> roleManager,
     Microsoft.Extensions.Localization.IStringLocalizer<DashboardController> localizer) : Controller
 {
     [RenderInNavBar(
@@ -157,16 +160,43 @@ public class DashboardController(
         return RedirectToAction(nameof(Index));
     }
 
+    private async Task<bool> HasAccess(Site site, User user, SharePermission requiredPermission)
+    {
+        if (site.AppUserId == user.Id) return true;
+
+        var userRoles = await userManager.GetRolesAsync(user);
+        var userRoleIds = await roleManager.Roles
+            .Where(r => userRoles.Contains(r.Name!))
+            .Select(r => r.Id)
+            .ToListAsync();
+
+        var share = await dbContext.SiteShares
+            .Where(s => s.SiteId == site.Id)
+            .Where(s => s.SharedWithUserId == user.Id || (s.SharedWithRoleId != null && userRoleIds.Contains(s.SharedWithRoleId)))
+            .OrderByDescending(s => s.Permission)
+            .FirstOrDefaultAsync();
+
+        if (share == null) return false;
+
+        if (requiredPermission == SharePermission.ReadOnly) return true;
+        if (requiredPermission == SharePermission.Editable && share.Permission == SharePermission.Editable) return true;
+
+        return false;
+    }
+
     [Route("Dashboard/Files/{siteName}/{**path}")]
     public async Task<IActionResult> Files(string siteName, string? path)
     {
-        var user = await dbContext.Users
-            .Include(u => u.Sites)
-            .SingleOrDefaultAsync(u => u.UserName == User.Identity!.Name);
+        var user = await userManager.GetUserAsync(User);
+        if (user == null) return Unauthorized();
 
-        if (user == null) return NotFound();
-        var site = user.Sites.FirstOrDefault(s => s.SiteName == siteName);
+        var site = await dbContext.Sites.FirstOrDefaultAsync(s => s.SiteName == siteName);
         if (site == null) return NotFound();
+
+        if (!await HasAccess(site, user, SharePermission.ReadOnly))
+        {
+            return Forbid();
+        }
 
         path ??= string.Empty;
         var logicalPath = Path.Combine(siteName, path);
@@ -195,24 +225,26 @@ public class DashboardController(
             PageTitle = "File Manager",
             UsedSpaceInBytes = storage.GetSiteSize(siteName),
             TotalSpaceInGB = maxSpaceGB,
-            AllowImagePreview = await globalSettings.GetBoolSettingAsync(SettingsMap.AllowImagePreview)
+            AllowImagePreview = await globalSettings.GetBoolSettingAsync(SettingsMap.AllowImagePreview),
+            IsOwner = site.AppUserId == user.Id
         };
         return this.StackView(model);
     }
-
-
 
     [HttpPost]
     [Route("Dashboard/Delete/{siteName}/{**path}")]
     public async Task<IActionResult> Delete(string siteName, string? path)
     {
-         var user = await dbContext.Users
-            .Include(u => u.Sites)
-            .SingleOrDefaultAsync(u => u.UserName == User.Identity!.Name);
-
+         var user = await userManager.GetUserAsync(User);
         if (user == null) return Unauthorized();
-        var site = user.Sites.FirstOrDefault(s => s.SiteName == siteName);
+
+        var site = await dbContext.Sites.FirstOrDefaultAsync(s => s.SiteName == siteName);
         if (site == null) return NotFound();
+
+        if (!await HasAccess(site, user, SharePermission.Editable))
+        {
+            return Forbid();
+        }
 
         if (string.IsNullOrWhiteSpace(path)) return BadRequest("Cannot delete root.");
 
@@ -255,6 +287,8 @@ public class DashboardController(
         var site = user.Sites.FirstOrDefault(s => s.SiteName == siteName);
         if (site == null) return NotFound();
 
+        // Only owner can delete site
+        
         var model = new DeleteSiteViewModel
         {
             SiteName = site.SiteName,
@@ -267,7 +301,7 @@ public class DashboardController(
     [HttpPost]
     [ValidateAntiForgeryToken]
     [Route("Dashboard/DeleteSite/{siteName}")]
-    [ActionName("DeleteSite")] // Ensures the form with asp-action="DeleteSite" posts here
+    [ActionName("DeleteSite")]
     public async Task<IActionResult> DeleteSiteConfirmed(string siteName)
     {
         var user = await dbContext.Users
@@ -278,21 +312,15 @@ public class DashboardController(
         var site = user.Sites.FirstOrDefault(s => s.SiteName == siteName);
         if (site == null) return NotFound();
 
-        // 1. Delete physical folder
         try 
         {
             storage.DeleteSiteFolder(site.SiteName);
         }
         catch (Exception e)
         {
-            // Log error but continue to delete DB record? Or fail?
-            // For now, let's assume if deletion fails we might want to stop, 
-            // but usually we want to clear the DB record anyway if the folder is gone or partially gone.
-            // Let's just proceed.
             Console.WriteLine($"Error deleting folder: {e.Message}");
         }
 
-        // 2. Delete from DB
         dbContext.Sites.Remove(site);
         await dbContext.SaveChangesAsync();
 
@@ -303,13 +331,16 @@ public class DashboardController(
     [Route("Dashboard/CreateFolder/{siteName}/{**path}")]
     public async Task<IActionResult> CreateFolder(string siteName, string? path, string newFolderName)
     {
-        var user = await dbContext.Users
-            .Include(u => u.Sites)
-            .SingleOrDefaultAsync(u => u.UserName == User.Identity!.Name);
-
+        var user = await userManager.GetUserAsync(User);
         if (user == null) return Unauthorized();
-        var site = user.Sites.FirstOrDefault(s => s.SiteName == siteName);
+
+        var site = await dbContext.Sites.FirstOrDefaultAsync(s => s.SiteName == siteName);
         if (site == null) return NotFound();
+
+        if (!await HasAccess(site, user, SharePermission.Editable))
+        {
+            return Forbid();
+        }
 
         if (string.IsNullOrWhiteSpace(newFolderName)) return BadRequest("Folder name cannot be empty.");
         if (newFolderName.Any(c => Path.GetInvalidFileNameChars().Contains(c))) return BadRequest("Invalid folder name.");
@@ -338,13 +369,16 @@ public class DashboardController(
     [Route("Dashboard/Rename/{siteName}/{**path}")]
     public async Task<IActionResult> Rename(string siteName, string path, string newName)
     {
-        var user = await dbContext.Users
-            .Include(u => u.Sites)
-            .SingleOrDefaultAsync(u => u.UserName == User.Identity!.Name);
-
+        var user = await userManager.GetUserAsync(User);
         if (user == null) return Unauthorized();
-        var site = user.Sites.FirstOrDefault(s => s.SiteName == siteName);
+
+        var site = await dbContext.Sites.FirstOrDefaultAsync(s => s.SiteName == siteName);
         if (site == null) return NotFound();
+
+        if (!await HasAccess(site, user, SharePermission.Editable))
+        {
+            return Forbid();
+        }
 
         if (string.IsNullOrWhiteSpace(path)) return BadRequest("Cannot rename root.");
         if (string.IsNullOrWhiteSpace(newName)) return BadRequest("New name cannot be empty.");
@@ -357,15 +391,10 @@ public class DashboardController(
             var oldPhysicalPath = storage.GetFilePhysicalPath(logicalPath, !site.OpenToUpload);
             var parentPhysicalPath = Directory.GetParent(oldPhysicalPath)?.FullName;
             if (parentPhysicalPath == null) return BadRequest("Cannot find parent directory.");
-
-            // Security check: ensure new path is still valid within the storage root
-            // We can do this by converting back to logical path or checking prefix, 
-            // but calling GetFilePhysicalPath with the reconstructed logical path is safer.
             
-            var parentLogicalPath = Path.GetDirectoryName(path); // relative to site
+            var parentLogicalPath = Path.GetDirectoryName(path);
             var newLogicalPath = Path.Combine(siteName, parentLogicalPath ?? string.Empty, newName);
             
-            // This throws if traversal detected
             var validatedNewPhysicalPath = storage.GetFilePhysicalPath(newLogicalPath, !site.OpenToUpload); 
 
             if (System.IO.File.Exists(validatedNewPhysicalPath) || Directory.Exists(validatedNewPhysicalPath))
@@ -399,30 +428,27 @@ public class DashboardController(
     [Route("Dashboard/Move/{siteName}")]
     public async Task<IActionResult> Move(string siteName, string sourcePath, string? targetPath)
     {
-        var user = await dbContext.Users
-            .Include(u => u.Sites)
-            .SingleOrDefaultAsync(u => u.UserName == User.Identity!.Name);
-
+        var user = await userManager.GetUserAsync(User);
         if (user == null) return Unauthorized();
-        var site = user.Sites.FirstOrDefault(s => s.SiteName == siteName);
+
+        var site = await dbContext.Sites.FirstOrDefaultAsync(s => s.SiteName == siteName);
         if (site == null) return NotFound();
+
+        if (!await HasAccess(site, user, SharePermission.Editable))
+        {
+            return Forbid();
+        }
 
         if (string.IsNullOrWhiteSpace(sourcePath)) return BadRequest("Source path cannot be empty.");
 
-        // Prevent moving into itself
-        // Normalizing paths for comparison
         var normalizedSource = sourcePath.Replace("\\", "/").Trim('/');
         var normalizedTarget = (targetPath ?? string.Empty).Replace("\\", "/").Trim('/');
         
-        // Check if target is same as source (useless move)
         if (string.Equals(Path.GetDirectoryName(normalizedSource)?.Replace("\\", "/"), normalizedTarget, StringComparison.OrdinalIgnoreCase))
         {
              return RedirectToAction(nameof(Files), new { siteName, path = normalizedTarget });
         }
 
-        // Check for recursive move: Target starts with Source
-        // e.g. Source: A, Target: A/B.  normalizedTarget (A/B) starts with normalizedSource (A)
-        // Need to ensure we match directory boundaries, e.g. "Folder" starts with "Fold" is false positive.
         if (normalizedTarget.StartsWith(normalizedSource + "/", StringComparison.OrdinalIgnoreCase) || 
             string.Equals(normalizedTarget, normalizedSource, StringComparison.OrdinalIgnoreCase))
         {
@@ -436,10 +462,6 @@ public class DashboardController(
         try 
         {
             var physicalSource = storage.GetFilePhysicalPath(logicalSourcePath, !site.OpenToUpload);
-            // We use GetFilePhysicalPath for destination too to ensure it resolves to a safe path inside the site
-            // However, GetFilePhysicalPath usually checks for existence? 
-            // Wait, looking at StorageService.GetFilePhysicalPath: it only checks "StartsWith root". It does NOT check File.Exists.
-            // So it's safe to use for a non-existent target as long as it's valid.
             var physicalDest = storage.GetFilePhysicalPath(logicalDestPath, !site.OpenToUpload);
 
             if (System.IO.File.Exists(physicalDest) || Directory.Exists(physicalDest))

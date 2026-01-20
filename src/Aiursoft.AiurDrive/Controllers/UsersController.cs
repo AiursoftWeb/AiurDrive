@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Aiursoft.AiurDrive.Services.FileStorage;
 
 namespace Aiursoft.AiurDrive.Controllers;
 
@@ -19,7 +20,8 @@ namespace Aiursoft.AiurDrive.Controllers;
 public class UsersController(
     RoleManager<IdentityRole> roleManager,
     UserManager<User> userManager,
-    AiurDriveDbContext context)
+    AiurDriveDbContext context,
+    StorageService storage)
     : Controller
 {
     [Authorize(Policy = AppPermissionNames.CanReadUsers)]
@@ -236,5 +238,39 @@ public class UsersController(
         }
         await userManager.DeleteAsync(user);
         return RedirectToAction(nameof(Index));
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Search(string query)
+    {
+        if (string.IsNullOrWhiteSpace(query) || query.Length < 3)
+        {
+            return Json(new { users = Array.Empty<object>() });
+        }
+
+        var users = await context.Users
+            .Where(u => u.UserName!.Contains(query) || u.DisplayName.Contains(query) || u.Email!.Contains(query))
+            .Select(u => new
+            {
+                u.Id,
+                u.UserName,
+                u.DisplayName,
+                // Using method call in LINQ to SQL might fail if EF Core can't translate it.
+                // RelativePathToInternetUrl is a service method.
+                // We should select data first then project in memory.
+                u.AvatarRelativePath
+            })
+            .Take(10)
+            .ToListAsync();
+
+        var projectedUsers = users.Select(u => new
+        {
+            u.Id,
+            u.UserName,
+            u.DisplayName,
+            AvatarUrl = storage.RelativePathToInternetUrl(u.AvatarRelativePath) + "?w=128&square=true"
+        });
+
+        return Json(new { users = projectedUsers });
     }
 }
