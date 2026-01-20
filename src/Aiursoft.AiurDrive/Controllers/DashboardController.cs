@@ -38,12 +38,6 @@ public class DashboardController(
             
         if (user == null) return NotFound();
         var maxSites = await globalSettings.GetIntSettingAsync(SettingsMap.MaxSitesPerPerson);
-
-        if (!user.Sites.Any() && maxSites > 0)
-        {
-            return RedirectToAction(nameof(CreateSite));
-        }
-
         var model = new IndexViewModel
         {
             Sites = user.Sites,
