@@ -31,6 +31,8 @@ public class Site
     [MaxLength(300)]
     public string? Description { get; set; }
     
+    public long? StorageSizeLimit { get; set; }
+
     [InverseProperty(nameof(SiteShare.Site))]
     public IEnumerable<SiteShare> SiteShares { get; set; } = new List<SiteShare>();
 }

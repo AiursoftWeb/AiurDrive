@@ -1,0 +1,98 @@
+@model Aiursoft.AiurDrive.Models.SitesViewModels.IndexViewModel
+@using Aiursoft.AiurDrive.Entities
+
+<div class="row mb-2 mb-xl-3">
+    <div class="col-auto d-none d-sm-block">
+        <h3>@Localizer["Sites Management"]</h3>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h5 class="card-title">@Localizer["All Sites"]</h5>
+        <h6 class="card-subtitle text-muted">@Localizer["Manage storage limits for all sites."]</h6>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover mb-0">
+            <thead>
+                <tr>
+                    <th>@Localizer["Site Name"]</th>
+                    <th>@Localizer["Owner"]</th>
+                    <th>@Localizer["Created"]</th>
+                    <th>@Localizer["Storage Usage"]</th>
+                    <th>@Localizer["Status"]</th>
+                    <th class="text-end">@Localizer["Actions"]</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Sites)
+                {
+                    var usedSpaceGB = item.UsedSizeInBytes / 1024.0 / 1024.0 / 1024.0;
+                    var totalSpaceGB = (double)item.LimitInGB;
+                    var percentage = totalSpaceGB > 0 ? (usedSpaceGB / totalSpaceGB) * 100 : 100;
+                    var colorClass = percentage >= 100 ? "bg-danger" : percentage >= 80 ? "bg-warning" : "bg-success";
+                    
+                    <tr>
+                        <td>
+                            <a asp-controller="Dashboard" asp-action="Files" asp-route-siteName="@item.Site.SiteName">
+                                <i class="fas fa-folder text-warning me-2"></i>@item.Site.SiteName
+                            </a>
+                        </td>
+                        <td>
+                            @if(item.Site.AppUser != null)
+                            {
+                                <div class="d-flex align-items-center">
+                                    <span class="ms-2">@item.Site.AppUser.UserName</span>
+                                </div>
+                            }
+                        </td>
+                        <td>@item.Site.CreationTime.ToString("g")</td>
+                        <td style="min-width: 200px;">
+                            <div class="mb-1 d-flex justify-content-between small">
+                                <span>@usedSpaceGB.ToString("0.00") GB</span>
+                                <span>@totalSpaceGB.ToString("0.00") GB</span>
+                            </div>
+                            <div class="progress" style="height: 6px;">
+                                <div class="progress-bar @colorClass" role="progressbar" style="width: @percentage%" aria-valuenow="@percentage" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </td>
+                        <td>
+                            @if (item.IsOverridden)
+                            {
+                                <span class="badge bg-primary">@Localizer["Overridden"]</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">@Localizer["Global"]</span>
+                            }
+                        </td>
+                        <td class="text-end">
+                            <a asp-action="Edit" asp-route-id="@item.Site.Id" class="btn btn-sm btn-outline-primary">
+                                <i class="fas fa-edit"></i> @Localizer["Edit Limit"]
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    
+    @if (Model.TotalCount > Model.PageSize)
+    {
+        <div class="card-footer">
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center mb-0">
+                    <li class="page-item @(Model.CurrentPage == 1 ? "disabled" : "")">
+                        <a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage - 1)">Previous</a>
+                    </li>
+                    <li class="page-item disabled">
+                        <span class="page-link">Page @Model.CurrentPage</span>
+                    </li>
+                    <li class="page-item @(Model.CurrentPage * Model.PageSize >= Model.TotalCount ? "disabled" : "")">
+                        <a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage + 1)">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    }
+</div>

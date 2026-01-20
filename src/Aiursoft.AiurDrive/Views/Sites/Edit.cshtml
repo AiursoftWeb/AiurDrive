@@ -1,0 +1,32 @@
+@model Aiursoft.AiurDrive.Models.SitesViewModels.EditViewModel
+
+<div class="row mb-2 mb-xl-3">
+    <div class="col-auto d-none d-sm-block">
+        <h3>@Localizer["Edit Site Storage Limit"]</h3>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h5 class="card-title">@Localizer["Site"]: @Model.SiteName</h5>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SiteId" />
+            <input type="hidden" asp-for="SiteName" />
+
+            <div class="mb-3">
+                <label asp-for="StorageSizeLimit" class="form-label"></label>
+                <input asp-for="StorageSizeLimit" class="form-control" placeholder="Leave empty to use global setting" />
+                <span asp-validation-for="StorageSizeLimit" class="text-danger"></span>
+                <div class="form-text">
+                    @Localizer["Enter the maximum storage size in GB. Leave empty to use the global server setting."]
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">@Localizer["Save"]</button>
+            <a asp-action="Index" class="btn btn-secondary">@Localizer["Cancel"]</a>
+        </form>
+    </div>
+</div>

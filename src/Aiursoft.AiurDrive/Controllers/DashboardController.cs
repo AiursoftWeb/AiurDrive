@@ -214,6 +214,11 @@ public class DashboardController(
 
         var maxSpaceString = await globalSettings.GetSettingValueAsync(SettingsMap.MaxSiteStorageInGB);
         long.TryParse(maxSpaceString, out var maxSpaceGB);
+        
+        if (site.StorageSizeLimit.HasValue)
+        {
+            maxSpaceGB = site.StorageSizeLimit.Value;
+        }
 
         var model = new FileManagerViewModel
         {
