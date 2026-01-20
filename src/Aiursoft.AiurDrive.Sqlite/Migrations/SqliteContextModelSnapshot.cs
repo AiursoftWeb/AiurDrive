@@ -54,6 +54,9 @@ namespace Aiursoft.AiurDrive.Sqlite.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<long?>("StorageSizeLimit")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
 
                     b.HasIndex("AppUserId");
