@@ -102,6 +102,9 @@
   <data name="Manage" xml:space="preserve">
     <value>Yönet</value>
   </data>
+  <data name="My Drive" xml:space="preserve">
+    <value>Benim Sürücüm</value>
+  </data>
   <data name="Permissions" xml:space="preserve">
     <value>İzinler</value>
   </data>
@@ -128,6 +131,9 @@
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Ayarlar</value>
+  </data>
+  <data name="Shared with me" xml:space="preserve">
+    <value>Bana paylaşılanlar</value>
   </data>
   <data name="Sign out" xml:space="preserve">
     <value>Çıkış Yap</value>

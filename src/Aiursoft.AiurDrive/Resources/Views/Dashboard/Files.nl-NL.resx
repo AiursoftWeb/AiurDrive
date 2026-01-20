@@ -48,6 +48,9 @@
   <data name="Folder Name" xml:space="preserve">
     <value>Mapnaam</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>Shares beheren</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Naam</value>
   </data>

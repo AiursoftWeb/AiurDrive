@@ -48,6 +48,9 @@
   <data name="Folder Name" xml:space="preserve">
     <value>文件夹名称</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>管理共享</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>名称</value>
   </data>

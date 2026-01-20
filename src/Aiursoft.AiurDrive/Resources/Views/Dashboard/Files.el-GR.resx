@@ -48,6 +48,9 @@
   <data name="Folder Name" xml:space="preserve">
     <value>Όνομα Φακέλου</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>Διαχείριση Μορφωτικών Αντικειμένων</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Όνομα</value>
   </data>

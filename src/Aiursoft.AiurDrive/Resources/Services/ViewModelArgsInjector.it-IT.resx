@@ -102,6 +102,9 @@
   <data name="Manage" xml:space="preserve">
     <value>Gestisci</value>
   </data>
+  <data name="My Drive" xml:space="preserve">
+    <value>Il mio drive</value>
+  </data>
   <data name="Permissions" xml:space="preserve">
     <value>Permessi</value>
   </data>
@@ -128,6 +131,9 @@
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Impostazioni</value>
+  </data>
+  <data name="Shared with me" xml:space="preserve">
+    <value>Condiviso con me</value>
   </data>
   <data name="Sign out" xml:space="preserve">
     <value>Esci</value>

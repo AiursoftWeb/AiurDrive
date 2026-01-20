@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Ajouter</value>
+  </data>
+  <data name="Add New Share" xml:space="preserve">
+    <value>Nouvelle partage</value>
+  </data>
+  <data name="An error occurred while processing your request." xml:space="preserve">
+    <value>Une erreur s&apos;est produite lors du traitement de votre demande.</value>
+  </data>
+  <data name="Are you sure you want to remove this share?" xml:space="preserve">
+    <value>Êtes-vous sûr de vouloir supprimer ce partage ?</value>
+  </data>
+  <data name="Back to Files" xml:space="preserve">
+    <value>Retour aux fichiers</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>Créé</value>
+  </data>
+  <data name="Editable" xml:space="preserve">
+    <value>Modifiable</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="Error searching users" xml:space="preserve">
+    <value>Erreur lors de la recherche des utilisateurs</value>
+  </data>
+  <data name="Existing Shares" xml:space="preserve">
+    <value>Partages existants</value>
+  </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>Gérer les partages</value>
+  </data>
+  <data name="No shares yet. Add one above to share this site." xml:space="preserve">
+    <value>Aucun partage pour l&apos;instant. Ajoutez-en un ci-dessus pour partager ce site.</value>
+  </data>
+  <data name="No users found" xml:space="preserve">
+    <value>Aucun utilisateur trouvé</value>
+  </data>
+  <data name="Permission" xml:space="preserve">
+    <value>Permission</value>
+  </data>
+  <data name="Please select a valid user or role." xml:space="preserve">
+    <value>Veuillez sélectionner un utilisateur ou un rôle valide.</value>
+  </data>
+  <data name="Read Only" xml:space="preserve">
+    <value>Lecture seule</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Rôle</value>
+  </data>
+  <data name="Select a role..." xml:space="preserve">
+    <value>Sélectionnez un rôle...</value>
+  </data>
+  <data name="Share with" xml:space="preserve">
+    <value>Partager avec</value>
+  </data>
+  <data name="Shared With" xml:space="preserve">
+    <value>Partagé avec</value>
+  </data>
+  <data name="Site:" xml:space="preserve">
+    <value>Site :</value>
+  </data>
+  <data name="Specific User" xml:space="preserve">
+    <value>Utilisateur spécifique</value>
+  </data>
+  <data name="This site is Private. Only you and specific users/roles listed below can access it." xml:space="preserve">
+    <value>Ce site est privé. Seul vous et les utilisateurs/rôles spécifiques listés ci-dessous peuvent y accéder.</value>
+  </data>
+  <data name="This site is Public. Anyone can view files." xml:space="preserve">
+    <value>Ce site est public. Tout le monde peut visualiser les fichiers.</value>
+  </data>
+  <data name="This user or role already has access to this site." xml:space="preserve">
+    <value>Cet utilisateur ou ce rôle a déjà accès à ce site.</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Type to search users..." xml:space="preserve">
+    <value>Tapez pour rechercher des utilisateurs...</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Utilisateur</value>
+  </data>
+  <data name="Visibility" xml:space="preserve">
+    <value>État de visibilité</value>
+  </data>
+
+</root>

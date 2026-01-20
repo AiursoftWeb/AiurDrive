@@ -48,6 +48,9 @@
   <data name="Folder Name" xml:space="preserve">
     <value>KansioNimi</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>Hallinnoi jaotteluja</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Nimi</value>
   </data>

@@ -102,6 +102,9 @@
   <data name="Manage" xml:space="preserve">
     <value>Διαχείριση</value>
   </data>
+  <data name="My Drive" xml:space="preserve">
+    <value>Το δικό μου Drive</value>
+  </data>
   <data name="Permissions" xml:space="preserve">
     <value>Άδειες</value>
   </data>
@@ -128,6 +131,9 @@
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Ρυθμίσεις</value>
+  </data>
+  <data name="Shared with me" xml:space="preserve">
+    <value>Κοινοποιημένα με εμένα</value>
   </data>
   <data name="Sign out" xml:space="preserve">
     <value>Αποσύνδεση</value>

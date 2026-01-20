@@ -48,6 +48,9 @@
   <data name="Folder Name" xml:space="preserve">
     <value>اسم المجلد</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>إدارة المشاركات</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>الاسم</value>
   </data>

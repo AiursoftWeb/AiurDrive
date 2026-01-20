@@ -102,6 +102,9 @@
   <data name="Manage" xml:space="preserve">
     <value>إدارة</value>
   </data>
+  <data name="My Drive" xml:space="preserve">
+    <value>مُسْتَخْرَجِيَّتِي</value>
+  </data>
   <data name="Permissions" xml:space="preserve">
     <value>الصلاحيات</value>
   </data>
@@ -128,6 +131,9 @@
   </data>
   <data name="Settings" xml:space="preserve">
     <value>الإعدادات</value>
+  </data>
+  <data name="Shared with me" xml:space="preserve">
+    <value>مشاركة معي</value>
   </data>
   <data name="Sign out" xml:space="preserve">
     <value>تسجيل الخروج</value>

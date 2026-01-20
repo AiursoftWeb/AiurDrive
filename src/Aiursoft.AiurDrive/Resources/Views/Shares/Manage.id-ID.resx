@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Actions" xml:space="preserve">
+    <value>Tindakan</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Tambah</value>
+  </data>
+  <data name="Add New Share" xml:space="preserve">
+    <value>Tambah Bagian Baru</value>
+  </data>
+  <data name="An error occurred while processing your request." xml:space="preserve">
+    <value>Terjadi kesalahan saat memproses permintaan Anda.</value>
+  </data>
+  <data name="Are you sure you want to remove this share?" xml:space="preserve">
+    <value>Apakah Anda yakin ingin menghapus bagian ini?</value>
+  </data>
+  <data name="Back to Files" xml:space="preserve">
+    <value>Kembali ke File</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Tutup</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>Dibuat</value>
+  </data>
+  <data name="Editable" xml:space="preserve">
+    <value>Dapat Diedit</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Kesalahan</value>
+  </data>
+  <data name="Error searching users" xml:space="preserve">
+    <value>Gagal mencari pengguna</value>
+  </data>
+  <data name="Existing Shares" xml:space="preserve">
+    <value>Bagian yang Dibagikan</value>
+  </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>Kelola Bagikan</value>
+  </data>
+  <data name="No shares yet. Add one above to share this site." xml:space="preserve">
+    <value>Belum ada bagian. Tambahkan satu di atas untuk berbagi situs ini.</value>
+  </data>
+  <data name="No users found" xml:space="preserve">
+    <value>Tidak ada pengguna ditemukan</value>
+  </data>
+  <data name="Permission" xml:space="preserve">
+    <value>Izin</value>
+  </data>
+  <data name="Please select a valid user or role." xml:space="preserve">
+    <value>Silakan pilih pengguna atau peran yang valid.</value>
+  </data>
+  <data name="Read Only" xml:space="preserve">
+    <value>Hanya Baca</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Hapus</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Peran</value>
+  </data>
+  <data name="Select a role..." xml:space="preserve">
+    <value>Pilih peran...</value>
+  </data>
+  <data name="Share with" xml:space="preserve">
+    <value>Bagikan dengan</value>
+  </data>
+  <data name="Shared With" xml:space="preserve">
+    <value>Diberikan Kepada</value>
+  </data>
+  <data name="Site:" xml:space="preserve">
+    <value>Situs:</value>
+  </data>
+  <data name="Specific User" xml:space="preserve">
+    <value>Pengguna Tertentu</value>
+  </data>
+  <data name="This site is Private. Only you and specific users/roles listed below can access it." xml:space="preserve">
+    <value>Situs ini bersifat pribadi. Hanya Anda dan pengguna/peran khusus yang tercantum di bawah ini yang dapat mengaksesnya.</value>
+  </data>
+  <data name="This site is Public. Anyone can view files." xml:space="preserve">
+    <value>Situs ini publik. Siapa pun dapat melihat file.</value>
+  </data>
+  <data name="This user or role already has access to this site." xml:space="preserve">
+    <value>Pengguna atau peran ini sudah memiliki akses ke situs ini.</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Jenis</value>
+  </data>
+  <data name="Type to search users..." xml:space="preserve">
+    <value>Ketik untuk mencari pengguna...</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Pengguna</value>
+  </data>
+  <data name="Visibility" xml:space="preserve">
+    <value>Visibilitas</value>
+  </data>
+
+</root>

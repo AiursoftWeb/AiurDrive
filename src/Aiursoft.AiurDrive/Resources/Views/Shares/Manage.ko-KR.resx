@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Actions" xml:space="preserve">
+    <value>작업</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>추가</value>
+  </data>
+  <data name="Add New Share" xml:space="preserve">
+    <value>새 공유 추가</value>
+  </data>
+  <data name="An error occurred while processing your request." xml:space="preserve">
+    <value>요청 처리 중 오류가 발생했습니다.</value>
+  </data>
+  <data name="Are you sure you want to remove this share?" xml:space="preserve">
+    <value>이 공유를 삭제하시겠습니까?</value>
+  </data>
+  <data name="Back to Files" xml:space="preserve">
+    <value>파일로 돌아가기</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>닫기</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>생성됨</value>
+  </data>
+  <data name="Editable" xml:space="preserve">
+    <value>편집 가능</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>오류</value>
+  </data>
+  <data name="Error searching users" xml:space="preserve">
+    <value>사용자 검색 중 오류 발생</value>
+  </data>
+  <data name="Existing Shares" xml:space="preserve">
+    <value>기존 공유</value>
+  </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>공유 관리</value>
+  </data>
+  <data name="No shares yet. Add one above to share this site." xml:space="preserve">
+    <value>아직 공유가 없습니다. 이 사이트를 공유하려면 위에서 하나를 추가하세요.</value>
+  </data>
+  <data name="No users found" xml:space="preserve">
+    <value>사용자를 찾을 수 없습니다</value>
+  </data>
+  <data name="Permission" xml:space="preserve">
+    <value>권한</value>
+  </data>
+  <data name="Please select a valid user or role." xml:space="preserve">
+    <value>유효한 사용자 또는 역할을 선택해 주세요.</value>
+  </data>
+  <data name="Read Only" xml:space="preserve">
+    <value>읽기 전용</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>제거</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>역할</value>
+  </data>
+  <data name="Select a role..." xml:space="preserve">
+    <value>역할을 선택하세요...</value>
+  </data>
+  <data name="Share with" xml:space="preserve">
+    <value>공유 대상</value>
+  </data>
+  <data name="Shared With" xml:space="preserve">
+    <value>공유된 사용자</value>
+  </data>
+  <data name="Site:" xml:space="preserve">
+    <value>사이트:</value>
+  </data>
+  <data name="Specific User" xml:space="preserve">
+    <value>특정 사용자</value>
+  </data>
+  <data name="This site is Private. Only you and specific users/roles listed below can access it." xml:space="preserve">
+    <value>이 사이트는 개인용입니다. 당신과 아래에 나열된 특정 사용자/역할만 접근할 수 있습니다.</value>
+  </data>
+  <data name="This site is Public. Anyone can view files." xml:space="preserve">
+    <value>이 사이트는 공개되어 있습니다. 누구나 파일을 볼 수 있습니다.</value>
+  </data>
+  <data name="This user or role already has access to this site." xml:space="preserve">
+    <value>이 사용자 또는 역할은 이미 이 사이트에 액세스 권한을 가지고 있습니다.</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>유형</value>
+  </data>
+  <data name="Type to search users..." xml:space="preserve">
+    <value>사용자를 검색하려면 입력하세요...</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>사용자</value>
+  </data>
+  <data name="Visibility" xml:space="preserve">
+    <value>가시성</value>
+  </data>
+
+</root>

@@ -48,6 +48,9 @@
   <data name="Folder Name" xml:space="preserve">
     <value>Numele dosarului</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>Gestionare partajări</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Nume</value>
   </data>

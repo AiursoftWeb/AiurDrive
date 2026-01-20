@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Actions" xml:space="preserve">
+    <value>إجراءات</value>
+  </data>
+  <data name="Directly" xml:space="preserve">
+    <value>مباشرة</value>
+  </data>
+  <data name="Editable" xml:space="preserve">
+    <value>قابل للتحرير</value>
+  </data>
+  <data name="No sites have been shared with you yet." xml:space="preserve">
+    <value>لم يتم مشاركة أي مواقع معك بعد.</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>افتح</value>
+  </data>
+  <data name="Owner" xml:space="preserve">
+    <value>المالك</value>
+  </data>
+  <data name="Permission" xml:space="preserve">
+    <value>الصلاحيات</value>
+  </data>
+  <data name="Read Only" xml:space="preserve">
+    <value>قراءة فقط</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>دور</value>
+  </data>
+  <data name="Shared Date" xml:space="preserve">
+    <value>تاريخ المشاركة</value>
+  </data>
+  <data name="Shared Via" xml:space="preserve">
+    <value>المشاركة عبر</value>
+  </data>
+  <data name="Shared with Me" xml:space="preserve">
+    <value>مشاركة معي</value>
+  </data>
+  <data name="Site Name" xml:space="preserve">
+    <value>اسم الموقع</value>
+  </data>
+  <data name="Sites Shared with You" xml:space="preserve">
+    <value>المواقع المشتركة معك</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>غير معروف</value>
+  </data>
+
+</root>

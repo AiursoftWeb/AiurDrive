@@ -48,6 +48,9 @@
   <data name="Folder Name" xml:space="preserve">
     <value>Tên thư mục</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>Quản lý Chia sẻ</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Tên</value>
   </data>

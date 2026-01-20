@@ -70,6 +70,9 @@ public class ViewModelArgsInjector(
     
         _ = localizer["Explore"];
         _ = localizer["Public Sites"];
+    
+        _ = localizer["My Drive"];
+        _ = localizer["Shared with me"];
     }
 
     public void InjectSimple(

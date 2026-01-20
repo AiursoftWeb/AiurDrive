@@ -105,6 +105,9 @@
   <data name="Manage" xml:space="preserve">
     <value>管理</value>
   </data>
+  <data name="My Drive" xml:space="preserve">
+    <value>我的网盘</value>
+  </data>
   <data name="Permissions" xml:space="preserve">
     <value>权限</value>
   </data>
@@ -131,6 +134,9 @@
   </data>
   <data name="Settings" xml:space="preserve">
     <value>设置</value>
+  </data>
+  <data name="Shared with me" xml:space="preserve">
+    <value>与我共享</value>
   </data>
   <data name="Sign out" xml:space="preserve">
     <value>退出登录</value>
