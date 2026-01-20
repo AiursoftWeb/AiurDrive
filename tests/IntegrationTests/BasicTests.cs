@@ -49,9 +49,9 @@ public class BasicTests : TestBase
         AssertRedirect(loginResponse, "/Dashboard/Index");
 
         // Step 4: Verify the final login state by checking the home page redirects correctly.
-        // Since the user has no sites, dashboard/index will redirect to CreateSite.
+        // Since the user has no sites, dashboard/index will return 200 OK.
         var finalHomePageResponse = await Http.GetAsync("/dashboard/index");
-        AssertRedirect(finalHomePageResponse, "/Dashboard/CreateSite");
+        finalHomePageResponse.EnsureSuccessStatusCode();
     }
 
     [TestMethod]
@@ -233,10 +233,10 @@ await PostForm("/Account/LogOff", new Dictionary<string, string>(), includeToken
         // Step 3: Assert the profile change was successful and redirected correctly.
         AssertRedirect(changeProfileResponse, "/Manage?Message=ChangeProfileSuccess");
 
-        // Step 4: Visit the dashboard page and verify it redirects to CreateSite (user has no sites).
+        // Step 4: Visit the dashboard page and verify it returns 200 OK (user has no sites).
         // Then create a site to verify the profile change by checking the site owner.
         var dashboardResponse = await Http.GetAsync("/dashboard/index");
-        AssertRedirect(dashboardResponse, "/Dashboard/CreateSite");
+        dashboardResponse.EnsureSuccessStatusCode();
         
         // Create a site to verify the username change
         var createSiteResponse = await PostForm("/Dashboard/CreateSite", new Dictionary<string, string>
