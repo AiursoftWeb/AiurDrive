@@ -107,6 +107,15 @@
                         </div>
                     }
 
+                    @if (Model.IsOwner)
+                    {
+                        <div class="d-grid mb-3">
+                            <a asp-controller="Shares" asp-action="Manage" asp-route-siteName="@Model.SiteName" class="btn btn-outline-info">
+                                <i class="fas fa-share-alt"></i> @Localizer["Manage Shares"]
+                            </a>
+                        </div>
+                    }
+
                     <div class="d-grid mb-3">
                         <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#createFolderModal">
                             <i class="fas fa-folder-plus"></i> @Localizer["New Folder"]

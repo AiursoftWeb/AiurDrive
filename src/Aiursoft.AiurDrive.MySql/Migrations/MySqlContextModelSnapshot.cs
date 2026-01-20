@@ -71,6 +71,38 @@ namespace Aiursoft.AiurDrive.MySql.Migrations
                     b.ToTable("Sites");
                 });
 
+            modelBuilder.Entity("Aiursoft.AiurDrive.Entities.SiteShare", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("Permission")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SharedWithRoleId")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("SharedWithUserId")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<int>("SiteId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SharedWithUserId");
+
+                    b.HasIndex("SiteId");
+
+                    b.ToTable("SiteShares");
+                });
+
             modelBuilder.Entity("Aiursoft.AiurDrive.Entities.User", b =>
                 {
                     b.Property<string>("Id")
@@ -291,6 +323,23 @@ namespace Aiursoft.AiurDrive.MySql.Migrations
                     b.Navigation("AppUser");
                 });
 
+            modelBuilder.Entity("Aiursoft.AiurDrive.Entities.SiteShare", b =>
+                {
+                    b.HasOne("Aiursoft.AiurDrive.Entities.User", "SharedWithUser")
+                        .WithMany()
+                        .HasForeignKey("SharedWithUserId");
+
+                    b.HasOne("Aiursoft.AiurDrive.Entities.Site", "Site")
+                        .WithMany("SiteShares")
+                        .HasForeignKey("SiteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("SharedWithUser");
+
+                    b.Navigation("Site");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -340,6 +389,11 @@ namespace Aiursoft.AiurDrive.MySql.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Aiursoft.AiurDrive.Entities.Site", b =>
+                {
+                    b.Navigation("SiteShares");
                 });
 
             modelBuilder.Entity("Aiursoft.AiurDrive.Entities.User", b =>
