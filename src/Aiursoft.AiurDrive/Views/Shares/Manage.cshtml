@@ -345,11 +345,11 @@
                     let html = '';
                     users.forEach(user => {
                         html += `
-                            <div class="user-search-item p-2 d-flex align-items-center" style="cursor: pointer;" data-user-id="${user.id}" data-user-name="${user.displayName}" data-user-username="${user.userName}" data-user-avatar="${user.avatarUrl}">
-                                <img src="${user.avatarUrl}" alt="${user.displayName}" class="rounded-circle me-2" style="width: 32px; height: 32px; object-fit: cover;">
+                            <div class="user-search-item p-2 d-flex align-items-center" style="cursor: pointer;" data-user-id="${user.Id}" data-user-name="${user.DisplayName}" data-user-username="${user.UserName}" data-user-avatar="${user.AvatarUrl}">
+                                <img src="${user.AvatarUrl}" alt="${user.DisplayName}" class="rounded-circle me-2" style="width: 32px; height: 32px; object-fit: cover;">
                                 <div>
-                                    <div class="fw-bold">${user.displayName}</div>
-                                    <div class="small text-muted">${user.userName}</div>
+                                    <div class="fw-bold">${user.DisplayName}</div>
+                                    <div class="small text-muted">${user.UserName}</div>
                                 </div>
                             </div>
                         `;
