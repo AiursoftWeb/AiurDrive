@@ -104,7 +104,7 @@ public class StorageService(
 
     public bool ValidateToken(string requestPath, string tokenString, FilePermission requiredPermission)
     {
-        if (requestPath.Contains("..")) return false; // Patch for path traversal
+        if (string.IsNullOrEmpty(requestPath) || requestPath.Contains("..")) return false; // Patch for path traversal
         try
         {
             // Create the same protector used for token generation
