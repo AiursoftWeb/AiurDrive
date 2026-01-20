@@ -1,4 +1,3 @@
-using System.ComponentModel.DataAnnotations;
 using Aiursoft.AiurDrive.Entities;
 using Aiursoft.AiurDrive.Models.SharesViewModels;
 using Aiursoft.AiurDrive.Services;
@@ -159,7 +158,7 @@ public class SharesController(
 
         var shares = await context.SiteShares
             .Include(s => s.Site)
-                .ThenInclude(site => site.AppUser) // Owner info
+                .ThenInclude(site => site!.AppUser) // Owner info
             .Where(s => s.SharedWithUserId == user.Id || (s.SharedWithRoleId != null && userRoleIds.Contains(s.SharedWithRoleId)))
             .OrderByDescending(s => s.CreationTime)
             .ToListAsync();
