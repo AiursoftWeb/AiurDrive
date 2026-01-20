@@ -28,7 +28,7 @@ public class DashboardController(
         CascadedLinksGroupName = "Home",
         CascadedLinksIcon = "home",
         CascadedLinksOrder = 1,
-        LinkText = "Index",
+        LinkText = "My Drive",
         LinkOrder = 1)]
     public async Task<IActionResult> Index()
     {
