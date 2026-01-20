@@ -22,4 +22,5 @@ public class FileManagerViewModel : UiStackLayoutViewModel
     public long TotalSpaceInGB { get; set; }
     public bool AllowImagePreview { get; set; }
     public bool IsOwner { get; set; }
+    public bool HasWriteAccess { get; set; }
 }

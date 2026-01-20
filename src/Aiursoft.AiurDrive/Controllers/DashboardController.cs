@@ -231,7 +231,8 @@ public class DashboardController(
             UsedSpaceInBytes = storage.GetSiteSize(siteName),
             TotalSpaceInGB = maxSpaceGB,
             AllowImagePreview = await globalSettings.GetBoolSettingAsync(SettingsMap.AllowImagePreview),
-            IsOwner = site.AppUserId == user.Id
+            IsOwner = site.AppUserId == user.Id,
+            HasWriteAccess = await HasAccess(site, user, SharePermission.Editable)
         };
         return this.StackView(model);
     }
