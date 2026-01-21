@@ -25,8 +25,7 @@ public class SitesControllerTests : TestBase
         var site = new Site
         {
             SiteName = "testsiteforoverride",
-            AppUserId = user.Id,
-            OpenToUpload = true
+            AppUserId = user.Id
         };
         context.Sites.Add(site);
         await context.SaveChangesAsync();

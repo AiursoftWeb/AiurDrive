@@ -12,7 +12,6 @@ public class FileManagerViewModel : UiStackLayoutViewModel
     }
 
     public required string SiteName { get; set; }
-    public bool OpenToUpload { get; set; }
     public string Path { get; set; } = string.Empty;
     public List<FileInfo> Files { get; set; }
     public List<string> Folders { get; set; }

@@ -29,7 +29,7 @@ public class ExploreTests : TestBase
             {
                 SiteName = "public-test-site",
                 AppUserId = user.Id,
-                OpenToUpload = true
+                AllowAnonymousView = true
             };
             db.Sites.Add(publicSite);
             await db.SaveChangesAsync();
@@ -55,7 +55,7 @@ public class ExploreTests : TestBase
             {
                 SiteName = "private-test-site",
                 AppUserId = user.Id,
-                OpenToUpload = false
+                AllowAnonymousView = false
             };
             db.Sites.Add(privateSite);
             await db.SaveChangesAsync();

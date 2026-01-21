@@ -50,7 +50,7 @@
                                 <h5 class="card-title">@site.SiteName</h5>
                                 <p class="card-text text-muted">@Localizer["Created at"]: @site.CreationTime.ToLocalTime()</p>
                                 <p class="card-text">
-                                    @if (site.OpenToUpload)
+                                    @if (site.AllowAnonymousView)
                                     {
                                         <span class="badge bg-success">@Localizer["Public"]</span>
                                     }

@@ -14,7 +14,7 @@ public class CreateSiteTests : TestBase
         var createSiteResponse = await PostForm("/Dashboard/CreateSite", new Dictionary<string, string>
         {
             { "SiteName", siteName },
-            { "OpenToUpload", "true" }
+            { "AllowAnonymousView", "false" }
         });
 
         // Step 3: Assert redirect to Files manager

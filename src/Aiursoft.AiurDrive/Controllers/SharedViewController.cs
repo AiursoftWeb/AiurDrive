@@ -23,13 +23,15 @@ public class SharedViewController(
             .SingleOrDefaultAsync(s => s.SiteName == siteName);
 
         if (site == null) return NotFound();
-        if (!site.OpenToUpload) return Unauthorized();
+        
+        // Allow anonymous viewing only if enabled
+        if (!site.AllowAnonymousView) return Unauthorized();
 
         path ??= string.Empty;
         var logicalPath = Path.Combine(siteName, path);
         
-        // Ensure the folder exists (for consistency, though shared view shouldn't really create them)
-        var physicalPath = storage.GetFilePhysicalPath(logicalPath, isVault: false);
+        // All sites now use Vault storage
+        var physicalPath = storage.GetFilePhysicalPath(logicalPath, isVault: true);
         if (!Directory.Exists(physicalPath))
         {
              Directory.CreateDirectory(physicalPath);

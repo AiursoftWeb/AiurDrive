@@ -21,12 +21,13 @@ public class Site
     [JsonIgnore]
     public User? AppUser { get; set; }
 
+
     /// <summary>
-    /// If true, the site is public (Workspace storage).
-    /// If false, the site is private (Vault storage).
-    /// Default is true to maintain backward compatibility.
+    /// If true, anonymous users can view (read-only) the site's files.
+    /// If false, only the owner and users with explicit shares can access.
+    /// All sites are stored in Vault regardless of this setting.
     /// </summary>
-    public bool OpenToUpload { get; set; } = true;
+    public bool AllowAnonymousView { get; set; } = false;
 
     [MaxLength(300)]
     public string? Description { get; set; }

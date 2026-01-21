@@ -19,7 +19,7 @@
     </div>
 </div>
 
-@* Visibility Info (Read Only here as it is set at creation/edit currently, or we can assume private if we are here) *@
+@* Visibility Settings *@
 <div class="row mb-4">
     <div class="col-12">
         <div class="card">
@@ -29,18 +29,42 @@
                 </h5>
             </div>
             <div class="card-body">
-                @if (Model.IsPublic)
-                {
-                    <div class="alert alert-info mb-0">
-                        <i class="align-middle" data-lucide="globe"></i> @Localizer["This site is Public. Anyone can view files."]
+                <form asp-action="UpdateVisibility" asp-route-siteName="@Model.SiteName" method="post" id="visibility-form">
+                    @Html.AntiForgeryToken()
+                    <div class="mb-3">
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name="publicAccess" id="visibilityPublic" value="true" @(Model.IsPublic ? "checked" : "") onchange="this.form.submit()">
+                            <label class="form-check-label fw-bold" for="visibilityPublic">
+                                @Localizer["Allow anonymous viewing (Public)"]
+                            </label>
+                            <div class="form-text text-muted ms-0">
+                                @Localizer["Anyone with the link can view this site's files (read-only)."]
+                                @if (!string.IsNullOrEmpty(Model.PublicLink))
+                                {
+                                    <div class="input-group input-group-sm mt-2" style="max-width: 500px;">
+                                        <span class="input-group-text">@Localizer["Share Link"]</span>
+                                        <input type="text" class="form-control" value="@Model.PublicLink" readonly id="public-link-input">
+                                        <button class="btn btn-outline-secondary" type="button" onclick="navigator.clipboard.writeText(document.getElementById('public-link-input').value); this.innerHTML = '<i class=\'align-middle\' data-lucide=\'check\'></i>'; setTimeout(() => this.innerHTML = '<i class=\'align-middle\' data-lucide=\'copy\'></i>', 2000);">
+                                            <i class="align-middle" data-lucide="copy"></i>
+                                        </button>
+                                        <a href="@Model.PublicLink" target="_blank" class="btn btn-outline-secondary">
+                                            <i class="align-middle" data-lucide="external-link"></i>
+                                        </a>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="publicAccess" id="visibilityPrivate" value="false" @(!Model.IsPublic ? "checked" : "") onchange="this.form.submit()">
+                            <label class="form-check-label fw-bold" for="visibilityPrivate">
+                                @Localizer["Forbid anonymous viewing (Private / Shared)"]
+                            </label>
+                            <div class="form-text text-muted ms-0">
+                                @Localizer["Only you and specific users/roles listed below can view this site."]
+                            </div>
+                        </div>
                     </div>
-                }
-                else
-                {
-                    <div class="alert alert-warning mb-0">
-                        <i class="align-middle" data-lucide="lock"></i> @Localizer["This site is Private. Only you and specific users/roles listed below can access it."]
-                    </div>
-                }
+                </form>
             </div>
         </div>
     </div>
@@ -221,8 +245,9 @@
                                         <label class="text-muted" data-utc-time="@share.CreationTime.ToString("o")"></label>
                                     </td>
                                     <td class="text-end">
-                                        <form asp-action="RemoveShare" asp-route-id="@share.Id" method="post" class="d-inline" onsubmit="return confirm('@Localizer["Are you sure you want to remove this share?"]')">
+                                        <form asp-action="RemoveShare" method="post" class="d-inline" onsubmit="return confirm('@Localizer["Are you sure you want to remove this share?"]')">
                                             @Html.AntiForgeryToken()
+                                            <input type="hidden" name="id" value="@share.Id" />
                                             <button type="submit" class="btn btn-sm btn-outline-danger">
                                                 <i class="align-middle" data-lucide="trash-2"></i> @Localizer["Remove"]
                                             </button>

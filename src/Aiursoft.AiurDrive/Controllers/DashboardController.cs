@@ -92,7 +92,7 @@ public class DashboardController(
         {
             SiteName = model.SiteName!.ToLower(),
             AppUserId = user.Id,
-            OpenToUpload = model.OpenToUpload,
+            AllowAnonymousView = model.AllowAnonymousView,
             Description = model.Description
         };
 
@@ -195,8 +195,8 @@ public class DashboardController(
         path ??= string.Empty;
         var logicalPath = Path.Combine(siteName, path);
         
-        // Ensure the folder exists
-        var physicalPath = storage.GetFilePhysicalPath(logicalPath, !site.OpenToUpload);
+        // Ensure the folder exists (all sites use Vault)
+        var physicalPath = storage.GetFilePhysicalPath(logicalPath, isVault: true);
         if (!Directory.Exists(physicalPath))
         {
              Directory.CreateDirectory(physicalPath);
@@ -217,7 +217,6 @@ public class DashboardController(
         var model = new FileManagerViewModel
         {
             SiteName = siteName,
-            OpenToUpload = site.OpenToUpload,
             Path = path.Replace("\\", "/"),
             Files = files,
             Folders = folders,
@@ -251,7 +250,7 @@ public class DashboardController(
         var logicalPath = Path.Combine(siteName, path);
         try 
         {
-            var physicalPath = storage.GetFilePhysicalPath(logicalPath, !site.OpenToUpload);
+            var physicalPath = storage.GetFilePhysicalPath(logicalPath, isVault: true);
             if (System.IO.File.Exists(physicalPath))
             {
                 System.IO.File.Delete(physicalPath);
@@ -292,7 +291,7 @@ public class DashboardController(
         var model = new DeleteSiteViewModel
         {
             SiteName = site.SiteName,
-            OpenToUpload = site.OpenToUpload,
+            AllowAnonymousView = site.AllowAnonymousView,
             CreationTime = site.CreationTime
         };
         return this.StackView(model);
@@ -350,7 +349,7 @@ public class DashboardController(
 
         try 
         {
-            var physicalPath = storage.GetFilePhysicalPath(logicalPath, !site.OpenToUpload);
+            var physicalPath = storage.GetFilePhysicalPath(logicalPath, isVault: true);
             if (Directory.Exists(physicalPath) || System.IO.File.Exists(physicalPath))
             {
                 return BadRequest("File or folder already exists.");
@@ -388,14 +387,14 @@ public class DashboardController(
         
         try 
         {
-            var oldPhysicalPath = storage.GetFilePhysicalPath(logicalPath, !site.OpenToUpload);
+            var oldPhysicalPath = storage.GetFilePhysicalPath(logicalPath, isVault: true);
             var parentPhysicalPath = Directory.GetParent(oldPhysicalPath)?.FullName;
             if (parentPhysicalPath == null) return BadRequest("Cannot find parent directory.");
             
             var parentLogicalPath = Path.GetDirectoryName(path);
             var newLogicalPath = Path.Combine(siteName, parentLogicalPath ?? string.Empty, newName);
             
-            var validatedNewPhysicalPath = storage.GetFilePhysicalPath(newLogicalPath, !site.OpenToUpload); 
+            var validatedNewPhysicalPath = storage.GetFilePhysicalPath(newLogicalPath, isVault: true); 
 
             if (System.IO.File.Exists(validatedNewPhysicalPath) || Directory.Exists(validatedNewPhysicalPath))
             {
@@ -461,8 +460,8 @@ public class DashboardController(
 
         try 
         {
-            var physicalSource = storage.GetFilePhysicalPath(logicalSourcePath, !site.OpenToUpload);
-            var physicalDest = storage.GetFilePhysicalPath(logicalDestPath, !site.OpenToUpload);
+            var physicalSource = storage.GetFilePhysicalPath(logicalSourcePath, isVault: true);
+            var physicalDest = storage.GetFilePhysicalPath(logicalDestPath, isVault: true);
 
             if (System.IO.File.Exists(physicalDest) || Directory.Exists(physicalDest))
             {

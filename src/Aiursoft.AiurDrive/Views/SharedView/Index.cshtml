@@ -126,7 +126,7 @@
                                 @foreach (var file in Model.Files)
                                 {
                                     var logicalPath = System.IO.Path.Combine(Model.Site.SiteName, Model.Path, file.Name).Replace("\\", "/");
-                                    var directUrl = Storage.RelativePathToInternetUrl(logicalPath, isVault: false);
+                                    var directUrl = Storage.RelativePathToInternetUrl(logicalPath, isVault: true);
                                     <tr>
                                 @{
                                     var isImageInList = file.Name.IsStaticImage();

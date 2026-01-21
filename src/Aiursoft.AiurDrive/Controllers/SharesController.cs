@@ -40,12 +40,12 @@ public class SharesController(
 
         var allRoles = await roleManager.Roles.ToListAsync();
         
-        var publicLink = $"{Request.Scheme}://{Request.Host}/{siteName}";
+        var publicLink = $"{Request.Scheme}://{Request.Host}/Dashboard/Files/{siteName}";
 
         var model = new ManageSharesViewModel
         {
             SiteName = site.SiteName,
-            IsPublic = site.OpenToUpload, 
+            IsPublic = site.AllowAnonymousView,
             PublicLink = publicLink,
             ExistingShares = site.SiteShares.ToList(),
             AvailableRoles = allRoles
@@ -113,8 +113,8 @@ public class SharesController(
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    [Route("Dashboard/RemoveShare/{id}")]
-    public async Task<IActionResult> RemoveShare(int id)
+    [Route("Dashboard/RemoveShare")]
+    public async Task<IActionResult> RemoveShare([FromForm] int id)
     {
          var user = await userManager.GetUserAsync(User);
          if (user == null) return Unauthorized();
@@ -175,5 +175,28 @@ public class SharesController(
         };
 
         return this.StackView(model);
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    [Route("Dashboard/UpdateVisibility/{siteName}")]
+    public async Task<IActionResult> UpdateVisibility(string siteName, bool publicAccess)
+    {
+        var user = await userManager.GetUserAsync(User);
+        if (user == null) return Unauthorized();
+
+        var site = await context.Sites.FirstOrDefaultAsync(s => s.SiteName == siteName);
+        if (site == null) return NotFound();
+
+        // Only owner can change visibility
+        if (site.AppUserId != user.Id) return Forbid();
+
+        site.AllowAnonymousView = publicAccess;
+        await context.SaveChangesAsync();
+
+        logger.LogInformation("Site '{SiteName}' visibility changed to {PublicAccess} by user '{UserId}'.", 
+            siteName, publicAccess, user.Id);
+
+        return RedirectToAction(nameof(Manage), new { siteName });
     }
 }

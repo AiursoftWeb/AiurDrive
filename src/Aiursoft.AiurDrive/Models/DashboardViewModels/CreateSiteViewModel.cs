@@ -11,8 +11,8 @@ public class CreateSiteViewModel : UiStackLayoutViewModel
     [ValidDomainName(ErrorMessage =  "Site name is invalid. Only letters, digits, and hyphens are allowed.")]
     public string? SiteName { get; set; }
 
-    [Display(Name = "Storage Type")]
-    public bool OpenToUpload { get; set; } = true;
+    [Display(Name = "Allow anonymous viewing")]
+    public bool AllowAnonymousView { get; set; } = false;
 
     [MaxLength(300)]
     public string? Description { get; set; }

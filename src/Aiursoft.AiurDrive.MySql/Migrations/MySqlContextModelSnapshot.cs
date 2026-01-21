@@ -10,8 +10,6 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Aiursoft.AiurDrive.MySql.Migrations
 {
-    // THIS FILE IS AUTO GENERATED AND MAINTAINED BY ENTITY FRAMEWORK!
-    // NEVER EDIT THIS FILE MANUALLY!!!
     [DbContext(typeof(MySqlContext))]
     partial class MySqlContextModelSnapshot : ModelSnapshot
     {
@@ -45,6 +43,9 @@ namespace Aiursoft.AiurDrive.MySql.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<bool>("AllowAnonymousView")
+                        .HasColumnType("tinyint(1)");
+
                     b.Property<string>("AppUserId")
                         .IsRequired()
                         .HasColumnType("varchar(255)");
@@ -55,9 +56,6 @@ namespace Aiursoft.AiurDrive.MySql.Migrations
                     b.Property<string>("Description")
                         .HasMaxLength(300)
                         .HasColumnType("varchar(300)");
-
-                    b.Property<bool>("OpenToUpload")
-                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("SiteName")
                         .IsRequired()

@@ -23,7 +23,7 @@ public class ExploreController(AiurDriveDbContext dbContext) : Controller
     {
         var publicSites = await dbContext.Sites
             .Include(s => s.AppUser)
-            .Where(s => s.OpenToUpload)
+            .Where(s => s.AllowAnonymousView)
             .OrderByDescending(s => s.CreationTime)
             .ToListAsync();
 

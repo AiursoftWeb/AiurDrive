@@ -18,12 +18,13 @@
                     </div>
 
                     <div class="mb-3">
-                        <label asp-for="OpenToUpload" class="form-label"></label>
-                        <select asp-for="OpenToUpload" class="form-select">
-                            <option value="true">@Localizer["Public - Anyone can browse the files without authentication. Used for public sharing."]</option>
-                            <option value="false">@Localizer["Private - Only invited people can browse or manage the files. Used for team collaboration or personal storage."]</option>
-                        </select>
-                        <span asp-validation-for="OpenToUpload" class="text-danger"></span>
+                        <div class="form-check">
+                            <input asp-for="AllowAnonymousView" class="form-check-input" type="checkbox" />
+                            <label asp-for="AllowAnonymousView" class="form-check-label"></label>
+                        </div>
+                        <div class="form-text">
+                            @Localizer["If enabled, anyone with the link can view files (read-only). All uploads require authentication."]
+                        </div>
                     </div>
 
                     <div class="d-grid mt-3">

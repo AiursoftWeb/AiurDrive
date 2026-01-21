@@ -19,14 +19,6 @@
                     <a asp-action="Files" asp-route-siteName="@Model.SiteName" asp-route-path="">
                         <i class="fas fa-home"></i> @Model.SiteName
                     </a>
-                    @if (Model.OpenToUpload)
-                    {
-                        <span class="badge bg-success ms-1" style="font-size: 0.7em; vertical-align: middle;">@Localizer["Public"]</span>
-                    }
-                    else
-                    {
-                        <span class="badge bg-secondary ms-1" style="font-size: 0.7em; vertical-align: middle;">@Localizer["Private"]</span>
-                    }
                 </li>
                 @if (!string.IsNullOrEmpty(Model.Path))
                 {
@@ -84,7 +76,7 @@
                              <vc:file-upload
                                 asp-for="UploadedFilePath"
                                 subfolder="@(Model.SiteName + "/" + Model.Path)"
-                                is-vault="@(!Model.OpenToUpload)"
+                                is-vault="true"
                                 allowed-extensions=""
                                 max-size-in-mb="1024"
                                 on-upload-success="reloadPage">
@@ -211,7 +203,7 @@
                                 {
                                     var logicalPath = System.IO.Path.Combine(Model.SiteName, Model.Path, file.Name).Replace("\\", "/");
                                     var currentRelativePath = string.IsNullOrEmpty(Model.Path) ? file.Name : Model.Path + "/" + file.Name;
-                                    var directUrl = Storage.RelativePathToInternetUrl(logicalPath, !Model.OpenToUpload);
+                                    var directUrl = Storage.RelativePathToInternetUrl(logicalPath, isVault: true);
                                     <tr>
                                 @{
                                     var isImageInList = file.Name.IsStaticImage();
@@ -291,7 +283,7 @@
                             {
                                 var logicalPath = System.IO.Path.Combine(Model.SiteName, Model.Path, file.Name).Replace("\\", "/");
                                 var currentRelativePath = string.IsNullOrEmpty(Model.Path) ? file.Name : Model.Path + "/" + file.Name;
-                                var directUrl = Storage.RelativePathToInternetUrl(logicalPath, !Model.OpenToUpload);
+                                var directUrl = Storage.RelativePathToInternetUrl(logicalPath, isVault: true);
                                 var isImage = file.Name.IsStaticImage();
 
                                 <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
