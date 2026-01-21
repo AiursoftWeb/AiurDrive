@@ -12,7 +12,7 @@ public class CreateSiteViewModel : UiStackLayoutViewModel
     public string? SiteName { get; set; }
 
     [Display(Name = "Allow anonymous viewing")]
-    public bool AllowAnonymousView { get; set; } = false;
+    public bool AllowAnonymousView { get; set; }
 
     [MaxLength(300)]
     public string? Description { get; set; }

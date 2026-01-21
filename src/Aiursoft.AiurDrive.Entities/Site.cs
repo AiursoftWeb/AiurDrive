@@ -27,7 +27,7 @@ public class Site
     /// If false, only the owner and users with explicit shares can access.
     /// All sites are stored in Vault regardless of this setting.
     /// </summary>
-    public bool AllowAnonymousView { get; set; } = false;
+    public bool AllowAnonymousView { get; set; }
 
     [MaxLength(300)]
     public string? Description { get; set; }
