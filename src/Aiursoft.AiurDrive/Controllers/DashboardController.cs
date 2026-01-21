@@ -246,6 +246,9 @@ public class DashboardController(
         }
 
         if (string.IsNullOrWhiteSpace(path)) return BadRequest("Cannot delete root.");
+        
+        var normalizedPath = path.Replace("\\", "/");
+        if (normalizedPath.Contains("..")) return BadRequest("Path traversal not allowed.");
 
         var logicalPath = Path.Combine(siteName, path);
         try 
@@ -345,6 +348,9 @@ public class DashboardController(
         if (newFolderName.Any(c => Path.GetInvalidFileNameChars().Contains(c))) return BadRequest("Invalid folder name.");
 
         path ??= string.Empty;
+        var normalizedPath = path.Replace("\\", "/");
+        if (normalizedPath.Contains("..")) return BadRequest("Path traversal not allowed.");
+        
         var logicalPath = Path.Combine(siteName, path, newFolderName);
 
         try 
@@ -382,6 +388,9 @@ public class DashboardController(
         if (string.IsNullOrWhiteSpace(path)) return BadRequest("Cannot rename root.");
         if (string.IsNullOrWhiteSpace(newName)) return BadRequest("New name cannot be empty.");
         if (newName.Any(c => Path.GetInvalidFileNameChars().Contains(c))) return BadRequest("Invalid file name.");
+        
+        var normalizedPath = path.Replace("\\", "/");
+        if (normalizedPath.Contains("..")) return BadRequest("Path traversal not allowed.");
 
         var logicalPath = Path.Combine(siteName, path);
         

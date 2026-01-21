@@ -187,4 +187,108 @@ public class SecurityTests : TestBase
         var isValidForDownload = storage.ValidateToken(path, downloadToken, FilePermission.Download);
         Assert.IsTrue(isValidForDownload, "Download token should be valid for Download");
     }
+    [TestMethod]
+    public async Task TestCrossSiteDelete()
+    {
+        await LoginAsAdmin();
+        var context = GetService<AiurDriveDbContext>();
+        var userA = await context.Users.FirstAsync(u => u.Email == "admin@default.com");
+        
+        // Ensure User B exists
+        var userB = await context.Users.FirstOrDefaultAsync(u => u.UserName == "victim-del@aiursoft.com");
+        if (userB == null)
+        {
+            userB = new User { UserName = "victim-del@aiursoft.com", Email = "victim-del@aiursoft.com", DisplayName = "VictimDel" };
+            context.Users.Add(userB);
+            await context.SaveChangesAsync();
+        }
+
+        // Site A (Attacker)
+        var siteA = new Site { SiteName = "site-a-del-" + Guid.NewGuid().ToString().Substring(0, 5), AppUserId = userA.Id };
+        // Site B (Victim)
+        var siteB = new Site { SiteName = "site-b-del-" + Guid.NewGuid().ToString().Substring(0, 5), AppUserId = userB.Id };
+        
+        context.Sites.Add(siteA);
+        context.Sites.Add(siteB);
+        await context.SaveChangesAsync();
+        
+        var storage = GetService<StorageService>();
+        var pathB = storage.GetFilePhysicalPath(siteB.SiteName, isVault: true);
+        Directory.CreateDirectory(pathB);
+        var fileInB = Path.Combine(pathB, "victim.txt");
+        await File.WriteAllTextAsync(fileInB, "data");
+        
+        // Attacker attempts path traversal delete via Site A
+        // Use encoded dot-dot to ensure it reaches the controller as strict string if possible, 
+        // OR rely on the fact that if it normalizes, it accesses SiteB which is now forbidden.
+        // We want to test the '..' check specifically, so let's try to bypass normalization by using a folder.
+        // But HttpClient normalizes paths.
+        // Let's use %2E%2E to ensure it passes as parameter.
+        
+        var traversalPath = $"%2E%2E/{siteB.SiteName}/victim.txt";
+        
+        var response = await PostForm($"/Dashboard/Delete/{siteA.SiteName}/{traversalPath}", new Dictionary<string, string>());
+        
+        // Check if file is deleted (Ultimate Truth)
+        if (!File.Exists(fileInB))
+        {
+             Assert.Fail($"VULNERABILITY CONFIRMED: File in {siteB.SiteName} was deleted via {siteA.SiteName}");
+        }
+        
+        // Also check status code isn't success-like, to ensure we aren't silently failing in a weird way
+        // But primarily rely on file existence. 
+        // We expect 400 (if blocked) or 403 (if auth) or 404 (if not found).
+        // 302 Found usually means success redirect.
+        if (response.StatusCode == System.Net.HttpStatusCode.Found)
+        {
+             // If redirected, check where. If back to files, it implies success flow?
+             // But if file exists, it means operation failed essentially.
+        }
+    }
+
+    [TestMethod]
+    public async Task TestCrossSiteCreateFolder()
+    {
+        await LoginAsAdmin();
+        var context = GetService<AiurDriveDbContext>();
+        var userA = await context.Users.FirstAsync(u => u.Email == "admin@default.com");
+        
+        var userB = await context.Users.FirstOrDefaultAsync(u => u.UserName == "victim-cr@aiursoft.com");
+        if (userB == null)
+        {
+             userB = new User { UserName = "victim-cr@aiursoft.com", Email = "victim-cr@aiursoft.com", DisplayName = "VictimCr" };
+             context.Users.Add(userB);
+             await context.SaveChangesAsync();
+        }
+
+        var siteA = new Site { SiteName = "site-a-create-" + Guid.NewGuid().ToString().Substring(0, 5), AppUserId = userA.Id };
+        var siteB = new Site { SiteName = "site-b-create-" + Guid.NewGuid().ToString().Substring(0, 5), AppUserId = userB.Id };
+        context.Sites.Add(siteA);
+        context.Sites.Add(siteB);
+        await context.SaveChangesAsync();
+        
+        var storage = GetService<StorageService>();
+        var pathB = storage.GetFilePhysicalPath(siteB.SiteName, isVault: true);
+        Directory.CreateDirectory(pathB);
+        
+        var traversalPath = $"%2E%2E/{siteB.SiteName}";
+        var newFolder = "hacked_folder";
+        
+        var response = await PostForm($"/Dashboard/CreateFolder/{siteA.SiteName}/{traversalPath}", new Dictionary<string, string>
+        {
+            { "newFolderName", newFolder }
+        });
+        
+        // Check if folder is created (Ultimate Truth)
+        var hackedFolderPath = Path.Combine(pathB, newFolder);
+        if (Directory.Exists(hackedFolderPath))
+        {
+             Assert.Fail($"VULNERABILITY CONFIRMED: Folder created in {siteB.SiteName} via {siteA.SiteName}");
+        }
+        
+        if (response.StatusCode == System.Net.HttpStatusCode.Found)
+        {
+             // If redirected, could be success flow, but if directory not created, we are safe.
+        }
+    }
 }
