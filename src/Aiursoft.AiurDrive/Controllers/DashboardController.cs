@@ -442,6 +442,11 @@ public class DashboardController(
 
         var normalizedSource = sourcePath.Replace("\\", "/").Trim('/');
         var normalizedTarget = (targetPath ?? string.Empty).Replace("\\", "/").Trim('/');
+
+        if (normalizedSource.Contains("..") || normalizedTarget.Contains(".."))
+        {
+            return BadRequest("Path traversal not allowed.");
+        }
         
         if (string.Equals(Path.GetDirectoryName(normalizedSource)?.Replace("\\", "/"), normalizedTarget, StringComparison.OrdinalIgnoreCase))
         {
