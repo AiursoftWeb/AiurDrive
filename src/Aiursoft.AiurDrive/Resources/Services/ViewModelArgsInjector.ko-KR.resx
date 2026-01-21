@@ -141,6 +141,9 @@
   <data name="Sign out" xml:space="preserve">
     <value>로그아웃</value>
   </data>
+  <data name="Sites Management" xml:space="preserve">
+    <value>사이트 관리</value>
+  </data>
   <data name="System" xml:space="preserve">
     <value>시스템</value>
   </data>

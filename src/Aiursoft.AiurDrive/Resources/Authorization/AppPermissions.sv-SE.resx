@@ -33,6 +33,9 @@
   <data name="Allows modification of user details like email and roles, and can also reset user passwords." xml:space="preserve">
     <value>Tillåter ändring av användardetaljer som e-post och roller, och kan också återställa användarlösenord.</value>
   </data>
+  <data name="Allows overriding the storage size limit for any site." xml:space="preserve">
+    <value>Tillåter att åsidosätta lagringsstorleksgränsen för vilken webbplats som helst.</value>
+  </data>
   <data name="Allows the permanent deletion of roles." xml:space="preserve">
     <value>Tillåter permanent borttagning av roller.</value>
   </data>
@@ -83,6 +86,9 @@
   </data>
   <data name="Manage Global Settings" xml:space="preserve">
     <value>Hantera globala inställningar</value>
+  </data>
+  <data name="Override Site Storage Size" xml:space="preserve">
+    <value>Åsidosätt platsstorlek för webbplats</value>
   </data>
   <data name="Read Permissions" xml:space="preserve">
     <value>Läs behörigheter</value>

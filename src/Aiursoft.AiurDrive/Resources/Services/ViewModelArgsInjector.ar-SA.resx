@@ -138,6 +138,9 @@
   <data name="Sign out" xml:space="preserve">
     <value>تسجيل الخروج</value>
   </data>
+  <data name="Sites Management" xml:space="preserve">
+    <value>إدارة المواقع</value>
+  </data>
   <data name="System" xml:space="preserve">
     <value>النظام</value>
   </data>

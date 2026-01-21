@@ -141,6 +141,9 @@
   <data name="Sign out" xml:space="preserve">
     <value>Đăng xuất</value>
   </data>
+  <data name="Sites Management" xml:space="preserve">
+    <value>Quản lý trang web</value>
+  </data>
   <data name="System" xml:space="preserve">
     <value>Hệ thống</value>
   </data>

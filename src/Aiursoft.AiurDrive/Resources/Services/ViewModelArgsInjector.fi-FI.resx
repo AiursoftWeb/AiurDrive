@@ -138,6 +138,9 @@
   <data name="Sign out" xml:space="preserve">
     <value>Kirjaudu ulos</value>
   </data>
+  <data name="Sites Management" xml:space="preserve">
+    <value>Sivustojen hallinta</value>
+  </data>
   <data name="System" xml:space="preserve">
     <value>Järjestelmä</value>
   </data>

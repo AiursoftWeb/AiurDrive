@@ -33,6 +33,9 @@
   <data name="Allows modification of user details like email and roles, and can also reset user passwords." xml:space="preserve">
     <value>允許修改使用者詳細資料，例如電郵地址和角色，並可重設使用者密碼。</value>
   </data>
+  <data name="Allows overriding the storage size limit for any site." xml:space="preserve">
+    <value>允許覆蓋任何網站的儲存空間上限。</value>
+  </data>
   <data name="Allows the permanent deletion of roles." xml:space="preserve">
     <value>允許永久刪除角色。</value>
   </data>
@@ -83,6 +86,9 @@
   </data>
   <data name="Manage Global Settings" xml:space="preserve">
     <value>管理全域設定</value>
+  </data>
+  <data name="Override Site Storage Size" xml:space="preserve">
+    <value>覆蓋網站儲存空間大小</value>
   </data>
   <data name="Read Permissions" xml:space="preserve">
     <value>讀取權限</value>

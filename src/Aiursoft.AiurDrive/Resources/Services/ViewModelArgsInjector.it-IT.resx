@@ -138,6 +138,9 @@
   <data name="Sign out" xml:space="preserve">
     <value>Esci</value>
   </data>
+  <data name="Sites Management" xml:space="preserve">
+    <value>Gestione siti</value>
+  </data>
   <data name="System" xml:space="preserve">
     <value>Sistema</value>
   </data>

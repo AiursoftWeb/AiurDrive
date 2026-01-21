@@ -33,6 +33,9 @@
   <data name="Allows modification of user details like email and roles, and can also reset user passwords." xml:space="preserve">
     <value>ユーザーのメールアドレスやロールなどの詳細情報の変更を許可し、ユーザーのパスワードをリセットすることもできます。</value>
   </data>
+  <data name="Allows overriding the storage size limit for any site." xml:space="preserve">
+    <value>任意のサイトのストレージサイズ制限をオーバーライドすることを許可します。</value>
+  </data>
   <data name="Allows the permanent deletion of roles." xml:space="preserve">
     <value>ロールの完全な削除を許可します。</value>
   </data>
@@ -83,6 +86,9 @@
   </data>
   <data name="Manage Global Settings" xml:space="preserve">
     <value>グローバル設定の管理</value>
+  </data>
+  <data name="Override Site Storage Size" xml:space="preserve">
+    <value>サイトストレージサイズのオーバーライド</value>
   </data>
   <data name="Read Permissions" xml:space="preserve">
     <value>権限の閲覧</value>

@@ -141,6 +141,9 @@
   <data name="Sign out" xml:space="preserve">
     <value>Abmelden</value>
   </data>
+  <data name="Sites Management" xml:space="preserve">
+    <value>Seitenverwaltung</value>
+  </data>
   <data name="System" xml:space="preserve">
     <value>System</value>
   </data>
