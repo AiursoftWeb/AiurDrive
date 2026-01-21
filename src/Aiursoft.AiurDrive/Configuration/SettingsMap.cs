@@ -50,7 +50,7 @@ public class SettingsMap
         {
             Key = AllowImagePreview,
             Name = Localizer["Allow Image Preview"],
-            Description = "Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled.",
+            Description = Localizer["Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled."],
             Type = SettingType.Bool,
             DefaultValue = "True"
         }
