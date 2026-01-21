@@ -1,9 +1,6 @@
 using Aiursoft.AiurDrive.Entities;
-using Aiursoft.AiurDrive.Services;
 using Aiursoft.AiurDrive.Services.FileStorage;
-using Aiursoft.CSTools.Tools;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Aiursoft.AiurDrive.Tests.IntegrationTests;
 
@@ -171,7 +168,7 @@ public class SecurityTests : TestBase
     }
 
     [TestMethod]
-    public async Task TestTokenScope()
+    public void TestTokenScope()
     {
         var storage = GetService<StorageService>();
         var path = "some/path";
