@@ -123,7 +123,11 @@ public class StorageService(
             if (authorizedPermission != requiredPermission) return false;
 
             // Verify the token authorizes access to the requested path
-            return requestPath.StartsWith(authorizedPath.TrimEnd('/'), StringComparison.OrdinalIgnoreCase);
+            // Fix: Enforce trailing slash to prevent partial directory matching (e.g. "A" matching "AA")
+            var normalizedRequestPath = requestPath.TrimEnd('/') + "/";
+            var normalizedAuthorizedPath = authorizedPath.TrimEnd('/') + "/";
+            
+            return normalizedRequestPath.StartsWith(normalizedAuthorizedPath, StringComparison.OrdinalIgnoreCase);
         }
         catch
         {
