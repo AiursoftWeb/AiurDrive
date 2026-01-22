@@ -27,8 +27,14 @@
   <data name="Add New Share" xml:space="preserve">
     <value>Додати новий доступ</value>
   </data>
+  <data name="Allow anonymous viewing (Public)" xml:space="preserve">
+    <value>Дозволити анонімний перегляд (Public)</value>
+  </data>
   <data name="An error occurred while processing your request." xml:space="preserve">
     <value>Під час обробки запиту сталася помилка.</value>
+  </data>
+  <data name="Anyone with the link can view this site&apos;s files (read-only)." xml:space="preserve">
+    <value>Люба особа з посиланням може переглянути файли цього сайту (тільки для перегляду).</value>
   </data>
   <data name="Are you sure you want to remove this share?" xml:space="preserve">
     <value>Ви впевнені, що хочете видалити цей спільний доступ?</value>
@@ -54,6 +60,9 @@
   <data name="Existing Shares" xml:space="preserve">
     <value>Існуючі надання</value>
   </data>
+  <data name="Forbid anonymous viewing (Private / Shared)" xml:space="preserve">
+    <value>Заборонити анонімний перегляд (Приватно / Спільний)</value>
+  </data>
   <data name="Manage Shares" xml:space="preserve">
     <value>Керування наданням доступу</value>
   </data>
@@ -62,6 +71,9 @@
   </data>
   <data name="No users found" xml:space="preserve">
     <value>Не знайдено користувачів</value>
+  </data>
+  <data name="Only you and specific users/roles listed below can view this site." xml:space="preserve">
+    <value>Лише ви та конкретні користувачі/ролі, перелічені нижче, зможуть переглянути цей сайт.</value>
   </data>
   <data name="Permission" xml:space="preserve">
     <value>Дозвіл</value>
@@ -80,6 +92,9 @@
   </data>
   <data name="Select a role..." xml:space="preserve">
     <value>Виберіть роль...</value>
+  </data>
+  <data name="Share Link" xml:space="preserve">
+    <value>Посилання для спільного використання</value>
   </data>
   <data name="Share with" xml:space="preserve">
     <value>Надати доступ</value>

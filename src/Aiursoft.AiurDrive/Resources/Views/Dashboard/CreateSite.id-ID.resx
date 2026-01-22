@@ -24,6 +24,9 @@
   <data name="Create Site" xml:space="preserve">
     <value>Buat Situs</value>
   </data>
+  <data name="If enabled, anyone with the link can view files (read-only). All uploads require authentication." xml:space="preserve">
+    <value>Jika diaktifkan, siapa pun yang memiliki tautan dapat melihat file (hanya baca). Semua unggahan memerlukan otentikasi.</value>
+  </data>
   <data name="Only lowercase letters, numbers and hyphens are allowed." xml:space="preserve">
     <value>Hanya huruf kecil, angka, dan tanda hubung yang diperbolehkan.</value>
   </data>

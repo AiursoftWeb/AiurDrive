@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Creation Time" xml:space="preserve">
+      <data name="Allow Anonymous Viewing" xml:space="preserve">
+    <value>Allow Anonymous Viewing</value>
+  </data>
+  <data name="Creation Time" xml:space="preserve">
     <value>Creation Time</value>
   </data>
   <data name="Site Name" xml:space="preserve">

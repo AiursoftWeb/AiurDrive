@@ -54,6 +54,9 @@
   <data name="New Password" xml:space="preserve">
     <value>Νέος Κωδικός Πρόσβασης</value>
   </data>
+  <data name="OpenID Connect (OIDC) is enabled. Users are synchronized from an external identity provider. We strongly recommend managing users on your OIDC provider. Changes made here might be overwritten during the next synchronization." xml:space="preserve">
+    <value>Το OpenID Connect (OIDC) είναι ενεργοποιημένο. Οι χρήστες συγχρονίζονται από έναν εξωτερικό πάροχο ταυτότητας. Σας συνιστούμε ισχυρά να διαχειρίζεστε τους χρήστες στον πάροχό σας OIDC. Οι αλλαγές που εισαχθούν εδώ μπορεί να αντικατασταθούν κατά την επόμενη συγχρονισμό.</value>
+  </data>
   <data name="Save Role Assignments" xml:space="preserve">
     <value>Αποθήκευση Ανάθεσης Ρόλων</value>
   </data>

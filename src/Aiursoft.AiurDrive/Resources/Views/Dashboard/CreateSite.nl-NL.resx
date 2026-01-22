@@ -24,6 +24,9 @@
   <data name="Create Site" xml:space="preserve">
     <value>Site aanmaken</value>
   </data>
+  <data name="If enabled, anyone with the link can view files (read-only). All uploads require authentication." xml:space="preserve">
+    <value>Als ingeschakeld kan iedereen met de koppeling bestanden bekijken (alleen-lezen). Alle uploads vereisen authenticatie.</value>
+  </data>
   <data name="Only lowercase letters, numbers and hyphens are allowed." xml:space="preserve">
     <value>Alleen kleine letters, cijfers en koppeltekens zijn toegestaan.</value>
   </data>

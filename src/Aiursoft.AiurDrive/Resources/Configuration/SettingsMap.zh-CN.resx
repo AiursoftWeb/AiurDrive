@@ -21,6 +21,9 @@
       <data name="Allow Image Preview" xml:space="preserve">
     <value>允许图片预览</value>
   </data>
+  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
+    <value>允许在文件管理器中预览图片。此设置仅为前端开关，图片处理功能始终启用。</value>
+  </data>
   <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>允许用户修改昵称</value>
   </data>

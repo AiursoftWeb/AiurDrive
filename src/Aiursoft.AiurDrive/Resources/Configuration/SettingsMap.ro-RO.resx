@@ -21,6 +21,9 @@
       <data name="Allow Image Preview" xml:space="preserve">
     <value>Permite previzualizarea imaginilor</value>
   </data>
+  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
+    <value>Permite previzualizarea imaginilor în managerul de fișiere. Aceasta este doar un comutator de interfață. Procesarea imaginilor este întotdeauna activată.</value>
+  </data>
   <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>Permite utilizatorului să-și ajusteze nickname-ul</value>
   </data>

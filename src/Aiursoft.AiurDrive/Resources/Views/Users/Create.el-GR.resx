@@ -54,6 +54,9 @@
   <data name="OpenID Connect (OIDC) is enabled. User accounts are synchronized from an external identity provider. We strongly recommend creating new users on your OIDC provider to ensure they are managed centrally. This form will create a local-only account that exists solely within this application." xml:space="preserve">
     <value>Το OpenID Connect (OIDC) είναι ενεργοποιημένο. Οι λογαριασμοί χρηστών συγχρονίζονται από έναν εξωτερικό πάροχο ταυτότητας. Συνιστούμε ανεπιφύλακτα τη δημιουργία νέων χρηστών στον πάροχο OIDC σας, ώστε να διασφαλιστεί ότι διαχειρίζονται κεντρικά. Αυτή η φόρμα θα δημιουργήσει έναν τοπικό λογαριασμό που υπάρχει αποκλειστικά εντός αυτής της εφαρμογής.</value>
   </data>
+  <data name="OpenID Connect (OIDC) is enabled. Users are synchronized from an external identity provider. We strongly recommend creating new users on your OIDC provider to ensure they can log in. This form will create a local-only user that might not be able to authenticate via OIDC." xml:space="preserve">
+    <value>Το OpenID Connect (OIDC) είναι ενεργοποιημένο. Οι χρήστες συγχρονίζονται από έναν εξωτερικό πάροχο ταυτότητας. Σας συνιστούμε ισχυρά να δημιουργήσετε νέους χρήστες στον πάροχο OIDC σας, για να διασφαλίσετε ότι μπορούν να συνδεθούν. Αυτή η φόρμα θα δημιουργήσει έναν χρήστη μόνο στον τοπικό σας σύστημα, ο οποίος μπορεί να μην μπορεί να πιστοποιηθεί μέσω OIDC.</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Κωδικός πρόσβασης</value>
   </data>

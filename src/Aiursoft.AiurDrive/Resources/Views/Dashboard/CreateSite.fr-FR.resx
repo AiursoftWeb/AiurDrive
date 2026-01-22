@@ -24,6 +24,9 @@
   <data name="Create Site" xml:space="preserve">
     <value>Créer un site</value>
   </data>
+  <data name="If enabled, anyone with the link can view files (read-only). All uploads require authentication." xml:space="preserve">
+    <value>Si activé, toute personne possédant le lien pourra visualiser les fichiers (en lecture seule). Toutes les téléchargements nécessitent une authentification.</value>
+  </data>
   <data name="Only lowercase letters, numbers and hyphens are allowed." xml:space="preserve">
     <value>Seules les lettres minuscules, les chiffres et les traits d&apos;union sont autorisés.</value>
   </data>

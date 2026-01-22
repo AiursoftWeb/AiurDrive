@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="New Site Name" xml:space="preserve">
+      <data name="Allow anonymous viewing" xml:space="preserve">
+    <value>Permitir visualização anónima</value>
+  </data>
+  <data name="New Site Name" xml:space="preserve">
     <value>Novo Nome do Site</value>
   </data>
   <data name="Site name is invalid. Only letters, digits, and hyphens are allowed." xml:space="preserve">

@@ -45,6 +45,9 @@
   <data name="Name" xml:space="preserve">
     <value>Nume</value>
   </data>
+  <data name="OpenID Connect (OIDC) is enabled. Users are synchronized from an external identity provider. We strongly recommend deleting users on your OIDC provider. Deleting a user here will only remove their local record and might be recreated during the next synchronization." xml:space="preserve">
+    <value>OpenID Connect (OIDC) este activat. Utilizatorii sunt sincronizați de la un furnizor extern de identitate. Vă recomandăm puternic să ștergeți utilizatorii de pe furnizorul dumneavoastră OIDC. Ștergerea unui utilizator aici va elimina doar înregistrarea locală și ar putea fi recreată în timpul următoarei sincronizări.</value>
+  </data>
   <data name="This action is irreversible. You are about to permanently delete the following user and all their associated data:" xml:space="preserve">
     <value>Această acțiune este ireversibilă. Sunteți pe cale să ștergeți definitiv următorul utilizator și toate datele asociate acestuia:</value>
   </data>

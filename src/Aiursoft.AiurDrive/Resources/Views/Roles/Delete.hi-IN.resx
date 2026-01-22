@@ -36,6 +36,9 @@
   <data name="Delete Role" xml:space="preserve">
     <value>भूमिका हटाएं</value>
   </data>
+  <data name="OpenID Connect (OIDC) is enabled. Roles are synchronized from an external identity provider. We strongly recommend deleting roles or groups on your OIDC provider to ensure they are managed centrally. Deleting this local role will not affect the external provider but may cause permission issues for synchronized users." xml:space="preserve">
+    <value>OpenID Connect (OIDC) सक्षम है। भूमिकाएँ एक बाहरी पहचान प्रदाता से सिंक्रनाइज़ की जाती हैं। केंद्रीय रूप से प्रबंधित करने के लिए हम तीव्र रूप से सुझाव देते हैं कि आप अपने OIDC प्रदाता पर भूमिकाओं या समूहों को हटाएं। इस स्थानीय भूमिका को हटाने से बाहरी प्रदाता प्रभावित नहीं होगा, लेकिन सिंक्रनाइज़ किए गए उपयोगकर्ताओं के लिए अनुमति संबंधी समस्याएँ हो सकती हैं।</value>
+  </data>
   <data name="Role" xml:space="preserve">
     <value>भूमिका</value>
   </data>

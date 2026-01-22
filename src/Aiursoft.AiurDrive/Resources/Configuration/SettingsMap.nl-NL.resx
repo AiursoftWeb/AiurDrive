@@ -21,6 +21,9 @@
       <data name="Allow Image Preview" xml:space="preserve">
     <value>Afbeeldingvoorbeeld toestaan</value>
   </data>
+  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
+    <value>Als u afbeeldingsvoorbeeld toestaat in de bestandsbeheerder. Dit is alleen een front-end schakelaar. Afbeeldingsverwerking is altijd ingeschakeld.</value>
+  </data>
   <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>Gebruiker mag eigen bijnaam aanpassen</value>
   </data>

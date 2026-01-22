@@ -21,6 +21,9 @@
       <data name="Allow Image Preview" xml:space="preserve">
     <value>Autoriser l’aperçu des images</value>
   </data>
+  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
+    <value>Autoriser l’aperçu des images dans le gestionnaire de fichiers. Il s’agit uniquement d’un interrupteur côté front-end. Le traitement des images est toujours activé.</value>
+  </data>
   <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>Autoriser l&apos;utilisateur à modifier le surnom</value>
   </data>

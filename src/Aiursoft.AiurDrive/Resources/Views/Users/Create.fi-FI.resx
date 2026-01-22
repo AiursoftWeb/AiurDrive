@@ -54,6 +54,9 @@
   <data name="OpenID Connect (OIDC) is enabled. User accounts are synchronized from an external identity provider. We strongly recommend creating new users on your OIDC provider to ensure they are managed centrally. This form will create a local-only account that exists solely within this application." xml:space="preserve">
     <value>OpenID Connect (OIDC) on käytössä. Käyttäjätilit synkronoidaan ulkoisesta identiteetin tarjoajasta. Suosittelemme vahvasti, että luot uudet käyttäjät OIDC-palveluntarjoajallasi, jotta niitä hallitaan keskitetysti. Tämä lomake luo vain paikallisen tilin, joka on olemassa ainoastaan tässä sovelluksessa.</value>
   </data>
+  <data name="OpenID Connect (OIDC) is enabled. Users are synchronized from an external identity provider. We strongly recommend creating new users on your OIDC provider to ensure they can log in. This form will create a local-only user that might not be able to authenticate via OIDC." xml:space="preserve">
+    <value>OpenID Connect (OIDC) on käytössä. Käyttäjät synkronoidaan ulkoisesta tunnistustarjoajasta. Suosittelemme voimakkaasti uusien käyttäjien luomista OIDC-tarjoajasi varmistaaksesi, että he voivat kirjautua sisään. Tämä lomake luo paikallisen käyttäjätunnuksen, joka saattaa ei voi autentikoitua OIDC:n kautta.</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Salasana</value>
   </data>

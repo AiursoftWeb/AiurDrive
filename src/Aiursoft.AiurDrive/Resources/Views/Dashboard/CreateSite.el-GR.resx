@@ -24,6 +24,9 @@
   <data name="Create Site" xml:space="preserve">
     <value>Δημιουργία Ιστότοπου</value>
   </data>
+  <data name="If enabled, anyone with the link can view files (read-only). All uploads require authentication." xml:space="preserve">
+    <value>Εάν ενεργοποιηθεί, οποιοσδήποτε διαθέτει το σύνδεσμο μπορεί να δει τα αρχεία (μόνο για ανάγνωση). Όλες οι ανεβάσεις απαιτούν εξουσιοδότηση.</value>
+  </data>
   <data name="Only lowercase letters, numbers and hyphens are allowed." xml:space="preserve">
     <value>Επιτρέπονται μόνο πεζοί χαρακτήρες, αριθμοί και παύλες.</value>
   </data>

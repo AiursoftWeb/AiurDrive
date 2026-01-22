@@ -27,8 +27,14 @@
   <data name="Add New Share" xml:space="preserve">
     <value>नया शेयर जोड़ें</value>
   </data>
+  <data name="Allow anonymous viewing (Public)" xml:space="preserve">
+    <value>निःशुल्क दृश्य (सार्वजनिक) के लिए अनुमति दें</value>
+  </data>
   <data name="An error occurred while processing your request." xml:space="preserve">
     <value>प्रयास करते समय एक त्रुटि हुई।</value>
+  </data>
+  <data name="Anyone with the link can view this site&apos;s files (read-only)." xml:space="preserve">
+    <value>लिंक के साथ कोई भी इस साइट के फ़ाइल्स को देख सकता है (केवल पढ़ने के लिए)।</value>
   </data>
   <data name="Are you sure you want to remove this share?" xml:space="preserve">
     <value>क्या आप वाकई इस शेयर को हटाना चाहते हैं?</value>
@@ -54,6 +60,9 @@
   <data name="Existing Shares" xml:space="preserve">
     <value>मौजूदा शेयर</value>
   </data>
+  <data name="Forbid anonymous viewing (Private / Shared)" xml:space="preserve">
+    <value>गैर-प्रकट दृश्य अनुमति नहीं दें (निजी / साझा)</value>
+  </data>
   <data name="Manage Shares" xml:space="preserve">
     <value>शेयर प्रबंधित करें</value>
   </data>
@@ -62,6 +71,9 @@
   </data>
   <data name="No users found" xml:space="preserve">
     <value>कोई उपयोगकर्ता नहीं मिला</value>
+  </data>
+  <data name="Only you and specific users/roles listed below can view this site." xml:space="preserve">
+    <value>केवल आप और नीचे दिए गए विशिष्ट उपयोगकर्ता/भूमिकाएँ इस साइट को देख सकते हैं।</value>
   </data>
   <data name="Permission" xml:space="preserve">
     <value>अनुमति</value>
@@ -80,6 +92,9 @@
   </data>
   <data name="Select a role..." xml:space="preserve">
     <value>एक भूमिका चुनें...</value>
+  </data>
+  <data name="Share Link" xml:space="preserve">
+    <value>शेयर लिंक</value>
   </data>
   <data name="Share with" xml:space="preserve">
     <value>शेयर करें इसके साथ</value>

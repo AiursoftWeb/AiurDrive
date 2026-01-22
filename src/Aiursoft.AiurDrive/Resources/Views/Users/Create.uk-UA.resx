@@ -54,6 +54,9 @@
   <data name="OpenID Connect (OIDC) is enabled. User accounts are synchronized from an external identity provider. We strongly recommend creating new users on your OIDC provider to ensure they are managed centrally. This form will create a local-only account that exists solely within this application." xml:space="preserve">
     <value>Увімкнено OpenID Connect (OIDC). Облікові записи користувачів синхронізуються з зовнішнього провайдера ідентичності. Ми настійно рекомендуємо створювати нових користувачів у вашому провайдері OIDC, щоб забезпечити їх централізоване керування. Ця форма створить обліковий запис, який існує лише локально в межах цього додатку.</value>
   </data>
+  <data name="OpenID Connect (OIDC) is enabled. Users are synchronized from an external identity provider. We strongly recommend creating new users on your OIDC provider to ensure they can log in. This form will create a local-only user that might not be able to authenticate via OIDC." xml:space="preserve">
+    <value>OpenID Connect (OIDC) увімкнено. Користувачі синхронізуються з зовнішнього постачальника ідентифікації. Ми сильнодушно рекомендуємо створювати нових користувачів на вашому постачальнику OIDC, щоб переконатися, що вони зможуть увійти. Ця форма створить користувача тільки локально, який може не змогти автентифікуватися через OIDC.</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Пароль</value>
   </data>

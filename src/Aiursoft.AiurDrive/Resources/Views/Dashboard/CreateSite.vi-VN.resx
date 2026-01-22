@@ -24,6 +24,9 @@
   <data name="Create Site" xml:space="preserve">
     <value>Tạo trang web</value>
   </data>
+  <data name="If enabled, anyone with the link can view files (read-only). All uploads require authentication." xml:space="preserve">
+    <value>Nếu được bật, bất kỳ ai có liên kết đều có thể xem tệp tin (chỉ đọc). Tất cả các tải lên đều yêu cầu xác thực.</value>
+  </data>
   <data name="Only lowercase letters, numbers and hyphens are allowed." xml:space="preserve">
     <value>Chỉ cho phép chữ thường, chữ số và dấu gạch ngang.</value>
   </data>

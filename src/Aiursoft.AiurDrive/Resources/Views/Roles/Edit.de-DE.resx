@@ -33,6 +33,9 @@
   <data name="Manage Permissions for this Role" xml:space="preserve">
     <value>Berechtigungen für diese Rolle verwalten</value>
   </data>
+  <data name="OpenID Connect (OIDC) is enabled. Roles are synchronized from an external identity provider. We strongly recommend creating new roles or groups on your OIDC provider to ensure they are managed centrally. This form will modify a local-only role that exists solely within this application." xml:space="preserve">
+    <value>OpenID Connect (OIDC) ist aktiviert. Rollen werden von einem externen Identitätsanbieter synchronisiert. Wir empfehlen dringend, neue Rollen oder Gruppen in Ihrem OIDC-Anbieter zu erstellen, um sicherzustellen, dass sie zentral verwaltet werden. Dieses Formular wird eine ausschließlich innerhalb dieser Anwendung existierende lokale Rolle ändern.</value>
+  </data>
   <data name="Role" xml:space="preserve">
     <value>Rolle</value>
   </data>

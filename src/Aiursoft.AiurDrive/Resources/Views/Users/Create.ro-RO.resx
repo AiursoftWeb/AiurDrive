@@ -54,6 +54,9 @@
   <data name="OpenID Connect (OIDC) is enabled. User accounts are synchronized from an external identity provider. We strongly recommend creating new users on your OIDC provider to ensure they are managed centrally. This form will create a local-only account that exists solely within this application." xml:space="preserve">
     <value>OpenID Connect (OIDC) este activat. Conturile de utilizator sunt sincronizate de la un furnizor extern de identitate. Recomandăm cu tărie crearea de utilizatori noi pe furnizorul dvs. OIDC pentru a vă asigura că acestea sunt gestionate central. Acest formular va crea un cont doar local, care există doar în cadrul acestei aplicații.</value>
   </data>
+  <data name="OpenID Connect (OIDC) is enabled. Users are synchronized from an external identity provider. We strongly recommend creating new users on your OIDC provider to ensure they can log in. This form will create a local-only user that might not be able to authenticate via OIDC." xml:space="preserve">
+    <value>OpenID Connect (OIDC) este activat. Utilizatorii sunt sincronizați dintr-un provider extern de identitate. Vă recomandăm ferm crearea de noi utilizatori pe providerul dumneavoastră OIDC pentru a vă asigura că aceștia pot să se autentifice. Acest formular va crea un utilizator doar local, care poate să nu poată fi autentificat prin OIDC.</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Parolă</value>
   </data>

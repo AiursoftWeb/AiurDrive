@@ -27,8 +27,14 @@
   <data name="Add New Share" xml:space="preserve">
     <value>新增分享</value>
   </data>
+  <data name="Allow anonymous viewing (Public)" xml:space="preserve">
+    <value>允許匿名檢視 (公開)</value>
+  </data>
   <data name="An error occurred while processing your request." xml:space="preserve">
     <value>處理請求時發生錯誤。</value>
+  </data>
+  <data name="Anyone with the link can view this site&apos;s files (read-only)." xml:space="preserve">
+    <value>任何擁有連結的人都可以檢視此網站的檔案（只讀）。</value>
   </data>
   <data name="Are you sure you want to remove this share?" xml:space="preserve">
     <value>你確定要移除這個分享嗎？</value>
@@ -54,6 +60,9 @@
   <data name="Existing Shares" xml:space="preserve">
     <value>現有分享</value>
   </data>
+  <data name="Forbid anonymous viewing (Private / Shared)" xml:space="preserve">
+    <value>禁止匿名查看 (私人 / 共享)</value>
+  </data>
   <data name="Manage Shares" xml:space="preserve">
     <value>管理分享</value>
   </data>
@@ -62,6 +71,9 @@
   </data>
   <data name="No users found" xml:space="preserve">
     <value>沒有找到用戶</value>
+  </data>
+  <data name="Only you and specific users/roles listed below can view this site." xml:space="preserve">
+    <value>只有你和下面列出的特定用戶/角色可以查看此網站。</value>
   </data>
   <data name="Permission" xml:space="preserve">
     <value>權限</value>
@@ -80,6 +92,9 @@
   </data>
   <data name="Select a role..." xml:space="preserve">
     <value>選擇角色...</value>
+  </data>
+  <data name="Share Link" xml:space="preserve">
+    <value>分享連結</value>
   </data>
   <data name="Share with" xml:space="preserve">
     <value>與...分享</value>

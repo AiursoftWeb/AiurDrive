@@ -21,6 +21,9 @@
       <data name="Allow Image Preview" xml:space="preserve">
     <value>Görüntü Önizlemesine İzin Ver</value>
   </data>
+  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
+    <value>Dosya yöneticisinde resim önizlemesine izin ver. Bu sadece arka yüz anahtarıdır. Resim işleme her zaman etkin durumdadır.</value>
+  </data>
   <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>Kullanıcı Adını Ayarlamaya İzin Ver</value>
   </data>

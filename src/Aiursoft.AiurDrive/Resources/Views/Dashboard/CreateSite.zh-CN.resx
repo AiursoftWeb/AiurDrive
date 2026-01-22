@@ -24,6 +24,9 @@
   <data name="Create Site" xml:space="preserve">
     <value>创建站点</value>
   </data>
+  <data name="If enabled, anyone with the link can view files (read-only). All uploads require authentication." xml:space="preserve">
+    <value>如果启用，拥有链接的任何人均可查看文件（只读）。所有上传均需身份验证。</value>
+  </data>
   <data name="Only lowercase letters, numbers and hyphens are allowed." xml:space="preserve">
     <value>仅允许小写字母、数字和连字符。</value>
   </data>

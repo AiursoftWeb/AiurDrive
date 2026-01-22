@@ -54,6 +54,9 @@
   <data name="New Password" xml:space="preserve">
     <value>รหัสผ่านใหม่</value>
   </data>
+  <data name="OpenID Connect (OIDC) is enabled. Users are synchronized from an external identity provider. We strongly recommend managing users on your OIDC provider. Changes made here might be overwritten during the next synchronization." xml:space="preserve">
+    <value>OpenID Connect (OIDC) ถูกเปิดใช้งานแล้ว ผู้ใช้จะถูกซิงค์จากผู้ให้บริการยืนยันตัวตนภายนอก เราขอแนะนำอย่างยิ่งให้จัดการผู้ใช้ที่ผู้ให้บริการ OIDC ของคุณเอง เปลี่ยนแปลงที่ทำที่นี่อาจถูกแทนที่ในระหว่างการซิงค์ครั้งถัดไป</value>
+  </data>
   <data name="Save Role Assignments" xml:space="preserve">
     <value>บันทึกการกำหนดบทบาท</value>
   </data>
