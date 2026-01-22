@@ -21,6 +21,9 @@
       <data name="Allow Image Preview" xml:space="preserve">
     <value>Bildvorschau zulassen</value>
   </data>
+  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
+    <value>Wenn aktiviert, wird die Vorschau von Bildern im Dateimanager aktiviert. Dies ist lediglich ein Frontend-Schalter. Die Bildverarbeitung ist immer aktiviert.</value>
+  </data>
   <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>Benutzer dürfen Nickname anpassen</value>
   </data>

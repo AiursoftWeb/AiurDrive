@@ -54,6 +54,9 @@
   <data name="OpenID Connect (OIDC) is enabled. User accounts are synchronized from an external identity provider. We strongly recommend creating new users on your OIDC provider to ensure they are managed centrally. This form will create a local-only account that exists solely within this application." xml:space="preserve">
     <value>OpenID Connect (OIDC) telah diaktifkan. Akun pengguna disinkronkan dari penyedia identitas eksternal. Kami sangat merekomendasikan untuk membuat pengguna baru di penyedia OIDC Anda untuk memastikan mereka dikelola secara terpusat. Formulir ini akan membuat akun lokal saja yang hanya ada dalam aplikasi ini.</value>
   </data>
+  <data name="OpenID Connect (OIDC) is enabled. Users are synchronized from an external identity provider. We strongly recommend creating new users on your OIDC provider to ensure they can log in. This form will create a local-only user that might not be able to authenticate via OIDC." xml:space="preserve">
+    <value>OpenID Connect (OIDC) diaktifkan. Pengguna disinkronkan dari penyedia identitas eksternal. Kami sangat menyarankan membuat pengguna baru di penyedia OIDC Anda untuk memastikan mereka dapat masuk. Formulir ini akan membuat pengguna lokal saja yang mungkin tidak dapat melakukan otentikasi melalui OIDC.</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Kata Sandi</value>
   </data>

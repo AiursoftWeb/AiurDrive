@@ -33,6 +33,9 @@
   <data name="Manage Permissions for this Role" xml:space="preserve">
     <value>إدارة الصلاحيات لهذه الدور</value>
   </data>
+  <data name="OpenID Connect (OIDC) is enabled. Roles are synchronized from an external identity provider. We strongly recommend creating new roles or groups on your OIDC provider to ensure they are managed centrally. This form will modify a local-only role that exists solely within this application." xml:space="preserve">
+    <value>تم تفعيل OpenID Connect (OIDC). يتم مزامنة الأدوار من مزود هوية خارجي. نوصي بشدة بإنشاء أدوار أو مجموعات جديدة على مزود OIDC الخاص بك لضمان إدارتها بشكل مركزي. سيقوم هذا النموذج بتعديل دور محلي فقط موجود ضمن هذا التطبيق فقط.</value>
+  </data>
   <data name="Role" xml:space="preserve">
     <value>الدور</value>
   </data>

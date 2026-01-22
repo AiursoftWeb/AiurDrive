@@ -36,6 +36,9 @@
   <data name="Delete Role" xml:space="preserve">
     <value>Rolü Sil</value>
   </data>
+  <data name="OpenID Connect (OIDC) is enabled. Roles are synchronized from an external identity provider. We strongly recommend deleting roles or groups on your OIDC provider to ensure they are managed centrally. Deleting this local role will not affect the external provider but may cause permission issues for synchronized users." xml:space="preserve">
+    <value>OpenID Connect (OIDC) etkinleştirildi. Rollar, bir harici kimlik sağlayıcıdan senkronize edilir. Merkezi olarak yönetilmelerini sağlamak için, OIDC sağlayıcınızda rolleri veya grupları silmenizi şiddetle tavsiye ederiz. Bu yerel rolü silmek, harici sağlayıcıyı etkilemeyecektir ancak senkronize edilmiş kullanıcılar için izin sorunlarına neden olabilir.</value>
+  </data>
   <data name="Role" xml:space="preserve">
     <value>Rol</value>
   </data>

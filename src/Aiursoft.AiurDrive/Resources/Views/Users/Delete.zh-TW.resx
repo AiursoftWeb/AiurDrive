@@ -45,6 +45,9 @@
   <data name="Name" xml:space="preserve">
     <value>名稱</value>
   </data>
+  <data name="OpenID Connect (OIDC) is enabled. Users are synchronized from an external identity provider. We strongly recommend deleting users on your OIDC provider. Deleting a user here will only remove their local record and might be recreated during the next synchronization." xml:space="preserve">
+    <value>OpenID Connect (OIDC) 已啟用。使用者會從外部身分識別提供者同步。我們強烈建議您在 OIDC 提供者上刪除使用者。在此處刪除使用者僅會移除其本機記錄，下次同步時可能會被重新建立。</value>
+  </data>
   <data name="This action is irreversible. You are about to permanently delete the following user and all their associated data:" xml:space="preserve">
     <value>此操作無法復原。您即將永久刪除以下使用者及其所有關聯資料：</value>
   </data>

@@ -27,8 +27,14 @@
   <data name="Add New Share" xml:space="preserve">
     <value>Lisää uusi jakaminen</value>
   </data>
+  <data name="Allow anonymous viewing (Public)" xml:space="preserve">
+    <value>Salli anonyymi näkymä (Julkinen)</value>
+  </data>
   <data name="An error occurred while processing your request." xml:space="preserve">
     <value>Tapahtui virhe pyynnön käsittelyssä.</value>
+  </data>
+  <data name="Anyone with the link can view this site&apos;s files (read-only)." xml:space="preserve">
+    <value>Kaikilla linkin omistajilla on oikeus tarkastella tämän sivuston tiedostoja (vain lukuoikeus).</value>
   </data>
   <data name="Are you sure you want to remove this share?" xml:space="preserve">
     <value>Oletko varma, että haluat poistaa tämän jakamisen?</value>
@@ -54,6 +60,9 @@
   <data name="Existing Shares" xml:space="preserve">
     <value>Olemassa olevat jaot</value>
   </data>
+  <data name="Forbid anonymous viewing (Private / Shared)" xml:space="preserve">
+    <value>Estä nimettömän katselun (Yksityinen / Jaettu)</value>
+  </data>
   <data name="Manage Shares" xml:space="preserve">
     <value>Hallinnoi jaettuja</value>
   </data>
@@ -62,6 +71,9 @@
   </data>
   <data name="No users found" xml:space="preserve">
     <value>Ei käyttäjiä löytynyt</value>
+  </data>
+  <data name="Only you and specific users/roles listed below can view this site." xml:space="preserve">
+    <value>Vain sinä ja alla olevat tarkat käyttäjät/roolit voivat tarkastella tätä sivustoa.</value>
   </data>
   <data name="Permission" xml:space="preserve">
     <value>Oikeudet</value>
@@ -80,6 +92,9 @@
   </data>
   <data name="Select a role..." xml:space="preserve">
     <value>Valitse rooli...</value>
+  </data>
+  <data name="Share Link" xml:space="preserve">
+    <value>Jaa linkki</value>
   </data>
   <data name="Share with" xml:space="preserve">
     <value>Jaa kanssa</value>

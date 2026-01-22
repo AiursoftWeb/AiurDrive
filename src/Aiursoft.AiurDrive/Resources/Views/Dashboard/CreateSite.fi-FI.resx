@@ -24,6 +24,9 @@
   <data name="Create Site" xml:space="preserve">
     <value>Luo sivusto</value>
   </data>
+  <data name="If enabled, anyone with the link can view files (read-only). All uploads require authentication." xml:space="preserve">
+    <value>Jos käytössä, linkin omistaja voi tarkastella tiedostoja (vain lukeminen). Kaikki lataukset vaativat tunnistautumisen.</value>
+  </data>
   <data name="Only lowercase letters, numbers and hyphens are allowed." xml:space="preserve">
     <value>Vain pienet kirjaimet, numerot ja viivat ovat sallittuja.</value>
   </data>

@@ -21,6 +21,9 @@
       <data name="Allow Image Preview" xml:space="preserve">
     <value>छवि पूर्वावलोकन की अनुमति दें</value>
   </data>
+  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
+    <value>फ़ाइल मैनेजर में छवि पूर्वावलोकन की अनुमति दें। यह केवल फ्रंट-एंड स्विच है। छवि प्रोसेसिंग हमेशा सक्षम रहती है।</value>
+  </data>
   <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>उपयोगकर्ता नाम समायोजित करने की अनुमति दें</value>
   </data>

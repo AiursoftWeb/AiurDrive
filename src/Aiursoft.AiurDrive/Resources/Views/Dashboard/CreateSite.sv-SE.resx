@@ -24,6 +24,9 @@
   <data name="Create Site" xml:space="preserve">
     <value>Skapa webbplats</value>
   </data>
+  <data name="If enabled, anyone with the link can view files (read-only). All uploads require authentication." xml:space="preserve">
+    <value>Om aktiverat kan alla med länken visa filer (skrivskyddat). Alla uppladdningar kräver autentisering.</value>
+  </data>
   <data name="Only lowercase letters, numbers and hyphens are allowed." xml:space="preserve">
     <value>Endast gemener, siffror och bindestreck är tillåtna.</value>
   </data>

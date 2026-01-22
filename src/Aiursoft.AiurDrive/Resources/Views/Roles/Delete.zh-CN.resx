@@ -36,6 +36,9 @@
   <data name="Delete Role" xml:space="preserve">
     <value>删除角色</value>
   </data>
+  <data name="OpenID Connect (OIDC) is enabled. Roles are synchronized from an external identity provider. We strongly recommend deleting roles or groups on your OIDC provider to ensure they are managed centrally. Deleting this local role will not affect the external provider but may cause permission issues for synchronized users." xml:space="preserve">
+    <value>OpenID Connect (OIDC) 已启用。角色已从外部身份提供商同步。我们强烈建议删除您的 OIDC 提供商上的角色或组，以确保它们由中心统一管理。删除此本地角色不会影响外部提供商，但可能导致同步用户的权限出现问题。</value>
+  </data>
   <data name="Role" xml:space="preserve">
     <value>角色</value>
   </data>

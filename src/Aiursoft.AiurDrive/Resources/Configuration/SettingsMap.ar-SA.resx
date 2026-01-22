@@ -21,6 +21,9 @@
       <data name="Allow Image Preview" xml:space="preserve">
     <value>تمكين معاينة الصورة</value>
   </data>
+  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
+    <value>إذا كانت صحيحة، فسيتم تمكين معاينة الصورة في مدير الملفات. هذا مجرد مفتاح في الواجهة الأمامية. يتم دائمًا تمكين معالجة الصور.</value>
+  </data>
   <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>تمكين المستخدم من تعديل الاسم المستعار</value>
   </data>

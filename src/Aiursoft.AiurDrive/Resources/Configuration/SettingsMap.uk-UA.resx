@@ -21,6 +21,9 @@
       <data name="Allow Image Preview" xml:space="preserve">
     <value>Дозволити попередній перегляд зображень</value>
   </data>
+  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
+    <value>Якщо ввімкнено, попередній перегляд зображень буде доступний у менеджері файлів. Це лише перемикач на фронтенді. Обробка зображень завжди увімкнена.</value>
+  </data>
   <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>Дозволити користувачеві змінювати прізвисько</value>
   </data>

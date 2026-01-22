@@ -21,6 +21,9 @@
       <data name="Allow Image Preview" xml:space="preserve">
     <value>อนุญาตให้ดูตัวอย่างภาพ</value>
   </data>
+  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
+    <value>อนุญาตให้ดูตัวอย่างภาพในตัวจัดการไฟล์ ข้อนี้เป็นการเปิดใช้งานเฉพาะด้านหน้าเท่านั้น การประมวลผลภาพจะถูกเปิดใช้งานตลอดเวลา</value>
+  </data>
   <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>อนุญาตให้ผู้ใช้แก้ไขชื่อเล่น</value>
   </data>

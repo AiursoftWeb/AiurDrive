@@ -21,6 +21,9 @@
       <data name="Allow Image Preview" xml:space="preserve">
     <value>Tillad billedvise visning</value>
   </data>
+  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
+    <value>Tillad billedforhåndsvise i filhåndteringen. Dette er kun en front-end-skift. Billedbehandling er altid aktiveret.</value>
+  </data>
   <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>Tillad bruger at justere nickname</value>
   </data>
