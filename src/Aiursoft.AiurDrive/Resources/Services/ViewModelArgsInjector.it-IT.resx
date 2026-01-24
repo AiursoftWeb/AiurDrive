@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Admin" xml:space="preserve">
+      <data name="Access Denied" xml:space="preserve">
+    <value>Accesso negato</value>
+  </data>
+  <data name="Admin" xml:space="preserve">
     <value>Amministratore</value>
   </data>
   <data name="Administration" xml:space="preserve">
@@ -39,6 +42,9 @@
   <data name="Background Jobs" xml:space="preserve">
     <value>Lavori in background</value>
   </data>
+  <data name="Bad Request" xml:space="preserve">
+    <value>Richiesta non valida</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>Cambia Avatar</value>
   </data>
@@ -51,14 +57,23 @@
   <data name="Click to login" xml:space="preserve">
     <value>Clicca per accedere</value>
   </data>
+  <data name="Create New Site" xml:space="preserve">
+    <value>Crea nuovo sito</value>
+  </data>
   <data name="Create Role" xml:space="preserve">
     <value>Crea Ruolo</value>
   </data>
   <data name="Create User" xml:space="preserve">
     <value>Crea Utente</value>
   </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
   <data name="Delete Role" xml:space="preserve">
     <value>Elimina Ruolo</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>Elimina sito</value>
   </data>
   <data name="Delete User" xml:space="preserve">
     <value>Elimina utente</value>
@@ -69,6 +84,12 @@
   <data name="Edit Role" xml:space="preserve">
     <value>Modifica Ruolo</value>
   </data>
+  <data name="Edit Site Settings" xml:space="preserve">
+    <value>Modifica le impostazioni del sito</value>
+  </data>
+  <data name="Edit Site Storage Limit" xml:space="preserve">
+    <value>Modifica il limite di archiviazione del sito</value>
+  </data>
   <data name="Edit User" xml:space="preserve">
     <value>Modifica Utente</value>
   </data>
@@ -78,8 +99,14 @@
   <data name="Explore" xml:space="preserve">
     <value>Esplora</value>
   </data>
+  <data name="Explore Public Sites" xml:space="preserve">
+    <value>Esplora siti pubblici</value>
+  </data>
   <data name="Features" xml:space="preserve">
     <value>Funzionalità</value>
+  </data>
+  <data name="File Manager" xml:space="preserve">
+    <value>Gestore file</value>
   </data>
   <data name="Global Settings" xml:space="preserve">
     <value>Impostazioni globali</value>
@@ -93,6 +120,12 @@
   <data name="Info" xml:space="preserve">
     <value>Informazioni</value>
   </data>
+  <data name="Internal Server Error" xml:space="preserve">
+    <value>Errore del server interno</value>
+  </data>
+  <data name="Lockout" xml:space="preserve">
+    <value>Blocco</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Accedi</value>
   </data>
@@ -102,8 +135,17 @@
   <data name="Manage" xml:space="preserve">
     <value>Gestisci</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>Gestisci Condivisioni</value>
+  </data>
   <data name="My Drive" xml:space="preserve">
     <value>Il mio drive</value>
+  </data>
+  <data name="Not Found" xml:space="preserve">
+    <value>Non trovato</value>
+  </data>
+  <data name="Permission Details" xml:space="preserve">
+    <value>Dettagli autorizzazioni</value>
   </data>
   <data name="Permissions" xml:space="preserve">
     <value>Permessi</value>

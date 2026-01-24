@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Account Settings" xml:space="preserve">
+      <data name="Access Denied" xml:space="preserve">
+    <value>การเข้าถึงถูกปฏิเสธ</value>
+  </data>
+  <data name="Account Settings" xml:space="preserve">
     <value>การตั้งค่าบัญชี</value>
   </data>
   <data name="Admin" xml:space="preserve">
@@ -42,6 +45,9 @@
   <data name="Background Jobs" xml:space="preserve">
     <value>งานพื้นหลัง</value>
   </data>
+  <data name="Bad Request" xml:space="preserve">
+    <value>คำขอไม่ถูกต้อง</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>เปลี่ยนรูปโปรไฟล์</value>
   </data>
@@ -54,14 +60,23 @@
   <data name="Click to login" xml:space="preserve">
     <value>คลิกเพื่อเข้าสู่ระบบ</value>
   </data>
+  <data name="Create New Site" xml:space="preserve">
+    <value>สร้างไซต์ใหม่</value>
+  </data>
   <data name="Create Role" xml:space="preserve">
     <value>สร้างบทบาท</value>
   </data>
   <data name="Create User" xml:space="preserve">
     <value>สร้างผู้ใช้</value>
   </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>แดชบอร์ด</value>
+  </data>
   <data name="Delete Role" xml:space="preserve">
     <value>ลบบทบาท</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>ลบไซต์</value>
   </data>
   <data name="Delete User" xml:space="preserve">
     <value>ลบผู้ใช้</value>
@@ -72,6 +87,12 @@
   <data name="Edit Role" xml:space="preserve">
     <value>แก้ไขบทบาท</value>
   </data>
+  <data name="Edit Site Settings" xml:space="preserve">
+    <value>แก้ไขการตั้งค่าไซต์</value>
+  </data>
+  <data name="Edit Site Storage Limit" xml:space="preserve">
+    <value>แก้ไขขีดจำกัดการจัดเก็บไซต์</value>
+  </data>
   <data name="Edit User" xml:space="preserve">
     <value>แก้ไขผู้ใช้</value>
   </data>
@@ -81,8 +102,14 @@
   <data name="Explore" xml:space="preserve">
     <value>สำรวจ</value>
   </data>
+  <data name="Explore Public Sites" xml:space="preserve">
+    <value>สำรวจเว็บไซต์สาธารณะ</value>
+  </data>
   <data name="Features" xml:space="preserve">
     <value>คุณสมบัติ</value>
+  </data>
+  <data name="File Manager" xml:space="preserve">
+    <value>ผู้จัดการไฟล์</value>
   </data>
   <data name="Global Settings" xml:space="preserve">
     <value>การตั้งค่าทั่วไป</value>
@@ -96,6 +123,12 @@
   <data name="Info" xml:space="preserve">
     <value>ข้อมูล</value>
   </data>
+  <data name="Internal Server Error" xml:space="preserve">
+    <value>ข้อผิดพลาดภายในเซิร์ฟเวอร์</value>
+  </data>
+  <data name="Lockout" xml:space="preserve">
+    <value>ล็อกเอาต์</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>เข้าสู่ระบบ</value>
   </data>
@@ -105,8 +138,17 @@
   <data name="Manage" xml:space="preserve">
     <value>จัดการ</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>จัดการการแชร์</value>
+  </data>
   <data name="My Drive" xml:space="preserve">
     <value>ไดรฟ์ของฉัน</value>
+  </data>
+  <data name="Not Found" xml:space="preserve">
+    <value>ไม่พบ</value>
+  </data>
+  <data name="Permission Details" xml:space="preserve">
+    <value>รายละเอียดสิทธิ์</value>
   </data>
   <data name="Permissions" xml:space="preserve">
     <value>สิทธิ์การเข้าถึง</value>

@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Account Settings" xml:space="preserve">
+      <data name="Access Denied" xml:space="preserve">
+    <value>アクセスが拒否されました</value>
+  </data>
+  <data name="Account Settings" xml:space="preserve">
     <value>アカウント設定</value>
   </data>
   <data name="Admin" xml:space="preserve">
@@ -42,6 +45,9 @@
   <data name="Background Jobs" xml:space="preserve">
     <value>バックグラウンドジョブ</value>
   </data>
+  <data name="Bad Request" xml:space="preserve">
+    <value>Bad Request</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>アバターを変更</value>
   </data>
@@ -54,14 +60,23 @@
   <data name="Click to login" xml:space="preserve">
     <value>ログインするにはクリック</value>
   </data>
+  <data name="Create New Site" xml:space="preserve">
+    <value>新しいサイトを作成</value>
+  </data>
   <data name="Create Role" xml:space="preserve">
     <value>ロールの作成</value>
   </data>
   <data name="Create User" xml:space="preserve">
     <value>ユーザーを作成</value>
   </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>ダッシュボード</value>
+  </data>
   <data name="Delete Role" xml:space="preserve">
     <value>ロールを削除</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>サイトの削除</value>
   </data>
   <data name="Delete User" xml:space="preserve">
     <value>ユーザーを削除</value>
@@ -72,6 +87,12 @@
   <data name="Edit Role" xml:space="preserve">
     <value>ロールを編集</value>
   </data>
+  <data name="Edit Site Settings" xml:space="preserve">
+    <value>サイト設定の編集</value>
+  </data>
+  <data name="Edit Site Storage Limit" xml:space="preserve">
+    <value>サイトストレージ制限の編集</value>
+  </data>
   <data name="Edit User" xml:space="preserve">
     <value>ユーザー編集</value>
   </data>
@@ -81,8 +102,14 @@
   <data name="Explore" xml:space="preserve">
     <value>探索</value>
   </data>
+  <data name="Explore Public Sites" xml:space="preserve">
+    <value>公開サイトを探索する</value>
+  </data>
   <data name="Features" xml:space="preserve">
     <value>機能</value>
+  </data>
+  <data name="File Manager" xml:space="preserve">
+    <value>ファイルマネージャ</value>
   </data>
   <data name="Global Settings" xml:space="preserve">
     <value>グローバル設定</value>
@@ -96,6 +123,12 @@
   <data name="Info" xml:space="preserve">
     <value>情報</value>
   </data>
+  <data name="Internal Server Error" xml:space="preserve">
+    <value>内部サーバーエラー</value>
+  </data>
+  <data name="Lockout" xml:space="preserve">
+    <value>ロックアウト</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>ログイン</value>
   </data>
@@ -105,8 +138,17 @@
   <data name="Manage" xml:space="preserve">
     <value>管理</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>共有の管理</value>
+  </data>
   <data name="My Drive" xml:space="preserve">
     <value>マイドライブ</value>
+  </data>
+  <data name="Not Found" xml:space="preserve">
+    <value>Not Found</value>
+  </data>
+  <data name="Permission Details" xml:space="preserve">
+    <value>権限の詳細</value>
   </data>
   <data name="Permissions" xml:space="preserve">
     <value>権限</value>

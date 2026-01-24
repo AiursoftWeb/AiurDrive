@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Admin" xml:space="preserve">
+      <data name="Access Denied" xml:space="preserve">
+    <value>प्रवेश अस्वीकृत</value>
+  </data>
+  <data name="Admin" xml:space="preserve">
     <value>प्रशासक</value>
   </data>
   <data name="Administration" xml:space="preserve">
@@ -39,6 +42,9 @@
   <data name="Background Jobs" xml:space="preserve">
     <value>बैकग्राउंड जॉब्स</value>
   </data>
+  <data name="Bad Request" xml:space="preserve">
+    <value>बैड रिक्वेस्ट</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>अवतार बदलें</value>
   </data>
@@ -51,14 +57,23 @@
   <data name="Click to login" xml:space="preserve">
     <value>लॉगिन करने के लिए क्लिक करें</value>
   </data>
+  <data name="Create New Site" xml:space="preserve">
+    <value>नया साइट बनाएं</value>
+  </data>
   <data name="Create Role" xml:space="preserve">
     <value>भूमिका बनाएं</value>
   </data>
   <data name="Create User" xml:space="preserve">
     <value>उपयोगकर्ता बनाएं</value>
   </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>डैशबोर्ड</value>
+  </data>
   <data name="Delete Role" xml:space="preserve">
     <value>रोल हटाएं</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>साइट हटाएं</value>
   </data>
   <data name="Delete User" xml:space="preserve">
     <value>उपयोगकर्ता हटाएं</value>
@@ -69,6 +84,12 @@
   <data name="Edit Role" xml:space="preserve">
     <value>भूमिका संपादित करें</value>
   </data>
+  <data name="Edit Site Settings" xml:space="preserve">
+    <value>साइट सेटिंग्स संपादित करें</value>
+  </data>
+  <data name="Edit Site Storage Limit" xml:space="preserve">
+    <value>साइट स्टोरेज सीमा संपादित करें</value>
+  </data>
   <data name="Edit User" xml:space="preserve">
     <value>उपयोगकर्ता संपादित करें</value>
   </data>
@@ -78,8 +99,14 @@
   <data name="Explore" xml:space="preserve">
     <value>खोजें</value>
   </data>
+  <data name="Explore Public Sites" xml:space="preserve">
+    <value>सार्वजनिक साइट्स का अन्वेषण करें</value>
+  </data>
   <data name="Features" xml:space="preserve">
     <value>विशेषताएँ</value>
+  </data>
+  <data name="File Manager" xml:space="preserve">
+    <value>फ़ाइल प्रबंधक</value>
   </data>
   <data name="Global Settings" xml:space="preserve">
     <value>सार्वभौम सेटिंग्स</value>
@@ -93,6 +120,12 @@
   <data name="Info" xml:space="preserve">
     <value>जानकारी</value>
   </data>
+  <data name="Internal Server Error" xml:space="preserve">
+    <value>आ interनल सर्वर त्रुटि</value>
+  </data>
+  <data name="Lockout" xml:space="preserve">
+    <value>लॉकआउट</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>लॉगिन</value>
   </data>
@@ -102,8 +135,17 @@
   <data name="Manage" xml:space="preserve">
     <value>प्रबंधित करें</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>शेयर प्रबंधित करें</value>
+  </data>
   <data name="My Drive" xml:space="preserve">
     <value>मेरा ड्राइव</value>
+  </data>
+  <data name="Not Found" xml:space="preserve">
+    <value>नहीं मिला</value>
+  </data>
+  <data name="Permission Details" xml:space="preserve">
+    <value>अनुमति विवरण</value>
   </data>
   <data name="Permissions" xml:space="preserve">
     <value>अनुमतियाँ</value>

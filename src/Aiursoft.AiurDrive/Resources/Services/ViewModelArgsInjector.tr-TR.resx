@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Admin" xml:space="preserve">
+      <data name="Access Denied" xml:space="preserve">
+    <value>Erişim Engellendi</value>
+  </data>
+  <data name="Admin" xml:space="preserve">
     <value>Yönetici</value>
   </data>
   <data name="Administration" xml:space="preserve">
@@ -39,6 +42,9 @@
   <data name="Background Jobs" xml:space="preserve">
     <value>Arka Plan Görevleri</value>
   </data>
+  <data name="Bad Request" xml:space="preserve">
+    <value>Geçersiz İstek</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>Profil Resmini Değiştir</value>
   </data>
@@ -51,14 +57,23 @@
   <data name="Click to login" xml:space="preserve">
     <value>Giriş yapmak için tıklayın</value>
   </data>
+  <data name="Create New Site" xml:space="preserve">
+    <value>Yeni Site Oluştur</value>
+  </data>
   <data name="Create Role" xml:space="preserve">
     <value>Rol Oluştur</value>
   </data>
   <data name="Create User" xml:space="preserve">
     <value>Kullanıcı Oluştur</value>
   </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Kontrol Paneli</value>
+  </data>
   <data name="Delete Role" xml:space="preserve">
     <value>Rolü Sil</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>Siteyi Sil</value>
   </data>
   <data name="Delete User" xml:space="preserve">
     <value>Kullanıcıyı Sil</value>
@@ -69,6 +84,12 @@
   <data name="Edit Role" xml:space="preserve">
     <value>Rolü Düzenle</value>
   </data>
+  <data name="Edit Site Settings" xml:space="preserve">
+    <value>Site Ayarlarını Düzenle</value>
+  </data>
+  <data name="Edit Site Storage Limit" xml:space="preserve">
+    <value>Site Depolama Sınırını Düzenle</value>
+  </data>
   <data name="Edit User" xml:space="preserve">
     <value>Kullanıcıyı Düzenle</value>
   </data>
@@ -78,8 +99,14 @@
   <data name="Explore" xml:space="preserve">
     <value>Keşfet</value>
   </data>
+  <data name="Explore Public Sites" xml:space="preserve">
+    <value>Kamu Sitelerini Keşfet</value>
+  </data>
   <data name="Features" xml:space="preserve">
     <value>Özellikler</value>
+  </data>
+  <data name="File Manager" xml:space="preserve">
+    <value>Dosya Yöneticisi</value>
   </data>
   <data name="Global Settings" xml:space="preserve">
     <value>Genel Ayarlar</value>
@@ -93,6 +120,12 @@
   <data name="Info" xml:space="preserve">
     <value>Bilgi</value>
   </data>
+  <data name="Internal Server Error" xml:space="preserve">
+    <value>İç Sunucu Hatası</value>
+  </data>
+  <data name="Lockout" xml:space="preserve">
+    <value>Kilitleme</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Giriş Yap</value>
   </data>
@@ -102,8 +135,17 @@
   <data name="Manage" xml:space="preserve">
     <value>Yönet</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>Paylaşımları Yönet</value>
+  </data>
   <data name="My Drive" xml:space="preserve">
     <value>Benim Sürücüm</value>
+  </data>
+  <data name="Not Found" xml:space="preserve">
+    <value>Bulunamadı</value>
+  </data>
+  <data name="Permission Details" xml:space="preserve">
+    <value>İzin Detayları</value>
   </data>
   <data name="Permissions" xml:space="preserve">
     <value>İzinler</value>

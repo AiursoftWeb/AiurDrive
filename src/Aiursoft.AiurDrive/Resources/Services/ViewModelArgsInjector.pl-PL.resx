@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Admin" xml:space="preserve">
+      <data name="Access Denied" xml:space="preserve">
+    <value>Dostęp zabroniony</value>
+  </data>
+  <data name="Admin" xml:space="preserve">
     <value>Administrator</value>
   </data>
   <data name="Administration" xml:space="preserve">
@@ -39,6 +42,9 @@
   <data name="Background Jobs" xml:space="preserve">
     <value>Zadania w tle</value>
   </data>
+  <data name="Bad Request" xml:space="preserve">
+    <value>Błędne żądanie</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>Zmień awatar</value>
   </data>
@@ -51,14 +57,23 @@
   <data name="Click to login" xml:space="preserve">
     <value>Kliknij, aby się zalogować</value>
   </data>
+  <data name="Create New Site" xml:space="preserve">
+    <value>Utwórz nową witrynę</value>
+  </data>
   <data name="Create Role" xml:space="preserve">
     <value>Utwórz rolę</value>
   </data>
   <data name="Create User" xml:space="preserve">
     <value>Utwórz użytkownika</value>
   </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Panel sterowania</value>
+  </data>
   <data name="Delete Role" xml:space="preserve">
     <value>Usuń rolę</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>Usuń witrynę</value>
   </data>
   <data name="Delete User" xml:space="preserve">
     <value>Usuń użytkownika</value>
@@ -69,6 +84,12 @@
   <data name="Edit Role" xml:space="preserve">
     <value>Edytuj rolę</value>
   </data>
+  <data name="Edit Site Settings" xml:space="preserve">
+    <value>Edytuj ustawienia witryny</value>
+  </data>
+  <data name="Edit Site Storage Limit" xml:space="preserve">
+    <value>Edytuj limit przechowywania danych witryny</value>
+  </data>
   <data name="Edit User" xml:space="preserve">
     <value>Edytuj użytkownika</value>
   </data>
@@ -78,8 +99,14 @@
   <data name="Explore" xml:space="preserve">
     <value>Przeglądaj</value>
   </data>
+  <data name="Explore Public Sites" xml:space="preserve">
+    <value>Przeglądaj publiczne strony</value>
+  </data>
   <data name="Features" xml:space="preserve">
     <value>Funkcje</value>
+  </data>
+  <data name="File Manager" xml:space="preserve">
+    <value>Menadżer plików</value>
   </data>
   <data name="Global Settings" xml:space="preserve">
     <value>Ustawienia globalne</value>
@@ -93,6 +120,12 @@
   <data name="Info" xml:space="preserve">
     <value>Informacje</value>
   </data>
+  <data name="Internal Server Error" xml:space="preserve">
+    <value>Wewnętrzny błąd serwera</value>
+  </data>
+  <data name="Lockout" xml:space="preserve">
+    <value>Blokada</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Zaloguj się</value>
   </data>
@@ -102,8 +135,17 @@
   <data name="Manage" xml:space="preserve">
     <value>Zarządzaj</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>Zarządzaj udostępnieniami</value>
+  </data>
   <data name="My Drive" xml:space="preserve">
     <value>Mój dysk</value>
+  </data>
+  <data name="Not Found" xml:space="preserve">
+    <value>Nie znaleziono</value>
+  </data>
+  <data name="Permission Details" xml:space="preserve">
+    <value>Szczegóły uprawnień</value>
   </data>
   <data name="Permissions" xml:space="preserve">
     <value>Uprawnienia</value>

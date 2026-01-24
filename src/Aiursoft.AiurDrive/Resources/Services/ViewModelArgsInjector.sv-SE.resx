@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Admin" xml:space="preserve">
+      <data name="Access Denied" xml:space="preserve">
+    <value>Åtkomst nekad</value>
+  </data>
+  <data name="Admin" xml:space="preserve">
     <value>Administratör</value>
   </data>
   <data name="Administration" xml:space="preserve">
@@ -39,6 +42,9 @@
   <data name="Background Jobs" xml:space="preserve">
     <value>Bakgrundsjobb</value>
   </data>
+  <data name="Bad Request" xml:space="preserve">
+    <value>Felaktig begäran</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>Byt avatar</value>
   </data>
@@ -51,14 +57,23 @@
   <data name="Click to login" xml:space="preserve">
     <value>Klicka för att logga in</value>
   </data>
+  <data name="Create New Site" xml:space="preserve">
+    <value>Skapa ny plats</value>
+  </data>
   <data name="Create Role" xml:space="preserve">
     <value>Skapa roll</value>
   </data>
   <data name="Create User" xml:space="preserve">
     <value>Skapa användare</value>
   </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Instrumentbräda</value>
+  </data>
   <data name="Delete Role" xml:space="preserve">
     <value>Ta bort roll</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>Ta bort plats</value>
   </data>
   <data name="Delete User" xml:space="preserve">
     <value>Ta bort användare</value>
@@ -69,6 +84,12 @@
   <data name="Edit Role" xml:space="preserve">
     <value>Redigera roll</value>
   </data>
+  <data name="Edit Site Settings" xml:space="preserve">
+    <value>Redigera platsinställningar</value>
+  </data>
+  <data name="Edit Site Storage Limit" xml:space="preserve">
+    <value>Redigera platsens lagringsgräns</value>
+  </data>
   <data name="Edit User" xml:space="preserve">
     <value>Redigera användare</value>
   </data>
@@ -78,8 +99,14 @@
   <data name="Explore" xml:space="preserve">
     <value>Utforska</value>
   </data>
+  <data name="Explore Public Sites" xml:space="preserve">
+    <value>Utforska offentliga sidor</value>
+  </data>
   <data name="Features" xml:space="preserve">
     <value>Funktioner</value>
+  </data>
+  <data name="File Manager" xml:space="preserve">
+    <value>Filhanterare</value>
   </data>
   <data name="Global Settings" xml:space="preserve">
     <value>Globala inställningar</value>
@@ -93,6 +120,12 @@
   <data name="Info" xml:space="preserve">
     <value>Information</value>
   </data>
+  <data name="Internal Server Error" xml:space="preserve">
+    <value>Internt serverfel</value>
+  </data>
+  <data name="Lockout" xml:space="preserve">
+    <value>Låsning</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Logga in</value>
   </data>
@@ -102,8 +135,17 @@
   <data name="Manage" xml:space="preserve">
     <value>Hantera</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>Hantera delningar</value>
+  </data>
   <data name="My Drive" xml:space="preserve">
     <value>Mitt driv</value>
+  </data>
+  <data name="Not Found" xml:space="preserve">
+    <value>Sidan kunde inte hittas</value>
+  </data>
+  <data name="Permission Details" xml:space="preserve">
+    <value>Behörighetsdetaljer</value>
   </data>
   <data name="Permissions" xml:space="preserve">
     <value>Behörigheter</value>
