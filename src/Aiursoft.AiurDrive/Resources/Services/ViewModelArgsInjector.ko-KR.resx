@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Account Settings" xml:space="preserve">
+      <data name="Access Denied" xml:space="preserve">
+    <value>접근 거부됨</value>
+  </data>
+  <data name="Account Settings" xml:space="preserve">
     <value>계정 설정</value>
   </data>
   <data name="Admin" xml:space="preserve">
@@ -42,6 +45,9 @@
   <data name="Background Jobs" xml:space="preserve">
     <value>백그라운드 작업</value>
   </data>
+  <data name="Bad Request" xml:space="preserve">
+    <value>잘못된 요청</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>아바타 변경</value>
   </data>
@@ -54,14 +60,23 @@
   <data name="Click to login" xml:space="preserve">
     <value>로그인하려면 클릭</value>
   </data>
+  <data name="Create New Site" xml:space="preserve">
+    <value>새 사이트 만들기</value>
+  </data>
   <data name="Create Role" xml:space="preserve">
     <value>역할 생성</value>
   </data>
   <data name="Create User" xml:space="preserve">
     <value>사용자 생성</value>
   </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>대시보드</value>
+  </data>
   <data name="Delete Role" xml:space="preserve">
     <value>역할 삭제</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>사이트 삭제</value>
   </data>
   <data name="Delete User" xml:space="preserve">
     <value>사용자 삭제</value>
@@ -72,6 +87,12 @@
   <data name="Edit Role" xml:space="preserve">
     <value>역할 편집</value>
   </data>
+  <data name="Edit Site Settings" xml:space="preserve">
+    <value>사이트 설정 편집</value>
+  </data>
+  <data name="Edit Site Storage Limit" xml:space="preserve">
+    <value>사이트 스토리지 한도 편집</value>
+  </data>
   <data name="Edit User" xml:space="preserve">
     <value>사용자 편집</value>
   </data>
@@ -81,8 +102,14 @@
   <data name="Explore" xml:space="preserve">
     <value>탐색</value>
   </data>
+  <data name="Explore Public Sites" xml:space="preserve">
+    <value>공개 사이트 탐색</value>
+  </data>
   <data name="Features" xml:space="preserve">
     <value>기능</value>
+  </data>
+  <data name="File Manager" xml:space="preserve">
+    <value>파일 관리자</value>
   </data>
   <data name="Global Settings" xml:space="preserve">
     <value>전역 설정</value>
@@ -96,6 +123,12 @@
   <data name="Info" xml:space="preserve">
     <value>정보</value>
   </data>
+  <data name="Internal Server Error" xml:space="preserve">
+    <value>내부 서버 오류</value>
+  </data>
+  <data name="Lockout" xml:space="preserve">
+    <value>잠금 해제</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>로그인</value>
   </data>
@@ -105,8 +138,17 @@
   <data name="Manage" xml:space="preserve">
     <value>관리</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>공유 관리</value>
+  </data>
   <data name="My Drive" xml:space="preserve">
     <value>내 드라이브</value>
+  </data>
+  <data name="Not Found" xml:space="preserve">
+    <value>찾을 수 없음</value>
+  </data>
+  <data name="Permission Details" xml:space="preserve">
+    <value>권한 세부 정보</value>
   </data>
   <data name="Permissions" xml:space="preserve">
     <value>권한</value>

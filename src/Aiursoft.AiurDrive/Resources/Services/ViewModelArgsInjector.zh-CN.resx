@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Account Settings" xml:space="preserve">
+      <data name="Access Denied" xml:space="preserve">
+    <value>访问被拒绝</value>
+  </data>
+  <data name="Account Settings" xml:space="preserve">
     <value>账户设置</value>
   </data>
   <data name="Admin" xml:space="preserve">
@@ -42,6 +45,9 @@
   <data name="Background Jobs" xml:space="preserve">
     <value>后台任务</value>
   </data>
+  <data name="Bad Request" xml:space="preserve">
+    <value>错误的请求</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>更换头像</value>
   </data>
@@ -54,14 +60,23 @@
   <data name="Click to login" xml:space="preserve">
     <value>点击登录</value>
   </data>
+  <data name="Create New Site" xml:space="preserve">
+    <value>创建新站点</value>
+  </data>
   <data name="Create Role" xml:space="preserve">
     <value>创建角色</value>
   </data>
   <data name="Create User" xml:space="preserve">
     <value>创建用户</value>
   </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>仪表盘</value>
+  </data>
   <data name="Delete Role" xml:space="preserve">
     <value>删除角色</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>删除站点</value>
   </data>
   <data name="Delete User" xml:space="preserve">
     <value>删除用户</value>
@@ -72,6 +87,12 @@
   <data name="Edit Role" xml:space="preserve">
     <value>编辑角色</value>
   </data>
+  <data name="Edit Site Settings" xml:space="preserve">
+    <value>编辑站点设置</value>
+  </data>
+  <data name="Edit Site Storage Limit" xml:space="preserve">
+    <value>编辑站点存储限制</value>
+  </data>
   <data name="Edit User" xml:space="preserve">
     <value>编辑用户</value>
   </data>
@@ -81,8 +102,14 @@
   <data name="Explore" xml:space="preserve">
     <value>探索</value>
   </data>
+  <data name="Explore Public Sites" xml:space="preserve">
+    <value>探索公共站点</value>
+  </data>
   <data name="Features" xml:space="preserve">
     <value>功能</value>
+  </data>
+  <data name="File Manager" xml:space="preserve">
+    <value>文件管理器</value>
   </data>
   <data name="Global Settings" xml:space="preserve">
     <value>全局设置</value>
@@ -96,6 +123,12 @@
   <data name="Info" xml:space="preserve">
     <value>信息</value>
   </data>
+  <data name="Internal Server Error" xml:space="preserve">
+    <value>内部服务器错误</value>
+  </data>
+  <data name="Lockout" xml:space="preserve">
+    <value>账户锁定</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>登录</value>
   </data>
@@ -105,8 +138,17 @@
   <data name="Manage" xml:space="preserve">
     <value>管理</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>管理共享</value>
+  </data>
   <data name="My Drive" xml:space="preserve">
     <value>我的网盘</value>
+  </data>
+  <data name="Not Found" xml:space="preserve">
+    <value>未找到</value>
+  </data>
+  <data name="Permission Details" xml:space="preserve">
+    <value>权限详情</value>
   </data>
   <data name="Permissions" xml:space="preserve">
     <value>权限</value>

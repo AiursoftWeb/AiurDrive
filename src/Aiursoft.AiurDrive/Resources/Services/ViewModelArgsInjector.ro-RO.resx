@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Admin" xml:space="preserve">
+      <data name="Access Denied" xml:space="preserve">
+    <value>Acces interzis</value>
+  </data>
+  <data name="Admin" xml:space="preserve">
     <value>Administrator</value>
   </data>
   <data name="Administration" xml:space="preserve">
@@ -39,6 +42,9 @@
   <data name="Background Jobs" xml:space="preserve">
     <value>Joburi în fundal</value>
   </data>
+  <data name="Bad Request" xml:space="preserve">
+    <value>Cerere invalidă</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>Schimbă Avatarul</value>
   </data>
@@ -51,14 +57,23 @@
   <data name="Click to login" xml:space="preserve">
     <value>Apasă pentru a te autentifica</value>
   </data>
+  <data name="Create New Site" xml:space="preserve">
+    <value>Crează un site nou</value>
+  </data>
   <data name="Create Role" xml:space="preserve">
     <value>Creează Rol</value>
   </data>
   <data name="Create User" xml:space="preserve">
     <value>Creează utilizator</value>
   </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Panou de control</value>
+  </data>
   <data name="Delete Role" xml:space="preserve">
     <value>Șterge Rol</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>Șterge Site-ul</value>
   </data>
   <data name="Delete User" xml:space="preserve">
     <value>Șterge utilizator</value>
@@ -69,6 +84,12 @@
   <data name="Edit Role" xml:space="preserve">
     <value>Editează Rol</value>
   </data>
+  <data name="Edit Site Settings" xml:space="preserve">
+    <value>Editare setări site</value>
+  </data>
+  <data name="Edit Site Storage Limit" xml:space="preserve">
+    <value>Editare limită stocare site</value>
+  </data>
   <data name="Edit User" xml:space="preserve">
     <value>Editează Utilizator</value>
   </data>
@@ -78,8 +99,14 @@
   <data name="Explore" xml:space="preserve">
     <value>Exploră</value>
   </data>
+  <data name="Explore Public Sites" xml:space="preserve">
+    <value>Exploră site-uri publice</value>
+  </data>
   <data name="Features" xml:space="preserve">
     <value>Caracteristici</value>
+  </data>
+  <data name="File Manager" xml:space="preserve">
+    <value>Manager fișiere</value>
   </data>
   <data name="Global Settings" xml:space="preserve">
     <value>Setări globale</value>
@@ -93,6 +120,12 @@
   <data name="Info" xml:space="preserve">
     <value>Informații</value>
   </data>
+  <data name="Internal Server Error" xml:space="preserve">
+    <value>Eroare interne a serverului</value>
+  </data>
+  <data name="Lockout" xml:space="preserve">
+    <value>Blocare</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Autentificare</value>
   </data>
@@ -102,8 +135,17 @@
   <data name="Manage" xml:space="preserve">
     <value>Gestionează</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>Gestionare împărtășiri</value>
+  </data>
   <data name="My Drive" xml:space="preserve">
     <value>Drive-ul meu</value>
+  </data>
+  <data name="Not Found" xml:space="preserve">
+    <value>Nu a fost găsit</value>
+  </data>
+  <data name="Permission Details" xml:space="preserve">
+    <value>Detalii permisiuni</value>
   </data>
   <data name="Permissions" xml:space="preserve">
     <value>Permisiuni</value>

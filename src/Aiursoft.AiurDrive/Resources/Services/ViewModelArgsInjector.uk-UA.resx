@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Admin" xml:space="preserve">
+      <data name="Access Denied" xml:space="preserve">
+    <value>Доступ заборонено</value>
+  </data>
+  <data name="Admin" xml:space="preserve">
     <value>Адмін</value>
   </data>
   <data name="Administration" xml:space="preserve">
@@ -39,6 +42,9 @@
   <data name="Background Jobs" xml:space="preserve">
     <value>Фонові завдання</value>
   </data>
+  <data name="Bad Request" xml:space="preserve">
+    <value>Помилковий запит</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>Змінити аватар</value>
   </data>
@@ -51,14 +57,23 @@
   <data name="Click to login" xml:space="preserve">
     <value>Натисніть, щоб увійти</value>
   </data>
+  <data name="Create New Site" xml:space="preserve">
+    <value>Створити новий сайт</value>
+  </data>
   <data name="Create Role" xml:space="preserve">
     <value>Створити роль</value>
   </data>
   <data name="Create User" xml:space="preserve">
     <value>Створити користувача</value>
   </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Панель керування</value>
+  </data>
   <data name="Delete Role" xml:space="preserve">
     <value>Видалити роль</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>Видалити сайт</value>
   </data>
   <data name="Delete User" xml:space="preserve">
     <value>Видалити користувача</value>
@@ -69,6 +84,12 @@
   <data name="Edit Role" xml:space="preserve">
     <value>Редагувати роль</value>
   </data>
+  <data name="Edit Site Settings" xml:space="preserve">
+    <value>Редагувати параметри сайту</value>
+  </data>
+  <data name="Edit Site Storage Limit" xml:space="preserve">
+    <value>Редагувати межу зберігання сайту</value>
+  </data>
   <data name="Edit User" xml:space="preserve">
     <value>Редагувати користувача</value>
   </data>
@@ -78,8 +99,14 @@
   <data name="Explore" xml:space="preserve">
     <value>Переглянути</value>
   </data>
+  <data name="Explore Public Sites" xml:space="preserve">
+    <value>Переглянути публічні сайти</value>
+  </data>
   <data name="Features" xml:space="preserve">
     <value>Функції</value>
+  </data>
+  <data name="File Manager" xml:space="preserve">
+    <value>Менеджер файлів</value>
   </data>
   <data name="Global Settings" xml:space="preserve">
     <value>Глобальні налаштування</value>
@@ -93,6 +120,12 @@
   <data name="Info" xml:space="preserve">
     <value>Інформація</value>
   </data>
+  <data name="Internal Server Error" xml:space="preserve">
+    <value>Помилка внутрішнього сервера</value>
+  </data>
+  <data name="Lockout" xml:space="preserve">
+    <value>Блокування</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Увійти</value>
   </data>
@@ -102,8 +135,17 @@
   <data name="Manage" xml:space="preserve">
     <value>Керування</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>Керування спільними доступами</value>
+  </data>
   <data name="My Drive" xml:space="preserve">
     <value>Мій накопичувач</value>
+  </data>
+  <data name="Not Found" xml:space="preserve">
+    <value>Не знайдено</value>
+  </data>
+  <data name="Permission Details" xml:space="preserve">
+    <value>Деталі дозволів</value>
   </data>
   <data name="Permissions" xml:space="preserve">
     <value>Дозволи</value>

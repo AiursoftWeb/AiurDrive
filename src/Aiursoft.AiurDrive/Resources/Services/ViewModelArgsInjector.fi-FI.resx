@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Admin" xml:space="preserve">
+      <data name="Access Denied" xml:space="preserve">
+    <value>Pääsy estetty</value>
+  </data>
+  <data name="Admin" xml:space="preserve">
     <value>Ylläpitäjä</value>
   </data>
   <data name="Administration" xml:space="preserve">
@@ -39,6 +42,9 @@
   <data name="Background Jobs" xml:space="preserve">
     <value>Taustatehtävät</value>
   </data>
+  <data name="Bad Request" xml:space="preserve">
+    <value>Väärä pyyntö</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>Vaihda avataria</value>
   </data>
@@ -51,14 +57,23 @@
   <data name="Click to login" xml:space="preserve">
     <value>Klikkaa kirjautuaksesi</value>
   </data>
+  <data name="Create New Site" xml:space="preserve">
+    <value>Luo uusi sivusto</value>
+  </data>
   <data name="Create Role" xml:space="preserve">
     <value>Luo rooli</value>
   </data>
   <data name="Create User" xml:space="preserve">
     <value>Luo käyttäjä</value>
   </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Hallintapaneeli</value>
+  </data>
   <data name="Delete Role" xml:space="preserve">
     <value>Poista rooli</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>Poista sivu</value>
   </data>
   <data name="Delete User" xml:space="preserve">
     <value>Poista käyttäjä</value>
@@ -69,6 +84,12 @@
   <data name="Edit Role" xml:space="preserve">
     <value>Muokkaa roolia</value>
   </data>
+  <data name="Edit Site Settings" xml:space="preserve">
+    <value>Muokkaa sivuston asetuksia</value>
+  </data>
+  <data name="Edit Site Storage Limit" xml:space="preserve">
+    <value>Muokkaa sivuston tallennustilan rajoitusta</value>
+  </data>
   <data name="Edit User" xml:space="preserve">
     <value>Muokkaa käyttäjää</value>
   </data>
@@ -78,8 +99,14 @@
   <data name="Explore" xml:space="preserve">
     <value>Selaa</value>
   </data>
+  <data name="Explore Public Sites" xml:space="preserve">
+    <value>Tutustu julkaistuihin sivustoihin</value>
+  </data>
   <data name="Features" xml:space="preserve">
     <value>Ominaisuudet</value>
+  </data>
+  <data name="File Manager" xml:space="preserve">
+    <value>Tiedostoselain</value>
   </data>
   <data name="Global Settings" xml:space="preserve">
     <value>Yleiset asetukset</value>
@@ -93,6 +120,12 @@
   <data name="Info" xml:space="preserve">
     <value>Tiedot</value>
   </data>
+  <data name="Internal Server Error" xml:space="preserve">
+    <value>Sisäinen palvelinvirhe</value>
+  </data>
+  <data name="Lockout" xml:space="preserve">
+    <value>Lukitus</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Kirjaudu</value>
   </data>
@@ -102,8 +135,17 @@
   <data name="Manage" xml:space="preserve">
     <value>Hallinnoi</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>Hallinnoi jaettuja</value>
+  </data>
   <data name="My Drive" xml:space="preserve">
     <value>Oma levy</value>
+  </data>
+  <data name="Not Found" xml:space="preserve">
+    <value>Ei löytynyt</value>
+  </data>
+  <data name="Permission Details" xml:space="preserve">
+    <value>Oikeuksien tiedot</value>
   </data>
   <data name="Permissions" xml:space="preserve">
     <value>Oikeudet</value>

@@ -75,6 +75,23 @@ public class ViewModelArgsInjector(
         _ = localizer["Shared with me"];
     
         _ = localizer["Sites Management"];
+    
+        _ = localizer["Access Denied"];
+        _ = localizer["Bad Request"];
+        _ = localizer["Create New Site"];
+        _ = localizer["Dashboard"];
+        _ = localizer["Delete Site"];
+        _ = localizer["Edit Site Settings"];
+        _ = localizer["Edit Site Storage Limit"];
+        _ = localizer["Explore Public Sites"];
+        _ = localizer["File Manager"];
+        _ = localizer["Internal Server Error"];
+        _ = localizer["Lockout"];
+        _ = localizer["Manage Shares"];
+        _ = localizer["Not Found"];
+        _ = localizer["Permission Details"];
+        _ = localizer["Register"];
+        _ = localizer["Shared with Me"];
     }
 
     public void InjectSimple(

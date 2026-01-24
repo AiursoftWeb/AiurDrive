@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Admin" xml:space="preserve">
+      <data name="Access Denied" xml:space="preserve">
+    <value>Πρόσβαση απαγορεύεται</value>
+  </data>
+  <data name="Admin" xml:space="preserve">
     <value>Διαχειριστής</value>
   </data>
   <data name="Administration" xml:space="preserve">
@@ -39,6 +42,9 @@
   <data name="Background Jobs" xml:space="preserve">
     <value>Ημικυκλικές Εργασίες</value>
   </data>
+  <data name="Bad Request" xml:space="preserve">
+    <value>Λάθος Αίτημα</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>Αλλαγή Avatar</value>
   </data>
@@ -51,14 +57,23 @@
   <data name="Click to login" xml:space="preserve">
     <value>Κάντε κλικ για σύνδεση</value>
   </data>
+  <data name="Create New Site" xml:space="preserve">
+    <value>Δημιουργία Νέου Ιστότοπου</value>
+  </data>
   <data name="Create Role" xml:space="preserve">
     <value>Δημιουργία Ρόλου</value>
   </data>
   <data name="Create User" xml:space="preserve">
     <value>Δημιουργία Χρήστη</value>
   </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Πίνακας ελέγχου</value>
+  </data>
   <data name="Delete Role" xml:space="preserve">
     <value>Διαγραφή Ρόλου</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>Διαγραφή Ιστοσελίδας</value>
   </data>
   <data name="Delete User" xml:space="preserve">
     <value>Διαγραφή Χρήστη</value>
@@ -69,6 +84,12 @@
   <data name="Edit Role" xml:space="preserve">
     <value>Επεξεργασία Ρόλου</value>
   </data>
+  <data name="Edit Site Settings" xml:space="preserve">
+    <value>Επεξεργασία Ρυθμίσεων Ιστότοπου</value>
+  </data>
+  <data name="Edit Site Storage Limit" xml:space="preserve">
+    <value>Επεξεργασία Ορίου Αποθήκευσης Ιστότοπου</value>
+  </data>
   <data name="Edit User" xml:space="preserve">
     <value>Επεξεργασία Χρήστη</value>
   </data>
@@ -78,8 +99,14 @@
   <data name="Explore" xml:space="preserve">
     <value>Εξερεύνηση</value>
   </data>
+  <data name="Explore Public Sites" xml:space="preserve">
+    <value>Εξερεύνηση Δημόσιων Ιστοσελίδων</value>
+  </data>
   <data name="Features" xml:space="preserve">
     <value>Λειτουργίες</value>
+  </data>
+  <data name="File Manager" xml:space="preserve">
+    <value>Διαχειριστής Αρχείων</value>
   </data>
   <data name="Global Settings" xml:space="preserve">
     <value>Καθολικές Ρυθμίσεις</value>
@@ -93,6 +120,12 @@
   <data name="Info" xml:space="preserve">
     <value>Πληροφορίες</value>
   </data>
+  <data name="Internal Server Error" xml:space="preserve">
+    <value>Εσωτερικό Σφάλμα Διακομιστή</value>
+  </data>
+  <data name="Lockout" xml:space="preserve">
+    <value>Μπλοκάρισμα</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Σύνδεση</value>
   </data>
@@ -102,8 +135,17 @@
   <data name="Manage" xml:space="preserve">
     <value>Διαχείριση</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>Διαχείριση Μοιρασμένων</value>
+  </data>
   <data name="My Drive" xml:space="preserve">
     <value>Το δικό μου Drive</value>
+  </data>
+  <data name="Not Found" xml:space="preserve">
+    <value>Δεν βρέθηκε</value>
+  </data>
+  <data name="Permission Details" xml:space="preserve">
+    <value>Λεπτομέρειες Άδειας</value>
   </data>
   <data name="Permissions" xml:space="preserve">
     <value>Άδειες</value>

@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Account Settings" xml:space="preserve">
+      <data name="Access Denied" xml:space="preserve">
+    <value>Truy cập bị từ chối</value>
+  </data>
+  <data name="Account Settings" xml:space="preserve">
     <value>Cài đặt Tài khoản</value>
   </data>
   <data name="Admin" xml:space="preserve">
@@ -42,6 +45,9 @@
   <data name="Background Jobs" xml:space="preserve">
     <value>Các nhiệm vụ nền</value>
   </data>
+  <data name="Bad Request" xml:space="preserve">
+    <value>Yêu cầu sai</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>Thay đổi Ảnh đại diện</value>
   </data>
@@ -54,14 +60,23 @@
   <data name="Click to login" xml:space="preserve">
     <value>Nhấp để đăng nhập</value>
   </data>
+  <data name="Create New Site" xml:space="preserve">
+    <value>Tạo trang web mới</value>
+  </data>
   <data name="Create Role" xml:space="preserve">
     <value>Tạo Vai Trò</value>
   </data>
   <data name="Create User" xml:space="preserve">
     <value>Tạo Người Dùng</value>
   </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Bảng điều khiển</value>
+  </data>
   <data name="Delete Role" xml:space="preserve">
     <value>Xóa Vai trò</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>Xóa trang web</value>
   </data>
   <data name="Delete User" xml:space="preserve">
     <value>Xóa Người Dùng</value>
@@ -72,6 +87,12 @@
   <data name="Edit Role" xml:space="preserve">
     <value>Chỉnh sửa Vai trò</value>
   </data>
+  <data name="Edit Site Settings" xml:space="preserve">
+    <value>Chỉnh sửa cài đặt trang web</value>
+  </data>
+  <data name="Edit Site Storage Limit" xml:space="preserve">
+    <value>Chỉnh sửa giới hạn dung lượng lưu trữ trang web</value>
+  </data>
   <data name="Edit User" xml:space="preserve">
     <value>Chỉnh sửa Người dùng</value>
   </data>
@@ -81,8 +102,14 @@
   <data name="Explore" xml:space="preserve">
     <value>Duyệt</value>
   </data>
+  <data name="Explore Public Sites" xml:space="preserve">
+    <value>Khám phá các trang web công khai</value>
+  </data>
   <data name="Features" xml:space="preserve">
     <value>Tính năng</value>
+  </data>
+  <data name="File Manager" xml:space="preserve">
+    <value>Quản lý tập tin</value>
   </data>
   <data name="Global Settings" xml:space="preserve">
     <value>Cài đặt chung</value>
@@ -96,6 +123,12 @@
   <data name="Info" xml:space="preserve">
     <value>Thông tin</value>
   </data>
+  <data name="Internal Server Error" xml:space="preserve">
+    <value>Lỗi máy chủ nội bộ</value>
+  </data>
+  <data name="Lockout" xml:space="preserve">
+    <value>Khóa tài khoản</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Đăng nhập</value>
   </data>
@@ -105,8 +138,17 @@
   <data name="Manage" xml:space="preserve">
     <value>Quản lý</value>
   </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>Quản lý chia sẻ</value>
+  </data>
   <data name="My Drive" xml:space="preserve">
     <value>My Drive</value>
+  </data>
+  <data name="Not Found" xml:space="preserve">
+    <value>Không tìm thấy</value>
+  </data>
+  <data name="Permission Details" xml:space="preserve">
+    <value>Chi tiết quyền truy cập</value>
   </data>
   <data name="Permissions" xml:space="preserve">
     <value>Quyền hạn</value>
