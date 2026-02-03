@@ -10,5 +10,6 @@ public class FileUploadViewModel
     public required string? AllowedExtensions { get; init; }
     public bool IsVault { get; init; }
     public string? OnUploadSuccess { get; init; }
+    public string? FieldName { get; init; }
     public string UniqueId { get; } = "uploader-" + Guid.NewGuid().ToString("N");
 }
