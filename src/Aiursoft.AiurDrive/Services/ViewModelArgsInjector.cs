@@ -26,6 +26,7 @@ namespace Aiursoft.AiurDrive.Services;
 public class ViewModelArgsInjector(
     IStringLocalizer<ViewModelArgsInjector> localizer,
     StorageService storageService,
+    GlobalSettingsService globalSettingsService,
     NavigationState<Startup> navigationState,
     IAuthorizationService authorizationService,
     IOptions<AppSettings> appSettings,
@@ -198,8 +199,8 @@ public class ViewModelArgsInjector(
         {
             SideLogo = new SideLogoViewModel
             {
-                AppName = localizer["Aiursoft AiurDrive"],
-                LogoUrl = "/logo.svg",
+                AppName = projectName,
+                LogoUrl = GetLogoUrl(context).GetAwaiter().GetResult(),
                 Href = "/"
             },
             SideMenu = new SideMenuViewModel
@@ -301,5 +302,16 @@ public class ViewModelArgsInjector(
                 ]
             };
         }
+    }
+
+
+    private async Task<string> GetLogoUrl(HttpContext context)
+    {
+        var logoPath = await globalSettingsService.GetSettingValueAsync("ProjectLogo");
+        if (string.IsNullOrWhiteSpace(logoPath))
+        {
+            return "/logo.svg";
+        }
+        return storageService.RelativePathToInternetUrl(logoPath, context);
     }
 }

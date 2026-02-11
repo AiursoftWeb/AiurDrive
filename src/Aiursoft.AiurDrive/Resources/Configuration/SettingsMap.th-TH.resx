@@ -30,6 +30,12 @@
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>อนุญาตให้ผู้ใช้ปรับชื่อเล่นของตนเองได้ในหน้าจัดการโปรไฟล์</value>
   </data>
+  <data name="Brand Home URL" xml:space="preserve">
+    <value>URL หน้าหลักของแบรนด์</value>
+  </data>
+  <data name="Brand Name" xml:space="preserve">
+    <value>ชื่อแบรนด์</value>
+  </data>
   <data name="Max Site Storage In GB" xml:space="preserve">
     <value>สูงสุด ขนาดเก็บข้อมูลของไซต์ ในหน่วย GB</value>
   </data>
@@ -41,6 +47,24 @@
   </data>
   <data name="Maximum number of sites each user can create." xml:space="preserve">
     <value>จำนวนสูงสุดของไซต์ที่ผู้ใช้แต่ละคนสามารถสร้างได้</value>
+  </data>
+  <data name="Project Logo" xml:space="preserve">
+    <value>โลโก้โครงการ</value>
+  </data>
+  <data name="Project Name" xml:space="preserve">
+    <value>ชื่อโปรเจกต์</value>
+  </data>
+  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
+    <value>ชื่อแบรนด์ของบริษัทหรือโครงการ เช่น Aiursoft</value>
+  </data>
+  <data name="The logo of the project displayed in the navbar and footer. Support jpg, png, svg." xml:space="preserve">
+    <value>โลโก้ของโครงการที่แสดงในแถบนำทางและส่วนท้าย รองรับไฟล์ jpg, png, svg</value>
+  </data>
+  <data name="The name of the project displayed in the frontend." xml:space="preserve">
+    <value>ชื่อโปรเจกต์ที่แสดงในส่วนหน้าเว็บไซต์</value>
+  </data>
+  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
+    <value>URL ของบริษัทหรือโปรเจกต์ ตัวอย่างเช่น https://www.aiursoft.com</value>
   </data>
 
 </root>
