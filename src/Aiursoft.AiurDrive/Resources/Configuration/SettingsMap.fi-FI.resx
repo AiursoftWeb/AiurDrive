@@ -30,6 +30,12 @@
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>Salli käyttäjien muuttaa nimimerkkiään profiilin hallintasivulla.</value>
   </data>
+  <data name="Brand Home URL" xml:space="preserve">
+    <value>Brändin kotisivun URL</value>
+  </data>
+  <data name="Brand Name" xml:space="preserve">
+    <value>Brändinimi</value>
+  </data>
   <data name="Max Site Storage In GB" xml:space="preserve">
     <value>Suurin sivuston tallennustila GB:ssa</value>
   </data>
@@ -41,6 +47,24 @@
   </data>
   <data name="Maximum number of sites each user can create." xml:space="preserve">
     <value>Maksimimäärä sivustoja, joita jokainen käyttäjä voi luoda.</value>
+  </data>
+  <data name="Project Logo" xml:space="preserve">
+    <value>Projektin logo</value>
+  </data>
+  <data name="Project Name" xml:space="preserve">
+    <value>Projektin nimi</value>
+  </data>
+  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
+    <value>Yrityksen tai projektin brändin nimi. Esim. Aiursoft.</value>
+  </data>
+  <data name="The logo of the project displayed in the navbar and footer. Support jpg, png, svg." xml:space="preserve">
+    <value>Projektin logo näytetään navigointipalkissa ja alatunnisteessa. Tuetut muodot: jpg, png, svg.</value>
+  </data>
+  <data name="The name of the project displayed in the frontend." xml:space="preserve">
+    <value>Projektin nimi, joka näytetään etusivulla.</value>
+  </data>
+  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
+    <value>Yrityksen tai projektin verkkosivuston osoite. Esim. https://www.aiursoft.com</value>
   </data>
 
 </root>
