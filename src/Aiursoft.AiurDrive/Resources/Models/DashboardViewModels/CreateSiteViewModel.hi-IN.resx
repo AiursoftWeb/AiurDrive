@@ -21,6 +21,9 @@
       <data name="Allow anonymous viewing" xml:space="preserve">
     <value>अनाम प्रदर्शन की अनुमति दें</value>
   </data>
+  <data name="Description" xml:space="preserve">
+    <value>विवरण</value>
+  </data>
   <data name="New Site Name" xml:space="preserve">
     <value>नया साइट नाम</value>
   </data>
@@ -32,6 +35,9 @@
   </data>
   <data name="Storage Type" xml:space="preserve">
     <value>स्टोरेज प्रकार</value>
+  </data>
+  <data name="The {0} must be at max {1} characters long." xml:space="preserve">
+    <value>{0} के अधिकतम {1} अक्षरों के लंबे होने की आवश्यकता है।</value>
   </data>
 
 </root>

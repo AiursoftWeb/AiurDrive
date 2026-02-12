@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Role Name" xml:space="preserve">
+      <data name="Role ID" xml:space="preserve">
+    <value>Rolle-ID</value>
+  </data>
+  <data name="Role Name" xml:space="preserve">
     <value>Rollenavn</value>
   </data>
   <data name="The {0} is required." xml:space="preserve">

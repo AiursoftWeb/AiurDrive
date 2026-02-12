@@ -27,14 +27,23 @@
   <data name="Password" xml:space="preserve">
     <value>Пароль</value>
   </data>
+  <data name="The {0} is not a valid domain name." xml:space="preserve">
+    <value>{0} не є дійсним ім&apos;ям домену.</value>
+  </data>
   <data name="The {0} is not a valid email address." xml:space="preserve">
     <value>Поле {0} не є дійсною email-адресою.</value>
   </data>
   <data name="The {0} is required." xml:space="preserve">
     <value>Поле {0} є обов&apos;язковим.</value>
   </data>
+  <data name="The {0} must be at least {1} characters long." xml:space="preserve">
+    <value>{0} має бути не менше {1} символів.</value>
+  </data>
   <data name="The {0} must be at least {2} and at max {1} characters long." xml:space="preserve">
     <value>{0} має містити щонайменше {2} та не більше {1} символів.</value>
+  </data>
+  <data name="The {0} must be at max {1} characters long." xml:space="preserve">
+    <value>{0} не повинен перевищувати {1} символів.</value>
   </data>
   <data name="User name" xml:space="preserve">
     <value>Ім&apos;я користувача</value>

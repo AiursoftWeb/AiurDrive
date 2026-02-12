@@ -36,6 +36,9 @@
   <data name="Brand Name" xml:space="preserve">
     <value>Brandsnamn</value>
   </data>
+  <data name="ICP Number" xml:space="preserve">
+    <value>ICP-nummer</value>
+  </data>
   <data name="Max Site Storage In GB" xml:space="preserve">
     <value>Max platslagring i GB</value>
   </data>
@@ -56,6 +59,9 @@
   </data>
   <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
     <value>Varumärket för företaget eller projektet. Exempelvis Aiursoft.</value>
+  </data>
+  <data name="The ICP license number for China mainland users. Leave empty to hide." xml:space="preserve">
+    <value>ICP-licensnummer för användare i Kina. Lämna tomt för att dölja.</value>
   </data>
   <data name="The logo of the project displayed in the navbar and footer. Support jpg, png, svg." xml:space="preserve">
     <value>Logotypen för projektet som visas i navigeringsfältet och sidfoten. Stödjer jpg, png, svg.</value>

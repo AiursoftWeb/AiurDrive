@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <root>
     <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
         <xsd:element name="root" msdata:IsDataSet="true">
+
         </xsd:element>
     </xsd:schema>
     <resheader name="resmimetype">
@@ -16,19 +18,20 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-    <data name="Edit Site Settings" xml:space="preserve">
-        <value>Edit Site Settings</value>
-    </data>
-    <data name="Save Settings" xml:space="preserve">
-        <value>Save Settings</value>
-    </data>
-    <data name="Back to Files" xml:space="preserve">
-        <value>Back to Files</value>
-    </data>
-    <data name="If enabled, anyone with the link can view files (read-only). All uploads require authentication." xml:space="preserve">
-        <value>If enabled, anyone with the link can view files (read-only). All uploads require authentication.</value>
-    </data>
-    <data name="Only lowercase letters, numbers and hyphens are allowed." xml:space="preserve">
-        <value>Only lowercase letters, numbers and hyphens are allowed.</value>
-    </data>
+      <data name="Back to Files" xml:space="preserve">
+    <value>Back to Files</value>
+  </data>
+  <data name="Edit Site Settings" xml:space="preserve">
+    <value>Edit Site Settings</value>
+  </data>
+  <data name="If enabled, anyone with the link can view files (read-only). All uploads require authentication." xml:space="preserve">
+    <value>If enabled, anyone with the link can view files (read-only). All uploads require authentication.</value>
+  </data>
+  <data name="Only lowercase letters, numbers and hyphens are allowed." xml:space="preserve">
+    <value>Only lowercase letters, numbers and hyphens are allowed.</value>
+  </data>
+  <data name="Save Settings" xml:space="preserve">
+    <value>Save Settings</value>
+  </data>
+
 </root>

@@ -21,6 +21,9 @@
       <data name="Allow anonymous viewing" xml:space="preserve">
     <value>允許匿名瀏覽</value>
   </data>
+  <data name="Description" xml:space="preserve">
+    <value>描述</value>
+  </data>
   <data name="New Site Name" xml:space="preserve">
     <value>新網站名稱</value>
   </data>
@@ -32,6 +35,9 @@
   </data>
   <data name="Storage Type" xml:space="preserve">
     <value>儲存類型</value>
+  </data>
+  <data name="The {0} must be at max {1} characters long." xml:space="preserve">
+    <value>{0} 最長不得超過 {1} 個字元。</value>
   </data>
 
 </root>
