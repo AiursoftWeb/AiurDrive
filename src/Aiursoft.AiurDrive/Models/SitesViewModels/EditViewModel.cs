@@ -10,8 +10,10 @@ public class EditViewModel : UiStackLayoutViewModel
         PageTitle = "Edit Site Storage Limit";
     }
 
+    [Display(Name = "Site ID")]
     public int SiteId { get; set; }
     
+    [Display(Name = "Site Name")]
     public string? SiteName { get; set; }
 
     [Display(Name = "Storage Size Limit (GB)")]

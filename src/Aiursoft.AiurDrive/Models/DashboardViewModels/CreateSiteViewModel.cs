@@ -14,7 +14,8 @@ public class CreateSiteViewModel : UiStackLayoutViewModel
     [Display(Name = "Allow anonymous viewing")]
     public bool AllowAnonymousView { get; set; }
 
-    [MaxLength(300)]
+    [Display(Name = "Description")]
+    [MaxLength(300, ErrorMessage = "The {0} must be at max {1} characters long.")]
     public string? Description { get; set; }
 
     public CreateSiteViewModel()
