@@ -4,7 +4,12 @@ namespace Aiursoft.AiurDrive.Configuration;
 
 public class SettingsMap
 {
+    public const string ProjectName = "ProjectName";
+    public const string BrandName = "BrandName";
+    public const string BrandHomeUrl = "BrandHomeUrl";
+    public const string ProjectLogo = "ProjectLogo";
     public const string AllowUserAdjustNickname = "Allow_User_Adjust_Nickname";
+    public const string Icp = "Icp";
     public const string MaxSiteStorageInGB = "Max_Site_Storage_In_GB";
     public const string MaxSitesPerPerson = "Max_Sites_Per_Person";
 
@@ -24,7 +29,7 @@ public class SettingsMap
     {
         new GlobalSettingDefinition
         {
-            Key = "ProjectName",
+            Key = ProjectName,
             Name = Localizer["Project Name"],
             Description = Localizer["The name of the project displayed in the frontend."],
             Type = SettingType.Text,
@@ -32,7 +37,7 @@ public class SettingsMap
         },
         new GlobalSettingDefinition
         {
-            Key = "BrandName",
+            Key = BrandName,
             Name = Localizer["Brand Name"],
             Description = Localizer["The brand name of the company or project. E.g. Aiursoft."],
             Type = SettingType.Text,
@@ -40,11 +45,22 @@ public class SettingsMap
         },
         new GlobalSettingDefinition
         {
-            Key = "BrandHomeUrl",
+            Key = BrandHomeUrl,
             Name = Localizer["Brand Home URL"],
             Description = Localizer["The URL of the company or project. E.g. https://www.aiursoft.com"],
             Type = SettingType.Text,
             DefaultValue = "https://www.aiursoft.com"
+        },
+        new GlobalSettingDefinition
+        {
+            Key = ProjectLogo,
+            Name = Localizer["Project Logo"],
+            Description = Localizer["The logo of the project displayed in the navbar and footer. Support jpg, png, svg."],
+            Type = SettingType.File,
+            DefaultValue = "",
+            Subfolder = "project-logo",
+            AllowedExtensions = "jpg png svg",
+            MaxSizeInMb = 5
         },
         new GlobalSettingDefinition
         {
@@ -53,6 +69,14 @@ public class SettingsMap
             Description = Localizer["Allow users to adjust their nickname in the profile management page."],
             Type = SettingType.Bool,
             DefaultValue = "True"
+        },
+        new GlobalSettingDefinition
+        {
+            Key = Icp,
+            Name = Localizer["ICP Number"],
+            Description = Localizer["The ICP license number for China mainland users. Leave empty to hide."],
+            Type = SettingType.Text,
+            DefaultValue = ""
         },
         new GlobalSettingDefinition
         {
@@ -77,17 +101,6 @@ public class SettingsMap
             Description = Localizer["Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled."],
             Type = SettingType.Bool,
             DefaultValue = "True"
-        },
-        new GlobalSettingDefinition
-        {
-            Key = "ProjectLogo",
-            Name = Localizer["Project Logo"],
-            Description = Localizer["The logo of the project displayed in the navbar and footer. Support jpg, png, svg."],
-            Type = SettingType.File,
-            DefaultValue = "",
-            Subfolder = "project-logo",
-            AllowedExtensions = "jpg png svg",
-            MaxSizeInMb = 5
         }
     };
 }
