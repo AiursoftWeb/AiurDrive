@@ -21,6 +21,9 @@
       <data name="Allow anonymous viewing" xml:space="preserve">
     <value>Tillåt anonym visning</value>
   </data>
+  <data name="Description" xml:space="preserve">
+    <value>Beskrivning</value>
+  </data>
   <data name="New Site Name" xml:space="preserve">
     <value>Nytt platsnamn</value>
   </data>
@@ -32,6 +35,9 @@
   </data>
   <data name="Storage Type" xml:space="preserve">
     <value>Lagringsformat</value>
+  </data>
+  <data name="The {0} must be at max {1} characters long." xml:space="preserve">
+    <value>{0} får vara högst {1} tecken långt.</value>
   </data>
 
 </root>

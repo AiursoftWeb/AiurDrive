@@ -36,6 +36,9 @@
   <data name="Delete" xml:space="preserve">
     <value>Ta bort</value>
   </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>Ta bort site</value>
+  </data>
   <data name="Delete some files to free up space." xml:space="preserve">
     <value>Ta bort några filer för att släppa fram plats.</value>
   </data>
@@ -60,6 +63,9 @@
   <data name="New Name" xml:space="preserve">
     <value>Nytt namn</value>
   </data>
+  <data name="Operations" xml:space="preserve">
+    <value>Funktioner</value>
+  </data>
   <data name="Paste" xml:space="preserve">
     <value>Klistra</value>
   </data>
@@ -71,6 +77,12 @@
   </data>
   <data name="Rename" xml:space="preserve">
     <value>Ändra namn</value>
+  </data>
+  <data name="Rename Site" xml:space="preserve">
+    <value>Ändra namn på plats</value>
+  </data>
+  <data name="Site Management" xml:space="preserve">
+    <value>Site Management</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Storlek</value>

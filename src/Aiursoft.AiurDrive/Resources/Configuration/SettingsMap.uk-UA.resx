@@ -36,6 +36,9 @@
   <data name="Brand Name" xml:space="preserve">
     <value>Назва бренду</value>
   </data>
+  <data name="ICP Number" xml:space="preserve">
+    <value>Номер реєстрації ICP</value>
+  </data>
   <data name="Max Site Storage In GB" xml:space="preserve">
     <value>Макс. об&apos;єм сховища сайту в ГБ</value>
   </data>
@@ -56,6 +59,9 @@
   </data>
   <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
     <value>Назва бренду компанії або проекту. Наприклад: Aiursoft.</value>
+  </data>
+  <data name="The ICP license number for China mainland users. Leave empty to hide." xml:space="preserve">
+    <value>Номер ліцензії ICP для користувачів Китайської Народної Республіки. Залиште порожнім, щоб приховати.</value>
   </data>
   <data name="The logo of the project displayed in the navbar and footer. Support jpg, png, svg." xml:space="preserve">
     <value>Логотип проекту, який відображається в навбарі та футері. Підтримується jpg, png, svg.</value>

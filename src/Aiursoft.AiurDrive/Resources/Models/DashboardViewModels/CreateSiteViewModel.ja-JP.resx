@@ -21,6 +21,9 @@
       <data name="Allow anonymous viewing" xml:space="preserve">
     <value>匿名での閲覧を許可する</value>
   </data>
+  <data name="Description" xml:space="preserve">
+    <value>説明</value>
+  </data>
   <data name="New Site Name" xml:space="preserve">
     <value>新しいサイト名</value>
   </data>
@@ -32,6 +35,9 @@
   </data>
   <data name="Storage Type" xml:space="preserve">
     <value>ストレージタイプ</value>
+  </data>
+  <data name="The {0} must be at max {1} characters long." xml:space="preserve">
+    <value>{0} は最大 {1} 文字までです。</value>
   </data>
 
 </root>

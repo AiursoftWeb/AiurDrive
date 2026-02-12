@@ -27,14 +27,23 @@
   <data name="Password" xml:space="preserve">
     <value>Κωδικός πρόσβασης</value>
   </data>
+  <data name="The {0} is not a valid domain name." xml:space="preserve">
+    <value>Το {0} δεν είναι έγκυρο όνομα πεδίου.</value>
+  </data>
   <data name="The {0} is not a valid email address." xml:space="preserve">
     <value>Το {0} δεν είναι έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου.</value>
   </data>
   <data name="The {0} is required." xml:space="preserve">
     <value>Το {0} απαιτείται.</value>
   </data>
+  <data name="The {0} must be at least {1} characters long." xml:space="preserve">
+    <value>Το {0} πρέπει να είναι τουλάχιστον {1} χαρακτήρες μακρύ.</value>
+  </data>
   <data name="The {0} must be at least {2} and at max {1} characters long." xml:space="preserve">
     <value>Το {0} πρέπει να έχει τουλάχιστον {2} και το πολύ {1} χαρακτήρες.</value>
+  </data>
+  <data name="The {0} must be at max {1} characters long." xml:space="preserve">
+    <value>Το {0} πρέπει να είναι το πολύ {1} χαρακτήρες μακρύ.</value>
   </data>
   <data name="User name" xml:space="preserve">
     <value>Όνομα χρήστη</value>

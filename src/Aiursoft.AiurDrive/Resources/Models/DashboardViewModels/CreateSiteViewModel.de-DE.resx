@@ -21,6 +21,9 @@
       <data name="Allow anonymous viewing" xml:space="preserve">
     <value>Anonymen Zugriff erlauben</value>
   </data>
+  <data name="Description" xml:space="preserve">
+    <value>Beschreibung</value>
+  </data>
   <data name="New Site Name" xml:space="preserve">
     <value>Neuer Seitenname</value>
   </data>
@@ -32,6 +35,9 @@
   </data>
   <data name="Storage Type" xml:space="preserve">
     <value>Speicherart</value>
+  </data>
+  <data name="The {0} must be at max {1} characters long." xml:space="preserve">
+    <value>Der {0} darf maximal {1} Zeichen lang sein.</value>
   </data>
 
 </root>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Back to Files" xml:space="preserve">
+    <value>返回檔案</value>
+  </data>
+  <data name="Edit Site Settings" xml:space="preserve">
+    <value>編輯網站設定</value>
+  </data>
+  <data name="If enabled, anyone with the link can view files (read-only). All uploads require authentication." xml:space="preserve">
+    <value>啟用後，擁有連結者皆可檢視檔案（唯讀）。所有上傳皆需驗證身分。</value>
+  </data>
+  <data name="Only lowercase letters, numbers and hyphens are allowed." xml:space="preserve">
+    <value>僅允許小寫字母、數字及連字符。</value>
+  </data>
+  <data name="Save Settings" xml:space="preserve">
+    <value>儲存設定</value>
+  </data>
+
+</root>
