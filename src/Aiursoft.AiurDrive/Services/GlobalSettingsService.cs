@@ -4,13 +4,26 @@ using Aiursoft.AiurDrive.Entities;
 using Aiursoft.AiurDrive.Models;
 using Aiursoft.AiurDrive.Services.FileStorage;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace Aiursoft.AiurDrive.Services;
 
-public class GlobalSettingsService(AiurDriveDbContext dbContext, IConfiguration configuration, StorageService storageService) : IScopedDependency
+public class GlobalSettingsService(
+    AiurDriveDbContext dbContext, 
+    IConfiguration configuration,
+    StorageService storageService,
+    IMemoryCache cache) : IScopedDependency
 {
+    private string GetCacheKey(string key) => $"global-setting-{key}";
+
     public async Task<string> GetSettingValueAsync(string key)
     {
+        var cacheKey = GetCacheKey(key);
+        if (cache.TryGetValue(cacheKey, out string? cachedValue) && cachedValue != null)
+        {
+            return cachedValue;
+        }
+
         // 1. Check configuration (Environment variables, appsettings.json, etc.)
         var configValue = configuration[$"GlobalSettings:{key}"] ?? configuration[key];
         if (!string.IsNullOrWhiteSpace(configValue))
@@ -20,14 +33,20 @@ public class GlobalSettingsService(AiurDriveDbContext dbContext, IConfiguration 
 
         // 2. Check database
         var dbSetting = await dbContext.GlobalSettings.AsNoTracking().FirstOrDefaultAsync(s => s.Key == key);
+        string result;
         if (dbSetting != null && dbSetting.Value != null)
         {
-            return dbSetting.Value;
+            result = dbSetting.Value;
+        }
+        else
+        {
+            // 3. Fallback to default
+            var definition = SettingsMap.Definitions.FirstOrDefault(d => d.Key == key);
+            result = definition?.DefaultValue ?? string.Empty;
         }
 
-        // 3. Fallback to default
-        var definition = SettingsMap.Definitions.FirstOrDefault(d => d.Key == key);
-        return definition?.DefaultValue ?? string.Empty;
+        cache.Set(cacheKey, result, TimeSpan.FromHours(2));
+        return result;
     }
 
     public async Task<bool> GetBoolSettingAsync(string key)
@@ -116,7 +135,9 @@ public class GlobalSettingsService(AiurDriveDbContext dbContext, IConfiguration 
         }
 
         await dbContext.SaveChangesAsync();
+        cache.Remove(GetCacheKey(key));
     }
+
     public async Task SeedSettingsAsync()
     {
         foreach (var definition in SettingsMap.Definitions)
@@ -132,6 +153,7 @@ public class GlobalSettingsService(AiurDriveDbContext dbContext, IConfiguration 
                     Key = definition.Key,
                     Value = initialValue
                 });
+                cache.Remove(GetCacheKey(definition.Key));
             }
         }
         await dbContext.SaveChangesAsync();
