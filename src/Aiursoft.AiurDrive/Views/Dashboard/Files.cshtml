@@ -121,6 +121,13 @@
                             </a>
                          }
 
+                         @if (Model.HasWriteAccess)
+                         {
+                             <button class="btn btn-sm btn-outline-secondary me-2" data-bs-toggle="modal" data-bs-target="#createFolderModal">
+                                 <i class="fas fa-folder-plus"></i> @Localizer["New Folder"]
+                             </button>
+                         }
+
                          <button class="btn btn-sm btn-outline-secondary" onclick="toggleView()" id="viewToggleBtn" title="@Localizer["Toggle View"]">
                              <i class="fas fa-th-large" id="viewToggleIcon"></i>
                          </button>
@@ -310,45 +317,36 @@
                         <h5 class="card-title mb-0">@Localizer["Operations"]</h5>
                     </div>
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-8">
-                                <h6>@Localizer["Upload File"]</h6>
-                                @{
-                                    var usedSpaceGB2 = Model.UsedSpaceInBytes / 1024.0 / 1024.0 / 1024.0;
-                                    var totalSpaceGB2 = (double)Model.TotalSpaceInGB;
-                                    var percentage2 = (usedSpaceGB2 / totalSpaceGB2) * 100;
-                                    var isFull2 = percentage2 >= 100;
-                                }
-                                @if (!isFull2)
-                                {
-                                    <vc:file-upload
-                                        asp-for="UploadedFilePath"
-                                        subfolder="@(Model.SiteName + "/" + Model.Path)"
-                                        is-vault="true"
-                                        allowed-extensions=""
-                                        max-size-in-mb="1024"
-                                        on-upload-success="reloadPage">
-                                    </vc:file-upload>
-                                }
-                                else
-                                {
-                                    <div class="alert alert-danger" role="alert">
-                                        <div class="alert-icon">
-                                            <i class="align-middle" data-lucide="alert-octagon"></i>
-                                        </div>
-                                        <div class="alert-message">
-                                            <strong>@Localizer["Storage Full"]</strong>
-                                            <span class="d-block small">@Localizer["Delete some files to free up space."]</span>
-                                        </div>
-                                    </div>
-                                }
+                        <h6>@Localizer["Upload File"]</h6>
+                        @{
+                            var usedSpaceGB2 = Model.UsedSpaceInBytes / 1024.0 / 1024.0 / 1024.0;
+                            var totalSpaceGB2 = (double)Model.TotalSpaceInGB;
+                            var percentage2 = (usedSpaceGB2 / totalSpaceGB2) * 100;
+                            var isFull2 = percentage2 >= 100;
+                        }
+                        @if (!isFull2)
+                        {
+                            <vc:file-upload
+                                asp-for="UploadedFilePath"
+                                subfolder="@(Model.SiteName + "/" + Model.Path)"
+                                is-vault="true"
+                                allowed-extensions=""
+                                max-size-in-mb="1024"
+                                on-upload-success="reloadPage">
+                            </vc:file-upload>
+                        }
+                        else
+                        {
+                            <div class="alert alert-danger" role="alert">
+                                <div class="alert-icon">
+                                    <i class="align-middle" data-lucide="alert-octagon"></i>
+                                </div>
+                                <div class="alert-message">
+                                    <strong>@Localizer["Storage Full"]</strong>
+                                    <span class="d-block small">@Localizer["Delete some files to free up space."]</span>
+                                </div>
                             </div>
-                            <div class="col-md-4 d-flex flex-column justify-content-center border-start">
-                                <button class="btn btn-primary w-100 py-3" data-bs-toggle="modal" data-bs-target="#createFolderModal">
-                                    <i class="fas fa-folder-plus me-1"></i> @Localizer["New Folder"]
-                                </button>
-                            </div>
-                        </div>
+                        }
                     </div>
                 </div>
             }
