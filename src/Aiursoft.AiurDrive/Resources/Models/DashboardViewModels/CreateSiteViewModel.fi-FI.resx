@@ -21,6 +21,9 @@
       <data name="Allow anonymous viewing" xml:space="preserve">
     <value>Salli anonyymi näkymä</value>
   </data>
+  <data name="Description" xml:space="preserve">
+    <value>Kuvaus</value>
+  </data>
   <data name="New Site Name" xml:space="preserve">
     <value>Uusi sivuston nimi</value>
   </data>
@@ -32,6 +35,9 @@
   </data>
   <data name="Storage Type" xml:space="preserve">
     <value>Tallennustyyppi</value>
+  </data>
+  <data name="The {0} must be at max {1} characters long." xml:space="preserve">
+    <value>{0} saa olla korkeintaan {1} merkkiä pitkä.</value>
   </data>
 
 </root>

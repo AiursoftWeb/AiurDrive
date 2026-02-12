@@ -21,6 +21,9 @@
       <data name="Allow anonymous viewing" xml:space="preserve">
     <value>Anonim görüntülemeye izin ver</value>
   </data>
+  <data name="Description" xml:space="preserve">
+    <value>Açıklama</value>
+  </data>
   <data name="New Site Name" xml:space="preserve">
     <value>Yeni Site Adı</value>
   </data>
@@ -32,6 +35,9 @@
   </data>
   <data name="Storage Type" xml:space="preserve">
     <value>Depolama Türü</value>
+  </data>
+  <data name="The {0} must be at max {1} characters long." xml:space="preserve">
+    <value>{0} alanı en fazla {1} karakter olmalıdır.</value>
   </data>
 
 </root>

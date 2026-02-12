@@ -36,6 +36,9 @@
   <data name="Delete" xml:space="preserve">
     <value>Xóa</value>
   </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>Xóa trang web</value>
+  </data>
   <data name="Delete some files to free up space." xml:space="preserve">
     <value>Xóa một số tệp để giải phóng dung lượng.</value>
   </data>
@@ -60,6 +63,9 @@
   <data name="New Name" xml:space="preserve">
     <value>Tên mới</value>
   </data>
+  <data name="Operations" xml:space="preserve">
+    <value>Thao tác</value>
+  </data>
   <data name="Paste" xml:space="preserve">
     <value>Dán</value>
   </data>
@@ -71,6 +77,12 @@
   </data>
   <data name="Rename" xml:space="preserve">
     <value>Đổi tên</value>
+  </data>
+  <data name="Rename Site" xml:space="preserve">
+    <value>Đổi tên trang</value>
+  </data>
+  <data name="Site Management" xml:space="preserve">
+    <value>Quản lý trang web</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Kích thước</value>

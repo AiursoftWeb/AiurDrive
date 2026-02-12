@@ -27,14 +27,23 @@
   <data name="Password" xml:space="preserve">
     <value>Mật khẩu</value>
   </data>
+  <data name="The {0} is not a valid domain name." xml:space="preserve">
+    <value>{0} không phải là tên miền hợp lệ.</value>
+  </data>
   <data name="The {0} is not a valid email address." xml:space="preserve">
     <value>{0} không phải là một địa chỉ email hợp lệ.</value>
   </data>
   <data name="The {0} is required." xml:space="preserve">
     <value>{0} là bắt buộc.</value>
   </data>
+  <data name="The {0} must be at least {1} characters long." xml:space="preserve">
+    <value>{0} phải có ít nhất {1} ký tự.</value>
+  </data>
   <data name="The {0} must be at least {2} and at max {1} characters long." xml:space="preserve">
     <value>{0} phải có ít nhất {2} và tối đa {1} ký tự.</value>
+  </data>
+  <data name="The {0} must be at max {1} characters long." xml:space="preserve">
+    <value>{0} không được vượt quá {1} ký tự.</value>
   </data>
   <data name="User name" xml:space="preserve">
     <value>Tên người dùng</value>

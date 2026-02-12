@@ -24,6 +24,12 @@
   <data name="Name" xml:space="preserve">
     <value>الاسم</value>
   </data>
+  <data name="The {0} must be at least {1} characters long." xml:space="preserve">
+    <value>يجب أن يكون {0} على الأقل {1} حرفًا.</value>
+  </data>
+  <data name="The {0} must be at max {1} characters long." xml:space="preserve">
+    <value>يجب ألا يتجاوز طول {0} ما مقداره {1} حرفًا.</value>
+  </data>
   <data name="The avatar file is invalid. Please upload it again." xml:space="preserve">
     <value>ملف الصورة الشخصية غير صالح. يرجى تحميله مرة أخرى.</value>
   </data>

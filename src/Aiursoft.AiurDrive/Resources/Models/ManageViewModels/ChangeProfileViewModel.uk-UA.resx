@@ -21,6 +21,12 @@
       <data name="Name" xml:space="preserve">
     <value>Ім&apos;я</value>
   </data>
+  <data name="The {0} must be at least {1} characters long." xml:space="preserve">
+    <value>{0} має бути не менше {1} символів.</value>
+  </data>
+  <data name="The {0} must be at max {1} characters long." xml:space="preserve">
+    <value>{0} не повинен перевищувати {1} символів.</value>
+  </data>
   <data name="The name is required." xml:space="preserve">
     <value>Ім&apos;я обов&apos;язкове.</value>
   </data>

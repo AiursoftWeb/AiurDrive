@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Back to Files" xml:space="preserve">
+    <value>返回文件管理</value>
+  </data>
+  <data name="Edit Site Settings" xml:space="preserve">
+    <value>编辑站点设置</value>
+  </data>
+  <data name="If enabled, anyone with the link can view files (read-only). All uploads require authentication." xml:space="preserve">
+    <value>如果启用，任何拥有链接的人都可以查看文件（只读）。所有上传都需要身份验证。</value>
+  </data>
+  <data name="Only lowercase letters, numbers and hyphens are allowed." xml:space="preserve">
+    <value>只允许使用小写字母、数字和连字符。</value>
+  </data>
+  <data name="Save Settings" xml:space="preserve">
+    <value>保存设置</value>
+  </data>
+
+</root>

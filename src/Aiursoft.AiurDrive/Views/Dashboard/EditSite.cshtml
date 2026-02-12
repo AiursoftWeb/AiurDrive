@@ -1,0 +1,44 @@
+@model Aiursoft.AiurDrive.Models.DashboardViewModels.EditSiteViewModel
+<div class="container-fluid">
+    <div class="row position-relative">
+        <div class="col-md-4 offset-md-4">
+            <div class="card p-3">
+                <h2 class="card-title">@Localizer["Edit Site Settings"]</h2>
+                <form asp-controller="Dashboard" asp-action="EditSite" asp-route-siteName="@Model.SiteName" method="post" class="mt-3">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="mb-3">
+                        <label asp-for="SiteName" class="form-label"></label>
+                        <div class="input-group">
+                            <input asp-for="SiteName" class="form-control" placeholder="my-site" />
+                        </div>
+                        <span asp-validation-for="SiteName" class="text-danger"></span>
+                        <div class="form-text">
+                            @Localizer["Only lowercase letters, numbers and hyphens are allowed."]
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Description" class="form-label"></label>
+                        <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input asp-for="AllowAnonymousView" class="form-check-input" type="checkbox" />
+                            <label asp-for="AllowAnonymousView" class="form-check-label"></label>
+                        </div>
+                        <div class="form-text">
+                            @Localizer["If enabled, anyone with the link can view files (read-only). All uploads require authentication."]
+                        </div>
+                    </div>
+
+                    <div class="d-grid mt-3">
+                        <button type="submit" class="btn btn-primary">@Localizer["Save Settings"]</button>
+                        <a asp-action="Files" asp-route-siteName="@Model.SiteName" class="btn btn-light mt-2">@Localizer["Back to Files"]</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

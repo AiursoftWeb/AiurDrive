@@ -197,6 +197,33 @@ public class StorageService(
         }
     }
 
+    public void RenameSiteFolder(string oldSiteName, string newSiteName)
+    {
+        // Workspace
+        var oldWorkspacePath = Path.Combine(folders.GetWorkspaceFolder(), oldSiteName);
+        var newWorkspacePath = Path.Combine(folders.GetWorkspaceFolder(), newSiteName);
+        if (Directory.Exists(oldWorkspacePath))
+        {
+            if (Directory.Exists(newWorkspacePath))
+            {
+                throw new InvalidOperationException("Target workspace directory already exists.");
+            }
+            Directory.Move(oldWorkspacePath, newWorkspacePath);
+        }
+
+        // Vault
+        var oldVaultPath = Path.Combine(folders.GetVaultFolder(), oldSiteName);
+        var newVaultPath = Path.Combine(folders.GetVaultFolder(), newSiteName);
+        if (Directory.Exists(oldVaultPath))
+        {
+            if (Directory.Exists(newVaultPath))
+            {
+                throw new InvalidOperationException("Target vault directory already exists.");
+            }
+            Directory.Move(oldVaultPath, newVaultPath);
+        }
+    }
+
     public long GetSiteSize(string siteName)
     {
         long size = 0;

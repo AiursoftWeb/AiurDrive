@@ -112,7 +112,7 @@ public class DashboardController(
 
     [HttpGet]
     [Route("Dashboard/EditSite/{siteName}")]
-    public async Task<IActionResult> EditSite(string siteName)
+    public async Task<IActionResult> EditSite([FromRoute]string siteName)
     {
         var user = await dbContext.Users
             .Include(u => u.Sites)
@@ -125,7 +125,8 @@ public class DashboardController(
         var model = new EditSiteViewModel
         {
             SiteName = site.SiteName,
-            Description = site.Description
+            Description = site.Description,
+            AllowAnonymousView = site.AllowAnonymousView
         };
         return this.StackView(model);
     }
@@ -133,7 +134,7 @@ public class DashboardController(
     [HttpPost]
     [ValidateAntiForgeryToken]
     [Route("Dashboard/EditSite/{siteName}")]
-    public async Task<IActionResult> EditSite(string siteName, EditSiteViewModel model)
+    public async Task<IActionResult> EditSite([FromRoute]string siteName, EditSiteViewModel model)
     {
         if (!ModelState.IsValid)
         {
@@ -148,10 +149,33 @@ public class DashboardController(
         var site = user.Sites.FirstOrDefault(s => s.SiteName == siteName);
         if (site == null) return NotFound();
 
+        var newName = model.SiteName.ToLower();
+        if (newName != site.SiteName)
+        {
+            // Check if name is taken
+            if (await dbContext.Sites.AnyAsync(s => s.SiteName == newName))
+            {
+                ModelState.AddModelError(nameof(model.SiteName), localizer["This site name is already taken."]);
+                return this.StackView(model);
+            }
+
+            try 
+            {
+                storage.RenameSiteFolder(site.SiteName, newName);
+                site.SiteName = newName;
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError(nameof(model.SiteName), e.Message);
+                return this.StackView(model);
+            }
+        }
+
         site.Description = model.Description;
+        site.AllowAnonymousView = model.AllowAnonymousView;
         await dbContext.SaveChangesAsync();
 
-        return RedirectToAction(nameof(Index));
+        return RedirectToAction(nameof(Files), new { siteName = site.SiteName });
     }
 
     private async Task<bool> HasAccess(Site site, User user, SharePermission requiredPermission)
@@ -179,7 +203,7 @@ public class DashboardController(
     }
 
     [Route("Dashboard/Files/{siteName}/{**path}")]
-    public async Task<IActionResult> Files(string siteName, string? path)
+    public async Task<IActionResult> Files([FromRoute]string siteName, string? path)
     {
         var user = await userManager.GetUserAsync(User);
         if (user == null) return Unauthorized();
@@ -232,7 +256,7 @@ public class DashboardController(
 
     [HttpPost]
     [Route("Dashboard/Delete/{siteName}/{**path}")]
-    public async Task<IActionResult> Delete(string siteName, string? path)
+    public async Task<IActionResult> Delete([FromRoute]string siteName, string? path)
     {
          var user = await userManager.GetUserAsync(User);
         if (user == null) return Unauthorized();
@@ -279,7 +303,7 @@ public class DashboardController(
 
     [HttpGet]
     [Route("Dashboard/DeleteSite/{siteName}")]
-    public async Task<IActionResult> DeleteSite(string siteName)
+    public async Task<IActionResult> DeleteSite([FromRoute]string siteName)
     {
         var user = await dbContext.Users
             .Include(u => u.Sites)
@@ -304,7 +328,7 @@ public class DashboardController(
     [ValidateAntiForgeryToken]
     [Route("Dashboard/DeleteSite/{siteName}")]
     [ActionName("DeleteSite")]
-    public async Task<IActionResult> DeleteSiteConfirmed(string siteName)
+    public async Task<IActionResult> DeleteSiteConfirmed([FromRoute]string siteName)
     {
         var user = await dbContext.Users
             .Include(u => u.Sites)
