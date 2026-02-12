@@ -45,9 +45,32 @@
     </div>
 
     <div class="row">
-        <!-- Sidebar / Stats -->
+        <!-- Sidebar -->
         <div class="col-sm-5 col-xl-3 mb-3">
+            @if (Model.IsOwner)
+            {
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">@Localizer["Site Management"]</h5>
+                    </div>
+                    <div class="list-group list-group-flush">
+                        <a asp-controller="Shares" asp-action="Manage" asp-route-siteName="@Model.SiteName" class="list-group-item list-group-item-action">
+                            <i class="align-middle me-1" data-lucide="share-2"></i> @Localizer["Manage Shares"]
+                        </a>
+                        <a asp-action="EditSite" asp-route-siteName="@Model.SiteName" class="list-group-item list-group-item-action">
+                            <i class="align-middle me-1" data-lucide="edit-3"></i> @Localizer["Rename Site"]
+                        </a>
+                        <a asp-action="DeleteSite" asp-route-siteName="@Model.SiteName" class="list-group-item list-group-item-action text-danger">
+                            <i class="align-middle me-1" data-lucide="trash-2"></i> @Localizer["Delete Site"]
+                        </a>
+                    </div>
+                </div>
+            }
+
             <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">@Localizer["Storage Usage"]</h5>
+                </div>
                 <div class="card-body">
                     @{
                         var usedSpaceGB = Model.UsedSpaceInBytes / 1024.0 / 1024.0 / 1024.0;
@@ -57,64 +80,13 @@
                         var colorClass = percentage >= 100 ? "bg-danger" : percentage >= 80 ? "bg-warning" : "bg-success";
                     }
 
-                    <div class="mb-3">
-                        <label class="form-label small text-muted">@Localizer["Storage Usage"]</label>
-                        <div class="progress" style="height: 10px;">
-                            <div class="progress-bar @colorClass" role="progressbar" style="width: @percentage%" aria-valuenow="@percentage" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <div class="d-flex justify-content-between small text-muted mt-1">
-                            <span>@usedSpaceGB.ToString("0.00") GB</span>
-                            <span>@totalSpaceGB.ToString("0.00") GB</span>
-                        </div>
+                    <div class="progress mb-2" style="height: 10px;">
+                        <div class="progress-bar @colorClass" role="progressbar" style="width: @percentage%" aria-valuenow="@percentage" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-
-                    @if (!isFull && Model.HasWriteAccess)
-                    {
-                        <div class="d-grid mb-3">
-                             <!-- Upload Component -->
-                             <h6 class="card-title">@Localizer["Upload File"]</h6>
-                             <vc:file-upload
-                                asp-for="UploadedFilePath"
-                                subfolder="@(Model.SiteName + "/" + Model.Path)"
-                                is-vault="true"
-                                allowed-extensions=""
-                                max-size-in-mb="1024"
-                                on-upload-success="reloadPage">
-                            </vc:file-upload>
-                        </div>
-                    }
-                    else if (isFull)
-                    {
-                        <div class="alert alert-danger alert-dismissible" role="alert">
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            <div class="alert-icon">
-                                <i class="align-middle" data-lucide="alert-octagon"></i>
-                            </div>
-                            <div class="alert-message">
-                                <strong>@Localizer["Storage Full"]</strong>
-                                <span class="d-block small">@Localizer["Delete some files to free up space."]</span>
-                            </div>
-                        </div>
-                    }
-
-                    @if (Model.IsOwner)
-                    {
-                        <div class="d-grid mb-3">
-                            <a asp-controller="Shares" asp-action="Manage" asp-route-siteName="@Model.SiteName" class="btn btn-outline-info">
-                                <i class="fas fa-share-alt"></i> @Localizer["Manage Shares"]
-                            </a>
-                        </div>
-                    }
-
-                    @if (Model.HasWriteAccess)
-                    {
-                        <div class="d-grid mb-3">
-                            <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#createFolderModal">
-                                <i class="fas fa-folder-plus"></i> @Localizer["New Folder"]
-                            </button>
-                        </div>
-                    }
-
+                    <div class="d-flex justify-content-between small text-muted">
+                        <span>@usedSpaceGB.ToString("0.00") GB</span>
+                        <span>@totalSpaceGB.ToString("0.00") GB</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -331,6 +303,56 @@
 
                 </div>
             </div>
+
+            @if (Model.HasWriteAccess)
+            {
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">@Localizer["Operations"]</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h6>@Localizer["Upload File"]</h6>
+                                @{
+                                    var usedSpaceGB2 = Model.UsedSpaceInBytes / 1024.0 / 1024.0 / 1024.0;
+                                    var totalSpaceGB2 = (double)Model.TotalSpaceInGB;
+                                    var percentage2 = (usedSpaceGB2 / totalSpaceGB2) * 100;
+                                    var isFull2 = percentage2 >= 100;
+                                }
+                                @if (!isFull2)
+                                {
+                                    <vc:file-upload
+                                        asp-for="UploadedFilePath"
+                                        subfolder="@(Model.SiteName + "/" + Model.Path)"
+                                        is-vault="true"
+                                        allowed-extensions=""
+                                        max-size-in-mb="1024"
+                                        on-upload-success="reloadPage">
+                                    </vc:file-upload>
+                                }
+                                else
+                                {
+                                    <div class="alert alert-danger" role="alert">
+                                        <div class="alert-icon">
+                                            <i class="align-middle" data-lucide="alert-octagon"></i>
+                                        </div>
+                                        <div class="alert-message">
+                                            <strong>@Localizer["Storage Full"]</strong>
+                                            <span class="d-block small">@Localizer["Delete some files to free up space."]</span>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                            <div class="col-md-4 d-flex flex-column justify-content-center border-start">
+                                <button class="btn btn-primary w-100 py-3" data-bs-toggle="modal" data-bs-target="#createFolderModal">
+                                    <i class="fas fa-folder-plus me-1"></i> @Localizer["New Folder"]
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
         </div>
     </div>
 </div>

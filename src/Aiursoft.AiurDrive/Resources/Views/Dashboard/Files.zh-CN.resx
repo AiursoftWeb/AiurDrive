@@ -96,5 +96,17 @@
   <data name="Upload File" xml:space="preserve">
     <value>上传文件</value>
   </data>
+  <data name="Rename Site" xml:space="preserve">
+    <value>重命名站点</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>删除站点</value>
+  </data>
+  <data name="Site Management" xml:space="preserve">
+    <value>站点管理</value>
+  </data>
+  <data name="Operations" xml:space="preserve">
+    <value>操作</value>
+  </data>
 
 </root>

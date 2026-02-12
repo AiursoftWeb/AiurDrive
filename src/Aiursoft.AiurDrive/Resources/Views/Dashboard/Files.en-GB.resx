@@ -96,5 +96,17 @@
   <data name="Upload File" xml:space="preserve">
     <value>Upload File</value>
   </data>
+  <data name="Rename Site" xml:space="preserve">
+    <value>Rename Site</value>
+  </data>
+  <data name="Delete Site" xml:space="preserve">
+    <value>Delete Site</value>
+  </data>
+  <data name="Site Management" xml:space="preserve">
+    <value>Site Management</value>
+  </data>
+  <data name="Operations" xml:space="preserve">
+    <value>Operations</value>
+  </data>
 
 </root>
