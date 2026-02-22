@@ -3,7 +3,7 @@ ARG PROJ_NAME="Aiursoft.AiurDrive"
 
 # ============================
 # Prepare NPM Environment
-FROM hub.aiursoft.com/node:24-alpine AS npm-env
+FROM --platform=$BUILDPLATFORM hub.aiursoft.com/node:24-alpine AS npm-env
 ARG CSPROJ_PATH
 WORKDIR /src
 COPY . .
@@ -13,14 +13,25 @@ RUN npm install --prefix "${CSPROJ_PATH}wwwroot" --loglevel verbose
 
 # ============================
 # Prepare Building Environment
-FROM hub.aiursoft.com/aiursoft/internalimages/dotnet AS build-env
+FROM --platform=$BUILDPLATFORM hub.aiursoft.com/aiursoft/internalimages/dotnet AS build-env
 ARG CSPROJ_PATH
 ARG PROJ_NAME
+ARG TARGETARCH
+
 WORKDIR /src
 COPY --from=npm-env /src .
 
 # Build
-RUN dotnet publish ${CSPROJ_PATH}${PROJ_NAME}.csproj  --configuration Release --no-self-contained --runtime linux-x64 --output /app
+RUN if [ "$TARGETARCH" = "arm64" ]; then \
+        RID="linux-arm64"; \
+    elif [ "$TARGETARCH" = "amd64" ]; then \
+        RID="linux-x64"; \
+    else \
+        RID="linux-$TARGETARCH"; \
+    fi && \
+    echo "Building for arch: $TARGETARCH, using .NET RID: $RID" && \
+    dotnet publish ${CSPROJ_PATH}${PROJ_NAME}.csproj --configuration Release --no-self-contained --runtime $RID --output /app
+
 RUN cp -r ${CSPROJ_PATH}/wwwroot/* /app/wwwroot
 
 # ============================
