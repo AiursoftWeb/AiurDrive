@@ -27,8 +27,4 @@
     <ProjectReference Include="..\Aiursoft.AiurDrive.MySql\Aiursoft.AiurDrive.MySql.csproj" />
     <ProjectReference Include="..\Aiursoft.AiurDrive.Sqlite\Aiursoft.AiurDrive.Sqlite.csproj" />
   </ItemGroup>
-  <Target Name="NpmInstall" AfterTargets="Restore">
-    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
-    <Exec Command="npm install" WorkingDirectory="./wwwroot" />
-  </Target>
 </Project>
