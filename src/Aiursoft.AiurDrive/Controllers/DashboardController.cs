@@ -220,11 +220,8 @@ public class DashboardController(
         var logicalPath = Path.Combine(siteName, path);
         
         // Ensure the folder exists (all sites use Vault)
+        storage.CreateDirectory(logicalPath, isVault: true);
         var physicalPath = storage.GetFilePhysicalPath(logicalPath, isVault: true);
-        if (!Directory.Exists(physicalPath))
-        {
-             Directory.CreateDirectory(physicalPath);
-        }
 
         var directoryInfo = new DirectoryInfo(physicalPath);
         var files = directoryInfo.GetFiles().OrderByDescending(f => f.LastWriteTime).ToList();
@@ -277,19 +274,7 @@ public class DashboardController(
         var logicalPath = Path.Combine(siteName, path);
         try 
         {
-            var physicalPath = storage.GetFilePhysicalPath(logicalPath, isVault: true);
-            if (System.IO.File.Exists(physicalPath))
-            {
-                System.IO.File.Delete(physicalPath);
-            }
-            else if (Directory.Exists(physicalPath))
-            {
-                 Directory.Delete(physicalPath, true);
-            }
-            else
-            {
-                return NotFound();
-            }
+            storage.DeleteFileOrDirectory(logicalPath, isVault: true);
         }
         catch (Exception e)
         {
@@ -382,9 +367,9 @@ public class DashboardController(
             var physicalPath = storage.GetFilePhysicalPath(logicalPath, isVault: true);
             if (Directory.Exists(physicalPath) || System.IO.File.Exists(physicalPath))
             {
-                return BadRequest("File or folder already exists.");
+                return BadRequest(localizer["File or folder already exists."]);
             }
-            Directory.CreateDirectory(physicalPath);
+            storage.CreateDirectory(logicalPath, isVault: true);
         }
         catch (Exception e)
         {
@@ -420,32 +405,7 @@ public class DashboardController(
         
         try 
         {
-            var oldPhysicalPath = storage.GetFilePhysicalPath(logicalPath, isVault: true);
-            var parentPhysicalPath = Directory.GetParent(oldPhysicalPath)?.FullName;
-            if (parentPhysicalPath == null) return BadRequest("Cannot find parent directory.");
-            
-            var parentLogicalPath = Path.GetDirectoryName(path);
-            var newLogicalPath = Path.Combine(siteName, parentLogicalPath ?? string.Empty, newName);
-            
-            var validatedNewPhysicalPath = storage.GetFilePhysicalPath(newLogicalPath, isVault: true); 
-
-            if (System.IO.File.Exists(validatedNewPhysicalPath) || Directory.Exists(validatedNewPhysicalPath))
-            {
-                return BadRequest("Target already exists.");
-            }
-
-            if (System.IO.File.Exists(oldPhysicalPath))
-            {
-                System.IO.File.Move(oldPhysicalPath, validatedNewPhysicalPath);
-            }
-            else if (Directory.Exists(oldPhysicalPath))
-            {
-                Directory.Move(oldPhysicalPath, validatedNewPhysicalPath);
-            }
-            else
-            {
-                return NotFound();
-            }
+            storage.RenameFileOrDirectory(logicalPath, newName, isVault: true);
         }
         catch (Exception e)
         {
@@ -492,32 +452,12 @@ public class DashboardController(
             return BadRequest("Cannot move a folder into itself or its subfolder.");
         }
 
-        var fileName = Path.GetFileName(normalizedSource);
-        var logicalDestPath = Path.Combine(siteName, normalizedTarget, fileName).Replace("\\", "/");
+        var logicalDestPath = Path.Combine(siteName, normalizedTarget).Replace("\\", "/");
         var logicalSourcePath = Path.Combine(siteName, normalizedSource).Replace("\\", "/");
 
         try 
         {
-            var physicalSource = storage.GetFilePhysicalPath(logicalSourcePath, isVault: true);
-            var physicalDest = storage.GetFilePhysicalPath(logicalDestPath, isVault: true);
-
-            if (System.IO.File.Exists(physicalDest) || Directory.Exists(physicalDest))
-            {
-                return BadRequest("Destination file or folder already exists.");
-            }
-
-            if (System.IO.File.Exists(physicalSource))
-            {
-                System.IO.File.Move(physicalSource, physicalDest);
-            }
-            else if (Directory.Exists(physicalSource))
-            {
-                Directory.Move(physicalSource, physicalDest);
-            }
-            else
-            {
-                return NotFound();
-            }
+            storage.MoveFileOrDirectory(logicalSourcePath, logicalDestPath, isVault: true);
         }
         catch (Exception e)
         {

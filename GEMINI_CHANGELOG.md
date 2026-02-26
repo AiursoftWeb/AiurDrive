@@ -51,3 +51,21 @@ Implemented the ability to share private sites with specific users or roles.
     *   Users can search for other users by name/email to share with.
     *   Users can select roles to share with.
     *   "Shared with me" page lists all sites shared with the user.
+
+## Optimization: Refactored Storage Operations (Issue #34)
+
+Centralized and optimized file system operations to improve security, performance, and maintainability.
+
+### Changes:
+
+1.  **StorageService**:
+    *   Refactored `GetDirectorySize` to use a non-recursive approach with `Stack<DirectoryInfo>` and `EnumerateFiles/EnumerateDirectories` for better performance on large/deep directory trees and reduced memory footprint.
+    *   Added centralized methods: `CreateDirectory`, `DeleteFileOrDirectory`, `RenameFileOrDirectory`, and `MoveFileOrDirectory` with built-in path traversal security checks and exception handling.
+    *   Improved `Save` method by correctly disposing `FileStream` objects.
+
+2.  **Controllers**:
+    *   Updated `DashboardController` and `SharedViewController` to utilize the new centralized `StorageService` methods, reducing manual path manipulation and ensuring consistent security checks across the application.
+    *   Wrapped several hardcoded error messages in `localizer` to facilitate future localization.
+
+3.  **Security**:
+    *   Ensured all file system operations leverage the centralized path traversal detection in `StorageService`.
