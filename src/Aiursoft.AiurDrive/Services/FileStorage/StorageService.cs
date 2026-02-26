@@ -39,14 +39,14 @@ public class StorageService(
 
         // 4. Create directory if needed
         var directory = Path.GetDirectoryName(physicalPath);
-        if (!Directory.Exists(directory))
+        if (directory != null && !Directory.Exists(directory))
         {
-             Directory.CreateDirectory(directory!);
+             Directory.CreateDirectory(directory);
         }
 
         // 5. Handle collisions (Renaming)
         // Lock on the directory to prevent race conditions during renaming
-        var lockObj = fileLockProvider.GetLock(directory!);
+        var lockObj = fileLockProvider.GetLock(directory ?? root);
         await lockObj.WaitAsync();
         try
         {
@@ -54,11 +54,14 @@ public class StorageService(
             while (File.Exists(physicalPath))
             {
                 expectedFileName = "_" + expectedFileName;
-                physicalPath = Path.Combine(directory!, expectedFileName);
+                physicalPath = Path.Combine(directory ?? root, expectedFileName);
             }
 
             // Create placeholder to reserve name
-            File.Create(physicalPath).Close();
+            using (File.Create(physicalPath))
+            {
+                // File.Create returns a FileStream that needs to be disposed.
+            }
         }
         finally
         {
@@ -86,6 +89,86 @@ public class StorageService(
             throw new ArgumentException("Restricted path access!");
         }
         return physicalPath;
+    }
+
+    public void CreateDirectory(string logicalPath, bool isVault = false)
+    {
+        var physicalPath = GetFilePhysicalPath(logicalPath, isVault);
+        if (!Directory.Exists(physicalPath))
+        {
+            Directory.CreateDirectory(physicalPath);
+        }
+    }
+
+    public void DeleteFileOrDirectory(string logicalPath, bool isVault = false)
+    {
+        var physicalPath = GetFilePhysicalPath(logicalPath, isVault);
+        if (File.Exists(physicalPath))
+        {
+            File.Delete(physicalPath);
+        }
+        else if (Directory.Exists(physicalPath))
+        {
+            Directory.Delete(physicalPath, true);
+        }
+    }
+
+    public void RenameFileOrDirectory(string logicalPath, string newName, bool isVault = false)
+    {
+        var physicalPath = GetFilePhysicalPath(logicalPath, isVault);
+        var parentPhysicalPath = Path.GetDirectoryName(physicalPath);
+        if (parentPhysicalPath == null)
+        {
+            throw new ArgumentException("Cannot find parent directory.");
+        }
+
+        var parentLogicalPath = Path.GetDirectoryName(logicalPath);
+        var newLogicalPath = Path.Combine(parentLogicalPath ?? string.Empty, newName);
+        var newPhysicalPath = GetFilePhysicalPath(newLogicalPath, isVault);
+
+        if (File.Exists(newPhysicalPath) || Directory.Exists(newPhysicalPath))
+        {
+            throw new InvalidOperationException("Target already exists.");
+        }
+
+        if (File.Exists(physicalPath))
+        {
+            File.Move(physicalPath, newPhysicalPath);
+        }
+        else if (Directory.Exists(physicalPath))
+        {
+            Directory.Move(physicalPath, newPhysicalPath);
+        }
+        else
+        {
+            throw new FileNotFoundException("Source file or directory not found.");
+        }
+    }
+
+    public void MoveFileOrDirectory(string sourceLogicalPath, string targetLogicalPath, bool isVault = false)
+    {
+        var sourcePhysicalPath = GetFilePhysicalPath(sourceLogicalPath, isVault);
+        var fileName = Path.GetFileName(sourceLogicalPath);
+        var newLogicalPath = Path.Combine(targetLogicalPath, fileName);
+        var targetPhysicalPath = GetFilePhysicalPath(newLogicalPath, isVault);
+
+        if (File.Exists(targetPhysicalPath) || Directory.Exists(targetPhysicalPath))
+        {
+            throw new InvalidOperationException("Destination file or folder already exists.");
+        }
+
+        if (File.Exists(sourcePhysicalPath))
+        {
+            File.Move(sourcePhysicalPath, targetPhysicalPath);
+        }
+        else if (Directory.Exists(sourcePhysicalPath))
+        {
+            Directory.Move(sourcePhysicalPath, targetPhysicalPath);
+        }
+        else
+        {
+            throw new FileNotFoundException("Source file or directory not found.");
+        }
     }
 
     public string GetToken(string path, FilePermission permission)
@@ -247,12 +330,38 @@ public class StorageService(
 
     private static long GetDirectorySize(DirectoryInfo d)
     {
-        // Add file sizes.
-        var fis = d.GetFiles();
-        var size = fis.Sum(fi => fi.Length);
-        // Add subdirectory sizes.
-        var dis = d.GetDirectories();
-        size += dis.Sum(GetDirectorySize);
+        long size = 0;
+        var stack = new Stack<DirectoryInfo>();
+        stack.Push(d);
+
+        while (stack.Count > 0)
+        {
+            var current = stack.Pop();
+
+            // Add file sizes.
+            try
+            {
+                size += current.EnumerateFiles().Sum(fi => fi.Length);
+            }
+            catch (UnauthorizedAccessException)
+            {
+                // Skip if no permission
+            }
+
+            // Add subdirectories to stack.
+            try
+            {
+                foreach (var di in current.EnumerateDirectories())
+                {
+                    stack.Push(di);
+                }
+            }
+            catch (UnauthorizedAccessException)
+            {
+                // Skip if no permission
+            }
+        }
+
         return size;
     }
 }

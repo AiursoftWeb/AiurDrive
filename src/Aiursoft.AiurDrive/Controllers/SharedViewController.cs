@@ -31,11 +31,8 @@ public class SharedViewController(
         var logicalPath = Path.Combine(siteName, path);
         
         // All sites now use Vault storage
+        storage.CreateDirectory(logicalPath, isVault: true);
         var physicalPath = storage.GetFilePhysicalPath(logicalPath, isVault: true);
-        if (!Directory.Exists(physicalPath))
-        {
-             Directory.CreateDirectory(physicalPath);
-        }
 
         var directoryInfo = new DirectoryInfo(physicalPath);
         var files = directoryInfo.GetFiles().OrderByDescending(f => f.LastWriteTime).ToList();
