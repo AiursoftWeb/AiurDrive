@@ -235,6 +235,12 @@ public class DashboardController(
             maxSpaceGB = site.StorageSizeLimit.Value;
         }
 
+        var usedSpaceTask = Task.Run(() => storage.GetSiteSize(siteName));
+        var allowImagePreviewTask = globalSettings.GetBoolSettingAsync(SettingsMap.AllowImagePreview);
+        var hasWriteAccessTask = HasAccess(site, user, SharePermission.Editable);
+
+        await Task.WhenAll(usedSpaceTask, allowImagePreviewTask, hasWriteAccessTask);
+
         var model = new FileManagerViewModel
         {
             SiteName = siteName,
@@ -242,11 +248,11 @@ public class DashboardController(
             Files = files,
             Folders = folders,
             PageTitle = "File Manager",
-            UsedSpaceInBytes = storage.GetSiteSize(siteName),
+            UsedSpaceInBytes = await usedSpaceTask,
             TotalSpaceInGB = maxSpaceGB,
-            AllowImagePreview = await globalSettings.GetBoolSettingAsync(SettingsMap.AllowImagePreview),
+            AllowImagePreview = await allowImagePreviewTask,
             IsOwner = site.AppUserId == user.Id,
-            HasWriteAccess = await HasAccess(site, user, SharePermission.Editable)
+            HasWriteAccess = await hasWriteAccessTask
         };
         return this.StackView(model);
     }

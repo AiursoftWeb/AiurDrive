@@ -44,7 +44,6 @@ public class Startup : IWebStartup
         services.AddSingleton<NavigationState<Startup>>();
 
         // Background job queue
-        services.AddSingleton<Services.BackgroundJobs.BackgroundJobQueue>();
         services.AddHostedService<Services.BackgroundJobs.QueueWorkerService>();
 
         // Controllers and localization

@@ -8,51 +8,72 @@ namespace Aiursoft.AiurDrive.Services.BackgroundJobs;
 public class QueueWorkerService(
     BackgroundJobQueue backgroundJobQueue,
     IServiceScopeFactory serviceScopeFactory,
-    ILogger<QueueWorkerService> logger) : IHostedService, IDisposable
+    ILogger<QueueWorkerService> logger) : BackgroundService
 {
-    private Timer? _timer;
-    private Timer? _cleanupTimer;
-    private readonly SemaphoreSlim _semaphore = new(1, 1);
-
-    public Task StartAsync(CancellationToken cancellationToken)
+    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         logger.LogInformation("Queue Worker Service is starting");
 
-        // Process jobs every 100ms
-        _timer = new Timer(ProcessJobs, null, TimeSpan.Zero, TimeSpan.FromMilliseconds(100));
+        using var processTimer = new PeriodicTimer(TimeSpan.FromMilliseconds(100));
+        using var cleanupTimer = new PeriodicTimer(TimeSpan.FromMinutes(5));
 
-        // Cleanup old jobs every 5 minutes
-        _cleanupTimer = new Timer(CleanupOldJobs, null, TimeSpan.FromMinutes(1), TimeSpan.FromMinutes(5));
+        var processTask = ProcessJobsLoop(stoppingToken, processTimer);
+        var cleanupTask = CleanupJobsLoop(stoppingToken, cleanupTimer);
 
-        return Task.CompletedTask;
+        await Task.WhenAll(processTask, cleanupTask);
+        
+        logger.LogInformation("Queue Worker Service is stopping");
     }
 
-    private void ProcessJobs(object? state)
+    private async Task ProcessJobsLoop(CancellationToken stoppingToken, PeriodicTimer timer)
     {
-        // Try to acquire the semaphore (non-blocking)
-        if (!_semaphore.Wait(0))
+        while (await timer.WaitForNextTickAsync(stoppingToken))
         {
-            return; // Already processing
-        }
-
-        try
-        {
-            var queues = backgroundJobQueue.GetQueuesWithPendingJobs().ToList();
-
-            foreach (var queueName in queues)
+            try
             {
-                // Try to get next job for this queue (will return null if queue is already processing)
-                var job = backgroundJobQueue.TryDequeueNextJob(queueName);
-                if (job != null)
+                var queues = backgroundJobQueue.GetQueuesWithPendingJobs().ToList();
+
+                foreach (var queueName in queues)
                 {
-                    // Process job asynchronously without blocking the timer
-                    _ = Task.Run(async () => await ProcessJobAsync(job));
+                    // Try to get next job for this queue (will return null if queue is already processing)
+                    var job = backgroundJobQueue.TryDequeueNextJob(queueName);
+                    if (job != null)
+                    {
+                        // Process job asynchronously without blocking the timer
+                        _ = Task.Run(async () => await ProcessJobAsync(job), stoppingToken);
+                    }
                 }
             }
+            catch (OperationCanceledException)
+            {
+                // Normal shutdown
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "Error occurred while processing jobs loop");
+            }
         }
-        finally
+    }
+
+    private async Task CleanupJobsLoop(CancellationToken stoppingToken, PeriodicTimer timer)
+    {
+        // Initial delay to avoid running immediately at startup if not desired, 
+        // but here we wait for the first tick which is 5 minutes.
+        while (await timer.WaitForNextTickAsync(stoppingToken))
         {
-            _semaphore.Release();
+            try
+            {
+                logger.LogInformation("Cleaning up old jobs");
+                backgroundJobQueue.CleanupOldJobs(TimeSpan.FromHours(1));
+            }
+            catch (OperationCanceledException)
+            {
+                // Normal shutdown
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "Error cleaning up old jobs");
+            }
         }
     }
 
@@ -86,36 +107,5 @@ public class QueueWorkerService(
             // Mark as failed with error message
             backgroundJobQueue.CompleteJob(job.JobId, false, ex.ToString());
         }
-    }
-
-    private void CleanupOldJobs(object? state)
-    {
-        try
-        {
-            logger.LogInformation("Cleaning up old jobs");
-            backgroundJobQueue.CleanupOldJobs(TimeSpan.FromHours(1));
-        }
-        catch (Exception ex)
-        {
-            logger.LogError(ex, "Error cleaning up old jobs");
-        }
-    }
-
-    public Task StopAsync(CancellationToken cancellationToken)
-    {
-        logger.LogInformation("Queue Worker Service is stopping");
-
-        _timer?.Change(Timeout.Infinite, 0);
-        _cleanupTimer?.Change(Timeout.Infinite, 0);
-
-        return Task.CompletedTask;
-    }
-
-    public void Dispose()
-    {
-        _timer?.Dispose();
-        _cleanupTimer?.Dispose();
-        _semaphore.Dispose();
-        GC.SuppressFinalize(this);
     }
 }

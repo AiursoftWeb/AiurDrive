@@ -36,15 +36,18 @@ public class UsersController(
     public async Task<IActionResult> Index()
     {
         var allUsers = await context.Users.ToListAsync();
-        var usersWithRoles = new List<UserWithRolesViewModel>();
-        foreach (var user in allUsers)
+        var userRoleJoins = await context.UserRoles
+            .Join(context.Roles, ur => ur.RoleId, r => r.Id, (ur, r) => new { ur.UserId, r.Name })
+            .ToListAsync();
+
+        var usersWithRoles = allUsers.Select(user => new UserWithRolesViewModel
         {
-            usersWithRoles.Add(new UserWithRolesViewModel
-            {
-                User = user,
-                Roles = await userManager.GetRolesAsync(user)
-            });
-        }
+            User = user,
+            Roles = userRoleJoins
+                .Where(ur => ur.UserId == user.Id)
+                .Select(ur => ur.Name!)
+                .ToList()
+        }).ToList();
 
         return this.StackView(new IndexViewModel
         {
