@@ -24,9 +24,9 @@ public class GlobalSettingsController(GlobalSettingsService settingsService) : C
     public async Task<IActionResult> Index()
     {
         var model = new IndexViewModel();
-        foreach (var definition in SettingsMap.Definitions)
+        var settingsTasks = SettingsMap.Definitions.Select(async definition =>
         {
-            model.Settings.Add(new SettingViewModel
+            return new SettingViewModel
             {
                 Key = definition.Key,
                 Name = definition.Name,
@@ -40,8 +40,10 @@ public class GlobalSettingsController(GlobalSettingsService settingsService) : C
                 Subfolder = definition.Subfolder,
                 AllowedExtensions = definition.AllowedExtensions,
                 MaxSizeInMb = definition.MaxSizeInMb
-            });
-        }
+            };
+        });
+
+        model.Settings.AddRange(await Task.WhenAll(settingsTasks));
         return this.StackView(model);
     }
 

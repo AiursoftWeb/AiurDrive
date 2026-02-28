@@ -43,19 +43,20 @@ public class SitesController(
         var maxSpaceString = await globalSettings.GetSettingValueAsync(SettingsMap.MaxSiteStorageInGB);
         long.TryParse(maxSpaceString, out var globalMaxSpaceGB);
 
-        var viewModels = new List<SiteStorageViewModel>();
-        foreach(var site in sites)
+        var viewModelsTasks = sites.Select(async site =>
         {
-            var usedSize = storageService.GetSiteSize(site.SiteName);
+            var usedSize = await Task.Run(() => storageService.GetSiteSize(site.SiteName));
             var limit = site.StorageSizeLimit ?? globalMaxSpaceGB;
-            viewModels.Add(new SiteStorageViewModel
+            return new SiteStorageViewModel
             {
                 Site = site,
                 UsedSizeInBytes = usedSize,
                 LimitInGB = limit,
                 IsOverridden = site.StorageSizeLimit.HasValue
-            });
-        }
+            };
+        });
+
+        var viewModels = (await Task.WhenAll(viewModelsTasks)).ToList();
 
         var model = new IndexViewModel
         {
