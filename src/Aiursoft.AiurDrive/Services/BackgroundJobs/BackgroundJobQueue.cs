@@ -1,5 +1,4 @@
 using System.Collections.Concurrent;
-using Aiursoft.Scanner.Abstractions;
 using Aiursoft.AiurDrive.Models.BackgroundJobs;
 
 namespace Aiursoft.AiurDrive.Services.BackgroundJobs;
@@ -8,7 +7,7 @@ namespace Aiursoft.AiurDrive.Services.BackgroundJobs;
 /// A queue system for background jobs with dependency injection support.
 /// Each queue processes jobs sequentially, but different queues can process jobs in parallel.
 /// </summary>
-public class BackgroundJobQueue : ISingletonDependency
+public class BackgroundJobQueue
 {
     private readonly ConcurrentDictionary<Guid, JobInfo> _allJobs = new();
     private readonly ConcurrentDictionary<string, ConcurrentQueue<Guid>> _queuesByName = new();
