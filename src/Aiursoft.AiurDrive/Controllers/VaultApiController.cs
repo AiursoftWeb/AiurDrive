@@ -105,6 +105,11 @@ public class VaultApiController(
     [DisableRequestSizeLimit]
     public async Task<IActionResult> Upload(IFormFile file)
     {
+        if (file == null || file.Length == 0)
+        {
+            return BadRequest("No file uploaded.");
+        }
+
         var objectsPath = GetUserVaultObjectsPath();
         var uuid = Path.GetFileNameWithoutExtension(file.FileName);
         if (string.IsNullOrWhiteSpace(uuid) || uuid.Any(c => !char.IsLetterOrDigit(c)))
