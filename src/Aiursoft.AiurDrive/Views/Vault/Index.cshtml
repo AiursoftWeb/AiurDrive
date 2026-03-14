@@ -16,12 +16,18 @@
         <div class="col-12 col-md-8 col-lg-6 col-xl-5 mx-auto">
             <div class="card shadow-sm">
                 <div class="card-header">
-                    <h5 class="card-title mb-0"><i class="fas fa-shield-alt me-2 text-primary"></i>Initialize Vault</h5>
+                    <h5 class="card-title mb-0"><i class="fas fa-shield-alt me-2 text-primary"></i>Initialize Vault <span class="badge bg-success ms-2">Zero-Trust</span></h5>
                 </div>
                 <div class="card-body">
-                    <div class="alert alert-info small mb-4">
-                        <i class="fas fa-info-circle me-1"></i>
-                        Files are encrypted on your device. We never see your password or your raw data.
+                    <div class="alert alert-primary alert-outline-coloured alert-dismissible mb-4" role="alert">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        <div class="alert-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="alert-message">
+                            <strong>Zero-Trust Architecture</strong><br />
+                            Your files are encrypted <strong>locally</strong> in your browser before upload. We never see your password, and without it, recovery is <strong>mathematically impossible</strong>. Raw data is <strong>never</strong> uploaded to our server.
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Set Vault Password</label>
@@ -48,10 +54,19 @@
                     <div class="mb-3">
                         <i class="fas fa-lock fa-3x text-secondary"></i>
                     </div>
-                    <h4 class="card-title mb-0">Vault Locked</h4>
+                    <h4 class="card-title mb-0">Vault Locked <span class="badge bg-secondary ms-2 small" style="font-size: 0.4em; vertical-align: middle;">Encrypted</span></h4>
                 </div>
                 <div class="card-body px-4 pb-4">
-                    <p class="text-center text-muted mb-4">Please enter your password to access your encrypted files.</p>
+                    <div class="alert alert-info alert-outline-coloured alert-dismissible mb-4" role="alert">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        <div class="alert-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="alert-message">
+                            <strong>Ready to Decrypt?</strong><br />
+                            Decryption happens entirely on your device using your password. We never see your password or your raw data. Without your password, your files are <strong>forever inaccessible</strong>.
+                        </div>
+                    </div>
                     <div class="mb-3">
                         <input type="password" id="login-password" class="form-control form-control-lg" placeholder="Vault Password" autofocus />
                     </div>
@@ -114,7 +129,7 @@
             <div class="col-12 col-xl-8">
                 <div class="card shadow-sm">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h5 class="card-title mb-0"><i class="fas fa-list me-2 text-success"></i>Encrypted Files</h5>
+                        <h5 class="card-title mb-0"><i class="fas fa-list me-2 text-success"></i>Encrypted Files <span class="badge bg-info ms-2">Private</span></h5>
                         <button class="btn btn-sm btn-light" onclick="refreshFileList()">
                             <i class="fas fa-sync-alt"></i>
                         </button>
@@ -154,6 +169,7 @@
 
     let masterKey = null;
     let vaultConfig = null;
+    let cachedFiles = [];
 
     async function digestMessage(message) {
         const msgUint8 = new TextEncoder().encode(message);
@@ -318,25 +334,34 @@
         const response = await fetch('/VaultApi/List');
         const files = await response.json();
         const body = document.getElementById('file-list-body');
-        body.innerHTML = '';
-
+        
         if (files.length === 0) {
             body.innerHTML = '<tr><td colspan="4" class="text-center py-4 text-muted">Empty</td></tr>';
+            cachedFiles = [];
             return;
         }
 
-        for (const f of files) {
-            const row = document.createElement('tr');
-            // We need to fetch and decrypt the filename
-            const fileName = await getDecryptedName(f.Uuid);
+        // Show loading state for the table
+        body.innerHTML = '<tr><td colspan="4" class="text-center py-4 text-muted"><span class="spinner-border spinner-border-sm me-2"></span>Decrypting file list...</td></tr>';
 
+        const filePromises = files.map(async f => {
+            const fileName = await getDecryptedName(f.Uuid);
+            return { ...f, fileName };
+        });
+
+        const decryptedFiles = await Promise.all(filePromises);
+        cachedFiles = decryptedFiles;
+        body.innerHTML = '';
+
+        for (const f of decryptedFiles) {
+            const row = document.createElement('tr');
             row.innerHTML = `
-                <td><i class="far fa-file-alt text-primary me-2"></i>${escapeHtml(fileName)}</td>
+                <td><i class="far fa-file-alt text-primary me-2"></i>${escapeHtml(f.fileName)}</td>
                 <td>${formatBytes(f.Size)}</td>
                 <td class="small">${new Date(f.LastWriteTime).toLocaleString()}</td>
                 <td class="text-end">
-                    <button class="btn btn-sm btn-outline-success me-1" onclick="downloadFile('${f.Uuid}')"><i class="fas fa-download"></i></button>
-                    <button class="btn btn-sm btn-outline-danger" onclick="deleteFile('${f.Uuid}')"><i class="fas fa-trash"></i></button>
+                    <button class="btn btn-sm btn-outline-success me-1" onclick="downloadFile('${f.Uuid}')" title="Download"><i class="fas fa-download"></i></button>
+                    <button class="btn btn-sm btn-outline-danger" onclick="deleteFile('${f.Uuid}')" title="Delete"><i class="fas fa-trash"></i></button>
                 </td>
             `;
             body.appendChild(row);
@@ -358,17 +383,29 @@
         const input = document.getElementById('file-upload-input');
         if (!input.files[0] || !masterKey) return;
 
+        const file = input.files[0];
+        let uuidStr;
+        let fileUuid;
+
+        const existing = cachedFiles.find(f => f.fileName === file.name);
+        if (existing) {
+            if (!confirm(`A file named "${file.name}" already exists. Do you want to overwrite it?`)) {
+                return;
+            }
+            uuidStr = existing.Uuid;
+            fileUuid = new Uint8Array(uuidStr.match(/.{1,2}/g).map(byte => parseInt(byte, 16)));
+        } else {
+            fileUuid = crypto.getRandomValues(new Uint8Array(UUID_SIZE));
+            uuidStr = Array.from(fileUuid).map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
         const btn = document.getElementById('upload-btn');
         btn.disabled = true;
         btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Encrypting...';
 
         try {
-            const file = input.files[0];
             const content = await file.arrayBuffer();
-            const uuid = crypto.getRandomValues(new Uint8Array(UUID_SIZE));
-            const uuidStr = Array.from(uuid).map(b => b.toString(16).padStart(2, '0')).join('');
-
-            const encryptedBlob = await encryptFileData(new Uint8Array(content), file.name, uuid);
+            const encryptedBlob = await encryptFileData(new Uint8Array(content), file.name, fileUuid);
 
             const formData = new FormData();
             formData.append('file', new Blob([encryptedBlob]), uuidStr + ".enc");

@@ -23,3 +23,8 @@ nav.navbar{
 .landing-intro{
     padding-top:160px!important
 }
+
+/* Vault Page Styles */
+#vault-loading {
+    transition: opacity 0.3s ease;
+}
