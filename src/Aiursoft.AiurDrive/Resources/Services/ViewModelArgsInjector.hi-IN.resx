@@ -201,5 +201,11 @@
   <data name="Users" xml:space="preserve">
     <value>उपयोगकर्ता</value>
   </data>
+  <data name="Vault" xml:space="preserve">
+    <value>खजाना</value>
+  </data>
+  <data name="Zero-Trust Vault" xml:space="preserve">
+    <value>ज़ीरो-ट्रस्ट वॉल्ट</value>
+  </data>
 
 </root>

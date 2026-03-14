@@ -204,5 +204,11 @@
   <data name="Users" xml:space="preserve">
     <value>사용자</value>
   </data>
+  <data name="Vault" xml:space="preserve">
+    <value>보관함</value>
+  </data>
+  <data name="Zero-Trust Vault" xml:space="preserve">
+    <value>제로 트러스트 금고</value>
+  </data>
 
 </root>

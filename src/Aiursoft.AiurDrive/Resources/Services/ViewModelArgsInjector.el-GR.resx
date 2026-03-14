@@ -201,5 +201,11 @@
   <data name="Users" xml:space="preserve">
     <value>Χρήστες</value>
   </data>
+  <data name="Vault" xml:space="preserve">
+    <value>Θησαυροφυλάκιο</value>
+  </data>
+  <data name="Zero-Trust Vault" xml:space="preserve">
+    <value>Αποθήκη Μηδενικής Εμπιστοσύνης</value>
+  </data>
 
 </root>
