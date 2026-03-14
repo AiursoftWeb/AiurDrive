@@ -15,7 +15,7 @@ namespace Aiursoft.AiurDrive.Sqlite.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "10.0.2");
+            modelBuilder.HasAnnotation("ProductVersion", "10.0.5");
 
             modelBuilder.Entity("Aiursoft.AiurDrive.Entities.GlobalSetting", b =>
                 {
@@ -160,6 +160,18 @@ namespace Aiursoft.AiurDrive.Sqlite.Migrations
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("VaultSaltBase64")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("VerifierCipherBase64")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("VerifierNonceBase64")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("VerifierTagBase64")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

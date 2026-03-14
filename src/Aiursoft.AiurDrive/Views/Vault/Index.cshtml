@@ -1,0 +1,501 @@
+@model Aiursoft.AiurDrive.Models.VaultViewModel
+@{
+    ViewData["Title"] = Model.PageTitle;
+}
+
+<div class="container-fluid">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">@Model.PageTitle</h1>
+    </div>
+
+    <div id="vault-loading" class="text-center py-5">
+        <div class="spinner-border text-primary" role="status"></div>
+        <p class="mt-2">Connecting to Vault...</p>
+    </div>
+
+    <div id="vault-init" class="card shadow-sm mx-auto d-none" style="max-width: 500px;">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0"><i class="fas fa-shield-alt me-2"></i>Initialize Zero-Trust Vault</h5>
+        </div>
+        <div class="card-body">
+            <p class="text-muted small">Your files will be encrypted on your device before they reach our servers. We never see your password.</p>
+            <div class="mb-3">
+                <label class="form-label">Set Vault Password</label>
+                <input type="password" id="init-password" class="form-control" placeholder="Minimum 8 characters" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Confirm Password</label>
+                <input type="password" id="init-confirm" class="form-control" />
+            </div>
+            <div id="init-error" class="alert alert-danger py-2 d-none"></div>
+            <button class="btn btn-primary w-100" onclick="initializeVault()">Initialize Vault</button>
+        </div>
+    </div>
+
+    <div id="vault-login" class="card shadow-sm mx-auto d-none" style="max-width: 500px;">
+        <div class="card-header bg-dark text-white">
+            <h5 class="mb-0"><i class="fas fa-lock me-2"></i>Vault Locked</h5>
+        </div>
+        <div class="card-body">
+            <p>Please enter your vault password to continue.</p>
+            <div class="mb-3">
+                <input type="password" id="login-password" class="form-control" placeholder="Vault Password" autofocus />
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="remember-me" />
+                <label class="form-check-label" for="remember-me">Remember for this session</label>
+            </div>
+            <div id="login-error" class="alert alert-danger py-2 d-none"></div>
+            <button class="btn btn-success w-100" onclick="unlockVault()">Unlock Vault</button>
+            
+            <div class="mt-3 text-center">
+                <hr />
+                <p class="text-muted small mb-1">Forgot your vault password?</p>
+                <button class="btn btn-sm btn-link text-danger p-0" onclick="formatVault()">
+                    <i class="fas fa-exclamation-triangle me-1"></i>Reset and Format Vault
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="vault-content" class="d-none">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3><i class="fas fa-vault me-2"></i>Safe Files</h3>
+            <div class="btn-group">
+                <button class="btn btn-outline-danger btn-sm" onclick="formatVault()">
+                    <i class="fas fa-bomb me-1"></i>Format
+                </button>
+                <button class="btn btn-outline-secondary btn-sm" onclick="lockVault()">
+                    <i class="fas fa-lock me-1"></i>Lock
+                </button>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body p-3">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <input type="file" id="file-upload-input" class="form-control" />
+                    </div>
+                    <div class="col-auto">
+                        <button id="upload-btn" class="btn btn-primary" onclick="uploadFile()">
+                            <i class="fas fa-upload me-1"></i>Upload
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Name</th>
+                        <th>Size</th>
+                        <th>Date</th>
+                        <th class="text-end">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="file-list-body">
+                    <!-- Files will be injected here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+<script>
+    const PBKDF2_ITERATIONS = 600000;
+    const SALT_SIZE = 32;
+    const KEY_SIZE = 32; // 256 bit
+    const NONCE_SIZE = 12;
+    const TAG_SIZE = 16;
+    const UUID_SIZE = 16;
+
+    let masterKey = null;
+    let vaultConfig = null;
+
+    async function digestMessage(message) {
+        const msgUint8 = new TextEncoder().encode(message);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);
+        return new Uint8Array(hashBuffer);
+    }
+
+    async function deriveMasterKey(password, salt) {
+        const passwordKey = await crypto.subtle.importKey(
+            'raw',
+            new TextEncoder().encode(password),
+            { name: 'PBKDF2' },
+            false,
+            ['deriveKey']
+        );
+
+        return await crypto.subtle.deriveKey(
+            {
+                name: 'PBKDF2',
+                salt: salt,
+                iterations: PBKDF2_ITERATIONS,
+                hash: 'SHA-256'
+            },
+            passwordKey,
+            { name: 'AES-GCM', length: 256 },
+            true,
+            ['encrypt', 'decrypt']
+        );
+    }
+
+    async function validatePassword(password, config) {
+        try {
+            const salt = base64ToUint8(config.VaultSaltBase64);
+            const mKey = await deriveMasterKey(password, salt);
+            
+            const nonce = base64ToUint8(config.VerifierNonceBase64);
+            const tag = base64ToUint8(config.VerifierTagBase64);
+            const cipher = base64ToUint8(config.VerifierCipherBase64);
+            
+            // Web Crypto AES-GCM expects cipher and tag to be concatenated
+            const dataToDecrypt = new Uint8Array(cipher.length + tag.length);
+            dataToDecrypt.set(cipher);
+            dataToDecrypt.set(tag, cipher.length);
+
+            const decrypted = await crypto.subtle.decrypt(
+                { name: 'AES-GCM', iv: nonce, tagLength: 128 },
+                mKey,
+                dataToDecrypt
+            );
+
+            return new TextDecoder().decode(decrypted) === "VALID";
+        } catch (e) {
+            console.error(e);
+            return false;
+        }
+    }
+
+    async function initializeVault() {
+        const pwd = document.getElementById('init-password').value;
+        const confirm = document.getElementById('init-confirm').value;
+        const errorDiv = document.getElementById('init-error');
+
+        if (pwd.length < 8) {
+            errorDiv.innerText = "Password too short.";
+            errorDiv.classList.remove('d-none');
+            return;
+        }
+        if (pwd !== confirm) {
+            errorDiv.innerText = "Passwords do not match.";
+            errorDiv.classList.remove('d-none');
+            return;
+        }
+
+        try {
+            const salt = crypto.getRandomValues(new Uint8Array(SALT_SIZE));
+            const mKey = await deriveMasterKey(pwd, salt);
+            
+            const verifierPlain = new TextEncoder().encode("VALID");
+            const nonce = crypto.getRandomValues(new Uint8Array(NONCE_SIZE));
+            
+            const encrypted = await crypto.subtle.encrypt(
+                { name: 'AES-GCM', iv: nonce, tagLength: 128 },
+                mKey,
+                verifierPlain
+            );
+
+            const encryptedUint8 = new Uint8Array(encrypted);
+            const cipher = encryptedUint8.slice(0, -TAG_SIZE);
+            const tag = encryptedUint8.slice(-TAG_SIZE);
+
+            const config = {
+                VaultSaltBase64: uint8ToBase64(salt),
+                VerifierNonceBase64: uint8ToBase64(nonce),
+                VerifierTagBase64: uint8ToBase64(tag),
+                VerifierCipherBase64: uint8ToBase64(cipher)
+            };
+
+            const response = await fetch('/VaultApi/Init', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(config)
+            });
+
+            if (response.ok) {
+                vaultConfig = config;
+                masterKey = mKey;
+                showView('vault-content');
+                refreshFileList();
+            } else {
+                alert("Failed to init: " + await response.text());
+            }
+        } catch (e) {
+            alert("Error: " + e.message);
+        }
+    }
+
+    async function unlockVault() {
+        const pwd = document.getElementById('login-password').value;
+        const remember = document.getElementById('remember-me').checked;
+        const errorDiv = document.getElementById('login-error');
+
+        if (await validatePassword(pwd, vaultConfig)) {
+            masterKey = await deriveMasterKey(pwd, base64ToUint8(vaultConfig.VaultSaltBase64));
+            if (remember) {
+                sessionStorage.setItem('vault_pass', pwd);
+            }
+            showView('vault-content');
+            refreshFileList();
+        } else {
+            errorDiv.innerText = "Invalid password.";
+            errorDiv.classList.remove('d-none');
+        }
+    }
+
+    function lockVault() {
+        masterKey = null;
+        sessionStorage.removeItem('vault_pass');
+        showView('vault-login');
+    }
+
+    async function formatVault() {
+        if (!confirm("WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?")) {
+            return;
+        }
+        if (!confirm("LAST CHANCE: All your data will be wiped. This action cannot be undone. Confirm formatting?")) {
+            return;
+        }
+
+        const response = await fetch('/VaultApi/Reset', { method: 'POST' });
+        if (response.ok) {
+            masterKey = null;
+            vaultConfig = null;
+            sessionStorage.removeItem('vault_pass');
+            showView('vault-init');
+            alert("Vault has been formatted and reset to factory state.");
+        } else {
+            alert("Failed to format vault: " + await response.text());
+        }
+    }
+
+    async function refreshFileList() {
+        const response = await fetch('/VaultApi/List');
+        const files = await response.json();
+        const body = document.getElementById('file-list-body');
+        body.innerHTML = '';
+
+        if (files.length === 0) {
+            body.innerHTML = '<tr><td colspan="4" class="text-center py-4 text-muted">Empty</td></tr>';
+            return;
+        }
+
+        for (const f of files) {
+            const row = document.createElement('tr');
+            // We need to fetch and decrypt the filename
+            const fileName = await getDecryptedName(f.Uuid);
+            
+            row.innerHTML = `
+                <td><i class="far fa-file-alt text-primary me-2"></i>${escapeHtml(fileName)}</td>
+                <td>${formatBytes(f.Size)}</td>
+                <td class="small">${new Date(f.LastWriteTime).toLocaleString()}</td>
+                <td class="text-end">
+                    <button class="btn btn-sm btn-outline-success me-1" onclick="downloadFile('${f.Uuid}')"><i class="fas fa-download"></i></button>
+                    <button class="btn btn-sm btn-outline-danger" onclick="deleteFile('${f.Uuid}')"><i class="fas fa-trash"></i></button>
+                </td>
+            `;
+            body.appendChild(row);
+        }
+    }
+
+    async function getDecryptedName(uuid) {
+        try {
+            const response = await fetch(`/VaultApi/Download/${uuid}`);
+            const buffer = await response.arrayBuffer();
+            const { relativePath } = await decryptFileData(new Uint8Array(buffer));
+            return relativePath;
+        } catch (e) {
+            return "[Encrypted File]";
+        }
+    }
+
+    async function uploadFile() {
+        const input = document.getElementById('file-upload-input');
+        if (!input.files[0] || !masterKey) return;
+
+        const btn = document.getElementById('upload-btn');
+        btn.disabled = true;
+        btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Encrypting...';
+
+        try {
+            const file = input.files[0];
+            const content = await file.arrayBuffer();
+            const uuid = crypto.getRandomValues(new Uint8Array(UUID_SIZE));
+            const uuidStr = Array.from(uuid).map(b => b.toString(16).padStart(2, '0')).join('');
+
+            const encryptedBlob = await encryptFileData(new Uint8Array(content), file.name, uuid);
+            
+            const formData = new FormData();
+            formData.append('file', new Blob([encryptedBlob]), uuidStr + ".enc");
+
+            const response = await fetch('/VaultApi/Upload', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                input.value = '';
+                refreshFileList();
+            } else {
+                alert("Upload failed.");
+            }
+        } catch (e) {
+            alert("Error: " + e.message);
+        } finally {
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fas fa-upload me-1"></i>Upload';
+        }
+    }
+
+    async function encryptFileData(content, path, fileUuid) {
+        // Derive file-specific key using HKDF
+        const rawMasterKey = await crypto.subtle.exportKey('raw', masterKey);
+        const baseKey = await crypto.subtle.importKey('raw', rawMasterKey, 'HKDF', false, ['deriveKey']);
+        
+        const fileKey = await crypto.subtle.deriveKey(
+            { name: 'HKDF', hash: 'SHA-256', salt: fileUuid, info: new Uint8Array() },
+            baseKey,
+            { name: 'AES-GCM', length: 256 },
+            false,
+            ['encrypt']
+        );
+
+        const pathBytes = new TextEncoder().encode(path);
+        const pathLen = new Uint8Array(new Uint32Array([pathBytes.length]).buffer);
+        
+        const payload = new Uint8Array(4 + pathBytes.length + content.length);
+        payload.set(pathLen, 0);
+        payload.set(pathBytes, 4);
+        payload.set(content, 4 + pathBytes.length);
+
+        const nonce = crypto.getRandomValues(new Uint8Array(NONCE_SIZE));
+        const encrypted = await crypto.subtle.encrypt(
+            { name: 'AES-GCM', iv: nonce, tagLength: 128 },
+            fileKey,
+            payload
+        );
+
+        const result = new Uint8Array(UUID_SIZE + NONCE_SIZE + encrypted.byteLength);
+        result.set(fileUuid, 0);
+        result.set(nonce, UUID_SIZE);
+        result.set(new Uint8Array(encrypted), UUID_SIZE + NONCE_SIZE);
+        return result;
+    }
+
+    async function decryptFileData(data) {
+        const fileUuid = data.slice(0, UUID_SIZE);
+        const nonce = data.slice(UUID_SIZE, UUID_SIZE + NONCE_SIZE);
+        const ciphertextWithTag = data.slice(UUID_SIZE + NONCE_SIZE);
+
+        const rawMasterKey = await crypto.subtle.exportKey('raw', masterKey);
+        const baseKey = await crypto.subtle.importKey('raw', rawMasterKey, 'HKDF', false, ['deriveKey']);
+        
+        const fileKey = await crypto.subtle.deriveKey(
+            { name: 'HKDF', hash: 'SHA-256', salt: fileUuid, info: new Uint8Array() },
+            baseKey,
+            { name: 'AES-GCM', length: 256 },
+            false,
+            ['decrypt']
+        );
+
+        const decryptedPayload = await crypto.subtle.decrypt(
+            { name: 'AES-GCM', iv: nonce, tagLength: 128 },
+            fileKey,
+            ciphertextWithTag
+        );
+
+        const payload = new Uint8Array(decryptedPayload);
+        const pathLen = new Uint32Array(payload.buffer, 0, 1)[0];
+        const relativePath = new TextDecoder().decode(payload.slice(4, 4 + pathLen));
+        const content = payload.slice(4 + pathLen);
+
+        return { relativePath, content };
+    }
+
+    async function downloadFile(uuid) {
+        try {
+            const response = await fetch(`/VaultApi/Download/${uuid}`);
+            const buffer = await response.arrayBuffer();
+            const { relativePath, content } = await decryptFileData(new Uint8Array(buffer));
+            
+            const blob = new Blob([content], { type: 'application/octet-stream' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = relativePath;
+            a.click();
+            URL.revokeObjectURL(url);
+        } catch (e) {
+            alert("Decryption failed: " + e.message);
+        }
+    }
+
+    async function deleteFile(uuid) {
+        if (!confirm("Delete this encrypted file?")) return;
+        const response = await fetch(`/VaultApi/Delete/${uuid}`, { method: 'DELETE' });
+        if (response.ok) refreshFileList();
+    }
+
+    // Utilities
+    function uint8ToBase64(uint8) {
+        return btoa(String.fromCharCode.apply(null, uint8));
+    }
+    function base64ToUint8(base64) {
+        return new Uint8Array(atob(base64).split('').map(c => c.charCodeAt(0)));
+    }
+    function showView(id) {
+        ['vault-loading', 'vault-init', 'vault-login', 'vault-content'].forEach(v => {
+            document.getElementById(v).classList.add('d-none');
+        });
+        document.getElementById(id).classList.remove('d-none');
+    }
+    function formatBytes(bytes, decimals = 2) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const dm = decimals < 0 ? 0 : decimals;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+    }
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    // Startup
+    window.onload = async () => {
+        const response = await fetch('/VaultApi/GetConfig');
+        if (response.status === 401) {
+            // Unauthorized - redirect to login
+            window.location.href = '/Account/Login?ReturnUrl=' + encodeURIComponent(window.location.pathname);
+            return;
+        }
+        if (response.status === 404) {
+            showView('vault-init');
+        } else if (response.ok) {
+            vaultConfig = await response.json();
+            const saved = sessionStorage.getItem('vault_pass');
+            if (saved && await validatePassword(saved, vaultConfig)) {
+                masterKey = await deriveMasterKey(saved, base64ToUint8(vaultConfig.VaultSaltBase64));
+                showView('vault-content');
+                refreshFileList();
+            } else {
+                showView('vault-login');
+            }
+        } else {
+            alert("Unexpected error: " + response.status);
+        }
+    };
+
+    document.getElementById('login-password').addEventListener('keyup', e => {
+        if (e.key === 'Enter') unlockVault();
+    });
+</script>
+}

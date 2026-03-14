@@ -18,4 +18,9 @@ public class User : IdentityUser
     
     [InverseProperty(nameof(Site.AppUser))]
     public IEnumerable<Site> Sites { get; set; } = new List<Site>();
+
+    public string? VaultSaltBase64 { get; set; }
+    public string? VerifierNonceBase64 { get; set; }
+    public string? VerifierTagBase64 { get; set; }
+    public string? VerifierCipherBase64 { get; set; }
 }
