@@ -15,6 +15,7 @@ namespace Aiursoft.AiurDrive.Controllers;
 [LimitPerMin]
 [Authorize]
 public class DashboardController(
+    ILogger<DashboardController> logger,
     AiurDriveDbContext dbContext,
     StorageService storage,
     GlobalSettingsService globalSettings,
@@ -35,7 +36,7 @@ public class DashboardController(
         var user = await dbContext.Users
             .Include(u => u.Sites)
             .SingleOrDefaultAsync(u => u.UserName == User.Identity!.Name);
-            
+
         if (user == null) return NotFound();
         var maxSites = await globalSettings.GetIntSettingAsync(SettingsMap.MaxSitesPerPerson);
         var model = new IndexViewModel
@@ -159,7 +160,7 @@ public class DashboardController(
                 return this.StackView(model);
             }
 
-            try 
+            try
             {
                 storage.RenameSiteFolder(site.SiteName, newName);
                 site.SiteName = newName;
@@ -218,7 +219,7 @@ public class DashboardController(
 
         path ??= string.Empty;
         var logicalPath = Path.Combine(siteName, path);
-        
+
         // Ensure the folder exists (all sites use Vault)
         storage.CreateDirectory(logicalPath, isVault: true);
         var physicalPath = storage.GetFilePhysicalPath(logicalPath, isVault: true);
@@ -229,7 +230,7 @@ public class DashboardController(
 
         var maxSpaceString = await globalSettings.GetSettingValueAsync(SettingsMap.MaxSiteStorageInGB);
         long.TryParse(maxSpaceString, out var maxSpaceGB);
-        
+
         if (site.StorageSizeLimit.HasValue)
         {
             maxSpaceGB = site.StorageSizeLimit.Value;
@@ -273,12 +274,12 @@ public class DashboardController(
         }
 
         if (string.IsNullOrWhiteSpace(path)) return BadRequest("Cannot delete root.");
-        
+
         var normalizedPath = path.Replace("\\", "/");
         if (normalizedPath.Contains("..")) return BadRequest("Path traversal not allowed.");
 
         var logicalPath = Path.Combine(siteName, path);
-        try 
+        try
         {
             storage.DeleteFileOrDirectory(logicalPath, isVault: true);
         }
@@ -305,7 +306,7 @@ public class DashboardController(
         if (site == null) return NotFound();
 
         // Only owner can delete site
-        
+
         var model = new DeleteSiteViewModel
         {
             SiteName = site.SiteName,
@@ -329,13 +330,13 @@ public class DashboardController(
         var site = user.Sites.FirstOrDefault(s => s.SiteName == siteName);
         if (site == null) return NotFound();
 
-        try 
+        try
         {
             storage.DeleteSiteFolder(site.SiteName);
         }
         catch (Exception e)
         {
-            Console.WriteLine($"Error deleting folder: {e.Message}");
+            logger.LogError(e, "Error deleting site folder for site {SiteName}", site.SiteName);
         }
 
         dbContext.Sites.Remove(site);
@@ -365,10 +366,10 @@ public class DashboardController(
         path ??= string.Empty;
         var normalizedPath = path.Replace("\\", "/");
         if (normalizedPath.Contains("..")) return BadRequest("Path traversal not allowed.");
-        
+
         var logicalPath = Path.Combine(siteName, path, newFolderName);
 
-        try 
+        try
         {
             var physicalPath = storage.GetFilePhysicalPath(logicalPath, isVault: true);
             if (Directory.Exists(physicalPath) || System.IO.File.Exists(physicalPath))
@@ -403,13 +404,13 @@ public class DashboardController(
         if (string.IsNullOrWhiteSpace(path)) return BadRequest("Cannot rename root.");
         if (string.IsNullOrWhiteSpace(newName)) return BadRequest("New name cannot be empty.");
         if (newName.Any(c => Path.GetInvalidFileNameChars().Contains(c))) return BadRequest("Invalid file name.");
-        
+
         var normalizedPath = path.Replace("\\", "/");
         if (normalizedPath.Contains("..")) return BadRequest("Path traversal not allowed.");
 
         var logicalPath = Path.Combine(siteName, path);
-        
-        try 
+
+        try
         {
             storage.RenameFileOrDirectory(logicalPath, newName, isVault: true);
         }
@@ -446,13 +447,13 @@ public class DashboardController(
         {
             return BadRequest("Path traversal not allowed.");
         }
-        
+
         if (string.Equals(Path.GetDirectoryName(normalizedSource)?.Replace("\\", "/"), normalizedTarget, StringComparison.OrdinalIgnoreCase))
         {
              return RedirectToAction(nameof(Files), new { siteName, path = normalizedTarget });
         }
 
-        if (normalizedTarget.StartsWith(normalizedSource + "/", StringComparison.OrdinalIgnoreCase) || 
+        if (normalizedTarget.StartsWith(normalizedSource + "/", StringComparison.OrdinalIgnoreCase) ||
             string.Equals(normalizedTarget, normalizedSource, StringComparison.OrdinalIgnoreCase))
         {
             return BadRequest("Cannot move a folder into itself or its subfolder.");
@@ -461,7 +462,7 @@ public class DashboardController(
         var logicalDestPath = Path.Combine(siteName, normalizedTarget).Replace("\\", "/");
         var logicalSourcePath = Path.Combine(siteName, normalizedSource).Replace("\\", "/");
 
-        try 
+        try
         {
             storage.MoveFileOrDirectory(logicalSourcePath, logicalDestPath, isVault: true);
         }
