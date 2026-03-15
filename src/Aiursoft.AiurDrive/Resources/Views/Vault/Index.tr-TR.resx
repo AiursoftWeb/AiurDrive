@@ -153,11 +153,17 @@
   <data name="Start Upload" xml:space="preserve">
     <value>Yüklemeyi Başlat</value>
   </data>
+  <data name="Synchronizing..." xml:space="preserve">
+    <value>Senkronize ediliyor...</value>
+  </data>
   <data name="Unlock" xml:space="preserve">
     <value>Kilidi Aç</value>
   </data>
   <data name="Up Level" xml:space="preserve">
     <value>Üst Düzey</value>
+  </data>
+  <data name="Updating" xml:space="preserve">
+    <value>Güncelleniyor</value>
   </data>
   <data name="Upload failed." xml:space="preserve">
     <value>Yükleme başarısız oldu.</value>

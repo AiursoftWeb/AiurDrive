@@ -153,11 +153,17 @@
   <data name="Start Upload" xml:space="preserve">
     <value>アップロードを開始</value>
   </data>
+  <data name="Synchronizing..." xml:space="preserve">
+    <value>同期中...</value>
+  </data>
   <data name="Unlock" xml:space="preserve">
     <value>ロック解除</value>
   </data>
   <data name="Up Level" xml:space="preserve">
     <value>上へ戻る</value>
+  </data>
+  <data name="Updating" xml:space="preserve">
+    <value>更新中</value>
   </data>
   <data name="Upload failed." xml:space="preserve">
     <value>アップロードに失敗しました。</value>

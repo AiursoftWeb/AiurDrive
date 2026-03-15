@@ -153,11 +153,17 @@
   <data name="Start Upload" xml:space="preserve">
     <value>بدء الرفع</value>
   </data>
+  <data name="Synchronizing..." xml:space="preserve">
+    <value>جاري المزامنة...</value>
+  </data>
   <data name="Unlock" xml:space="preserve">
     <value>فتح</value>
   </data>
   <data name="Up Level" xml:space="preserve">
     <value>المستوى الأعلى</value>
+  </data>
+  <data name="Updating" xml:space="preserve">
+    <value>جاري التحديث</value>
   </data>
   <data name="Upload failed." xml:space="preserve">
     <value>فشل الرفع.</value>

@@ -153,11 +153,17 @@
   <data name="Start Upload" xml:space="preserve">
     <value>開始上傳</value>
   </data>
+  <data name="Synchronizing..." xml:space="preserve">
+    <value>正在同步...</value>
+  </data>
   <data name="Unlock" xml:space="preserve">
     <value>解鎖</value>
   </data>
   <data name="Up Level" xml:space="preserve">
     <value>上一層</value>
+  </data>
+  <data name="Updating" xml:space="preserve">
+    <value>更新中</value>
   </data>
   <data name="Upload failed." xml:space="preserve">
     <value>上傳失敗。</value>

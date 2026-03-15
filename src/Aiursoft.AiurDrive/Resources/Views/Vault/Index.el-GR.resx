@@ -153,11 +153,17 @@
   <data name="Start Upload" xml:space="preserve">
     <value>Έναρξη Μετάβασης</value>
   </data>
+  <data name="Synchronizing..." xml:space="preserve">
+    <value>Συγχρονισμός...</value>
+  </data>
   <data name="Unlock" xml:space="preserve">
     <value>Αποκλειδώστε</value>
   </data>
   <data name="Up Level" xml:space="preserve">
     <value>Πάνω Επίπεδο</value>
+  </data>
+  <data name="Updating" xml:space="preserve">
+    <value>Ενημέρωση</value>
   </data>
   <data name="Upload failed." xml:space="preserve">
     <value>Αποστολή απέτυχε.</value>
