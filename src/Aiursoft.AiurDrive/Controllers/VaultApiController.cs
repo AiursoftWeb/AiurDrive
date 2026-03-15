@@ -104,7 +104,7 @@ public class VaultApiController(
     [Route("Upload")]
     [DisableRequestSizeLimit]
     [RequestFormLimits(ValueLengthLimit = int.MaxValue, MultipartBodyLengthLimit = long.MaxValue)]
-    public async Task<IActionResult> Upload(IFormFile file)
+    public async Task<IActionResult> Upload(IFormFile? file)
     {
         if (file == null || file.Length == 0)
         {
