@@ -54,6 +54,12 @@
   <data name="Delete this encrypted file?" xml:space="preserve">
     <value>Ștergeți acest fișier criptat?</value>
   </data>
+  <data name="Download Folder" xml:space="preserve">
+    <value>Descarcă dosarul</value>
+  </data>
+  <data name="Downloading" xml:space="preserve">
+    <value>Se descarcă</value>
+  </data>
   <data name="Empty" xml:space="preserve">
     <value>Gol</value>
   </data>

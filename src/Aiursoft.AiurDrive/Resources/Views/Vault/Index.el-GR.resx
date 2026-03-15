@@ -54,6 +54,12 @@
   <data name="Delete this encrypted file?" xml:space="preserve">
     <value>Διαγραφή αυτού του κρυπτογραφημένου αρχείου;</value>
   </data>
+  <data name="Download Folder" xml:space="preserve">
+    <value>Λήψη Φακέλου</value>
+  </data>
+  <data name="Downloading" xml:space="preserve">
+    <value>Λήψη</value>
+  </data>
   <data name="Empty" xml:space="preserve">
     <value>Κενό</value>
   </data>

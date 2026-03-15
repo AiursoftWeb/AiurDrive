@@ -54,6 +54,12 @@
   <data name="Delete this encrypted file?" xml:space="preserve">
     <value>هل تريد حذف هذا الملف المشفر؟</value>
   </data>
+  <data name="Download Folder" xml:space="preserve">
+    <value>تحميل المجلد</value>
+  </data>
+  <data name="Downloading" xml:space="preserve">
+    <value>جاري التنزيل</value>
+  </data>
   <data name="Empty" xml:space="preserve">
     <value>فارغ</value>
   </data>
