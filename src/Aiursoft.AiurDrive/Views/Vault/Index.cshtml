@@ -3,12 +3,42 @@
     ViewData["Title"] = Model.PageTitle;
 }
 
+<!-- Localized strings for JavaScript -->
+<div id="localized-strings" class="d-none">
+    <input type="hidden" id="l-passwordTooShort" value="@Localizer["Password too short."]" />
+    <input type="hidden" id="l-passwordsDoNotMatch" value="@Localizer["Passwords do not match."]" />
+    <input type="hidden" id="l-failedToInit" value="@Localizer["Failed to init: "]" />
+    <input type="hidden" id="l-invalidPassword" value="@Localizer["Invalid password."]" />
+    <input type="hidden" id="l-formatWarning1" value="@Localizer["WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?"]" />
+    <input type="hidden" id="l-formatWarning2" value="@Localizer["LAST CHANCE: All your data will be wiped. This action cannot be undone. Confirm formatting?"]" />
+    <input type="hidden" id="l-formatSuccess" value="@Localizer["Vault has been formatted and reset to factory state."]" />
+    <input type="hidden" id="l-empty" value="@Localizer["Empty"]" />
+    <input type="hidden" id="l-folderIsEmpty" value="@Localizer["Folder is empty."]" />
+    <input type="hidden" id="l-decrypting" value="@Localizer["Decrypting file list..."]" />
+    <input type="hidden" id="l-overwriteConfirm" value="@Localizer["already exists in this folder. Overwrite it?"]" />
+    <input type="hidden" id="l-encrypting" value="@Localizer["Encrypting..."]" />
+    <input type="hidden" id="l-uploadFailed" value="@Localizer["Upload failed."]" />
+    <input type="hidden" id="l-decryptionFailed" value="@Localizer["Decryption failed: "]" />
+    <input type="hidden" id="l-deleteConfirm" value="@Localizer["Delete this encrypted file?"]" />
+    <input type="hidden" id="l-enterFolderName" value="@Localizer["Enter new folder name:"]" />
+    <input type="hidden" id="l-noSlashes" value="@Localizer["Folder name cannot contain slashes."]" />
+    <input type="hidden" id="l-failedToCreateFolder" value="@Localizer["Failed to create folder."]" />
+    <input type="hidden" id="l-deleteFolderConfirm" value="@Localizer["Are you sure you want to delete the folder and all its contents?"]" />
+    <input type="hidden" id="l-invalidName" value="@Localizer["Invalid name."]" />
+    <input type="hidden" id="l-renameFailed" value="@Localizer["Rename failed: "]" />
+    <input type="hidden" id="l-renaming" value="@Localizer["Renaming..."]" />
+    <input type="hidden" id="l-rename" value="@Localizer["Rename"]" />
+    <input type="hidden" id="l-folder" value="@Localizer["Folder"]" />
+    <input type="hidden" id="l-root" value="@Localizer["Root"]" />
+    <input type="hidden" id="l-startUpload" value="@Localizer["Start Upload"]" />
+</div>
+
 <div class="container-fluid p-0">
     <h1 class="h3 mb-3">@Model.PageTitle</h1>
 
     <div id="vault-loading" class="text-center py-5">
         <div class="spinner-border text-primary" role="status"></div>
-        <p class="mt-2 text-muted">Connecting to secure vault...</p>
+        <p class="mt-2 text-muted">@Localizer["Connecting to secure vault..."]</p>
     </div>
 
     <!-- Init Vault View -->
@@ -16,7 +46,7 @@
         <div class="col-12 col-md-8 col-lg-6 col-xl-5 mx-auto">
             <div class="card shadow-sm">
                 <div class="card-header">
-                    <h5 class="card-title mb-0"><i class="fas fa-shield-alt me-2 text-primary"></i>Initialize Vault <span class="badge bg-success ms-2">Zero-Trust</span></h5>
+                    <h5 class="card-title mb-0"><i class="fas fa-shield-alt me-2 text-primary"></i>@Localizer["Initialize Vault"] <span class="badge bg-success ms-2">@Localizer["Zero-Trust"]</span></h5>
                 </div>
                 <div class="card-body">
                     <div class="alert alert-primary alert-outline-coloured alert-dismissible mb-4" role="alert">
@@ -25,21 +55,21 @@
                             <i class="fas fa-shield-alt"></i>
                         </div>
                         <div class="alert-message">
-                            <strong>Zero-Trust Architecture</strong><br />
-                            Your files are encrypted <strong>locally</strong> in your browser before upload. We never see your password, and without it, recovery is <strong>mathematically impossible</strong>. Raw data is <strong>never</strong> uploaded to our server.
+                            <strong>@Localizer["Zero-Trust Architecture"]</strong><br />
+                            @Localizer["Your files are encrypted <strong>locally</strong> in your browser before upload. We never see your password, and without it, recovery is <strong>mathematically impossible</strong>. Raw data is <strong>never</strong> uploaded to our server."]
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Set Vault Password</label>
-                        <input type="password" id="init-password" class="form-control form-control-lg" placeholder="Minimum 8 characters" />
+                        <label class="form-label">@Localizer["Set Vault Password"]</label>
+                        <input type="password" id="init-password" class="form-control form-control-lg" placeholder="@Localizer["Minimum 8 characters"]" />
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Confirm Password</label>
+                        <label class="form-label">@Localizer["Confirm Password"]</label>
                         <input type="password" id="init-confirm" class="form-control form-control-lg" />
                     </div>
                     <div id="init-error" class="alert alert-danger py-2 d-none"></div>
                     <button class="btn btn-primary btn-lg w-100" onclick="initializeVault()">
-                        Create Secure Vault
+                        @Localizer["Create Secure Vault"]
                     </button>
                 </div>
             </div>
@@ -54,7 +84,7 @@
                     <div class="mb-3">
                         <i class="fas fa-lock fa-3x text-secondary"></i>
                     </div>
-                    <h4 class="card-title mb-0">Vault Locked <span class="badge bg-secondary ms-2 small" style="font-size: 0.4em; vertical-align: middle;">Encrypted</span></h4>
+                    <h4 class="card-title mb-0">@Localizer["Vault Locked"] <span class="badge bg-secondary ms-2 small" style="font-size: 0.4em; vertical-align: middle;">@Localizer["Encrypted"]</span></h4>
                 </div>
                 <div class="card-body px-4 pb-4">
                     <div class="alert alert-info alert-outline-coloured alert-dismissible mb-4" role="alert">
@@ -63,24 +93,24 @@
                             <i class="fas fa-info-circle"></i>
                         </div>
                         <div class="alert-message">
-                            <strong>Ready to Decrypt?</strong><br />
-                            Decryption happens entirely on your device using your password. We never see your password or your raw data. Without your password, your files are <strong>forever inaccessible</strong>.
+                            <strong>@Localizer["Ready to Decrypt?"]</strong><br />
+                            @Localizer["Decryption happens entirely on your device using your password. We never see your password or your raw data. Without your password, your files are <strong>forever inaccessible</strong>."]
                         </div>
                     </div>
                     <div class="mb-3">
-                        <input type="password" id="login-password" class="form-control form-control-lg" placeholder="Vault Password" autofocus />
+                        <input type="password" id="login-password" class="form-control form-control-lg" placeholder="@Localizer["Vault Password"]" autofocus />
                     </div>
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="remember-me" />
-                        <label class="form-check-label" for="remember-me">Remember for this session</label>
+                        <label class="form-check-label" for="remember-me">@Localizer["Remember for this session"]</label>
                     </div>
                     <div id="login-error" class="alert alert-danger py-2 d-none"></div>
-                    <button class="btn btn-success btn-lg w-100" onclick="unlockVault()">Unlock</button>
+                    <button class="btn btn-success btn-lg w-100" onclick="unlockVault()">@Localizer["Unlock"]</button>
 
                     <div class="mt-4 text-center">
                         <hr />
                         <button class="btn btn-sm btn-link text-danger" onclick="formatVault()">
-                            <i class="fas fa-exclamation-triangle me-1"></i>Reset and Wipe Vault
+                            <i class="fas fa-exclamation-triangle me-1"></i>@Localizer["Reset and Wipe Vault"]
                         </button>
                     </div>
                 </div>
@@ -95,30 +125,30 @@
             <div class="col-12 col-xl-4">
                 <div class="card shadow-sm mb-4">
                     <div class="card-header">
-                        <h5 class="card-title mb-0"><i class="fas fa-cloud-upload-alt me-2 text-primary"></i>Upload Secure File</h5>
+                        <h5 class="card-title mb-0"><i class="fas fa-cloud-upload-alt me-2 text-primary"></i>@Localizer["Upload Secure File"]</h5>
                     </div>
                     <div class="card-body">
-                        <p class="text-muted small mb-3">Choose a file to encrypt and store. Maximum size depends on your browser's memory.</p>
+                        <p class="text-muted small mb-3">@Localizer["Choose a file to encrypt and store. Maximum size depends on your browser's memory."]</p>
                         <div class="mb-3">
                             <input type="file" id="file-upload-input" class="form-control" />
                         </div>
                         <button id="upload-btn" class="btn btn-primary w-100" onclick="uploadFile()">
-                            <i class="fas fa-upload me-1"></i>Start Upload
+                            <i class="fas fa-upload me-1"></i>@Localizer["Start Upload"]
                         </button>
                     </div>
                 </div>
 
                 <div class="card shadow-sm">
                     <div class="card-header">
-                        <h5 class="card-title mb-0"><i class="fas fa-cog me-2 text-secondary"></i>Vault Settings</h5>
+                        <h5 class="card-title mb-0"><i class="fas fa-cog me-2 text-secondary"></i>@Localizer["Vault Settings"]</h5>
                     </div>
-                    <div class="card-body">
-                        <div class="d-grid gap-2">
-                            <button class="btn btn-outline-secondary" onclick="lockVault()">
-                                <i class="fas fa-lock me-1"></i>Lock Vault
+                    <div class="card-body p-0">
+                        <div class="list-group list-group-flush">
+                            <button class="list-group-item list-group-item-action" onclick="lockVault()">
+                                <i class="fas fa-lock me-2 text-secondary"></i>@Localizer["Lock Vault"]
                             </button>
-                            <button class="btn btn-outline-danger" onclick="formatVault()">
-                                <i class="fas fa-trash-alt me-1"></i>Wipe All Data
+                            <button class="list-group-item list-group-item-action text-danger" onclick="formatVault()">
+                                <i class="fas fa-trash-alt me-2 text-danger"></i>@Localizer["Wipe All Data"]
                             </button>
                         </div>
                     </div>
@@ -129,20 +159,35 @@
             <div class="col-12 col-xl-8">
                 <div class="card shadow-sm">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h5 class="card-title mb-0"><i class="fas fa-list me-2 text-success"></i>Encrypted Files <span class="badge bg-info ms-2">Private</span></h5>
-                        <button class="btn btn-sm btn-light" onclick="refreshFileList()">
-                            <i class="fas fa-sync-alt"></i>
-                        </button>
+                        <div class="d-flex align-items-center overflow-hidden">
+                            <h5 class="card-title mb-0 me-3 flex-shrink-0"><i class="fas fa-list me-2 text-success"></i>@Localizer["Files"]</h5>
+                            <nav aria-label="breadcrumb" class="mb-0 flex-grow-1 overflow-hidden">
+                                <ol class="breadcrumb mb-0 flex-nowrap" id="vault-breadcrumbs">
+                                    <li class="breadcrumb-item active" aria-current="page">@Localizer["Root"]</li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="btn-toolbar flex-shrink-0 ms-2">
+                             <button id="up-level-btn" class="btn btn-sm btn-outline-secondary me-2 d-none" onclick="navigateUp()">
+                                <i class="fas fa-arrow-up"></i> @Localizer["Up Level"]
+                            </button>
+                            <button class="btn btn-sm btn-outline-secondary me-2" onclick="createNewFolderPrompt()" title="@Localizer["New Folder"]">
+                                <i class="fas fa-folder-plus"></i> @Localizer["New Folder"]
+                            </button>
+                            <button class="btn btn-sm btn-outline-secondary" onclick="refreshFileList()" title="@Localizer["Refresh"]">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                        </div>
                     </div>
                     <div class="card-body p-0">
                         <div class="table-responsive">
-                            <table class="table table-hover align-middle mb-0">
+                            <table class="table table-hover align-middle mb-0" id="vault-file-table">
                                 <thead class="table-light">
                                     <tr>
-                                        <th class="ps-3">Name</th>
-                                        <th>Size</th>
-                                        <th>Modified</th>
-                                        <th class="text-end pe-3">Actions</th>
+                                        <th class="ps-3 w-50">@Localizer["Name"]</th>
+                                        <th>@Localizer["Size"]</th>
+                                        <th>@Localizer["Modified"]</th>
+                                        <th class="text-end pe-3">@Localizer["Actions"]</th>
                                     </tr>
                                 </thead>
                                 <tbody id="file-list-body">
@@ -152,6 +197,31 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Rename Modal -->
+<div class="modal fade" id="renameModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content shadow-sm">
+            <div class="modal-header">
+                <h5 class="modal-title">@Localizer["Rename"]</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="newName" class="form-label">@Localizer["New Name"]</label>
+                    <input type="text" class="form-control" id="newName" required />
+                    <input type="hidden" id="renameUuid" />
+                    <input type="hidden" id="renameOldName" />
+                    <input type="hidden" id="renameIsFolder" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@Localizer["Cancel"]</button>
+                <button type="button" class="btn btn-primary" onclick="performRename()">@Localizer["Rename"]</button>
             </div>
         </div>
     </div>
@@ -167,9 +237,39 @@
     const TAG_SIZE = 16;
     const UUID_SIZE = 16;
 
+    const L = {
+        passwordTooShort: document.getElementById('l-passwordTooShort').value,
+        passwordsDoNotMatch: document.getElementById('l-passwordsDoNotMatch').value,
+        failedToInit: document.getElementById('l-failedToInit').value,
+        invalidPassword: document.getElementById('l-invalidPassword').value,
+        formatWarning1: document.getElementById('l-formatWarning1').value,
+        formatWarning2: document.getElementById('l-formatWarning2').value,
+        formatSuccess: document.getElementById('l-formatSuccess').value,
+        empty: document.getElementById('l-empty').value,
+        folderIsEmpty: document.getElementById('l-folderIsEmpty').value,
+        decrypting: document.getElementById('l-decrypting').value,
+        overwriteConfirm: document.getElementById('l-overwriteConfirm').value,
+        encrypting: document.getElementById('l-encrypting').value,
+        uploadFailed: document.getElementById('l-uploadFailed').value,
+        decryptionFailed: document.getElementById('l-decryptionFailed').value,
+        deleteConfirm: document.getElementById('l-deleteConfirm').value,
+        enterFolderName: document.getElementById('l-enterFolderName').value,
+        noSlashes: document.getElementById('l-noSlashes').value,
+        failedToCreateFolder: document.getElementById('l-failedToCreateFolder').value,
+        deleteFolderConfirm: document.getElementById('l-deleteFolderConfirm').value,
+        invalidName: document.getElementById('l-invalidName').value,
+        renameFailed: document.getElementById('l-renameFailed').value,
+        renaming: document.getElementById('l-renaming').value,
+        rename: document.getElementById('l-rename').value,
+        folder: document.getElementById('l-folder').value,
+        root: document.getElementById('l-root').value,
+        startUpload: document.getElementById('l-startUpload').value
+    };
+
     let masterKey = null;
     let vaultConfig = null;
     let cachedFiles = [];
+    let currentPath = ""; // e.g., "Movies/" or ""
 
     async function digestMessage(message) {
         const msgUint8 = new TextEncoder().encode(message);
@@ -233,12 +333,12 @@
         const errorDiv = document.getElementById('init-error');
 
         if (pwd.length < 8) {
-            errorDiv.innerText = "Password too short.";
+            errorDiv.innerText = L.passwordTooShort;
             errorDiv.classList.remove('d-none');
             return;
         }
         if (pwd !== confirm) {
-            errorDiv.innerText = "Passwords do not match.";
+            errorDiv.innerText = L.passwordsDoNotMatch;
             errorDiv.classList.remove('d-none');
             return;
         }
@@ -279,7 +379,7 @@
                 showView('vault-content');
                 refreshFileList();
             } else {
-                alert("Failed to init: " + await response.text());
+                alert(L.failedToInit + await response.text());
             }
         } catch (e) {
             alert("Error: " + e.message);
@@ -299,7 +399,7 @@
             showView('vault-content');
             refreshFileList();
         } else {
-            errorDiv.innerText = "Invalid password.";
+            errorDiv.innerText = L.invalidPassword;
             errorDiv.classList.remove('d-none');
         }
     }
@@ -311,10 +411,10 @@
     }
 
     async function formatVault() {
-        if (!confirm("WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?")) {
+        if (!confirm(L.formatWarning1)) {
             return;
         }
-        if (!confirm("LAST CHANCE: All your data will be wiped. This action cannot be undone. Confirm formatting?")) {
+        if (!confirm(L.formatWarning2)) {
             return;
         }
 
@@ -324,9 +424,9 @@
             vaultConfig = null;
             sessionStorage.removeItem('vault_pass');
             showView('vault-init');
-            alert("Vault has been formatted and reset to factory state.");
+            alert(L.formatSuccess);
         } else {
-            alert("Failed to format vault: " + await response.text());
+            alert("Failed: " + await response.text());
         }
     }
 
@@ -335,16 +435,17 @@
         const files = await response.json();
         const body = document.getElementById('file-list-body');
         
-        if (files.length === 0) {
-            body.innerHTML = '<tr><td colspan="4" class="text-center py-4 text-muted">Empty</td></tr>';
+        if (files.length === 0 && currentPath === "") {
+            body.innerHTML = '<tr><td colspan="4" class="text-center py-4 text-muted">' + L.empty + '</td></tr>';
             cachedFiles = [];
+            renderBreadcrumbs();
             return;
         }
 
         // Show loading state for the table
-        body.innerHTML = '<tr><td colspan="4" class="text-center py-4 text-muted"><span class="spinner-border spinner-border-sm me-2"></span>Decrypting file list...</td></tr>';
+        body.innerHTML = '<tr><td colspan="4" class="text-center py-4 text-muted"><span class="spinner-border spinner-border-sm me-2"></span>' + L.decrypting + '</td></tr>';
 
-        const filePromises = files.map(async f => {
+        const decryptedFiles = await Promise.all(files.map(async f => {
             let fileName = "[Encrypted File]";
             if (f.MetaBase64) {
                 try {
@@ -353,26 +454,250 @@
                     console.error("Failed to decrypt metadata for " + f.Uuid, e);
                 }
             }
-            return { ...f, fileName };
-        });
+            return { ...f, fullPath: fileName };
+        }));
 
-        const decryptedFiles = await Promise.all(filePromises);
         cachedFiles = decryptedFiles;
-        body.innerHTML = '';
+        renderView();
+    }
 
-        for (const f of decryptedFiles) {
+    function renderView() {
+        const body = document.getElementById('file-list-body');
+        const upLevelBtn = document.getElementById('up-level-btn');
+        body.innerHTML = '';
+        renderBreadcrumbs();
+
+        if (currentPath === "") {
+            upLevelBtn.classList.add('d-none');
+        } else {
+            upLevelBtn.classList.remove('d-none');
+        }
+
+        const foldersToShow = new Set();
+        const filesInCurrentDir = [];
+
+        for (const f of cachedFiles) {
+            if (f.fullPath.startsWith(currentPath)) {
+                const relativePath = f.fullPath.substring(currentPath.length);
+                if (relativePath === "" || relativePath === "./") continue;
+
+                const parts = relativePath.split('/');
+                if (parts.length > 1 && parts[0] !== "") {
+                    // This file is in a sub-folder of the current dir
+                    foldersToShow.add(parts[0]);
+                } else {
+                    // This is a file or a folder marker (e.g., "name" or "name/")
+                    if (relativePath.endsWith('/')) {
+                        const folderName = relativePath.slice(0, -1);
+                        if (folderName !== "") foldersToShow.add(folderName);
+                    } else {
+                        filesInCurrentDir.push(f);
+                    }
+                }
+            }
+        }
+
+        // Show Folders
+        Array.from(foldersToShow).sort().forEach(folderName => {
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td><i class="far fa-file-alt text-primary me-2"></i>${escapeHtml(f.fileName)}</td>
-                <td>${formatBytes(f.Size)}</td>
-                <td class="small">${new Date(f.LastWriteTime).toLocaleString()}</td>
-                <td class="text-end">
-                    <button class="btn btn-sm btn-outline-success me-1" onclick="downloadFile('${f.Uuid}')" title="Download"><i class="fas fa-download"></i></button>
-                    <button class="btn btn-sm btn-outline-danger" onclick="deleteFile('${f.Uuid}')" title="Delete"><i class="fas fa-trash"></i></button>
+                <td class="ps-3">
+                    <a href="javascript:void(0)" class="text-reset fw-bold text-decoration-none" onclick="navigateTo('${currentPath + folderName + "/" }')">
+                        <i class="fas fa-folder text-warning me-2"></i>${escapeHtml(folderName)}
+                    </a>
+                </td>
+                <td class="text-muted">${L.folder}</td>
+                <td>-</td>
+                <td class="text-end pe-3">
+                    <button class="btn btn-sm btn-light text-primary me-1" onclick="openRenameModal(true, '${folderName}', '')" title="${L.rename}"><i class="fas fa-edit"></i></button>
+                    <button class="btn btn-sm btn-light text-danger" onclick="deleteFolder('${folderName}')" title="Delete"><i class="fas fa-trash"></i></button>
                 </td>
             `;
             body.appendChild(row);
+        });
+
+        // Show Files
+        filesInCurrentDir.sort((a, b) => a.fullPath.localeCompare(b.fullPath)).forEach(f => {
+            const name = f.fullPath.substring(currentPath.length);
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td class="ps-3">
+                    <a href="javascript:void(0)" class="text-reset text-decoration-none" onclick="downloadFile('${f.Uuid}')">
+                        <i class="fas fa-file text-primary me-2"></i>${escapeHtml(name)}
+                    </a>
+                </td>
+                <td>${formatBytes(f.Size)}</td>
+                <td class="small">${new Date(f.LastWriteTime).toLocaleString()}</td>
+                <td class="text-end pe-3">
+                    <button class="btn btn-sm btn-light text-success me-1" onclick="downloadFile('${f.Uuid}')" title="Download"><i class="fas fa-download"></i></button>
+                    <button class="btn btn-sm btn-light text-primary me-1" onclick="openRenameModal(false, '${name}', '${f.Uuid}')" title="${L.rename}"><i class="fas fa-edit"></i></button>
+                    <button class="btn btn-sm btn-light text-danger" onclick="deleteFile('${f.Uuid}')" title="Delete"><i class="fas fa-trash"></i></button>
+                </td>
+            `;
+            body.appendChild(row);
+        });
+
+        if (foldersToShow.size === 0 && filesInCurrentDir.length === 0) {
+             const row = document.createElement('tr');
+             row.innerHTML = '<td colspan="4" class="text-center py-5 text-muted">' + L.folderIsEmpty + '</td>';
+             body.appendChild(row);
         }
+    }
+
+    function openRenameModal(isFolder, name, uuid) {
+        document.getElementById('newName').value = name;
+        document.getElementById('renameUuid').value = uuid;
+        document.getElementById('renameOldName').value = name;
+        document.getElementById('renameIsFolder').value = isFolder;
+        
+        const modal = new bootstrap.Modal(document.getElementById('renameModal'));
+        modal.show();
+    }
+
+    async function performRename() {
+        const isFolder = document.getElementById('renameIsFolder').value === 'true';
+        const newName = document.getElementById('newName').value;
+        const oldName = document.getElementById('renameOldName').value;
+        const uuid = document.getElementById('renameUuid').value;
+        
+        if (!newName || newName.includes('/')) {
+            alert(L.invalidName);
+            return;
+        }
+        if (newName === oldName) {
+             bootstrap.Modal.getInstance(document.getElementById('renameModal')).hide();
+             return;
+        }
+
+        const modalBtn = document.querySelector('#renameModal .btn-primary');
+        modalBtn.disabled = true;
+        modalBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>' + L.renaming;
+
+        try {
+            if (isFolder) {
+                const oldFolderPath = currentPath + oldName + "/";
+                const newFolderPath = currentPath + newName + "/";
+                
+                // Rename all items within
+                const itemsToRename = cachedFiles.filter(f => f.fullPath.startsWith(oldFolderPath));
+                for (const f of itemsToRename) {
+                    const newPath = newFolderPath + f.fullPath.substring(oldFolderPath.length);
+                    await updateMeta(f.Uuid, newPath);
+                }
+                
+                // Also rename folder markers if any
+                const markers = cachedFiles.filter(f => f.fullPath === oldFolderPath);
+                for (const m of markers) {
+                    await updateMeta(m.Uuid, newFolderPath);
+                }
+            } else {
+                const newFullPath = currentPath + newName;
+                await updateMeta(uuid, newFullPath);
+            }
+
+            bootstrap.Modal.getInstance(document.getElementById('renameModal')).hide();
+            refreshFileList();
+        } catch (e) {
+            alert(L.renameFailed + e.message);
+        } finally {
+            modalBtn.disabled = false;
+            modalBtn.innerHTML = L.rename;
+        }
+    }
+
+    async function updateMeta(uuid, newFullPath) {
+        // uuid in cachedFiles is hex string.
+        // Let's get the fileUuid (16 bytes) from the hex string Uuid
+        const fileUuid = new Uint8Array(uuid.match(/.{1,2}/g).map(byte => parseInt(byte, 16)));
+        const encryptedMeta = await encryptMetadata(newFullPath, fileUuid);
+
+        const formData = new FormData();
+        formData.append('meta', new Blob([encryptedMeta]), uuid + ".meta");
+        
+        const response = await fetch('/VaultApi/Upload', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (!response.ok) throw new Error(await response.text());
+    }
+
+    function renderBreadcrumbs() {
+        const bread = document.getElementById('vault-breadcrumbs');
+        bread.innerHTML = '<li class="breadcrumb-item"><a href="#" onclick="navigateTo(\'\'); return false;">' + L.root + '</a></li>';
+        
+        let pathAccumulator = "";
+        const parts = currentPath.split('/').filter(p => p !== "");
+        parts.forEach((p, index) => {
+            pathAccumulator += p + "/";
+            if (index === parts.length - 1) {
+                bread.innerHTML += `<li class="breadcrumb-item active" aria-current="page">${escapeHtml(p)}</li>`;
+            } else {
+                const capturedPath = pathAccumulator;
+                bread.innerHTML += `<li class="breadcrumb-item"><a href="#" onclick="navigateTo('${capturedPath}'); return false;">${escapeHtml(p)}</a></li>`;
+            }
+        });
+    }
+
+    function navigateTo(path) {
+        currentPath = path;
+        renderView();
+    }
+
+    function navigateUp() {
+        const parts = currentPath.split('/').filter(p => p !== "");
+        parts.pop();
+        currentPath = parts.length > 0 ? parts.join('/') + "/" : "";
+        renderView();
+    }
+
+    async function createNewFolderPrompt() {
+        const name = prompt(L.enterFolderName);
+        if (!name || name.includes('/')) {
+            if (name) alert(L.noSlashes);
+            return;
+        }
+
+        const folderPath = currentPath + name + "/";
+        const fileUuid = crypto.getRandomValues(new Uint8Array(UUID_SIZE));
+        const uuidStr = Array.from(fileUuid).map(b => b.toString(16).padStart(2, '0')).join('');
+        
+        try {
+            const encryptedMetaBlob = await encryptMetadata(folderPath, fileUuid);
+            const formData = new FormData();
+            formData.append('meta', new Blob([encryptedMetaBlob]), uuidStr + ".meta");
+
+            const response = await fetch('/VaultApi/Upload', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                refreshFileList();
+            } else {
+                alert(L.failedToCreateFolder);
+            }
+        } catch (e) {
+            alert("Error: " + e.message);
+        }
+    }
+
+    async function deleteFolder(folderName) {
+        const folderFullPath = currentPath + folderName + "/";
+        if (!confirm(L.deleteFolderConfirm)) return;
+
+        const toDelete = cachedFiles.filter(f => f.fullPath.startsWith(folderFullPath));
+        for (const f of toDelete) {
+            await fetch(`/VaultApi/Delete/${f.Uuid}`, { method: 'DELETE' });
+        }
+        
+        // Also find and delete any folder markers for this exact folder
+        const markers = cachedFiles.filter(f => f.fullPath === folderFullPath);
+        for (const m of markers) {
+             await fetch(`/VaultApi/Delete/${m.Uuid}`, { method: 'DELETE' });
+        }
+
+        refreshFileList();
     }
 
     async function decryptMetadata(data) {
@@ -407,10 +732,11 @@
         const file = input.files[0];
         let uuidStr;
         let fileUuid;
+        const fullPath = currentPath + file.name;
 
-        const existing = cachedFiles.find(f => f.fileName === file.name);
+        const existing = cachedFiles.find(f => f.fullPath === fullPath);
         if (existing) {
-            if (!confirm(`A file named "${file.name}" already exists. Do you want to overwrite it?`)) {
+            if (!confirm(`A file named "${file.name}" ` + L.overwriteConfirm)) {
                 return;
             }
             uuidStr = existing.Uuid;
@@ -422,12 +748,12 @@
 
         const btn = document.getElementById('upload-btn');
         btn.disabled = true;
-        btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Encrypting...';
+        btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>' + L.encrypting;
 
         try {
             const content = await file.arrayBuffer();
             const encryptedContentBlob = await encryptFileData(new Uint8Array(content), fileUuid);
-            const encryptedMetaBlob = await encryptMetadata(file.name, fileUuid);
+            const encryptedMetaBlob = await encryptMetadata(fullPath, fileUuid);
 
             const formData = new FormData();
             formData.append('file', new Blob([encryptedContentBlob]), uuidStr + ".enc");
@@ -442,13 +768,13 @@
                 input.value = '';
                 refreshFileList();
             } else {
-                alert("Upload failed.");
+                alert(L.uploadFailed);
             }
         } catch (e) {
             alert("Error: " + e.message);
         } finally {
             btn.disabled = false;
-            btn.innerHTML = '<i class="fas fa-upload me-1"></i>Upload';
+            btn.innerHTML = '<i class="fas fa-upload me-1"></i>' + L.startUpload;
         }
     }
 
@@ -538,20 +864,26 @@
             const buffer = await response.arrayBuffer();
             const content = await decryptFileData(new Uint8Array(buffer));
 
+            let downloadName = "downloaded-file";
+            if (f) {
+                const parts = f.fullPath.split('/');
+                downloadName = parts[parts.length - 1];
+            }
+
             const blob = new Blob([content], { type: 'application/octet-stream' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = f ? f.fileName : "downloaded-file";
+            a.download = downloadName;
             a.click();
             URL.revokeObjectURL(url);
         } catch (e) {
-            alert("Decryption failed: " + e.message);
+            alert(L.decryptionFailed + e.message);
         }
     }
 
     async function deleteFile(uuid) {
-        if (!confirm("Delete this encrypted file?")) return;
+        if (!confirm(L.deleteConfirm)) return;
         const response = await fetch(`/VaultApi/Delete/${uuid}`, { method: 'DELETE' });
         if (response.ok) refreshFileList();
     }

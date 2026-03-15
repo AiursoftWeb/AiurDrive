@@ -55,8 +55,10 @@ public class VaultIntegrationTests : TestBase
 
         // 8. Test Upload API
         var fileContent = new ByteArrayContent("fake-encrypted-data"u8.ToArray());
+        var metaContent = new ByteArrayContent("fake-encrypted-meta"u8.ToArray());
         var form = new MultipartFormDataContent();
         form.Add(fileContent, "file", "testuuid.enc");
+        form.Add(metaContent, "meta", "testuuid.meta");
         var uploadResponse = await Http.PostAsync("/VaultApi/Upload", form);
         Assert.AreEqual(HttpStatusCode.OK, uploadResponse.StatusCode, "Upload API failed.");
 

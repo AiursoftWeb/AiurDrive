@@ -88,28 +88,30 @@ public class VaultApiController(
     {
         var objectsPath = GetUserVaultObjectsPath();
         var directoryInfo = new DirectoryInfo(objectsPath);
-        var files = directoryInfo.GetFiles("*.enc")
-            .Select(f =>
+        // Use .meta files as the source of truth
+        var metaFiles = directoryInfo.GetFiles("*.meta");
+        
+        var result = metaFiles.Select(f =>
+        {
+            var uuid = Path.GetFileNameWithoutExtension(f.Name);
+            var encPath = Path.Combine(objectsPath, uuid + ".enc");
+            long size = 0;
+            if (System.IO.File.Exists(encPath))
             {
-                var uuid = Path.GetFileNameWithoutExtension(f.Name);
-                var metaPath = Path.Combine(objectsPath, uuid + ".meta");
-                string? metaBase64 = null;
-                if (System.IO.File.Exists(metaPath))
-                {
-                    metaBase64 = Convert.ToBase64String(System.IO.File.ReadAllBytes(metaPath));
-                }
-                
-                return new
-                {
-                    Uuid = uuid,
-                    Size = f.Length,
-                    LastWriteTime = f.LastWriteTimeUtc,
-                    MetaBase64 = metaBase64
-                };
-            })
-            .ToList();
+                size = new FileInfo(encPath).Length;
+            }
+            
+            var metaContent = System.IO.File.ReadAllBytes(f.FullName);
+            return new
+            {
+                Uuid = uuid,
+                Size = size,
+                LastWriteTime = f.LastWriteTimeUtc,
+                MetaBase64 = Convert.ToBase64String(metaContent)
+            };
+        }).ToList();
 
-        return Json(files);
+        return Json(result);
     }
 
     [HttpPost]
@@ -118,29 +120,31 @@ public class VaultApiController(
     [RequestFormLimits(ValueLengthLimit = int.MaxValue, MultipartBodyLengthLimit = long.MaxValue)]
     public async Task<IActionResult> Upload(IFormFile? file, IFormFile? meta)
     {
-        if (file == null || file.Length == 0)
+        if (meta == null || meta.Length == 0)
         {
-            return BadRequest("No file uploaded.");
+            return BadRequest("No metadata provided.");
         }
 
         var objectsPath = GetUserVaultObjectsPath();
-        var uuid = Path.GetFileNameWithoutExtension(file.FileName);
+        var uuid = Path.GetFileNameWithoutExtension(meta.FileName);
         if (string.IsNullOrWhiteSpace(uuid) || uuid.Any(c => !char.IsLetterOrDigit(c)))
         {
             return BadRequest("Invalid object name.");
         }
 
-        var filePath = Path.Combine(objectsPath, uuid + ".enc");
-        await using (var stream = new FileStream(filePath, FileMode.Create))
+        // Always save meta
+        var metaPath = Path.Combine(objectsPath, uuid + ".meta");
+        await using (var metaStream = new FileStream(metaPath, FileMode.Create))
         {
-            await file.CopyToAsync(stream);
+            await meta.CopyToAsync(metaStream);
         }
 
-        if (meta != null && meta.Length > 0)
+        // Save encrypted content if present (it's a file, not just a folder)
+        if (file != null && file.Length > 0)
         {
-            var metaPath = Path.Combine(objectsPath, uuid + ".meta");
-            await using var metaStream = new FileStream(metaPath, FileMode.Create);
-            await meta.CopyToAsync(metaStream);
+            var filePath = Path.Combine(objectsPath, uuid + ".enc");
+            await using var stream = new FileStream(filePath, FileMode.Create);
+            await file.CopyToAsync(stream);
         }
 
         return Ok();
