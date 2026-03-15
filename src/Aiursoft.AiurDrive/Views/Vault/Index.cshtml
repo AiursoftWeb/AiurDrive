@@ -33,6 +33,8 @@
     <input type="hidden" id="l-startUpload" value="@Localizer["Start Upload"]" />
     <input type="hidden" id="l-syncing" value="@Localizer["Synchronizing..."]" />
     <input type="hidden" id="l-batchProgress" value="@Localizer["Updating"]" />
+    <input type="hidden" id="l-downloadFolder" value="@Localizer["Download Folder"]" />
+    <input type="hidden" id="l-downloading" value="@Localizer["Downloading"]" />
 </div>
 
 <div class="container-fluid p-0">
@@ -173,6 +175,9 @@
                              <button id="up-level-btn" class="btn btn-sm btn-outline-secondary me-2 d-none" onclick="navigateUp()">
                                 <i class="fas fa-arrow-up"></i> @Localizer["Up Level"]
                             </button>
+                            <button id="download-folder-btn" class="btn btn-sm btn-outline-secondary me-2" onclick="downloadAllInFolder()" title="@Localizer["Download Folder"]">
+                                <i class="fas fa-download"></i> @Localizer["Download Folder"]
+                            </button>
                             <button class="btn btn-sm btn-outline-secondary me-2" onclick="createNewFolderPrompt()" title="@Localizer["New Folder"]">
                                 <i class="fas fa-folder-plus"></i> @Localizer["New Folder"]
                             </button>
@@ -267,7 +272,9 @@
         root: document.getElementById('l-root').value,
         startUpload: document.getElementById('l-startUpload').value,
         syncing: document.getElementById('l-syncing').value,
-        batchProgress: document.getElementById('l-batchProgress').value
+        batchProgress: document.getElementById('l-batchProgress').value,
+        downloadFolder: document.getElementById('l-downloadFolder').value,
+        downloading: document.getElementById('l-downloading').value
     };
 
     let masterKey = null;
@@ -927,6 +934,43 @@
             URL.revokeObjectURL(url);
         } catch (e) {
             alert(L.decryptionFailed + e.message);
+        }
+    }
+
+    async function downloadAllInFolder() {
+        const filesToDownload = [];
+        for (const f of cachedFiles) {
+            if (f.fullPath.startsWith(currentPath)) {
+                const relativePath = f.fullPath.substring(currentPath.length);
+                if (relativePath === "" || relativePath === "./") continue;
+
+                const parts = relativePath.split('/');
+                if (parts.length === 1 && !relativePath.endsWith('/')) {
+                    filesToDownload.push(f);
+                }
+            }
+        }
+
+        if (filesToDownload.length === 0) {
+            return;
+        }
+
+        const btn = document.getElementById('download-folder-btn');
+        const originalHtml = btn.innerHTML;
+        btn.disabled = true;
+
+        try {
+            await runBatch(filesToDownload, async (f) => {
+                await downloadFile(f.Uuid);
+            }, (current, total) => {
+                btn.innerHTML = `<span class="spinner-border spinner-border-sm"></span> ${L.downloading} (${current}/${total})`;
+            });
+        } catch (e) {
+            alert("Download failed: " + e.message);
+        } finally {
+            btn.disabled = false;
+            btn.innerHTML = originalHtml;
+            isBatchOperating = false;
         }
     }
 

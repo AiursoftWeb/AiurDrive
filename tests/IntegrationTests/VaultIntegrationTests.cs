@@ -24,6 +24,9 @@ public class VaultIntegrationTests : TestBase
         Assert.IsTrue(html.Contains("id=\"vault-loading\""), "Vault loading container is missing.");
         Assert.IsTrue(html.Contains("id=\"vault-init\""), "Vault init container is missing.");
         Assert.IsTrue(html.Contains("id=\"vault-login\""), "Vault login container is missing.");
+        Assert.IsTrue(html.Contains("id=\"download-folder-btn\""), "The Download Folder button is missing.");
+        Assert.IsTrue(html.Contains("id=\"l-downloadFolder\""), "The localized string for Download Folder is missing.");
+        Assert.IsTrue(html.Contains("id=\"l-downloading\""), "The localized string for Downloading is missing.");
         
         // Ensure the title we set is in the HTML
         Assert.IsTrue(html.Contains("Zero-Trust Vault"), "The page title 'Zero-Trust Vault' is missing.");
