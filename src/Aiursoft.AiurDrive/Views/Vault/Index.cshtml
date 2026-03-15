@@ -31,6 +31,8 @@
     <input type="hidden" id="l-folder" value="@Localizer["Folder"]" />
     <input type="hidden" id="l-root" value="@Localizer["Root"]" />
     <input type="hidden" id="l-startUpload" value="@Localizer["Start Upload"]" />
+    <input type="hidden" id="l-syncing" value="@Localizer["Synchronizing..."]" />
+    <input type="hidden" id="l-batchProgress" value="@Localizer["Updating"]" />
 </div>
 
 <div class="container-fluid p-0">
@@ -263,13 +265,34 @@
         rename: document.getElementById('l-rename').value,
         folder: document.getElementById('l-folder').value,
         root: document.getElementById('l-root').value,
-        startUpload: document.getElementById('l-startUpload').value
+        startUpload: document.getElementById('l-startUpload').value,
+        syncing: document.getElementById('l-syncing').value,
+        batchProgress: document.getElementById('l-batchProgress').value
     };
 
     let masterKey = null;
     let vaultConfig = null;
     let cachedFiles = [];
     let currentPath = ""; // e.g., "Movies/" or ""
+    let isBatchOperating = false;
+
+    window.addEventListener('beforeunload', (e) => {
+        if (isBatchOperating) {
+            e.preventDefault();
+            e.returnValue = '';
+        }
+    });
+
+    async function runBatch(items, task, onProgress) {
+        isBatchOperating = true;
+        const limit = 6;
+        for (let i = 0; i < items.length; i += limit) {
+            const chunk = items.slice(i, i + limit);
+            await Promise.all(chunk.map(task));
+            if (onProgress) onProgress(Math.min(i + limit, items.length), items.length);
+        }
+        isBatchOperating = false;
+    }
 
     async function digestMessage(message) {
         const msgUint8 = new TextEncoder().encode(message);
@@ -475,6 +498,7 @@
 
         const foldersToShow = new Set();
         const filesInCurrentDir = [];
+        const nameCounts = {};
 
         for (const f of cachedFiles) {
             if (f.fullPath.startsWith(currentPath)) {
@@ -492,6 +516,8 @@
                         if (folderName !== "") foldersToShow.add(folderName);
                     } else {
                         filesInCurrentDir.push(f);
+                        const name = relativePath;
+                        nameCounts[name] = (nameCounts[name] || 0) + 1;
                     }
                 }
             }
@@ -519,11 +545,16 @@
         // Show Files
         filesInCurrentDir.sort((a, b) => a.fullPath.localeCompare(b.fullPath)).forEach(f => {
             const name = f.fullPath.substring(currentPath.length);
+            let displayName = name;
+            if (nameCounts[name] > 1) {
+                displayName += ` (${f.Uuid.substring(0, 4)})`;
+            }
+
             const row = document.createElement('tr');
             row.innerHTML = `
                 <td class="ps-3">
                     <a href="javascript:void(0)" class="text-reset text-decoration-none" onclick="downloadFile('${f.Uuid}')">
-                        <i class="fas fa-file text-primary me-2"></i>${escapeHtml(name)}
+                        <i class="fas fa-file text-primary me-2"></i>${escapeHtml(displayName)}
                     </a>
                 </td>
                 <td>${formatBytes(f.Size)}</td>
@@ -556,40 +587,46 @@
 
     async function performRename() {
         const isFolder = document.getElementById('renameIsFolder').value === 'true';
-        const newName = document.getElementById('newName').value;
+        let newName = document.getElementById('newName').value;
         const oldName = document.getElementById('renameOldName').value;
         const uuid = document.getElementById('renameUuid').value;
         
-        if (!newName || newName.includes('/')) {
+        // Normalize: remove leading/trailing slashes
+        newName = newName.replace(/\/+$/, "").replace(/^\/+/, "");
+        
+        if (!newName) {
             alert(L.invalidName);
             return;
         }
-        if (newName === oldName) {
+        if (newName === oldName && !isFolder) {
              bootstrap.Modal.getInstance(document.getElementById('renameModal')).hide();
              return;
         }
 
         const modalBtn = document.querySelector('#renameModal .btn-primary');
         modalBtn.disabled = true;
-        modalBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>' + L.renaming;
+        modalBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>' + L.syncing;
+
+        const updateProgress = (current, total) => {
+            modalBtn.innerHTML = `<span class="spinner-border spinner-border-sm me-1"></span> ${L.batchProgress} (${current}/${total})`;
+        };
 
         try {
             if (isFolder) {
                 const oldFolderPath = currentPath + oldName + "/";
                 const newFolderPath = currentPath + newName + "/";
                 
-                // Rename all items within
+                // Find all items and markers to rename
                 const itemsToRename = cachedFiles.filter(f => f.fullPath.startsWith(oldFolderPath));
-                for (const f of itemsToRename) {
-                    const newPath = newFolderPath + f.fullPath.substring(oldFolderPath.length);
-                    await updateMeta(f.Uuid, newPath);
-                }
-                
-                // Also rename folder markers if any
                 const markers = cachedFiles.filter(f => f.fullPath === oldFolderPath);
-                for (const m of markers) {
-                    await updateMeta(m.Uuid, newFolderPath);
-                }
+                const allTasks = [...itemsToRename, ...markers];
+
+                await runBatch(allTasks, async (f) => {
+                    const newPath = newFolderPath + f.fullPath.substring(oldFolderPath.length);
+                    if (newPath !== f.fullPath) {
+                        await updateMeta(f.Uuid, newPath);
+                    }
+                }, updateProgress);
             } else {
                 const newFullPath = currentPath + newName;
                 await updateMeta(uuid, newFullPath);
@@ -602,6 +639,7 @@
         } finally {
             modalBtn.disabled = false;
             modalBtn.innerHTML = L.rename;
+            isBatchOperating = false;
         }
     }
 
@@ -687,17 +725,27 @@
         if (!confirm(L.deleteFolderConfirm)) return;
 
         const toDelete = cachedFiles.filter(f => f.fullPath.startsWith(folderFullPath));
-        for (const f of toDelete) {
-            await fetch(`/VaultApi/Delete/${f.Uuid}`, { method: 'DELETE' });
-        }
-        
-        // Also find and delete any folder markers for this exact folder
         const markers = cachedFiles.filter(f => f.fullPath === folderFullPath);
-        for (const m of markers) {
-             await fetch(`/VaultApi/Delete/${m.Uuid}`, { method: 'DELETE' });
-        }
+        const allToDelete = [...toDelete, ...markers];
 
-        refreshFileList();
+        const btn = document.querySelector(`button[onclick="deleteFolder('${folderName}')"]`);
+        const originalHtml = btn.innerHTML;
+        btn.disabled = true;
+
+        try {
+            await runBatch(allToDelete, async (f) => {
+                await fetch(`/VaultApi/Delete/${f.Uuid}`, { method: 'DELETE' });
+            }, (current, total) => {
+                btn.innerHTML = `<span class="spinner-border spinner-border-sm"></span> ${current}/${total}`;
+            });
+            refreshFileList();
+        } catch (e) {
+            alert("Delete failed: " + e.message);
+        } finally {
+            btn.disabled = false;
+            btn.innerHTML = originalHtml;
+            isBatchOperating = false;
+        }
     }
 
     async function decryptMetadata(data) {
