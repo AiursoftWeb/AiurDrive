@@ -153,11 +153,17 @@
   <data name="Start Upload" xml:space="preserve">
     <value>अपलोड शुरू करें</value>
   </data>
+  <data name="Synchronizing..." xml:space="preserve">
+    <value>सिंक्रोनाइज़ कर रहा है...</value>
+  </data>
   <data name="Unlock" xml:space="preserve">
     <value>खोलें</value>
   </data>
   <data name="Up Level" xml:space="preserve">
     <value>ऊपरी स्तर</value>
+  </data>
+  <data name="Updating" xml:space="preserve">
+    <value>अपडेट हो रहा है...</value>
   </data>
   <data name="Upload failed." xml:space="preserve">
     <value>अपलोड विफल रहा।</value>

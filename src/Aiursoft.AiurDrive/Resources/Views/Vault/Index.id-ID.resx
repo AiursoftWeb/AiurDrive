@@ -153,11 +153,17 @@
   <data name="Start Upload" xml:space="preserve">
     <value>Mulai Unggah</value>
   </data>
+  <data name="Synchronizing..." xml:space="preserve">
+    <value>MenSinkronkan...</value>
+  </data>
   <data name="Unlock" xml:space="preserve">
     <value>Buka Kunci</value>
   </data>
   <data name="Up Level" xml:space="preserve">
     <value>Naik Tingkat</value>
+  </data>
+  <data name="Updating" xml:space="preserve">
+    <value>Memperbarui</value>
   </data>
   <data name="Upload failed." xml:space="preserve">
     <value>Upload gagal.</value>

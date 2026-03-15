@@ -153,11 +153,17 @@
   <data name="Start Upload" xml:space="preserve">
     <value>업로드 시작</value>
   </data>
+  <data name="Synchronizing..." xml:space="preserve">
+    <value>동기화 중...</value>
+  </data>
   <data name="Unlock" xml:space="preserve">
     <value>잠금 해제</value>
   </data>
   <data name="Up Level" xml:space="preserve">
     <value>한 단계 위로</value>
+  </data>
+  <data name="Updating" xml:space="preserve">
+    <value>업데이트 중</value>
   </data>
   <data name="Upload failed." xml:space="preserve">
     <value>업로드에 실패했습니다.</value>

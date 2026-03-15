@@ -153,11 +153,17 @@
   <data name="Start Upload" xml:space="preserve">
     <value>Starta uppladdning</value>
   </data>
+  <data name="Synchronizing..." xml:space="preserve">
+    <value>Synkroniserar...</value>
+  </data>
   <data name="Unlock" xml:space="preserve">
     <value>Lås upp</value>
   </data>
   <data name="Up Level" xml:space="preserve">
     <value>En nivå upp</value>
+  </data>
+  <data name="Updating" xml:space="preserve">
+    <value>Uppdaterar</value>
   </data>
   <data name="Upload failed." xml:space="preserve">
     <value>Uppladdning misslyckades.</value>
