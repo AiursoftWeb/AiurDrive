@@ -54,6 +54,12 @@
   <data name="Delete this encrypted file?" xml:space="preserve">
     <value>Dieses verschlüsselte Datei löschen?</value>
   </data>
+  <data name="Download Folder" xml:space="preserve">
+    <value>Ordner herunterladen</value>
+  </data>
+  <data name="Downloading" xml:space="preserve">
+    <value>Herunterladen</value>
+  </data>
   <data name="Empty" xml:space="preserve">
     <value>Leer</value>
   </data>
