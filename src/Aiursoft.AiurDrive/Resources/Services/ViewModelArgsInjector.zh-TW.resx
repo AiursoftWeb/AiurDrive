@@ -204,5 +204,11 @@
   <data name="Users" xml:space="preserve">
     <value>使用者</value>
   </data>
+  <data name="Vault" xml:space="preserve">
+    <value>金庫</value>
+  </data>
+  <data name="Zero-Trust Vault" xml:space="preserve">
+    <value>零信任金庫</value>
+  </data>
 
 </root>

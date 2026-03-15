@@ -201,5 +201,11 @@
   <data name="Users" xml:space="preserve">
     <value>Användare</value>
   </data>
+  <data name="Vault" xml:space="preserve">
+    <value>Värdshus</value>
+  </data>
+  <data name="Zero-Trust Vault" xml:space="preserve">
+    <value>Zero-Trust Vault</value>
+  </data>
 
 </root>

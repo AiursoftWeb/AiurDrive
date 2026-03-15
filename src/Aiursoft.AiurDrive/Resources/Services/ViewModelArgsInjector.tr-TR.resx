@@ -201,5 +201,11 @@
   <data name="Users" xml:space="preserve">
     <value>Kullanıcılar</value>
   </data>
+  <data name="Vault" xml:space="preserve">
+    <value>Kasa</value>
+  </data>
+  <data name="Zero-Trust Vault" xml:space="preserve">
+    <value>Sıfır Güven Kasa</value>
+  </data>
 
 </root>

@@ -204,5 +204,11 @@
   <data name="Users" xml:space="preserve">
     <value>Users</value>
   </data>
+  <data name="Vault" xml:space="preserve">
+    <value>Vault</value>
+  </data>
+  <data name="Zero-Trust Vault" xml:space="preserve">
+    <value>Zero-Trust Vault</value>
+  </data>
 
 </root>

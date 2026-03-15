@@ -201,5 +201,11 @@
   <data name="Users" xml:space="preserve">
     <value>المستخدمون</value>
   </data>
+  <data name="Vault" xml:space="preserve">
+    <value>الخزنة</value>
+  </data>
+  <data name="Zero-Trust Vault" xml:space="preserve">
+    <value>خزنة الصفرية الثقة</value>
+  </data>
 
 </root>

@@ -201,5 +201,11 @@
   <data name="Users" xml:space="preserve">
     <value>Пользователи</value>
   </data>
+  <data name="Vault" xml:space="preserve">
+    <value>Хранилище</value>
+  </data>
+  <data name="Zero-Trust Vault" xml:space="preserve">
+    <value>Сейф с нулевым доверием</value>
+  </data>
 
 </root>

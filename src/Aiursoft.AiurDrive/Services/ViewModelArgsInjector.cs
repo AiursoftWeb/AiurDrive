@@ -93,6 +93,9 @@ public class ViewModelArgsInjector(
         _ = localizer["Permission Details"];
         _ = localizer["Register"];
         _ = localizer["Shared with Me"];
+    
+        _ = localizer["Vault"];
+        _ = localizer["Zero-Trust Vault"];
     }
 
     public void InjectSimple(
