@@ -89,11 +89,23 @@ public class VaultApiController(
         var objectsPath = GetUserVaultObjectsPath();
         var directoryInfo = new DirectoryInfo(objectsPath);
         var files = directoryInfo.GetFiles("*.enc")
-            .Select(f => new 
+            .Select(f =>
             {
-                Uuid = Path.GetFileNameWithoutExtension(f.Name),
-                Size = f.Length,
-                LastWriteTime = f.LastWriteTimeUtc
+                var uuid = Path.GetFileNameWithoutExtension(f.Name);
+                var metaPath = Path.Combine(objectsPath, uuid + ".meta");
+                string? metaBase64 = null;
+                if (System.IO.File.Exists(metaPath))
+                {
+                    metaBase64 = Convert.ToBase64String(System.IO.File.ReadAllBytes(metaPath));
+                }
+                
+                return new
+                {
+                    Uuid = uuid,
+                    Size = f.Length,
+                    LastWriteTime = f.LastWriteTimeUtc,
+                    MetaBase64 = metaBase64
+                };
             })
             .ToList();
 
@@ -104,7 +116,7 @@ public class VaultApiController(
     [Route("Upload")]
     [DisableRequestSizeLimit]
     [RequestFormLimits(ValueLengthLimit = int.MaxValue, MultipartBodyLengthLimit = long.MaxValue)]
-    public async Task<IActionResult> Upload(IFormFile? file)
+    public async Task<IActionResult> Upload(IFormFile? file, IFormFile? meta)
     {
         if (file == null || file.Length == 0)
         {
@@ -122,6 +134,13 @@ public class VaultApiController(
         await using (var stream = new FileStream(filePath, FileMode.Create))
         {
             await file.CopyToAsync(stream);
+        }
+
+        if (meta != null && meta.Length > 0)
+        {
+            var metaPath = Path.Combine(objectsPath, uuid + ".meta");
+            await using var metaStream = new FileStream(metaPath, FileMode.Create);
+            await meta.CopyToAsync(metaStream);
         }
 
         return Ok();
@@ -151,6 +170,12 @@ public class VaultApiController(
         if (System.IO.File.Exists(filePath))
         {
             System.IO.File.Delete(filePath);
+        }
+        
+        var metaPath = Path.Combine(objectsPath, uuid + ".meta");
+        if (System.IO.File.Exists(metaPath))
+        {
+            System.IO.File.Delete(metaPath);
         }
 
         return Ok();

@@ -345,7 +345,14 @@
         body.innerHTML = '<tr><td colspan="4" class="text-center py-4 text-muted"><span class="spinner-border spinner-border-sm me-2"></span>Decrypting file list...</td></tr>';
 
         const filePromises = files.map(async f => {
-            const fileName = await getDecryptedName(f.Uuid);
+            let fileName = "[Encrypted File]";
+            if (f.MetaBase64) {
+                try {
+                    fileName = await decryptMetadata(base64ToUint8(f.MetaBase64));
+                } catch (e) {
+                    console.error("Failed to decrypt metadata for " + f.Uuid, e);
+                }
+            }
             return { ...f, fileName };
         });
 
@@ -368,15 +375,29 @@
         }
     }
 
-    async function getDecryptedName(uuid) {
-        try {
-            const response = await fetch(`/VaultApi/Download/${uuid}`);
-            const buffer = await response.arrayBuffer();
-            const { relativePath } = await decryptFileData(new Uint8Array(buffer));
-            return relativePath;
-        } catch (e) {
-            return "[Encrypted File]";
-        }
+    async function decryptMetadata(data) {
+        const fileUuid = data.slice(0, UUID_SIZE);
+        const nonce = data.slice(UUID_SIZE, UUID_SIZE + NONCE_SIZE);
+        const ciphertextWithTag = data.slice(UUID_SIZE + NONCE_SIZE);
+
+        const rawMasterKey = await crypto.subtle.exportKey('raw', masterKey);
+        const baseKey = await crypto.subtle.importKey('raw', rawMasterKey, 'HKDF', false, ['deriveKey']);
+
+        const fileKey = await crypto.subtle.deriveKey(
+            { name: 'HKDF', hash: 'SHA-256', salt: fileUuid, info: new Uint8Array() },
+            baseKey,
+            { name: 'AES-GCM', length: 256 },
+            false,
+            ['decrypt']
+        );
+
+        const decryptedPayload = await crypto.subtle.decrypt(
+            { name: 'AES-GCM', iv: nonce, tagLength: 128 },
+            fileKey,
+            ciphertextWithTag
+        );
+
+        return new TextDecoder().decode(decryptedPayload);
     }
 
     async function uploadFile() {
@@ -405,10 +426,12 @@
 
         try {
             const content = await file.arrayBuffer();
-            const encryptedBlob = await encryptFileData(new Uint8Array(content), file.name, fileUuid);
+            const encryptedContentBlob = await encryptFileData(new Uint8Array(content), fileUuid);
+            const encryptedMetaBlob = await encryptMetadata(file.name, fileUuid);
 
             const formData = new FormData();
-            formData.append('file', new Blob([encryptedBlob]), uuidStr + ".enc");
+            formData.append('file', new Blob([encryptedContentBlob]), uuidStr + ".enc");
+            formData.append('meta', new Blob([encryptedMetaBlob]), uuidStr + ".meta");
 
             const response = await fetch('/VaultApi/Upload', {
                 method: 'POST',
@@ -429,7 +452,34 @@
         }
     }
 
-    async function encryptFileData(content, path, fileUuid) {
+    async function encryptMetadata(path, fileUuid) {
+        const rawMasterKey = await crypto.subtle.exportKey('raw', masterKey);
+        const baseKey = await crypto.subtle.importKey('raw', rawMasterKey, 'HKDF', false, ['deriveKey']);
+
+        const fileKey = await crypto.subtle.deriveKey(
+            { name: 'HKDF', hash: 'SHA-256', salt: fileUuid, info: new Uint8Array() },
+            baseKey,
+            { name: 'AES-GCM', length: 256 },
+            false,
+            ['encrypt']
+        );
+
+        const payload = new TextEncoder().encode(path);
+        const nonce = crypto.getRandomValues(new Uint8Array(NONCE_SIZE));
+        const encrypted = await crypto.subtle.encrypt(
+            { name: 'AES-GCM', iv: nonce, tagLength: 128 },
+            fileKey,
+            payload
+        );
+
+        const result = new Uint8Array(UUID_SIZE + NONCE_SIZE + encrypted.byteLength);
+        result.set(fileUuid, 0);
+        result.set(nonce, UUID_SIZE);
+        result.set(new Uint8Array(encrypted), UUID_SIZE + NONCE_SIZE);
+        return result;
+    }
+
+    async function encryptFileData(content, fileUuid) {
         // Derive file-specific key using HKDF
         const rawMasterKey = await crypto.subtle.exportKey('raw', masterKey);
         const baseKey = await crypto.subtle.importKey('raw', rawMasterKey, 'HKDF', false, ['deriveKey']);
@@ -442,19 +492,11 @@
             ['encrypt']
         );
 
-        const pathBytes = new TextEncoder().encode(path);
-        const pathLen = new Uint8Array(new Uint32Array([pathBytes.length]).buffer);
-
-        const payload = new Uint8Array(4 + pathBytes.length + content.length);
-        payload.set(pathLen, 0);
-        payload.set(pathBytes, 4);
-        payload.set(content, 4 + pathBytes.length);
-
         const nonce = crypto.getRandomValues(new Uint8Array(NONCE_SIZE));
         const encrypted = await crypto.subtle.encrypt(
             { name: 'AES-GCM', iv: nonce, tagLength: 128 },
             fileKey,
-            payload
+            content
         );
 
         const result = new Uint8Array(UUID_SIZE + NONCE_SIZE + encrypted.byteLength);
@@ -486,25 +528,21 @@
             ciphertextWithTag
         );
 
-        const payload = new Uint8Array(decryptedPayload);
-        const pathLen = new Uint32Array(payload.buffer, 0, 1)[0];
-        const relativePath = new TextDecoder().decode(payload.slice(4, 4 + pathLen));
-        const content = payload.slice(4 + pathLen);
-
-        return { relativePath, content };
+        return new Uint8Array(decryptedPayload);
     }
 
     async function downloadFile(uuid) {
         try {
+            const f = cachedFiles.find(x => x.Uuid === uuid);
             const response = await fetch(`/VaultApi/Download/${uuid}`);
             const buffer = await response.arrayBuffer();
-            const { relativePath, content } = await decryptFileData(new Uint8Array(buffer));
+            const content = await decryptFileData(new Uint8Array(buffer));
 
             const blob = new Blob([content], { type: 'application/octet-stream' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = relativePath;
+            a.download = f ? f.fileName : "downloaded-file";
             a.click();
             URL.revokeObjectURL(url);
         } catch (e) {
