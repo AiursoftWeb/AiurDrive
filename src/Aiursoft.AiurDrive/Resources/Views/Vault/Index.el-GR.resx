@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Actions" xml:space="preserve">
+    <value>Ενέργειες</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>υπάρχει ήδη σε αυτόν τον φάκελο. Θέλετε να το αντικαταστήσετε;</value>
+  </data>
+  <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
+    <value>Είστε σίγουροι ότι θέλετε να διαγράψετε τον φάκελο και όλα τα περιεχόμενά του;</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Ακύρωση</value>
+  </data>
+  <data name="Choose a file to encrypt and store. Maximum size depends on your browser&apos;s memory." xml:space="preserve">
+    <value>Επιλέξτε ένα αρχείο για κρυπτογράφηση και αποθήκευση. Το μέγιστο μέγεθος εξαρτάται από τη μνήμη του περιηγητή σας.</value>
+  </data>
+  <data name="Confirm Password" xml:space="preserve">
+    <value>Επιβεβαίωση Κωδικού</value>
+  </data>
+  <data name="Connecting to secure vault..." xml:space="preserve">
+    <value>Σύνδεση με το ασφαλές θησαυροφυλάκιο...</value>
+  </data>
+  <data name="Create Secure Vault" xml:space="preserve">
+    <value>Δημιουργία Ασφαλούς Καταστήματος</value>
+  </data>
+  <data name="Decrypting file list..." xml:space="preserve">
+    <value>Αποκρυπτογράφηση λίστας αρχείων...</value>
+  </data>
+  <data name="Decryption failed: " xml:space="preserve">
+    <value>Αποκρυπτογράφηση αποτυγχάνει:</value>
+  </data>
+  <data name="Decryption happens entirely on your device using your password. We never see your password or your raw data. Without your password, your files are &lt;strong&gt;forever inaccessible&lt;/strong&gt;." xml:space="preserve">
+    <value>Η αποκρυπτογράφηση γίνεται εξ ολοκλήρου στη συσκευή σας χρησιμοποιώντας τον κωδικό πρόσβασής σας. Ποτέ δεν βλέπουμε τον κωδικό πρόσβασής σας ή τα ακατέργαστα δεδομένα σας. Χωρίς τον κωδικό πρόσβασής σας, τα αρχεία σας είναι &lt;strong&gt;οριστικά μη προσβάσιμα&lt;/strong&gt;.</value>
+  </data>
+  <data name="Delete this encrypted file?" xml:space="preserve">
+    <value>Διαγραφή αυτού του κρυπτογραφημένου αρχείου;</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value>Κενό</value>
+  </data>
+  <data name="Encrypted" xml:space="preserve">
+    <value>Κρυπτογραφημένο</value>
+  </data>
+  <data name="Encrypting..." xml:space="preserve">
+    <value>Κρυπτογράφηση...</value>
+  </data>
+  <data name="Enter new folder name:" xml:space="preserve">
+    <value>Εισαγάγετε το νέο όνομα φακέλου:</value>
+  </data>
+  <data name="Failed to create folder." xml:space="preserve">
+    <value>Αποτυχία δημιουργίας φακέλου.</value>
+  </data>
+  <data name="Failed to init: " xml:space="preserve">
+    <value>Αποτυχία αρχικοποίησης:</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>Αρχεία</value>
+  </data>
+  <data name="Folder" xml:space="preserve">
+    <value>Φάκελος</value>
+  </data>
+  <data name="Folder is empty." xml:space="preserve">
+    <value>Ο φάκελος είναι άδειος.</value>
+  </data>
+  <data name="Folder name cannot contain slashes." xml:space="preserve">
+    <value>Το όνομα φακέλου δεν μπορεί να περιέχει πλάγιες γραμμές.</value>
+  </data>
+  <data name="Initialize Vault" xml:space="preserve">
+    <value>Ενεργοποίηση Κουφωτού</value>
+  </data>
+  <data name="Invalid name." xml:space="preserve">
+    <value>Μη έγκυρο όνομα.</value>
+  </data>
+  <data name="Invalid password." xml:space="preserve">
+    <value>Λανθασμένος κωδικός πρόσβασης.</value>
+  </data>
+  <data name="LAST CHANCE: All your data will be wiped. This action cannot be undone. Confirm formatting?" xml:space="preserve">
+    <value>ΤΕΛΕΥΤΑΙΑ ΕΥΚΑΙΡΙΑ: Όλα τα δεδομένα σας θα διαγραφούν. Αυτή η ενέργεια δεν μπορεί να ανακληθεί. Επιβεβαιώστε τη μορφοποίηση;</value>
+  </data>
+  <data name="Lock Vault" xml:space="preserve">
+    <value>Κλείδωμα Θησαυροφυλακίου</value>
+  </data>
+  <data name="Minimum 8 characters" xml:space="preserve">
+    <value>Ελάχιστοι 8 χαρακτήρες</value>
+  </data>
+  <data name="Modified" xml:space="preserve">
+    <value>Τροποποιήθηκε</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Όνομα</value>
+  </data>
+  <data name="New Folder" xml:space="preserve">
+    <value>Νέος Φάκελος</value>
+  </data>
+  <data name="New Name" xml:space="preserve">
+    <value>Νέο Όνομα</value>
+  </data>
+  <data name="Password too short." xml:space="preserve">
+    <value>Ο κωδικός πρόσβασης είναι πολύ σύντομος.</value>
+  </data>
+  <data name="Passwords do not match." xml:space="preserve">
+    <value>Οι κωδικοί πρόσβασης δεν ταιριάζουν.</value>
+  </data>
+  <data name="Ready to Decrypt?" xml:space="preserve">
+    <value>Είστε έτοιμοι για αποκρυπτογράφηση;</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Ανανέωση</value>
+  </data>
+  <data name="Remember for this session" xml:space="preserve">
+    <value>Θυμήσου για αυτή τη συνεδρία</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Μετονομασία</value>
+  </data>
+  <data name="Rename failed: " xml:space="preserve">
+    <value>Η μετονομασία απέτυχε:</value>
+  </data>
+  <data name="Renaming..." xml:space="preserve">
+    <value>Μετονομασία...</value>
+  </data>
+  <data name="Reset and Wipe Vault" xml:space="preserve">
+    <value>Επαναφορά και Διαγραφή Κασσολογίου</value>
+  </data>
+  <data name="Root" xml:space="preserve">
+    <value>Ρίζα</value>
+  </data>
+  <data name="Set Vault Password" xml:space="preserve">
+    <value>Ορισμός Κωδικού Ασφαλείας</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Μέγεθος</value>
+  </data>
+  <data name="Start Upload" xml:space="preserve">
+    <value>Έναρξη Μετάβασης</value>
+  </data>
+  <data name="Unlock" xml:space="preserve">
+    <value>Αποκλειδώστε</value>
+  </data>
+  <data name="Up Level" xml:space="preserve">
+    <value>Πάνω Επίπεδο</value>
+  </data>
+  <data name="Upload failed." xml:space="preserve">
+    <value>Αποστολή απέτυχε.</value>
+  </data>
+  <data name="Upload Secure File" xml:space="preserve">
+    <value>Ανέβασμα Ασφαλούς Αρχείου</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>Το Vault έχει μορφοποιηθεί και επαναφερθεί στην εργοστασιακή κατάσταση.</value>
+  </data>
+  <data name="Vault Locked" xml:space="preserve">
+    <value>Αποθήκη Κλειδωμένη</value>
+  </data>
+  <data name="Vault Password" xml:space="preserve">
+    <value>Κωδικός Ασφαλούς Θησαυροφυλακίου</value>
+  </data>
+  <data name="Vault Settings" xml:space="preserve">
+    <value>Ρυθμίσεις Αποθήκης</value>
+  </data>
+  <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
+    <value>ΠΡΟΕΙΔΟΠΟΙΗΣΗ: Αυτό θα ΔΙΑΓΡΑΨΕΙ ΟΡΙΣΤΙΚΑ όλα τα αρχεία στο θησαυροφυλάκιό σας και θα επαναφέρει τον κωδικό πρόσβασής σας. Είστε απόλυτα σίγουροι;</value>
+  </data>
+  <data name="Wipe All Data" xml:space="preserve">
+    <value>Διαγραφή όλων των δεδομένων</value>
+  </data>
+  <data name="Your files are encrypted &lt;strong&gt;locally&lt;/strong&gt; in your browser before upload. We never see your password, and without it, recovery is &lt;strong&gt;mathematically impossible&lt;/strong&gt;. Raw data is &lt;strong&gt;never&lt;/strong&gt; uploaded to our server." xml:space="preserve">
+    <value>Τα αρχεία σας κρυπτογραφούνται &lt;strong&gt;τοπικά&lt;/strong&gt; στον περιηγητή σας πριν από την αναφόρτωση. Δεν βλέπουμε ποτέ τον κωδικό πρόσβασής σας και χωρίς αυτόν, η ανάκτηση είναι &lt;strong&gt;μαθηματικά αδύνατη&lt;/strong&gt;. Τα ακατέργαστα δεδομένα &lt;strong&gt;δεν&lt;/strong&gt; αναφορτώνονται ποτέ στον διακομιστή μας.</value>
+  </data>
+  <data name="Zero-Trust" xml:space="preserve">
+    <value>Μηδενική Εμπιστοσύνη</value>
+  </data>
+  <data name="Zero-Trust Architecture" xml:space="preserve">
+    <value>Αρχιτεκτονική Μηδενικής Εμπιστοσύνης</value>
+  </data>
+
+</root>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Actions" xml:space="preserve">
+    <value>Hành động</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>đã tồn tại trong thư mục này. Ghi đè nó?</value>
+  </data>
+  <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
+    <value>Bạn có chắc chắn muốn xóa thư mục và tất cả nội dung của nó không?</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
+  <data name="Choose a file to encrypt and store. Maximum size depends on your browser&apos;s memory." xml:space="preserve">
+    <value>Chọn một tệp để mã hóa và lưu trữ. Kích thước tối đa phụ thuộc vào bộ nhớ trình duyệt của bạn.</value>
+  </data>
+  <data name="Confirm Password" xml:space="preserve">
+    <value>Xác nhận mật khẩu</value>
+  </data>
+  <data name="Connecting to secure vault..." xml:space="preserve">
+    <value>Đang kết nối với kho chứa an toàn...</value>
+  </data>
+  <data name="Create Secure Vault" xml:space="preserve">
+    <value>Tạo Kho An Toàn</value>
+  </data>
+  <data name="Decrypting file list..." xml:space="preserve">
+    <value>Đang giải mã danh sách tệp...</value>
+  </data>
+  <data name="Decryption failed: " xml:space="preserve">
+    <value>Giải mã thất bại:</value>
+  </data>
+  <data name="Decryption happens entirely on your device using your password. We never see your password or your raw data. Without your password, your files are &lt;strong&gt;forever inaccessible&lt;/strong&gt;." xml:space="preserve">
+    <value>Việc giải mã diễn ra hoàn toàn trên thiết bị của bạn bằng mật khẩu của bạn. Chúng tôi không bao giờ xem được mật khẩu hoặc dữ liệu thô của bạn. Nếu không có mật khẩu, các tệp của bạn sẽ &lt;strong&gt;bị khóa vĩnh viễn&lt;/strong&gt;.</value>
+  </data>
+  <data name="Delete this encrypted file?" xml:space="preserve">
+    <value>Xóa tệp đã mã hóa này?</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value>Trống</value>
+  </data>
+  <data name="Encrypted" xml:space="preserve">
+    <value>Đã mã hóa</value>
+  </data>
+  <data name="Encrypting..." xml:space="preserve">
+    <value>Đang mã hóa...</value>
+  </data>
+  <data name="Enter new folder name:" xml:space="preserve">
+    <value>Nhập tên thư mục mới:</value>
+  </data>
+  <data name="Failed to create folder." xml:space="preserve">
+    <value>Không thể tạo thư mục.</value>
+  </data>
+  <data name="Failed to init: " xml:space="preserve">
+    <value>Khởi tạo thất bại:</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>Tệp</value>
+  </data>
+  <data name="Folder" xml:space="preserve">
+    <value>Thư mục</value>
+  </data>
+  <data name="Folder is empty." xml:space="preserve">
+    <value>Thư mục trống.</value>
+  </data>
+  <data name="Folder name cannot contain slashes." xml:space="preserve">
+    <value>Tên thư mục không được chứa dấu gạch chéo.</value>
+  </data>
+  <data name="Initialize Vault" xml:space="preserve">
+    <value>Khởi tạo Kho</value>
+  </data>
+  <data name="Invalid name." xml:space="preserve">
+    <value>Tên không hợp lệ.</value>
+  </data>
+  <data name="Invalid password." xml:space="preserve">
+    <value>Mật khẩu không hợp lệ.</value>
+  </data>
+  <data name="LAST CHANCE: All your data will be wiped. This action cannot be undone. Confirm formatting?" xml:space="preserve">
+    <value>CƠ HỘI CUỐI: Tất cả dữ liệu của bạn sẽ bị xóa. Hành động này không thể hoàn tác. Xác nhận định dạng lại?</value>
+  </data>
+  <data name="Lock Vault" xml:space="preserve">
+    <value>Khóa Kho</value>
+  </data>
+  <data name="Minimum 8 characters" xml:space="preserve">
+    <value>Tối thiểu 8 ký tự</value>
+  </data>
+  <data name="Modified" xml:space="preserve">
+    <value>Đã sửa đổi</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Tên</value>
+  </data>
+  <data name="New Folder" xml:space="preserve">
+    <value>Thư mục mới</value>
+  </data>
+  <data name="New Name" xml:space="preserve">
+    <value>Tên mới</value>
+  </data>
+  <data name="Password too short." xml:space="preserve">
+    <value>Mật khẩu quá ngắn.</value>
+  </data>
+  <data name="Passwords do not match." xml:space="preserve">
+    <value>Mật khẩu không khớp.</value>
+  </data>
+  <data name="Ready to Decrypt?" xml:space="preserve">
+    <value>Sẵn sàng để giải mã?</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Làm mới</value>
+  </data>
+  <data name="Remember for this session" xml:space="preserve">
+    <value>Ghi nhớ cho phiên này</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Đổi tên</value>
+  </data>
+  <data name="Rename failed: " xml:space="preserve">
+    <value>Đổi tên thất bại:</value>
+  </data>
+  <data name="Renaming..." xml:space="preserve">
+    <value>Đang đổi tên...</value>
+  </data>
+  <data name="Reset and Wipe Vault" xml:space="preserve">
+    <value>Đặt lại và Xóa Vault</value>
+  </data>
+  <data name="Root" xml:space="preserve">
+    <value>Gốc</value>
+  </data>
+  <data name="Set Vault Password" xml:space="preserve">
+    <value>Đặt mật khẩu kho</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Kích thước</value>
+  </data>
+  <data name="Start Upload" xml:space="preserve">
+    <value>Bắt đầu tải lên</value>
+  </data>
+  <data name="Unlock" xml:space="preserve">
+    <value>Mở khóa</value>
+  </data>
+  <data name="Up Level" xml:space="preserve">
+    <value>Lên cấp</value>
+  </data>
+  <data name="Upload failed." xml:space="preserve">
+    <value>Tải lên thất bại.</value>
+  </data>
+  <data name="Upload Secure File" xml:space="preserve">
+    <value>Tải lên tệp an toàn</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>Kho chứa đã được định dạng và khôi phục về trạng thái nhà máy.</value>
+  </data>
+  <data name="Vault Locked" xml:space="preserve">
+    <value>Kho bị khóa</value>
+  </data>
+  <data name="Vault Password" xml:space="preserve">
+    <value>Mật khẩu Kho</value>
+  </data>
+  <data name="Vault Settings" xml:space="preserve">
+    <value>Cài đặt Kho lưu trữ</value>
+  </data>
+  <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
+    <value>CẢNH BÁO: Thao tác này sẽ XÓA HOÀN TOÀN tất cả các tệp trong kho lưu trữ của bạn và đặt lại mật khẩu. Bạn có chắc chắn không?</value>
+  </data>
+  <data name="Wipe All Data" xml:space="preserve">
+    <value>Xóa tất cả dữ liệu</value>
+  </data>
+  <data name="Your files are encrypted &lt;strong&gt;locally&lt;/strong&gt; in your browser before upload. We never see your password, and without it, recovery is &lt;strong&gt;mathematically impossible&lt;/strong&gt;. Raw data is &lt;strong&gt;never&lt;/strong&gt; uploaded to our server." xml:space="preserve">
+    <value>Tệp của bạn được mã hóa &lt;strong&gt;cục bộ&lt;/strong&gt; trong trình duyệt của bạn trước khi tải lên. Chúng tôi không bao giờ nhìn thấy mật khẩu của bạn, và nếu không có nó, việc khôi phục là &lt;strong&gt;bất khả thi về mặt toán học&lt;/strong&gt;. Dữ liệu thô &lt;strong&gt;không bao giờ&lt;/strong&gt; được tải lên máy chủ của chúng tôi.</value>
+  </data>
+  <data name="Zero-Trust" xml:space="preserve">
+    <value>Không tin tưởng ai</value>
+  </data>
+  <data name="Zero-Trust Architecture" xml:space="preserve">
+    <value>Kiến trúc Zero-Trust</value>
+  </data>
+
+</root>

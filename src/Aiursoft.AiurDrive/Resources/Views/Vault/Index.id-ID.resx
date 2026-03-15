@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Actions" xml:space="preserve">
+    <value>Tindakan</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>sudah ada di folder ini. Timpa?</value>
+  </data>
+  <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
+    <value>Apakah Anda yakin ingin menghapus folder dan semua isinya?</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="Choose a file to encrypt and store. Maximum size depends on your browser&apos;s memory." xml:space="preserve">
+    <value>Pilih file untuk dienkripsi dan disimpan. Ukuran maksimum tergantung pada memori browser Anda.</value>
+  </data>
+  <data name="Confirm Password" xml:space="preserve">
+    <value>Konfirmasi Kata Sandi</value>
+  </data>
+  <data name="Connecting to secure vault..." xml:space="preserve">
+    <value>Menghubungkan ke brankas aman...</value>
+  </data>
+  <data name="Create Secure Vault" xml:space="preserve">
+    <value>Buat Brankas Aman</value>
+  </data>
+  <data name="Decrypting file list..." xml:space="preserve">
+    <value>Mendekripsi daftar file...</value>
+  </data>
+  <data name="Decryption failed: " xml:space="preserve">
+    <value>Gagal mendekripsi:</value>
+  </data>
+  <data name="Decryption happens entirely on your device using your password. We never see your password or your raw data. Without your password, your files are &lt;strong&gt;forever inaccessible&lt;/strong&gt;." xml:space="preserve">
+    <value>Dekripsi terjadi sepenuhnya di perangkat Anda menggunakan kata sandi Anda. Kami tidak pernah melihat kata sandi atau data mentah Anda. Tanpa kata sandi Anda, file Anda akan &lt;strong&gt;selamanya tidak dapat diakses&lt;/strong&gt;.</value>
+  </data>
+  <data name="Delete this encrypted file?" xml:space="preserve">
+    <value>Hapus file terenkripsi ini?</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value>Kosong</value>
+  </data>
+  <data name="Encrypted" xml:space="preserve">
+    <value>Terenkripsi</value>
+  </data>
+  <data name="Encrypting..." xml:space="preserve">
+    <value>Mengenkripsi...</value>
+  </data>
+  <data name="Enter new folder name:" xml:space="preserve">
+    <value>Masukkan nama folder baru:</value>
+  </data>
+  <data name="Failed to create folder." xml:space="preserve">
+    <value>Gagal membuat folder.</value>
+  </data>
+  <data name="Failed to init: " xml:space="preserve">
+    <value>Gagal menginisialisasi:</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="Folder" xml:space="preserve">
+    <value>Folder</value>
+  </data>
+  <data name="Folder is empty." xml:space="preserve">
+    <value>Folder kosong.</value>
+  </data>
+  <data name="Folder name cannot contain slashes." xml:space="preserve">
+    <value>Nama folder tidak boleh mengandung garis miring.</value>
+  </data>
+  <data name="Initialize Vault" xml:space="preserve">
+    <value>Inisialisasi Brankas</value>
+  </data>
+  <data name="Invalid name." xml:space="preserve">
+    <value>Nama tidak valid.</value>
+  </data>
+  <data name="Invalid password." xml:space="preserve">
+    <value>Kata sandi tidak valid.</value>
+  </data>
+  <data name="LAST CHANCE: All your data will be wiped. This action cannot be undone. Confirm formatting?" xml:space="preserve">
+    <value>PELUK TERAKHIR: Semua data Anda akan dihapus. Tindakan ini tidak dapat dibatalkan. Konfirmasi pemformatan?</value>
+  </data>
+  <data name="Lock Vault" xml:space="preserve">
+    <value>Kunci Brankas</value>
+  </data>
+  <data name="Minimum 8 characters" xml:space="preserve">
+    <value>Minimal 8 karakter</value>
+  </data>
+  <data name="Modified" xml:space="preserve">
+    <value>Dimodifikasi</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nama</value>
+  </data>
+  <data name="New Folder" xml:space="preserve">
+    <value>Folder Baru</value>
+  </data>
+  <data name="New Name" xml:space="preserve">
+    <value>Nama Baru</value>
+  </data>
+  <data name="Password too short." xml:space="preserve">
+    <value>Kata sandi terlalu pendek.</value>
+  </data>
+  <data name="Passwords do not match." xml:space="preserve">
+    <value>Kata sandi tidak cocok.</value>
+  </data>
+  <data name="Ready to Decrypt?" xml:space="preserve">
+    <value>Siap untuk Mengenkripsi?</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Muat Ulang</value>
+  </data>
+  <data name="Remember for this session" xml:space="preserve">
+    <value>Ingat untuk sesi ini</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Ubah Nama</value>
+  </data>
+  <data name="Rename failed: " xml:space="preserve">
+    <value>Ganti nama gagal:</value>
+  </data>
+  <data name="Renaming..." xml:space="preserve">
+    <value>Mengubah nama...</value>
+  </data>
+  <data name="Reset and Wipe Vault" xml:space="preserve">
+    <value>Atur Ulang dan Hapus Vault</value>
+  </data>
+  <data name="Root" xml:space="preserve">
+    <value>Akar</value>
+  </data>
+  <data name="Set Vault Password" xml:space="preserve">
+    <value>Atur Kata Sandi Brankas</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Ukuran</value>
+  </data>
+  <data name="Start Upload" xml:space="preserve">
+    <value>Mulai Unggah</value>
+  </data>
+  <data name="Unlock" xml:space="preserve">
+    <value>Buka Kunci</value>
+  </data>
+  <data name="Up Level" xml:space="preserve">
+    <value>Naik Tingkat</value>
+  </data>
+  <data name="Upload failed." xml:space="preserve">
+    <value>Upload gagal.</value>
+  </data>
+  <data name="Upload Secure File" xml:space="preserve">
+    <value>Unggah File Aman</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>Vault telah diformat dan direset ke kondisi pabrik.</value>
+  </data>
+  <data name="Vault Locked" xml:space="preserve">
+    <value>Brankas Terkunci</value>
+  </data>
+  <data name="Vault Password" xml:space="preserve">
+    <value>Kata Sandi Brankas</value>
+  </data>
+  <data name="Vault Settings" xml:space="preserve">
+    <value>Pengaturan Brankas</value>
+  </data>
+  <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
+    <value>PERINGATAN: Ini akan MENGHAPUS SELURUH file di brankas Anda secara PERMANEN dan mereset kata sandi Anda. Apakah Anda benar-benar yakin?</value>
+  </data>
+  <data name="Wipe All Data" xml:space="preserve">
+    <value>Hapus Semua Data</value>
+  </data>
+  <data name="Your files are encrypted &lt;strong&gt;locally&lt;/strong&gt; in your browser before upload. We never see your password, and without it, recovery is &lt;strong&gt;mathematically impossible&lt;/strong&gt;. Raw data is &lt;strong&gt;never&lt;/strong&gt; uploaded to our server." xml:space="preserve">
+    <value>File Anda dienkripsi &lt;strong&gt;lokal&lt;/strong&gt; di browser Anda sebelum diunggah. Kami tidak pernah melihat kata sandi Anda, dan tanpa itu, pemulihan adalah &lt;strong&gt;mustahil secara matematis&lt;/strong&gt;. Data mentah &lt;strong&gt;tidak pernah&lt;/strong&gt; diunggah ke server kami.</value>
+  </data>
+  <data name="Zero-Trust" xml:space="preserve">
+    <value>Zero-Trust</value>
+  </data>
+  <data name="Zero-Trust Architecture" xml:space="preserve">
+    <value>Arsitektur Zero-Trust</value>
+  </data>
+
+</root>

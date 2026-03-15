@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Actions" xml:space="preserve">
+    <value>Ações</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>já existe nesta pasta. Substituí-lo?</value>
+  </data>
+  <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
+    <value>Tem a certeza de que deseja eliminar a pasta e todo o seu conteúdo?</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="Choose a file to encrypt and store. Maximum size depends on your browser&apos;s memory." xml:space="preserve">
+    <value>Selecione um ficheiro para cifrar e guardar. O tamanho máximo depende da memória do seu navegador.</value>
+  </data>
+  <data name="Confirm Password" xml:space="preserve">
+    <value>Confirmar Palavra-passe</value>
+  </data>
+  <data name="Connecting to secure vault..." xml:space="preserve">
+    <value>A ligar ao cofre seguro...</value>
+  </data>
+  <data name="Create Secure Vault" xml:space="preserve">
+    <value>Criar cofre seguro</value>
+  </data>
+  <data name="Decrypting file list..." xml:space="preserve">
+    <value>A descriptar a lista de ficheiros...</value>
+  </data>
+  <data name="Decryption failed: " xml:space="preserve">
+    <value>Falha na descriptografia:</value>
+  </data>
+  <data name="Decryption happens entirely on your device using your password. We never see your password or your raw data. Without your password, your files are &lt;strong&gt;forever inaccessible&lt;/strong&gt;." xml:space="preserve">
+    <value>A descodificação ocorre inteiramente no seu dispositivo utilizando a sua palavra-passe. Nunca temos acesso à sua palavra-passe nem aos seus dados brutos. Sem a sua palavra-passe, os seus ficheiros ficam &lt;strong&gt;inacessíveis para sempre&lt;/strong&gt;.</value>
+  </data>
+  <data name="Delete this encrypted file?" xml:space="preserve">
+    <value>Eliminar este ficheiro encriptado?</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value>Vazio</value>
+  </data>
+  <data name="Encrypted" xml:space="preserve">
+    <value>Encriptado</value>
+  </data>
+  <data name="Encrypting..." xml:space="preserve">
+    <value>A encriptar...</value>
+  </data>
+  <data name="Enter new folder name:" xml:space="preserve">
+    <value>Introduza o novo nome da pasta:</value>
+  </data>
+  <data name="Failed to create folder." xml:space="preserve">
+    <value>Falha ao criar a pasta.</value>
+  </data>
+  <data name="Failed to init: " xml:space="preserve">
+    <value>Falha na inicialização:</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>Ficheiros</value>
+  </data>
+  <data name="Folder" xml:space="preserve">
+    <value>Pasta</value>
+  </data>
+  <data name="Folder is empty." xml:space="preserve">
+    <value>A pasta está vazia.</value>
+  </data>
+  <data name="Folder name cannot contain slashes." xml:space="preserve">
+    <value>O nome da pasta não pode conter barras.</value>
+  </data>
+  <data name="Initialize Vault" xml:space="preserve">
+    <value>Inicializar Cofre</value>
+  </data>
+  <data name="Invalid name." xml:space="preserve">
+    <value>Nome inválido.</value>
+  </data>
+  <data name="Invalid password." xml:space="preserve">
+    <value>Palavra-passe inválida.</value>
+  </data>
+  <data name="LAST CHANCE: All your data will be wiped. This action cannot be undone. Confirm formatting?" xml:space="preserve">
+    <value>ÚLTIMA OPORTUNIDADE: Todos os seus dados serão apagados. Esta ação não pode ser desfeita. Confirmar a formatação?</value>
+  </data>
+  <data name="Lock Vault" xml:space="preserve">
+    <value>Trancar Cofre</value>
+  </data>
+  <data name="Minimum 8 characters" xml:space="preserve">
+    <value>Mínimo 8 caracteres</value>
+  </data>
+  <data name="Modified" xml:space="preserve">
+    <value>Modificado</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="New Folder" xml:space="preserve">
+    <value>Nova Pasta</value>
+  </data>
+  <data name="New Name" xml:space="preserve">
+    <value>Novo Nome</value>
+  </data>
+  <data name="Password too short." xml:space="preserve">
+    <value>Palavra-passe demasiado curta.</value>
+  </data>
+  <data name="Passwords do not match." xml:space="preserve">
+    <value>As palavras-passe não coincidem.</value>
+  </data>
+  <data name="Ready to Decrypt?" xml:space="preserve">
+    <value>Pronto para descriptografar?</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Atualizar</value>
+  </data>
+  <data name="Remember for this session" xml:space="preserve">
+    <value>Lembrar nesta sessão</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Mudar o nome</value>
+  </data>
+  <data name="Rename failed: " xml:space="preserve">
+    <value>A alteração de nome falhou:</value>
+  </data>
+  <data name="Renaming..." xml:space="preserve">
+    <value>A mudar o nome...</value>
+  </data>
+  <data name="Reset and Wipe Vault" xml:space="preserve">
+    <value>Reiniciar e Apagar Cofre</value>
+  </data>
+  <data name="Root" xml:space="preserve">
+    <value>Raiz</value>
+  </data>
+  <data name="Set Vault Password" xml:space="preserve">
+    <value>Definir Palavra-Passe do Cofre</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Tamanho</value>
+  </data>
+  <data name="Start Upload" xml:space="preserve">
+    <value>Iniciar Carregamento</value>
+  </data>
+  <data name="Unlock" xml:space="preserve">
+    <value>Desbloquear</value>
+  </data>
+  <data name="Up Level" xml:space="preserve">
+    <value>Subir Nível</value>
+  </data>
+  <data name="Upload failed." xml:space="preserve">
+    <value>A transferência falhou.</value>
+  </data>
+  <data name="Upload Secure File" xml:space="preserve">
+    <value>Carregar Ficheiro Seguro</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>O cofre foi formatado e redefinido para o estado de fábrica.</value>
+  </data>
+  <data name="Vault Locked" xml:space="preserve">
+    <value>Cofre Bloqueado</value>
+  </data>
+  <data name="Vault Password" xml:space="preserve">
+    <value>Palavra-passe do Cofre</value>
+  </data>
+  <data name="Vault Settings" xml:space="preserve">
+    <value>Definições do Cofre</value>
+  </data>
+  <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
+    <value>AVISO: Isto irá APAGAR DEFINITIVAMENTE todos os ficheiros do seu cofre e redefinir a sua palavra-passe. Tem a certeza absoluta?</value>
+  </data>
+  <data name="Wipe All Data" xml:space="preserve">
+    <value>Apagar Todos os Dados</value>
+  </data>
+  <data name="Your files are encrypted &lt;strong&gt;locally&lt;/strong&gt; in your browser before upload. We never see your password, and without it, recovery is &lt;strong&gt;mathematically impossible&lt;/strong&gt;. Raw data is &lt;strong&gt;never&lt;/strong&gt; uploaded to our server." xml:space="preserve">
+    <value>Os seus ficheiros são criptografados &lt;strong&gt;localmente&lt;/strong&gt; no seu navegador antes do carregamento. Nunca vemos a sua palavra-passe e, sem ela, a recuperação é &lt;strong&gt;matematicamente impossível&lt;/strong&gt;. Os dados brutos &lt;strong&gt;nunca&lt;/strong&gt; são carregados para o nosso servidor.</value>
+  </data>
+  <data name="Zero-Trust" xml:space="preserve">
+    <value>Zero-Trust</value>
+  </data>
+  <data name="Zero-Trust Architecture" xml:space="preserve">
+    <value>Arquitetura Zero-Trust</value>
+  </data>
+
+</root>

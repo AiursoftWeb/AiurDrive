@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Actions" xml:space="preserve">
+    <value>アクション</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>このフォルダーに既に存在します。上書きしますか？</value>
+  </data>
+  <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
+    <value>フォルダーとそのすべてのコンテンツを削除してもよろしいですか？</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="Choose a file to encrypt and store. Maximum size depends on your browser&apos;s memory." xml:space="preserve">
+    <value>暗号化して保存するファイルを選択してください。最大サイズはブラウザのメモリに依存します。</value>
+  </data>
+  <data name="Confirm Password" xml:space="preserve">
+    <value>パスワードの確認</value>
+  </data>
+  <data name="Connecting to secure vault..." xml:space="preserve">
+    <value>安全なボルトに接続中...</value>
+  </data>
+  <data name="Create Secure Vault" xml:space="preserve">
+    <value>安全な保管庫を作成する</value>
+  </data>
+  <data name="Decrypting file list..." xml:space="preserve">
+    <value>ファイルリストを復号中...</value>
+  </data>
+  <data name="Decryption failed: " xml:space="preserve">
+    <value>復号に失敗しました：</value>
+  </data>
+  <data name="Decryption happens entirely on your device using your password. We never see your password or your raw data. Without your password, your files are &lt;strong&gt;forever inaccessible&lt;/strong&gt;." xml:space="preserve">
+    <value>復号はパスワードを使用して完全にデバイス上で行われます。私たちはあなたのパスワードや生データを見ることはありません。パスワードがない場合、あなたのファイルは&lt;strong&gt;永久にアクセス不能&lt;/strong&gt;になります。</value>
+  </data>
+  <data name="Delete this encrypted file?" xml:space="preserve">
+    <value>この暗号化されたファイルを削除しますか？</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value>空</value>
+  </data>
+  <data name="Encrypted" xml:space="preserve">
+    <value>暗号化済み</value>
+  </data>
+  <data name="Encrypting..." xml:space="preserve">
+    <value>暗号化中...</value>
+  </data>
+  <data name="Enter new folder name:" xml:space="preserve">
+    <value>新しいフォルダー名を入力してください：</value>
+  </data>
+  <data name="Failed to create folder." xml:space="preserve">
+    <value>フォルダの作成に失敗しました。</value>
+  </data>
+  <data name="Failed to init: " xml:space="preserve">
+    <value>初期化に失敗しました：</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>ファイル</value>
+  </data>
+  <data name="Folder" xml:space="preserve">
+    <value>フォルダー</value>
+  </data>
+  <data name="Folder is empty." xml:space="preserve">
+    <value>フォルダーは空です。</value>
+  </data>
+  <data name="Folder name cannot contain slashes." xml:space="preserve">
+    <value>フォルダー名にはスラッシュを含めることはできません。</value>
+  </data>
+  <data name="Initialize Vault" xml:space="preserve">
+    <value>ボルトの初期化</value>
+  </data>
+  <data name="Invalid name." xml:space="preserve">
+    <value>無効な名前。</value>
+  </data>
+  <data name="Invalid password." xml:space="preserve">
+    <value>無効なパスワード。</value>
+  </data>
+  <data name="LAST CHANCE: All your data will be wiped. This action cannot be undone. Confirm formatting?" xml:space="preserve">
+    <value>最後の機会：すべてのデータが消去されます。この操作は元に戻せません。フォーマットを確認しますか？</value>
+  </data>
+  <data name="Lock Vault" xml:space="preserve">
+    <value>保管庫をロック</value>
+  </data>
+  <data name="Minimum 8 characters" xml:space="preserve">
+    <value>最低 8 文字</value>
+  </data>
+  <data name="Modified" xml:space="preserve">
+    <value>更新日</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名前</value>
+  </data>
+  <data name="New Folder" xml:space="preserve">
+    <value>新しいフォルダー</value>
+  </data>
+  <data name="New Name" xml:space="preserve">
+    <value>新しい名前</value>
+  </data>
+  <data name="Password too short." xml:space="preserve">
+    <value>パスワードが短すぎます。</value>
+  </data>
+  <data name="Passwords do not match." xml:space="preserve">
+    <value>パスワードが一致しません。</value>
+  </data>
+  <data name="Ready to Decrypt?" xml:space="preserve">
+    <value>復号準備はできましたか？</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="Remember for this session" xml:space="preserve">
+    <value>このセッションで記憶する</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>名前の変更</value>
+  </data>
+  <data name="Rename failed: " xml:space="preserve">
+    <value>名前の変更失敗:</value>
+  </data>
+  <data name="Renaming..." xml:space="preserve">
+    <value>名前変更中...</value>
+  </data>
+  <data name="Reset and Wipe Vault" xml:space="preserve">
+    <value>保管庫のリセットとデータ消去</value>
+  </data>
+  <data name="Root" xml:space="preserve">
+    <value>ルート</value>
+  </data>
+  <data name="Set Vault Password" xml:space="preserve">
+    <value>vault パスワードを設定</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>サイズ</value>
+  </data>
+  <data name="Start Upload" xml:space="preserve">
+    <value>アップロードを開始</value>
+  </data>
+  <data name="Unlock" xml:space="preserve">
+    <value>ロック解除</value>
+  </data>
+  <data name="Up Level" xml:space="preserve">
+    <value>上へ戻る</value>
+  </data>
+  <data name="Upload failed." xml:space="preserve">
+    <value>アップロードに失敗しました。</value>
+  </data>
+  <data name="Upload Secure File" xml:space="preserve">
+    <value>安全なファイルをアップロード</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>Vault はフォーマットされ、工場出荷状態にリセットされました。</value>
+  </data>
+  <data name="Vault Locked" xml:space="preserve">
+    <value>保管庫がロックされています</value>
+  </data>
+  <data name="Vault Password" xml:space="preserve">
+    <value>金庫パスワード</value>
+  </data>
+  <data name="Vault Settings" xml:space="preserve">
+    <value>保管庫設定</value>
+  </data>
+  <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
+    <value>警告: これにより、ボルト内のすべてのファイルが永久に削除され、パスワードがリセットされます。本当に実行しますか？</value>
+  </data>
+  <data name="Wipe All Data" xml:space="preserve">
+    <value>すべてのデータを消去</value>
+  </data>
+  <data name="Your files are encrypted &lt;strong&gt;locally&lt;/strong&gt; in your browser before upload. We never see your password, and without it, recovery is &lt;strong&gt;mathematically impossible&lt;/strong&gt;. Raw data is &lt;strong&gt;never&lt;/strong&gt; uploaded to our server." xml:space="preserve">
+    <value>ファイルはアップロード前にブラウザ内で&lt;strong&gt;ローカル&lt;/strong&gt;に暗号化されます。パスワードは当社のシステムでは一切見られません。パスワードがない場合、復元は&lt;strong&gt;数学的に不可能&lt;/strong&gt;です。生データは&lt;strong&gt;決して&lt;/strong&gt;当社のサーバーにアップロードされません。</value>
+  </data>
+  <data name="Zero-Trust" xml:space="preserve">
+    <value>ゼロトラスト</value>
+  </data>
+  <data name="Zero-Trust Architecture" xml:space="preserve">
+    <value>ゼロトラストアーキテクチャ</value>
+  </data>
+
+</root>

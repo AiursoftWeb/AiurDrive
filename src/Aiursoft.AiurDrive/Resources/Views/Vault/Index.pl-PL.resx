@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Actions" xml:space="preserve">
+    <value>Akcje</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>już istnieje w tym folderze. Czy nadpisać?</value>
+  </data>
+  <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
+    <value>Czy na pewno chcesz usunąć folder i całą jego zawartość?</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
+  <data name="Choose a file to encrypt and store. Maximum size depends on your browser&apos;s memory." xml:space="preserve">
+    <value>Wybierz plik do zaszyfrowania i przechowywania. Maksymalny rozmiar zależy od pamięci Twojej przeglądarki.</value>
+  </data>
+  <data name="Confirm Password" xml:space="preserve">
+    <value>Potwierdź hasło</value>
+  </data>
+  <data name="Connecting to secure vault..." xml:space="preserve">
+    <value>Łączenie z bezpiecznym sejfem...</value>
+  </data>
+  <data name="Create Secure Vault" xml:space="preserve">
+    <value>Utwórz bezpieczne sejf</value>
+  </data>
+  <data name="Decrypting file list..." xml:space="preserve">
+    <value>Odszyfrowywanie listy plików...</value>
+  </data>
+  <data name="Decryption failed: " xml:space="preserve">
+    <value>Odszyfrowywanie nie powiodło się:</value>
+  </data>
+  <data name="Decryption happens entirely on your device using your password. We never see your password or your raw data. Without your password, your files are &lt;strong&gt;forever inaccessible&lt;/strong&gt;." xml:space="preserve">
+    <value>Odszyfrowywanie odbywa się w pełni na Twoim urządzeniu przy użyciu Twojego hasła. Nigdy nie widzimy Twojego hasła ani Twoich danych surowych. Bez Twojego hasła Twoje pliki są &lt;strong&gt;na zawsze niedostępne&lt;/strong&gt;.</value>
+  </data>
+  <data name="Delete this encrypted file?" xml:space="preserve">
+    <value>Usunąć ten zaszyfrowany plik?</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value>Pusty</value>
+  </data>
+  <data name="Encrypted" xml:space="preserve">
+    <value>Szyfrowane</value>
+  </data>
+  <data name="Encrypting..." xml:space="preserve">
+    <value>Szyfrowanie...</value>
+  </data>
+  <data name="Enter new folder name:" xml:space="preserve">
+    <value>Wpisz nową nazwę folderu:</value>
+  </data>
+  <data name="Failed to create folder." xml:space="preserve">
+    <value>Nie udało się utworzyć folderu.</value>
+  </data>
+  <data name="Failed to init: " xml:space="preserve">
+    <value>Nie udało się zainicjować:</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>Pliki</value>
+  </data>
+  <data name="Folder" xml:space="preserve">
+    <value>Folder</value>
+  </data>
+  <data name="Folder is empty." xml:space="preserve">
+    <value>Folder jest pusty.</value>
+  </data>
+  <data name="Folder name cannot contain slashes." xml:space="preserve">
+    <value>Nazwa folderu nie może zawierać ukośników.</value>
+  </data>
+  <data name="Initialize Vault" xml:space="preserve">
+    <value>Inicjuj Skrypt</value>
+  </data>
+  <data name="Invalid name." xml:space="preserve">
+    <value>Nieprawidłowa nazwa.</value>
+  </data>
+  <data name="Invalid password." xml:space="preserve">
+    <value>Nieprawidłowe hasło.</value>
+  </data>
+  <data name="LAST CHANCE: All your data will be wiped. This action cannot be undone. Confirm formatting?" xml:space="preserve">
+    <value>OSTATNIA SZANSA: Wszystkie Twoje dane zostaną usunięte. Tej czynności nie można cofnąć. Potwierdź formatowanie?</value>
+  </data>
+  <data name="Lock Vault" xml:space="preserve">
+    <value>Zablokuj Skrzynię</value>
+  </data>
+  <data name="Minimum 8 characters" xml:space="preserve">
+    <value>Minimum 8 znaków</value>
+  </data>
+  <data name="Modified" xml:space="preserve">
+    <value>Zmodyfikowano</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nazwa</value>
+  </data>
+  <data name="New Folder" xml:space="preserve">
+    <value>Nowy folder</value>
+  </data>
+  <data name="New Name" xml:space="preserve">
+    <value>Nowa nazwa</value>
+  </data>
+  <data name="Password too short." xml:space="preserve">
+    <value>Hasło jest zbyt krótkie.</value>
+  </data>
+  <data name="Passwords do not match." xml:space="preserve">
+    <value>Hasła nie pasują do siebie.</value>
+  </data>
+  <data name="Ready to Decrypt?" xml:space="preserve">
+    <value>Gotowi do odszyfrowania?</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Odśwież</value>
+  </data>
+  <data name="Remember for this session" xml:space="preserve">
+    <value>Zapamiętaj w tej sesji</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Zmień nazwę</value>
+  </data>
+  <data name="Rename failed: " xml:space="preserve">
+    <value>Zmiana nazwy nie powiodła się:</value>
+  </data>
+  <data name="Renaming..." xml:space="preserve">
+    <value>Zmienianie nazwy...</value>
+  </data>
+  <data name="Reset and Wipe Vault" xml:space="preserve">
+    <value>Zresetuj i wyczyść skrzynię</value>
+  </data>
+  <data name="Root" xml:space="preserve">
+    <value>Korzeń</value>
+  </data>
+  <data name="Set Vault Password" xml:space="preserve">
+    <value>Ustaw hasz sejfu</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Rozmiar</value>
+  </data>
+  <data name="Start Upload" xml:space="preserve">
+    <value>Rozpocznij przesyłanie</value>
+  </data>
+  <data name="Unlock" xml:space="preserve">
+    <value>Odblokuj</value>
+  </data>
+  <data name="Up Level" xml:space="preserve">
+    <value>Poziom wyżej</value>
+  </data>
+  <data name="Upload failed." xml:space="preserve">
+    <value>Przesyłanie nie powiodło się.</value>
+  </data>
+  <data name="Upload Secure File" xml:space="preserve">
+    <value>Prześlij bezpieczny plik</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>Skarbona została sformatowana i przywrócona do stanu fabrycznego.</value>
+  </data>
+  <data name="Vault Locked" xml:space="preserve">
+    <value>Sejf zablokowany</value>
+  </data>
+  <data name="Vault Password" xml:space="preserve">
+    <value>Hasło skrzynki</value>
+  </data>
+  <data name="Vault Settings" xml:space="preserve">
+    <value>Ustawienia Skarbca</value>
+  </data>
+  <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
+    <value>OSTRZEŻENIE: Ta operacja TRWAŁE usunie wszystkie pliki w Twoim sejfie i zresetuje hasło. Czy na pewno chcesz to zrobić?</value>
+  </data>
+  <data name="Wipe All Data" xml:space="preserve">
+    <value>Wyczyść wszystkie dane</value>
+  </data>
+  <data name="Your files are encrypted &lt;strong&gt;locally&lt;/strong&gt; in your browser before upload. We never see your password, and without it, recovery is &lt;strong&gt;mathematically impossible&lt;/strong&gt;. Raw data is &lt;strong&gt;never&lt;/strong&gt; uploaded to our server." xml:space="preserve">
+    <value>Twoje pliki są szyfrowane &lt;strong&gt;lokalnie&lt;/strong&gt; w Twojej przeglądarce przed wysłaniem. Nigdy nie widzimy Twojego hasła, a bez niego odzyskanie danych jest &lt;strong&gt;matematycznie niemożliwe&lt;/strong&gt;. Surowe dane są &lt;strong&gt;nigdy&lt;/strong&gt; nie są przesyłane na nasz serwer.</value>
+  </data>
+  <data name="Zero-Trust" xml:space="preserve">
+    <value>Zero-Trust</value>
+  </data>
+  <data name="Zero-Trust Architecture" xml:space="preserve">
+    <value>Architektura Zero-Trust</value>
+  </data>
+
+</root>

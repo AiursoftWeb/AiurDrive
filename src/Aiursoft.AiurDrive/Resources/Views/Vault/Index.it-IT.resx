@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Actions" xml:space="preserve">
+    <value>Azioni</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>è già presente in questa cartella. Sovrascriverlo?</value>
+  </data>
+  <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
+    <value>Sei sicuro di voler eliminare la cartella e tutto il suo contenuto?</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
+  <data name="Choose a file to encrypt and store. Maximum size depends on your browser&apos;s memory." xml:space="preserve">
+    <value>Seleziona un file da criptare e archiviare. La dimensione massima dipende dalla memoria del tuo browser.</value>
+  </data>
+  <data name="Confirm Password" xml:space="preserve">
+    <value>Conferma password</value>
+  </data>
+  <data name="Connecting to secure vault..." xml:space="preserve">
+    <value>Connessione al vault sicuro...</value>
+  </data>
+  <data name="Create Secure Vault" xml:space="preserve">
+    <value>Crea Vault Sicuro</value>
+  </data>
+  <data name="Decrypting file list..." xml:space="preserve">
+    <value>Decrittazione elenco file...</value>
+  </data>
+  <data name="Decryption failed: " xml:space="preserve">
+    <value>Decrittura non riuscita:</value>
+  </data>
+  <data name="Decryption happens entirely on your device using your password. We never see your password or your raw data. Without your password, your files are &lt;strong&gt;forever inaccessible&lt;/strong&gt;." xml:space="preserve">
+    <value>Il decrittamento avviene interamente sul tuo dispositivo utilizzando la tua password. Non vediamo mai la tua password né i tuoi dati grezzi. Senza la tua password, i tuoi file sono &lt;strong&gt;per sempre inaccessibili&lt;/strong&gt;.</value>
+  </data>
+  <data name="Delete this encrypted file?" xml:space="preserve">
+    <value>Eliminare questo file criptato?</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value>Vuoto</value>
+  </data>
+  <data name="Encrypted" xml:space="preserve">
+    <value>Crittografato</value>
+  </data>
+  <data name="Encrypting..." xml:space="preserve">
+    <value>Crittografia...</value>
+  </data>
+  <data name="Enter new folder name:" xml:space="preserve">
+    <value>Inserisci il nome della nuova cartella:</value>
+  </data>
+  <data name="Failed to create folder." xml:space="preserve">
+    <value>Creazione della cartella non riuscita.</value>
+  </data>
+  <data name="Failed to init: " xml:space="preserve">
+    <value>Inizializzazione non riuscita:</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="Folder" xml:space="preserve">
+    <value>Cartella</value>
+  </data>
+  <data name="Folder is empty." xml:space="preserve">
+    <value>La cartella è vuota.</value>
+  </data>
+  <data name="Folder name cannot contain slashes." xml:space="preserve">
+    <value>Il nome della cartella non può contenere barre oblique.</value>
+  </data>
+  <data name="Initialize Vault" xml:space="preserve">
+    <value>Inizializza Vault</value>
+  </data>
+  <data name="Invalid name." xml:space="preserve">
+    <value>Nome non valido.</value>
+  </data>
+  <data name="Invalid password." xml:space="preserve">
+    <value>Password non valida.</value>
+  </data>
+  <data name="LAST CHANCE: All your data will be wiped. This action cannot be undone. Confirm formatting?" xml:space="preserve">
+    <value>ULTIMA OCCASIONE: Tutti i tuoi dati verranno cancellati. Questa azione non può essere annullata. Confermare la formattazione?</value>
+  </data>
+  <data name="Lock Vault" xml:space="preserve">
+    <value>Blocca Vault</value>
+  </data>
+  <data name="Minimum 8 characters" xml:space="preserve">
+    <value>Minimo 8 caratteri</value>
+  </data>
+  <data name="Modified" xml:space="preserve">
+    <value>Modificato</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="New Folder" xml:space="preserve">
+    <value>Nuova cartella</value>
+  </data>
+  <data name="New Name" xml:space="preserve">
+    <value>Nuovo nome</value>
+  </data>
+  <data name="Password too short." xml:space="preserve">
+    <value>Password troppo breve.</value>
+  </data>
+  <data name="Passwords do not match." xml:space="preserve">
+    <value>Le password non corrispondono.</value>
+  </data>
+  <data name="Ready to Decrypt?" xml:space="preserve">
+    <value>Pronto a decriptare?</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Aggiorna</value>
+  </data>
+  <data name="Remember for this session" xml:space="preserve">
+    <value>Ricorda per questa sessione</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Rinomina</value>
+  </data>
+  <data name="Rename failed: " xml:space="preserve">
+    <value>Rinomina non riuscita:</value>
+  </data>
+  <data name="Renaming..." xml:space="preserve">
+    <value>Rinomina...</value>
+  </data>
+  <data name="Reset and Wipe Vault" xml:space="preserve">
+    <value>Reimposta e cancella la cassaforte</value>
+  </data>
+  <data name="Root" xml:space="preserve">
+    <value>Radice</value>
+  </data>
+  <data name="Set Vault Password" xml:space="preserve">
+    <value>Imposta Password Vault</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Dimensione</value>
+  </data>
+  <data name="Start Upload" xml:space="preserve">
+    <value>Avvia caricamento</value>
+  </data>
+  <data name="Unlock" xml:space="preserve">
+    <value>Sblocca</value>
+  </data>
+  <data name="Up Level" xml:space="preserve">
+    <value>Livello Superiore</value>
+  </data>
+  <data name="Upload failed." xml:space="preserve">
+    <value>Caricamento non riuscito.</value>
+  </data>
+  <data name="Upload Secure File" xml:space="preserve">
+    <value>Carica file sicuro</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>Il Vault è stato formattato e reimpostato allo stato di fabbrica.</value>
+  </data>
+  <data name="Vault Locked" xml:space="preserve">
+    <value>Vault Bloccato</value>
+  </data>
+  <data name="Vault Password" xml:space="preserve">
+    <value>Password del Vault</value>
+  </data>
+  <data name="Vault Settings" xml:space="preserve">
+    <value>Impostazioni Vault</value>
+  </data>
+  <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
+    <value>ATTENZIONE: Questo eliminerà PERMANENTEMENTE tutti i file nel tuo vault e reimposterà la tua password. Sei assolutamente sicuro?</value>
+  </data>
+  <data name="Wipe All Data" xml:space="preserve">
+    <value>Cancella tutti i dati</value>
+  </data>
+  <data name="Your files are encrypted &lt;strong&gt;locally&lt;/strong&gt; in your browser before upload. We never see your password, and without it, recovery is &lt;strong&gt;mathematically impossible&lt;/strong&gt;. Raw data is &lt;strong&gt;never&lt;/strong&gt; uploaded to our server." xml:space="preserve">
+    <value>I tuoi file vengono criptati &lt;strong&gt;localmente&lt;/strong&gt; nel tuo browser prima del caricamento. Non vediamo mai la tua password e, senza di essa, il recupero è &lt;strong&gt;matematicamente impossibile&lt;/strong&gt;. I dati grezzi non vengono &lt;strong&gt;mai&lt;/strong&gt; caricati sul nostro server.</value>
+  </data>
+  <data name="Zero-Trust" xml:space="preserve">
+    <value>Zero-Trust</value>
+  </data>
+  <data name="Zero-Trust Architecture" xml:space="preserve">
+    <value>Architettura Zero-Trust</value>
+  </data>
+
+</root>

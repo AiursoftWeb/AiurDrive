@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Actions" xml:space="preserve">
+    <value>İşlemler</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>Bu klasörde zaten var. Üzerine yazılsın mı?</value>
+  </data>
+  <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
+    <value>Klasörü ve tüm içeriğini silmek istediğinizden emin misiniz?</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="Choose a file to encrypt and store. Maximum size depends on your browser&apos;s memory." xml:space="preserve">
+    <value>Şifrelemek ve saklamak için bir dosya seçin. Maksimum boyut tarayıcınızın belleğine bağlıdır.</value>
+  </data>
+  <data name="Confirm Password" xml:space="preserve">
+    <value>Şifreyi Onayla</value>
+  </data>
+  <data name="Connecting to secure vault..." xml:space="preserve">
+    <value>Güvenli kasa&apos;ya bağlanıyor...</value>
+  </data>
+  <data name="Create Secure Vault" xml:space="preserve">
+    <value>Güvenli Kasa Oluştur</value>
+  </data>
+  <data name="Decrypting file list..." xml:space="preserve">
+    <value>Dosya listesi şifre çözülüyor...</value>
+  </data>
+  <data name="Decryption failed: " xml:space="preserve">
+    <value>Şifre çözümü başarısız:</value>
+  </data>
+  <data name="Decryption happens entirely on your device using your password. We never see your password or your raw data. Without your password, your files are &lt;strong&gt;forever inaccessible&lt;/strong&gt;." xml:space="preserve">
+    <value>Şifre çözme işlemi, şifreniz kullanılarak tamamen cihazınızda gerçekleşir. Şifrenizi veya ham verilerinizi asla görmeziz. Şifreniz olmadan dosyalarınız &lt;strong&gt;kalıcı olarak erişilemez&lt;/strong&gt; hale gelir.</value>
+  </data>
+  <data name="Delete this encrypted file?" xml:space="preserve">
+    <value>Bu şifreli dosyayı silmek istiyor musunuz?</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value>Boş</value>
+  </data>
+  <data name="Encrypted" xml:space="preserve">
+    <value>Şifreli</value>
+  </data>
+  <data name="Encrypting..." xml:space="preserve">
+    <value>Şifreleniyor...</value>
+  </data>
+  <data name="Enter new folder name:" xml:space="preserve">
+    <value>Yeni klasör adını girin:</value>
+  </data>
+  <data name="Failed to create folder." xml:space="preserve">
+    <value>Klasör oluşturulamadı.</value>
+  </data>
+  <data name="Failed to init: " xml:space="preserve">
+    <value>Başlatma başarısız:</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>Dosyalar</value>
+  </data>
+  <data name="Folder" xml:space="preserve">
+    <value>Klasör</value>
+  </data>
+  <data name="Folder is empty." xml:space="preserve">
+    <value>Klasör boş.</value>
+  </data>
+  <data name="Folder name cannot contain slashes." xml:space="preserve">
+    <value>Klasör adı eğik çizgi içermemelidir.</value>
+  </data>
+  <data name="Initialize Vault" xml:space="preserve">
+    <value>Kasaneyi Başlat</value>
+  </data>
+  <data name="Invalid name." xml:space="preserve">
+    <value>Geçersiz isim.</value>
+  </data>
+  <data name="Invalid password." xml:space="preserve">
+    <value>Geçersiz şifre.</value>
+  </data>
+  <data name="LAST CHANCE: All your data will be wiped. This action cannot be undone. Confirm formatting?" xml:space="preserve">
+    <value>SON ŞANS: Tüm verileriniz silinecek. Bu işlem geri alınamaz. Formatlamayı onaylıyor musunuz?</value>
+  </data>
+  <data name="Lock Vault" xml:space="preserve">
+    <value>Kasaneyi Kilitle</value>
+  </data>
+  <data name="Minimum 8 characters" xml:space="preserve">
+    <value>En az 8 karakter</value>
+  </data>
+  <data name="Modified" xml:space="preserve">
+    <value>Değiştirilme Tarihi</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>İsim</value>
+  </data>
+  <data name="New Folder" xml:space="preserve">
+    <value>Yeni Klasör</value>
+  </data>
+  <data name="New Name" xml:space="preserve">
+    <value>Yeni İsim</value>
+  </data>
+  <data name="Password too short." xml:space="preserve">
+    <value>Şifre çok kısa.</value>
+  </data>
+  <data name="Passwords do not match." xml:space="preserve">
+    <value>Şifreler eşleşmiyor.</value>
+  </data>
+  <data name="Ready to Decrypt?" xml:space="preserve">
+    <value>Şifre Çözmeye Hazır mısınız?</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Yenile</value>
+  </data>
+  <data name="Remember for this session" xml:space="preserve">
+    <value>Bu oturum için hatırla</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Yeniden Adlandır</value>
+  </data>
+  <data name="Rename failed: " xml:space="preserve">
+    <value>Yeniden adlandırma başarısız:</value>
+  </data>
+  <data name="Renaming..." xml:space="preserve">
+    <value>Yeniden adlandırılıyor...</value>
+  </data>
+  <data name="Reset and Wipe Vault" xml:space="preserve">
+    <value>Kasanı Sıfırla ve Sil</value>
+  </data>
+  <data name="Root" xml:space="preserve">
+    <value>Kök</value>
+  </data>
+  <data name="Set Vault Password" xml:space="preserve">
+    <value>Kasa Şifresini Ayarla</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Boyut</value>
+  </data>
+  <data name="Start Upload" xml:space="preserve">
+    <value>Yüklemeyi Başlat</value>
+  </data>
+  <data name="Unlock" xml:space="preserve">
+    <value>Kilidi Aç</value>
+  </data>
+  <data name="Up Level" xml:space="preserve">
+    <value>Üst Düzey</value>
+  </data>
+  <data name="Upload failed." xml:space="preserve">
+    <value>Yükleme başarısız oldu.</value>
+  </data>
+  <data name="Upload Secure File" xml:space="preserve">
+    <value>Güvenli Dosya Yükle</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>Kasa biçimlendirildi ve fabrika ayarlarına sıfırlandı.</value>
+  </data>
+  <data name="Vault Locked" xml:space="preserve">
+    <value>Kasa Kilitli</value>
+  </data>
+  <data name="Vault Password" xml:space="preserve">
+    <value>Kasa Şifresi</value>
+  </data>
+  <data name="Vault Settings" xml:space="preserve">
+    <value>Kasa Ayarları</value>
+  </data>
+  <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
+    <value>UYARI: Bu işlem, kasanızdaki tüm dosyaları SÜREKLİ olarak siler ve şifrenizi sıfırlar. Emin misiniz?</value>
+  </data>
+  <data name="Wipe All Data" xml:space="preserve">
+    <value>Tüm Verileri Sil</value>
+  </data>
+  <data name="Your files are encrypted &lt;strong&gt;locally&lt;/strong&gt; in your browser before upload. We never see your password, and without it, recovery is &lt;strong&gt;mathematically impossible&lt;/strong&gt;. Raw data is &lt;strong&gt;never&lt;/strong&gt; uploaded to our server." xml:space="preserve">
+    <value>Dosyalarınız yüklemeden önce tarayıcınızda &lt;strong&gt;yerel olarak&lt;/strong&gt; şifrelenir. Şifrenizi asla görmeziz ve şifre olmadan kurtarma &lt;strong&gt;matematiksel olarak imkansızdır&lt;/strong&gt;. Ham veriler sunucumuza &lt;strong&gt;asla&lt;/strong&gt; yüklenmez.</value>
+  </data>
+  <data name="Zero-Trust" xml:space="preserve">
+    <value>Sıfır Güven</value>
+  </data>
+  <data name="Zero-Trust Architecture" xml:space="preserve">
+    <value>Sıfır Güven Mimarisi</value>
+  </data>
+
+</root>

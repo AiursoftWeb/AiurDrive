@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Actions" xml:space="preserve">
+    <value>Действия</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>уже существует в этой папке. Заменить его?</value>
+  </data>
+  <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить папку и все её содержимое?</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="Choose a file to encrypt and store. Maximum size depends on your browser&apos;s memory." xml:space="preserve">
+    <value>Выберите файл для шифрования и хранения. Максимальный размер зависит от памяти вашего браузера.</value>
+  </data>
+  <data name="Confirm Password" xml:space="preserve">
+    <value>Подтвердите пароль</value>
+  </data>
+  <data name="Connecting to secure vault..." xml:space="preserve">
+    <value>Подключение к защищённому хранилищу...</value>
+  </data>
+  <data name="Create Secure Vault" xml:space="preserve">
+    <value>Создать защищённое хранилище</value>
+  </data>
+  <data name="Decrypting file list..." xml:space="preserve">
+    <value>Расшифровка списка файлов...</value>
+  </data>
+  <data name="Decryption failed: " xml:space="preserve">
+    <value>Ошибка дешифровки:</value>
+  </data>
+  <data name="Decryption happens entirely on your device using your password. We never see your password or your raw data. Without your password, your files are &lt;strong&gt;forever inaccessible&lt;/strong&gt;." xml:space="preserve">
+    <value>Расшифровка происходит полностью на вашем устройстве с использованием вашего пароля. Мы никогда не видим ваш пароль или ваши исходные данные. Без вашего пароля ваши файлы будут &lt;strong&gt;навсегда недоступны&lt;/strong&gt;.</value>
+  </data>
+  <data name="Delete this encrypted file?" xml:space="preserve">
+    <value>Удалить этот зашифрованный файл?</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value>Пусто</value>
+  </data>
+  <data name="Encrypted" xml:space="preserve">
+    <value>Зашифровано</value>
+  </data>
+  <data name="Encrypting..." xml:space="preserve">
+    <value>Шифрование...</value>
+  </data>
+  <data name="Enter new folder name:" xml:space="preserve">
+    <value>Введите новое имя папки:</value>
+  </data>
+  <data name="Failed to create folder." xml:space="preserve">
+    <value>Не удалось создать папку.</value>
+  </data>
+  <data name="Failed to init: " xml:space="preserve">
+    <value>Не удалось инициализировать:</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>Файлы</value>
+  </data>
+  <data name="Folder" xml:space="preserve">
+    <value>Папка</value>
+  </data>
+  <data name="Folder is empty." xml:space="preserve">
+    <value>Папка пуста.</value>
+  </data>
+  <data name="Folder name cannot contain slashes." xml:space="preserve">
+    <value>Название папки не может содержать слэши.</value>
+  </data>
+  <data name="Initialize Vault" xml:space="preserve">
+    <value>Инициализация хранилища</value>
+  </data>
+  <data name="Invalid name." xml:space="preserve">
+    <value>Недопустимое имя.</value>
+  </data>
+  <data name="Invalid password." xml:space="preserve">
+    <value>Неверный пароль.</value>
+  </data>
+  <data name="LAST CHANCE: All your data will be wiped. This action cannot be undone. Confirm formatting?" xml:space="preserve">
+    <value>ПОСЛЕДНИЙ ШАНС: Все ваши данные будут удалены. Это действие необратимо. Подтверждаете форматирование?</value>
+  </data>
+  <data name="Lock Vault" xml:space="preserve">
+    <value>Заблокировать хранилище</value>
+  </data>
+  <data name="Minimum 8 characters" xml:space="preserve">
+    <value>Минимум 8 символов</value>
+  </data>
+  <data name="Modified" xml:space="preserve">
+    <value>Изменен</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="New Folder" xml:space="preserve">
+    <value>Новая папка</value>
+  </data>
+  <data name="New Name" xml:space="preserve">
+    <value>Новое имя</value>
+  </data>
+  <data name="Password too short." xml:space="preserve">
+    <value>Пароль слишком короткий.</value>
+  </data>
+  <data name="Passwords do not match." xml:space="preserve">
+    <value>Пароли не совпадают.</value>
+  </data>
+  <data name="Ready to Decrypt?" xml:space="preserve">
+    <value>Готовы расшифровать?</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="Remember for this session" xml:space="preserve">
+    <value>Запомнить для этой сессии</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Переименовать</value>
+  </data>
+  <data name="Rename failed: " xml:space="preserve">
+    <value>Переименование не удалось:</value>
+  </data>
+  <data name="Renaming..." xml:space="preserve">
+    <value>Переименование...</value>
+  </data>
+  <data name="Reset and Wipe Vault" xml:space="preserve">
+    <value>Сброс и очистка хранилища</value>
+  </data>
+  <data name="Root" xml:space="preserve">
+    <value>Корень</value>
+  </data>
+  <data name="Set Vault Password" xml:space="preserve">
+    <value>Установить пароль хранилища</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Размер</value>
+  </data>
+  <data name="Start Upload" xml:space="preserve">
+    <value>Начать загрузку</value>
+  </data>
+  <data name="Unlock" xml:space="preserve">
+    <value>Разблокировать</value>
+  </data>
+  <data name="Up Level" xml:space="preserve">
+    <value>На уровень выше</value>
+  </data>
+  <data name="Upload failed." xml:space="preserve">
+    <value>Загрузка не удалась.</value>
+  </data>
+  <data name="Upload Secure File" xml:space="preserve">
+    <value>Загрузить защищенный файл</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>Хранилище было отформатировано и сброшено до заводских настроек.</value>
+  </data>
+  <data name="Vault Locked" xml:space="preserve">
+    <value>Хранилище заблокировано</value>
+  </data>
+  <data name="Vault Password" xml:space="preserve">
+    <value>Пароль хранилища</value>
+  </data>
+  <data name="Vault Settings" xml:space="preserve">
+    <value>Настройки хранилища</value>
+  </data>
+  <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
+    <value>ВНИМАНИЕ: Это БЕСПОВОРОТНО удалит все файлы в вашем хранилище и сбросит пароль. Вы уверены?</value>
+  </data>
+  <data name="Wipe All Data" xml:space="preserve">
+    <value>Стереть все данные</value>
+  </data>
+  <data name="Your files are encrypted &lt;strong&gt;locally&lt;/strong&gt; in your browser before upload. We never see your password, and without it, recovery is &lt;strong&gt;mathematically impossible&lt;/strong&gt;. Raw data is &lt;strong&gt;never&lt;/strong&gt; uploaded to our server." xml:space="preserve">
+    <value>Ваши файлы шифруются &lt;strong&gt;локально&lt;/strong&gt; в вашем браузере перед загрузкой. Мы никогда не видим ваш пароль, и без него восстановление &lt;strong&gt;математически невозможно&lt;/strong&gt;. Исходные данные &lt;strong&gt;никогда&lt;/strong&gt; не загружаются на наш сервер.</value>
+  </data>
+  <data name="Zero-Trust" xml:space="preserve">
+    <value>Zero-Trust</value>
+  </data>
+  <data name="Zero-Trust Architecture" xml:space="preserve">
+    <value>Архитектура нулевого доверия</value>
+  </data>
+
+</root>

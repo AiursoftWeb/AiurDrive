@@ -5,6 +5,7 @@ using Aiursoft.WebTools.Attributes;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 using System.Security.Claims;
 
 namespace Aiursoft.AiurDrive.Controllers;
@@ -14,6 +15,7 @@ namespace Aiursoft.AiurDrive.Controllers;
 [Route("VaultApi")]
 public class VaultApiController(
     UserManager<User> userManager,
+    IStringLocalizer<VaultApiController> localizer,
     FeatureFoldersProvider folders) : Controller
 {
     private string GetCurrentUserId() => User.FindFirstValue(ClaimTypes.NameIdentifier) 
@@ -65,7 +67,7 @@ public class VaultApiController(
 
         if (!string.IsNullOrEmpty(user.VaultSaltBase64))
         {
-            return BadRequest("Vault already initialized.");
+            return BadRequest(localizer["Vault already initialized."]);
         }
 
         user.VaultSaltBase64 = config.VaultSaltBase64;
@@ -122,14 +124,14 @@ public class VaultApiController(
     {
         if (meta == null || meta.Length == 0)
         {
-            return BadRequest("No metadata provided.");
+            return BadRequest(localizer["No metadata provided."]);
         }
 
         var objectsPath = GetUserVaultObjectsPath();
         var uuid = Path.GetFileNameWithoutExtension(meta.FileName);
         if (string.IsNullOrWhiteSpace(uuid) || uuid.Any(c => !char.IsLetterOrDigit(c)))
         {
-            return BadRequest("Invalid object name.");
+            return BadRequest(localizer["Invalid object name."]);
         }
 
         // Always save meta
