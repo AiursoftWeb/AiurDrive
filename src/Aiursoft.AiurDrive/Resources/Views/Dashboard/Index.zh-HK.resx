@@ -201,5 +201,8 @@
   <data name="You have reached the maximum number of sites." xml:space="preserve">
     <value>您已達到最多網站數量。</value>
   </data>
+  <data name="Zero Trust Vault" xml:space="preserve">
+    <value>零信任保險櫃</value>
+  </data>
 
 </root>
