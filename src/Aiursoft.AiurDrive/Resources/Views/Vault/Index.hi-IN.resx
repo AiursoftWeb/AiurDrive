@@ -33,6 +33,9 @@
   <data name="Choose a file to encrypt and store. Maximum size depends on your browser&apos;s memory." xml:space="preserve">
     <value>एन्क्रिप्ट और स्टोर करने के लिए एक फ़ाइल चुनें। अधिकतम आकार आपके ब्राउज़र की मेमोरी पर निर्भर करता है।</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>बंद करें</value>
+  </data>
   <data name="Confirm Password" xml:space="preserve">
     <value>पासवर्ड की पुष्टि करें</value>
   </data>
@@ -53,6 +56,9 @@
   </data>
   <data name="Delete this encrypted file?" xml:space="preserve">
     <value>क्या इस एन्क्रिप्टेड फ़ाइल को हटाया जाए?</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>डाउनलोड</value>
   </data>
   <data name="Download Folder" xml:space="preserve">
     <value>फ़ोल्डर डाउनलोड करें</value>
@@ -125,6 +131,9 @@
   </data>
   <data name="Passwords do not match." xml:space="preserve">
     <value>पासवर्ड मेल नहीं खा रहे हैं।</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>पूर्वदर्शन</value>
   </data>
   <data name="Ready to Decrypt?" xml:space="preserve">
     <value>क्या डिक्रिप्ट करने के लिए तैयार हैं?</value>

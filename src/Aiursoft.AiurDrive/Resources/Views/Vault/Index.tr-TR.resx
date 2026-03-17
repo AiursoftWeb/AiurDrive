@@ -33,6 +33,9 @@
   <data name="Choose a file to encrypt and store. Maximum size depends on your browser&apos;s memory." xml:space="preserve">
     <value>Şifrelemek ve saklamak için bir dosya seçin. Maksimum boyut tarayıcınızın belleğine bağlıdır.</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
   <data name="Confirm Password" xml:space="preserve">
     <value>Şifreyi Onayla</value>
   </data>
@@ -53,6 +56,9 @@
   </data>
   <data name="Delete this encrypted file?" xml:space="preserve">
     <value>Bu şifreli dosyayı silmek istiyor musunuz?</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>İndir</value>
   </data>
   <data name="Download Folder" xml:space="preserve">
     <value>Klasörü İndir</value>
@@ -125,6 +131,9 @@
   </data>
   <data name="Passwords do not match." xml:space="preserve">
     <value>Şifreler eşleşmiyor.</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Önizleme</value>
   </data>
   <data name="Ready to Decrypt?" xml:space="preserve">
     <value>Şifre Çözmeye Hazır mısınız?</value>

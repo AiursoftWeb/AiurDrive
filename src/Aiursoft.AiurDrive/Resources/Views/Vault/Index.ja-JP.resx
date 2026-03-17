@@ -33,6 +33,9 @@
   <data name="Choose a file to encrypt and store. Maximum size depends on your browser&apos;s memory." xml:space="preserve">
     <value>暗号化して保存するファイルを選択してください。最大サイズはブラウザのメモリに依存します。</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
   <data name="Confirm Password" xml:space="preserve">
     <value>パスワードの確認</value>
   </data>
@@ -53,6 +56,9 @@
   </data>
   <data name="Delete this encrypted file?" xml:space="preserve">
     <value>この暗号化されたファイルを削除しますか？</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>ダウンロード</value>
   </data>
   <data name="Download Folder" xml:space="preserve">
     <value>フォルダをダウンロード</value>
@@ -125,6 +131,9 @@
   </data>
   <data name="Passwords do not match." xml:space="preserve">
     <value>パスワードが一致しません。</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>プレビュー</value>
   </data>
   <data name="Ready to Decrypt?" xml:space="preserve">
     <value>復号準備はできましたか？</value>

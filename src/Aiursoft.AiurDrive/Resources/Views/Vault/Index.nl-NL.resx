@@ -33,6 +33,9 @@
   <data name="Choose a file to encrypt and store. Maximum size depends on your browser&apos;s memory." xml:space="preserve">
     <value>Kies een bestand om te versleutelen en op te slaan. De maximale grootte is afhankelijk van het geheugen van uw browser.</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>Sluiten</value>
+  </data>
   <data name="Confirm Password" xml:space="preserve">
     <value>Wachtwoord bevestigen</value>
   </data>
@@ -53,6 +56,9 @@
   </data>
   <data name="Delete this encrypted file?" xml:space="preserve">
     <value>Dit versleutelde bestand verwijderen?</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Downloaden</value>
   </data>
   <data name="Download Folder" xml:space="preserve">
     <value>Map downloaden</value>
@@ -125,6 +131,9 @@
   </data>
   <data name="Passwords do not match." xml:space="preserve">
     <value>Wachtwoorden komen niet overeen.</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Voorbeeld</value>
   </data>
   <data name="Ready to Decrypt?" xml:space="preserve">
     <value>Klaar om te ontsleutelen?</value>

@@ -33,6 +33,9 @@
   <data name="Choose a file to encrypt and store. Maximum size depends on your browser&apos;s memory." xml:space="preserve">
     <value>เลือกไฟล์เพื่อเข้ารหัสและจัดเก็บ ขนาดสูงสุดขึ้นอยู่กับหน่วยความจำของเบราว์เซอร์ของคุณ</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>ปิด</value>
+  </data>
   <data name="Confirm Password" xml:space="preserve">
     <value>ยืนยันรหัสผ่าน</value>
   </data>
@@ -53,6 +56,9 @@
   </data>
   <data name="Delete this encrypted file?" xml:space="preserve">
     <value>ต้องการลบไฟล์ที่เข้ารหัสนี้หรือไม่?</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>ดาวน์โหลด</value>
   </data>
   <data name="Download Folder" xml:space="preserve">
     <value>ดาวน์โหลดโฟลเดอร์</value>
@@ -125,6 +131,9 @@
   </data>
   <data name="Passwords do not match." xml:space="preserve">
     <value>รหัสผ่านไม่ตรงกัน</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>ตัวอย่าง</value>
   </data>
   <data name="Ready to Decrypt?" xml:space="preserve">
     <value>พร้อมที่จะถอดรหัสหรือไม่?</value>
