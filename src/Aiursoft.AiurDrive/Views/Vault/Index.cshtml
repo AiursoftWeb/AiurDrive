@@ -35,6 +35,8 @@
     <input type="hidden" id="l-batchProgress" value="@Localizer["Updating"]" />
     <input type="hidden" id="l-downloadFolder" value="@Localizer["Download Folder"]" />
     <input type="hidden" id="l-downloading" value="@Localizer["Downloading"]" />
+    <input type="hidden" id="l-preview" value="@Localizer["Preview"]" />
+    <input type="hidden" id="l-close" value="@Localizer["Close"]" />
 </div>
 
 <div class="container-fluid p-0">
@@ -234,6 +236,25 @@
     </div>
 </div>
 
+<!-- Preview Modal -->
+<div class="modal fade" id="previewModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content shadow-lg">
+            <div class="modal-header">
+                <h5 class="modal-title" id="previewTitle">@Localizer["Preview"]</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0 text-center bg-dark" id="previewBody" style="min-height: 200px; display: flex; align-items: center; justify-content: center;">
+                <div class="spinner-border text-light" role="status"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@Localizer["Close"]</button>
+                <button id="previewDownloadBtn" class="btn btn-success"><i class="fas fa-download me-1"></i>@Localizer["Download"]</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 @* ReSharper disable once Razor.SectionNotResolved *@
 @section scripts {
 <script>
@@ -274,8 +295,40 @@
         syncing: document.getElementById('l-syncing').value,
         batchProgress: document.getElementById('l-batchProgress').value,
         downloadFolder: document.getElementById('l-downloadFolder').value,
-        downloading: document.getElementById('l-downloading').value
+        downloading: document.getElementById('l-downloading').value,
+        preview: document.getElementById('l-preview').value,
+        close: document.getElementById('l-close').value
     };
+
+    function getMimeType(filename) {
+        const ext = filename.split('.').pop().toLowerCase();
+        const mimes = {
+            'jpg': 'image/jpeg',
+            'jpeg': 'image/jpeg',
+            'png': 'image/png',
+            'gif': 'image/gif',
+            'webp': 'image/webp',
+            'svg': 'image/svg+xml',
+            'mp4': 'video/mp4',
+            'webm': 'video/webm',
+            'ogg': 'video/ogg',
+            'mp3': 'audio/mpeg',
+            'wav': 'audio/wav',
+            'pdf': 'application/pdf',
+            'txt': 'text/plain',
+            'md': 'text/markdown',
+            'json': 'application/json',
+            'js': 'text/javascript',
+            'css': 'text/css',
+            'html': 'text/html'
+        };
+        return mimes[ext] || 'application/octet-stream';
+    }
+
+    function isViewable(filename) {
+        const ext = filename.split('.').pop().toLowerCase();
+        return ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg', 'mp4', 'webm', 'ogg', 'mp3', 'wav', 'pdf', 'txt', 'md', 'json', 'js', 'css', 'html'].includes(ext);
+    }
 
     let masterKey = null;
     let vaultConfig = null;
@@ -558,15 +611,17 @@
             }
 
             const row = document.createElement('tr');
+            const viewable = isViewable(name);
             row.innerHTML = `
                 <td class="ps-3">
-                    <a href="javascript:void(0)" class="text-reset text-decoration-none" onclick="downloadFile('${f.Uuid}')">
-                        <i class="fas fa-file text-primary me-2"></i>${escapeHtml(displayName)}
+                    <a href="javascript:void(0)" class="text-reset text-decoration-none" onclick="${viewable ? 'viewFile' : 'downloadFile'}('${f.Uuid}')">
+                        <i class="fas fa-file ${viewable ? 'text-success' : 'text-primary'} me-2"></i>${escapeHtml(displayName)}
                     </a>
                 </td>
                 <td>${formatBytes(f.Size)}</td>
                 <td class="small">${new Date(f.LastWriteTime).toLocaleString()}</td>
                 <td class="text-end pe-3">
+                    ${viewable ? `<button class="btn btn-sm btn-light text-info me-1" onclick="viewFile('${f.Uuid}')" title="${L.preview}"><i class="fas fa-eye"></i></button>` : ''}
                     <button class="btn btn-sm btn-light text-success me-1" onclick="downloadFile('${f.Uuid}')" title="Download"><i class="fas fa-download"></i></button>
                     <button class="btn btn-sm btn-light text-primary me-1" onclick="openRenameModal(false, '${name}', '${f.Uuid}')" title="${L.rename}"><i class="fas fa-edit"></i></button>
                     <button class="btn btn-sm btn-light text-danger" onclick="deleteFile('${f.Uuid}')" title="Delete"><i class="fas fa-trash"></i></button>
@@ -934,6 +989,63 @@
             URL.revokeObjectURL(url);
         } catch (e) {
             alert(L.decryptionFailed + e.message);
+        }
+    }
+
+    async function viewFile(uuid) {
+        const f = cachedFiles.find(x => x.Uuid === uuid);
+        if (!f) return;
+        const parts = f.fullPath.split('/');
+        const filename = parts[parts.length - 1];
+        
+        const previewModalElement = document.getElementById('previewModal');
+        const previewModal = new bootstrap.Modal(previewModalElement);
+        const previewBody = document.getElementById('previewBody');
+        const previewTitle = document.getElementById('previewTitle');
+        const downloadBtn = document.getElementById('previewDownloadBtn');
+
+        previewTitle.textContent = filename;
+        previewBody.innerHTML = '<div class="spinner-border text-light" role="status"></div>';
+        downloadBtn.onclick = () => {
+            downloadFile(uuid);
+            previewModal.hide();
+        };
+        previewModal.show();
+
+        try {
+            const response = await fetch(`/VaultApi/Download/${uuid}`);
+            const buffer = await response.arrayBuffer();
+            const content = await decryptFileData(new Uint8Array(buffer));
+            const mime = getMimeType(filename);
+            const blob = new Blob([content], { type: mime });
+            const url = URL.createObjectURL(blob);
+
+            if (mime.startsWith('image/')) {
+                previewBody.innerHTML = `<img src="${url}" class="img-fluid" style="max-height: 80vh;" />`;
+            } else if (mime.startsWith('video/')) {
+                previewBody.innerHTML = `<video src="${url}" controls autoplay class="w-100" style="max-height: 80vh;"></video>`;
+            } else if (mime.startsWith('audio/')) {
+                previewBody.innerHTML = `<audio src="${url}" controls autoplay class="w-75"></audio>`;
+            } else if (mime === 'application/pdf') {
+                previewBody.innerHTML = `<iframe src="${url}" class="w-100" style="height: 80vh; border: none;"></iframe>`;
+            } else if (mime.startsWith('text/') || mime === 'application/json' || mime === 'text/javascript' || mime === 'text/css') {
+                const text = new TextDecoder().decode(content);
+                previewBody.innerHTML = `<pre class="text-start p-3 m-0 w-100 bg-white" style="max-height: 80vh; overflow: auto; white-space: pre-wrap; font-family: monospace;">${escapeHtml(text)}</pre>`;
+            } else {
+                // Not viewable, just download
+                previewModal.hide();
+                downloadFile(uuid);
+                return;
+            }
+
+            // Cleanup URL when modal is hidden
+            previewModalElement.addEventListener('hidden.bs.modal', () => {
+                URL.revokeObjectURL(url);
+                previewBody.innerHTML = '';
+            }, { once: true });
+
+        } catch (e) {
+            previewBody.innerHTML = `<div class="alert alert-danger m-3">${L.decryptionFailed + e.message}</div>`;
         }
     }
 
