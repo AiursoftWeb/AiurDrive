@@ -201,5 +201,8 @@
   <data name="You have reached the maximum number of sites." xml:space="preserve">
     <value>Έχετε φτάσει στο μέγιστο αριθμό ιστοτόπων.</value>
   </data>
+  <data name="Zero Trust Vault" xml:space="preserve">
+    <value>Αποθήκη Μηδενικής Εμπιστοσύνης</value>
+  </data>
 
 </root>

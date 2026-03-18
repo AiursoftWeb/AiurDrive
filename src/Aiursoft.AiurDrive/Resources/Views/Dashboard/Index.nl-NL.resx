@@ -201,5 +201,8 @@
   <data name="You have reached the maximum number of sites." xml:space="preserve">
     <value>U heeft het maximum aantal sites bereikt.</value>
   </data>
+  <data name="Zero Trust Vault" xml:space="preserve">
+    <value>Zero Trust Kluis</value>
+  </data>
 
 </root>
