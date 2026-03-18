@@ -177,6 +177,9 @@
   <data name="Shared with me" xml:space="preserve">
     <value>Condiviso con me</value>
   </data>
+  <data name="Shared with Me" xml:space="preserve">
+    <value>Condivisi con me</value>
+  </data>
   <data name="Sign out" xml:space="preserve">
     <value>Esci</value>
   </data>
