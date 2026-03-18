@@ -18,4 +18,18 @@ public class DashboardControllerTests : TestBase
         // We just check if we get a response.
         Assert.IsNotNull(response);
     }
+
+    [TestMethod]
+    public async Task GetIndex_ContainsVaultCard()
+    {
+        await LoginAsAdmin();
+        var url = "/Dashboard/Index";
+        
+        var response = await Http.GetAsync(url);
+        response.EnsureSuccessStatusCode();
+        var content = await response.Content.ReadAsStringAsync();
+        
+        Assert.IsTrue(content.Contains("Zero Trust Vault"), "Dashboard should contain 'Zero Trust Vault' card.");
+        Assert.IsTrue(content.Contains("/Vault/Index"), "Dashboard should contain link to '/Vault/Index'.");
+    }
 }
