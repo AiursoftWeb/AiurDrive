@@ -201,5 +201,8 @@
   <data name="You have reached the maximum number of sites." xml:space="preserve">
     <value>आपने अधिकतम संख्या में साइट्स तक पहुंच लिया है।</value>
   </data>
+  <data name="Zero Trust Vault" xml:space="preserve">
+    <value>ज़ीरो ट्रस्ट वैल्ट</value>
+  </data>
 
 </root>

@@ -201,5 +201,8 @@
   <data name="You have reached the maximum number of sites." xml:space="preserve">
     <value>Olet saavuttanut sivustojen maksimimäärän.</value>
   </data>
+  <data name="Zero Trust Vault" xml:space="preserve">
+    <value>Luottamuspohjainen talletus</value>
+  </data>
 
 </root>
