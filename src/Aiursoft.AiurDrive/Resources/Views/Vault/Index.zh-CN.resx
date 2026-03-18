@@ -33,6 +33,9 @@
   <data name="Choose a file to encrypt and store. Maximum size depends on your browser&apos;s memory." xml:space="preserve">
     <value>选择要加密和存储的文件。最大大小取决于您的浏览器内存。</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>关闭</value>
+  </data>
   <data name="Confirm Password" xml:space="preserve">
     <value>确认密码</value>
   </data>
@@ -53,6 +56,9 @@
   </data>
   <data name="Delete this encrypted file?" xml:space="preserve">
     <value>删除此加密文件？</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>下载</value>
   </data>
   <data name="Download Folder" xml:space="preserve">
     <value>下载整个文件夹</value>
@@ -125,6 +131,9 @@
   </data>
   <data name="Passwords do not match." xml:space="preserve">
     <value>密码不匹配。</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>预览</value>
   </data>
   <data name="Ready to Decrypt?" xml:space="preserve">
     <value>准备解密了吗？</value>

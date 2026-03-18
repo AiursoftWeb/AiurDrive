@@ -33,6 +33,9 @@
   <data name="Choose a file to encrypt and store. Maximum size depends on your browser&apos;s memory." xml:space="preserve">
     <value>Wybierz plik do zaszyfrowania i przechowywania. Maksymalny rozmiar zależy od pamięci Twojej przeglądarki.</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>Zamknij</value>
+  </data>
   <data name="Confirm Password" xml:space="preserve">
     <value>Potwierdź hasło</value>
   </data>
@@ -53,6 +56,9 @@
   </data>
   <data name="Delete this encrypted file?" xml:space="preserve">
     <value>Usunąć ten zaszyfrowany plik?</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Pobierz</value>
   </data>
   <data name="Download Folder" xml:space="preserve">
     <value>Pobierz folder</value>
@@ -125,6 +131,9 @@
   </data>
   <data name="Passwords do not match." xml:space="preserve">
     <value>Hasła nie pasują do siebie.</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Podgląd</value>
   </data>
   <data name="Ready to Decrypt?" xml:space="preserve">
     <value>Gotowi do odszyfrowania?</value>

@@ -33,6 +33,9 @@
   <data name="Choose a file to encrypt and store. Maximum size depends on your browser&apos;s memory." xml:space="preserve">
     <value>Επιλέξτε ένα αρχείο για κρυπτογράφηση και αποθήκευση. Το μέγιστο μέγεθος εξαρτάται από τη μνήμη του περιηγητή σας.</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>Κλείσιμο</value>
+  </data>
   <data name="Confirm Password" xml:space="preserve">
     <value>Επιβεβαίωση Κωδικού</value>
   </data>
@@ -53,6 +56,9 @@
   </data>
   <data name="Delete this encrypted file?" xml:space="preserve">
     <value>Διαγραφή αυτού του κρυπτογραφημένου αρχείου;</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Λήψη</value>
   </data>
   <data name="Download Folder" xml:space="preserve">
     <value>Λήψη Φακέλου</value>
@@ -125,6 +131,9 @@
   </data>
   <data name="Passwords do not match." xml:space="preserve">
     <value>Οι κωδικοί πρόσβασης δεν ταιριάζουν.</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Προεπισκόπηση</value>
   </data>
   <data name="Ready to Decrypt?" xml:space="preserve">
     <value>Είστε έτοιμοι για αποκρυπτογράφηση;</value>
