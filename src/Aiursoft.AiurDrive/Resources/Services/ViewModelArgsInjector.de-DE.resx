@@ -180,6 +180,9 @@
   <data name="Shared with me" xml:space="preserve">
     <value>Mit mir geteilt</value>
   </data>
+  <data name="Shared with Me" xml:space="preserve">
+    <value>Mit mir geteilt</value>
+  </data>
   <data name="Sign out" xml:space="preserve">
     <value>Abmelden</value>
   </data>
