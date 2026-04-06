@@ -42,8 +42,20 @@
   <data name="Job Name" xml:space="preserve">
     <value>Tehtävän nimi</value>
   </data>
+  <data name="last hour" xml:space="preserve">
+    <value>viimeisen tunnin aikana</value>
+  </data>
+  <data name="Last run" xml:space="preserve">
+    <value>Viimeisin suoritus</value>
+  </data>
   <data name="Monitor and manage background job queues and their execution status." xml:space="preserve">
     <value>Seuraa ja hallinnoi taustajonoja ja niiden suoritusstatusia.</value>
+  </data>
+  <data name="Monitor and manage background job queues. Trigger any registered job manually or let the scheduler run it automatically." xml:space="preserve">
+    <value>Seuraa ja hallinnoi taustajonon jonotuksia. Käynnistä rekisteröity tehtävä manuaalisesti tai anna ajoittimen suorittaa se automaattisesti.</value>
+  </data>
+  <data name="Never executed" xml:space="preserve">
+    <value>Ei koskaan suoritettu</value>
   </data>
   <data name="New Job A" xml:space="preserve">
     <value>Uusi tehtävä A</value>
@@ -51,8 +63,14 @@
   <data name="New Job B" xml:space="preserve">
     <value>Uusi tehtävä B</value>
   </data>
+  <data name="No background jobs are registered. Add jobs using services.AddBackgroundJob&lt;TJob&gt;() in Startup.cs." xml:space="preserve">
+    <value>Taustatehtäviä ei ole rekisteröity. Lisää tehtäviä käyttämällä services.AddBackgroundJob&lt;TJob&gt;() Startup.cs-tiedostossa.</value>
+  </data>
   <data name="No jobs" xml:space="preserve">
     <value>Ei tehtäviä</value>
+  </data>
+  <data name="No jobs have run in the last hour." xml:space="preserve">
+    <value>Viime tunnin aikana ei ole suoritettu tehtäviä.</value>
   </data>
   <data name="Pending" xml:space="preserve">
     <value>Odottaa</value>
@@ -60,17 +78,29 @@
   <data name="Processing" xml:space="preserve">
     <value>Käsitellään</value>
   </data>
+  <data name="Queue" xml:space="preserve">
+    <value>Jono</value>
+  </data>
   <data name="Queue Name" xml:space="preserve">
     <value>Jonon nimi</value>
   </data>
   <data name="Queued At" xml:space="preserve">
     <value>Jonossa oleva aika</value>
   </data>
+  <data name="Recent Execution History" xml:space="preserve">
+    <value>Viimeisin suoritushistoria</value>
+  </data>
+  <data name="Registered Jobs" xml:space="preserve">
+    <value>Rekisteröidyt tehtävät</value>
+  </data>
   <data name="Status" xml:space="preserve">
     <value>Tila</value>
   </data>
   <data name="Success" xml:space="preserve">
     <value>Onnistui</value>
+  </data>
+  <data name="Trigger Now" xml:space="preserve">
+    <value>Ajoita nyt</value>
   </data>
 
 </root>
