@@ -180,9 +180,6 @@
   <data name="Shared with me" xml:space="preserve">
     <value>แชร์ให้ฉัน</value>
   </data>
-  <data name="Shared with Me" xml:space="preserve">
-    <value>แชร์กับฉัน</value>
-  </data>
   <data name="Sign out" xml:space="preserve">
     <value>ออกจากระบบ</value>
   </data>

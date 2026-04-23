@@ -180,9 +180,6 @@
   <data name="Shared with me" xml:space="preserve">
     <value>내게 공유된 것들</value>
   </data>
-  <data name="Shared with Me" xml:space="preserve">
-    <value>나와 공유됨</value>
-  </data>
   <data name="Sign out" xml:space="preserve">
     <value>로그아웃</value>
   </data>
