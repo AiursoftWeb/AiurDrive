@@ -294,6 +294,9 @@
   <data name="Start a new project" xml:space="preserve">
     <value>Ξεκινήστε ένα νέο έργο</value>
   </data>
+  <data name="Start Now" xml:space="preserve">
+    <value>Ξεκίστε Τώρα</value>
+  </data>
   <data name="Support for SQLite, MySQL, and SQL Server. Switch between List and Grid views to manage your files comfortably." xml:space="preserve">
     <value>Υποστήριξη για SQLite, MySQL και SQL Server. Μεταβείτε ανάμεσα στις προβολές Λίστας και Δικτύου για να διαχειρίζεστε τα αρχεία σας άνετα.</value>
   </data>

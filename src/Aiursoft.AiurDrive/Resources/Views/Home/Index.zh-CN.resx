@@ -93,6 +93,9 @@
   <data name="Self-Hosted" xml:space="preserve">
     <value>私有化部署</value>
   </data>
+  <data name="Start Now" xml:space="preserve">
+    <value>立即开始</value>
+  </data>
   <data name="Support for SQLite, MySQL, and SQL Server. Switch between List and Grid views to manage your files comfortably." xml:space="preserve">
     <value>支持 SQLite、MySQL 和 SQL Server。在列表和网格视图之间切换，舒适地管理您的文件。</value>
   </data>

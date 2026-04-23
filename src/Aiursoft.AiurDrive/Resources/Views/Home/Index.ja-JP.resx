@@ -294,6 +294,9 @@
   <data name="Start a new project" xml:space="preserve">
     <value>新規プロジェクトを開始</value>
   </data>
+  <data name="Start Now" xml:space="preserve">
+    <value>今すぐ開始</value>
+  </data>
   <data name="Support for SQLite, MySQL, and SQL Server. Switch between List and Grid views to manage your files comfortably." xml:space="preserve">
     <value>SQLite、MySQL、SQL Server のサポート。リスト表示とグリッド表示の切り替えで、ファイルの管理を快適に行えます。</value>
   </data>
