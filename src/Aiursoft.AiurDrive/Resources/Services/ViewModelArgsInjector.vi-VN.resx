@@ -180,9 +180,6 @@
   <data name="Shared with me" xml:space="preserve">
     <value>Được chia sẻ với tôi</value>
   </data>
-  <data name="Shared with Me" xml:space="preserve">
-    <value>Đã được chia sẻ với tôi</value>
-  </data>
   <data name="Sign out" xml:space="preserve">
     <value>Đăng xuất</value>
   </data>

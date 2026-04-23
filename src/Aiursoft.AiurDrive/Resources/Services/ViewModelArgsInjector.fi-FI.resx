@@ -177,9 +177,6 @@
   <data name="Shared with me" xml:space="preserve">
     <value>Minulle jaettu</value>
   </data>
-  <data name="Shared with Me" xml:space="preserve">
-    <value>Jakettu minulle</value>
-  </data>
   <data name="Sign out" xml:space="preserve">
     <value>Kirjaudu ulos</value>
   </data>
