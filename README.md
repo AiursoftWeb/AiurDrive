@@ -11,7 +11,7 @@ A free, flexible file sharing center designed for local deployment.
 
 ![screenshot](./screenshot.png)
 
-Default user name is `admin@default.com` and default password is `admin123`.
+Default user name is `admin@default.com` and default password is `Admin@123456!`.
 
 ## Try
 
