@@ -242,13 +242,12 @@ public class DashboardController(
 
         await Task.WhenAll(usedSpaceTask, allowImagePreviewTask, hasWriteAccessTask);
 
-        var model = new FileManagerViewModel
+        var model = new FileManagerViewModel(siteName)
         {
             SiteName = siteName,
             Path = path.Replace("\\", "/"),
             Files = files,
             Folders = folders,
-            PageTitle = "File Manager",
             UsedSpaceInBytes = await usedSpaceTask,
             TotalSpaceInGB = maxSpaceGB,
             AllowImagePreview = await allowImagePreviewTask,
@@ -307,7 +306,7 @@ public class DashboardController(
 
         // Only owner can delete site
 
-        var model = new DeleteSiteViewModel
+        var model = new DeleteSiteViewModel(site.SiteName)
         {
             SiteName = site.SiteName,
             AllowAnonymousView = site.AllowAnonymousView,

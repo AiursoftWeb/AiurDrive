@@ -1,7 +1,6 @@
 @model Aiursoft.AiurDrive.Models.ExploreViewModels.IndexViewModel
 @inject Aiursoft.AiurDrive.Services.FileStorage.StorageService Storage
 @{
-    ViewData["Title"] = "Explore Public Sites";
     var currentUserName = User.Identity?.IsAuthenticated == true ? User.Identity.Name : null;
 }
 

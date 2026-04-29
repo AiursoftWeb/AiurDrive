@@ -2,7 +2,6 @@
 @inject Aiursoft.AiurDrive.Services.FileStorage.StorageService Storage
 @using Aiursoft.CSTools.Tools
 @{
-    ViewData["Title"] = "File Manager - " + Model.SiteName;
     string GetFileIcon(string filename)
     {
         var icon = Aiursoft.CSTools.Models.Mime.GetIcon(filename);

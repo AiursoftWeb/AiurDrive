@@ -14,35 +14,23 @@ public class ErrorController : Controller
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Code(int code, [FromQuery] string? returnUrl = null)
     {
-        var model = new ErrorViewModel
+        var pageTitle = code switch
+        {
+            400 => "Bad Request",
+            401 => "Unauthorized",
+            403 => "Access Denied",
+            404 => "Not Found",
+            500 => "Internal Server Error",
+            _ => $"Error {code}"
+        };
+
+        var model = new ErrorViewModel(pageTitle)
         {
             RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier,
             ErrorCode = code,
             ReturnUrl = returnUrl
         };
 
-        switch (code)
-        {
-            case 400:
-                model.PageTitle = "Bad Request";
-                break;
-            case 401:
-                model.PageTitle = "Unauthorized";
-                break;
-            case 403:
-                model.PageTitle = "Access Denied"; // Changed from Forbidden to match "Access Denied" context usually
-                break;
-            case 404:
-                model.PageTitle = "Not Found";
-                break;
-            case 500:
-                model.PageTitle = "Internal Server Error";
-                break;
-            default:
-                model.PageTitle = $"Error {code}";
-                break;
-        }
-
-        return this.StackView(model, viewName: "Error");
+        return this.SimpleView(model, "Error");
     }
 }

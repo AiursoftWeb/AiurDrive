@@ -5,6 +5,11 @@ namespace Aiursoft.AiurDrive.Models.SharedViewModels;
 
 public class SharedViewModel : UiStackLayoutViewModel
 {
+    public SharedViewModel(string siteName)
+    {
+        PageTitle = $"Shared - {siteName}";
+    }
+
     public required Site Site { get; set; }
     public string Path { get; set; } = string.Empty;
     public List<FileInfo> Files { get; set; } = new();

@@ -4,9 +4,9 @@ namespace Aiursoft.AiurDrive.Models.ErrorViewModels;
 
 public class ErrorViewModel: UiStackLayoutViewModel
 {
-    public ErrorViewModel()
+    public ErrorViewModel(string pageTitle = "Error")
     {
-        PageTitle = "Error";
+        PageTitle = pageTitle;
     }
 
     public int ErrorCode { get; set; } = 500;

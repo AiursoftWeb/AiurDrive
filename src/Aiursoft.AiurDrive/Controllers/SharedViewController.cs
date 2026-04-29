@@ -38,13 +38,12 @@ public class SharedViewController(
         var files = directoryInfo.GetFiles().OrderByDescending(f => f.LastWriteTime).ToList();
         var folders = directoryInfo.GetDirectories().OrderBy(f => f.Name).Select(f => f.Name).ToList();
 
-        var model = new SharedViewModel
+        var model = new SharedViewModel(site.SiteName)
         {
             Site = site,
             Path = path.Replace("\\", "/"),
             Files = files,
             Folders = folders,
-            PageTitle = $"Shared - {site.SiteName}",
             AllowImagePreview = await globalSettings.GetBoolSettingAsync(SettingsMap.AllowImagePreview)
         };
         return this.StackView(model);

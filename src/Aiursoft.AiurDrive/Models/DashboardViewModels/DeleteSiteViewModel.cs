@@ -14,8 +14,8 @@ public class DeleteSiteViewModel : UiStackLayoutViewModel
     [Display(Name = "Creation Time")]
     public DateTime CreationTime { get; set; }
 
-    public DeleteSiteViewModel()
+    public DeleteSiteViewModel(string siteName)
     {
-        PageTitle = "Delete Site";
+        PageTitle = $"Delete Site - {siteName}";
     }
 }
