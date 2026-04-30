@@ -4,9 +4,9 @@ namespace Aiursoft.AiurDrive.Models.DashboardViewModels;
 
 public class FileManagerViewModel : UiStackLayoutViewModel
 {
-    public FileManagerViewModel()
+    public FileManagerViewModel(string siteName)
     {
-        PageTitle = "File Manager";
+        PageTitle = $"File Manager - {siteName}";
         Files = new List<FileInfo>();
         Folders = new List<string>();
     }

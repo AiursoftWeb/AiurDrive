@@ -29,8 +29,7 @@ public class ExploreController(AiurDriveDbContext dbContext) : Controller
 
         var model = new IndexViewModel
         {
-            PublicSites = publicSites,
-            PageTitle = "Explore Public Sites"
+            PublicSites = publicSites
         };
         return this.StackView(model);
     }

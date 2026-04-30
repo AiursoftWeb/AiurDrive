@@ -19,10 +19,7 @@ public class VaultController : Controller
         LinkOrder = 2)]
     public IActionResult Index()
     {
-        var model = new VaultViewModel
-        {
-            PageTitle = "Zero-Trust Vault"
-        };
+        var model = new VaultViewModel();
         return this.StackView(model);
     }
 }
