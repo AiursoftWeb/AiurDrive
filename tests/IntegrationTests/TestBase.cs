@@ -9,7 +9,7 @@ namespace Aiursoft.AiurDrive.Tests.IntegrationTests;
 
 public abstract class TestBase
 {
-    protected readonly int Port;
+    protected int Port;
     protected readonly HttpClient Http;
     protected IHost? Server;
 
@@ -21,20 +21,37 @@ public abstract class TestBase
             CookieContainer = cookieContainer,
             AllowAutoRedirect = false
         };
-        Port = Network.GetAvailablePort();
-        Http = new HttpClient(handler)
-        {
-            BaseAddress = new Uri($"http://localhost:{Port}")
-        };
+        Http = new HttpClient(handler);
     }
 
     [TestInitialize]
     public virtual async Task CreateServer()
     {
-        Server = await AppAsync<Startup>([], port: Port);
-        await Server.UpdateDbAsync<AiurDriveDbContext>();
-        await Server.SeedAsync();
-        await Server.StartAsync();
+        for (var i = 0; i < 10; i++)
+        {
+            Port = Network.GetAvailablePort();
+            try
+            {
+                Server = await AppAsync<Startup>([], port: Port);
+                await Server.UpdateDbAsync<AiurDriveDbContext>();
+                await Server.SeedAsync();
+                await Server.StartAsync();
+                Http.BaseAddress = new Uri($"http://localhost:{Port}");
+                return;
+            }
+            catch (Exception ex) when (ex.ToString().Contains("address already in use", StringComparison.OrdinalIgnoreCase))
+            {
+                if (Server != null)
+                {
+                    await Server.StopAsync();
+                    Server.Dispose();
+                }
+
+                await Task.Delay(200);
+            }
+        }
+
+        throw new IOException("Failed to find an available port after 10 retries.");
     }
 
     [TestCleanup]
