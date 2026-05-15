@@ -160,7 +160,7 @@ public class SecurityTests : TestBase
         var dummyFile = new FormFile(new MemoryStream(new byte[10]), 0, 10, "file", "test.txt");
         var response = await Http.PostAsync($"/upload/{site.SiteName}", new MultipartFormDataContent
         {
-            { new StreamContent(dummyFile.OpenReadStream()), "file", "test.txt" }
+            { new StreamContent(dummyFile.OpenReadStream()), "file", $"test-{Guid.NewGuid():N}.txt" }
         });
         
         // Should be Unauthorized because token is missing

@@ -21,7 +21,7 @@ public class AvatarTests : TestBase
         fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/gif");
 
         var multipartContent = new MultipartFormDataContent();
-        multipartContent.Add(fileContent, "file", "avatar.gif");
+        multipartContent.Add(fileContent, "file", $"avatar-{Guid.NewGuid():N}.gif");
 
         var storage = GetService<StorageService>();
         var uploadUrl = storage.GetUploadUrl("avatars", isVault: false);
@@ -54,7 +54,7 @@ public class AvatarTests : TestBase
         fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/gif");
 
         var multipartContent = new MultipartFormDataContent();
-        multipartContent.Add(fileContent, "file", "avatar.gif");
+        multipartContent.Add(fileContent, "file", $"avatar-{Guid.NewGuid():N}.gif");
 
         var storage = GetService<StorageService>();
         var uploadUrl = storage.GetUploadUrl("avatars", isVault: false);
@@ -89,7 +89,7 @@ public class AvatarTests : TestBase
         fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/png");
 
         var multipartContent = new MultipartFormDataContent();
-        multipartContent.Add(fileContent, "file", "avatar.png");
+        multipartContent.Add(fileContent, "file", $"avatar-{Guid.NewGuid():N}.png");
 
         var storage = GetService<StorageService>();
         var uploadUrl = storage.GetUploadUrl("avatars", isVault: false);
@@ -127,7 +127,7 @@ public class AvatarTests : TestBase
         fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/png");
 
         var multipartContent = new MultipartFormDataContent();
-        multipartContent.Add(fileContent, "file", "avatar.png");
+        multipartContent.Add(fileContent, "file", $"avatar-{Guid.NewGuid():N}.png");
 
         var storage = GetService<StorageService>();
         var uploadUrl = storage.GetUploadUrl("avatars", isVault: false);
@@ -164,7 +164,7 @@ public class AvatarTests : TestBase
         fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/png");
 
         var multipartContent = new MultipartFormDataContent();
-        multipartContent.Add(fileContent, "file", "avatar.png");
+        multipartContent.Add(fileContent, "file", $"avatar-{Guid.NewGuid():N}.png");
 
         var storage = GetService<StorageService>();
         var uploadUrl = storage.GetUploadUrl("avatars", isVault: false);

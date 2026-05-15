@@ -40,7 +40,7 @@ public class FilesControllerTests : TestBase
         // 1. Upload
         var content = new StringContent("Private Hello World");
         var multipartContent = new MultipartFormDataContent();
-        multipartContent.Add(content, "file", "private-test.txt");
+        multipartContent.Add(content, "file", $"private-test-{Guid.NewGuid():N}.txt");
 
         var uploadResponse = await Http.PostAsync(uploadUrl, multipartContent);
         uploadResponse.EnsureSuccessStatusCode();
