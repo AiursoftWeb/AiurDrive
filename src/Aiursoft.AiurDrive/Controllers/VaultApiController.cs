@@ -52,7 +52,7 @@ public class VaultApiController(
 
     public class VaultConfig
     {
-        public string VaultSaltBase64 { get; init; } = string.Empty;
+        public string VaultSaltBase64 { get; set; } = string.Empty;
         public string VerifierNonceBase64 { get; set; } = string.Empty;
         public string VerifierTagBase64 { get; set; } = string.Empty;
         public string VerifierCipherBase64 { get; set; } = string.Empty;
