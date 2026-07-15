@@ -169,7 +169,7 @@
     <value>ไซต์</value>
   </data>
   <data name="sites max" xml:space="preserve">
-    <value>สูงสุด {sites}</value>
+    <value>สูงสุด {{sites}}</value>
   </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>การแทนที่การตั้งค่าอัจฉริยะ</value>
