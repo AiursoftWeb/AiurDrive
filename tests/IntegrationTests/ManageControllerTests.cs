@@ -4,7 +4,7 @@ using Aiursoft.AiurDrive.Entities;
 using System.Net;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
+
 namespace Aiursoft.AiurDrive.Tests.IntegrationTests;
 
 [TestClass]
