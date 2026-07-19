@@ -1,9 +1,33 @@
+@using Aiursoft.AiurDrive.Configuration
+@using Microsoft.Extensions.Options
 @model dynamic
+@inject IOptions<AppSettings> AppSettings
 @{
-    ViewData["Title"] = Localizer["Delete Account"];
+    if (AppSettings.Value.LocalEnabled)
+    {
+        ViewData["Title"] = Localizer["Delete Account"];
+    }
+    else
+    {
+        ViewData["Title"] = Localizer["Delete Account Data"];
+    }
 }
 
 <h1 class="h3 mb-3">@ViewData["Title"]</h1>
+
+@if (!AppSettings.Value.LocalEnabled)
+{
+    <div class="alert alert-warning alert-outline-coloured alert-dismissible" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="@Localizer["Close"]"></button>
+        <div class="alert-icon">
+            <i class="align-middle" data-lucide="info"></i>
+        </div>
+        <div class="alert-message">
+            <strong>@Localizer["OIDC Account"]</strong> @Localizer["Your account is synced from an external authentication provider. Deleting your data here will remove all your local records, but your account may be recreated the next time you log in. To permanently delete your account, please visit your"]
+            <a href="@AppSettings.Value.OIDC.GetAuthProviderHomePage()">@Localizer["auth provider"]</a>.
+        </div>
+    </div>
+}
 
 <div class="card border-danger">
     <div class="card-header bg-danger text-white">
@@ -16,7 +40,7 @@
             {
                 <h5 class="text-danger">@Localizer["Action Required!"]</h5>
                 <p>
-                    @Localizer["You still own {0} site(s).", count] 
+                    @Localizer["You still own {0} site(s).", count]
                     @Localizer["To prevent breaking downstream dependencies or losing team assets, you must manually delete them or transfer their ownership to another user before you can delete your account."]
                 </p>
                 <a asp-controller="Home" asp-action="Index" class="btn btn-primary">@Localizer["Manage My Sites"]</a>
@@ -24,18 +48,39 @@
             }
             else
             {
-                <h5 class="text-danger">@Localizer["Are you sure you want to delete your account?"]</h5>
-                <p>
-                    @Localizer["This action will permanently erase all your data from our servers. This includes your profile, comments, likes, and favorites. This action cannot be undone."]
-                </p>
-                <form asp-action="DeleteAccountPost" method="post" id="delete-form">
-                    <button type="submit" class="btn btn-danger" id="delete-btn" disabled>
-                        <i class="align-middle me-1" data-lucide="trash-2"></i> 
-                        <span id="btn-text">@Localizer["Yes, delete my account"]</span> 
-                        (<span id="countdown">10</span>s)
-                    </button>
-                    <a asp-action="Index" class="btn btn-outline-secondary ms-2">@Localizer["Cancel"]</a>
-                </form>
+                if (AppSettings.Value.LocalEnabled)
+                {
+                    <h5 class="text-danger">@Localizer["Are you sure you want to permanently delete your account?"]</h5>
+                    <p>
+                        @Localizer["This action will permanently erase your profile and all associated data from our servers. This action cannot be undone."]
+                    </p>
+                    <form asp-action="DeleteAccountPost" method="post" id="delete-form">
+                        <button type="submit" class="btn btn-danger" id="delete-btn" disabled>
+                            <i class="align-middle me-1" data-lucide="user-x"></i>
+                            <span id="btn-text">@Localizer["Yes, delete my account"]</span>
+                            (<span id="countdown">10</span>s)
+                        </button>
+                        <a asp-action="Index" class="btn btn-outline-secondary ms-2">@Localizer["Cancel"]</a>
+                    </form>
+                }
+                else
+                {
+                    <h5 class="text-danger">@Localizer["Are you sure you want to delete all your data?"]</h5>
+                    <p>
+                        @Localizer["This action will permanently erase all your data from our servers. Your comments, likes, and favorites will be removed. This action cannot be undone."]
+                    </p>
+                    <p class="text-muted">
+                        @Localizer["After deletion, you may still be able to log in again, which will create a new account with no data. To permanently delete your account, please visit your auth provider."]
+                    </p>
+                    <form asp-action="DeleteAccountPost" method="post" id="delete-form">
+                        <button type="submit" class="btn btn-danger" id="delete-btn" disabled>
+                            <i class="align-middle me-1" data-lucide="database"></i>
+                            <span id="btn-text">@Localizer["Yes, delete all my data"]</span>
+                            (<span id="countdown">10</span>s)
+                        </button>
+                        <a asp-action="Index" class="btn btn-outline-secondary ms-2">@Localizer["Cancel"]</a>
+                    </form>
+                }
             }
         }
     </div>
@@ -48,7 +93,7 @@
 
         let timeLeft = 10;
         const countdownSpan = document.getElementById("countdown");
-        
+
         const timer = setInterval(function() {
             timeLeft--;
             if (timeLeft <= 0) {
