@@ -203,7 +203,10 @@ public class ManageController(
             ownedItemsCount = sitesCount;
         }
         ViewData["OwnedItemsCount"] = ownedItemsCount;
-        return this.StackView(new UiStackLayoutViewModel());
+        return this.StackView(new UiStackLayoutViewModel
+        {
+            PageTitle = "Delete Account"
+        });
     }
 
     //

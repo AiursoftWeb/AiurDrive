@@ -1,19 +1,17 @@
 @using Aiursoft.AiurDrive.Configuration
 @using Microsoft.Extensions.Options
-@model dynamic
+@using Aiursoft.UiStack.Layout
+@model UiStackLayoutViewModel
 @inject IOptions<AppSettings> AppSettings
-@{
-    if (AppSettings.Value.LocalEnabled)
-    {
-        ViewData["Title"] = Localizer["Delete Account"];
-    }
-    else
-    {
-        ViewData["Title"] = Localizer["Delete Account Data"];
-    }
-}
 
-<h1 class="h3 mb-3">@ViewData["Title"]</h1>
+@if (AppSettings.Value.LocalEnabled)
+{
+    <h1 class="h3 mb-3">@Localizer["Delete Account"]</h1>
+}
+else
+{
+    <h1 class="h3 mb-3">@Localizer["Delete Account Data"]</h1>
+}
 
 @if (!AppSettings.Value.LocalEnabled)
 {
@@ -40,7 +38,7 @@
             {
                 <h5 class="text-danger">@Localizer["Action Required!"]</h5>
                 <p>
-                    @Localizer["You still own {0} site(s).", count]
+                    @Localizer["You still own"] @count @Localizer["site(s)."]
                     @Localizer["To prevent breaking downstream dependencies or losing team assets, you must manually delete them or transfer their ownership to another user before you can delete your account."]
                 </p>
                 <a asp-controller="Home" asp-action="Index" class="btn btn-primary">@Localizer["Manage My Sites"]</a>
