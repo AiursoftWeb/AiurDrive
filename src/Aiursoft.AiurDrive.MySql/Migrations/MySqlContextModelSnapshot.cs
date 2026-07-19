@@ -17,7 +17,7 @@ namespace Aiursoft.AiurDrive.MySql.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "10.0.5")
+                .HasAnnotation("ProductVersion", "10.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
@@ -332,7 +332,7 @@ namespace Aiursoft.AiurDrive.MySql.Migrations
                     b.HasOne("Aiursoft.AiurDrive.Entities.User", "AppUser")
                         .WithMany("Sites")
                         .HasForeignKey("AppUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("AppUser");

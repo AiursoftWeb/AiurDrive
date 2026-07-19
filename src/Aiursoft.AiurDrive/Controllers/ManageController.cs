@@ -188,6 +188,48 @@ public class ManageController(
         return this.StackView(model);
     }
 
+    //
+    // GET: /Manage/DeleteAccount
+    [HttpGet]
+    public async Task<IActionResult> DeleteAccount([FromServices] Aiursoft.AiurDrive.Entities.AiurDriveDbContext context)
+    {
+        var user = await GetCurrentUserAsync();
+        int ownedItemsCount = 0;
+        if (user != null)
+        {
+            var sitesCount = await Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.CountAsync(
+                System.Linq.Queryable.Where(context.Sites, p => p.AppUserId == user.Id));
+            ownedItemsCount = sitesCount;
+        }
+        ViewData["OwnedItemsCount"] = ownedItemsCount;
+        return this.StackView(new Aiursoft.UiStack.Layout.UiStackLayoutViewModel());
+    }
+
+    //
+    // POST: /Manage/DeleteAccount
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> DeleteAccountPost([FromServices] Aiursoft.AiurDrive.Entities.AiurDriveDbContext context)
+    {
+        var user = await GetCurrentUserAsync();
+        if (user != null)
+        {
+            var hasSites = await Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.AnyAsync(
+                System.Linq.Queryable.Where(context.Sites, p => p.AppUserId == user.Id));
+                
+            if (hasSites)
+            {
+                // Can't delete if owning sites.
+                return RedirectToAction(nameof(DeleteAccount));
+            }
+            await signInManager.SignOutAsync();
+            await userManager.DeleteAsync(user);
+            logger.LogInformation(3, "User deleted their account successfully");
+            return Redirect("/");
+        }
+        return RedirectToAction(nameof(Index), new { Message = ManageMessageId.Error });
+    }
+
     #region Helpers
 
     private void AddErrors(IdentityResult result)

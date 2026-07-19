@@ -17,4 +17,15 @@ public abstract class AiurDriveDbContext(DbContextOptions options) : IdentityDbC
 
     public virtual  Task<bool> CanConnectAsync() =>
         Database.CanConnectAsync();
+
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        base.OnModelCreating(builder);
+
+        builder.Entity<Site>()
+            .HasOne(m => m.AppUser)
+            .WithMany(u => u.Sites)
+            .HasForeignKey(m => m.AppUserId)
+            .OnDelete(DeleteBehavior.Restrict);
+    }
 }

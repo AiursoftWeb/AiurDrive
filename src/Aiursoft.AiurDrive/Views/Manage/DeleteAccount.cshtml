@@ -1,0 +1,63 @@
+@model dynamic
+@{
+    ViewData["Title"] = Localizer["Delete Account"];
+}
+
+<h1 class="h3 mb-3">@ViewData["Title"]</h1>
+
+<div class="card border-danger">
+    <div class="card-header bg-danger text-white">
+        <h5 class="card-title mb-0 text-white"><i class="align-middle me-2" data-lucide="alert-triangle"></i> @Localizer["Danger Zone"]</h5>
+    </div>
+    <div class="card-body">
+        @{
+            int count = (int?)ViewData["OwnedItemsCount"] ?? 0;
+            if (count > 0)
+            {
+                <h5 class="text-danger">@Localizer["Action Required!"]</h5>
+                <p>
+                    @Localizer["You still own {0} site(s).", count] 
+                    @Localizer["To prevent breaking downstream dependencies or losing team assets, you must manually delete them or transfer their ownership to another user before you can delete your account."]
+                </p>
+                <a asp-controller="Home" asp-action="Index" class="btn btn-primary">@Localizer["Manage My Sites"]</a>
+                <a asp-action="Index" class="btn btn-outline-secondary ms-2">@Localizer["Go Back"]</a>
+            }
+            else
+            {
+                <h5 class="text-danger">@Localizer["Are you sure you want to delete your account?"]</h5>
+                <p>
+                    @Localizer["This action will permanently erase all your data from our servers. This includes your profile, comments, likes, and favorites. This action cannot be undone."]
+                </p>
+                <form asp-action="DeleteAccountPost" method="post" id="delete-form">
+                    <button type="submit" class="btn btn-danger" id="delete-btn" disabled>
+                        <i class="align-middle me-1" data-lucide="trash-2"></i> 
+                        <span id="btn-text">@Localizer["Yes, delete my account"]</span> 
+                        (<span id="countdown">10</span>s)
+                    </button>
+                    <a asp-action="Index" class="btn btn-outline-secondary ms-2">@Localizer["Cancel"]</a>
+                </form>
+            }
+        }
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const btn = document.getElementById("delete-btn");
+        if (!btn) return;
+
+        let timeLeft = 10;
+        const countdownSpan = document.getElementById("countdown");
+        
+        const timer = setInterval(function() {
+            timeLeft--;
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                btn.removeAttribute("disabled");
+                countdownSpan.parentElement.innerHTML = document.getElementById("btn-text").innerHTML;
+            } else {
+                countdownSpan.textContent = timeLeft;
+            }
+        }, 1000);
+    });
+</script>
