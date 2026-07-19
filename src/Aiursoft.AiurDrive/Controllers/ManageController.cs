@@ -3,11 +3,13 @@ using Aiursoft.AiurDrive.Entities;
 using Aiursoft.AiurDrive.Models.ManageViewModels;
 using Aiursoft.AiurDrive.Services;
 using Aiursoft.AiurDrive.Services.FileStorage;
+using Aiursoft.UiStack.Layout;
 using Aiursoft.UiStack.Navigation;
 using Aiursoft.WebTools.Attributes;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Options;
 
@@ -191,31 +193,29 @@ public class ManageController(
     //
     // GET: /Manage/DeleteAccount
     [HttpGet]
-    public async Task<IActionResult> DeleteAccount([FromServices] Aiursoft.AiurDrive.Entities.AiurDriveDbContext context)
+    public async Task<IActionResult> DeleteAccount([FromServices] AiurDriveDbContext context)
     {
         var user = await GetCurrentUserAsync();
         int ownedItemsCount = 0;
         if (user != null)
         {
-            var sitesCount = await Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.CountAsync(
-                System.Linq.Queryable.Where(context.Sites, p => p.AppUserId == user.Id));
+            var sitesCount = await context.Sites.CountAsync(p => p.AppUserId == user.Id);
             ownedItemsCount = sitesCount;
         }
         ViewData["OwnedItemsCount"] = ownedItemsCount;
-        return this.StackView(new Aiursoft.UiStack.Layout.UiStackLayoutViewModel());
+        return this.StackView(new UiStackLayoutViewModel());
     }
 
     //
     // POST: /Manage/DeleteAccount
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteAccountPost([FromServices] Aiursoft.AiurDrive.Entities.AiurDriveDbContext context)
+    public async Task<IActionResult> DeleteAccountPost([FromServices] AiurDriveDbContext context)
     {
         var user = await GetCurrentUserAsync();
         if (user != null)
         {
-            var hasSites = await Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.AnyAsync(
-                System.Linq.Queryable.Where(context.Sites, p => p.AppUserId == user.Id));
+            var hasSites = await context.Sites.AnyAsync(p => p.AppUserId == user.Id);
                 
             if (hasSites)
             {
