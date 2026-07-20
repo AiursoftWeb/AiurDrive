@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Action Required!" xml:space="preserve">
+    <value>Handling påkrævet!</value>
+  </data>
+  <data name="After deletion, you may still be able to log in again, which will create a new account with no data. To permanently delete your account, please visit your auth provider." xml:space="preserve">
+    <value>Efter sletning kan du muligvis stadig logge på igen, hvilket vil oprette en ny konto uden data. For permanent at slette din konto, skal du besøge din auth provider.</value>
+  </data>
+  <data name="Are you sure you want to delete all your data?" xml:space="preserve">
+    <value>Er du sikker på, at du vil slette alle dine data?</value>
+  </data>
+  <data name="Are you sure you want to permanently delete your account?" xml:space="preserve">
+    <value>Er du sikker på, at du vil slette din konto permanent?</value>
+  </data>
+  <data name="auth provider" xml:space="preserve">
+    <value>godkendelsesudbyder</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Annuller</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Luk</value>
+  </data>
+  <data name="Danger Zone" xml:space="preserve">
+    <value>Farezone</value>
+  </data>
+  <data name="Delete Account" xml:space="preserve">
+    <value>Slet konto</value>
+  </data>
+  <data name="Delete Account Data" xml:space="preserve">
+    <value>Slet kontodata</value>
+  </data>
+  <data name="Go Back" xml:space="preserve">
+    <value>Gå tilbage</value>
+  </data>
+  <data name="Manage My Sites" xml:space="preserve">
+    <value>Administrer mine sider</value>
+  </data>
+  <data name="OIDC Account" xml:space="preserve">
+    <value>OIDC-konto</value>
+  </data>
+  <data name="site(s)." xml:space="preserve">
+    <value>sted(er).</value>
+  </data>
+  <data name="This action will permanently erase all your data from our servers. Your comments, likes, and favorites will be removed. This action cannot be undone." xml:space="preserve">
+    <value>Denne handling sletter permanent alle dine data fra vores servere. Dine kommentarer, likes og favoritter vil blive fjernet. Denne handling kan ikke fortrydes.</value>
+  </data>
+  <data name="This action will permanently erase your profile and all associated data from our servers. This action cannot be undone." xml:space="preserve">
+    <value>Denne handling vil permanent slette din profil og alle tilknyttede data fra vores servere. Denne handling kan ikke fortrydes.</value>
+  </data>
+  <data name="To prevent breaking downstream dependencies or losing team assets, you must manually delete them or transfer their ownership to another user before you can delete your account." xml:space="preserve">
+    <value>For at undgå at ødelægge efterfølgende afhængigheder eller miste teamets aktiver, skal du manuelt slette dem eller overdrage ejerskabet til en anden bruger, før du kan slette din konto.</value>
+  </data>
+  <data name="Yes, delete all my data" xml:space="preserve">
+    <value>Ja, slet alle mine data</value>
+  </data>
+  <data name="Yes, delete my account" xml:space="preserve">
+    <value>Ja, slet min konto</value>
+  </data>
+  <data name="You still own" xml:space="preserve">
+    <value>Du ejer stadig</value>
+  </data>
+  <data name="Your account is synced from an external authentication provider. Deleting your data here will remove all your local records, but your account may be recreated the next time you log in. To permanently delete your account, please visit your" xml:space="preserve">
+    <value>Din konto er synkroniseret fra en ekstern godgørelsesudbyder. Hvis du sletter dine data her, fjernes alle dine lokale registreringer, men din konto kan blive genoprettet næste gang, du logger ind. For permanent at slette din konto, skal du besøge din</value>
+  </data>
+
+</root>

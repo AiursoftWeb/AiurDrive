@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Action Required!" xml:space="preserve">
+    <value>Eylem Gerekli!</value>
+  </data>
+  <data name="After deletion, you may still be able to log in again, which will create a new account with no data. To permanently delete your account, please visit your auth provider." xml:space="preserve">
+    <value>Silme işleminden sonra tekrar giriş yapmaya devam edebilirsiniz; bu, veri içermeyen yeni bir hesap oluşturacaktır. Hesabınızı kalıcı olarak silmek için lütfen kimlik doğrulama sağlayıcınıza gidin.</value>
+  </data>
+  <data name="Are you sure you want to delete all your data?" xml:space="preserve">
+    <value>Tüm verilerinizi silmek istediğinizden emin misiniz?</value>
+  </data>
+  <data name="Are you sure you want to permanently delete your account?" xml:space="preserve">
+    <value>Hesabınızı kalıcı olarak silmek istediğinizden emin misiniz?</value>
+  </data>
+  <data name="auth provider" xml:space="preserve">
+    <value>kimlik doğrulama sağlayıcısı</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
+  <data name="Danger Zone" xml:space="preserve">
+    <value>Tehlike Bölgesi</value>
+  </data>
+  <data name="Delete Account" xml:space="preserve">
+    <value>Hesabı Sil</value>
+  </data>
+  <data name="Delete Account Data" xml:space="preserve">
+    <value>Hesap Verilerini Sil</value>
+  </data>
+  <data name="Go Back" xml:space="preserve">
+    <value>Geri Dön</value>
+  </data>
+  <data name="Manage My Sites" xml:space="preserve">
+    <value>Sitelerimi Yönet</value>
+  </data>
+  <data name="OIDC Account" xml:space="preserve">
+    <value>OIDC Hesabı</value>
+  </data>
+  <data name="site(s)." xml:space="preserve">
+    <value>site(ler).</value>
+  </data>
+  <data name="This action will permanently erase all your data from our servers. Your comments, likes, and favorites will be removed. This action cannot be undone." xml:space="preserve">
+    <value>Bu işlem, tüm verilerinizi sunucularımızdan kalıcı olarak siler. Yorumlarınız, beğenileriniz ve favorileriniz kaldırılacaktır. Bu işlem geri alınamaz.</value>
+  </data>
+  <data name="This action will permanently erase your profile and all associated data from our servers. This action cannot be undone." xml:space="preserve">
+    <value>Bu işlem profilinizi ve tüm ilişkili verilerimizi sunucularımızdan kalıcı olarak silecektir. Bu işlem geri alınamaz.</value>
+  </data>
+  <data name="To prevent breaking downstream dependencies or losing team assets, you must manually delete them or transfer their ownership to another user before you can delete your account." xml:space="preserve">
+    <value>Aşağı akış bağımlılıklarının bozulmasını veya ekip varlıklarının kaybolmasını önlemek için, hesabınızı silmeden önce bunları manuel olarak silmeniz veya sahipliğini başka bir kullanıcıya devretmeniz gerekir.</value>
+  </data>
+  <data name="Yes, delete all my data" xml:space="preserve">
+    <value>Evet, tüm verilerimi sil</value>
+  </data>
+  <data name="Yes, delete my account" xml:space="preserve">
+    <value>Evet, hesabımı sil</value>
+  </data>
+  <data name="You still own" xml:space="preserve">
+    <value>Hâlâ sahip olduğunuz</value>
+  </data>
+  <data name="Your account is synced from an external authentication provider. Deleting your data here will remove all your local records, but your account may be recreated the next time you log in. To permanently delete your account, please visit your" xml:space="preserve">
+    <value>Hesabınız harici bir kimlik doğrulama sağlayıcısından senkronize edilir. Buradan verilerinizi silmek tüm yerel kayıtlarınızı kaldırır, ancak hesabınız bir sonraki giriş yaptığınızda yeniden oluşturulabilir. Hesabınızı kalıcı olarak silmek için lütfen</value>
+  </data>
+
+</root>

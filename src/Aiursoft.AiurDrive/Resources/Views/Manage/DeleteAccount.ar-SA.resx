@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Action Required!" xml:space="preserve">
+    <value>يتطلب إجراءً!</value>
+  </data>
+  <data name="After deletion, you may still be able to log in again, which will create a new account with no data. To permanently delete your account, please visit your auth provider." xml:space="preserve">
+    <value>بعد الحذف، قد تتمكن من تسجيل الدخول مرة أخرى، مما سيؤدي إلى إنشاء حساب جديد بدون بيانات. لحذف حسابك نهائيًا، يرجى زيارة مزود المصادقة الخاص بك.</value>
+  </data>
+  <data name="Are you sure you want to delete all your data?" xml:space="preserve">
+    <value>هل أنت متأكد أنك تريد حذف جميع بياناتك؟</value>
+  </data>
+  <data name="Are you sure you want to permanently delete your account?" xml:space="preserve">
+    <value>هل أنت متأكد من رغبتك في حذف حسابك نهائيًا؟</value>
+  </data>
+  <data name="auth provider" xml:space="preserve">
+    <value>مزود المصادقة</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>إغلاق</value>
+  </data>
+  <data name="Danger Zone" xml:space="preserve">
+    <value>منطقة الخطر</value>
+  </data>
+  <data name="Delete Account" xml:space="preserve">
+    <value>حذف الحساب</value>
+  </data>
+  <data name="Delete Account Data" xml:space="preserve">
+    <value>حذف بيانات الحساب</value>
+  </data>
+  <data name="Go Back" xml:space="preserve">
+    <value>العودة</value>
+  </data>
+  <data name="Manage My Sites" xml:space="preserve">
+    <value>إدارة مواقعى</value>
+  </data>
+  <data name="OIDC Account" xml:space="preserve">
+    <value>حساب OIDC</value>
+  </data>
+  <data name="site(s)." xml:space="preserve">
+    <value>موقع(ات).</value>
+  </data>
+  <data name="This action will permanently erase all your data from our servers. Your comments, likes, and favorites will be removed. This action cannot be undone." xml:space="preserve">
+    <value>سيؤدي هذا الإجراء إلى حذف جميع بياناتك نهائيًا من خوادمنا. سيتم إزالة تعليقاتك وإعجاباتك والمفضلة. لا يمكن التراجع عن هذا الإجراء.</value>
+  </data>
+  <data name="This action will permanently erase your profile and all associated data from our servers. This action cannot be undone." xml:space="preserve">
+    <value>سيؤدي هذا الإجراء إلى حذف ملفك الشخصي وجميع البيانات المرتبطة به نهائيًا من خوادمنا. لا يمكن التراجع عن هذا الإجراء.</value>
+  </data>
+  <data name="To prevent breaking downstream dependencies or losing team assets, you must manually delete them or transfer their ownership to another user before you can delete your account." xml:space="preserve">
+    <value>لمنع تعطيل التبعيات اللاحقة أو فقدان أصول الفريق، يجب عليك حذفها يدويًا أو نقل ملكيتها إلى مستخدم آخر قبل أن تتمكن من حذف حسابك.</value>
+  </data>
+  <data name="Yes, delete all my data" xml:space="preserve">
+    <value>نعم، احذف جميع بياناتي</value>
+  </data>
+  <data name="Yes, delete my account" xml:space="preserve">
+    <value>نعم، احذف حسابي</value>
+  </data>
+  <data name="You still own" xml:space="preserve">
+    <value>لا تزال تمتلك</value>
+  </data>
+  <data name="Your account is synced from an external authentication provider. Deleting your data here will remove all your local records, but your account may be recreated the next time you log in. To permanently delete your account, please visit your" xml:space="preserve">
+    <value>حسابك متزامن مع مزود مصادقة خارجي. حذف بياناتك هنا سيقوم بإزالة جميع سجلاتك المحلية، ولكن قد يتم إعادة إنشاء حسابك في المرة القادمة التي تقوم فيها بتسجيل الدخول. لحذف حسابك بشكل دائم، يرجى زيارة مزود المصادقة الخاص بك.</value>
+  </data>
+
+</root>
