@@ -69,6 +69,9 @@
   <data name="Dashboard" xml:space="preserve">
     <value>Panel sterowania</value>
   </data>
+  <data name="Delete Account" xml:space="preserve">
+    <value>Usuń konto</value>
+  </data>
   <data name="Delete Role" xml:space="preserve">
     <value>Usuń rolę</value>
   </data>

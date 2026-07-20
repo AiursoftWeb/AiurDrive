@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Action Required!" xml:space="preserve">
+    <value>需要採取行動！</value>
+  </data>
+  <data name="After deletion, you may still be able to log in again, which will create a new account with no data. To permanently delete your account, please visit your auth provider." xml:space="preserve">
+    <value>刪除後，您可能仍可再次登入，這將建立一個沒有資料的新帳戶。如需永久刪除您的帳戶，請前往您的身份驗證提供者。</value>
+  </data>
+  <data name="Are you sure you want to delete all your data?" xml:space="preserve">
+    <value>你確定要刪除所有資料嗎？</value>
+  </data>
+  <data name="Are you sure you want to permanently delete your account?" xml:space="preserve">
+    <value>你確定要永久刪除你的帳戶嗎？</value>
+  </data>
+  <data name="auth provider" xml:space="preserve">
+    <value>認證供應商</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="Danger Zone" xml:space="preserve">
+    <value>危險區域</value>
+  </data>
+  <data name="Delete Account" xml:space="preserve">
+    <value>刪除帳戶</value>
+  </data>
+  <data name="Delete Account Data" xml:space="preserve">
+    <value>刪除帳戶資料</value>
+  </data>
+  <data name="Go Back" xml:space="preserve">
+    <value>返回</value>
+  </data>
+  <data name="Manage My Sites" xml:space="preserve">
+    <value>管理我的站點</value>
+  </data>
+  <data name="OIDC Account" xml:space="preserve">
+    <value>OIDC 帳戶</value>
+  </data>
+  <data name="site(s)." xml:space="preserve">
+    <value>個網站。</value>
+  </data>
+  <data name="This action will permanently erase all your data from our servers. Your comments, likes, and favorites will be removed. This action cannot be undone." xml:space="preserve">
+    <value>此操作將永久刪除您伺服器上的所有資料。您的留言、讚好及收藏項目將被移除。此操作無法撤銷。</value>
+  </data>
+  <data name="This action will permanently erase your profile and all associated data from our servers. This action cannot be undone." xml:space="preserve">
+    <value>此操作將永久刪除您嘅個人資料同所有相關數據，無法復原。</value>
+  </data>
+  <data name="To prevent breaking downstream dependencies or losing team assets, you must manually delete them or transfer their ownership to another user before you can delete your account." xml:space="preserve">
+    <value>為避免破壞下游依賴關係或導致團隊資產丟失，您必須在刪除帳戶前手動刪除這些項目或將其所有權轉移給其他用戶。</value>
+  </data>
+  <data name="Yes, delete all my data" xml:space="preserve">
+    <value>確定，刪除我嘅所有資料</value>
+  </data>
+  <data name="Yes, delete my account" xml:space="preserve">
+    <value>是的，刪除我的帳戶</value>
+  </data>
+  <data name="You still own" xml:space="preserve">
+    <value>你仍然擁有</value>
+  </data>
+  <data name="Your account is synced from an external authentication provider. Deleting your data here will remove all your local records, but your account may be recreated the next time you log in. To permanently delete your account, please visit your" xml:space="preserve">
+    <value>您的帳戶已與外部身份驗證提供者同步。在此刪除您的資料將移除所有本地記錄，但下次登入時您的帳戶可能會重新建立。若要永久刪除您的帳戶，請造訪您的</value>
+  </data>
+
+</root>

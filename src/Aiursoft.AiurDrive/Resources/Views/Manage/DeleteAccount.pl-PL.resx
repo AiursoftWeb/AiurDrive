@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Action Required!" xml:space="preserve">
+    <value>Wymagane działania!</value>
+  </data>
+  <data name="After deletion, you may still be able to log in again, which will create a new account with no data. To permanently delete your account, please visit your auth provider." xml:space="preserve">
+    <value>Po usunięciu nadal możesz się zalogować, co spowoduje utworzenie nowego konta bez danych. Aby trwale usunąć swoje konto, odwiedź swojego dostawcę autoryzacji.</value>
+  </data>
+  <data name="Are you sure you want to delete all your data?" xml:space="preserve">
+    <value>Czy na pewno chcesz usunąć wszystkie swoje dane?</value>
+  </data>
+  <data name="Are you sure you want to permanently delete your account?" xml:space="preserve">
+    <value>Czy na pewno chcesz trwale usunąć swoje konto?</value>
+  </data>
+  <data name="auth provider" xml:space="preserve">
+    <value>dostawca uwierzytelniania</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Zamknij</value>
+  </data>
+  <data name="Danger Zone" xml:space="preserve">
+    <value>Strefa niebezpieczeństwa</value>
+  </data>
+  <data name="Delete Account" xml:space="preserve">
+    <value>Usuń konto</value>
+  </data>
+  <data name="Delete Account Data" xml:space="preserve">
+    <value>Usuń dane konta</value>
+  </data>
+  <data name="Go Back" xml:space="preserve">
+    <value>Wróć</value>
+  </data>
+  <data name="Manage My Sites" xml:space="preserve">
+    <value>Zarządzaj moimi stronami</value>
+  </data>
+  <data name="OIDC Account" xml:space="preserve">
+    <value>Konto OIDC</value>
+  </data>
+  <data name="site(s)." xml:space="preserve">
+    <value>witrynę(witryny).</value>
+  </data>
+  <data name="This action will permanently erase all your data from our servers. Your comments, likes, and favorites will be removed. This action cannot be undone." xml:space="preserve">
+    <value>Ta operacja trwale usunie wszystkie Twoje dane z naszych serwerów. Twoje komentarze, polubienia i ulubione elementy zostaną usunięte. Tej operacji nie można cofnąć.</value>
+  </data>
+  <data name="This action will permanently erase your profile and all associated data from our servers. This action cannot be undone." xml:space="preserve">
+    <value>Ta operacja trwale usunie Twój profil oraz wszystkie powiązane dane z naszych serwerów. Tej operacji nie można cofnąć.</value>
+  </data>
+  <data name="To prevent breaking downstream dependencies or losing team assets, you must manually delete them or transfer their ownership to another user before you can delete your account." xml:space="preserve">
+    <value>Aby zapobiec naruszeniu zależności lub utracie zasobów zespołu, musisz ręcznie je usunąć lub przekazać ich własność innemu użytkownikowi przed usunięciem konta.</value>
+  </data>
+  <data name="Yes, delete all my data" xml:space="preserve">
+    <value>Tak, usuń wszystkie moje dane</value>
+  </data>
+  <data name="Yes, delete my account" xml:space="preserve">
+    <value>Tak, usuń moje konto</value>
+  </data>
+  <data name="You still own" xml:space="preserve">
+    <value>Wciąż posiadasz</value>
+  </data>
+  <data name="Your account is synced from an external authentication provider. Deleting your data here will remove all your local records, but your account may be recreated the next time you log in. To permanently delete your account, please visit your" xml:space="preserve">
+    <value>Twoje konto jest synchronizowane z zewnętrznym dostawcą uwierzytelniania. Usunięcie danych tutaj spowoduje usunięcie wszystkich lokalnych rekordów, ale Twoje konto może zostać przywrócone przy kolejnym logowaniu. Aby trwale usunąć konto, odwiedź swoją</value>
+  </data>
+
+</root>

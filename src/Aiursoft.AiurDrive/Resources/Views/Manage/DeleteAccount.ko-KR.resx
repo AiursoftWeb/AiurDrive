@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Action Required!" xml:space="preserve">
+    <value>조치 필요!</value>
+  </data>
+  <data name="After deletion, you may still be able to log in again, which will create a new account with no data. To permanently delete your account, please visit your auth provider." xml:space="preserve">
+    <value>삭제 후에도 다시 로그인할 수 있으며, 이 경우 데이터가 없는 새 계정이 생성됩니다. 계정을 영구적으로 삭제하려면 인증 제공자를 방문하세요.</value>
+  </data>
+  <data name="Are you sure you want to delete all your data?" xml:space="preserve">
+    <value>모든 데이터를 삭제하시겠습니까?</value>
+  </data>
+  <data name="Are you sure you want to permanently delete your account?" xml:space="preserve">
+    <value>계정을 영구적으로 삭제하시겠습니까?</value>
+  </data>
+  <data name="auth provider" xml:space="preserve">
+    <value>인증 제공자</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>닫기</value>
+  </data>
+  <data name="Danger Zone" xml:space="preserve">
+    <value>위험 영역</value>
+  </data>
+  <data name="Delete Account" xml:space="preserve">
+    <value>계정 삭제</value>
+  </data>
+  <data name="Delete Account Data" xml:space="preserve">
+    <value>계정 데이터 삭제</value>
+  </data>
+  <data name="Go Back" xml:space="preserve">
+    <value>돌아가기</value>
+  </data>
+  <data name="Manage My Sites" xml:space="preserve">
+    <value>내 사이트 관리하기</value>
+  </data>
+  <data name="OIDC Account" xml:space="preserve">
+    <value>OIDC 계정</value>
+  </data>
+  <data name="site(s)." xml:space="preserve">
+    <value>사이트입니다.</value>
+  </data>
+  <data name="This action will permanently erase all your data from our servers. Your comments, likes, and favorites will be removed. This action cannot be undone." xml:space="preserve">
+    <value>이 작업은 서버에서 모든 데이터를 영구적으로 삭제합니다. 댓글, 좋아요, 즐겨찾기가 모두 제거됩니다. 이 작업은 되돌릴 수 없습니다.</value>
+  </data>
+  <data name="This action will permanently erase your profile and all associated data from our servers. This action cannot be undone." xml:space="preserve">
+    <value>이 작업은 프로필과 모든 관련 데이터를 서버에서 영구적으로 삭제합니다. 이 작업은 되돌릴 수 없습니다.</value>
+  </data>
+  <data name="To prevent breaking downstream dependencies or losing team assets, you must manually delete them or transfer their ownership to another user before you can delete your account." xml:space="preserve">
+    <value>하위 의존성 손상이나 팀 자산 손실을 방지하려면 계정을 삭제하기 전에 해당 항목을 수동으로 삭제하거나 소유권을 다른 사용자에게 이전해야 합니다.</value>
+  </data>
+  <data name="Yes, delete all my data" xml:space="preserve">
+    <value>네, 내 모든 데이터를 삭제합니다</value>
+  </data>
+  <data name="Yes, delete my account" xml:space="preserve">
+    <value>네, 내 계정 삭제하기</value>
+  </data>
+  <data name="You still own" xml:space="preserve">
+    <value>여전히 소유하고 있습니다</value>
+  </data>
+  <data name="Your account is synced from an external authentication provider. Deleting your data here will remove all your local records, but your account may be recreated the next time you log in. To permanently delete your account, please visit your" xml:space="preserve">
+    <value>계정은 외부 인증 공급자에서 동기화됩니다. 여기서 데이터를 삭제하면 모든 로컬 기록이 삭제되지만, 다음 로그인 시 계정이 다시 생성될 수 있습니다. 계정을 영구적으로 삭제하려면 다음을 방문하십시오.</value>
+  </data>
+
+</root>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Action Required!" xml:space="preserve">
+    <value>Απαιτείται Ενέργεια!</value>
+  </data>
+  <data name="After deletion, you may still be able to log in again, which will create a new account with no data. To permanently delete your account, please visit your auth provider." xml:space="preserve">
+    <value>Μετά τη διαγραφή, ενδέχεται να μπορείτε να συνδεθείτε ξανά, κάτι που θα δημιουργήσει έναν νέο λογαριασμό χωρίς δεδομένα. Για να διαγράψετε οριστικά τον λογαριασμό σας, επισκεφθείτε τον πάροχο ελέγχου ταυτότητας (auth provider) σας.</value>
+  </data>
+  <data name="Are you sure you want to delete all your data?" xml:space="preserve">
+    <value>Είστε σίγουρος/η ότι θέλετε να διαγράψετε όλα τα δεδομένα σας;</value>
+  </data>
+  <data name="Are you sure you want to permanently delete your account?" xml:space="preserve">
+    <value>Είστε σίγουρος/η ότι θέλετε να διαγράψετε οριστικά τον λογαριασμό σας;</value>
+  </data>
+  <data name="auth provider" xml:space="preserve">
+    <value>παρόχου εγγύησης</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Ακύρωση</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Κλείσιμο</value>
+  </data>
+  <data name="Danger Zone" xml:space="preserve">
+    <value>Ζώνη Κινδύνου</value>
+  </data>
+  <data name="Delete Account" xml:space="preserve">
+    <value>Διαγραφή Λογαριασμού</value>
+  </data>
+  <data name="Delete Account Data" xml:space="preserve">
+    <value>Διαγραφή δεδομένων λογαριασμού</value>
+  </data>
+  <data name="Go Back" xml:space="preserve">
+    <value>Επιστροφή</value>
+  </data>
+  <data name="Manage My Sites" xml:space="preserve">
+    <value>Διαχείριση Ιστοσελίδων Μου</value>
+  </data>
+  <data name="OIDC Account" xml:space="preserve">
+    <value>Λογαριασμός OIDC</value>
+  </data>
+  <data name="site(s)." xml:space="preserve">
+    <value>τόπους.</value>
+  </data>
+  <data name="This action will permanently erase all your data from our servers. Your comments, likes, and favorites will be removed. This action cannot be undone." xml:space="preserve">
+    <value>Η ενέργεια αυτή θα διαγράψει οριστικά όλα τα δεδομένα σας από τους διακομιστές μας. Οι σχόλια, οι αρεστές και οι αγαπημένα σας θα αφαιρεθούν. Η ενέργεια αυτή δεν μπορεί να αναιρεθεί.</value>
+  </data>
+  <data name="This action will permanently erase your profile and all associated data from our servers. This action cannot be undone." xml:space="preserve">
+    <value>Αυτή η ενέργεια θα διαγράψει οριστικά το προφίλ σας και όλα τα σχετικά δεδομένα από τους διακομιστές μας. Αυτή η ενέργεια δεν μπορεί να αναιρεθεί.</value>
+  </data>
+  <data name="To prevent breaking downstream dependencies or losing team assets, you must manually delete them or transfer their ownership to another user before you can delete your account." xml:space="preserve">
+    <value>Για να αποτρέψετε τη διακοπή εξαρτήσεων χαμηλότερου επιπέδου ή την απώλεια περιουσιακών στοιχείων της ομάδας, πρέπει να τα διαγράψετε χειροκίνητα ή να μεταφέρετε την ιδιοκτησία τους σε άλλο χρήστη πριν μπορέσετε να διαγράψετε τον λογαριασμό σας.</value>
+  </data>
+  <data name="Yes, delete all my data" xml:space="preserve">
+    <value>Ναι, διαγράψτε όλα τα δεδομένα μου</value>
+  </data>
+  <data name="Yes, delete my account" xml:space="preserve">
+    <value>Ναι, διαγράψτε τον λογαριασμό μου</value>
+  </data>
+  <data name="You still own" xml:space="preserve">
+    <value>Είστε ακόμα ιδιοκτήτης</value>
+  </data>
+  <data name="Your account is synced from an external authentication provider. Deleting your data here will remove all your local records, but your account may be recreated the next time you log in. To permanently delete your account, please visit your" xml:space="preserve">
+    <value>Ο λογαριασμός σας συγχρονίζεται από εξωτερικό πάροχο ελέγχου ταυτότητας. Η διαγραφή των δεδομένων σας εδώ θα αφαιρέσει όλα τα τοπικά σας αρχεία, αλλά ο λογαριασμός σας ενδέεται να δημιουργηθεί ξανά την επόμενη φορά που θα συνδεθείτε. Για να διαγράψετε οριστικά τον λογαριασμό σας, επισκεφθείτε τον</value>
+  </data>
+
+</root>

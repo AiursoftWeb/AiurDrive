@@ -96,6 +96,8 @@ public class ViewModelArgsInjector(
     
         _ = localizer["Vault"];
         _ = localizer["Zero-Trust Vault"];
+    
+        _ = localizer["Delete Account"];
     }
 
     public void InjectSimple(

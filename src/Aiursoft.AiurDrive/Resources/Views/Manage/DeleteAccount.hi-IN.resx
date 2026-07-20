@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Action Required!" xml:space="preserve">
+    <value>कार्रवाई आवश्यक है!</value>
+  </data>
+  <data name="After deletion, you may still be able to log in again, which will create a new account with no data. To permanently delete your account, please visit your auth provider." xml:space="preserve">
+    <value>हटाने के बाद, आप फिर से लॉग इन करने में सक्षम हो सकते हैं, जिससे कोई डेटा नहीं होने वाला एक नया खाता बनाया जाएगा। अपने खाते को स्थायी रूप से हटाने के लिए, कृपया अपने प्रमाणीकरण प्रदाता पर जाएं।</value>
+  </data>
+  <data name="Are you sure you want to delete all your data?" xml:space="preserve">
+    <value>क्या आप वाकई अपनी सभी डेटा को हटाना चाहते हैं?</value>
+  </data>
+  <data name="Are you sure you want to permanently delete your account?" xml:space="preserve">
+    <value>क्या आप वाकई अपना खाता स्थायी रूप से हटाना चाहते हैं?</value>
+  </data>
+  <data name="auth provider" xml:space="preserve">
+    <value>प्रमाणीकरण प्रदाता</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>बंद करें</value>
+  </data>
+  <data name="Danger Zone" xml:space="preserve">
+    <value>खतरनाक क्षेत्र</value>
+  </data>
+  <data name="Delete Account" xml:space="preserve">
+    <value>खाता हटाएं</value>
+  </data>
+  <data name="Delete Account Data" xml:space="preserve">
+    <value>खाता डेटा हटाएं</value>
+  </data>
+  <data name="Go Back" xml:space="preserve">
+    <value>वापस जाएं</value>
+  </data>
+  <data name="Manage My Sites" xml:space="preserve">
+    <value>मेरी साइटें प्रबंधित करें</value>
+  </data>
+  <data name="OIDC Account" xml:space="preserve">
+    <value>OIDC खाता</value>
+  </data>
+  <data name="site(s)." xml:space="preserve">
+    <value>साइट(एं)।</value>
+  </data>
+  <data name="This action will permanently erase all your data from our servers. Your comments, likes, and favorites will be removed. This action cannot be undone." xml:space="preserve">
+    <value>यह कार्रवाई हमारे सर्वर से आपका सभी डेटा स्थायी रूप से मिटा देगी। आपके टिप्पणियाँ, लाइक्स और पसंदीदा हटा दिए जाएंगे। इस कार्रवाई को पूर्ववत नहीं किया जा सकता।</value>
+  </data>
+  <data name="This action will permanently erase your profile and all associated data from our servers. This action cannot be undone." xml:space="preserve">
+    <value>यह क्रिया हमारे सर्वर से आपकी प्रोफ़ाइल और सभी संबंधित डेटा को स्थायी रूप से मिटा देगा। इस क्रिया को पूर्ववत नहीं किया जा सकता।</value>
+  </data>
+  <data name="To prevent breaking downstream dependencies or losing team assets, you must manually delete them or transfer their ownership to another user before you can delete your account." xml:space="preserve">
+    <value>निम्न स्तर की निर्भरताओं को तोड़ने या टीम के संपत्ियों को खोने से रोकने के लिए, आपको अपना खाता हटाने से पहले उन्हें मैन्युअल रूप से हटाना होगा या किसी अन्य उपयोगकर्ता को उनका स्वामित्व स्थानांतरित करना होगा।</value>
+  </data>
+  <data name="Yes, delete all my data" xml:space="preserve">
+    <value>हाँ, मेरे सभी डेटा को हटा दें</value>
+  </data>
+  <data name="Yes, delete my account" xml:space="preserve">
+    <value>हाँ, मेरा खाता हटा दें</value>
+  </data>
+  <data name="You still own" xml:space="preserve">
+    <value>आप अभी भी मालिक हैं</value>
+  </data>
+  <data name="Your account is synced from an external authentication provider. Deleting your data here will remove all your local records, but your account may be recreated the next time you log in. To permanently delete your account, please visit your" xml:space="preserve">
+    <value>आपका खाता एक बाहरी प्रमाणीकरण प्रदाता से सिंक होता है। यहाँ से आपका डेटा हटाने पर आपकी सभी स्थानीय रिकॉर्ड हटा दी जाएंगी, लेकिन अगली बार लॉग इन करने पर आपका खाता फिर से बनाया जा सकता है। अपने खाते को स्थायी रूप से हटाने के लिए, कृपया अपने पर जाएं।</value>
+  </data>
+
+</root>
