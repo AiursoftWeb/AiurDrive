@@ -32,7 +32,7 @@ public abstract class TestBase
             Port = Network.GetAvailablePort();
             try
             {
-                Server = await AppAsync<Startup>([], port: Port);
+                Server = await AppAsync<Startup>(["Storage:RequireDedicatedInlineOrigin=false"], port: Port);
                 await Server.UpdateDbAsync<AiurDriveDbContext>();
                 await Server.SeedAsync();
                 await Server.StartAsync();

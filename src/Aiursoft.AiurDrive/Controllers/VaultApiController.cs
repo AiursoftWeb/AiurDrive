@@ -18,6 +18,10 @@ public class VaultApiController(
     IStringLocalizer<VaultApiController> localizer,
     FeatureFoldersProvider folders) : Controller
 {
+    private const long MaxEncryptedFileBytes = 2L * 1024 * 1024 * 1024;
+    private const long MaxMetadataBytes = 1024 * 1024;
+    private const long MaxUploadRequestBytes = MaxEncryptedFileBytes + MaxMetadataBytes + 64 * 1024;
+
     private string GetCurrentUserId() => User.FindFirstValue(ClaimTypes.NameIdentifier) 
         ?? throw new UnauthorizedAccessException();
 
@@ -118,13 +122,18 @@ public class VaultApiController(
 
     [HttpPost]
     [Route("Upload")]
-    [DisableRequestSizeLimit]
-    [RequestFormLimits(ValueLengthLimit = int.MaxValue, MultipartBodyLengthLimit = long.MaxValue)]
+    [RequestSizeLimit(MaxUploadRequestBytes)]
+    [RequestFormLimits(ValueLengthLimit = 16 * 1024, MultipartBodyLengthLimit = MaxUploadRequestBytes)]
     public async Task<IActionResult> Upload(IFormFile? file, IFormFile? meta)
     {
         if (meta == null || meta.Length == 0)
         {
             return BadRequest(localizer["No metadata provided."]);
+        }
+
+        if (meta.Length > MaxMetadataBytes || file?.Length > MaxEncryptedFileBytes)
+        {
+            return StatusCode(StatusCodes.Status413PayloadTooLarge);
         }
 
         var objectsPath = GetUserVaultObjectsPath();
