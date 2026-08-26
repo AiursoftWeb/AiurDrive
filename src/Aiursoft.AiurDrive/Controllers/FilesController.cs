@@ -192,7 +192,7 @@ public class FilesController(
 
         if (deliveryPolicy.CanRenderArbitraryContentInline(Request))
         {
-            return this.SandboxedInlineFile(physicalPath, isPrivate: isVault);
+            return this.IsolatedOriginInlineFile(physicalPath, isPrivate: isVault);
         }
 
         return this.WebFile(physicalPath, isPrivate: isVault);

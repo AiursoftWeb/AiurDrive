@@ -32,7 +32,7 @@ public class FileOriginPolicyTests
     }
 
     [TestMethod]
-    public void SandboxedInlineFileUsesTheMappedContentType()
+    public void IsolatedOriginInlineFileUsesTheMappedContentTypeWithoutRestrictiveCsp()
     {
         var path = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid():N}.html");
         File.WriteAllText(path, "<script>alert(document.domain)</script>");
@@ -45,14 +45,14 @@ public class FileOriginPolicyTests
                 ControllerContext = new ControllerContext { HttpContext = context }
             };
 
-            var result = controller.SandboxedInlineFile(path);
+            var result = controller.IsolatedOriginInlineFile(path);
 
             var file = result as PhysicalFileResult;
             Assert.IsNotNull(file);
             Assert.AreEqual("text/html", file.ContentType);
             Assert.StartsWith("inline", context.Response.Headers.ContentDisposition.Single());
             Assert.AreEqual("nosniff", context.Response.Headers.XContentTypeOptions.Single());
-            Assert.Contains("sandbox", context.Response.Headers.ContentSecurityPolicy.Single()!);
+            Assert.IsFalse(context.Response.Headers.ContainsKey("Content-Security-Policy"));
         }
         finally
         {

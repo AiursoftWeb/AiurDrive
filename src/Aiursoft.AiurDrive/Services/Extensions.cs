@@ -6,6 +6,8 @@ namespace Aiursoft.AiurDrive.Services;
 
 public static class Extensions
 {
+    private const string RestrictedContentSecurityPolicy =
+        "sandbox; default-src 'none'; style-src 'unsafe-inline'; img-src data:";
     private static readonly FileExtensionContentTypeProvider ContentTypeProvider = new();
 
     public static ViewResult SimpleView(this Controller controller, UiStackLayoutViewModel model)
@@ -72,7 +74,7 @@ public static class Extensions
         return ServeFile(controller, path, "inline", verifiedContentType, isPrivate);
     }
 
-    public static IActionResult SandboxedInlineFile(
+    public static IActionResult IsolatedOriginInlineFile(
         this ControllerBase controller,
         string path,
         bool isPrivate = false)
@@ -80,7 +82,7 @@ public static class Extensions
         var contentType = ContentTypeProvider.TryGetContentType(path, out var value)
             ? value
             : "application/octet-stream";
-        return ServeFile(controller, path, "inline", contentType, isPrivate);
+        return ServeFile(controller, path, "inline", contentType, isPrivate, contentSecurityPolicy: null);
     }
 
     private static IActionResult ServeFile(
@@ -88,7 +90,8 @@ public static class Extensions
         string path,
         string disposition,
         string contentType,
-        bool isPrivate)
+        bool isPrivate,
+        string? contentSecurityPolicy = RestrictedContentSecurityPolicy)
     {
         var (etag, length) = GetFileHttpProperties(path);
         controller.Response.Headers["ETag"] = etag;
@@ -103,8 +106,10 @@ public static class Extensions
             $"{disposition}; filename*=UTF-8''{encodedFileName}";
         controller.Response.Headers["Content-Length"] = length.ToString();
         controller.Response.Headers["X-Content-Type-Options"] = "nosniff";
-        controller.Response.Headers["Content-Security-Policy"] =
-            "sandbox; default-src 'none'; style-src 'unsafe-inline'; img-src data:";
+        if (contentSecurityPolicy is not null)
+        {
+            controller.Response.Headers["Content-Security-Policy"] = contentSecurityPolicy;
+        }
         controller.Response.Headers["Cache-Control"] = isPrivate
             ? "private, no-store"
             : $"public, max-age={TimeSpan.FromDays(7).TotalSeconds}";
