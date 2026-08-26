@@ -1,10 +1,13 @@
 using Aiursoft.UiStack.Layout;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.StaticFiles;
 
 namespace Aiursoft.AiurDrive.Services;
 
 public static class Extensions
 {
+    private static readonly FileExtensionContentTypeProvider ContentTypeProvider = new();
+
     public static ViewResult SimpleView(this Controller controller, UiStackLayoutViewModel model)
     {
         var services = controller.HttpContext.RequestServices;
@@ -67,6 +70,17 @@ public static class Extensions
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(verifiedContentType);
         return ServeFile(controller, path, "inline", verifiedContentType, isPrivate);
+    }
+
+    public static IActionResult SandboxedInlineFile(
+        this ControllerBase controller,
+        string path,
+        bool isPrivate = false)
+    {
+        var contentType = ContentTypeProvider.TryGetContentType(path, out var value)
+            ? value
+            : "application/octet-stream";
+        return ServeFile(controller, path, "inline", contentType, isPrivate);
     }
 
     private static IActionResult ServeFile(
