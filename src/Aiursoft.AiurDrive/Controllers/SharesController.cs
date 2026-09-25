@@ -40,7 +40,11 @@ public class SharesController(
 
         var allRoles = await roleManager.Roles.ToListAsync();
         
-        var publicLink = $"{Request.Scheme}://{Request.Host}/Dashboard/Files/{siteName}";
+        var publicLink = Url.Action(
+            nameof(SharedViewController.Index),
+            "SharedView",
+            new { siteName = site.SiteName },
+            Request.Scheme);
 
         var model = new ManageSharesViewModel
         {
