@@ -28,15 +28,9 @@ public class SharesControllerTests : TestBase
             managePage.Contains($"value=\"http://localhost:{Port}/Dashboard/Files/{siteName}\"", StringComparison.Ordinal),
             "The public link must not point to the authenticated Dashboard route.");
 
-        using var anonymousHttp = new HttpClient(new HttpClientHandler
-        {
-            AllowAutoRedirect = false
-        })
-        {
-            BaseAddress = Http.BaseAddress
-        };
+        await PostForm("/Account/LogOff", new Dictionary<string, string>(), includeToken: false);
 
-        var sharedViewResponse = await anonymousHttp.GetAsync(expectedPublicLink);
+        var sharedViewResponse = await Http.GetAsync(expectedPublicLink);
 
         Assert.AreEqual(HttpStatusCode.OK, sharedViewResponse.StatusCode);
         var sharedViewPage = await sharedViewResponse.Content.ReadAsStringAsync();
