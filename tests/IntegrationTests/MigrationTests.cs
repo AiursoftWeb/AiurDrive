@@ -23,10 +23,13 @@ public class MigrationTests
     }
 
     [TestMethod]
-    public void TestMySqlMigrations()
+    [DataRow(8, 0, 31)]
+    [DataRow(9, 5, 0)]
+    [DataRow(9, 7, 0)]
+    public void TestMySqlMigrations(int major, int minor, int patch)
     {
         var options = new DbContextOptionsBuilder<MySqlContext>()
-            .UseMySql("Server=localhost;Database=test;Uid=root;Pwd=password;", new MySqlServerVersion(new Version(8, 0, 31)))
+            .UseMySql("Server=localhost;Database=test;Uid=root;Pwd=password;", new MySqlServerVersion(new Version(major, minor, patch)))
             .Options;
         using var context = new MySqlContext(options);
         var hasPendingChanges = context.Database.HasPendingModelChanges();
