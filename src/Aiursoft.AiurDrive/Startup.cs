@@ -1,4 +1,6 @@
 using Aiursoft.CSTools.Tools;
+using Aiursoft.AiurDrive.Authorization;
+using Aiursoft.AiurDrive.Services;
 using Aiursoft.DbTools.Switchable;
 using Aiursoft.ClickhouseLoggerProvider;
 using Aiursoft.Scanner;
@@ -46,6 +48,10 @@ public class Startup : IWebStartup
 
         // Authentication and Authorization
         services.AddTemplateAuth(configuration);
+        services.AddAuthorization(options => options.AddPolicy(SiteAccessService.AdministrationPolicy,
+            policy => policy.RequireAuthenticatedUser().RequireAssertion(context =>
+                context.User.HasClaim(AppPermissions.Type, AppPermissionNames.CanManageAnySite) ||
+                context.User.HasClaim(AppPermissions.Type, AppPermissionNames.CanOverrideSiteStorage))));
 
         // Services
         services.AddMemoryCache();

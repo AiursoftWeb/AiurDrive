@@ -16,6 +16,7 @@ public class SharesController(
     UserManager<User> userManager,
     AiurDriveDbContext context,
     RoleManager<IdentityRole> roleManager,
+    SiteAccessService siteAccess,
     ILogger<SharesController> logger) : Controller
 {
     [HttpGet]
@@ -32,8 +33,7 @@ public class SharesController(
 
         if (site == null) return NotFound();
 
-        // Only owner can manage shares
-        if (site.AppUserId != user.Id)
+        if (!await siteAccess.CanManageAsync(site, user, User))
         {
             return Forbid();
         }
@@ -71,7 +71,7 @@ public class SharesController(
 
         if (site == null) return NotFound();
 
-        if (site.AppUserId != user.Id)
+        if (!await siteAccess.CanManageAsync(site, user, User))
         {
             return Forbid();
         }
@@ -129,7 +129,9 @@ public class SharesController(
 
          if (share == null) return NotFound();
 
-         if (share.Site!.AppUserId != user.Id)
+         var site = share.Site;
+         if (site == null) return NotFound();
+         if (!await siteAccess.CanManageAsync(site, user, User))
          {
              return Forbid();
          }
@@ -137,7 +139,7 @@ public class SharesController(
          context.SiteShares.Remove(share);
          await context.SaveChangesAsync();
 
-         return RedirectToAction(nameof(Manage), new { siteName = share.Site.SiteName });
+         return RedirectToAction(nameof(Manage), new { siteName = site.SiteName });
     }
 
     [HttpGet]
@@ -192,8 +194,7 @@ public class SharesController(
         var site = await context.Sites.FirstOrDefaultAsync(s => s.SiteName == siteName);
         if (site == null) return NotFound();
 
-        // Only owner can change visibility
-        if (site.AppUserId != user.Id) return Forbid();
+        if (!await siteAccess.CanManageAsync(site, user, User)) return Forbid();
 
         site.AllowAnonymousView = publicAccess;
         await context.SaveChangesAsync();

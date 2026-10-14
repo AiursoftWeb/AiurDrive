@@ -46,7 +46,7 @@
     <div class="row">
         <!-- Sidebar -->
         <div class="col-sm-5 col-xl-3 mb-3">
-            @if (Model.IsOwner)
+            @if (Model.CanManageSite)
             {
                 <div class="card mb-3">
                     <div class="card-header">

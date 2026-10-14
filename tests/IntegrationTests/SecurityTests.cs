@@ -11,9 +11,9 @@ public class SecurityTests : TestBase
     public async Task TestCrossSiteMove()
     {
         // 1. Setup User A and Site A
-        await LoginAsAdmin(); // Acts as User A
+        var account = await RegisterAndLoginAsync();
         var context = GetService<AiurDriveDbContext>();
-        var userA = await context.Users.FirstAsync(u => u.Email == "admin@default.com");
+        var userA = await context.Users.FirstAsync(u => u.Email == account.email);
         
         var siteA = new Site
         {
@@ -187,9 +187,9 @@ public class SecurityTests : TestBase
     [TestMethod]
     public async Task TestCrossSiteDelete()
     {
-        await LoginAsAdmin();
+        var account = await RegisterAndLoginAsync();
         var context = GetService<AiurDriveDbContext>();
-        var userA = await context.Users.FirstAsync(u => u.Email == "admin@default.com");
+        var userA = await context.Users.FirstAsync(u => u.Email == account.email);
         
         // Ensure User B exists
         var userB = await context.Users.FirstOrDefaultAsync(u => u.UserName == "victim-del@aiursoft.com");
@@ -246,9 +246,9 @@ public class SecurityTests : TestBase
     [TestMethod]
     public async Task TestCrossSiteCreateFolder()
     {
-        await LoginAsAdmin();
+        var account = await RegisterAndLoginAsync();
         var context = GetService<AiurDriveDbContext>();
-        var userA = await context.Users.FirstAsync(u => u.Email == "admin@default.com");
+        var userA = await context.Users.FirstAsync(u => u.Email == account.email);
         
         var userB = await context.Users.FirstOrDefaultAsync(u => u.UserName == "victim-cr@aiursoft.com");
         if (userB == null)

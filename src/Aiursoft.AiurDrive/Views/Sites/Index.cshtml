@@ -66,9 +66,12 @@
                             }
                         </td>
                         <td class="text-end">
-                            <a asp-action="Edit" asp-route-id="@item.Site.Id" class="btn btn-sm btn-outline-primary">
-                                <i class="fas fa-edit"></i> @Localizer["Edit Limit"]
-                            </a>
+                            @if (Model.CanOverrideStorage)
+                            {
+                                <a asp-action="Edit" asp-route-id="@item.Site.Id" class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-edit"></i> @Localizer["Edit Limit"]
+                                </a>
+                            }
                         </td>
                     </tr>
                 }

@@ -24,7 +24,7 @@ public class Site
 
     /// <summary>
     /// If true, anonymous users can view (read-only) the site's files.
-    /// If false, only the owner and users with explicit shares can access.
+    /// If false, only the owner, users with explicit shares, and authorized site administrators can access.
     /// All sites are stored in Vault regardless of this setting.
     /// </summary>
     public bool AllowAnonymousView { get; set; }

@@ -20,7 +20,7 @@ public class DashboardController(
     StorageService storage,
     GlobalSettingsService globalSettings,
     UserManager<User> userManager,
-    RoleManager<IdentityRole> roleManager,
+    SiteAccessService siteAccess,
     Microsoft.Extensions.Localization.IStringLocalizer<DashboardController> localizer) : Controller
 {
     [RenderInNavBar(
@@ -115,12 +115,7 @@ public class DashboardController(
     [Route("Dashboard/EditSite/{siteName}")]
     public async Task<IActionResult> EditSite([FromRoute]string siteName)
     {
-        var user = await dbContext.Users
-            .Include(u => u.Sites)
-            .SingleOrDefaultAsync(u => u.UserName == User.Identity!.Name);
-
-        if (user == null) return NotFound();
-        var site = user.Sites.FirstOrDefault(s => s.SiteName == siteName);
+        var site = await FindManageableSiteAsync(siteName);
         if (site == null) return NotFound();
 
         var model = new EditSiteViewModel
@@ -142,12 +137,7 @@ public class DashboardController(
             return this.StackView(model);
         }
 
-        var user = await dbContext.Users
-            .Include(u => u.Sites)
-            .SingleOrDefaultAsync(u => u.UserName == User.Identity!.Name);
-
-        if (user == null) return NotFound();
-        var site = user.Sites.FirstOrDefault(s => s.SiteName == siteName);
+        var site = await FindManageableSiteAsync(siteName);
         if (site == null) return NotFound();
 
         var newName = model.SiteName.ToLower();
@@ -179,29 +169,16 @@ public class DashboardController(
         return RedirectToAction(nameof(Files), new { siteName = site.SiteName });
     }
 
-    private async Task<bool> HasAccess(Site site, User user, SharePermission requiredPermission)
+    private async Task<Site?> FindManageableSiteAsync(string siteName)
     {
-        if (site.AppUserId == user.Id) return true;
-
-        var userRoles = await userManager.GetRolesAsync(user);
-        var userRoleIds = await roleManager.Roles
-            .Where(r => userRoles.Contains(r.Name!))
-            .Select(r => r.Id)
-            .ToListAsync();
-
-        var share = await dbContext.SiteShares
-            .Where(s => s.SiteId == site.Id)
-            .Where(s => s.SharedWithUserId == user.Id || (s.SharedWithRoleId != null && userRoleIds.Contains(s.SharedWithRoleId)))
-            .OrderByDescending(s => s.Permission)
-            .FirstOrDefaultAsync();
-
-        if (share == null) return false;
-
-        if (requiredPermission == SharePermission.ReadOnly) return true;
-        if (requiredPermission == SharePermission.Editable && share.Permission == SharePermission.Editable) return true;
-
-        return false;
+        var user = await userManager.GetUserAsync(User);
+        if (user == null) return null;
+        var site = await dbContext.Sites.FirstOrDefaultAsync(s => s.SiteName == siteName);
+        return site != null && await siteAccess.CanManageAsync(site, user, User) ? site : null;
     }
+
+    private Task<bool> HasAccess(Site site, User user, SharePermission requiredPermission) =>
+        siteAccess.CanAccessAsync(site, user, User, requiredPermission);
 
     [Route("Dashboard/Files/{siteName}/{**path}")]
     public async Task<IActionResult> Files([FromRoute]string siteName, string? path)
@@ -252,6 +229,7 @@ public class DashboardController(
             TotalSpaceInGB = maxSpaceGB,
             AllowImagePreview = await allowImagePreviewTask,
             IsOwner = site.AppUserId == user.Id,
+            CanManageSite = await siteAccess.CanManageAsync(site, user, User),
             HasWriteAccess = await hasWriteAccessTask
         };
         return this.StackView(model);
@@ -296,15 +274,8 @@ public class DashboardController(
     [Route("Dashboard/DeleteSite/{siteName}")]
     public async Task<IActionResult> DeleteSite([FromRoute]string siteName)
     {
-        var user = await dbContext.Users
-            .Include(u => u.Sites)
-            .SingleOrDefaultAsync(u => u.UserName == User.Identity!.Name);
-
-        if (user == null) return NotFound();
-        var site = user.Sites.FirstOrDefault(s => s.SiteName == siteName);
+        var site = await FindManageableSiteAsync(siteName);
         if (site == null) return NotFound();
-
-        // Only owner can delete site
 
         var model = new DeleteSiteViewModel(site.SiteName)
         {
@@ -321,12 +292,7 @@ public class DashboardController(
     [ActionName("DeleteSite")]
     public async Task<IActionResult> DeleteSiteConfirmed([FromRoute]string siteName)
     {
-        var user = await dbContext.Users
-            .Include(u => u.Sites)
-            .SingleOrDefaultAsync(u => u.UserName == User.Identity!.Name);
-
-        if (user == null) return NotFound();
-        var site = user.Sites.FirstOrDefault(s => s.SiteName == siteName);
+        var site = await FindManageableSiteAsync(siteName);
         if (site == null) return NotFound();
 
         try

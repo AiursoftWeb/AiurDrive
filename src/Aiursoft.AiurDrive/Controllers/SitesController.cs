@@ -12,12 +12,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Aiursoft.AiurDrive.Controllers;
 
-[Authorize(Policy = AppPermissionNames.CanOverrideSiteStorage)]
+[Authorize(Policy = SiteAccessService.AdministrationPolicy)]
 [LimitPerMin]
 public class SitesController(
     AiurDriveDbContext dbContext,
     StorageService storageService,
-    GlobalSettingsService globalSettings) : Controller
+    GlobalSettingsService globalSettings,
+    IAuthorizationService authorization) : Controller
 {
     [RenderInNavBar(
         NavGroupName = "Administration",
@@ -63,13 +64,16 @@ public class SitesController(
             Sites = viewModels,
             TotalCount = totalCount,
             CurrentPage = page,
-            PageSize = pageSize
+            PageSize = pageSize,
+            CanOverrideStorage = (await authorization.AuthorizeAsync(User,
+                AppPermissionNames.CanOverrideSiteStorage)).Succeeded
         };
         
         return this.StackView(model);
     }
 
     [HttpGet]
+    [Authorize(Policy = AppPermissionNames.CanOverrideSiteStorage)]
     [Route("Sites/Edit/{id}")]
     public async Task<IActionResult> Edit(int id)
     {
@@ -86,6 +90,7 @@ public class SitesController(
     }
 
     [HttpPost]
+    [Authorize(Policy = AppPermissionNames.CanOverrideSiteStorage)]
     [Route("Sites/Edit/{id}")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Edit(int id, EditViewModel model)

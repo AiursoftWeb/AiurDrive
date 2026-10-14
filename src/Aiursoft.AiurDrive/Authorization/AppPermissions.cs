@@ -69,7 +69,10 @@ public class AppPermissions
                 localizer["Allows viewing and modifying global application settings."]),
             new(AppPermissionNames.CanOverrideSiteStorage,
                 localizer["Override Site Storage Size"],
-                localizer["Allows overriding the storage size limit for any site."])
+                localizer["Allows overriding the storage size limit for any site."]),
+            new(AppPermissionNames.CanManageAnySite,
+                localizer["Manage Any Site"],
+                localizer["Allows accessing and managing all public and private sites, their files, settings and shares."])
         ];
         return allPermission;
     }

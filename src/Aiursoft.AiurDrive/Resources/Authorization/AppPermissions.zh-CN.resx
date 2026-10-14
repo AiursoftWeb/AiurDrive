@@ -109,4 +109,10 @@
     <value>查看系统上下文</value>
   </data>
 
+  <data name="Manage Any Site" xml:space="preserve">
+    <value>管理任意站点</value>
+  </data>
+  <data name="Allows accessing and managing all public and private sites, their files, settings and shares." xml:space="preserve">
+    <value>允许访问和管理所有公开及私密站点，以及其中的文件、设置和分享。</value>
+  </data>
 </root>
