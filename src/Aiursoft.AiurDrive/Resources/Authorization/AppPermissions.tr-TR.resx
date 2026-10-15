@@ -24,6 +24,9 @@
   <data name="Add New Users" xml:space="preserve">
     <value>Yeni Kullanıcı Ekle</value>
   </data>
+  <data name="Allows accessing and managing all public and private sites, their files, settings and shares." xml:space="preserve">
+    <value>Tüm herkese açık ve özel sitelere, dosyalarına, ayarlarına ve paylaşımlarına erişme ve bunları yönetme olanağı sağlar.</value>
+  </data>
   <data name="Allows assigning or removing roles for any user." xml:space="preserve">
     <value>Herhangi bir kullanıcıya rol atanmasına veya kaldırılmasına izin verir.</value>
   </data>
@@ -83,6 +86,9 @@
   </data>
   <data name="Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded." xml:space="preserve">
     <value>Uygulama örneğini yeniden başlatma iznini verir. Kullanılabilirlik kesintilerine neden olabilir ancak tüm ayarlar ve önbellek yeniden yüklenecektir.</value>
+  </data>
+  <data name="Manage Any Site" xml:space="preserve">
+    <value>Herhangi Bir Siteyi Yönet</value>
   </data>
   <data name="Manage Global Settings" xml:space="preserve">
     <value>Genel Ayarları Yönet</value>

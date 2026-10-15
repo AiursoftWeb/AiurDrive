@@ -24,6 +24,9 @@
   <data name="Add New Users" xml:space="preserve">
     <value>새 사용자 추가</value>
   </data>
+  <data name="Allows accessing and managing all public and private sites, their files, settings and shares." xml:space="preserve">
+    <value>모든 공개 및 비공개 사이트와 해당 파일, 설정 및 공유 항목에 접근하고 관리할 수 있습니다.</value>
+  </data>
   <data name="Allows assigning or removing roles for any user." xml:space="preserve">
     <value>모든 사용자에게 역할을 할당하거나 제거할 수 있습니다.</value>
   </data>
@@ -83,6 +86,9 @@
   </data>
   <data name="Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded." xml:space="preserve">
     <value>애플리케이션 인스턴스를 재시작할 수 있는 권한을 부여합니다. 가용성 중단을 초래할 수 있으나 모든 설정과 캐시가 다시 로드됩니다.</value>
+  </data>
+  <data name="Manage Any Site" xml:space="preserve">
+    <value>모든 사이트 관리</value>
   </data>
   <data name="Manage Global Settings" xml:space="preserve">
     <value>전역 설정 관리</value>

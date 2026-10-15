@@ -24,6 +24,9 @@
   <data name="Add New Users" xml:space="preserve">
     <value>新增使用者</value>
   </data>
+  <data name="Allows accessing and managing all public and private sites, their files, settings and shares." xml:space="preserve">
+    <value>允許存取及管理所有公開和私人網站、其檔案、設定及分享內容。</value>
+  </data>
   <data name="Allows assigning or removing roles for any user." xml:space="preserve">
     <value>允許為任何用戶分配或移除角色。</value>
   </data>
@@ -83,6 +86,9 @@
   </data>
   <data name="Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded." xml:space="preserve">
     <value>授予重啟應用程式實例嘅權限。可能會導致服務中斷，但所有設定同快取將會重新載入。</value>
+  </data>
+  <data name="Manage Any Site" xml:space="preserve">
+    <value>管理任何網站</value>
   </data>
   <data name="Manage Global Settings" xml:space="preserve">
     <value>管理全域設定</value>
