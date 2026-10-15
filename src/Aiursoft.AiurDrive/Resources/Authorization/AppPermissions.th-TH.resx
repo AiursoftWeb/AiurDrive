@@ -24,6 +24,9 @@
   <data name="Add New Users" xml:space="preserve">
     <value>เพิ่มผู้ใช้ใหม่</value>
   </data>
+  <data name="Allows accessing and managing all public and private sites, their files, settings and shares." xml:space="preserve">
+    <value>อนุญาตให้เข้าถึงและจัดการไซต์สาธารณะและไซต์ส่วนตัวทั้งหมด รวมถึงไฟล์ การตั้งค่า และการแชร์ของไซต์เหล่านั้น</value>
+  </data>
   <data name="Allows assigning or removing roles for any user." xml:space="preserve">
     <value>อนุญาตให้กำหนดหรือลบบทบาทสำหรับผู้ใช้ใดๆ</value>
   </data>
@@ -83,6 +86,9 @@
   </data>
   <data name="Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded." xml:space="preserve">
     <value>ให้สิทธิ์ในการรีสตาร์ทอินสแตนซ์แอปพลิเคชัน อาจทำให้เกิดการขัดจังหวะในการให้บริการ แต่การตั้งค่าและแคชทั้งหมดจะถูกโหลดใหม่</value>
+  </data>
+  <data name="Manage Any Site" xml:space="preserve">
+    <value>จัดการทุกเว็บไซต์</value>
   </data>
   <data name="Manage Global Settings" xml:space="preserve">
     <value>จัดการการตั้งค่าทั่วโลก</value>

@@ -24,6 +24,9 @@
   <data name="Add New Users" xml:space="preserve">
     <value>Προσθήκη Νέων Χρηστών</value>
   </data>
+  <data name="Allows accessing and managing all public and private sites, their files, settings and shares." xml:space="preserve">
+    <value>Επιτρέπει την πρόσβαση και τη διαχείριση όλων των δημόσιων και ιδιωτικών ιστότοπων, των αρχείων, των ρυθμίσεων και των κοινόχρηστων στοιχείων τους.</value>
+  </data>
   <data name="Allows assigning or removing roles for any user." xml:space="preserve">
     <value>Επιτρέπει την ανάθεση ή την κατάργηση ρόλων για οποιονδήποτε χρήστη.</value>
   </data>
@@ -83,6 +86,9 @@
   </data>
   <data name="Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded." xml:space="preserve">
     <value>Παρέχει άδεια για επανεκκίνηση της εφαρμογής. Μπορεί να προκαλέσει διακοπές στη διαθεσιμότητα, αλλά όλες οι ρυθμίσεις και η προσωρινή μνήμη θα φορτωθούν εκ νέου.</value>
+  </data>
+  <data name="Manage Any Site" xml:space="preserve">
+    <value>Διαχείριση οποιουδήποτε ιστότοπου</value>
   </data>
   <data name="Manage Global Settings" xml:space="preserve">
     <value>Διαχείριση Γενικών Ρυθμίσεων</value>

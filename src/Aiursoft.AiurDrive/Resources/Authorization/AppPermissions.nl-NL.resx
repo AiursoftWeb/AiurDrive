@@ -24,6 +24,9 @@
   <data name="Add New Users" xml:space="preserve">
     <value>Nieuwe gebruikers toevoegen</value>
   </data>
+  <data name="Allows accessing and managing all public and private sites, their files, settings and shares." xml:space="preserve">
+    <value>Biedt toegang tot en beheer van alle openbare en besloten sites, hun bestanden, instellingen en gedeelde items.</value>
+  </data>
   <data name="Allows assigning or removing roles for any user." xml:space="preserve">
     <value>Stelt in staat om rollen toe te wijzen of te verwijderen voor elke gebruiker.</value>
   </data>
@@ -83,6 +86,9 @@
   </data>
   <data name="Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded." xml:space="preserve">
     <value>Verleent toestemming om de applicatie-instantie opnieuw op te starten. Kan beschikbaarheidsonderbrekingen veroorzaken, maar alle instellingen en cache worden opnieuw geladen.</value>
+  </data>
+  <data name="Manage Any Site" xml:space="preserve">
+    <value>Elke site beheren</value>
   </data>
   <data name="Manage Global Settings" xml:space="preserve">
     <value>Algemene instellingen beheren</value>

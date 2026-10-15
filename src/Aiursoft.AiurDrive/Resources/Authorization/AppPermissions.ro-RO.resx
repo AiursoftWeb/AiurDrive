@@ -24,6 +24,9 @@
   <data name="Add New Users" xml:space="preserve">
     <value>Adăugare Utilizatori Noi</value>
   </data>
+  <data name="Allows accessing and managing all public and private sites, their files, settings and shares." xml:space="preserve">
+    <value>Permite accesarea și gestionarea tuturor site-urilor publice și private, a fișierelor, setărilor și elementelor partajate ale acestora.</value>
+  </data>
   <data name="Allows assigning or removing roles for any user." xml:space="preserve">
     <value>Permite atribuirea sau eliminarea rolurilor pentru orice utilizator.</value>
   </data>
@@ -83,6 +86,9 @@
   </data>
   <data name="Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded." xml:space="preserve">
     <value>Acordă permisiunea de a reporni instanța aplicației. Poate cauza întreruperi de disponibilitate, dar toate setările și memoria cache vor fi reîncărcate.</value>
+  </data>
+  <data name="Manage Any Site" xml:space="preserve">
+    <value>Gestionați orice site</value>
   </data>
   <data name="Manage Global Settings" xml:space="preserve">
     <value>Gestionare setări globale</value>

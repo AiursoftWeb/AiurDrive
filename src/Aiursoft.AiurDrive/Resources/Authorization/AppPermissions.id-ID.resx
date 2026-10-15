@@ -24,6 +24,9 @@
   <data name="Add New Users" xml:space="preserve">
     <value>Tambahkan Pengguna Baru</value>
   </data>
+  <data name="Allows accessing and managing all public and private sites, their files, settings and shares." xml:space="preserve">
+    <value>Mengizinkan akses dan pengelolaan semua situs publik dan privat, termasuk file, pengaturan, dan pembagiannya.</value>
+  </data>
   <data name="Allows assigning or removing roles for any user." xml:space="preserve">
     <value>Memungkinkan menetapkan atau mencabut peran untuk pengguna mana pun.</value>
   </data>
@@ -83,6 +86,9 @@
   </data>
   <data name="Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded." xml:space="preserve">
     <value>Memberikan izin untuk memulai ulang instance aplikasi. Dapat menyebabkan gangguan ketersediaan, tetapi semua pengaturan dan cache akan dimuat ulang.</value>
+  </data>
+  <data name="Manage Any Site" xml:space="preserve">
+    <value>Kelola Semua Situs</value>
   </data>
   <data name="Manage Global Settings" xml:space="preserve">
     <value>Kelola Pengaturan Global</value>

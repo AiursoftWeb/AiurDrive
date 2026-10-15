@@ -24,6 +24,9 @@
   <data name="Add New Users" xml:space="preserve">
     <value>Thêm Người Dùng Mới</value>
   </data>
+  <data name="Allows accessing and managing all public and private sites, their files, settings and shares." xml:space="preserve">
+    <value>Cho phép truy cập và quản lý tất cả các trang web công khai và riêng tư, cùng với tệp, cài đặt và nội dung chia sẻ của chúng.</value>
+  </data>
   <data name="Allows assigning or removing roles for any user." xml:space="preserve">
     <value>Cho phép gán hoặc gỡ bỏ vai trò cho bất kỳ người dùng nào.</value>
   </data>
@@ -83,6 +86,9 @@
   </data>
   <data name="Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded." xml:space="preserve">
     <value>Cấp quyền khởi động lại phiên bản ứng dụng. Có thể gây ra gián đoạn về tính khả dụng nhưng tất cả cài đặt và bộ nhớ đệm sẽ được tải lại.</value>
+  </data>
+  <data name="Manage Any Site" xml:space="preserve">
+    <value>Quản lý mọi trang web</value>
   </data>
   <data name="Manage Global Settings" xml:space="preserve">
     <value>Quản lý Cài đặt Toàn cầu</value>

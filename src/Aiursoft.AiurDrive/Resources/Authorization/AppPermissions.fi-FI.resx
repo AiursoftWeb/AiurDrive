@@ -24,6 +24,9 @@
   <data name="Add New Users" xml:space="preserve">
     <value>Lisää uusia käyttäjiä</value>
   </data>
+  <data name="Allows accessing and managing all public and private sites, their files, settings and shares." xml:space="preserve">
+    <value>Sallii kaikkien julkisten ja yksityisten sivustojen sekä niiden tiedostojen, asetusten ja jakojen käytön ja hallinnan.</value>
+  </data>
   <data name="Allows assigning or removing roles for any user." xml:space="preserve">
     <value>Mahdollistaa roolien määrittämisen tai poistamisen mille tahansa käyttäjälle.</value>
   </data>
@@ -83,6 +86,9 @@
   </data>
   <data name="Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded." xml:space="preserve">
     <value>Antaa luvan sovelluksen uudelleenkäynnistämiseen. Saattaa aiheuttaa käyttökatkoksia, mutta kaikki asetukset ja välimuisti ladataan uudelleen.</value>
+  </data>
+  <data name="Manage Any Site" xml:space="preserve">
+    <value>Hallitse mitä tahansa sivustoa</value>
   </data>
   <data name="Manage Global Settings" xml:space="preserve">
     <value>Hallinnoi yleisiä asetuksia</value>

@@ -24,6 +24,9 @@
   <data name="Add New Users" xml:space="preserve">
     <value>Lägg till nya användare</value>
   </data>
+  <data name="Allows accessing and managing all public and private sites, their files, settings and shares." xml:space="preserve">
+    <value>Ger åtkomst till och möjlighet att hantera alla offentliga och privata webbplatser, deras filer, inställningar och delningar.</value>
+  </data>
   <data name="Allows assigning or removing roles for any user." xml:space="preserve">
     <value>Tillåter att tilldela eller ta bort roller för alla användare.</value>
   </data>
@@ -83,6 +86,9 @@
   </data>
   <data name="Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded." xml:space="preserve">
     <value>Ger tillstånd att starta om applikationsinstansen. Kan orsaka tillgänglighetsavbrott men alla inställningar och cacheminnen kommer att laddas om.</value>
+  </data>
+  <data name="Manage Any Site" xml:space="preserve">
+    <value>Hantera valfri webbplats</value>
   </data>
   <data name="Manage Global Settings" xml:space="preserve">
     <value>Hantera globala inställningar</value>
