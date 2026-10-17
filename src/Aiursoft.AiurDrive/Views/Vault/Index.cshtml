@@ -70,7 +70,7 @@
                         <label class="form-label">@Localizer["Confirm Password"]</label>
                         <input type="password" id="init-confirm" class="form-control form-control-lg" />
                     </div>
-                    <div id="init-error" class="alert alert-danger py-2 d-none"></div>
+                    <div id="init-error" class="alert alert-danger d-none" role="alert"><div class="alert-message"></div></div>
                     <button class="btn btn-primary btn-lg w-100" onclick="initializeVault()">
                         @Localizer["Create Secure Vault"]
                     </button>
@@ -107,7 +107,7 @@
                         <input type="checkbox" class="form-check-input" id="remember-me" />
                         <label class="form-check-label" for="remember-me">@Localizer["Remember for this session"]</label>
                     </div>
-                    <div id="login-error" class="alert alert-danger py-2 d-none"></div>
+                    <div id="login-error" class="alert alert-danger d-none" role="alert"><div class="alert-message"></div></div>
                     <button class="btn btn-success btn-lg w-100" onclick="unlockVault()">@Localizer["Unlock"]</button>
 
                     <div class="mt-4 text-center">
@@ -411,14 +411,15 @@
         const pwd = document.getElementById('init-password').value;
         const confirm = document.getElementById('init-confirm').value;
         const errorDiv = document.getElementById('init-error');
+        const errorMessage = errorDiv.querySelector('.alert-message');
 
         if (pwd.length < 8) {
-            errorDiv.innerText = L.passwordTooShort;
+            errorMessage.innerText = L.passwordTooShort;
             errorDiv.classList.remove('d-none');
             return;
         }
         if (pwd !== confirm) {
-            errorDiv.innerText = L.passwordsDoNotMatch;
+            errorMessage.innerText = L.passwordsDoNotMatch;
             errorDiv.classList.remove('d-none');
             return;
         }
@@ -470,6 +471,7 @@
         const pwd = document.getElementById('login-password').value;
         const remember = document.getElementById('remember-me').checked;
         const errorDiv = document.getElementById('login-error');
+        const errorMessage = errorDiv.querySelector('.alert-message');
 
         if (await validatePassword(pwd, vaultConfig)) {
             masterKey = await deriveMasterKey(pwd, base64ToUint8(vaultConfig.VaultSaltBase64));
@@ -479,7 +481,7 @@
             showView('vault-content');
             refreshFileList();
         } else {
-            errorDiv.innerText = L.invalidPassword;
+            errorMessage.innerText = L.invalidPassword;
             errorDiv.classList.remove('d-none');
         }
     }
@@ -1042,7 +1044,7 @@
             }, { once: true });
 
         } catch (e) {
-            previewBody.innerHTML = `<div class="alert alert-danger m-3">${L.decryptionFailed + e.message}</div>`;
+            previewBody.innerHTML = `<div class="alert alert-danger m-3" role="alert"><div class="alert-message">${L.decryptionFailed + e.message}</div></div>`;
         }
     }
 
