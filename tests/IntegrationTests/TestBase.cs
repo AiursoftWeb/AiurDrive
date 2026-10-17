@@ -1,6 +1,5 @@
 using System.Net;
 using System.Text.RegularExpressions;
-using Aiursoft.CSTools.Tools;
 using Aiursoft.DbTools;
 using Aiursoft.AiurDrive.Entities;
 using static Aiursoft.WebTools.Extends;
@@ -9,7 +8,7 @@ namespace Aiursoft.AiurDrive.Tests.IntegrationTests;
 
 public abstract class TestBase
 {
-    protected int Port;
+    protected int Port => Http.BaseAddress!.Port;
     protected readonly HttpClient Http;
     protected IHost? Server;
 
@@ -27,31 +26,22 @@ public abstract class TestBase
     [TestInitialize]
     public virtual async Task CreateServer()
     {
-        for (var i = 0; i < 10; i++)
+        using var reservation = new TestPortReservation();
+        Http.BaseAddress = new Uri($"http://localhost:{reservation.Port}");
+        Server = await AppAsync<Startup>(["Storage:RequireDedicatedInlineOrigin=false"], port: reservation.Port);
+        try
         {
-            Port = Network.GetAvailablePort();
-            try
-            {
-                Server = await AppAsync<Startup>(["Storage:RequireDedicatedInlineOrigin=false"], port: Port);
-                await Server.UpdateDbAsync<AiurDriveDbContext>();
-                await Server.SeedAsync();
-                await Server.StartAsync();
-                Http.BaseAddress = new Uri($"http://localhost:{Port}");
-                return;
-            }
-            catch (Exception ex) when (ex.ToString().Contains("address already in use", StringComparison.OrdinalIgnoreCase))
-            {
-                if (Server != null)
-                {
-                    await Server.StopAsync();
-                    Server.Dispose();
-                }
-
-                await Task.Delay(200);
-            }
+            reservation.ConfigureServer(Server);
+            await Server.UpdateDbAsync<AiurDriveDbContext>();
+            await Server.SeedAsync();
+            await Server.StartAsync();
         }
-
-        throw new IOException("Failed to find an available port after 10 retries.");
+        catch
+        {
+            Server.Dispose();
+            Server = null;
+            throw;
+        }
     }
 
     [TestCleanup]
