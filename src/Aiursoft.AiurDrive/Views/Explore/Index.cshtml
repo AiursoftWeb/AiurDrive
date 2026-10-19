@@ -1,3 +1,4 @@
+@using Aiursoft.WebTools
 @model Aiursoft.AiurDrive.Models.ExploreViewModels.IndexViewModel
 @inject Aiursoft.AiurDrive.Services.FileStorage.StorageService Storage
 @{
@@ -27,7 +28,7 @@
                                          <img src="@Storage.RelativePathToInternetUrl(site.AppUser?.AvatarRelativePath ?? Aiursoft.AiurDrive.Entities.User.DefaultAvatarPath, isVault: false)" class="rounded-circle me-2" style="width: 24px; height: 24px; object-fit: cover;" alt="Avatar" />
                                          <span class="text-muted small">@(site.AppUser?.DisplayName ?? "Unknown")</span>
                                     </div>
-                                    <p class="card-text text-muted small">@Localizer["Created"]: @site.CreationTime.ToLocalTime().ToString("d")</p>
+                                    <p class="card-text text-muted small">@Localizer["Created"]: <span data-utc-time="@site.CreationTime.ToHtmlDateTime()"></span></p>
                                     <p class="card-text">
                                         <span class="badge bg-primary">@Localizer["Your Site"]</span>
                                     </p>
@@ -43,7 +44,7 @@
                                          <img src="@Storage.RelativePathToInternetUrl(site.AppUser?.AvatarRelativePath ?? Aiursoft.AiurDrive.Entities.User.DefaultAvatarPath, isVault: false)" class="rounded-circle me-2" style="width: 24px; height: 24px; object-fit: cover;" alt="Avatar" />
                                          <span class="text-muted small">@(site.AppUser?.DisplayName ?? "Unknown")</span>
                                     </div>
-                                    <p class="card-text text-muted small">@Localizer["Created"]: @site.CreationTime.ToLocalTime().ToString("d")</p>
+                                    <p class="card-text text-muted small">@Localizer["Created"]: <span data-utc-time="@site.CreationTime.ToHtmlDateTime()"></span></p>
                                     <p class="card-text">
                                         <span class="badge bg-success">@Localizer["Public"]</span>
                                     </p>
