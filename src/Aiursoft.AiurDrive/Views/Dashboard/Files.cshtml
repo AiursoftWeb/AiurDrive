@@ -1,3 +1,4 @@
+@using Aiursoft.WebTools
 @model Aiursoft.AiurDrive.Models.DashboardViewModels.FileManagerViewModel
 @inject Aiursoft.AiurDrive.Services.FileStorage.StorageService Storage
 @using Aiursoft.CSTools.Tools
@@ -197,7 +198,7 @@
                                                 @file.Name
                                             </a>
                                         </td>
-                                        <td data-sort="@file.LastWriteTime.Ticks">@file.LastWriteTime.ToString("g")</td>
+                                        <td data-sort="@file.LastWriteTime.Ticks"><span data-utc-time="@file.LastWriteTime.ToUniversalTime().ToHtmlDateTime()"></span></td>
                                         <td data-sort="@file.Length">@((file.Length / 1024.0).ToString("N0")) KB</td>
                                         <td class="text-end">
                                             <a href="@directUrl" target="_blank" class="btn btn-sm btn-light"><i class="fas fa-download"></i></a>

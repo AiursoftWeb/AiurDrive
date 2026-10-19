@@ -1,3 +1,4 @@
+@using Aiursoft.WebTools
 @model Aiursoft.AiurDrive.Models.DashboardViewModels.IndexViewModel
 
 <div class="container-fluid">
@@ -45,7 +46,7 @@
                         <a asp-controller="Dashboard" asp-action="Files" asp-route-siteName="@site.SiteName" class="text-decoration-none text-reset stretched-link">
                             <div class="card-body">
                                 <h5 class="card-title">@site.SiteName</h5>
-                                <p class="card-text text-muted">@Localizer["Created at"]: @site.CreationTime.ToLocalTime()</p>
+                                <p class="card-text text-muted">@Localizer["Created at"]: <span data-utc-time="@site.CreationTime.ToHtmlDateTime()"></span></p>
                                 <p class="card-text">
                                     @if (site.AllowAnonymousView)
                                     {

@@ -1,3 +1,4 @@
+@using Aiursoft.WebTools
 @model Aiursoft.AiurDrive.Models.SharedViewModels.SharedViewModel
 @inject Aiursoft.AiurDrive.Services.FileStorage.StorageService Storage
 @using Aiursoft.CSTools.Tools
@@ -62,7 +63,7 @@
                             <div class="text-muted small">@@@(Model.Site.AppUser?.UserName ?? "unknown")</div>
                         </div>
                     </div>
-                    <p class="card-text small"><strong>@Localizer["Created"]:</strong> @Model.Site.CreationTime.ToLocalTime().ToString("d")</p>
+                    <p class="card-text small"><strong>@Localizer["Created"]:</strong> <span data-utc-time="@Model.Site.CreationTime.ToHtmlDateTime()"></span></p>
                     <hr />
                     <p class="text-muted small">@Localizer["This is a public shared folder. You can download or view files but cannot modify them."]</p>
                 </div>
@@ -144,7 +145,7 @@
                                                 @file.Name
                                             </a>
                                         </td>
-                                        <td data-sort="@file.LastWriteTime.Ticks">@file.LastWriteTime.ToString("g")</td>
+                                        <td data-sort="@file.LastWriteTime.Ticks"><span data-utc-time="@file.LastWriteTime.ToUniversalTime().ToHtmlDateTime()"></span></td>
                                         <td data-sort="@file.Length">@((file.Length / 1024.0).ToString("N0")) KB</td>
                                         <td class="text-end">
                                             <a href="@directUrl" target="_blank" class="btn btn-sm btn-light"><i class="fas fa-download"></i></a>

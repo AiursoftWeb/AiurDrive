@@ -1,3 +1,4 @@
+@using Aiursoft.WebTools
 @model Aiursoft.AiurDrive.Models.DashboardViewModels.DeleteSiteViewModel
 
 <div class="container-fluid">
@@ -28,7 +29,7 @@
                             <div class="row">
                                 <strong class="col-sm-3">@Localizer["Creation Time"]</strong>
                                 <div class="col-sm-9">
-                                    <label class="text-monospace">@Model.CreationTime.ToLocalTime()</label>
+                                    <label class="text-monospace"><span data-utc-time="@Model.CreationTime.ToHtmlDateTime()"></span></label>
                                 </div>
                             </div>
                         </div>

@@ -1,3 +1,4 @@
+@using Aiursoft.WebTools
 @model Aiursoft.AiurDrive.Models.SitesViewModels.IndexViewModel
 
 <div class="row mb-2 mb-xl-3">
@@ -45,7 +46,7 @@
                                 </div>
                             }
                         </td>
-                        <td>@item.Site.CreationTime.ToString("g")</td>
+                        <td><span data-utc-time="@item.Site.CreationTime.ToHtmlDateTime()"></span></td>
                         <td style="min-width: 200px;">
                             <div class="mb-1 d-flex justify-content-between small">
                                 <span>@usedSpaceGB.ToString("0.00") GB</span>
