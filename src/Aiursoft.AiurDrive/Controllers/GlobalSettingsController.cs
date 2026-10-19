@@ -1,6 +1,7 @@
 using Aiursoft.AiurDrive.Authorization;
 using Aiursoft.AiurDrive.Configuration;
 using Aiursoft.AiurDrive.Models.GlobalSettingsViewModels;
+using Aiursoft.AiurDrive.Models;
 using Aiursoft.AiurDrive.Services;
 using Aiursoft.UiStack.Navigation;
 using Aiursoft.WebTools.Attributes;
@@ -24,9 +25,10 @@ public class GlobalSettingsController(GlobalSettingsService settingsService) : C
     public async Task<IActionResult> Index()
     {
         var model = new IndexViewModel();
-        var settingsTasks = SettingsMap.Definitions.Select(async definition =>
+        foreach (var definition in SettingsMap.Definitions)
         {
-            return new SettingViewModel
+            var value = await settingsService.GetSettingValueAsync(definition.Key);
+            model.Settings.Add(new SettingViewModel
             {
                 Key = definition.Key,
                 Name = definition.Name,
@@ -34,16 +36,16 @@ public class GlobalSettingsController(GlobalSettingsService settingsService) : C
                 Type = definition.Type,
                 DefaultValue = definition.DefaultValue,
                 ChoiceOptions = definition.ChoiceOptions,
-                Value = await settingsService.GetSettingValueAsync(definition.Key),
+                // Secrets must never be sent back to the browser after they are saved.
+                Value = definition.Type == SettingType.Secret ? string.Empty : value,
+                IsConfigured = !string.IsNullOrWhiteSpace(value),
                 IsOverriddenByConfig = settingsService.IsOverriddenByConfig(definition.Key),
                 // File upload settings
                 Subfolder = definition.Subfolder,
                 AllowedExtensions = definition.AllowedExtensions,
                 MaxSizeInMb = definition.MaxSizeInMb
-            };
-        });
-
-        model.Settings.AddRange(await Task.WhenAll(settingsTasks));
+            });
+        }
         return this.StackView(model);
     }
 
