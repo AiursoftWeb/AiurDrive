@@ -18,11 +18,17 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Actions" xml:space="preserve">
+      <data name="About access" xml:space="preserve">
+    <value>關於存取權限</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
     <value>操作</value>
   </data>
   <data name="Add" xml:space="preserve">
     <value>新增</value>
+  </data>
+  <data name="Add access" xml:space="preserve">
+    <value>新增存取權</value>
   </data>
   <data name="Add New Share" xml:space="preserve">
     <value>新增分享</value>
@@ -33,6 +39,15 @@
   <data name="An error occurred while processing your request." xml:space="preserve">
     <value>處理請求時發生錯誤。</value>
   </data>
+  <data name="Anonymous viewing does not change the user or role permissions above." xml:space="preserve">
+    <value>匿名瀏覽不會更改上方的使用者或角色權限。</value>
+  </data>
+  <data name="Anyone — view only" xml:space="preserve">
+    <value>任何人 — 僅限檢視</value>
+  </data>
+  <data name="Anyone with the link can view and download files without signing in." xml:space="preserve">
+    <value>任何人只要有此連結，無須登入即可檢視及下載檔案。</value>
+  </data>
   <data name="Anyone with the link can view this site&apos;s files (read-only)." xml:space="preserve">
     <value>任何擁有連結的人都可以檢視此網站的檔案（只讀）。</value>
   </data>
@@ -42,8 +57,32 @@
   <data name="Back to Files" xml:space="preserve">
     <value>返回檔案</value>
   </data>
+  <data name="Can edit" xml:space="preserve">
+    <value>可編輯</value>
+  </data>
+  <data name="Can view" xml:space="preserve">
+    <value>可檢視</value>
+  </data>
+  <data name="Can view allows reading and downloading files. Can edit also allows uploading, changing and deleting files, but does not grant site administration." xml:space="preserve">
+    <value>「可檢視」權限可讀取及下載檔案。「可編輯」權限亦可上載、修改及刪除檔案，但不包括網站管理權限。</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>更改</value>
+  </data>
+  <data name="Change link access" xml:space="preserve">
+    <value>更改連結存取權限</value>
+  </data>
   <data name="Close" xml:space="preserve">
     <value>關閉</value>
+  </data>
+  <data name="Copy link" xml:space="preserve">
+    <value>複製連結</value>
+  </data>
+  <data name="Could not confirm the change. Your input is kept. Try again, or reload to check the saved state." xml:space="preserve">
+    <value>未能確認變更。你輸入的內容已保留。請再試一次，或重新載入以查看已儲存的狀態。</value>
+  </data>
+  <data name="Could not copy. Select and copy the link above." xml:space="preserve">
+    <value>無法複製。請選取並複製上方的連結。</value>
   </data>
   <data name="Created" xml:space="preserve">
     <value>建立時間</value>
@@ -63,8 +102,17 @@
   <data name="Forbid anonymous viewing (Private / Shared)" xml:space="preserve">
     <value>禁止匿名查看 (私人 / 共享)</value>
   </data>
+  <data name="Link access" xml:space="preserve">
+    <value>連結存取</value>
+  </data>
+  <data name="Link copied." xml:space="preserve">
+    <value>已複製連結。</value>
+  </data>
   <data name="Manage Shares" xml:space="preserve">
     <value>管理分享</value>
+  </data>
+  <data name="Name or email (3+ characters)" xml:space="preserve">
+    <value>姓名或電郵（至少 3 個字元）</value>
   </data>
   <data name="No shares yet. Add one above to share this site." xml:space="preserve">
     <value>尚未有分享。請在上方新增一個以分享此網站。</value>
@@ -72,8 +120,20 @@
   <data name="No users found" xml:space="preserve">
     <value>沒有找到用戶</value>
   </data>
+  <data name="No users found. Try another name or email." xml:space="preserve">
+    <value>找不到使用者。請嘗試輸入其他姓名或電郵地址。</value>
+  </data>
+  <data name="No users or roles added." xml:space="preserve">
+    <value>尚未加入任何使用者或角色。</value>
+  </data>
+  <data name="Not saved. The link above still uses the current access setting." xml:space="preserve">
+    <value>未儲存。上方連結仍使用目前的存取設定。</value>
+  </data>
   <data name="Only you and specific users/roles listed below can view this site." xml:space="preserve">
     <value>只有你和下面列出的特定用戶/角色可以查看此網站。</value>
+  </data>
+  <data name="People with access" xml:space="preserve">
+    <value>有權限的人</value>
   </data>
   <data name="Permission" xml:space="preserve">
     <value>權限</value>
@@ -81,17 +141,38 @@
   <data name="Please select a valid user or role." xml:space="preserve">
     <value>請選擇有效的用戶或角色。</value>
   </data>
+  <data name="Public viewing" xml:space="preserve">
+    <value>公開瀏覽</value>
+  </data>
   <data name="Read Only" xml:space="preserve">
     <value>只讀</value>
   </data>
   <data name="Remove" xml:space="preserve">
     <value>移除</value>
   </data>
+  <data name="Remove this share? Other access may still apply." xml:space="preserve">
+    <value>要移除此分享？其他存取權限可能仍然適用。</value>
+  </data>
+  <data name="Restricted access" xml:space="preserve">
+    <value>僅限存取</value>
+  </data>
   <data name="Role" xml:space="preserve">
     <value>角色</value>
   </data>
+  <data name="Save access" xml:space="preserve">
+    <value>儲存存取權限</value>
+  </data>
+  <data name="Search failed. Change the search text to try again." xml:space="preserve">
+    <value>搜尋失敗。請更改搜尋文字，再試一次。</value>
+  </data>
+  <data name="Searching..." xml:space="preserve">
+    <value>搜尋中……</value>
+  </data>
   <data name="Select a role..." xml:space="preserve">
     <value>選擇角色...</value>
+  </data>
+  <data name="Select a user from the search results or choose a role." xml:space="preserve">
+    <value>請從搜尋結果中選擇一位使用者，或選擇一個角色。</value>
   </data>
   <data name="Share Link" xml:space="preserve">
     <value>分享連結</value>
@@ -99,14 +180,23 @@
   <data name="Share with" xml:space="preserve">
     <value>與...分享</value>
   </data>
+  <data name="Shared access" xml:space="preserve">
+    <value>共用存取權限</value>
+  </data>
   <data name="Shared With" xml:space="preserve">
     <value>與其共享</value>
+  </data>
+  <data name="Sign-in and existing access are required. Copying a link does not grant access." xml:space="preserve">
+    <value>必須登入並已有存取權限。複製連結並不會授予存取權限。</value>
   </data>
   <data name="Site:" xml:space="preserve">
     <value>網站：</value>
   </data>
   <data name="Specific User" xml:space="preserve">
     <value>特定用戶</value>
+  </data>
+  <data name="The owner and authorized site administrators also have access. Role access applies to its members; permissions from other roles or direct shares still apply after removing one share." xml:space="preserve">
+    <value>擁有者及獲授權的網站管理員亦可存取。角色存取權適用於該角色的成員；移除某項分享後，其他角色或直接分享所授予的權限仍然有效。</value>
   </data>
   <data name="This site is Private. Only you and specific users/roles listed below can access it." xml:space="preserve">
     <value>此網站為私人網站。只有您和下方列出的特定用戶/角色可以存取。</value>
@@ -128,6 +218,9 @@
   </data>
   <data name="Visibility" xml:space="preserve">
     <value>可見度</value>
+  </data>
+  <data name="Who can use the link?" xml:space="preserve">
+    <value>邊個可以使用此連結？</value>
   </data>
 
 </root>

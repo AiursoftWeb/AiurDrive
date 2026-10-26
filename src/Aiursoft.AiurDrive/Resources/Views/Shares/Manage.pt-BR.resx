@@ -18,11 +18,17 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Actions" xml:space="preserve">
+      <data name="About access" xml:space="preserve">
+    <value>Sobre o acesso</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
     <value>Ações</value>
   </data>
   <data name="Add" xml:space="preserve">
     <value>Adicionar</value>
+  </data>
+  <data name="Add access" xml:space="preserve">
+    <value>Adicionar acesso</value>
   </data>
   <data name="Add New Share" xml:space="preserve">
     <value>Adicionar Nova Compartilhamento</value>
@@ -33,6 +39,15 @@
   <data name="An error occurred while processing your request." xml:space="preserve">
     <value>Ocorreu um erro ao processar sua solicitação.</value>
   </data>
+  <data name="Anonymous viewing does not change the user or role permissions above." xml:space="preserve">
+    <value>A visualização anônima não altera as permissões de usuário ou de função definidas acima.</value>
+  </data>
+  <data name="Anyone — view only" xml:space="preserve">
+    <value>Qualquer pessoa — somente visualização</value>
+  </data>
+  <data name="Anyone with the link can view and download files without signing in." xml:space="preserve">
+    <value>Qualquer pessoa com o link pode visualizar e baixar arquivos sem fazer login.</value>
+  </data>
   <data name="Anyone with the link can view this site&apos;s files (read-only)." xml:space="preserve">
     <value>Qualquer pessoa com o link pode visualizar os arquivos deste site (somente leitura).</value>
   </data>
@@ -42,8 +57,32 @@
   <data name="Back to Files" xml:space="preserve">
     <value>Voltar para Arquivos</value>
   </data>
+  <data name="Can edit" xml:space="preserve">
+    <value>Pode editar</value>
+  </data>
+  <data name="Can view" xml:space="preserve">
+    <value>Pode visualizar</value>
+  </data>
+  <data name="Can view allows reading and downloading files. Can edit also allows uploading, changing and deleting files, but does not grant site administration." xml:space="preserve">
+    <value>A permissão de visualização permite ler e baixar arquivos. A permissão de edição também permite enviar, alterar e excluir arquivos, mas não concede acesso de administrador do site.</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Alterar</value>
+  </data>
+  <data name="Change link access" xml:space="preserve">
+    <value>Alterar acesso ao link</value>
+  </data>
   <data name="Close" xml:space="preserve">
     <value>Fechar</value>
+  </data>
+  <data name="Copy link" xml:space="preserve">
+    <value>Copiar link</value>
+  </data>
+  <data name="Could not confirm the change. Your input is kept. Try again, or reload to check the saved state." xml:space="preserve">
+    <value>Não foi possível confirmar a alteração. Sua entrada foi mantida. Tente novamente ou recarregue a página para verificar o estado salvo.</value>
+  </data>
+  <data name="Could not copy. Select and copy the link above." xml:space="preserve">
+    <value>Não foi possível copiar. Selecione e copie o link acima.</value>
   </data>
   <data name="Created" xml:space="preserve">
     <value>Criado</value>
@@ -63,8 +102,17 @@
   <data name="Forbid anonymous viewing (Private / Shared)" xml:space="preserve">
     <value>Proibir visualização anônima (Privado / Compartilhado)</value>
   </data>
+  <data name="Link access" xml:space="preserve">
+    <value>Acesso por link</value>
+  </data>
+  <data name="Link copied." xml:space="preserve">
+    <value>Link copiado.</value>
+  </data>
   <data name="Manage Shares" xml:space="preserve">
     <value>Gerenciar Compartilhamentos</value>
+  </data>
+  <data name="Name or email (3+ characters)" xml:space="preserve">
+    <value>Nome ou e-mail (3+ caracteres)</value>
   </data>
   <data name="No shares yet. Add one above to share this site." xml:space="preserve">
     <value>Nenhum compartilhamento ainda. Adicione um acima para compartilhar este site.</value>
@@ -72,8 +120,20 @@
   <data name="No users found" xml:space="preserve">
     <value>Nenhum usuário encontrado</value>
   </data>
+  <data name="No users found. Try another name or email." xml:space="preserve">
+    <value>Nenhum usuário encontrado. Tente outro nome ou e-mail.</value>
+  </data>
+  <data name="No users or roles added." xml:space="preserve">
+    <value>Nenhum usuário ou função adicionada.</value>
+  </data>
+  <data name="Not saved. The link above still uses the current access setting." xml:space="preserve">
+    <value>Não foi salvo. O link acima ainda usa a configuração de acesso atual.</value>
+  </data>
   <data name="Only you and specific users/roles listed below can view this site." xml:space="preserve">
     <value>Apenas você e os usuários/roles específicos listados abaixo podem visualizar este site.</value>
+  </data>
+  <data name="People with access" xml:space="preserve">
+    <value>Pessoas com acesso</value>
   </data>
   <data name="Permission" xml:space="preserve">
     <value>Permissão</value>
@@ -81,17 +141,38 @@
   <data name="Please select a valid user or role." xml:space="preserve">
     <value>Por favor, selecione um usuário ou papel válido.</value>
   </data>
+  <data name="Public viewing" xml:space="preserve">
+    <value>Visualização pública</value>
+  </data>
   <data name="Read Only" xml:space="preserve">
     <value>Somente Leitura</value>
   </data>
   <data name="Remove" xml:space="preserve">
     <value>Remover</value>
   </data>
+  <data name="Remove this share? Other access may still apply." xml:space="preserve">
+    <value>Remover este compartilhamento? Outros acessos ainda podem ser aplicados.</value>
+  </data>
+  <data name="Restricted access" xml:space="preserve">
+    <value>Acesso restrito</value>
+  </data>
   <data name="Role" xml:space="preserve">
     <value>Função</value>
   </data>
+  <data name="Save access" xml:space="preserve">
+    <value>Salvar acesso</value>
+  </data>
+  <data name="Search failed. Change the search text to try again." xml:space="preserve">
+    <value>A pesquisa falhou. Altere o texto da pesquisa e tente novamente.</value>
+  </data>
+  <data name="Searching..." xml:space="preserve">
+    <value>Pesquisando...</value>
+  </data>
   <data name="Select a role..." xml:space="preserve">
     <value>Selecione um cargo...</value>
+  </data>
+  <data name="Select a user from the search results or choose a role." xml:space="preserve">
+    <value>Selecione um usuário nos resultados da pesquisa ou escolha uma função.</value>
   </data>
   <data name="Share Link" xml:space="preserve">
     <value>Link de Compartilhamento</value>
@@ -99,14 +180,23 @@
   <data name="Share with" xml:space="preserve">
     <value>Compartilhar com</value>
   </data>
+  <data name="Shared access" xml:space="preserve">
+    <value>Acesso compartilhado</value>
+  </data>
   <data name="Shared With" xml:space="preserve">
     <value>Compartilhado Com</value>
+  </data>
+  <data name="Sign-in and existing access are required. Copying a link does not grant access." xml:space="preserve">
+    <value>É necessário fazer login e já ter acesso. Copiar um link não concede acesso.</value>
   </data>
   <data name="Site:" xml:space="preserve">
     <value>Site:</value>
   </data>
   <data name="Specific User" xml:space="preserve">
     <value>Usuário Específico</value>
+  </data>
+  <data name="The owner and authorized site administrators also have access. Role access applies to its members; permissions from other roles or direct shares still apply after removing one share." xml:space="preserve">
+    <value>O proprietário e os administradores autorizados do site também têm acesso. O acesso concedido por função se aplica aos membros dela; as permissões de outras funções ou de compartilhamentos diretos continuam valendo mesmo após a remoção de um compartilhamento.</value>
   </data>
   <data name="This site is Private. Only you and specific users/roles listed below can access it." xml:space="preserve">
     <value>Este site é privado. Apenas você e os usuários/roles específicos listados abaixo podem acessá-lo.</value>
@@ -128,6 +218,9 @@
   </data>
   <data name="Visibility" xml:space="preserve">
     <value>Visibilidade</value>
+  </data>
+  <data name="Who can use the link?" xml:space="preserve">
+    <value>Quem pode usar o link?</value>
   </data>
 
 </root>

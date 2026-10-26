@@ -18,11 +18,17 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Actions" xml:space="preserve">
+      <data name="About access" xml:space="preserve">
+    <value>Σχετικά με την πρόσβαση</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
     <value>Ενέργειες</value>
   </data>
   <data name="Add" xml:space="preserve">
     <value>Προσθήκη</value>
+  </data>
+  <data name="Add access" xml:space="preserve">
+    <value>Προσθήκη πρόσβασης</value>
   </data>
   <data name="Add New Share" xml:space="preserve">
     <value>Προσθήκη Νέου Μοιρασμού</value>
@@ -33,6 +39,15 @@
   <data name="An error occurred while processing your request." xml:space="preserve">
     <value>Παρουσιάστηκε σφάλμα κατά την επεξεργασία της αίτησής σας.</value>
   </data>
+  <data name="Anonymous viewing does not change the user or role permissions above." xml:space="preserve">
+    <value>Η ανώνυμη προβολή δεν αλλάζει τα δικαιώματα πρόσβασης των χρηστών ή των ρόλων που αναφέρονται παραπάνω.</value>
+  </data>
+  <data name="Anyone — view only" xml:space="preserve">
+    <value>Οποιοσδήποτε — μόνο προβολή</value>
+  </data>
+  <data name="Anyone with the link can view and download files without signing in." xml:space="preserve">
+    <value>Όποιος έχει τον σύνδεσμο μπορεί να προβάλει και να κατεβάσει αρχεία χωρίς να συνδεθεί.</value>
+  </data>
   <data name="Anyone with the link can view this site&apos;s files (read-only)." xml:space="preserve">
     <value>Όποιος έχει το σύνδεσμο μπορεί να δει τα αρχεία αυτού του ιστότοπου (μόνο για ανάγνωση).</value>
   </data>
@@ -42,8 +57,32 @@
   <data name="Back to Files" xml:space="preserve">
     <value>Επιστροφή στα Αρχεία</value>
   </data>
+  <data name="Can edit" xml:space="preserve">
+    <value>Μπορεί να επεξεργαστεί</value>
+  </data>
+  <data name="Can view" xml:space="preserve">
+    <value>Δυνατότητα προβολής</value>
+  </data>
+  <data name="Can view allows reading and downloading files. Can edit also allows uploading, changing and deleting files, but does not grant site administration." xml:space="preserve">
+    <value>Η δυνατότητα προβολής επιτρέπει την ανάγνωση και τη λήψη αρχείων. Η δυνατότητα επεξεργασίας επιτρέπει επίσης τη μεταφόρτωση, την τροποποίηση και τη διαγραφή αρχείων, αλλά δεν παρέχει δικαιώματα διαχείρισης του ιστότοπου.</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Αλλαγή</value>
+  </data>
+  <data name="Change link access" xml:space="preserve">
+    <value>Αλλαγή πρόσβασης μέσω συνδέσμου</value>
+  </data>
   <data name="Close" xml:space="preserve">
     <value>Κλείσιμο</value>
+  </data>
+  <data name="Copy link" xml:space="preserve">
+    <value>Αντιγραφή συνδέσμου</value>
+  </data>
+  <data name="Could not confirm the change. Your input is kept. Try again, or reload to check the saved state." xml:space="preserve">
+    <value>Δεν ήταν δυνατή η επιβεβαίωση της αλλαγής. Η καταχώρισή σας διατηρείται. Δοκιμάστε ξανά ή φορτώστε ξανά τη σελίδα για να ελέγξετε την αποθηκευμένη κατάσταση.</value>
+  </data>
+  <data name="Could not copy. Select and copy the link above." xml:space="preserve">
+    <value>Δεν ήταν δυνατή η αντιγραφή. Επιλέξτε και αντιγράψτε τον παραπάνω σύνδεσμο.</value>
   </data>
   <data name="Created" xml:space="preserve">
     <value>Δημιουργήθηκε</value>
@@ -63,8 +102,17 @@
   <data name="Forbid anonymous viewing (Private / Shared)" xml:space="preserve">
     <value>Απαγόρευση ανώνυμης πρόσβασης (Private / Shared)</value>
   </data>
+  <data name="Link access" xml:space="preserve">
+    <value>Πρόσβαση μέσω συνδέσμου</value>
+  </data>
+  <data name="Link copied." xml:space="preserve">
+    <value>Ο σύνδεσμος αντιγράφηκε.</value>
+  </data>
   <data name="Manage Shares" xml:space="preserve">
     <value>Διαχείριση Μορφών</value>
+  </data>
+  <data name="Name or email (3+ characters)" xml:space="preserve">
+    <value>Όνομα ή email (3+ χαρακτήρες)</value>
   </data>
   <data name="No shares yet. Add one above to share this site." xml:space="preserve">
     <value>Δεν υπάρχουν ακόμη μοιρασμοί. Προσθέστε έναν παραπάνω για να μοιραστείτε αυτό τον τόπο.</value>
@@ -72,8 +120,20 @@
   <data name="No users found" xml:space="preserve">
     <value>Δεν βρέθηκαν χρήστες</value>
   </data>
+  <data name="No users found. Try another name or email." xml:space="preserve">
+    <value>Δεν βρέθηκαν χρήστες. Δοκιμάστε με άλλο όνομα ή email.</value>
+  </data>
+  <data name="No users or roles added." xml:space="preserve">
+    <value>Δεν έχουν προστεθεί χρήστες ή ρόλοι.</value>
+  </data>
+  <data name="Not saved. The link above still uses the current access setting." xml:space="preserve">
+    <value>Δεν αποθηκεύτηκε. Ο παραπάνω σύνδεσμος εξακολουθεί να χρησιμοποιεί την τρέχουσα ρύθμιση πρόσβασης.</value>
+  </data>
   <data name="Only you and specific users/roles listed below can view this site." xml:space="preserve">
     <value>Μόνο εσείς και ορισμένοι χρήστες/ρόλοι που αναφέρονται παρακάτω μπορούν να δουν αυτό το site.</value>
+  </data>
+  <data name="People with access" xml:space="preserve">
+    <value>Άτομα με πρόσβαση</value>
   </data>
   <data name="Permission" xml:space="preserve">
     <value>Άδεια</value>
@@ -81,17 +141,38 @@
   <data name="Please select a valid user or role." xml:space="preserve">
     <value>Παρακαλώ επιλέξτε έναν έγκυρο χρήστη ή ρόλο.</value>
   </data>
+  <data name="Public viewing" xml:space="preserve">
+    <value>Δημόσια προβολή</value>
+  </data>
   <data name="Read Only" xml:space="preserve">
     <value>Μόνο για ανάγνωση</value>
   </data>
   <data name="Remove" xml:space="preserve">
     <value>Αφαίρεση</value>
   </data>
+  <data name="Remove this share? Other access may still apply." xml:space="preserve">
+    <value>Να καταργηθεί αυτή η κοινή χρήση; Ενδέχεται να εξακολουθεί να ισχύει άλλη πρόσβαση.</value>
+  </data>
+  <data name="Restricted access" xml:space="preserve">
+    <value>Περιορισμένη πρόσβαση</value>
+  </data>
   <data name="Role" xml:space="preserve">
     <value>Ρόλος</value>
   </data>
+  <data name="Save access" xml:space="preserve">
+    <value>Αποθήκευση πρόσβασης</value>
+  </data>
+  <data name="Search failed. Change the search text to try again." xml:space="preserve">
+    <value>Η αναζήτηση απέτυχε. Αλλάξτε το κείμενο αναζήτησης και δοκιμάστε ξανά.</value>
+  </data>
+  <data name="Searching..." xml:space="preserve">
+    <value>Αναζήτηση...</value>
+  </data>
   <data name="Select a role..." xml:space="preserve">
     <value>Επιλέξτε ρόλο...</value>
+  </data>
+  <data name="Select a user from the search results or choose a role." xml:space="preserve">
+    <value>Επιλέξτε έναν χρήστη από τα αποτελέσματα αναζήτησης ή επιλέξτε έναν ρόλο.</value>
   </data>
   <data name="Share Link" xml:space="preserve">
     <value>Μοιραστείτε το σύνδεσμο</value>
@@ -99,14 +180,23 @@
   <data name="Share with" xml:space="preserve">
     <value>Κοινοποίηση με</value>
   </data>
+  <data name="Shared access" xml:space="preserve">
+    <value>Κοινόχρηστη πρόσβαση</value>
+  </data>
   <data name="Shared With" xml:space="preserve">
     <value>Με Επιτροπή</value>
+  </data>
+  <data name="Sign-in and existing access are required. Copying a link does not grant access." xml:space="preserve">
+    <value>Απαιτείται σύνδεση και να έχετε ήδη πρόσβαση. Η αντιγραφή ενός συνδέσμου δεν παρέχει πρόσβαση.</value>
   </data>
   <data name="Site:" xml:space="preserve">
     <value>Σελίδα:</value>
   </data>
   <data name="Specific User" xml:space="preserve">
     <value>Συγκεκριμένος Χρήστης</value>
+  </data>
+  <data name="The owner and authorized site administrators also have access. Role access applies to its members; permissions from other roles or direct shares still apply after removing one share." xml:space="preserve">
+    <value>Ο κάτοχος και οι εξουσιοδοτημένοι διαχειριστές του ιστότοπου έχουν επίσης πρόσβαση. Η πρόσβαση βάσει ρόλου ισχύει για τα μέλη του· τα δικαιώματα από άλλους ρόλους ή από άμεσες κοινοποιήσεις εξακολουθούν να ισχύουν και μετά την κατάργηση μιας κοινοποίησης.</value>
   </data>
   <data name="This site is Private. Only you and specific users/roles listed below can access it." xml:space="preserve">
     <value>Αυτός ο ιστότοπος είναι ιδιωτικός. Μόνο εσείς και οι συγκεκριμένοι χρήστες/ρόλοι που αναφέρονται παρακάτω μπορούν να τον προσπελάσουν.</value>
@@ -128,6 +218,9 @@
   </data>
   <data name="Visibility" xml:space="preserve">
     <value>Εμφάνιση</value>
+  </data>
+  <data name="Who can use the link?" xml:space="preserve">
+    <value>Ποιος μπορεί να χρησιμοποιήσει τον σύνδεσμο;</value>
   </data>
 
 </root>
