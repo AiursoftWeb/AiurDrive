@@ -1,3 +1,5 @@
+using Aiursoft.AiurDrive.Entities;
+using Microsoft.EntityFrameworkCore;
 using System.Net;
 
 namespace Aiursoft.AiurDrive.Tests.IntegrationTests;
@@ -36,4 +38,36 @@ public class SharesControllerTests : TestBase
         var sharedViewPage = await sharedViewResponse.Content.ReadAsStringAsync();
         StringAssert.Contains(sharedViewPage, $"Shared - {siteName}");
     }
+
+    [TestMethod]
+    public async Task PublicViewingKeepsExplicitSharesVisibleAndPreservesTheirPermissions()
+    {
+        await RegisterAndLoginAsync();
+        var siteName = $"share-{Guid.NewGuid():N}"[..28];
+        AssertRedirect(await PostForm("/Dashboard/CreateSite", new()
+        {
+            ["SiteName"] = siteName,
+            ["AllowAnonymousView"] = "false"
+        }), $"/Dashboard/Files/{siteName}");
+        var db = GetService<AiurDriveDbContext>();
+        var site = await db.Sites.SingleAsync(s => s.SiteName == siteName);
+        var recipient = new User { UserName = "sharing-recipient", DisplayName = "Sharing recipient" };
+        db.Users.Add(recipient);
+        var share = new SiteShare { SiteId = site.Id, SharedWithUserId = recipient.Id, Permission = SharePermission.Editable };
+        db.SiteShares.Add(share);
+        await db.SaveChangesAsync();
+
+        AssertRedirect(await PostForm($"/Dashboard/UpdateVisibility/{siteName}",
+            new() { ["publicAccess"] = "true" }, tokenUrl: $"/Dashboard/ManageShares/{siteName}"),
+            $"/Dashboard/ManageShares/{siteName}");
+        var response = await Http.GetAsync($"/Dashboard/ManageShares/{siteName}");
+        response.EnsureSuccessStatusCode();
+        var html = await response.Content.ReadAsStringAsync();
+        StringAssert.Contains(html, recipient.DisplayName);
+        StringAssert.Contains(html, $"name=\"id\" value=\"{share.Id}\"");
+        db.ChangeTracker.Clear();
+        Assert.IsTrue((await db.Sites.SingleAsync(s => s.Id == site.Id)).AllowAnonymousView);
+        Assert.AreEqual(SharePermission.Editable, (await db.SiteShares.SingleAsync(s => s.Id == share.Id)).Permission);
+    }
+
 }
