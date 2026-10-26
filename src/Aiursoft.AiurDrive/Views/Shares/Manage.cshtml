@@ -2,107 +2,105 @@
 @model Aiursoft.AiurDrive.Models.SharesViewModels.ManageSharesViewModel
 @inject Aiursoft.AiurDrive.Services.FileStorage.StorageService StorageService
 
-<div class="row mb-3">
-    <div class="col-12">
-        <div class="d-flex align-items-center justify-content-between">
-            <div>
-                <h3>@Localizer["Manage Shares"]</h3>
-                <p class="text-muted">@Localizer["Site:"] <strong>@Model.SiteName</strong></p>
-            </div>
-            <div>
-                <a asp-controller="Dashboard" asp-action="Files" asp-route-siteName="@Model.SiteName" class="btn btn-outline-secondary">
-                    <i class="align-middle" data-lucide="arrow-left"></i> @Localizer["Back to Files"]
-                </a>
-            </div>
+<div id="sharing-page" class="mx-auto" style="max-width: 960px;">
+    <div class="d-flex flex-wrap align-items-start justify-content-between gap-3 mb-4">
+        <div class="min-w-0">
+            <div class="text-muted mb-1">@Localizer["Manage Shares"]</div>
+            <h1 class="h3 text-break mb-2">@Model.SiteName</h1>
+            @if (Model.IsPublic)
+            {
+                <span class="badge bg-info">@Localizer["Public viewing"]</span>
+            }
+            else
+            {
+                <span class="badge bg-secondary">@Localizer["Restricted access"]</span>
+            }
         </div>
+        <a asp-controller="Dashboard" asp-action="Files" asp-route-siteName="@Model.SiteName" class="btn btn-outline-primary">
+            <i class="align-middle" data-lucide="arrow-left" aria-hidden="true"></i> @Localizer["Back to Files"]
+        </a>
     </div>
-</div>
 
-@* Visibility Settings *@
-<div class="row mb-4">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="card-title mb-0">
-                    <i class="align-middle" data-lucide="globe"></i> @Localizer["Visibility"]
-                </h5>
-            </div>
-            <div class="card-body">
-                <form asp-action="UpdateVisibility" asp-route-siteName="@Model.SiteName" method="post" id="visibility-form">
-                    @Html.AntiForgeryToken()
-                    <div class="mb-3">
-                        <div class="form-check mb-3">
-                            <input class="form-check-input" type="radio" name="publicAccess" id="visibilityPublic" value="true" @(Model.IsPublic ? "checked" : "") onchange="this.form.submit()">
-                            <label class="form-check-label fw-bold" for="visibilityPublic">
-                                @Localizer["Allow anonymous viewing (Public)"]
-                            </label>
-                            <div class="form-text text-muted ms-0">
-                                @Localizer["Anyone with the link can view this site's files (read-only)."]
-                                @if (!string.IsNullOrEmpty(Model.PublicLink))
+    <div class="card">
+        <div class="card-header d-flex flex-wrap align-items-center justify-content-between gap-2">
+            <h2 class="card-title mb-0">@Localizer["Shared access"] <span class="text-muted">(@Model.ExistingShares.Count)</span></h2>
+        </div>
+        <div class="card-body pt-0">
+            @if (!Model.ExistingShares.Any())
+            {
+                <p class="text-muted py-3 mb-0">@Localizer["No users or roles added."]</p>
+            }
+            else
+            {
+                <ul class="list-group list-group-flush">
+                    @foreach (var share in Model.ExistingShares)
+                    {
+                        <li class="list-group-item px-0 py-3 d-flex flex-wrap align-items-center justify-content-between gap-3">
+                            <div class="d-flex align-items-center gap-3 text-break">
+                                @if (share.SharedWithUser != null)
                                 {
-                                    <div class="input-group input-group-sm mt-2" style="max-width: 500px;">
-                                        <span class="input-group-text">@Localizer["Share Link"]</span>
-                                        <input type="text" class="form-control" value="@Model.PublicLink" readonly id="public-link-input">
-                                        <button class="btn btn-outline-secondary" type="button" onclick="navigator.clipboard.writeText(document.getElementById('public-link-input').value); this.innerHTML = '<i class=\'align-middle\' data-lucide=\'check\'></i>'; setTimeout(() => this.innerHTML = '<i class=\'align-middle\' data-lucide=\'copy\'></i>', 2000);">
-                                            <i class="align-middle" data-lucide="copy"></i>
-                                        </button>
-                                        <a href="@Model.PublicLink" target="_blank" class="btn btn-outline-secondary">
-                                            <i class="align-middle" data-lucide="external-link"></i>
-                                        </a>
-                                    </div>
+                                    <img src="@(StorageService.RelativePathToInternetUrl(share.SharedWithUser.AvatarRelativePath))?w=128&amp;square=true" alt="" class="rounded-circle flex-shrink-0" width="36" height="36">
                                 }
+                                else
+                                {
+                                    <span class="d-inline-flex align-items-center justify-content-center flex-shrink-0" style="width: 36px; height: 36px;"><i class="align-middle" data-lucide="@(share.SharedWithUserId != null ? "user" : "users")" aria-hidden="true"></i></span>
+                                }
+                                <div>
+                                    <div class="fw-semibold">@(share.SharedWithUserId != null ? share.SharedWithUser?.DisplayName ?? share.SharedWithUserId : Model.AvailableRoles.FirstOrDefault(r => r.Id == share.SharedWithRoleId)?.Name ?? share.SharedWithRoleId)</div>
+                                    <div class="small text-muted">
+                                        @if (share.SharedWithUserId != null)
+                                        {
+                                            @Localizer["User"]
+                                        }
+                                        else
+                                        {
+                                            @Localizer["Role"]
+                                        }
+                                        <span aria-hidden="true"> · </span><span data-utc-time="@share.CreationTime.ToString("o")"></span>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="d-flex align-items-center gap-3 ms-auto">
+                                @if (share.Permission == SharePermission.ReadOnly)
+                                {
+                                    <span class="badge bg-secondary">@Localizer["Can view"]</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-success">@Localizer["Can edit"]</span>
+                                }
+                                <form asp-action="RemoveShare" method="post" class="remove-share-form">
+                                    <input type="hidden" name="id" value="@share.Id">
+                                    <button type="submit" class="btn btn-sm btn-outline-danger">@Localizer["Remove"]</button>
+                                    <div class="small text-danger mt-2 form-error" role="alert" hidden></div>
+                                </form>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            }
+            <details class="mt-3 small text-muted">
+                <summary>@Localizer["About access"]</summary>
+                <p class="mt-2 mb-1">@Localizer["The owner and authorized site administrators also have access. Role access applies to its members; permissions from other roles or direct shares still apply after removing one share."]</p>
+                <p class="mb-0">@Localizer["Can view allows reading and downloading files. Can edit also allows uploading, changing and deleting files, but does not grant site administration."]</p>
+            </details>
+            <details id="add-share-details" class="mt-3 border-top pt-3">
+                <summary class="fw-semibold">@Localizer["Add access"]</summary>
+                <form asp-action="AddShare" asp-route-siteName="@Model.SiteName" method="post" id="add-share-form" class="mt-3">
+                    <fieldset class="mb-3">
+                        <legend class="form-label fs-6">@Localizer["Share with"]</legend>
+                        <div class="btn-group" role="group" aria-label="@Localizer["Share with"]">
+                            <input type="radio" class="btn-check" name="shareType" id="shareTypeRole" value="role" checked>
+                            <label class="btn btn-outline-primary" for="shareTypeRole">@Localizer["Role"]</label>
+                            <input type="radio" class="btn-check" name="shareType" id="shareTypeUser" value="user">
+                            <label class="btn btn-outline-primary" for="shareTypeUser">@Localizer["User"]</label>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="publicAccess" id="visibilityPrivate" value="false" @(!Model.IsPublic ? "checked" : "") onchange="this.form.submit()">
-                            <label class="form-check-label fw-bold" for="visibilityPrivate">
-                                @Localizer["Forbid anonymous viewing (Private / Shared)"]
-                            </label>
-                            <div class="form-text text-muted ms-0">
-                                @Localizer["Only you and specific users/roles listed below can view this site."]
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-@if (!Model.IsPublic)
-{
-@* Add New Share Card *@
-<div class="row mb-4">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="card-title mb-0">
-                    <i class="align-middle" data-lucide="user-plus"></i> @Localizer["Add New Share"]
-                </h5>
-            </div>
-            <div class="card-body">
-                <form asp-action="AddShare" asp-route-siteName="@Model.SiteName" method="post" id="add-share-form">
-                    @Html.AntiForgeryToken()
-
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <label class="form-label">@Localizer["Share with"]</label>
-
-                            <div class="btn-group w-100 mb-3" role="group">
-                                <input type="radio" class="btn-check" name="shareType" id="shareTypeRole" value="role" checked>
-                                <label class="btn btn-outline-primary" for="shareTypeRole">
-                                    <i class="align-middle" data-lucide="users"></i> @Localizer["Role"]
-                                </label>
-
-                                <input type="radio" class="btn-check" name="shareType" id="shareTypeUser" value="user">
-                                <label class="btn btn-outline-primary" for="shareTypeUser">
-                                    <i class="align-middle" data-lucide="user"></i> @Localizer["Specific User"]
-                                </label>
-                            </div>
-
-                            @* Role Selection *@
+                    </fieldset>
+                    <div class="row g-3 align-items-end">
+                        <div class="col-md-7">
                             <div id="role-selection">
-                                <select class="form-select" name="TargetRoleId" id="roleSelect">
+                                <label class="form-label" for="roleSelect">@Localizer["Role"]</label>
+                                <select class="form-select" name="TargetRoleId" id="roleSelect" required>
                                     <option value="">@Localizer["Select a role..."]</option>
                                     @foreach (var role in Model.AvailableRoles)
                                     {
@@ -110,361 +108,80 @@
                                     }
                                 </select>
                             </div>
-
-                            @* User Selection with Autocomplete *@
-                            <div id="user-selection" class="d-none">
-                                <div class="position-relative">
-                                    <input type="text" class="form-control" id="userSearch" placeholder="@Localizer["Type to search users..."]" autocomplete="off">
-                                    <input type="hidden" name="TargetUserId" id="selectedUserId">
-
-                                    @* Autocomplete dropdown *@
-                                    <div id="userSearchResults" class="position-absolute w-100 bg-white border rounded shadow-sm d-none" style="z-index: 1000; max-height: 300px; overflow-y: auto;">
-                                        @* Results will be populated by JavaScript *@
-                                    </div>
-                                </div>
-
-                                @* Selected user display *@
-                                <div id="selectedUserDisplay" class="mt-2 p-2 bg-light rounded d-none">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div class="d-flex align-items-center">
-                                            <img id="selectedUserAvatar" src="" alt="" class="rounded-circle me-2" style="width: 32px; height: 32px; object-fit: cover;">
-                                            <div>
-                                                <div id="selectedUserName" class="fw-bold"></div>
-                                                <div id="selectedUserUsername" class="small text-muted"></div>
-                                            </div>
-                                        </div>
-                                        <button type="button" class="btn btn-sm btn-outline-danger" id="clearSelectedUser">
-                                            <i class="align-middle" data-lucide="x"></i>
-                                        </button>
-                                    </div>
+                            <div id="user-selection" hidden>
+                                <label class="form-label" for="userSearch">@Localizer["User"]</label>
+                                <input type="search" class="form-control" id="userSearch" placeholder="@Localizer["Name or email (3+ characters)"]" autocomplete="off" aria-controls="userSearchResults" aria-describedby="user-search-status" disabled>
+                                <input type="hidden" name="TargetUserId" id="selectedUserId" disabled>
+                                <div id="user-search-status" class="small text-muted mt-1" role="status"></div>
+                                <div id="userSearchResults" class="list-group mt-2 d-none" style="max-height: 240px; overflow-y: auto;"></div>
+                                <div id="selectedUserDisplay" class="d-flex align-items-center justify-content-between border rounded p-2 mt-2 gap-2 d-none">
+                                    <div class="text-break"><strong id="selectedUserName"></strong><div id="selectedUserUsername" class="small text-muted"></div></div>
+                                    <button type="button" class="btn btn-sm btn-outline-primary" id="clearSelectedUser">@Localizer["Change"]</button>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-md-4">
-                            <label class="form-label">@Localizer["Permission"]</label>
-                            <select class="form-select" name="Permission" required>
-                                <option value="0">@Localizer["Read Only"]</option>
-                                <option value="1">@Localizer["Editable"]</option>
+                        <div class="col-md-5">
+                            <label class="form-label" for="share-permission">@Localizer["Permission"]</label>
+                            <select class="form-select" name="Permission" id="share-permission" required>
+                                <option value="0">@Localizer["Can view"]</option>
+                                <option value="1">@Localizer["Can edit"]</option>
                             </select>
                         </div>
-
-                        <div class="col-md-2 d-flex align-items-end">
-                            <button type="submit" class="btn btn-primary w-100">
-                                <i class="align-middle" data-lucide="plus"></i> @Localizer["Add"]
-                            </button>
-                        </div>
                     </div>
+                    <div class="small text-danger mt-3 form-error" role="alert" hidden></div>
+                    <button type="submit" class="btn btn-primary mt-3">@Localizer["Add access"]</button>
                 </form>
-            </div>
+            </details>
         </div>
     </div>
-</div>
 
-@* Existing Shares *@
-<div class="row">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="card-title mb-0">
-                    <i class="align-middle" data-lucide="share-2"></i> @Localizer["Existing Shares"]
-                </h5>
-            </div>
-            <div class="card-body">
-                @if (!Model.ExistingShares.Any())
+    <div class="card">
+        <div class="card-header"><h2 class="card-title mb-0">@Localizer["Link access"]</h2></div>
+        <div class="card-body pt-0">
+            <p class="text-muted" id="saved-link-scope">
+                @if (Model.IsPublic)
                 {
-                    <div class="text-center text-muted py-4">
-                        <i class="align-middle" data-lucide="inbox" style="width: 48px; height: 48px;"></i>
-                        <p class="mt-3">@Localizer["No shares yet. Add one above to share this site."]</p>
-                    </div>
+                    @Localizer["Anyone with the link can view and download files without signing in."]
                 }
                 else
                 {
-                    <div class="table-responsive">
-                        <table class="table table-hover mb-0">
-                            <thead>
-                            <tr>
-                                <th>@Localizer["Shared With"]</th>
-                                <th>@Localizer["Type"]</th>
-                                <th>@Localizer["Permission"]</th>
-                                <th>@Localizer["Created"]</th>
-                                <th class="text-end">@Localizer["Actions"]</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach (var share in Model.ExistingShares)
-                            {
-                                <tr>
-                                    <td>
-                                        @if (share.SharedWithUserId != null)
-                                        {
-                                            <div class="d-flex align-items-center">
-                                                @if (share.SharedWithUser != null)
-                                                {
-                                                    <img src="@(StorageService.RelativePathToInternetUrl(share.SharedWithUser.AvatarRelativePath))?w=128&square=true" alt="Avatar" class="rounded-circle me-2" style="width: 32px; height: 32px; object-fit: cover;">
-                                                    <span>@share.SharedWithUser.DisplayName</span>
-                                                }
-                                                else
-                                                {
-                                                    <i class="align-middle me-2" data-lucide="user"></i>
-                                                    <span class="text-muted">@Localizer["User"] (@share.SharedWithUserId)</span>
-                                                }
-                                            </div>
-                                        }
-                                        else if (share.SharedWithRoleId != null)
-                                        {
-                                            var roleName = Model.AvailableRoles.FirstOrDefault(r => r.Id == share.SharedWithRoleId)?.Name ?? share.SharedWithRoleId;
-                                            <div class="d-flex align-items-center">
-                                                <i class="align-middle me-2" data-lucide="users"></i>
-                                                <span>@roleName</span>
-                                            </div>
-                                        }
-                                    </td>
-                                    <td>
-                                        @if (share.SharedWithUserId != null)
-                                        {
-                                            <span class="badge bg-info">@Localizer["User"]</span>
-                                        }
-                                        else
-                                        {
-                                            <span class="badge bg-primary">@Localizer["Role"]</span>
-                                        }
-                                    </td>
-                                    <td>
-                                        @if (share.Permission == SharePermission.ReadOnly)
-                                        {
-                                            <span class="badge bg-secondary">@Localizer["Read Only"]</span>
-                                        }
-                                        else
-                                        {
-                                            <span class="badge bg-success">@Localizer["Editable"]</span>
-                                        }
-                                    </td>
-                                    <td>
-                                        <label class="text-muted" data-utc-time="@share.CreationTime.ToString("o")"></label>
-                                    </td>
-                                    <td class="text-end">
-                                        <form asp-action="RemoveShare" method="post" class="d-inline" onsubmit="return confirm('@Localizer["Are you sure you want to remove this share?"]')">
-                                            @Html.AntiForgeryToken()
-                                            <input type="hidden" name="id" value="@share.Id" />
-                                            <button type="submit" class="btn btn-sm btn-outline-danger">
-                                                <i class="align-middle" data-lucide="trash-2"></i> @Localizer["Remove"]
-                                            </button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            }
-                            </tbody>
-                        </table>
-                    </div>
+                    @Localizer["Sign-in and existing access are required. Copying a link does not grant access."]
                 }
+            </p>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" value="@(Model.IsPublic ? Model.PublicLink : Url.Action("Files", "Dashboard", new { siteName = Model.SiteName }, Context.Request.Scheme))" readonly id="share-link" aria-label="@Localizer["Share Link"]" aria-describedby="saved-link-scope">
+                <button type="button" class="btn btn-outline-primary" id="copy-share-link">@Localizer["Copy link"]</button>
             </div>
+            <div id="copy-status" class="small mb-3" role="status" hidden></div>
+            <details id="link-access-details">
+                <summary class="fw-semibold">@Localizer["Change link access"]</summary>
+                <form asp-action="UpdateVisibility" asp-route-siteName="@Model.SiteName" method="post" id="visibility-form" class="mt-3" data-saved-public="@Model.IsPublic.ToString().ToLowerInvariant()">
+                    <label for="link-access" class="form-label">@Localizer["Who can use the link?"]</label>
+                    <select name="publicAccess" id="link-access" class="form-select">
+                        <option value="false" selected="@(!Model.IsPublic)">@Localizer["People with access"]</option>
+                        <option value="true" selected="@(Model.IsPublic)">@Localizer["Anyone — view only"]</option>
+                    </select>
+                    <p class="small text-muted mt-2 mb-0">@Localizer["Anonymous viewing does not change the user or role permissions above."]</p>
+                    <p id="visibility-pending" class="small mt-2 mb-0" role="status" hidden>@Localizer["Not saved. The link above still uses the current access setting."]</p>
+                    <div class="small text-danger mt-2 form-error" role="alert" hidden></div>
+                    <button type="submit" class="btn btn-primary mt-3">@Localizer["Save access"]</button>
+                </form>
+            </details>
         </div>
     </div>
-</div>
-}
-
-@* Error Modal *@
-<div class="modal fade" id="errorModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header text-danger">
-                <h5 class="modal-title">
-                    <i class="align-middle me-2" data-lucide="alert-circle"></i> @Localizer["Error"]
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p id="errorMessage">@Localizer["An error occurred while processing your request."]</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@Localizer["Close"]</button>
-            </div>
-        </div>
+    <div id="sharing-loc" hidden>
+        <span data-key="invalid">@Localizer["Select a user from the search results or choose a role."]</span>
+        <span data-key="duplicate">@Localizer["This user or role already has access to this site."]</span>
+        <span data-key="failed">@Localizer["Could not confirm the change. Your input is kept. Try again, or reload to check the saved state."]</span>
+        <span data-key="remove">@Localizer["Remove this share? Other access may still apply."]</span>
+        <span data-key="searching">@Localizer["Searching..."]</span>
+        <span data-key="noUsers">@Localizer["No users found. Try another name or email."]</span>
+        <span data-key="searchFailed">@Localizer["Search failed. Change the search text to try again."]</span>
+        <span data-key="copied">@Localizer["Link copied."]</span>
+        <span data-key="copyFailed">@Localizer["Could not copy. Select and copy the link above."]</span>
     </div>
 </div>
 
-@* ReSharper disable once Razor.SectionNotResolved *@
 @section scripts {
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const shareTypeRole = document.getElementById('shareTypeRole');
-            const shareTypeUser = document.getElementById('shareTypeUser');
-            const roleSelection = document.getElementById('role-selection');
-            const userSelection = document.getElementById('user-selection');
-            const roleSelect = document.getElementById('roleSelect');
-
-            const userSearch = document.getElementById('userSearch');
-            const userSearchResults = document.getElementById('userSearchResults');
-            const selectedUserId = document.getElementById('selectedUserId');
-            const selectedUserDisplay = document.getElementById('selectedUserDisplay');
-            const clearSelectedUser = document.getElementById('clearSelectedUser');
-
-            let searchTimeout;
-            let isLoading = false;
-            let currentQuery = '';
-
-            // Toggle between role and user selection
-            shareTypeRole.addEventListener('change', function() {
-                if (this.checked) {
-                    roleSelection.classList.remove('d-none');
-                    userSelection.classList.add('d-none');
-                    roleSelect.setAttribute('name', 'TargetRoleId');
-                    selectedUserId.removeAttribute('name');
-                }
-            });
-
-            shareTypeUser.addEventListener('change', function() {
-                if (this.checked) {
-                    userSelection.classList.remove('d-none');
-                    roleSelection.classList.add('d-none');
-                    roleSelect.removeAttribute('name');
-                    selectedUserId.setAttribute('name', 'TargetUserId');
-                }
-            });
-
-            // User search autocomplete
-            userSearch.addEventListener('input', function() {
-                const query = this.value.trim();
-                currentQuery = query;
-
-                clearTimeout(searchTimeout);
-
-                if (query.length < 3) {
-                    userSearchResults.classList.add('d-none');
-                    userSearchResults.innerHTML = '';
-                    return;
-                }
-
-                userSearchResults.innerHTML = '';
-
-                searchTimeout = setTimeout(() => loadUsers(query), 300);
-            });
-
-            async function loadUsers(query) {
-                if (isLoading) return;
-                isLoading = true;
-
-                try {
-                    // Assuming there is an API to search users. 
-                    // Does UsersController have search?
-                    // Let's check UsersController.
-                    // If not, we might need to add one or use a workaround.
-                    // The snippet used /api/users/search.
-                    // I need to implement a search API or use existing one.
-                    // I'll assume for now I will add a method in UsersController or use a specific action.
-                    const response = await fetch(`/Users/Search?query=${encodeURIComponent(query)}`);
-                    if (!response.ok) throw new Error('Search failed');
-
-                    const data = await response.json();
-                    const users = data.users;
-
-                    if (users.length === 0) {
-                        userSearchResults.innerHTML = '<div class="p-3 text-muted">@Localizer["No users found"]</div>';
-                        userSearchResults.classList.remove('d-none');
-                        isLoading = false;
-                        return;
-                    }
-
-                    let html = '';
-                    users.forEach(user => {
-                        html += `
-                            <div class="user-search-item p-2 d-flex align-items-center" style="cursor: pointer;" data-user-id="${user.Id}" data-user-name="${user.DisplayName}" data-user-username="${user.UserName}" data-user-avatar="${user.AvatarUrl}">
-                                <img src="${user.AvatarUrl}" alt="${user.DisplayName}" class="rounded-circle me-2" style="width: 32px; height: 32px; object-fit: cover;">
-                                <div>
-                                    <div class="fw-bold">${user.DisplayName}</div>
-                                    <div class="small text-muted">${user.UserName}</div>
-                                </div>
-                            </div>
-                        `;
-                    });
-
-                    userSearchResults.innerHTML = html;
-                    userSearchResults.classList.remove('d-none');
-
-                } catch (error) {
-                    console.error('Error searching users:', error);
-                    userSearchResults.innerHTML = '<div class="p-3 text-danger">@Localizer["Error searching users"]</div>';
-                    userSearchResults.classList.remove('d-none');
-                } finally {
-                    isLoading = false;
-                }
-            }
-
-            // Event delegation for clicking items
-            userSearchResults.addEventListener('click', function(e) {
-                const item = e.target.closest('.user-search-item');
-                if (item) {
-                    selectUser(
-                        item.dataset.userId,
-                        item.dataset.userName,
-                        item.dataset.userUsername,
-                        item.dataset.userAvatar
-                    );
-                }
-            });
-
-            // Hover effects via delegation
-            userSearchResults.addEventListener('mouseover', function(e) {
-                const item = e.target.closest('.user-search-item');
-                if (item) item.style.backgroundColor = '#f8f9fa';
-            });
-
-            userSearchResults.addEventListener('mouseout', function(e) {
-                const item = e.target.closest('.user-search-item');
-                if (item) item.style.backgroundColor = '';
-            });
-
-            function selectUser(id, name, username, avatar) {
-                selectedUserId.value = id;
-                userSearch.value = '';
-                userSearchResults.classList.add('d-none');
-
-                document.getElementById('selectedUserAvatar').src = avatar;
-                document.getElementById('selectedUserName').textContent = name;
-                document.getElementById('selectedUserUsername').textContent = username;
-                selectedUserDisplay.classList.remove('d-none');
-            }
-
-            clearSelectedUser.addEventListener('click', function() {
-                selectedUserId.value = '';
-                selectedUserDisplay.classList.add('d-none');
-                userSearch.value = '';
-            });
-
-            // Close search results when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!userSearch.contains(e.target) && !userSearchResults.contains(e.target)) {
-                    userSearchResults.classList.add('d-none');
-                }
-            });
-
-            // Prevent form submission on enter in user search input
-            userSearch.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter') {
-                    e.preventDefault();
-                    return false;
-                }
-            });
-
-            // Check for error parameter in URL
-            const urlParams = new URLSearchParams(window.location.search);
-            const error = urlParams.get('error');
-            if (error) {
-                const errorMessage = document.getElementById('errorMessage');
-                if (error === 'duplicate') {
-                    errorMessage.textContent = '@Localizer["This user or role already has access to this site."]';
-                } else if (error === 'invalid') {
-                    errorMessage.textContent = '@Localizer["Please select a valid user or role."].';
-                }
-
-                const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
-                errorModal.show();
-
-                // Clean up URL
-                const newUrl = window.location.pathname + window.location.search.replace(/[\?&]error=[^&]+/, '').replace(/^&/, '?');
-                window.history.replaceState({}, document.title, newUrl);
-            }
-        });
-    </script>
+    <script src="~/scripts/manage-shares.js" asp-append-version="true" defer></script>
 }
