@@ -2,23 +2,85 @@
 @model Aiursoft.AiurDrive.Models.SharesViewModels.ManageSharesViewModel
 @inject Aiursoft.AiurDrive.Services.FileStorage.StorageService StorageService
 
+@{
+    string DescribeRecipients(IEnumerable<string> recipients, bool roles)
+    {
+        var names = recipients.OrderBy(name => name).ToList();
+        if (names.Count == 0) return string.Empty;
+        if (names[0].Length > 40)
+        {
+            if (names.Count == 1)
+            {
+                if (roles) return string.Format(@Localizer["{0} role"].Value, names.Count);
+                return string.Format(@Localizer["{0} user"].Value, names.Count);
+            }
+            if (roles) return string.Format(@Localizer["{0} roles"].Value, names.Count);
+            return string.Format(@Localizer["{0} users"].Value, names.Count);
+        }
+        if (roles)
+        {
+            if (names.Count == 1) return string.Format(@Localizer["Role {0}"].Value, names[0]);
+            if (names.Count == 2) return string.Format(@Localizer["Role {0} and {1} other role"].Value, names[0], names.Count - 1);
+            return string.Format(@Localizer["Role {0} and {1} other roles"].Value, names[0], names.Count - 1);
+        }
+        if (names.Count == 1) return names[0];
+        if (names.Count == 2) return string.Format(@Localizer["{0} and {1} other user"].Value, names[0], names.Count - 1);
+        return string.Format(@Localizer["{0} and {1} other users"].Value, names[0], names.Count - 1);
+    }
+
+    var accessDescriptions = new List<string>();
+    foreach (var permission in new[] { SharePermission.ReadOnly, SharePermission.Editable })
+    {
+        var shares = Model.ExistingShares.Where(share => share.Permission == permission).ToList();
+        var roles = DescribeRecipients(shares.Where(share => share.SharedWithRoleId != null).DistinctBy(share => share.SharedWithRoleId)
+            .Select(share => Model.AvailableRoles.FirstOrDefault(role => role.Id == share.SharedWithRoleId)?.Name ?? share.SharedWithRoleId!), true);
+        var users = DescribeRecipients(shares.Where(share => share.SharedWithUserId != null).DistinctBy(share => share.SharedWithUserId)
+            .Select(share => share.SharedWithUser?.DisplayName ?? share.SharedWithUserId!), false);
+        var recipients = string.IsNullOrEmpty(roles) ? users : string.IsNullOrEmpty(users) ? roles : string.Format(@Localizer["{0}, {1}"].Value, roles, users);
+        if (string.IsNullOrEmpty(recipients)) continue;
+        if (permission == SharePermission.ReadOnly)
+        {
+            if (Model.IsPublic) continue;
+            accessDescriptions.Add(string.Format(@Localizer["{0} can view."].Value, recipients));
+        }
+        else
+        {
+            accessDescriptions.Add(string.Format(@Localizer["{0} can edit."].Value, recipients));
+        }
+    }
+}
+
 <div id="sharing-page" class="mx-auto" style="max-width: 960px;">
     <div class="d-flex flex-wrap align-items-start justify-content-between gap-3 mb-4">
         <div class="min-w-0">
             <div class="text-muted mb-1">@Localizer["Manage Shares"]</div>
             <h1 class="h3 text-break mb-2">@Model.SiteName</h1>
-            @if (Model.IsPublic)
-            {
-                <span class="badge bg-info">@Localizer["Public viewing"]</span>
-            }
-            else
-            {
-                <span class="badge bg-secondary">@Localizer["Restricted access"]</span>
-            }
         </div>
         <a asp-controller="Dashboard" asp-action="Files" asp-route-siteName="@Model.SiteName" class="btn btn-outline-primary">
             <i class="align-middle" data-lucide="arrow-left" aria-hidden="true"></i> @Localizer["Back to Files"]
         </a>
+    </div>
+
+    <div id="access-summary" class="d-flex align-items-start gap-2 border rounded px-3 py-2 mb-4 text-break" aria-label="@Localizer["Current access"]">
+        <i class="align-middle flex-shrink-0" data-lucide="@(Model.IsPublic ? "globe" : "lock")" aria-hidden="true"></i>
+        <div>
+            @if (Model.IsPublic)
+            {
+                <span>@Localizer["Anyone with the link can view without signing in."]</span>
+            }
+            else if (!Model.ExistingShares.Any())
+            {
+                <span>@Localizer["Only the owner and authorized administrators have access."]</span>
+            }
+            else
+            {
+                <span>@Localizer["Only authorized people can access."]</span>
+            }
+            @foreach (var description in accessDescriptions)
+            {
+                <span>@description</span>
+            }
+        </div>
     </div>
 
     <div class="card">
