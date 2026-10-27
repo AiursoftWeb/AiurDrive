@@ -9,15 +9,22 @@
         if (names.Count == 0) return string.Empty;
         if (names[0].Length > 40)
         {
+            if (names.Count == 1)
+            {
+                if (roles) return string.Format(@Localizer["{0} role"].Value, names.Count);
+                return string.Format(@Localizer["{0} user"].Value, names.Count);
+            }
             if (roles) return string.Format(@Localizer["{0} roles"].Value, names.Count);
             return string.Format(@Localizer["{0} users"].Value, names.Count);
         }
         if (roles)
         {
             if (names.Count == 1) return string.Format(@Localizer["Role {0}"].Value, names[0]);
+            if (names.Count == 2) return string.Format(@Localizer["Role {0} and {1} other role"].Value, names[0], names.Count - 1);
             return string.Format(@Localizer["Role {0} and {1} other roles"].Value, names[0], names.Count - 1);
         }
         if (names.Count == 1) return names[0];
+        if (names.Count == 2) return string.Format(@Localizer["{0} and {1} other user"].Value, names[0], names.Count - 1);
         return string.Format(@Localizer["{0} and {1} other users"].Value, names[0], names.Count - 1);
     }
 
@@ -54,7 +61,7 @@
         </a>
     </div>
 
-    <div id="access-summary" class="d-flex align-items-start gap-2 border rounded px-3 py-2 mb-4 small text-break" aria-label="@Localizer["Current access"]">
+    <div id="access-summary" class="d-flex align-items-start gap-2 border rounded px-3 py-2 mb-4 text-break" aria-label="@Localizer["Current access"]">
         <i class="align-middle flex-shrink-0" data-lucide="@(Model.IsPublic ? "globe" : "lock")" aria-hidden="true"></i>
         <div>
             @if (Model.IsPublic)

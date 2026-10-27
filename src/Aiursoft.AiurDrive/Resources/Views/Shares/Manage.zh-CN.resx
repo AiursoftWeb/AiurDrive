@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="{0} and {1} other users" xml:space="preserve">
+      <data name="{0} and {1} other user" xml:space="preserve">
+    <value>{0}及另外{1}位用户</value>
+  </data>
+  <data name="{0} and {1} other users" xml:space="preserve">
     <value>{0}和另外{1}位用户</value>
   </data>
   <data name="{0} can edit." xml:space="preserve">
@@ -27,8 +30,14 @@
   <data name="{0} can view." xml:space="preserve">
     <value>{0}可以查看。</value>
   </data>
+  <data name="{0} role" xml:space="preserve">
+    <value>{0} 个角色</value>
+  </data>
   <data name="{0} roles" xml:space="preserve">
     <value>{0} 个角色</value>
+  </data>
+  <data name="{0} user" xml:space="preserve">
+    <value>{0} 个用户</value>
   </data>
   <data name="{0} users" xml:space="preserve">
     <value>{0} 位用户</value>
@@ -191,6 +200,9 @@
   </data>
   <data name="Role {0}" xml:space="preserve">
     <value>角色 {0}</value>
+  </data>
+  <data name="Role {0} and {1} other role" xml:space="preserve">
+    <value>角色 {0} 及其他 {1} 个角色</value>
   </data>
   <data name="Role {0} and {1} other roles" xml:space="preserve">
     <value>角色 {0} 及其他 {1} 个角色</value>
