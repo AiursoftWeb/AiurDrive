@@ -18,7 +18,34 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="About access" xml:space="preserve">
+      <data name="{0} and {1} other user" xml:space="preserve">
+    <value>{0} og {1} anden bruger</value>
+  </data>
+  <data name="{0} and {1} other users" xml:space="preserve">
+    <value>{0} og {1} andre brugere</value>
+  </data>
+  <data name="{0} can edit." xml:space="preserve">
+    <value>{0} kan redigere.</value>
+  </data>
+  <data name="{0} can view." xml:space="preserve">
+    <value>{0} kan se.</value>
+  </data>
+  <data name="{0} role" xml:space="preserve">
+    <value>{0} rolle</value>
+  </data>
+  <data name="{0} roles" xml:space="preserve">
+    <value>{0} roller</value>
+  </data>
+  <data name="{0} user" xml:space="preserve">
+    <value>{0} bruger</value>
+  </data>
+  <data name="{0} users" xml:space="preserve">
+    <value>{0} brugere</value>
+  </data>
+  <data name="{0}, {1}" xml:space="preserve">
+    <value>{0}, {1}</value>
+  </data>
+  <data name="About access" xml:space="preserve">
     <value>Om adgang</value>
   </data>
   <data name="Actions" xml:space="preserve">
@@ -50,6 +77,9 @@
   </data>
   <data name="Anyone with the link can view this site&apos;s files (read-only)." xml:space="preserve">
     <value>Alle med linket kan se denne websides filer (skrivebeskyttet).</value>
+  </data>
+  <data name="Anyone with the link can view without signing in." xml:space="preserve">
+    <value>Alle med linket kan se indholdet uden at logge ind.</value>
   </data>
   <data name="Are you sure you want to remove this share?" xml:space="preserve">
     <value>Er du sikker på, at du vil fjerne denne deling?</value>
@@ -86,6 +116,9 @@
   </data>
   <data name="Created" xml:space="preserve">
     <value>Oprettet</value>
+  </data>
+  <data name="Current access" xml:space="preserve">
+    <value>Aktuel adgang</value>
   </data>
   <data name="Editable" xml:space="preserve">
     <value>Redigerbar</value>
@@ -129,6 +162,12 @@
   <data name="Not saved. The link above still uses the current access setting." xml:space="preserve">
     <value>Ikke gemt. Linket ovenfor bruger stadig den aktuelle adgangsindstilling.</value>
   </data>
+  <data name="Only authorized people can access." xml:space="preserve">
+    <value>Kun autoriserede personer har adgang.</value>
+  </data>
+  <data name="Only the owner and authorized administrators have access." xml:space="preserve">
+    <value>Kun ejeren og autoriserede administratorer har adgang.</value>
+  </data>
   <data name="Only you and specific users/roles listed below can view this site." xml:space="preserve">
     <value>Kun dig og de specifikke brugere/roller, der er listet nedenfor, kan se denne side.</value>
   </data>
@@ -158,6 +197,15 @@
   </data>
   <data name="Role" xml:space="preserve">
     <value>Rolle</value>
+  </data>
+  <data name="Role {0}" xml:space="preserve">
+    <value>Rolle {0}</value>
+  </data>
+  <data name="Role {0} and {1} other role" xml:space="preserve">
+    <value>Rollen {0} og {1} anden rolle</value>
+  </data>
+  <data name="Role {0} and {1} other roles" xml:space="preserve">
+    <value>Rolle {0} og {1} andre roller</value>
   </data>
   <data name="Save access" xml:space="preserve">
     <value>Gem adgang</value>

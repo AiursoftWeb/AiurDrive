@@ -18,7 +18,34 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="About access" xml:space="preserve">
+      <data name="{0} and {1} other user" xml:space="preserve">
+    <value>{0} și {1} alt utilizator</value>
+  </data>
+  <data name="{0} and {1} other users" xml:space="preserve">
+    <value>{0} și {1} alți utilizatori</value>
+  </data>
+  <data name="{0} can edit." xml:space="preserve">
+    <value>{0} poate edita.</value>
+  </data>
+  <data name="{0} can view." xml:space="preserve">
+    <value>{0} poate vizualiza.</value>
+  </data>
+  <data name="{0} role" xml:space="preserve">
+    <value>rolul {0}</value>
+  </data>
+  <data name="{0} roles" xml:space="preserve">
+    <value>{0} roluri</value>
+  </data>
+  <data name="{0} user" xml:space="preserve">
+    <value>{0} utilizator</value>
+  </data>
+  <data name="{0} users" xml:space="preserve">
+    <value>{0} de utilizatori</value>
+  </data>
+  <data name="{0}, {1}" xml:space="preserve">
+    <value>{0}, {1}</value>
+  </data>
+  <data name="About access" xml:space="preserve">
     <value>Despre acces</value>
   </data>
   <data name="Actions" xml:space="preserve">
@@ -50,6 +77,9 @@
   </data>
   <data name="Anyone with the link can view this site&apos;s files (read-only)." xml:space="preserve">
     <value>Oricine cu linkul poate vizualiza fișierele de pe acest site (doar citire).</value>
+  </data>
+  <data name="Anyone with the link can view without signing in." xml:space="preserve">
+    <value>Oricine are linkul poate vizualiza fără să se conecteze.</value>
   </data>
   <data name="Are you sure you want to remove this share?" xml:space="preserve">
     <value>Ești sigur că vrei să elimini această partajare?</value>
@@ -86,6 +116,9 @@
   </data>
   <data name="Created" xml:space="preserve">
     <value>Creat</value>
+  </data>
+  <data name="Current access" xml:space="preserve">
+    <value>Acces curent</value>
   </data>
   <data name="Editable" xml:space="preserve">
     <value>Editabil</value>
@@ -129,6 +162,12 @@
   <data name="Not saved. The link above still uses the current access setting." xml:space="preserve">
     <value>Nu a fost salvat. Linkul de mai sus folosește în continuare setarea actuală de acces.</value>
   </data>
+  <data name="Only authorized people can access." xml:space="preserve">
+    <value>Numai persoanele autorizate pot accesa.</value>
+  </data>
+  <data name="Only the owner and authorized administrators have access." xml:space="preserve">
+    <value>Doar proprietarul și administratorii autorizați au acces.</value>
+  </data>
   <data name="Only you and specific users/roles listed below can view this site." xml:space="preserve">
     <value>Doar tu și utilizatorii/rolurile specifice listate mai jos pot vizualiza acest site.</value>
   </data>
@@ -158,6 +197,15 @@
   </data>
   <data name="Role" xml:space="preserve">
     <value>Rol</value>
+  </data>
+  <data name="Role {0}" xml:space="preserve">
+    <value>Rolul {0}</value>
+  </data>
+  <data name="Role {0} and {1} other role" xml:space="preserve">
+    <value>Rolul {0} și încă un rol</value>
+  </data>
+  <data name="Role {0} and {1} other roles" xml:space="preserve">
+    <value>Rolul {0} și încă {1} roluri</value>
   </data>
   <data name="Save access" xml:space="preserve">
     <value>Salvează accesul</value>

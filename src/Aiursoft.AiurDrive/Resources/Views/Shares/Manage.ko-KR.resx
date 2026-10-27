@@ -18,7 +18,34 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="About access" xml:space="preserve">
+      <data name="{0} and {1} other user" xml:space="preserve">
+    <value>{0}님 외 {1}명의 사용자</value>
+  </data>
+  <data name="{0} and {1} other users" xml:space="preserve">
+    <value>{0} 외 {1}명의 다른 사용자</value>
+  </data>
+  <data name="{0} can edit." xml:space="preserve">
+    <value>{0} 님은 수정할 수 있습니다.</value>
+  </data>
+  <data name="{0} can view." xml:space="preserve">
+    <value>{0}님이 볼 수 있습니다.</value>
+  </data>
+  <data name="{0} role" xml:space="preserve">
+    <value>{0}개 역할</value>
+  </data>
+  <data name="{0} roles" xml:space="preserve">
+    <value>역할 {0}개</value>
+  </data>
+  <data name="{0} user" xml:space="preserve">
+    <value>사용자 {0}명</value>
+  </data>
+  <data name="{0} users" xml:space="preserve">
+    <value>사용자 {0}명</value>
+  </data>
+  <data name="{0}, {1}" xml:space="preserve">
+    <value>{0}, {1}</value>
+  </data>
+  <data name="About access" xml:space="preserve">
     <value>액세스 정보</value>
   </data>
   <data name="Actions" xml:space="preserve">
@@ -50,6 +77,9 @@
   </data>
   <data name="Anyone with the link can view this site&apos;s files (read-only)." xml:space="preserve">
     <value>링크를 가진 사람은 이 사이트의 파일을 읽기 전용으로 볼 수 있습니다.</value>
+  </data>
+  <data name="Anyone with the link can view without signing in." xml:space="preserve">
+    <value>링크가 있는 사람은 누구나 로그인하지 않고 볼 수 있습니다.</value>
   </data>
   <data name="Are you sure you want to remove this share?" xml:space="preserve">
     <value>이 공유를 삭제하시겠습니까?</value>
@@ -86,6 +116,9 @@
   </data>
   <data name="Created" xml:space="preserve">
     <value>생성됨</value>
+  </data>
+  <data name="Current access" xml:space="preserve">
+    <value>현재 액세스</value>
   </data>
   <data name="Editable" xml:space="preserve">
     <value>편집 가능</value>
@@ -129,6 +162,12 @@
   <data name="Not saved. The link above still uses the current access setting." xml:space="preserve">
     <value>저장되지 않았습니다. 위 링크에는 여전히 현재 액세스 설정이 적용됩니다.</value>
   </data>
+  <data name="Only authorized people can access." xml:space="preserve">
+    <value>승인된 사용자만 접근할 수 있습니다.</value>
+  </data>
+  <data name="Only the owner and authorized administrators have access." xml:space="preserve">
+    <value>소유자와 권한이 있는 관리자만 액세스할 수 있습니다.</value>
+  </data>
   <data name="Only you and specific users/roles listed below can view this site." xml:space="preserve">
     <value>자신과 아래에 나열된 특정 사용자/역할만 이 사이트를 볼 수 있습니다.</value>
   </data>
@@ -158,6 +197,15 @@
   </data>
   <data name="Role" xml:space="preserve">
     <value>역할</value>
+  </data>
+  <data name="Role {0}" xml:space="preserve">
+    <value>역할 {0}</value>
+  </data>
+  <data name="Role {0} and {1} other role" xml:space="preserve">
+    <value>역할 {0} 외 {1}개 역할</value>
+  </data>
+  <data name="Role {0} and {1} other roles" xml:space="preserve">
+    <value>역할 {0} 외 {1}개 역할</value>
   </data>
   <data name="Save access" xml:space="preserve">
     <value>접근 권한 저장</value>

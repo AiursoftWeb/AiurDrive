@@ -18,7 +18,34 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="About access" xml:space="preserve">
+      <data name="{0} and {1} other user" xml:space="preserve">
+    <value>{0} और {1} अन्य उपयोगकर्ता</value>
+  </data>
+  <data name="{0} and {1} other users" xml:space="preserve">
+    <value>{0} और {1} अन्य उपयोगकर्ता</value>
+  </data>
+  <data name="{0} can edit." xml:space="preserve">
+    <value>{0} संपादन कर सकते हैं।</value>
+  </data>
+  <data name="{0} can view." xml:space="preserve">
+    <value>{0} देख सकते हैं।</value>
+  </data>
+  <data name="{0} role" xml:space="preserve">
+    <value>{0} भूमिका</value>
+  </data>
+  <data name="{0} roles" xml:space="preserve">
+    <value>{0} भूमिकाएँ</value>
+  </data>
+  <data name="{0} user" xml:space="preserve">
+    <value>{0} उपयोगकर्ता</value>
+  </data>
+  <data name="{0} users" xml:space="preserve">
+    <value>{0} उपयोगकर्ता</value>
+  </data>
+  <data name="{0}, {1}" xml:space="preserve">
+    <value>{0}, {1}</value>
+  </data>
+  <data name="About access" xml:space="preserve">
     <value>ऐक्सेस के बारे में</value>
   </data>
   <data name="Actions" xml:space="preserve">
@@ -50,6 +77,9 @@
   </data>
   <data name="Anyone with the link can view this site&apos;s files (read-only)." xml:space="preserve">
     <value>लिंक के साथ कोई भी इस साइट के फ़ाइल्स को देख सकता है (केवल पढ़ने के लिए)।</value>
+  </data>
+  <data name="Anyone with the link can view without signing in." xml:space="preserve">
+    <value>लिंक वाला कोई भी व्यक्ति बिना साइन इन किए देख सकता है।</value>
   </data>
   <data name="Are you sure you want to remove this share?" xml:space="preserve">
     <value>क्या आप वाकई इस शेयर को हटाना चाहते हैं?</value>
@@ -86,6 +116,9 @@
   </data>
   <data name="Created" xml:space="preserve">
     <value>बनाया गया</value>
+  </data>
+  <data name="Current access" xml:space="preserve">
+    <value>वर्तमान पहुँच</value>
   </data>
   <data name="Editable" xml:space="preserve">
     <value>संपादित करने योग्य</value>
@@ -129,6 +162,12 @@
   <data name="Not saved. The link above still uses the current access setting." xml:space="preserve">
     <value>सहेजा नहीं गया। ऊपर दिया गया लिंक अभी भी मौजूदा पहुँच सेटिंग का उपयोग करता है।</value>
   </data>
+  <data name="Only authorized people can access." xml:space="preserve">
+    <value>केवल अधिकृत लोगों को ही पहुँच प्राप्त है।</value>
+  </data>
+  <data name="Only the owner and authorized administrators have access." xml:space="preserve">
+    <value>केवल स्वामी और अधिकृत व्यवस्थापकों को ही पहुँच प्राप्त है।</value>
+  </data>
   <data name="Only you and specific users/roles listed below can view this site." xml:space="preserve">
     <value>केवल आप और नीचे दिए गए विशिष्ट उपयोगकर्ता/भूमिकाएँ इस साइट को देख सकते हैं।</value>
   </data>
@@ -158,6 +197,15 @@
   </data>
   <data name="Role" xml:space="preserve">
     <value>भूमिका</value>
+  </data>
+  <data name="Role {0}" xml:space="preserve">
+    <value>भूमिका {0}</value>
+  </data>
+  <data name="Role {0} and {1} other role" xml:space="preserve">
+    <value>भूमिका {0} और {1} अन्य भूमिका</value>
+  </data>
+  <data name="Role {0} and {1} other roles" xml:space="preserve">
+    <value>भूमिका {0} और {1} अन्य भूमिकाएँ</value>
   </data>
   <data name="Save access" xml:space="preserve">
     <value>एक्सेस सहेजें</value>
