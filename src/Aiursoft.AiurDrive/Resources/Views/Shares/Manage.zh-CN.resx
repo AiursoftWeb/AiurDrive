@@ -18,7 +18,25 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="About access" xml:space="preserve">
+      <data name="{0} and {1} other users" xml:space="preserve">
+    <value>{0}和另外{1}位用户</value>
+  </data>
+  <data name="{0} can edit." xml:space="preserve">
+    <value>{0} 可以编辑。</value>
+  </data>
+  <data name="{0} can view." xml:space="preserve">
+    <value>{0}可以查看。</value>
+  </data>
+  <data name="{0} roles" xml:space="preserve">
+    <value>{0} 个角色</value>
+  </data>
+  <data name="{0} users" xml:space="preserve">
+    <value>{0} 位用户</value>
+  </data>
+  <data name="{0}, {1}" xml:space="preserve">
+    <value>{0}，{1}</value>
+  </data>
+  <data name="About access" xml:space="preserve">
     <value>关于访问权限</value>
   </data>
   <data name="Actions" xml:space="preserve">
@@ -50,6 +68,9 @@
   </data>
   <data name="Anyone with the link can view this site&apos;s files (read-only)." xml:space="preserve">
     <value>任何拥有链接的人都可以查看此网站的文件（只读）。</value>
+  </data>
+  <data name="Anyone with the link can view without signing in." xml:space="preserve">
+    <value>任何持有链接的人都可以无需登录即可查看。</value>
   </data>
   <data name="Are you sure you want to remove this share?" xml:space="preserve">
     <value>确定要删除此共享吗？</value>
@@ -86,6 +107,9 @@
   </data>
   <data name="Created" xml:space="preserve">
     <value>创建时间</value>
+  </data>
+  <data name="Current access" xml:space="preserve">
+    <value>当前访问权限</value>
   </data>
   <data name="Editable" xml:space="preserve">
     <value>可编辑</value>
@@ -129,6 +153,12 @@
   <data name="Not saved. The link above still uses the current access setting." xml:space="preserve">
     <value>未保存。上方链接仍使用当前访问权限设置。</value>
   </data>
+  <data name="Only authorized people can access." xml:space="preserve">
+    <value>仅限授权人员访问。</value>
+  </data>
+  <data name="Only the owner and authorized administrators have access." xml:space="preserve">
+    <value>只有所有者和获授权的管理员才能访问。</value>
+  </data>
   <data name="Only you and specific users/roles listed below can view this site." xml:space="preserve">
     <value>只有您和下面列出的特定用户/角色可以查看此网站。</value>
   </data>
@@ -158,6 +188,12 @@
   </data>
   <data name="Role" xml:space="preserve">
     <value>角色</value>
+  </data>
+  <data name="Role {0}" xml:space="preserve">
+    <value>角色 {0}</value>
+  </data>
+  <data name="Role {0} and {1} other roles" xml:space="preserve">
+    <value>角色 {0} 及其他 {1} 个角色</value>
   </data>
   <data name="Save access" xml:space="preserve">
     <value>保存访问权限</value>
