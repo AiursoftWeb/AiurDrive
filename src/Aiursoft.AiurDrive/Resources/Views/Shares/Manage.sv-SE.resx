@@ -18,7 +18,34 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="About access" xml:space="preserve">
+      <data name="{0} and {1} other user" xml:space="preserve">
+    <value>{0} och {1} annan användare</value>
+  </data>
+  <data name="{0} and {1} other users" xml:space="preserve">
+    <value>{0} och {1} andra användare</value>
+  </data>
+  <data name="{0} can edit." xml:space="preserve">
+    <value>{0} kan redigera.</value>
+  </data>
+  <data name="{0} can view." xml:space="preserve">
+    <value>{0} kan visa.</value>
+  </data>
+  <data name="{0} role" xml:space="preserve">
+    <value>{0} roll</value>
+  </data>
+  <data name="{0} roles" xml:space="preserve">
+    <value>{0} roller</value>
+  </data>
+  <data name="{0} user" xml:space="preserve">
+    <value>{0} användare</value>
+  </data>
+  <data name="{0} users" xml:space="preserve">
+    <value>{0} användare</value>
+  </data>
+  <data name="{0}, {1}" xml:space="preserve">
+    <value>{0}, {1}</value>
+  </data>
+  <data name="About access" xml:space="preserve">
     <value>Om åtkomst</value>
   </data>
   <data name="Actions" xml:space="preserve">
@@ -50,6 +77,9 @@
   </data>
   <data name="Anyone with the link can view this site&apos;s files (read-only)." xml:space="preserve">
     <value>Någon med länken kan visa sidans filer (endast läsning).</value>
+  </data>
+  <data name="Anyone with the link can view without signing in." xml:space="preserve">
+    <value>Alla med länken kan visa utan att logga in.</value>
   </data>
   <data name="Are you sure you want to remove this share?" xml:space="preserve">
     <value>Är du säker på att du vill ta bort den här delningen?</value>
@@ -86,6 +116,9 @@
   </data>
   <data name="Created" xml:space="preserve">
     <value>Skapad</value>
+  </data>
+  <data name="Current access" xml:space="preserve">
+    <value>Aktuell åtkomst</value>
   </data>
   <data name="Editable" xml:space="preserve">
     <value>Redigerbar</value>
@@ -129,6 +162,12 @@
   <data name="Not saved. The link above still uses the current access setting." xml:space="preserve">
     <value>Inte sparat. Länken ovan använder fortfarande den aktuella åtkomstinställningen.</value>
   </data>
+  <data name="Only authorized people can access." xml:space="preserve">
+    <value>Endast behöriga personer har åtkomst.</value>
+  </data>
+  <data name="Only the owner and authorized administrators have access." xml:space="preserve">
+    <value>Endast ägaren och behöriga administratörer har åtkomst.</value>
+  </data>
   <data name="Only you and specific users/roles listed below can view this site." xml:space="preserve">
     <value>Endast du och de specifika användare/roller som anges nedan kan visa denna sida.</value>
   </data>
@@ -158,6 +197,15 @@
   </data>
   <data name="Role" xml:space="preserve">
     <value>Roll</value>
+  </data>
+  <data name="Role {0}" xml:space="preserve">
+    <value>Roll {0}</value>
+  </data>
+  <data name="Role {0} and {1} other role" xml:space="preserve">
+    <value>Rollen {0} och {1} annan roll</value>
+  </data>
+  <data name="Role {0} and {1} other roles" xml:space="preserve">
+    <value>Rollen {0} och {1} annan roll</value>
   </data>
   <data name="Save access" xml:space="preserve">
     <value>Spara åtkomst</value>

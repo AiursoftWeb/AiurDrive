@@ -18,7 +18,34 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="About access" xml:space="preserve">
+      <data name="{0} and {1} other user" xml:space="preserve">
+    <value>{0} 和另外 {1} 位使用者</value>
+  </data>
+  <data name="{0} and {1} other users" xml:space="preserve">
+    <value>{0} 和其他 {1} 位使用者</value>
+  </data>
+  <data name="{0} can edit." xml:space="preserve">
+    <value>{0} 可以編輯。</value>
+  </data>
+  <data name="{0} can view." xml:space="preserve">
+    <value>{0} 可以檢視。</value>
+  </data>
+  <data name="{0} role" xml:space="preserve">
+    <value>{0} 個角色</value>
+  </data>
+  <data name="{0} roles" xml:space="preserve">
+    <value>{0} 個角色</value>
+  </data>
+  <data name="{0} user" xml:space="preserve">
+    <value>{0} 位使用者</value>
+  </data>
+  <data name="{0} users" xml:space="preserve">
+    <value>{0} 位使用者</value>
+  </data>
+  <data name="{0}, {1}" xml:space="preserve">
+    <value>{0}、{1}</value>
+  </data>
+  <data name="About access" xml:space="preserve">
     <value>關於存取權限</value>
   </data>
   <data name="Actions" xml:space="preserve">
@@ -50,6 +77,9 @@
   </data>
   <data name="Anyone with the link can view this site&apos;s files (read-only)." xml:space="preserve">
     <value>任何擁有連結的人都可以檢視此網站的檔案（唯讀）。</value>
+  </data>
+  <data name="Anyone with the link can view without signing in." xml:space="preserve">
+    <value>任何持有連結的人都可以檢視，無須登入。</value>
   </data>
   <data name="Are you sure you want to remove this share?" xml:space="preserve">
     <value>確定要移除這個分享嗎？</value>
@@ -86,6 +116,9 @@
   </data>
   <data name="Created" xml:space="preserve">
     <value>建立時間</value>
+  </data>
+  <data name="Current access" xml:space="preserve">
+    <value>目前的存取權限</value>
   </data>
   <data name="Editable" xml:space="preserve">
     <value>可編輯</value>
@@ -129,6 +162,12 @@
   <data name="Not saved. The link above still uses the current access setting." xml:space="preserve">
     <value>尚未儲存。上方連結仍使用目前的存取設定。</value>
   </data>
+  <data name="Only authorized people can access." xml:space="preserve">
+    <value>只有經授權的人員可以存取。</value>
+  </data>
+  <data name="Only the owner and authorized administrators have access." xml:space="preserve">
+    <value>只有擁有者和獲授權的管理員可以存取。</value>
+  </data>
   <data name="Only you and specific users/roles listed below can view this site." xml:space="preserve">
     <value>只有您和下方列出的特定使用者/角色可以檢視此網站。</value>
   </data>
@@ -158,6 +197,15 @@
   </data>
   <data name="Role" xml:space="preserve">
     <value>角色</value>
+  </data>
+  <data name="Role {0}" xml:space="preserve">
+    <value>角色 {0}</value>
+  </data>
+  <data name="Role {0} and {1} other role" xml:space="preserve">
+    <value>角色 {0} 及另外 {1} 個角色</value>
+  </data>
+  <data name="Role {0} and {1} other roles" xml:space="preserve">
+    <value>角色 {0}及其他 {1} 個角色</value>
   </data>
   <data name="Save access" xml:space="preserve">
     <value>儲存存取權限</value>

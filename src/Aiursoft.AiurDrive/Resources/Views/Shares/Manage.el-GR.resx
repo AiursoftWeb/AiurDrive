@@ -18,7 +18,34 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="About access" xml:space="preserve">
+      <data name="{0} and {1} other user" xml:space="preserve">
+    <value>{0} και {1} ακόμη χρήστης</value>
+  </data>
+  <data name="{0} and {1} other users" xml:space="preserve">
+    <value>{0} και {1} ακόμη χρήστες</value>
+  </data>
+  <data name="{0} can edit." xml:space="preserve">
+    <value>{0} μπορεί να επεξεργαστεί.</value>
+  </data>
+  <data name="{0} can view." xml:space="preserve">
+    <value>Το/τα {0} μπορεί/μπορούν να προβάλει/προβάλουν.</value>
+  </data>
+  <data name="{0} role" xml:space="preserve">
+    <value>{0} ρόλος</value>
+  </data>
+  <data name="{0} roles" xml:space="preserve">
+    <value>{0} ρόλοι</value>
+  </data>
+  <data name="{0} user" xml:space="preserve">
+    <value>{0} χρήστης</value>
+  </data>
+  <data name="{0} users" xml:space="preserve">
+    <value>{0} χρήστες</value>
+  </data>
+  <data name="{0}, {1}" xml:space="preserve">
+    <value>{0}, {1}</value>
+  </data>
+  <data name="About access" xml:space="preserve">
     <value>Σχετικά με την πρόσβαση</value>
   </data>
   <data name="Actions" xml:space="preserve">
@@ -50,6 +77,9 @@
   </data>
   <data name="Anyone with the link can view this site&apos;s files (read-only)." xml:space="preserve">
     <value>Όποιος έχει το σύνδεσμο μπορεί να δει τα αρχεία αυτού του ιστότοπου (μόνο για ανάγνωση).</value>
+  </data>
+  <data name="Anyone with the link can view without signing in." xml:space="preserve">
+    <value>Όποιος έχει τον σύνδεσμο μπορεί να δει το περιεχόμενο χωρίς να συνδεθεί.</value>
   </data>
   <data name="Are you sure you want to remove this share?" xml:space="preserve">
     <value>Είστε βέβαιοι ότι θέλετε να αφαιρέσετε αυτή την πρόσβαση;</value>
@@ -86,6 +116,9 @@
   </data>
   <data name="Created" xml:space="preserve">
     <value>Δημιουργήθηκε</value>
+  </data>
+  <data name="Current access" xml:space="preserve">
+    <value>Τρέχουσα πρόσβαση</value>
   </data>
   <data name="Editable" xml:space="preserve">
     <value>Επεξεργάσιμο</value>
@@ -129,6 +162,12 @@
   <data name="Not saved. The link above still uses the current access setting." xml:space="preserve">
     <value>Δεν αποθηκεύτηκε. Ο παραπάνω σύνδεσμος εξακολουθεί να χρησιμοποιεί την τρέχουσα ρύθμιση πρόσβασης.</value>
   </data>
+  <data name="Only authorized people can access." xml:space="preserve">
+    <value>Μόνο εξουσιοδοτημένα άτομα έχουν πρόσβαση.</value>
+  </data>
+  <data name="Only the owner and authorized administrators have access." xml:space="preserve">
+    <value>Πρόσβαση έχουν μόνο ο ιδιοκτήτης και οι εξουσιοδοτημένοι διαχειριστές.</value>
+  </data>
   <data name="Only you and specific users/roles listed below can view this site." xml:space="preserve">
     <value>Μόνο εσείς και ορισμένοι χρήστες/ρόλοι που αναφέρονται παρακάτω μπορούν να δουν αυτό το site.</value>
   </data>
@@ -158,6 +197,15 @@
   </data>
   <data name="Role" xml:space="preserve">
     <value>Ρόλος</value>
+  </data>
+  <data name="Role {0}" xml:space="preserve">
+    <value>Ρόλος {0}</value>
+  </data>
+  <data name="Role {0} and {1} other role" xml:space="preserve">
+    <value>Ρόλος {0} και {1} ακόμη ρόλος</value>
+  </data>
+  <data name="Role {0} and {1} other roles" xml:space="preserve">
+    <value>Ρόλος {0} και {1} άλλοι ρόλοι</value>
   </data>
   <data name="Save access" xml:space="preserve">
     <value>Αποθήκευση πρόσβασης</value>

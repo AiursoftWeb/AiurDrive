@@ -18,7 +18,34 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="About access" xml:space="preserve">
+      <data name="{0} and {1} other user" xml:space="preserve">
+    <value>{0} и ещё {1} пользователь</value>
+  </data>
+  <data name="{0} and {1} other users" xml:space="preserve">
+    <value>{0} и ещё {1} пользователя</value>
+  </data>
+  <data name="{0} can edit." xml:space="preserve">
+    <value>{0} может редактировать.</value>
+  </data>
+  <data name="{0} can view." xml:space="preserve">
+    <value>{0} могут просматривать.</value>
+  </data>
+  <data name="{0} role" xml:space="preserve">
+    <value>Роль: {0}</value>
+  </data>
+  <data name="{0} roles" xml:space="preserve">
+    <value>{0} ролей</value>
+  </data>
+  <data name="{0} user" xml:space="preserve">
+    <value>{0} пользователь</value>
+  </data>
+  <data name="{0} users" xml:space="preserve">
+    <value>{0} пользователей</value>
+  </data>
+  <data name="{0}, {1}" xml:space="preserve">
+    <value>{0}, {1}</value>
+  </data>
+  <data name="About access" xml:space="preserve">
     <value>О доступе</value>
   </data>
   <data name="Actions" xml:space="preserve">
@@ -50,6 +77,9 @@
   </data>
   <data name="Anyone with the link can view this site&apos;s files (read-only)." xml:space="preserve">
     <value>Любой, у кого есть ссылка, может просматривать файлы этого сайта (только для чтения).</value>
+  </data>
+  <data name="Anyone with the link can view without signing in." xml:space="preserve">
+    <value>Все, у кого есть ссылка, могут просматривать без входа в систему.</value>
   </data>
   <data name="Are you sure you want to remove this share?" xml:space="preserve">
     <value>Вы действительно хотите удалить этот доступ?</value>
@@ -86,6 +116,9 @@
   </data>
   <data name="Created" xml:space="preserve">
     <value>Создано</value>
+  </data>
+  <data name="Current access" xml:space="preserve">
+    <value>Текущий доступ</value>
   </data>
   <data name="Editable" xml:space="preserve">
     <value>Редактируемый</value>
@@ -129,6 +162,12 @@
   <data name="Not saved. The link above still uses the current access setting." xml:space="preserve">
     <value>Не сохранено. Для ссылки выше по-прежнему используется текущая настройка доступа.</value>
   </data>
+  <data name="Only authorized people can access." xml:space="preserve">
+    <value>Доступ разрешён только авторизованным пользователям.</value>
+  </data>
+  <data name="Only the owner and authorized administrators have access." xml:space="preserve">
+    <value>Доступ есть только у владельца и уполномоченных администраторов.</value>
+  </data>
   <data name="Only you and specific users/roles listed below can view this site." xml:space="preserve">
     <value>Только вы и конкретные пользователи/роли, перечисленные ниже, могут просматривать этот сайт.</value>
   </data>
@@ -158,6 +197,15 @@
   </data>
   <data name="Role" xml:space="preserve">
     <value>Роль</value>
+  </data>
+  <data name="Role {0}" xml:space="preserve">
+    <value>Роль {0}</value>
+  </data>
+  <data name="Role {0} and {1} other role" xml:space="preserve">
+    <value>Роль {0} и ещё {1} роль</value>
+  </data>
+  <data name="Role {0} and {1} other roles" xml:space="preserve">
+    <value>Роль {0} и ещё {1} роль</value>
   </data>
   <data name="Save access" xml:space="preserve">
     <value>Сохранить настройки доступа</value>
