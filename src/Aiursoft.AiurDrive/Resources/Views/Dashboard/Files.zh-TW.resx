@@ -21,6 +21,15 @@
       <data name="Actions" xml:space="preserve">
     <value>操作</value>
   </data>
+  <data name="Actions for {0}" xml:space="preserve">
+    <value>{0} 的動作</value>
+  </data>
+  <data name="Are you sure you want to delete this file?" xml:space="preserve">
+    <value>您確定要刪除此檔案嗎？</value>
+  </data>
+  <data name="Are you sure you want to delete this folder and all its contents?" xml:space="preserve">
+    <value>確定要刪除此資料夾及其所有內容嗎？</value>
+  </data>
   <data name="Cancel" xml:space="preserve">
     <value>取消</value>
   </data>
@@ -41,6 +50,9 @@
   </data>
   <data name="Delete some files to free up space." xml:space="preserve">
     <value>刪除一些檔案以釋放空間。</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>下載</value>
   </data>
   <data name="Files" xml:space="preserve">
     <value>檔案</value>

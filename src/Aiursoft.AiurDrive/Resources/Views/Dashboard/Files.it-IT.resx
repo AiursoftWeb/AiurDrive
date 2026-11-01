@@ -21,6 +21,15 @@
       <data name="Actions" xml:space="preserve">
     <value>Azioni</value>
   </data>
+  <data name="Actions for {0}" xml:space="preserve">
+    <value>Azioni per {0}</value>
+  </data>
+  <data name="Are you sure you want to delete this file?" xml:space="preserve">
+    <value>Sei sicuro di voler eliminare questo file?</value>
+  </data>
+  <data name="Are you sure you want to delete this folder and all its contents?" xml:space="preserve">
+    <value>Vuoi davvero eliminare questa cartella e tutto il suo contenuto?</value>
+  </data>
   <data name="Cancel" xml:space="preserve">
     <value>Annulla</value>
   </data>
@@ -41,6 +50,9 @@
   </data>
   <data name="Delete some files to free up space." xml:space="preserve">
     <value>Elimina alcuni file per liberare spazio.</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Scarica</value>
   </data>
   <data name="Files" xml:space="preserve">
     <value>File</value>

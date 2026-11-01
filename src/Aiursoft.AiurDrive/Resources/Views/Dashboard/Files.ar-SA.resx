@@ -21,6 +21,15 @@
       <data name="Actions" xml:space="preserve">
     <value>إجراءات</value>
   </data>
+  <data name="Actions for {0}" xml:space="preserve">
+    <value>الإجراءات الخاصة بـ {0}</value>
+  </data>
+  <data name="Are you sure you want to delete this file?" xml:space="preserve">
+    <value>هل أنت متأكد من رغبتك في حذف هذا الملف؟</value>
+  </data>
+  <data name="Are you sure you want to delete this folder and all its contents?" xml:space="preserve">
+    <value>هل أنت متأكد أنك تريد حذف هذا المجلد وجميع محتوياته؟</value>
+  </data>
   <data name="Cancel" xml:space="preserve">
     <value>إلغاء</value>
   </data>
@@ -41,6 +50,9 @@
   </data>
   <data name="Delete some files to free up space." xml:space="preserve">
     <value>احذف بعض الملفات لتحرير مساحة.</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>تنزيل</value>
   </data>
   <data name="Files" xml:space="preserve">
     <value>الملفات</value>
