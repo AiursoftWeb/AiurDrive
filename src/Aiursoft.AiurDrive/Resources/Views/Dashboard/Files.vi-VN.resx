@@ -21,6 +21,15 @@
       <data name="Actions" xml:space="preserve">
     <value>Hành động</value>
   </data>
+  <data name="Actions for {0}" xml:space="preserve">
+    <value>Thao tác cho {0}</value>
+  </data>
+  <data name="Are you sure you want to delete this file?" xml:space="preserve">
+    <value>Bạn có chắc chắn muốn xóa tệp này không?</value>
+  </data>
+  <data name="Are you sure you want to delete this folder and all its contents?" xml:space="preserve">
+    <value>Bạn có chắc chắn muốn xóa thư mục này và tất cả nội dung bên trong không?</value>
+  </data>
   <data name="Cancel" xml:space="preserve">
     <value>Hủy</value>
   </data>
@@ -41,6 +50,9 @@
   </data>
   <data name="Delete some files to free up space." xml:space="preserve">
     <value>Xóa một số tệp để giải phóng dung lượng.</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Tải xuống</value>
   </data>
   <data name="Files" xml:space="preserve">
     <value>Tệp tin</value>

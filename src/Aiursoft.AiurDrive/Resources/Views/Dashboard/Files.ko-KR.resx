@@ -21,6 +21,15 @@
       <data name="Actions" xml:space="preserve">
     <value>작업</value>
   </data>
+  <data name="Actions for {0}" xml:space="preserve">
+    <value>{0}에 대한 작업</value>
+  </data>
+  <data name="Are you sure you want to delete this file?" xml:space="preserve">
+    <value>이 파일을 삭제하시겠습니까?</value>
+  </data>
+  <data name="Are you sure you want to delete this folder and all its contents?" xml:space="preserve">
+    <value>이 폴더와 폴더 안의 모든 내용을 삭제하시겠습니까?</value>
+  </data>
   <data name="Cancel" xml:space="preserve">
     <value>취소</value>
   </data>
@@ -41,6 +50,9 @@
   </data>
   <data name="Delete some files to free up space." xml:space="preserve">
     <value>일부 파일을 삭제하여 공간을 확보하세요.</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>다운로드</value>
   </data>
   <data name="Files" xml:space="preserve">
     <value>파일</value>
