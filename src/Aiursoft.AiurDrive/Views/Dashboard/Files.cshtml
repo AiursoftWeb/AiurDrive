@@ -10,7 +10,7 @@
     }
 }
 
-<div class="container-fluid p-0">
+<div id="file-manager" class="container-fluid p-0" data-site-name="@Model.SiteName">
     <!-- Breadcrumb -->
     <div class="pt-3 pb-2 mb-3 border-bottom">
         <nav aria-label="breadcrumb">
@@ -107,7 +107,7 @@
                                  <button type="submit" class="btn btn-sm btn-outline-success">
                                      <i class="fas fa-paste"></i> <span id="pasteButtonText">@Localizer["Paste"]</span>
                                  </button>
-                                 <button type="button" class="btn btn-sm btn-outline-danger" onclick="cancelCut()">
+                                 <button type="button" class="btn btn-sm btn-outline-danger" data-file-action="cancel-cut">
                                      <i class="fas fa-times"></i>
                                  </button>
                              </form>
@@ -128,7 +128,7 @@
                              </button>
                          }
 
-                         <button class="btn btn-sm btn-outline-secondary" onclick="toggleView()" id="viewToggleBtn" title="@Localizer["Toggle View"]">
+                         <button class="btn btn-sm btn-outline-secondary" data-file-action="toggle-view" id="viewToggleBtn" title="@Localizer["Toggle View"]">
                              <i class="fas fa-th-large" id="viewToggleIcon"></i>
                          </button>
                     </div>
@@ -161,13 +161,13 @@
                                         <td class="text-end">
                                             @if (Model.HasWriteAccess)
                                             {
-                                                <button type="button" class="btn btn-sm btn-light text-secondary" onclick="cutItem('@Model.SiteName', '@currentRelativePath', '@folder')">
+                                                <button type="button" class="btn btn-sm btn-light text-secondary" data-file-action="cut" data-path="@currentRelativePath" data-name="@folder">
                                                     <i class="fas fa-cut"></i>
                                                 </button>
-                                                <button type="button" class="btn btn-sm btn-light text-primary" onclick="openRenameModal('@folder', '@currentRelativePath')">
+                                                <button type="button" class="btn btn-sm btn-light text-primary" data-file-action="rename" data-path="@currentRelativePath" data-name="@folder">
                                                     <i class="fas fa-edit"></i>
                                                 </button>
-                                                <form asp-action="Delete" asp-route-siteName="@Model.SiteName" asp-route-path="@currentRelativePath" method="post" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this folder and all its contents?');">
+                                                <form asp-action="Delete" asp-route-siteName="@Model.SiteName" asp-route-path="@currentRelativePath" method="post" class="d-inline" data-confirm-delete="folder">
                                                     <button type="submit" class="btn btn-sm btn-light text-danger"><i class="fas fa-trash"></i></button>
                                                 </form>
                                             }
@@ -204,13 +204,13 @@
                                             <a href="@directUrl" target="_blank" class="btn btn-sm btn-light"><i class="fas fa-download"></i></a>
                                             @if (Model.HasWriteAccess)
                                             {
-                                                <button type="button" class="btn btn-sm btn-light text-secondary" onclick="cutItem('@Model.SiteName', '@currentRelativePath', '@file.Name')">
+                                                <button type="button" class="btn btn-sm btn-light text-secondary" data-file-action="cut" data-path="@currentRelativePath" data-name="@file.Name">
                                                     <i class="fas fa-cut"></i>
                                                 </button>
-                                                <button type="button" class="btn btn-sm btn-light text-primary" onclick="openRenameModal('@file.Name', '@currentRelativePath')">
+                                                <button type="button" class="btn btn-sm btn-light text-primary" data-file-action="rename" data-path="@currentRelativePath" data-name="@file.Name">
                                                     <i class="fas fa-edit"></i>
                                                 </button>
-                                                <form asp-action="Delete" asp-route-siteName="@Model.SiteName" asp-route-path="@currentRelativePath" method="post" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this file?');">
+                                                <form asp-action="Delete" asp-route-siteName="@Model.SiteName" asp-route-path="@currentRelativePath" method="post" class="d-inline" data-confirm-delete="file">
                                                     <button type="submit" class="btn btn-sm btn-light text-danger"><i class="fas fa-trash"></i></button>
                                                 </form>
                                             }
@@ -233,24 +233,21 @@
                                             <i class="fas fa-folder fa-3x text-warning mb-2"></i>
                                             <span class="text-truncate w-100" title="@folder">@folder</span>
                                         </a>
-                                        <div class="card-footer bg-transparent border-top-0">
-                                            @if (Model.HasWriteAccess)
+                                        @if (Model.HasWriteAccess)
                                             {
-                                                <div class="btn-group w-100">
-                                                    <button type="button" class="btn btn-light text-secondary py-2" onclick="cutItem('@Model.SiteName', '@currentRelativePath', '@folder')" title="@Localizer["Cut"]">
-                                                        <i class="fas fa-cut"></i>
-                                                    </button>
-                                                    <button type="button" class="btn btn-light text-primary py-2" onclick="openRenameModal('@folder', '@currentRelativePath')" title="@Localizer["Rename"]">
-                                                        <i class="fas fa-edit"></i>
-                                                    </button>
-                                                    <button type="button" class="btn btn-light text-danger py-2" onclick="if(confirm('Are you sure you want to delete this folder and all its contents?')) document.getElementById('delete-folder-@folder').submit();" title="@Localizer["Delete"]">
-                                                        <i class="fas fa-trash"></i>
-                                                    </button>
-                                                </div>
-                                                <!-- Hidden form for delete -->
-                                                <form id="delete-folder-@folder" asp-action="Delete" asp-route-siteName="@Model.SiteName" asp-route-path="@currentRelativePath" method="post" class="d-none"></form>
-                                            }
+                                        <div class="dropdown file-grid-actions">
+                                            <button type="button" class="btn btn-sm btn-light" data-bs-toggle="dropdown" aria-expanded="false" aria-label="@string.Format(@Localizer["Actions for {0}"].Value, folder)" title="@Localizer["Actions"]"><i data-lucide="more-horizontal" aria-hidden="true"></i></button>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+
+                                                @if (Model.HasWriteAccess)
+                                                {
+                                                    <li><button type="button" class="dropdown-item" data-file-action="cut" data-path="@currentRelativePath" data-name="@folder"><i class="fas fa-cut me-2" aria-hidden="true"></i>@Localizer["Cut"]</button></li>
+                                                    <li><button type="button" class="dropdown-item" data-file-action="rename" data-path="@currentRelativePath" data-name="@folder"><i class="fas fa-edit me-2" aria-hidden="true"></i>@Localizer["Rename"]</button></li>
+                                                    <li><form asp-action="Delete" asp-route-siteName="@Model.SiteName" asp-route-path="@currentRelativePath" method="post" data-confirm-delete="folder"><button type="submit" class="dropdown-item text-danger"><i class="fas fa-trash me-2" aria-hidden="true"></i>@Localizer["Delete"]</button></form></li>
+                                                }
+                                            </ul>
                                         </div>
+                                            }
                                     </div>
                                 </div>
                             }
@@ -276,23 +273,17 @@
                                             }
                                             <span class="text-truncate w-100" title="@file.Name">@file.Name</span>
                                         </a>
-                                        <div class="card-footer bg-transparent border-top-0">
-                                            @if (Model.HasWriteAccess)
-                                            {
-                                                 <div class="btn-group w-100">
-                                                    <button type="button" class="btn btn-light text-secondary py-2" onclick="cutItem('@Model.SiteName', '@currentRelativePath', '@file.Name')" title="@Localizer["Cut"]">
-                                                        <i class="fas fa-cut"></i>
-                                                    </button>
-                                                    <button type="button" class="btn btn-light text-primary py-2" onclick="openRenameModal('@file.Name', '@currentRelativePath')" title="@Localizer["Rename"]">
-                                                        <i class="fas fa-edit"></i>
-                                                    </button>
-                                                    <button type="button" class="btn btn-light text-danger py-2" onclick="if(confirm('Are you sure you want to delete this file?')) document.getElementById('delete-file-@file.Name').submit();" title="@Localizer["Delete"]">
-                                                        <i class="fas fa-trash"></i>
-                                                    </button>
-                                                </div>
-                                                <!-- Hidden form for delete -->
-                                                <form id="delete-file-@file.Name" asp-action="Delete" asp-route-siteName="@Model.SiteName" asp-route-path="@currentRelativePath" method="post" class="d-none"></form>
-                                            }
+                                        <div class="dropdown file-grid-actions">
+                                            <button type="button" class="btn btn-sm btn-light" data-bs-toggle="dropdown" aria-expanded="false" aria-label="@string.Format(@Localizer["Actions for {0}"].Value, file.Name)" title="@Localizer["Actions"]"><i data-lucide="more-horizontal" aria-hidden="true"></i></button>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a href="@directUrl" target="_blank" class="dropdown-item"><i class="fas fa-download me-2" aria-hidden="true"></i>@Localizer["Download"]</a></li>
+                                                @if (Model.HasWriteAccess)
+                                                {
+                                                    <li><button type="button" class="dropdown-item" data-file-action="cut" data-path="@currentRelativePath" data-name="@file.Name"><i class="fas fa-cut me-2" aria-hidden="true"></i>@Localizer["Cut"]</button></li>
+                                                    <li><button type="button" class="dropdown-item" data-file-action="rename" data-path="@currentRelativePath" data-name="@file.Name"><i class="fas fa-edit me-2" aria-hidden="true"></i>@Localizer["Rename"]</button></li>
+                                                    <li><form asp-action="Delete" asp-route-siteName="@Model.SiteName" asp-route-path="@currentRelativePath" method="post" data-confirm-delete="file"><button type="submit" class="dropdown-item text-danger"><i class="fas fa-trash me-2" aria-hidden="true"></i>@Localizer["Delete"]</button></form></li>
+                                                }
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -406,128 +397,27 @@
     </div>
 }
 
+<div id="file-manager-loc" hidden>
+    <span data-key="paste">@Localizer["Paste"]</span>
+    <span data-key="list-view">@Localizer["Switch to List View"]</span>
+    <span data-key="grid-view">@Localizer["Switch to Grid View"]</span>
+    <span data-key="delete-folder">@Localizer["Are you sure you want to delete this folder and all its contents?"]</span>
+    <span data-key="delete-file">@Localizer["Are you sure you want to delete this file?"]</span>
+</div>
+
 @* ReSharper disable once Razor.SectionNotResolved *@
 @section styles {
     <link rel="stylesheet" href="~/node_modules/dropify/dist/css/dropify.min.css" />
     <link rel="stylesheet" href="~/styles/uploader.css" />
     <style>
-        .file-grid-card {
-            overflow: hidden;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        .file-grid-card .card-footer {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.98);
-            transform: translateY(100%);
-            transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
-            opacity: 0;
-            border-top: 1px solid rgba(0,0,0,0.05);
-            padding: 0 !important;
-        }
-        .file-grid-card:hover .card-footer {
-            transform: translateY(0);
-            opacity: 1;
-        }
+        .file-grid-card { position: relative; }
+        .file-grid-card > a { padding-top: 2.75rem !important; }
+        .file-grid-actions { position: absolute; top: .35rem; right: .35rem; z-index: 2; }
+        .file-grid-actions > button { min-width: 2.5rem; min-height: 2.5rem; }
     </style>
 }
 @* ReSharper disable once Razor.SectionNotResolved *@
 @section scripts {
     <script src="~/node_modules/dropify/dist/js/dropify.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#fileTable').DataTable({
-                "destroy": true,
-                "responsive": true,
-                "paging": true,
-                "pageLength": 25,
-                "searching": true,
-                "info": false,
-                "order": [[0, "asc"]]
-            });
-        });
-
-        function reloadPage() {
-            location.reload();
-        }
-
-        function openRenameModal(currentName, currentPath) {
-            document.getElementById('renamePath').value = currentPath;
-            document.getElementById('newName').value = currentName;
-            var renameModal = new bootstrap.Modal(document.getElementById('renameModal'));
-            renameModal.show();
-        }
-
-        function cutItem(siteName, path, name) {
-            sessionStorage.setItem('clipboard', JSON.stringify({
-                siteName: siteName,
-                path: path,
-                name: name
-            }));
-            checkClipboard();
-        }
-
-        function cancelCut() {
-            sessionStorage.removeItem('clipboard');
-            checkClipboard();
-        }
-
-        function checkClipboard() {
-            var clipboard = sessionStorage.getItem('clipboard');
-            var pasteForm = document.getElementById('pasteForm');
-            var pasteSourcePath = document.getElementById('pasteSourcePath');
-            var pasteButtonText = document.getElementById('pasteButtonText');
-
-            if (clipboard) {
-                var data = JSON.parse(clipboard);
-                if (data.siteName === '@Model.SiteName') {
-                    pasteForm.classList.remove('d-none');
-                    pasteSourcePath.value = data.path;
-                    pasteButtonText.innerText = '@Localizer["Paste"] ' + data.name;
-                } else {
-                    pasteForm.classList.add('d-none');
-                }
-            } else {
-                pasteForm.classList.add('d-none');
-            }
-        }
-
-        // View Toggle Logic
-        var currentView = localStorage.getItem('fileManagerView') || 'list';
-
-        function updateView() {
-            if (currentView === 'grid') {
-                $('#listView').addClass('d-none');
-                $('#gridView').removeClass('d-none');
-                $('#viewToggleIcon').removeClass('fa-th-large').addClass('fa-list');
-                $('#viewToggleBtn').attr('title', '@Localizer["Switch to List View"]');
-            } else {
-                $('#gridView').addClass('d-none');
-                $('#listView').removeClass('d-none');
-                $('#viewToggleIcon').removeClass('fa-list').addClass('fa-th-large');
-                $('#viewToggleBtn').attr('title', '@Localizer["Switch to Grid View"]');
-            }
-        }
-
-        function toggleView() {
-            currentView = currentView === 'list' ? 'grid' : 'list';
-            localStorage.setItem('fileManagerView', currentView);
-            updateView();
-        }
-
-        $(document).ready(function() {
-            // Check clipboard on load
-            checkClipboard();
-            // Initialize view
-            updateView();
-
-            // Clear clipboard after successful paste
-            $('#pasteForm').on('submit', function() {
-                sessionStorage.removeItem('clipboard');
-            });
-        });
-    </script>
+    <script src="~/scripts/file-manager.js" asp-append-version="true"></script>
 }
