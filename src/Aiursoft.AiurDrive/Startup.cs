@@ -67,7 +67,7 @@ public class Startup : IWebStartup
         services.RegisterScheduledTask(registration: orphanAvatarCleanupJob, period: TimeSpan.FromHours(6), startDelay: TimeSpan.FromMinutes(5));
 
         // Controllers and localization
-        services.AddControllersWithViews()
+        services.AddControllersWithViews(options => options.Filters.Add<Filters.DriveUploadQuotaFilter>())
             .AddNewtonsoftJson(options =>
             {
                 options.SerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.Utc;

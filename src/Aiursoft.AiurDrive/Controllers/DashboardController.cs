@@ -21,6 +21,7 @@ public class DashboardController(
     GlobalSettingsService globalSettings,
     UserManager<User> userManager,
     SiteAccessService siteAccess,
+    DriveStorageQuota quota,
     Microsoft.Extensions.Localization.IStringLocalizer<DashboardController> localizer) : Controller
 {
     [RenderInNavBar(
@@ -140,6 +141,7 @@ public class DashboardController(
         var site = await FindManageableSiteAsync(siteName);
         if (site == null) return NotFound();
 
+        await using var lease = await quota.LockAsync("site:" + site.Id, HttpContext.RequestAborted);
         var newName = model.SiteName.ToLower();
         if (newName != site.SiteName)
         {
@@ -294,6 +296,7 @@ public class DashboardController(
     {
         var site = await FindManageableSiteAsync(siteName);
         if (site == null) return NotFound();
+        await using var lease = await quota.LockAsync("site:" + site.Id, HttpContext.RequestAborted);
 
         try
         {

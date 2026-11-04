@@ -1,4 +1,6 @@
 using Aiursoft.AiurDrive.Entities;
+using Aiursoft.AiurDrive.Configuration;
+using Aiursoft.AiurDrive.Services;
 using Aiursoft.AiurDrive.Services.FileStorage;
 using Aiursoft.CSTools.Tools;
 using Aiursoft.WebTools.Attributes;
@@ -16,7 +18,10 @@ namespace Aiursoft.AiurDrive.Controllers;
 public class VaultApiController(
     UserManager<User> userManager,
     IStringLocalizer<VaultApiController> localizer,
-    FeatureFoldersProvider folders) : Controller
+    FeatureFoldersProvider folders,
+    DriveStorageQuota quota,
+    GlobalSettingsService settings,
+    ILogger<VaultApiController> logger) : Controller
 {
     private const long MaxEncryptedFileBytes = 2L * 1024 * 1024 * 1024;
     private const long MaxMetadataBytes = 1024 * 1024;
@@ -143,23 +148,86 @@ public class VaultApiController(
             return BadRequest(localizer["Invalid object name."]);
         }
 
-        // Always save meta
+        await using var lease = await quota.LockAsync("vault:" + GetCurrentUserId(), HttpContext.RequestAborted);
+        Directory.CreateDirectory(objectsPath);
         var metaPath = Path.Combine(objectsPath, uuid + ".meta");
-        await using (var metaStream = new FileStream(metaPath, FileMode.Create))
+        var filePath = Path.Combine(objectsPath, uuid + ".enc");
+        var hasContent = file is { Length: > 0 };
+        var delta = meta.Length - ExistingSize(metaPath) +
+                    (hasContent ? file!.Length - ExistingSize(filePath) : 0);
+        var limit = await settings.GetIntSettingAsync(SettingsMap.MaxVaultStorageInGB);
+        try
         {
-            await meta.CopyToAsync(metaStream);
+            quota.Check(checked(limit * DriveStorageQuota.GiB), delta, objectsPath);
+        }
+        catch (StorageQuotaExceededException)
+        {
+            return StatusCode(StatusCodes.Status413PayloadTooLarge, localizer["Storage quota exceeded."].Value);
         }
 
-        // Save encrypted content if present (it's a file, not just a folder)
-        if (file != null && file.Length > 0)
+        // Stage both parts before replacing either existing part. Interrupted writes leave
+        // the previous object intact; failed commits restore their original files.
+        var staging = Path.Combine(objectsPath, ".uploads", Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(staging);
+        var replacements = new List<(string Target, string Staged, string Backup, bool Existed)>();
+        var preserveStaging = false;
+        try
         {
-            var filePath = Path.Combine(objectsPath, uuid + ".enc");
-            await using var stream = new FileStream(filePath, FileMode.Create);
-            await file.CopyToAsync(stream);
+            var parts = new List<(IFormFile Part, string Target)> { (meta, metaPath) };
+            if (hasContent) parts.Add((file!, filePath));
+            foreach (var (part, target) in parts)
+            {
+                var staged = Path.Combine(staging, Path.GetFileName(target));
+                await using var output = new FileStream(staged, FileMode.CreateNew);
+                await part.CopyToAsync(output, HttpContext.RequestAborted);
+                replacements.Add((target, staged, staged + ".old", System.IO.File.Exists(target)));
+            }
+            try
+            {
+                foreach (var item in replacements)
+                {
+                    if (item.Existed) System.IO.File.Move(item.Target, item.Backup);
+                    System.IO.File.Move(item.Staged, item.Target);
+                }
+            }
+            catch
+            {
+                try
+                {
+                    foreach (var item in replacements.AsEnumerable().Reverse())
+                    {
+                        if (System.IO.File.Exists(item.Backup))
+                        {
+                            System.IO.File.Move(item.Backup, item.Target, overwrite: true);
+                        }
+                        else if (!item.Existed && !System.IO.File.Exists(item.Staged))
+                        {
+                            System.IO.File.Delete(item.Target);
+                        }
+                    }
+                }
+                catch
+                {
+                    preserveStaging = true;
+                    throw;
+                }
+                throw;
+            }
+        }
+        finally
+        {
+            try { if (!preserveStaging) Directory.Delete(staging, recursive: true); }
+            catch (Exception exception) when (exception is IOException or UnauthorizedAccessException)
+            {
+                // Remaining staging files are still included in the next quota calculation.
+                logger.LogWarning(exception, "Could not remove an encrypted upload staging directory.");
+            }
         }
 
         return Ok();
     }
+
+    private static long ExistingSize(string path) => System.IO.File.Exists(path) ? new FileInfo(path).Length : 0;
 
     [HttpGet]
     [Route("Download/{uuid}")]
@@ -176,8 +244,9 @@ public class VaultApiController(
 
     [HttpDelete]
     [Route("Delete/{uuid}")]
-    public IActionResult Delete(string uuid)
+    public async Task<IActionResult> Delete(string uuid)
     {
+        await using var lease = await quota.LockAsync("vault:" + GetCurrentUserId(), HttpContext.RequestAborted);
         var objectsPath = GetUserVaultObjectsPath();
         if (uuid.Any(c => !char.IsLetterOrDigit(c))) return BadRequest();
 
@@ -200,6 +269,7 @@ public class VaultApiController(
     [Route("Reset")]
     public async Task<IActionResult> Reset()
     {
+        await using var lease = await quota.LockAsync("vault:" + GetCurrentUserId(), HttpContext.RequestAborted);
         var user = await userManager.GetUserAsync(User);
         if (user == null) return Unauthorized();
 

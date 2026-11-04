@@ -11,6 +11,7 @@ public class SettingsMap
     public const string AllowUserAdjustNickname = "Allow_User_Adjust_Nickname";
     public const string Icp = "Icp";
     public const string MaxSiteStorageInGB = "Max_Site_Storage_In_GB";
+    public const string MaxVaultStorageInGB = "Max_Vault_Storage_In_GB";
     public const string MaxSitesPerPerson = "Max_Sites_Per_Person";
 
     /// <summary>
@@ -85,6 +86,14 @@ public class SettingsMap
             Description = Localizer["Max storage size for each site in GB."],
             Type = SettingType.Number,
             DefaultValue = "10"
+        },
+        new GlobalSettingDefinition
+        {
+            Key = MaxVaultStorageInGB,
+            Name = Localizer["Max Vault Storage In GB"],
+            Description = Localizer["Maximum encrypted Vault storage per user in GB."],
+            Type = SettingType.Number,
+            DefaultValue = "50"
         },
         new GlobalSettingDefinition
         {

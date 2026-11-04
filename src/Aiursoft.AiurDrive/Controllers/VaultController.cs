@@ -1,4 +1,5 @@
 using Aiursoft.AiurDrive.Models;
+using Aiursoft.AiurDrive.Configuration;
 using Aiursoft.AiurDrive.Services;
 using Aiursoft.UiStack.Navigation;
 using Microsoft.AspNetCore.Authorization;
@@ -7,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Aiursoft.AiurDrive.Controllers;
 
 [Authorize]
-public class VaultController : Controller
+public class VaultController(GlobalSettingsService settings) : Controller
 {
     [RenderInNavBar(
         NavGroupName = "Features",
@@ -17,9 +18,12 @@ public class VaultController : Controller
         CascadedLinksOrder = 1,
         LinkText = "Vault",
         LinkOrder = 2)]
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        var model = new VaultViewModel();
+        var model = new VaultViewModel
+        {
+            StorageLimitInGiB = await settings.GetIntSettingAsync(SettingsMap.MaxVaultStorageInGB)
+        };
         return this.StackView(model);
     }
 }
