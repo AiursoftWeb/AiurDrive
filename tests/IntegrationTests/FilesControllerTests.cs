@@ -47,7 +47,13 @@ public class FilesControllerTests : TestBase
         await LoginAsAdmin();
 
         var storage = GetService<StorageService>();
-        var subfolder = "private-test";
+        var subfolder = "private-" + Guid.NewGuid().ToString("N");
+        var created = await PostForm("/Dashboard/CreateSite", new Dictionary<string, string>
+        {
+            ["SiteName"] = subfolder,
+            ["AllowAnonymousView"] = "false"
+        });
+        Assert.AreEqual(HttpStatusCode.Found, created.StatusCode);
         var uploadUrl = storage.GetUploadUrl(subfolder, isVault: true);
 
         // 1. Upload

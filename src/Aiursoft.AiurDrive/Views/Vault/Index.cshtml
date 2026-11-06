@@ -38,6 +38,7 @@
 
 <div class="container-fluid p-0">
     <h1 class="h3 mb-3">@Model.PageTitle</h1>
+    <p class="text-muted">@Localizer["Storage limit: {0} GiB", Model.StorageLimitInGiB]</p>
 
     <div id="vault-loading" class="text-center py-5">
         <div class="spinner-border text-primary" role="status"></div>

@@ -21,6 +21,7 @@ public class VaultIntegrationTests : TestBase
         var html = await response.Content.ReadAsStringAsync();
         
         // Ensure the vault containers are present
+        Assert.Contains("Storage limit: 50 GiB", html);
         Assert.IsTrue(html.Contains("id=\"vault-loading\""), "Vault loading container is missing.");
         Assert.IsTrue(html.Contains("id=\"vault-init\""), "Vault init container is missing.");
         Assert.IsTrue(html.Contains("id=\"vault-login\""), "Vault login container is missing.");
