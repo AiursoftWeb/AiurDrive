@@ -48,6 +48,12 @@
   <data name="Max storage size for each site in GB." xml:space="preserve">
     <value>사이트당 최대 저장 용량 (GB 단위)</value>
   </data>
+  <data name="Max Vault Storage In GB" xml:space="preserve">
+    <value>최대 볼트 저장 용량 (GB)</value>
+  </data>
+  <data name="Maximum encrypted Vault storage per user in GB." xml:space="preserve">
+    <value>사용자당 최대 암호화 Vault 저장 용량(GB)</value>
+  </data>
   <data name="Maximum number of sites each user can create." xml:space="preserve">
     <value>사용자가 생성할 수 있는 최대 사이트 수</value>
   </data>

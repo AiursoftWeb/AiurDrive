@@ -24,6 +24,9 @@
   <data name="No metadata provided." xml:space="preserve">
     <value>메타데이터가 제공되지 않았습니다.</value>
   </data>
+  <data name="Storage quota exceeded." xml:space="preserve">
+    <value>저장 할당량이 초과되었습니다.</value>
+  </data>
   <data name="Vault already initialized." xml:space="preserve">
     <value>보금이 이미 초기화되었습니다.</value>
   </data>

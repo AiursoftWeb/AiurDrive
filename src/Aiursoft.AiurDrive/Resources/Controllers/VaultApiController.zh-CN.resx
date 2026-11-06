@@ -24,6 +24,9 @@
   <data name="No metadata provided." xml:space="preserve">
     <value>未提供元数据。</value>
   </data>
+  <data name="Storage quota exceeded." xml:space="preserve">
+    <value>存储空间配额已超出。</value>
+  </data>
   <data name="Vault already initialized." xml:space="preserve">
     <value>金库已初始化。</value>
   </data>

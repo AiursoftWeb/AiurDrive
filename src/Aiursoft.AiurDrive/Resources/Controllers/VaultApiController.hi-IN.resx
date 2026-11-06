@@ -24,6 +24,9 @@
   <data name="No metadata provided." xml:space="preserve">
     <value>कोई मेटाडेटा प्रदान नहीं किया गया है।</value>
   </data>
+  <data name="Storage quota exceeded." xml:space="preserve">
+    <value>संग्रहण कोटा समाप्त हो गया।</value>
+  </data>
   <data name="Vault already initialized." xml:space="preserve">
     <value>सुरंग पहले से ही प्रारंभित है।</value>
   </data>

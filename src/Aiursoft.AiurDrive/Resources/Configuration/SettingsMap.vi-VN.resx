@@ -48,6 +48,12 @@
   <data name="Max storage size for each site in GB." xml:space="preserve">
     <value>Dung lượng lưu trữ tối đa cho mỗi trang web tính bằng GB.</value>
   </data>
+  <data name="Max Vault Storage In GB" xml:space="preserve">
+    <value>Dung lượng Vault tối đa (GB)</value>
+  </data>
+  <data name="Maximum encrypted Vault storage per user in GB." xml:space="preserve">
+    <value>Dung lượng Vault mã hóa tối đa cho mỗi người dùng (tính bằng GB).</value>
+  </data>
   <data name="Maximum number of sites each user can create." xml:space="preserve">
     <value>Số lượng trang web tối đa mà mỗi người dùng có thể tạo</value>
   </data>
