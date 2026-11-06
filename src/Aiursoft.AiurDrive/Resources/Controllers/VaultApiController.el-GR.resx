@@ -24,6 +24,9 @@
   <data name="No metadata provided." xml:space="preserve">
     <value>Δεν παρέχονται μεταδεδομένα.</value>
   </data>
+  <data name="Storage quota exceeded." xml:space="preserve">
+    <value>Υπερβαίνει το όριο αποθήκευσης.</value>
+  </data>
   <data name="Vault already initialized." xml:space="preserve">
     <value>Το Vault έχει ήδη αρχικοποιηθεί.</value>
   </data>

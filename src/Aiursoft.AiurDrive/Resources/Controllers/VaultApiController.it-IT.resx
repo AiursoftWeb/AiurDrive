@@ -24,6 +24,9 @@
   <data name="No metadata provided." xml:space="preserve">
     <value>Nessun metadato fornito.</value>
   </data>
+  <data name="Storage quota exceeded." xml:space="preserve">
+    <value>Quota di archiviazione superata.</value>
+  </data>
   <data name="Vault already initialized." xml:space="preserve">
     <value>Vault già inizializzato.</value>
   </data>

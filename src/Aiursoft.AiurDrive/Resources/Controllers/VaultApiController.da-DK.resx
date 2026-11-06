@@ -24,6 +24,9 @@
   <data name="No metadata provided." xml:space="preserve">
     <value>Ingen metadata angivet.</value>
   </data>
+  <data name="Storage quota exceeded." xml:space="preserve">
+    <value>Lagringskvoten er overskredet.</value>
+  </data>
   <data name="Vault already initialized." xml:space="preserve">
     <value>Vault er allerede initialiseret.</value>
   </data>

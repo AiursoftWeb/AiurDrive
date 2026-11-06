@@ -48,6 +48,12 @@
   <data name="Max storage size for each site in GB." xml:space="preserve">
     <value>Максимальний розмір сховища для кожного сайту в ГБ.</value>
   </data>
+  <data name="Max Vault Storage In GB" xml:space="preserve">
+    <value>Макс. сховище в ГБ</value>
+  </data>
+  <data name="Maximum encrypted Vault storage per user in GB." xml:space="preserve">
+    <value>Максимальний обсяг зашифрованого сховища Vault на користувача в ГБ.</value>
+  </data>
   <data name="Maximum number of sites each user can create." xml:space="preserve">
     <value>Максимальна кількість сайтів, яку може створити кожен користувач.</value>
   </data>

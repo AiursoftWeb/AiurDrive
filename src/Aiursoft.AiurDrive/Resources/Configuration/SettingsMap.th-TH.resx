@@ -48,6 +48,12 @@
   <data name="Max storage size for each site in GB." xml:space="preserve">
     <value>ขนาดพื้นที่จัดเก็บสูงสุดต่อไซต์แต่ละไซต์เป็นกิกะไบต์</value>
   </data>
+  <data name="Max Vault Storage In GB" xml:space="preserve">
+    <value>ขนาดพื้นที่จัดเก็บ Vault สูงสุด (GB)</value>
+  </data>
+  <data name="Maximum encrypted Vault storage per user in GB." xml:space="preserve">
+    <value>พื้นที่จัดเก็บ Vault ที่เข้ารหัสสูงสุดต่อผู้ใช้ (หน่วยเป็น GB)</value>
+  </data>
   <data name="Maximum number of sites each user can create." xml:space="preserve">
     <value>จำนวนสูงสุดของไซต์ที่ผู้ใช้แต่ละคนสามารถสร้างได้</value>
   </data>

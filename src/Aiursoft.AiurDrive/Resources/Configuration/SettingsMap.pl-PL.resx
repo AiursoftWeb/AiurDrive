@@ -48,6 +48,12 @@
   <data name="Max storage size for each site in GB." xml:space="preserve">
     <value>Maksymalny rozmiar pamięci dla każdego witryny w GB.</value>
   </data>
+  <data name="Max Vault Storage In GB" xml:space="preserve">
+    <value>Maks. magazyn sejfu (GB)</value>
+  </data>
+  <data name="Maximum encrypted Vault storage per user in GB." xml:space="preserve">
+    <value>Maksymalny zaszyfrowany magazyn Vault na użytkownika w GB.</value>
+  </data>
   <data name="Maximum number of sites each user can create." xml:space="preserve">
     <value>Maksymalna liczba witryn, które każdy użytkownik może utworzyć.</value>
   </data>

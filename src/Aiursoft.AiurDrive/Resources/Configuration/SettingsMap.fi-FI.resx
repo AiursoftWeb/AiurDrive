@@ -48,6 +48,12 @@
   <data name="Max storage size for each site in GB." xml:space="preserve">
     <value>Maksimimäärä tallennustilaa jokaiselle sivustolle gigatavuina.</value>
   </data>
+  <data name="Max Vault Storage In GB" xml:space="preserve">
+    <value>Suurin varaston tallennustila GB:nä</value>
+  </data>
+  <data name="Maximum encrypted Vault storage per user in GB." xml:space="preserve">
+    <value>Suurin salattu Vault-tallennustila käyttäjää kohti GB-yksiköissä.</value>
+  </data>
   <data name="Maximum number of sites each user can create." xml:space="preserve">
     <value>Maksimimäärä sivustoja, joita jokainen käyttäjä voi luoda.</value>
   </data>

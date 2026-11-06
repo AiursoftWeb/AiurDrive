@@ -48,6 +48,12 @@
   <data name="Max storage size for each site in GB." xml:space="preserve">
     <value>Μέγιστο μέγεθος αποθήκευσης για κάθε ιστότοπο σε GB.</value>
   </data>
+  <data name="Max Vault Storage In GB" xml:space="preserve">
+    <value>Μέγιστη αποθήκευση Vault σε GB</value>
+  </data>
+  <data name="Maximum encrypted Vault storage per user in GB." xml:space="preserve">
+    <value>Μέγιστη κρυπτογραφημένη αποθήκευση Vault ανά χρήστη σε GB.</value>
+  </data>
   <data name="Maximum number of sites each user can create." xml:space="preserve">
     <value>Μέγιστος αριθμός ιστότοπων που μπορεί να δημιουργήσει κάθε χρήστης.</value>
   </data>
