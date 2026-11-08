@@ -228,7 +228,7 @@
                                 var currentRelativePath = string.IsNullOrEmpty(Model.Path) ? folder : Model.Path + "/" + folder;
                                 <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
                                     <div class="card h-100 text-center file-grid-card">
-                                        <a asp-action="Files" asp-route-siteName="@Model.SiteName" asp-route-path="@currentRelativePath" class="text-decoration-none text-dark flex-grow-1 d-flex flex-column align-items-center justify-content-center p-3">
+                                        <a asp-action="Files" asp-route-siteName="@Model.SiteName" asp-route-path="@currentRelativePath" class="text-decoration-none text-body flex-grow-1 d-flex flex-column align-items-center justify-content-center p-3">
                                             <i class="fas fa-folder fa-3x text-warning mb-2"></i>
                                             <span class="text-truncate w-100" title="@folder">@folder</span>
                                         </a>
@@ -260,7 +260,7 @@
 
                                 <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
                                     <div class="card h-100 text-center file-grid-card">
-                                        <a href="@directUrl" target="_blank" class="text-decoration-none text-dark flex-grow-1 d-flex flex-column align-items-center justify-content-center p-3">
+                                        <a href="@directUrl" target="_blank" class="text-decoration-none text-body flex-grow-1 d-flex flex-column align-items-center justify-content-center p-3">
                                             @if (isImage && Model.AllowImagePreview)
                                             {
                                                 var thumbUrl = directUrl + (directUrl.Contains("?") ? "&" : "?") + "w=200";
