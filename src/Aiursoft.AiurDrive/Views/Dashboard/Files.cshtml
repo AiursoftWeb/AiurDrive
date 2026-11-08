@@ -222,20 +222,20 @@
 
                     <!-- Grid View -->
                     <div id="gridView" class="d-none">
-                        <div class="row">
+                        <div class="file-grid">
                             @foreach (var folder in Model.Folders)
                             {
                                 var currentRelativePath = string.IsNullOrEmpty(Model.Path) ? folder : Model.Path + "/" + folder;
-                                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                                <div>
                                     <div class="card h-100 text-center file-grid-card">
-                                        <a asp-action="Files" asp-route-siteName="@Model.SiteName" asp-route-path="@currentRelativePath" class="text-decoration-none text-body flex-grow-1 d-flex flex-column align-items-center justify-content-center p-3">
-                                            <i class="fas fa-folder fa-3x text-warning mb-2"></i>
-                                            <span class="text-truncate w-100" title="@folder">@folder</span>
+                                        <a asp-action="Files" asp-route-siteName="@Model.SiteName" asp-route-path="@currentRelativePath" class="text-decoration-none text-body file-grid-link">
+                                            <span class="file-grid-icon"><i class="fas fa-folder fa-3x text-warning" aria-hidden="true"></i></span>
+                                            <span class="file-grid-name" title="@folder">@folder</span>
                                         </a>
                                         @if (Model.HasWriteAccess)
                                             {
                                         <div class="dropdown file-grid-actions">
-                                            <button type="button" class="btn btn-sm btn-light" data-bs-toggle="dropdown" aria-expanded="false" aria-label="@string.Format(@Localizer["Actions for {0}"].Value, folder)" title="@Localizer["Actions"]"><i data-lucide="more-horizontal" aria-hidden="true"></i></button>
+                                            <button type="button" class="btn file-grid-menu" data-bs-toggle="dropdown" aria-expanded="false" aria-label="@string.Format(@Localizer["Actions for {0}"].Value, folder)" title="@Localizer["Actions"]"><i data-lucide="more-horizontal" aria-hidden="true"></i></button>
                                             <ul class="dropdown-menu dropdown-menu-end">
 
                                                 @if (Model.HasWriteAccess)
@@ -258,22 +258,24 @@
                                 var directUrl = Storage.RelativePathToInternetUrl(logicalPath, isVault: true);
                                 var isImage = file.Name.IsStaticImage();
 
-                                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                                <div>
                                     <div class="card h-100 text-center file-grid-card">
-                                        <a href="@directUrl" target="_blank" class="text-decoration-none text-body flex-grow-1 d-flex flex-column align-items-center justify-content-center p-3">
-                                            @if (isImage && Model.AllowImagePreview)
-                                            {
-                                                var thumbUrl = directUrl + (directUrl.Contains("?") ? "&" : "?") + "w=200";
-                                                <img src="@thumbUrl" class="img-fluid mb-2 rounded" style="max-height: 80px; object-fit: contain;" alt="@file.Name" />
-                                            }
-                                            else
-                                            {
-                                                <img src="@GetFileIcon(file.Name)" class="img-fluid mb-2" style="max-height: 80px;" alt="@file.Name" />
-                                            }
-                                            <span class="text-truncate w-100" title="@file.Name">@file.Name</span>
+                                        <a href="@directUrl" target="_blank" class="text-decoration-none text-body file-grid-link">
+                                            <span class="file-grid-icon">
+                                                @if (isImage && Model.AllowImagePreview)
+                                                {
+                                                    var thumbUrl = directUrl + (directUrl.Contains("?") ? "&" : "?") + "w=200";
+                                                    <img src="@thumbUrl" class="rounded" alt="@file.Name" />
+                                                }
+                                                else
+                                                {
+                                                    <img src="@GetFileIcon(file.Name)" alt="@file.Name" />
+                                                }
+                                            </span>
+                                            <span class="file-grid-name" title="@file.Name">@file.Name</span>
                                         </a>
                                         <div class="dropdown file-grid-actions">
-                                            <button type="button" class="btn btn-sm btn-light" data-bs-toggle="dropdown" aria-expanded="false" aria-label="@string.Format(@Localizer["Actions for {0}"].Value, file.Name)" title="@Localizer["Actions"]"><i data-lucide="more-horizontal" aria-hidden="true"></i></button>
+                                            <button type="button" class="btn file-grid-menu" data-bs-toggle="dropdown" aria-expanded="false" aria-label="@string.Format(@Localizer["Actions for {0}"].Value, file.Name)" title="@Localizer["Actions"]"><i data-lucide="more-horizontal" aria-hidden="true"></i></button>
                                             <ul class="dropdown-menu dropdown-menu-end">
                                                 <li><a href="@directUrl" target="_blank" class="dropdown-item"><i class="fas fa-download me-2" aria-hidden="true"></i>@Localizer["Download"]</a></li>
                                                 @if (Model.HasWriteAccess)
@@ -290,7 +292,7 @@
 
                             @if (!Model.Files.Any() && !Model.Folders.Any())
                             {
-                                <div class="col-12 text-center text-muted py-5">
+                                <div class="file-grid-empty text-center text-muted py-5">
                                     @Localizer["Folder is empty."]
                                 </div>
                             }
@@ -409,10 +411,71 @@
     <link rel="stylesheet" href="~/node_modules/dropify/dist/css/dropify.min.css" />
     <link rel="stylesheet" href="~/styles/uploader.css" />
     <style>
-        .file-grid-card { position: relative; }
-        .file-grid-card > a { padding-top: 2.75rem !important; }
-        .file-grid-actions { position: absolute; top: .35rem; right: .35rem; z-index: 2; }
-        .file-grid-actions > button { min-width: 2.5rem; min-height: 2.5rem; }
+        .file-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+            gap: .75rem;
+        }
+        .file-grid > div { min-width: 0; }
+        .file-grid-card {
+            position: relative;
+            margin-bottom: 0;
+            border: 1px solid transparent;
+            border-radius: .5rem;
+            box-shadow: none;
+        }
+        .file-grid-card:hover,
+        .file-grid-card:focus-within { border-color: var(--bs-border-color); }
+        .file-grid-card:has(.dropdown-menu.show) { z-index: 3; }
+        .file-grid-link {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            align-items: center;
+            gap: .5rem;
+            padding: 1.5rem .5rem .75rem;
+            border-radius: inherit;
+        }
+        .file-grid-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 4rem;
+        }
+        .file-grid-icon img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        .file-grid-name {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            overflow-wrap: anywhere;
+            width: 100%;
+            min-height: 2.7em;
+            line-height: 1.35;
+        }
+        .file-grid-actions { position: absolute; top: .125rem; right: .125rem; z-index: 2; }
+        .file-grid-menu {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            padding: 0;
+            color: var(--bs-body-color);
+            background: transparent;
+            border: 0;
+        }
+        .file-grid-menu:hover,
+        .file-grid-menu:focus-visible,
+        .file-grid-menu[aria-expanded="true"] { background: var(--bs-secondary-bg); }
+        /* Preserve Popper positioning instead of the theme's transform animation. */
+        .file-grid-actions .dropdown-menu.show { animation: none; }
+        .file-grid-menu:focus-visible { outline: 2px solid var(--bs-primary); outline-offset: -2px; }
+        .file-grid-empty { grid-column: 1 / -1; }
+        @@media (max-width: 575.98px) {
+            .file-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
     </style>
 }
 @* ReSharper disable once Razor.SectionNotResolved *@
