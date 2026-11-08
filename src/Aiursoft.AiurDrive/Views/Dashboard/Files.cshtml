@@ -100,13 +100,13 @@
                     <div class="btn-toolbar gap-2 mw-100">
                          @if (Model.HasWriteAccess)
                          {
-                             <form asp-action="Move" asp-route-siteName="@Model.SiteName" method="post" id="pasteForm" class="d-none d-flex flex-wrap gap-2 mw-100">
+                             <form asp-action="Move" asp-route-siteName="@Model.SiteName" method="post" id="pasteForm" class="d-none d-flex align-items-center gap-2 mw-100">
                                  <input type="hidden" name="sourcePath" id="pasteSourcePath" />
                                  <input type="hidden" name="targetPath" value="@Model.Path" />
-                                 <button type="submit" class="btn btn-sm btn-outline-success text-break mw-100">
+                                 <button type="submit" class="btn btn-sm btn-outline-success text-break mw-100 flex-grow-1">
                                      <i class="fas fa-paste"></i> <span id="pasteButtonText">@Localizer["Paste"]</span>
                                  </button>
-                                 <button type="button" class="btn btn-sm btn-outline-danger" data-file-action="cancel-cut" title="@Localizer["Cancel cut"]" aria-label="@Localizer["Cancel cut"]">
+                                 <button type="button" class="btn btn-sm btn-outline-danger flex-shrink-0" data-file-action="cancel-cut" title="@Localizer["Cancel cut"]" aria-label="@Localizer["Cancel cut"]">
                                      <i class="fas fa-times"></i>
                                  </button>
                              </form>
