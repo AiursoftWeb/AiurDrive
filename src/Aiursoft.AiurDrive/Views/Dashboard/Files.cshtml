@@ -14,7 +14,7 @@
     <!-- Breadcrumb -->
     <div class="pt-3 pb-2 mb-3 border-bottom">
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb mb-0">
+            <ol class="breadcrumb mb-0 text-break">
                 <li class="breadcrumb-item">
                     <a asp-action="Files" asp-route-siteName="@Model.SiteName" asp-route-path="">
                         <i class="fas fa-home"></i> @Model.SiteName
@@ -93,21 +93,20 @@
         <!-- File List Container -->
         <div class="col-sm-7 col-xl-9">
             <div class="card">
-                <div class="card-header d-flex justify-content-between align-items-center">
+                <div class="card-header d-flex flex-wrap gap-2 justify-content-between align-items-center">
                     <h5 class="card-title mb-0">
                         @Localizer["Files"]
-                        @if(!string.IsNullOrEmpty(Model.Path)) { <span class="text-muted small">/ @Model.Path</span> }
                     </h5>
-                    <div class="btn-toolbar">
+                    <div class="btn-toolbar gap-2 mw-100">
                          @if (Model.HasWriteAccess)
                          {
-                             <form asp-action="Move" asp-route-siteName="@Model.SiteName" method="post" id="pasteForm" class="d-none me-2">
+                             <form asp-action="Move" asp-route-siteName="@Model.SiteName" method="post" id="pasteForm" class="d-none d-flex align-items-center gap-2 mw-100">
                                  <input type="hidden" name="sourcePath" id="pasteSourcePath" />
                                  <input type="hidden" name="targetPath" value="@Model.Path" />
-                                 <button type="submit" class="btn btn-sm btn-outline-success">
+                                 <button type="submit" class="btn btn-sm btn-outline-success text-break mw-100 flex-grow-1">
                                      <i class="fas fa-paste"></i> <span id="pasteButtonText">@Localizer["Paste"]</span>
                                  </button>
-                                 <button type="button" class="btn btn-sm btn-outline-danger" data-file-action="cancel-cut">
+                                 <button type="button" class="btn btn-sm btn-outline-danger flex-shrink-0" data-file-action="cancel-cut" title="@Localizer["Cancel cut"]" aria-label="@Localizer["Cancel cut"]">
                                      <i class="fas fa-times"></i>
                                  </button>
                              </form>
@@ -116,14 +115,14 @@
                          @if (!string.IsNullOrEmpty(Model.Path))
                          {
                              var parentPath = System.IO.Path.GetDirectoryName(Model.Path)?.Replace("\\", "/");
-                             <a asp-action="Files" asp-route-siteName="@Model.SiteName" asp-route-path="@parentPath" class="btn btn-sm btn-outline-secondary me-2">
+                             <a asp-action="Files" asp-route-siteName="@Model.SiteName" asp-route-path="@parentPath" class="btn btn-sm btn-outline-secondary">
                                 <i class="fas fa-arrow-up"></i> @Localizer["Up Level"]
                             </a>
                          }
 
                          @if (Model.HasWriteAccess)
                          {
-                             <button class="btn btn-sm btn-outline-secondary me-2" data-bs-toggle="modal" data-bs-target="#createFolderModal">
+                             <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#createFolderModal">
                                  <i class="fas fa-folder-plus"></i> @Localizer["New Folder"]
                              </button>
                          }
@@ -229,7 +228,7 @@
                                 var currentRelativePath = string.IsNullOrEmpty(Model.Path) ? folder : Model.Path + "/" + folder;
                                 <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
                                     <div class="card h-100 text-center file-grid-card">
-                                        <a asp-action="Files" asp-route-siteName="@Model.SiteName" asp-route-path="@currentRelativePath" class="text-decoration-none text-dark flex-grow-1 d-flex flex-column align-items-center justify-content-center p-3">
+                                        <a asp-action="Files" asp-route-siteName="@Model.SiteName" asp-route-path="@currentRelativePath" class="text-decoration-none text-body flex-grow-1 d-flex flex-column align-items-center justify-content-center p-3">
                                             <i class="fas fa-folder fa-3x text-warning mb-2"></i>
                                             <span class="text-truncate w-100" title="@folder">@folder</span>
                                         </a>
@@ -261,7 +260,7 @@
 
                                 <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
                                     <div class="card h-100 text-center file-grid-card">
-                                        <a href="@directUrl" target="_blank" class="text-decoration-none text-dark flex-grow-1 d-flex flex-column align-items-center justify-content-center p-3">
+                                        <a href="@directUrl" target="_blank" class="text-decoration-none text-body flex-grow-1 d-flex flex-column align-items-center justify-content-center p-3">
                                             @if (isImage && Model.AllowImagePreview)
                                             {
                                                 var thumbUrl = directUrl + (directUrl.Contains("?") ? "&" : "?") + "w=200";
