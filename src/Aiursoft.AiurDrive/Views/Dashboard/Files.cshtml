@@ -1,3 +1,4 @@
+@using System.Globalization
 @using Aiursoft.WebTools
 @model Aiursoft.AiurDrive.Models.DashboardViewModels.FileManagerViewModel
 @inject Aiursoft.AiurDrive.Services.FileStorage.StorageService Storage
@@ -83,8 +84,8 @@
                         <div class="progress-bar @colorClass" role="progressbar" style="width: @percentage%" aria-valuenow="@percentage" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                     <div class="d-flex justify-content-between small text-muted">
-                        <span>@usedSpaceGB.ToString("0.00") GB</span>
-                        <span>@totalSpaceGB.ToString("0.00") GB</span>
+                        <span>@usedSpaceGB.ToString("0.00", CultureInfo.CurrentCulture) GB</span>
+                        <span>@totalSpaceGB.ToString("0.00", CultureInfo.CurrentCulture) GB</span>
                     </div>
                 </div>
             </div>
@@ -198,7 +199,7 @@
                                             </a>
                                         </td>
                                         <td data-sort="@file.LastWriteTime.Ticks"><span data-utc-time="@file.LastWriteTime.ToUniversalTime().ToHtmlDateTime()"></span></td>
-                                        <td data-sort="@file.Length">@((file.Length / 1024.0).ToString("N0")) KB</td>
+                                        <td data-sort="@file.Length">@((file.Length / 1024.0).ToString("N0", CultureInfo.CurrentCulture)) KB</td>
                                         <td class="text-end">
                                             <a href="@directUrl" target="_blank" class="btn btn-sm btn-light"><i class="fas fa-download"></i></a>
                                             @if (Model.HasWriteAccess)

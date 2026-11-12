@@ -5,7 +5,7 @@
 @{
     string DescribeRecipients(IEnumerable<string> recipients, bool roles)
     {
-        var names = recipients.OrderBy(name => name).ToList();
+        var names = recipients.OrderBy(name => name, StringComparer.CurrentCulture).ToList();
         if (names.Count == 0) return string.Empty;
         if (names[0].Length > 40)
         {
@@ -244,6 +244,4 @@
     </div>
 </div>
 
-@section scripts {
-    <script src="~/scripts/manage-shares.js" asp-append-version="true" defer></script>
-}
+<script src="~/scripts/manage-shares.js" asp-append-version="true" defer></script>

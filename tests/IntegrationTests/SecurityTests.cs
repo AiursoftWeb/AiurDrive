@@ -17,7 +17,7 @@ public class SecurityTests : TestBase
         
         var siteA = new Site
         {
-            SiteName = "site-a-" + Guid.NewGuid().ToString().Substring(0, 5).ToLower(),
+            SiteName = "site-a-" + Guid.NewGuid().ToString().Substring(0, 5).ToLowerInvariant(),
             AppUserId = userA.Id
         };
         context.Sites.Add(siteA);
@@ -36,7 +36,7 @@ public class SecurityTests : TestBase
 
         var siteB = new Site
         {
-            SiteName = "site-b-" + Guid.NewGuid().ToString().Substring(0, 5).ToLower(),
+            SiteName = "site-b-" + Guid.NewGuid().ToString().Substring(0, 5).ToLowerInvariant(),
             AppUserId = userB.Id
         };
         context.Sites.Add(siteB);

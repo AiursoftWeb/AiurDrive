@@ -36,7 +36,7 @@ public class SharedViewController(
 
         var directoryInfo = new DirectoryInfo(physicalPath);
         var files = directoryInfo.GetFiles().OrderByDescending(f => f.LastWriteTime).ToList();
-        var folders = directoryInfo.GetDirectories().OrderBy(f => f.Name).Select(f => f.Name).ToList();
+        var folders = directoryInfo.GetDirectories().OrderBy(f => f.Name, StringComparer.CurrentCulture).Select(f => f.Name).ToList();
 
         var model = new SharedViewModel(site.SiteName)
         {
