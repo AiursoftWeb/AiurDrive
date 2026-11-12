@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Localization;
 using Aiursoft.AiurDrive.Authorization;
 using Aiursoft.AiurDrive.Entities;
 using Aiursoft.AiurDrive.Models.UsersViewModels;
@@ -21,7 +22,8 @@ public class UsersController(
     RoleManager<IdentityRole> roleManager,
     UserManager<User> userManager,
     AiurDriveDbContext context,
-    StorageService storage)
+    StorageService storage,
+    IStringLocalizer<AppPermissions> permissionLocalizer)
     : Controller
 {
     [Authorize(Policy = AppPermissionNames.CanReadUsers)]
@@ -79,7 +81,8 @@ public class UsersController(
 
         var permissions = AppPermissions.GetAllPermissions()
             .Where(p => allPermissionValues.Contains(p.Key))
-            .OrderBy(p => p.Name)
+            .OrderBy(p => permissionLocalizer[p.Name].Value, StringComparer.CurrentCulture)
+            .ThenBy(p => p.Key, StringComparer.Ordinal)
             .ToList();
 
         return this.StackView(new DetailsViewModel
