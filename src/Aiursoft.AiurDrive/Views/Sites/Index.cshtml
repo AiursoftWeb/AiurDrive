@@ -1,3 +1,4 @@
+@using System.Globalization
 @using Aiursoft.WebTools
 @model Aiursoft.AiurDrive.Models.SitesViewModels.IndexViewModel
 
@@ -49,8 +50,8 @@
                         <td><span data-utc-time="@item.Site.CreationTime.ToHtmlDateTime()"></span></td>
                         <td style="min-width: 200px;">
                             <div class="mb-1 d-flex justify-content-between small">
-                                <span>@usedSpaceGB.ToString("0.00") GB</span>
-                                <span>@totalSpaceGB.ToString("0.00") GB</span>
+                                <span>@usedSpaceGB.ToString("0.00", CultureInfo.CurrentCulture) GB</span>
+                                <span>@totalSpaceGB.ToString("0.00", CultureInfo.CurrentCulture) GB</span>
                             </div>
                             <div class="progress" style="height: 6px;">
                                 <div class="progress-bar @colorClass" role="progressbar" style="width: @percentage%" aria-valuenow="@percentage" aria-valuemin="0" aria-valuemax="100"></div>

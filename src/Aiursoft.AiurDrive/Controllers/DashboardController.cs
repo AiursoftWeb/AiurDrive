@@ -92,7 +92,7 @@ public class DashboardController(
 
         var newSite = new Site
         {
-            SiteName = model.SiteName!.ToLower(),
+            SiteName = model.SiteName!.ToLowerInvariant(),
             AppUserId = user.Id,
             AllowAnonymousView = model.AllowAnonymousView,
             Description = model.Description
@@ -142,7 +142,7 @@ public class DashboardController(
         if (site == null) return NotFound();
 
         await using var lease = await quota.LockAsync("site:" + site.Id, HttpContext.RequestAborted);
-        var newName = model.SiteName.ToLower();
+        var newName = model.SiteName.ToLowerInvariant();
         if (newName != site.SiteName)
         {
             // Check if name is taken
@@ -205,7 +205,7 @@ public class DashboardController(
 
         var directoryInfo = new DirectoryInfo(physicalPath);
         var files = directoryInfo.GetFiles().OrderByDescending(f => f.LastWriteTime).ToList();
-        var folders = directoryInfo.GetDirectories().OrderBy(f => f.Name).Select(f => f.Name).ToList();
+        var folders = directoryInfo.GetDirectories().OrderBy(f => f.Name, StringComparer.CurrentCulture).Select(f => f.Name).ToList();
 
         var maxSpaceString = await globalSettings.GetSettingValueAsync(SettingsMap.MaxSiteStorageInGB);
         long.TryParse(maxSpaceString, out var maxSpaceGB);
