@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Globalization;
 using Aiursoft.AiurDrive.Models.ErrorViewModels;
 using Aiursoft.AiurDrive.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -12,8 +13,11 @@ public class ErrorController : Controller
 {
     [Route("Error/Code{code:int}")]
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Code(int code, [FromQuery] string? returnUrl = null)
+    public IActionResult Code()
     {
+        // Error responses must not bind the original request body, which may be malformed.
+        var code = Convert.ToInt32(RouteData.Values["code"], CultureInfo.InvariantCulture);
+        var returnUrl = Request.Query["returnUrl"].FirstOrDefault();
         var pageTitle = code switch
         {
             400 => "Bad Request",
@@ -28,7 +32,7 @@ public class ErrorController : Controller
         {
             RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier,
             ErrorCode = code,
-            ReturnUrl = returnUrl
+            ReturnUrl = string.IsNullOrWhiteSpace(returnUrl) ? null : returnUrl
         };
 
         return this.SimpleView(model, "Error");
