@@ -21,9 +21,6 @@
       <data name="Actions" xml:space="preserve">
     <value>Acciones</value>
   </data>
-  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
-    <value>ya existe en esta carpeta. ¿Desea sobrescribirlo?</value>
-  </data>
   <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
     <value>¿Estás seguro de que quieres eliminar la carpeta y todo su contenido?</value>
   </data>
@@ -180,14 +177,11 @@
   <data name="Updating" xml:space="preserve">
     <value>Actualizando</value>
   </data>
-  <data name="Upload failed." xml:space="preserve">
-    <value>La carga ha fallado.</value>
-  </data>
   <data name="Upload Secure File" xml:space="preserve">
     <value>Subir archivo seguro</value>
   </data>
-  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
-    <value>El almacén ha sido formateado y restablecido a su estado de fábrica.</value>
+  <data name="Upload failed." xml:space="preserve">
+    <value>La carga ha fallado.</value>
   </data>
   <data name="Vault Locked" xml:space="preserve">
     <value>Cofre Bloqueado</value>
@@ -197,6 +191,9 @@
   </data>
   <data name="Vault Settings" xml:space="preserve">
     <value>Configuración de la bóveda</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>El almacén ha sido formateado y restablecido a su estado de fábrica.</value>
   </data>
   <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
     <value>ADVERTENCIA: Esto BORRARÁ permanentemente todos los archivos de su bóveda y restablecerá su contraseña. ¿Está absolutamente seguro?</value>
@@ -212,6 +209,9 @@
   </data>
   <data name="Zero-Trust Architecture" xml:space="preserve">
     <value>Arquitectura de Confianza Cero</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>ya existe en esta carpeta. ¿Desea sobrescribirlo?</value>
   </data>
 
 </root>

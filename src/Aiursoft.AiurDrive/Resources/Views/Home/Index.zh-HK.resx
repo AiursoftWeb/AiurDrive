@@ -39,14 +39,14 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>一個現代化、功能豐富且高度可擴展嘅基礎，為您嘅下一個網頁應用程式提供強大支援。</value>
   </data>
+  <data name="AI-Powered Translations" xml:space="preserve">
+    <value>人工智能驅動翻譯</value>
+  </data>
   <data name="Achieve more with Aiursoft Template" xml:space="preserve">
     <value>使用 Aiursoft 模板成就更多</value>
   </data>
   <data name="Advanced Privacy &amp; Security" xml:space="preserve">
     <value>進階私隱與保安</value>
-  </data>
-  <data name="AI-Powered Translations" xml:space="preserve">
-    <value>人工智能驅動翻譯</value>
   </data>
   <data name="Aiursoft Template is our definitive choice for enterprise projects! It&apos;s built for developers and is lightweight yet powerful. We can skip all the boilerplate for authentication and user management." xml:space="preserve">
     <value>Aiursoft Template 係我哋企業項目嘅不二之選！佢專為開發者打造，輕量之餘功能強大。我哋可以跳過所有驗證同用戶管理嘅樣板代碼。</value>
@@ -144,9 +144,6 @@
   <data name="FAQ" xml:space="preserve">
     <value>常見問題</value>
   </data>
-  <data name="faster" xml:space="preserve">
-    <value>更快</value>
-  </data>
   <data name="Features" xml:space="preserve">
     <value>功能</value>
   </data>
@@ -158,9 +155,6 @@
   </data>
   <data name="Flexible" xml:space="preserve">
     <value>彈性</value>
-  </data>
-  <data name="for any inquiries or to report issues." xml:space="preserve">
-    <value>如有任何查詢或報告問題。</value>
   </data>
   <data name="Free" xml:space="preserve">
     <value>免費</value>
@@ -213,11 +207,11 @@
   <data name="Join thousands of users who trust AiurDrive for their local file management needs." xml:space="preserve">
     <value>加入數以千計信任 AiurDrive 為本地檔案管理所需之用戶。</value>
   </data>
-  <data name="Markdown To HTML" xml:space="preserve">
-    <value>Markdown 轉 HTML</value>
-  </data>
   <data name="MIT Licence" xml:space="preserve">
     <value>MIT 許可證</value>
+  </data>
+  <data name="Markdown To HTML" xml:space="preserve">
+    <value>Markdown 轉 HTML</value>
   </data>
   <data name="Models are validated on both client and server sides based on data annotations." xml:space="preserve">
     <value>模型會根據資料註解在客戶端和伺服器端進行驗證。</value>
@@ -291,11 +285,11 @@
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>智能深色模式，會自動適應使用者嘅系統設定。</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>開始新項目</value>
-  </data>
   <data name="Start Now" xml:space="preserve">
     <value>立即開始</value>
+  </data>
+  <data name="Start a new project" xml:space="preserve">
+    <value>開始新項目</value>
   </data>
   <data name="Support for SQLite, MySQL, and SQL Server. Switch between List and Grid views to manage your files comfortably." xml:space="preserve">
     <value>支援 SQLite、MySQL 及 SQL Server。在列表及網格視圖之間切換，輕鬆管理您的檔案。</value>
@@ -365,6 +359,12 @@
   </data>
   <data name="Your Private Cloud" xml:space="preserve">
     <value>你的私人雲端</value>
+  </data>
+  <data name="faster" xml:space="preserve">
+    <value>更快</value>
+  </data>
+  <data name="for any inquiries or to report issues." xml:space="preserve">
+    <value>如有任何查詢或報告問題。</value>
   </data>
 
 </root>

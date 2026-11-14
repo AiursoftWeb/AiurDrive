@@ -18,34 +18,7 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="{0} and {1} other user" xml:space="preserve">
-    <value>{0} ja {1} muu käyttäjä</value>
-  </data>
-  <data name="{0} and {1} other users" xml:space="preserve">
-    <value>{0} ja {1} muuta käyttäjää</value>
-  </data>
-  <data name="{0} can edit." xml:space="preserve">
-    <value>{0} voi muokata.</value>
-  </data>
-  <data name="{0} can view." xml:space="preserve">
-    <value>{0} voi tarkastella.</value>
-  </data>
-  <data name="{0} role" xml:space="preserve">
-    <value>{0} rooli</value>
-  </data>
-  <data name="{0} roles" xml:space="preserve">
-    <value>{0} roolia</value>
-  </data>
-  <data name="{0} user" xml:space="preserve">
-    <value>{0} käyttäjää</value>
-  </data>
-  <data name="{0} users" xml:space="preserve">
-    <value>{0} käyttäjää</value>
-  </data>
-  <data name="{0}, {1}" xml:space="preserve">
-    <value>{0}, {1}</value>
-  </data>
-  <data name="About access" xml:space="preserve">
+      <data name="About access" xml:space="preserve">
     <value>Tietoa käyttöoikeuksista</value>
   </data>
   <data name="Actions" xml:space="preserve">
@@ -54,11 +27,11 @@
   <data name="Add" xml:space="preserve">
     <value>Lisää</value>
   </data>
-  <data name="Add access" xml:space="preserve">
-    <value>Lisää käyttöoikeus</value>
-  </data>
   <data name="Add New Share" xml:space="preserve">
     <value>Lisää uusi jakaminen</value>
+  </data>
+  <data name="Add access" xml:space="preserve">
+    <value>Lisää käyttöoikeus</value>
   </data>
   <data name="Allow anonymous viewing (Public)" xml:space="preserve">
     <value>Salli anonyymi näkymä (Julkinen)</value>
@@ -69,9 +42,6 @@
   <data name="Anonymous viewing does not change the user or role permissions above." xml:space="preserve">
     <value>Anonyymi katselu ei muuta yllä mainittuja käyttäjä- tai roolioikeuksia.</value>
   </data>
-  <data name="Anyone — view only" xml:space="preserve">
-    <value>Kuka tahansa — vain katselu</value>
-  </data>
   <data name="Anyone with the link can view and download files without signing in." xml:space="preserve">
     <value>Kuka tahansa linkin saanut voi tarkastella ja ladata tiedostoja kirjautumatta sisään.</value>
   </data>
@@ -80,6 +50,9 @@
   </data>
   <data name="Anyone with the link can view without signing in." xml:space="preserve">
     <value>Kaikki linkin saaneet voivat tarkastella sisältöä kirjautumatta sisään.</value>
+  </data>
+  <data name="Anyone — view only" xml:space="preserve">
+    <value>Kuka tahansa — vain katselu</value>
   </data>
   <data name="Are you sure you want to remove this share?" xml:space="preserve">
     <value>Oletko varma, että haluat poistaa tämän jakamisen?</value>
@@ -228,11 +201,11 @@
   <data name="Share with" xml:space="preserve">
     <value>Jaa kanssa</value>
   </data>
-  <data name="Shared access" xml:space="preserve">
-    <value>Jaettu käyttöoikeus</value>
-  </data>
   <data name="Shared With" xml:space="preserve">
     <value>Jaettu kanssa</value>
+  </data>
+  <data name="Shared access" xml:space="preserve">
+    <value>Jaettu käyttöoikeus</value>
   </data>
   <data name="Sign-in and existing access are required. Copying a link does not grant access." xml:space="preserve">
     <value>Kirjautuminen ja voimassa olevat käyttöoikeudet vaaditaan. Linkin kopioiminen ei anna käyttöoikeutta.</value>
@@ -269,6 +242,33 @@
   </data>
   <data name="Who can use the link?" xml:space="preserve">
     <value>Kuka voi käyttää linkkiä?</value>
+  </data>
+  <data name="{0} and {1} other user" xml:space="preserve">
+    <value>{0} ja {1} muu käyttäjä</value>
+  </data>
+  <data name="{0} and {1} other users" xml:space="preserve">
+    <value>{0} ja {1} muuta käyttäjää</value>
+  </data>
+  <data name="{0} can edit." xml:space="preserve">
+    <value>{0} voi muokata.</value>
+  </data>
+  <data name="{0} can view." xml:space="preserve">
+    <value>{0} voi tarkastella.</value>
+  </data>
+  <data name="{0} role" xml:space="preserve">
+    <value>{0} rooli</value>
+  </data>
+  <data name="{0} roles" xml:space="preserve">
+    <value>{0} roolia</value>
+  </data>
+  <data name="{0} user" xml:space="preserve">
+    <value>{0} käyttäjää</value>
+  </data>
+  <data name="{0} users" xml:space="preserve">
+    <value>{0} käyttäjää</value>
+  </data>
+  <data name="{0}, {1}" xml:space="preserve">
+    <value>{0}, {1}</value>
   </data>
 
 </root>

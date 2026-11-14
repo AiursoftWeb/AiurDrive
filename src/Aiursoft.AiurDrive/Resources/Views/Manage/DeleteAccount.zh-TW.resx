@@ -30,9 +30,6 @@
   <data name="Are you sure you want to permanently delete your account?" xml:space="preserve">
     <value>您確定要永久刪除您的帳號嗎？</value>
   </data>
-  <data name="auth provider" xml:space="preserve">
-    <value>驗證提供者</value>
-  </data>
   <data name="Cancel" xml:space="preserve">
     <value>取消</value>
   </data>
@@ -57,9 +54,6 @@
   <data name="OIDC Account" xml:space="preserve">
     <value>OIDC 帳號</value>
   </data>
-  <data name="site(s)." xml:space="preserve">
-    <value>網站。</value>
-  </data>
   <data name="This action will permanently erase all your data from our servers. Your comments, likes, and favorites will be removed. This action cannot be undone." xml:space="preserve">
     <value>此操作將永久從我們的伺服器中刪除您的所有資料。您的留言、按讚及收藏內容將被移除。此操作無法復原。</value>
   </data>
@@ -80,6 +74,12 @@
   </data>
   <data name="Your account is synced from an external authentication provider. Deleting your data here will remove all your local records, but your account may be recreated the next time you log in. To permanently delete your account, please visit your" xml:space="preserve">
     <value>您的帳戶是從外部驗證提供者同步的。在此刪除您的資料將移除所有本地記錄，但下次登入時您的帳戶可能會重新建立。若要永久刪除您的帳戶，請造訪您的</value>
+  </data>
+  <data name="auth provider" xml:space="preserve">
+    <value>驗證提供者</value>
+  </data>
+  <data name="site(s)." xml:space="preserve">
+    <value>網站。</value>
   </data>
 
 </root>

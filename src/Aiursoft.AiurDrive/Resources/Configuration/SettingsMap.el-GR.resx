@@ -21,11 +21,11 @@
       <data name="Allow Image Preview" xml:space="preserve">
     <value>Επιτροπή Προεπισκόπησης Εικόνας</value>
   </data>
-  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
-    <value>Επιτρέπει την προεπισκόπηση εικόνας στο διαχειριστή αρχείων. Αυτό είναι μόνο ένας διακόπτης στην πρόσθετη διεπαφή. Η επεξεργασία εικόνας είναι πάντα ενεργοποιημένη.</value>
-  </data>
   <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>Επιτρέψτε στον Χρήστη Να Τροποποιήσει το Κωδικό Όνομα</value>
+  </data>
+  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
+    <value>Επιτρέπει την προεπισκόπηση εικόνας στο διαχειριστή αρχείων. Αυτό είναι μόνο ένας διακόπτης στην πρόσθετη διεπαφή. Η επεξεργασία εικόνας είναι πάντα ενεργοποιημένη.</value>
   </data>
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>Επιτρέψτε στους χρήστες να τροποποιήσουν το ψευδώνυμό τους στη σελίδα διαχείρισης προφίλ.</value>
@@ -45,11 +45,11 @@
   <data name="Max Sites Per Person" xml:space="preserve">
     <value>Μέγιστος Αριθμός Ιστοτόπων ανά Άτομο</value>
   </data>
-  <data name="Max storage size for each site in GB." xml:space="preserve">
-    <value>Μέγιστο μέγεθος αποθήκευσης για κάθε ιστότοπο σε GB.</value>
-  </data>
   <data name="Max Vault Storage In GB" xml:space="preserve">
     <value>Μέγιστη αποθήκευση Vault σε GB</value>
+  </data>
+  <data name="Max storage size for each site in GB." xml:space="preserve">
+    <value>Μέγιστο μέγεθος αποθήκευσης για κάθε ιστότοπο σε GB.</value>
   </data>
   <data name="Maximum encrypted Vault storage per user in GB." xml:space="preserve">
     <value>Μέγιστη κρυπτογραφημένη αποθήκευση Vault ανά χρήστη σε GB.</value>
@@ -63,20 +63,20 @@
   <data name="Project Name" xml:space="preserve">
     <value>Όνομα Έργου</value>
   </data>
-  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
-    <value>Το όνομα του σήματος της εταιρείας ή του έργου. Π.χ. Aiursoft.</value>
-  </data>
   <data name="The ICP license number for China mainland users. Leave empty to hide." xml:space="preserve">
     <value>Ο αριθμός άδειας ICP για χρήστες της κύριας Κίνας. Αφήστε κενό για να κρυφτεί.</value>
+  </data>
+  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
+    <value>Το URL της εταιρείας ή του έργου. Π.χ. https://www.aiursoft.com</value>
+  </data>
+  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
+    <value>Το όνομα του σήματος της εταιρείας ή του έργου. Π.χ. Aiursoft.</value>
   </data>
   <data name="The logo of the project displayed in the navbar and footer. Support jpg, png, svg." xml:space="preserve">
     <value>Το λογότυπο του έργου που εμφανίζεται στην ναβιγατόρια και τον πόδα της σελίδας. Υποστήριξη jpg, png, svg.</value>
   </data>
   <data name="The name of the project displayed in the frontend." xml:space="preserve">
     <value>Το όνομα του έργου που εμφανίζεται στο πρόσωπο του χρήστη.</value>
-  </data>
-  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
-    <value>Το URL της εταιρείας ή του έργου. Π.χ. https://www.aiursoft.com</value>
   </data>
 
 </root>

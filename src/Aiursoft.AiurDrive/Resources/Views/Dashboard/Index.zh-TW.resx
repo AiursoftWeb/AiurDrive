@@ -168,9 +168,6 @@
   <data name="Sites" xml:space="preserve">
     <value>網站</value>
   </data>
-  <data name="sites max" xml:space="preserve">
-    <value>網站上限</value>
-  </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>智慧型設定覆寫</value>
   </data>
@@ -203,6 +200,9 @@
   </data>
   <data name="Zero Trust Vault" xml:space="preserve">
     <value>零信任保險櫃</value>
+  </data>
+  <data name="sites max" xml:space="preserve">
+    <value>網站上限</value>
   </data>
 
 </root>

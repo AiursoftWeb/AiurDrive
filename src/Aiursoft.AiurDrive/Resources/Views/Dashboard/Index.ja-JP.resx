@@ -168,9 +168,6 @@
   <data name="Sites" xml:space="preserve">
     <value>サイト</value>
   </data>
-  <data name="sites max" xml:space="preserve">
-    <value>サイトの上限</value>
-  </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>スマート設定オーバーライド</value>
   </data>
@@ -203,6 +200,9 @@
   </data>
   <data name="Zero Trust Vault" xml:space="preserve">
     <value>ゼロトラスト・ボルト</value>
+  </data>
+  <data name="sites max" xml:space="preserve">
+    <value>サイトの上限</value>
   </data>
 
 </root>

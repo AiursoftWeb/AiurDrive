@@ -39,14 +39,14 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>Modern, zengin özelliklere sahip ve bir sonraki web uygulamanız için oldukça genişletilebilir bir temel.</value>
   </data>
+  <data name="AI-Powered Translations" xml:space="preserve">
+    <value>Yapay Zeka Destekli Çeviriler</value>
+  </data>
   <data name="Achieve more with Aiursoft Template" xml:space="preserve">
     <value>Aiursoft Template ile daha fazlasını başarın</value>
   </data>
   <data name="Advanced Privacy &amp; Security" xml:space="preserve">
     <value>Gelişmiş Gizlilik ve Güvenlik</value>
-  </data>
-  <data name="AI-Powered Translations" xml:space="preserve">
-    <value>Yapay Zeka Destekli Çeviriler</value>
   </data>
   <data name="Aiursoft Template is our definitive choice for enterprise projects! It&apos;s built for developers and is lightweight yet powerful. We can skip all the boilerplate for authentication and user management." xml:space="preserve">
     <value>Aiursoft Template, kurumsal projeler için nihai tercihimizdir! Geliştiriciler için tasarlandı, hafif ama güçlüdür. Kimlik doğrulama ve kullanıcı yönetimi için gerekli tüm standart kodlardan kurtulabiliriz.</value>
@@ -144,9 +144,6 @@
   <data name="FAQ" xml:space="preserve">
     <value>SSS</value>
   </data>
-  <data name="faster" xml:space="preserve">
-    <value>daha hızlı</value>
-  </data>
   <data name="Features" xml:space="preserve">
     <value>Özellikler</value>
   </data>
@@ -158,9 +155,6 @@
   </data>
   <data name="Flexible" xml:space="preserve">
     <value>Esnek</value>
-  </data>
-  <data name="for any inquiries or to report issues." xml:space="preserve">
-    <value>her türlü soru veya sorun bildirimi için.</value>
   </data>
   <data name="Free" xml:space="preserve">
     <value>Ücretsiz</value>
@@ -213,11 +207,11 @@
   <data name="Join thousands of users who trust AiurDrive for their local file management needs." xml:space="preserve">
     <value>Binlerce kullanıcıya katılmak için AiurDrive&apos;ın yerel dosya yönetimi ihtiyaçlarınız için güvenilir bir çözüm olduğunu düşünün.</value>
   </data>
-  <data name="Markdown To HTML" xml:space="preserve">
-    <value>Markdown&apos;dan HTML&apos;e</value>
-  </data>
   <data name="MIT Licence" xml:space="preserve">
     <value>MIT Lisansı</value>
+  </data>
+  <data name="Markdown To HTML" xml:space="preserve">
+    <value>Markdown&apos;dan HTML&apos;e</value>
   </data>
   <data name="Models are validated on both client and server sides based on data annotations." xml:space="preserve">
     <value>Modeller, veri eklemelerine dayalı olarak hem istemci hem de sunucu tarafında doğrulanır.</value>
@@ -291,11 +285,11 @@
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>Kullanıcının sistem ayarlarına otomatik olarak uyum sağlayan akıllı karanlık mod.</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Yeni bir proje başlat</value>
-  </data>
   <data name="Start Now" xml:space="preserve">
     <value>Şimdi Başla</value>
+  </data>
+  <data name="Start a new project" xml:space="preserve">
+    <value>Yeni bir proje başlat</value>
   </data>
   <data name="Support for SQLite, MySQL, and SQL Server. Switch between List and Grid views to manage your files comfortably." xml:space="preserve">
     <value>SQLite, MySQL ve SQL Server desteklenir. Dosyalarınızı rahat bir şekilde yönetmek için Liste ve Grid görünümü arasında geçiş yapın.</value>
@@ -365,6 +359,12 @@
   </data>
   <data name="Your Private Cloud" xml:space="preserve">
     <value>Your Private Cloud</value>
+  </data>
+  <data name="faster" xml:space="preserve">
+    <value>daha hızlı</value>
+  </data>
+  <data name="for any inquiries or to report issues." xml:space="preserve">
+    <value>her türlü soru veya sorun bildirimi için.</value>
   </data>
 
 </root>

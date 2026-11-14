@@ -21,9 +21,6 @@
       <data name="Actions" xml:space="preserve">
     <value>アクション</value>
   </data>
-  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
-    <value>このフォルダーに既に存在します。上書きしますか？</value>
-  </data>
   <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
     <value>フォルダーとそのすべてのコンテンツを削除してもよろしいですか？</value>
   </data>
@@ -180,14 +177,11 @@
   <data name="Updating" xml:space="preserve">
     <value>更新中</value>
   </data>
-  <data name="Upload failed." xml:space="preserve">
-    <value>アップロードに失敗しました。</value>
-  </data>
   <data name="Upload Secure File" xml:space="preserve">
     <value>安全なファイルをアップロード</value>
   </data>
-  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
-    <value>Vault はフォーマットされ、工場出荷状態にリセットされました。</value>
+  <data name="Upload failed." xml:space="preserve">
+    <value>アップロードに失敗しました。</value>
   </data>
   <data name="Vault Locked" xml:space="preserve">
     <value>保管庫がロックされています</value>
@@ -197,6 +191,9 @@
   </data>
   <data name="Vault Settings" xml:space="preserve">
     <value>保管庫設定</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>Vault はフォーマットされ、工場出荷状態にリセットされました。</value>
   </data>
   <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
     <value>警告: これにより、ボルト内のすべてのファイルが永久に削除され、パスワードがリセットされます。本当に実行しますか？</value>
@@ -212,6 +209,9 @@
   </data>
   <data name="Zero-Trust Architecture" xml:space="preserve">
     <value>ゼロトラストアーキテクチャ</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>このフォルダーに既に存在します。上書きしますか？</value>
   </data>
 
 </root>

@@ -30,9 +30,6 @@
   <data name="Are you sure you want to permanently delete your account?" xml:space="preserve">
     <value>Bạn có chắc chắn muốn xóa vĩnh viễn tài khoản của mình không?</value>
   </data>
-  <data name="auth provider" xml:space="preserve">
-    <value>nhà cung cấp xác thực</value>
-  </data>
   <data name="Cancel" xml:space="preserve">
     <value>Hủy</value>
   </data>
@@ -57,9 +54,6 @@
   <data name="OIDC Account" xml:space="preserve">
     <value>Tài khoản OIDC</value>
   </data>
-  <data name="site(s)." xml:space="preserve">
-    <value>trang web.</value>
-  </data>
   <data name="This action will permanently erase all your data from our servers. Your comments, likes, and favorites will be removed. This action cannot be undone." xml:space="preserve">
     <value>Hành động này sẽ xóa vĩnh viễn tất cả dữ liệu của bạn khỏi máy chủ của chúng tôi. Các bình luận, lượt thích và mục yêu thích của bạn sẽ bị xóa. Hành động này không thể hoàn tác.</value>
   </data>
@@ -80,6 +74,12 @@
   </data>
   <data name="Your account is synced from an external authentication provider. Deleting your data here will remove all your local records, but your account may be recreated the next time you log in. To permanently delete your account, please visit your" xml:space="preserve">
     <value>Tài khoản của bạn được đồng bộ từ nhà cung cấp xác thực bên ngoài. Xóa dữ liệu của bạn ở đây sẽ xóa tất cả các bản ghi cục bộ, nhưng tài khoản của bạn có thể được tạo lại lần tiếp theo khi bạn đăng nhập. Để xóa vĩnh viễn tài khoản của bạn, vui lòng truy cập trang chủ của nhà cung cấp xác thực bên ngoài.</value>
+  </data>
+  <data name="auth provider" xml:space="preserve">
+    <value>nhà cung cấp xác thực</value>
+  </data>
+  <data name="site(s)." xml:space="preserve">
+    <value>trang web.</value>
   </data>
 
 </root>

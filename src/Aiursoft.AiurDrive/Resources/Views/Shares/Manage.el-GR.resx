@@ -18,34 +18,7 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="{0} and {1} other user" xml:space="preserve">
-    <value>{0} και {1} ακόμη χρήστης</value>
-  </data>
-  <data name="{0} and {1} other users" xml:space="preserve">
-    <value>{0} και {1} ακόμη χρήστες</value>
-  </data>
-  <data name="{0} can edit." xml:space="preserve">
-    <value>{0} μπορεί να επεξεργαστεί.</value>
-  </data>
-  <data name="{0} can view." xml:space="preserve">
-    <value>Το/τα {0} μπορεί/μπορούν να προβάλει/προβάλουν.</value>
-  </data>
-  <data name="{0} role" xml:space="preserve">
-    <value>{0} ρόλος</value>
-  </data>
-  <data name="{0} roles" xml:space="preserve">
-    <value>{0} ρόλοι</value>
-  </data>
-  <data name="{0} user" xml:space="preserve">
-    <value>{0} χρήστης</value>
-  </data>
-  <data name="{0} users" xml:space="preserve">
-    <value>{0} χρήστες</value>
-  </data>
-  <data name="{0}, {1}" xml:space="preserve">
-    <value>{0}, {1}</value>
-  </data>
-  <data name="About access" xml:space="preserve">
+      <data name="About access" xml:space="preserve">
     <value>Σχετικά με την πρόσβαση</value>
   </data>
   <data name="Actions" xml:space="preserve">
@@ -54,11 +27,11 @@
   <data name="Add" xml:space="preserve">
     <value>Προσθήκη</value>
   </data>
-  <data name="Add access" xml:space="preserve">
-    <value>Προσθήκη πρόσβασης</value>
-  </data>
   <data name="Add New Share" xml:space="preserve">
     <value>Προσθήκη Νέου Μοιρασμού</value>
+  </data>
+  <data name="Add access" xml:space="preserve">
+    <value>Προσθήκη πρόσβασης</value>
   </data>
   <data name="Allow anonymous viewing (Public)" xml:space="preserve">
     <value>Επιτροπή ανώνυμης πρόσβασης (Public)</value>
@@ -69,9 +42,6 @@
   <data name="Anonymous viewing does not change the user or role permissions above." xml:space="preserve">
     <value>Η ανώνυμη προβολή δεν αλλάζει τα δικαιώματα πρόσβασης των χρηστών ή των ρόλων που αναφέρονται παραπάνω.</value>
   </data>
-  <data name="Anyone — view only" xml:space="preserve">
-    <value>Οποιοσδήποτε — μόνο προβολή</value>
-  </data>
   <data name="Anyone with the link can view and download files without signing in." xml:space="preserve">
     <value>Όποιος έχει τον σύνδεσμο μπορεί να προβάλει και να κατεβάσει αρχεία χωρίς να συνδεθεί.</value>
   </data>
@@ -80,6 +50,9 @@
   </data>
   <data name="Anyone with the link can view without signing in." xml:space="preserve">
     <value>Όποιος έχει τον σύνδεσμο μπορεί να δει το περιεχόμενο χωρίς να συνδεθεί.</value>
+  </data>
+  <data name="Anyone — view only" xml:space="preserve">
+    <value>Οποιοσδήποτε — μόνο προβολή</value>
   </data>
   <data name="Are you sure you want to remove this share?" xml:space="preserve">
     <value>Είστε βέβαιοι ότι θέλετε να αφαιρέσετε αυτή την πρόσβαση;</value>
@@ -228,11 +201,11 @@
   <data name="Share with" xml:space="preserve">
     <value>Κοινοποίηση με</value>
   </data>
-  <data name="Shared access" xml:space="preserve">
-    <value>Κοινόχρηστη πρόσβαση</value>
-  </data>
   <data name="Shared With" xml:space="preserve">
     <value>Με Επιτροπή</value>
+  </data>
+  <data name="Shared access" xml:space="preserve">
+    <value>Κοινόχρηστη πρόσβαση</value>
   </data>
   <data name="Sign-in and existing access are required. Copying a link does not grant access." xml:space="preserve">
     <value>Απαιτείται σύνδεση και να έχετε ήδη πρόσβαση. Η αντιγραφή ενός συνδέσμου δεν παρέχει πρόσβαση.</value>
@@ -269,6 +242,33 @@
   </data>
   <data name="Who can use the link?" xml:space="preserve">
     <value>Ποιος μπορεί να χρησιμοποιήσει τον σύνδεσμο;</value>
+  </data>
+  <data name="{0} and {1} other user" xml:space="preserve">
+    <value>{0} και {1} ακόμη χρήστης</value>
+  </data>
+  <data name="{0} and {1} other users" xml:space="preserve">
+    <value>{0} και {1} ακόμη χρήστες</value>
+  </data>
+  <data name="{0} can edit." xml:space="preserve">
+    <value>{0} μπορεί να επεξεργαστεί.</value>
+  </data>
+  <data name="{0} can view." xml:space="preserve">
+    <value>Το/τα {0} μπορεί/μπορούν να προβάλει/προβάλουν.</value>
+  </data>
+  <data name="{0} role" xml:space="preserve">
+    <value>{0} ρόλος</value>
+  </data>
+  <data name="{0} roles" xml:space="preserve">
+    <value>{0} ρόλοι</value>
+  </data>
+  <data name="{0} user" xml:space="preserve">
+    <value>{0} χρήστης</value>
+  </data>
+  <data name="{0} users" xml:space="preserve">
+    <value>{0} χρήστες</value>
+  </data>
+  <data name="{0}, {1}" xml:space="preserve">
+    <value>{0}, {1}</value>
   </data>
 
 </root>

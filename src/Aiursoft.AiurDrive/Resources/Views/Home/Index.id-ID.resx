@@ -39,14 +39,14 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>Sebuah fondasi yang modern, kaya fitur, dan sangat dapat diperluas untuk aplikasi web Anda berikutnya.</value>
   </data>
+  <data name="AI-Powered Translations" xml:space="preserve">
+    <value>Terjemahan Berbasis AI</value>
+  </data>
   <data name="Achieve more with Aiursoft Template" xml:space="preserve">
     <value>Raih lebih banyak dengan Aiursoft Template</value>
   </data>
   <data name="Advanced Privacy &amp; Security" xml:space="preserve">
     <value>Privasi &amp; Keamanan Lanjutan</value>
-  </data>
-  <data name="AI-Powered Translations" xml:space="preserve">
-    <value>Terjemahan Berbasis AI</value>
   </data>
   <data name="Aiursoft Template is our definitive choice for enterprise projects! It&apos;s built for developers and is lightweight yet powerful. We can skip all the boilerplate for authentication and user management." xml:space="preserve">
     <value>Aiursoft Template adalah pilihan utama kami untuk proyek perusahaan! Template ini dibangun untuk pengembang, ringan namun bertenaga. Kami bisa melewati semua kode boilerplate untuk autentikasi dan manajemen pengguna.</value>
@@ -144,9 +144,6 @@
   <data name="FAQ" xml:space="preserve">
     <value>FAQ</value>
   </data>
-  <data name="faster" xml:space="preserve">
-    <value>lebih cepat</value>
-  </data>
   <data name="Features" xml:space="preserve">
     <value>Fitur</value>
   </data>
@@ -158,9 +155,6 @@
   </data>
   <data name="Flexible" xml:space="preserve">
     <value>Fleksibel</value>
-  </data>
-  <data name="for any inquiries or to report issues." xml:space="preserve">
-    <value>untuk pertanyaan apa pun atau untuk melaporkan masalah.</value>
   </data>
   <data name="Free" xml:space="preserve">
     <value>Gratis</value>
@@ -213,11 +207,11 @@
   <data name="Join thousands of users who trust AiurDrive for their local file management needs." xml:space="preserve">
     <value>Gabungkan ribuan pengguna yang mempercayai AiurDrive untuk kebutuhan manajemen file lokal mereka.</value>
   </data>
-  <data name="Markdown To HTML" xml:space="preserve">
-    <value>Markdown ke HTML</value>
-  </data>
   <data name="MIT Licence" xml:space="preserve">
     <value>Lisensi MIT</value>
+  </data>
+  <data name="Markdown To HTML" xml:space="preserve">
+    <value>Markdown ke HTML</value>
   </data>
   <data name="Models are validated on both client and server sides based on data annotations." xml:space="preserve">
     <value>Model divalidasi di sisi klien dan server berdasarkan anotasi data.</value>
@@ -291,11 +285,11 @@
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>Mode gelap cerdas yang secara otomatis menyesuaikan dengan pengaturan sistem pengguna.</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Mulai proyek baru</value>
-  </data>
   <data name="Start Now" xml:space="preserve">
     <value>Mulai Sekarang</value>
+  </data>
+  <data name="Start a new project" xml:space="preserve">
+    <value>Mulai proyek baru</value>
   </data>
   <data name="Support for SQLite, MySQL, and SQL Server. Switch between List and Grid views to manage your files comfortably." xml:space="preserve">
     <value>Dukungan untuk SQLite, MySQL, dan SQL Server. Beralih antara tampilan Daftar dan Grid untuk mengelola file Anda dengan nyaman.</value>
@@ -365,6 +359,12 @@
   </data>
   <data name="Your Private Cloud" xml:space="preserve">
     <value>Awan Pribadi Anda</value>
+  </data>
+  <data name="faster" xml:space="preserve">
+    <value>lebih cepat</value>
+  </data>
+  <data name="for any inquiries or to report issues." xml:space="preserve">
+    <value>untuk pertanyaan apa pun atau untuk melaporkan masalah.</value>
   </data>
 
 </root>

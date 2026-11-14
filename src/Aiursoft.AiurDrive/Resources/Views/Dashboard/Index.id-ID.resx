@@ -168,9 +168,6 @@
   <data name="Sites" xml:space="preserve">
     <value>Situs</value>
   </data>
-  <data name="sites max" xml:space="preserve">
-    <value>situs maks</value>
-  </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>Penggantian Konfigurasi Cerdas</value>
   </data>
@@ -203,6 +200,9 @@
   </data>
   <data name="Zero Trust Vault" xml:space="preserve">
     <value>Brankas Kepercayaan Nol</value>
+  </data>
+  <data name="sites max" xml:space="preserve">
+    <value>situs maks</value>
   </data>
 
 </root>

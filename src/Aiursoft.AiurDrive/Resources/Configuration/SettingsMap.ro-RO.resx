@@ -21,11 +21,11 @@
       <data name="Allow Image Preview" xml:space="preserve">
     <value>Permite previzualizarea imaginilor</value>
   </data>
-  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
-    <value>Permite previzualizarea imaginilor în managerul de fișiere. Aceasta este doar un comutator de interfață. Procesarea imaginilor este întotdeauna activată.</value>
-  </data>
   <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>Permite utilizatorului să-și ajusteze nickname-ul</value>
+  </data>
+  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
+    <value>Permite previzualizarea imaginilor în managerul de fișiere. Aceasta este doar un comutator de interfață. Procesarea imaginilor este întotdeauna activată.</value>
   </data>
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>Permite utilizatorilor să-și ajusteze pseudonimul în pagina de gestionare a profilului.</value>
@@ -45,11 +45,11 @@
   <data name="Max Sites Per Person" xml:space="preserve">
     <value>Numărul Maxim de Site-uri Pe Persoană</value>
   </data>
-  <data name="Max storage size for each site in GB." xml:space="preserve">
-    <value>Dimensiune maximă de stocare pentru fiecare site în GB.</value>
-  </data>
   <data name="Max Vault Storage In GB" xml:space="preserve">
     <value>Stocare maximă Vault în GB</value>
+  </data>
+  <data name="Max storage size for each site in GB." xml:space="preserve">
+    <value>Dimensiune maximă de stocare pentru fiecare site în GB.</value>
   </data>
   <data name="Maximum encrypted Vault storage per user in GB." xml:space="preserve">
     <value>Stocarea maximă criptată a Vault pe utilizator, în GB.</value>
@@ -63,20 +63,20 @@
   <data name="Project Name" xml:space="preserve">
     <value>Numele proiectului</value>
   </data>
-  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
-    <value>Numele brandului companiei sau proiectului. De exemplu: Aiursoft.</value>
-  </data>
   <data name="The ICP license number for China mainland users. Leave empty to hide." xml:space="preserve">
     <value>Numărul de înregistrare ICP pentru utilizatorii din China continentală. Lăsați gol pentru a ascunde.</value>
+  </data>
+  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
+    <value>Adresa URL a companiei sau a proiectului. De exemplu: https://www.aiursoft.com</value>
+  </data>
+  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
+    <value>Numele brandului companiei sau proiectului. De exemplu: Aiursoft.</value>
   </data>
   <data name="The logo of the project displayed in the navbar and footer. Support jpg, png, svg." xml:space="preserve">
     <value>Logo-ul proiectului afișat în bara de navigare și în subsol. Suportă jpg, png, svg.</value>
   </data>
   <data name="The name of the project displayed in the frontend." xml:space="preserve">
     <value>Numele proiectului afișat în interfața frontend.</value>
-  </data>
-  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
-    <value>Adresa URL a companiei sau a proiectului. De exemplu: https://www.aiursoft.com</value>
   </data>
 
 </root>

@@ -30,9 +30,6 @@
   <data name="Are you sure you want to permanently delete your account?" xml:space="preserve">
     <value>Είστε σίγουρος/η ότι θέλετε να διαγράψετε οριστικά τον λογαριασμό σας;</value>
   </data>
-  <data name="auth provider" xml:space="preserve">
-    <value>παρόχου εγγύησης</value>
-  </data>
   <data name="Cancel" xml:space="preserve">
     <value>Ακύρωση</value>
   </data>
@@ -57,9 +54,6 @@
   <data name="OIDC Account" xml:space="preserve">
     <value>Λογαριασμός OIDC</value>
   </data>
-  <data name="site(s)." xml:space="preserve">
-    <value>τόπους.</value>
-  </data>
   <data name="This action will permanently erase all your data from our servers. Your comments, likes, and favorites will be removed. This action cannot be undone." xml:space="preserve">
     <value>Η ενέργεια αυτή θα διαγράψει οριστικά όλα τα δεδομένα σας από τους διακομιστές μας. Οι σχόλια, οι αρεστές και οι αγαπημένα σας θα αφαιρεθούν. Η ενέργεια αυτή δεν μπορεί να αναιρεθεί.</value>
   </data>
@@ -80,6 +74,12 @@
   </data>
   <data name="Your account is synced from an external authentication provider. Deleting your data here will remove all your local records, but your account may be recreated the next time you log in. To permanently delete your account, please visit your" xml:space="preserve">
     <value>Ο λογαριασμός σας συγχρονίζεται από εξωτερικό πάροχο ελέγχου ταυτότητας. Η διαγραφή των δεδομένων σας εδώ θα αφαιρέσει όλα τα τοπικά σας αρχεία, αλλά ο λογαριασμός σας ενδέεται να δημιουργηθεί ξανά την επόμενη φορά που θα συνδεθείτε. Για να διαγράψετε οριστικά τον λογαριασμό σας, επισκεφθείτε τον</value>
+  </data>
+  <data name="auth provider" xml:space="preserve">
+    <value>παρόχου εγγύησης</value>
+  </data>
+  <data name="site(s)." xml:space="preserve">
+    <value>τόπους.</value>
   </data>
 
 </root>

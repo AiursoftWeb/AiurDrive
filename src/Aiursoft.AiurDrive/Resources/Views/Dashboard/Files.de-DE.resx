@@ -60,11 +60,11 @@
   <data name="Files" xml:space="preserve">
     <value>Dateien</value>
   </data>
-  <data name="Folder is empty." xml:space="preserve">
-    <value>Der Ordner ist leer.</value>
-  </data>
   <data name="Folder Name" xml:space="preserve">
     <value>Ordnername</value>
+  </data>
+  <data name="Folder is empty." xml:space="preserve">
+    <value>Der Ordner ist leer.</value>
   </data>
   <data name="Manage Shares" xml:space="preserve">
     <value>Freigaben verwalten</value>

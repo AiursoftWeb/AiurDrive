@@ -18,34 +18,7 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="{0} and {1} other user" xml:space="preserve">
-    <value>{0}及另外{1}位用户</value>
-  </data>
-  <data name="{0} and {1} other users" xml:space="preserve">
-    <value>{0}和另外{1}位用户</value>
-  </data>
-  <data name="{0} can edit." xml:space="preserve">
-    <value>{0} 可以编辑。</value>
-  </data>
-  <data name="{0} can view." xml:space="preserve">
-    <value>{0}可以查看。</value>
-  </data>
-  <data name="{0} role" xml:space="preserve">
-    <value>{0} 个角色</value>
-  </data>
-  <data name="{0} roles" xml:space="preserve">
-    <value>{0} 个角色</value>
-  </data>
-  <data name="{0} user" xml:space="preserve">
-    <value>{0} 个用户</value>
-  </data>
-  <data name="{0} users" xml:space="preserve">
-    <value>{0} 位用户</value>
-  </data>
-  <data name="{0}, {1}" xml:space="preserve">
-    <value>{0}，{1}</value>
-  </data>
-  <data name="About access" xml:space="preserve">
+      <data name="About access" xml:space="preserve">
     <value>关于访问权限</value>
   </data>
   <data name="Actions" xml:space="preserve">
@@ -54,11 +27,11 @@
   <data name="Add" xml:space="preserve">
     <value>添加</value>
   </data>
-  <data name="Add access" xml:space="preserve">
-    <value>添加访问权限</value>
-  </data>
   <data name="Add New Share" xml:space="preserve">
     <value>添加新共享</value>
+  </data>
+  <data name="Add access" xml:space="preserve">
+    <value>添加访问权限</value>
   </data>
   <data name="Allow anonymous viewing (Public)" xml:space="preserve">
     <value>允许匿名查看 (公开)</value>
@@ -69,9 +42,6 @@
   <data name="Anonymous viewing does not change the user or role permissions above." xml:space="preserve">
     <value>匿名查看不会更改上述用户或角色权限。</value>
   </data>
-  <data name="Anyone — view only" xml:space="preserve">
-    <value>任何人 — 仅可查看</value>
-  </data>
   <data name="Anyone with the link can view and download files without signing in." xml:space="preserve">
     <value>任何拥有链接的人都可以查看和下载文件，无需登录。</value>
   </data>
@@ -80,6 +50,9 @@
   </data>
   <data name="Anyone with the link can view without signing in." xml:space="preserve">
     <value>任何持有链接的人都可以无需登录即可查看。</value>
+  </data>
+  <data name="Anyone — view only" xml:space="preserve">
+    <value>任何人 — 仅可查看</value>
   </data>
   <data name="Are you sure you want to remove this share?" xml:space="preserve">
     <value>确定要删除此共享吗？</value>
@@ -228,11 +201,11 @@
   <data name="Share with" xml:space="preserve">
     <value>分享给</value>
   </data>
-  <data name="Shared access" xml:space="preserve">
-    <value>共享访问</value>
-  </data>
   <data name="Shared With" xml:space="preserve">
     <value>共享于</value>
+  </data>
+  <data name="Shared access" xml:space="preserve">
+    <value>共享访问</value>
   </data>
   <data name="Sign-in and existing access are required. Copying a link does not grant access." xml:space="preserve">
     <value>需要登录并且已有访问权限。复制链接不会授予访问权限。</value>
@@ -269,6 +242,33 @@
   </data>
   <data name="Who can use the link?" xml:space="preserve">
     <value>谁可以使用此链接？</value>
+  </data>
+  <data name="{0} and {1} other user" xml:space="preserve">
+    <value>{0}及另外{1}位用户</value>
+  </data>
+  <data name="{0} and {1} other users" xml:space="preserve">
+    <value>{0}和另外{1}位用户</value>
+  </data>
+  <data name="{0} can edit." xml:space="preserve">
+    <value>{0} 可以编辑。</value>
+  </data>
+  <data name="{0} can view." xml:space="preserve">
+    <value>{0}可以查看。</value>
+  </data>
+  <data name="{0} role" xml:space="preserve">
+    <value>{0} 个角色</value>
+  </data>
+  <data name="{0} roles" xml:space="preserve">
+    <value>{0} 个角色</value>
+  </data>
+  <data name="{0} user" xml:space="preserve">
+    <value>{0} 个用户</value>
+  </data>
+  <data name="{0} users" xml:space="preserve">
+    <value>{0} 位用户</value>
+  </data>
+  <data name="{0}, {1}" xml:space="preserve">
+    <value>{0}，{1}</value>
   </data>
 
 </root>

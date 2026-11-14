@@ -18,34 +18,7 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="{0} and {1} other user" xml:space="preserve">
-    <value>{0} och {1} annan användare</value>
-  </data>
-  <data name="{0} and {1} other users" xml:space="preserve">
-    <value>{0} och {1} andra användare</value>
-  </data>
-  <data name="{0} can edit." xml:space="preserve">
-    <value>{0} kan redigera.</value>
-  </data>
-  <data name="{0} can view." xml:space="preserve">
-    <value>{0} kan visa.</value>
-  </data>
-  <data name="{0} role" xml:space="preserve">
-    <value>{0} roll</value>
-  </data>
-  <data name="{0} roles" xml:space="preserve">
-    <value>{0} roller</value>
-  </data>
-  <data name="{0} user" xml:space="preserve">
-    <value>{0} användare</value>
-  </data>
-  <data name="{0} users" xml:space="preserve">
-    <value>{0} användare</value>
-  </data>
-  <data name="{0}, {1}" xml:space="preserve">
-    <value>{0}, {1}</value>
-  </data>
-  <data name="About access" xml:space="preserve">
+      <data name="About access" xml:space="preserve">
     <value>Om åtkomst</value>
   </data>
   <data name="Actions" xml:space="preserve">
@@ -54,11 +27,11 @@
   <data name="Add" xml:space="preserve">
     <value>Lägg till</value>
   </data>
-  <data name="Add access" xml:space="preserve">
-    <value>Lägg till åtkomst</value>
-  </data>
   <data name="Add New Share" xml:space="preserve">
     <value>Lägg till ny delning</value>
+  </data>
+  <data name="Add access" xml:space="preserve">
+    <value>Lägg till åtkomst</value>
   </data>
   <data name="Allow anonymous viewing (Public)" xml:space="preserve">
     <value>Tillåt anonym visning (Public)</value>
@@ -69,9 +42,6 @@
   <data name="Anonymous viewing does not change the user or role permissions above." xml:space="preserve">
     <value>Anonym visning ändrar inte användarens eller rollernas behörigheter ovan.</value>
   </data>
-  <data name="Anyone — view only" xml:space="preserve">
-    <value>Alla – endast visning</value>
-  </data>
   <data name="Anyone with the link can view and download files without signing in." xml:space="preserve">
     <value>Alla som har länken kan visa och ladda ner filer utan att logga in.</value>
   </data>
@@ -80,6 +50,9 @@
   </data>
   <data name="Anyone with the link can view without signing in." xml:space="preserve">
     <value>Alla med länken kan visa utan att logga in.</value>
+  </data>
+  <data name="Anyone — view only" xml:space="preserve">
+    <value>Alla – endast visning</value>
   </data>
   <data name="Are you sure you want to remove this share?" xml:space="preserve">
     <value>Är du säker på att du vill ta bort den här delningen?</value>
@@ -228,11 +201,11 @@
   <data name="Share with" xml:space="preserve">
     <value>Dela med</value>
   </data>
-  <data name="Shared access" xml:space="preserve">
-    <value>Delad åtkomst</value>
-  </data>
   <data name="Shared With" xml:space="preserve">
     <value>Delat med</value>
+  </data>
+  <data name="Shared access" xml:space="preserve">
+    <value>Delad åtkomst</value>
   </data>
   <data name="Sign-in and existing access are required. Copying a link does not grant access." xml:space="preserve">
     <value>Inloggning och befintlig åtkomst krävs. Att kopiera en länk ger inte åtkomst.</value>
@@ -269,6 +242,33 @@
   </data>
   <data name="Who can use the link?" xml:space="preserve">
     <value>Vem kan använda länken?</value>
+  </data>
+  <data name="{0} and {1} other user" xml:space="preserve">
+    <value>{0} och {1} annan användare</value>
+  </data>
+  <data name="{0} and {1} other users" xml:space="preserve">
+    <value>{0} och {1} andra användare</value>
+  </data>
+  <data name="{0} can edit." xml:space="preserve">
+    <value>{0} kan redigera.</value>
+  </data>
+  <data name="{0} can view." xml:space="preserve">
+    <value>{0} kan visa.</value>
+  </data>
+  <data name="{0} role" xml:space="preserve">
+    <value>{0} roll</value>
+  </data>
+  <data name="{0} roles" xml:space="preserve">
+    <value>{0} roller</value>
+  </data>
+  <data name="{0} user" xml:space="preserve">
+    <value>{0} användare</value>
+  </data>
+  <data name="{0} users" xml:space="preserve">
+    <value>{0} användare</value>
+  </data>
+  <data name="{0}, {1}" xml:space="preserve">
+    <value>{0}, {1}</value>
   </data>
 
 </root>

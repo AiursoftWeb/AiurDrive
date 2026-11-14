@@ -30,9 +30,6 @@
   <data name="Are you sure you want to permanently delete your account?" xml:space="preserve">
     <value>هل أنت متأكد من رغبتك في حذف حسابك نهائيًا؟</value>
   </data>
-  <data name="auth provider" xml:space="preserve">
-    <value>مزود المصادقة</value>
-  </data>
   <data name="Cancel" xml:space="preserve">
     <value>إلغاء</value>
   </data>
@@ -57,9 +54,6 @@
   <data name="OIDC Account" xml:space="preserve">
     <value>حساب OIDC</value>
   </data>
-  <data name="site(s)." xml:space="preserve">
-    <value>موقع(ات).</value>
-  </data>
   <data name="This action will permanently erase all your data from our servers. Your comments, likes, and favorites will be removed. This action cannot be undone." xml:space="preserve">
     <value>سيؤدي هذا الإجراء إلى حذف جميع بياناتك نهائيًا من خوادمنا. سيتم إزالة تعليقاتك وإعجاباتك والمفضلة. لا يمكن التراجع عن هذا الإجراء.</value>
   </data>
@@ -80,6 +74,12 @@
   </data>
   <data name="Your account is synced from an external authentication provider. Deleting your data here will remove all your local records, but your account may be recreated the next time you log in. To permanently delete your account, please visit your" xml:space="preserve">
     <value>حسابك متزامن مع مزود مصادقة خارجي. حذف بياناتك هنا سيقوم بإزالة جميع سجلاتك المحلية، ولكن قد يتم إعادة إنشاء حسابك في المرة القادمة التي تقوم فيها بتسجيل الدخول. لحذف حسابك بشكل دائم، يرجى زيارة مزود المصادقة الخاص بك.</value>
+  </data>
+  <data name="auth provider" xml:space="preserve">
+    <value>مزود المصادقة</value>
+  </data>
+  <data name="site(s)." xml:space="preserve">
+    <value>موقع(ات).</value>
   </data>
 
 </root>

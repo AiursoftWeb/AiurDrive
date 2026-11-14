@@ -39,14 +39,14 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>Современная, многофункциональная и легко расширяемая основа для вашего следующего веб-приложения.</value>
   </data>
+  <data name="AI-Powered Translations" xml:space="preserve">
+    <value>Переводы на основе ИИ</value>
+  </data>
   <data name="Achieve more with Aiursoft Template" xml:space="preserve">
     <value>Достигайте большего с Aiursoft Template</value>
   </data>
   <data name="Advanced Privacy &amp; Security" xml:space="preserve">
     <value>Расширенная конфиденциальность и безопасность</value>
-  </data>
-  <data name="AI-Powered Translations" xml:space="preserve">
-    <value>Переводы на основе ИИ</value>
   </data>
   <data name="Aiursoft Template is our definitive choice for enterprise projects! It&apos;s built for developers and is lightweight yet powerful. We can skip all the boilerplate for authentication and user management." xml:space="preserve">
     <value>Aiursoft Template — это наш окончательный выбор для корпоративных проектов! Он создан для разработчиков, легковесный, но мощный. Мы можем пропустить всю стандартную работу по аутентификации и управлению пользователями.</value>
@@ -144,9 +144,6 @@
   <data name="FAQ" xml:space="preserve">
     <value>ЧАВО</value>
   </data>
-  <data name="faster" xml:space="preserve">
-    <value>быстрее</value>
-  </data>
   <data name="Features" xml:space="preserve">
     <value>Возможности</value>
   </data>
@@ -158,9 +155,6 @@
   </data>
   <data name="Flexible" xml:space="preserve">
     <value>Гибкость</value>
-  </data>
-  <data name="for any inquiries or to report issues." xml:space="preserve">
-    <value>по любым вопросам или для сообщения о проблемах.</value>
   </data>
   <data name="Free" xml:space="preserve">
     <value>Бесплатно</value>
@@ -213,11 +207,11 @@
   <data name="Join thousands of users who trust AiurDrive for their local file management needs." xml:space="preserve">
     <value>Присоединяйтесь к тысячам пользователей, которые доверяют AiurDrive для управления локальными файлами.</value>
   </data>
-  <data name="Markdown To HTML" xml:space="preserve">
-    <value>Markdown в HTML</value>
-  </data>
   <data name="MIT Licence" xml:space="preserve">
     <value>Лицензия MIT</value>
+  </data>
+  <data name="Markdown To HTML" xml:space="preserve">
+    <value>Markdown в HTML</value>
   </data>
   <data name="Models are validated on both client and server sides based on data annotations." xml:space="preserve">
     <value>Модели проверяются на стороне клиента и сервера на основе аннотаций данных.</value>
@@ -291,11 +285,11 @@
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>Умный тёмный режим, который автоматически подстраивается под системные настройки пользователя.</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Начать новый проект</value>
-  </data>
   <data name="Start Now" xml:space="preserve">
     <value>Начать сейчас</value>
+  </data>
+  <data name="Start a new project" xml:space="preserve">
+    <value>Начать новый проект</value>
   </data>
   <data name="Support for SQLite, MySQL, and SQL Server. Switch between List and Grid views to manage your files comfortably." xml:space="preserve">
     <value>Поддержка SQLite, MySQL и SQL Server. Переключайтесь между режимами просмотра Список и Сетка для удобного управления файлами.</value>
@@ -365,6 +359,12 @@
   </data>
   <data name="Your Private Cloud" xml:space="preserve">
     <value>Ваш частный облако</value>
+  </data>
+  <data name="faster" xml:space="preserve">
+    <value>быстрее</value>
+  </data>
+  <data name="for any inquiries or to report issues." xml:space="preserve">
+    <value>по любым вопросам или для сообщения о проблемах.</value>
   </data>
 
 </root>

@@ -18,34 +18,7 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="{0} and {1} other user" xml:space="preserve">
-    <value>{0} ومستخدم آخر عددهم {1}</value>
-  </data>
-  <data name="{0} and {1} other users" xml:space="preserve">
-    <value>{0} و{1} مستخدمون آخرون</value>
-  </data>
-  <data name="{0} can edit." xml:space="preserve">
-    <value>يمكن لـ {0} التعديل.</value>
-  </data>
-  <data name="{0} can view." xml:space="preserve">
-    <value>يمكن لـ {0} العرض.</value>
-  </data>
-  <data name="{0} role" xml:space="preserve">
-    <value>دور {0}</value>
-  </data>
-  <data name="{0} roles" xml:space="preserve">
-    <value>{0} أدوار</value>
-  </data>
-  <data name="{0} user" xml:space="preserve">
-    <value>مستخدم (عددهم: {0})</value>
-  </data>
-  <data name="{0} users" xml:space="preserve">
-    <value>{0} مستخدمين</value>
-  </data>
-  <data name="{0}, {1}" xml:space="preserve">
-    <value>{0}، {1}</value>
-  </data>
-  <data name="About access" xml:space="preserve">
+      <data name="About access" xml:space="preserve">
     <value>معلومات حول إمكانية الوصول</value>
   </data>
   <data name="Actions" xml:space="preserve">
@@ -54,11 +27,11 @@
   <data name="Add" xml:space="preserve">
     <value>إضافة</value>
   </data>
-  <data name="Add access" xml:space="preserve">
-    <value>إضافة صلاحية الوصول</value>
-  </data>
   <data name="Add New Share" xml:space="preserve">
     <value>إضافة مشاركة جديدة</value>
+  </data>
+  <data name="Add access" xml:space="preserve">
+    <value>إضافة صلاحية الوصول</value>
   </data>
   <data name="Allow anonymous viewing (Public)" xml:space="preserve">
     <value>تمكين العرض العام (عام)</value>
@@ -69,9 +42,6 @@
   <data name="Anonymous viewing does not change the user or role permissions above." xml:space="preserve">
     <value>لا يؤدي العرض دون تسجيل الدخول إلى تغيير أذونات المستخدم أو الدور المذكورة أعلاه.</value>
   </data>
-  <data name="Anyone — view only" xml:space="preserve">
-    <value>أي شخص — عرض فقط</value>
-  </data>
   <data name="Anyone with the link can view and download files without signing in." xml:space="preserve">
     <value>يمكن لأي شخص لديه الرابط عرض الملفات وتنزيلها دون تسجيل الدخول.</value>
   </data>
@@ -80,6 +50,9 @@
   </data>
   <data name="Anyone with the link can view without signing in." xml:space="preserve">
     <value>يمكن لأي شخص لديه الرابط عرض المحتوى دون تسجيل الدخول.</value>
+  </data>
+  <data name="Anyone — view only" xml:space="preserve">
+    <value>أي شخص — عرض فقط</value>
   </data>
   <data name="Are you sure you want to remove this share?" xml:space="preserve">
     <value>هل أنت متأكد أنك تريد إزالة هذا المشاركة؟</value>
@@ -228,11 +201,11 @@
   <data name="Share with" xml:space="preserve">
     <value>مشاركة مع</value>
   </data>
-  <data name="Shared access" xml:space="preserve">
-    <value>الوصول المشترك</value>
-  </data>
   <data name="Shared With" xml:space="preserve">
     <value>المشاركة مع</value>
+  </data>
+  <data name="Shared access" xml:space="preserve">
+    <value>الوصول المشترك</value>
   </data>
   <data name="Sign-in and existing access are required. Copying a link does not grant access." xml:space="preserve">
     <value>يلزم تسجيل الدخول وتوفر صلاحية وصول مسبقة. نسخ الرابط لا يمنح صلاحية الوصول.</value>
@@ -269,6 +242,33 @@
   </data>
   <data name="Who can use the link?" xml:space="preserve">
     <value>من يمكنه استخدام الرابط؟</value>
+  </data>
+  <data name="{0} and {1} other user" xml:space="preserve">
+    <value>{0} ومستخدم آخر عددهم {1}</value>
+  </data>
+  <data name="{0} and {1} other users" xml:space="preserve">
+    <value>{0} و{1} مستخدمون آخرون</value>
+  </data>
+  <data name="{0} can edit." xml:space="preserve">
+    <value>يمكن لـ {0} التعديل.</value>
+  </data>
+  <data name="{0} can view." xml:space="preserve">
+    <value>يمكن لـ {0} العرض.</value>
+  </data>
+  <data name="{0} role" xml:space="preserve">
+    <value>دور {0}</value>
+  </data>
+  <data name="{0} roles" xml:space="preserve">
+    <value>{0} أدوار</value>
+  </data>
+  <data name="{0} user" xml:space="preserve">
+    <value>مستخدم (عددهم: {0})</value>
+  </data>
+  <data name="{0} users" xml:space="preserve">
+    <value>{0} مستخدمين</value>
+  </data>
+  <data name="{0}, {1}" xml:space="preserve">
+    <value>{0}، {1}</value>
   </data>
 
 </root>

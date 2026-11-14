@@ -21,11 +21,11 @@
       <data name="Allow Image Preview" xml:space="preserve">
     <value>Abilita Anteprima Immagini</value>
   </data>
-  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
-    <value>Abilita anteprima immagini nel gestore file. Si tratta solo di un interruttore lato front-end. Elaborazione immagini è sempre abilitata.</value>
-  </data>
   <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>Consenti all&apos;utente di modificare il soprannome</value>
+  </data>
+  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
+    <value>Abilita anteprima immagini nel gestore file. Si tratta solo di un interruttore lato front-end. Elaborazione immagini è sempre abilitata.</value>
   </data>
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>Consenti agli utenti di modificare il proprio nickname nella pagina di gestione del profilo.</value>
@@ -45,11 +45,11 @@
   <data name="Max Sites Per Person" xml:space="preserve">
     <value>Massimo Siti Per Persona</value>
   </data>
-  <data name="Max storage size for each site in GB." xml:space="preserve">
-    <value>Dimensione massima dello spazio di archiviazione per ogni sito in GB.</value>
-  </data>
   <data name="Max Vault Storage In GB" xml:space="preserve">
     <value>Spazio di archiviazione Vault massimo in GB</value>
+  </data>
+  <data name="Max storage size for each site in GB." xml:space="preserve">
+    <value>Dimensione massima dello spazio di archiviazione per ogni sito in GB.</value>
   </data>
   <data name="Maximum encrypted Vault storage per user in GB." xml:space="preserve">
     <value>Dimensione massima di archiviazione Vault cifrata per utente in GB.</value>
@@ -63,20 +63,20 @@
   <data name="Project Name" xml:space="preserve">
     <value>Nome del progetto</value>
   </data>
-  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
-    <value>Il nome del marchio dell&apos;azienda o del progetto. Esempio: Aiursoft.</value>
-  </data>
   <data name="The ICP license number for China mainland users. Leave empty to hide." xml:space="preserve">
     <value>Il numero di licenza ICP per gli utenti della Cina continentale. Lasciare vuoto per nascondere.</value>
+  </data>
+  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
+    <value>L&apos;URL dell&apos;azienda o del progetto. Esempio: https://www.aiursoft.com</value>
+  </data>
+  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
+    <value>Il nome del marchio dell&apos;azienda o del progetto. Esempio: Aiursoft.</value>
   </data>
   <data name="The logo of the project displayed in the navbar and footer. Support jpg, png, svg." xml:space="preserve">
     <value>Il logo del progetto visualizzato nella navbar e nel footer. Supporta jpg, png, svg.</value>
   </data>
   <data name="The name of the project displayed in the frontend." xml:space="preserve">
     <value>Il nome del progetto visualizzato nell&apos;interfaccia utente</value>
-  </data>
-  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
-    <value>L&apos;URL dell&apos;azienda o del progetto. Esempio: https://www.aiursoft.com</value>
   </data>
 
 </root>

@@ -168,9 +168,6 @@
   <data name="Sites" xml:space="preserve">
     <value>Siteler</value>
   </data>
-  <data name="sites max" xml:space="preserve">
-    <value>site max</value>
-  </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>Akıllı Yapılandırma Geçersiz Kılma</value>
   </data>
@@ -203,6 +200,9 @@
   </data>
   <data name="Zero Trust Vault" xml:space="preserve">
     <value>Sıfır Güven Kasa</value>
+  </data>
+  <data name="sites max" xml:space="preserve">
+    <value>site max</value>
   </data>
 
 </root>

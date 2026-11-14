@@ -21,9 +21,6 @@
       <data name="Actions" xml:space="preserve">
     <value>操作</value>
   </data>
-  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
-    <value>已存在于此文件夹中。是否覆盖？</value>
-  </data>
   <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
     <value>您确定要删除该文件夹及其所有内容吗？</value>
   </data>
@@ -180,14 +177,11 @@
   <data name="Updating" xml:space="preserve">
     <value>正在更新</value>
   </data>
-  <data name="Upload failed." xml:space="preserve">
-    <value>上传失败。</value>
-  </data>
   <data name="Upload Secure File" xml:space="preserve">
     <value>上传安全文件</value>
   </data>
-  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
-    <value>保险库已格式化并恢复至出厂状态。</value>
+  <data name="Upload failed." xml:space="preserve">
+    <value>上传失败。</value>
   </data>
   <data name="Vault Locked" xml:space="preserve">
     <value>保险库已锁定</value>
@@ -197,6 +191,9 @@
   </data>
   <data name="Vault Settings" xml:space="preserve">
     <value>保险库设置</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>保险库已格式化并恢复至出厂状态。</value>
   </data>
   <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
     <value>警告：这将永久删除您保险库中的所有文件并重置您的密码。您确定吗？</value>
@@ -212,6 +209,9 @@
   </data>
   <data name="Zero-Trust Architecture" xml:space="preserve">
     <value>零信任架构</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>已存在于此文件夹中。是否覆盖？</value>
   </data>
 
 </root>

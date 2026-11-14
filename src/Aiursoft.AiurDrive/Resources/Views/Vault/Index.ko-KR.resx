@@ -21,9 +21,6 @@
       <data name="Actions" xml:space="preserve">
     <value>액션</value>
   </data>
-  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
-    <value>이 폴더에 이미 있습니다. 덮어쓰시겠습니까?</value>
-  </data>
   <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
     <value>폴더와 모든 내용을 삭제하시겠습니까?</value>
   </data>
@@ -180,14 +177,11 @@
   <data name="Updating" xml:space="preserve">
     <value>업데이트 중</value>
   </data>
-  <data name="Upload failed." xml:space="preserve">
-    <value>업로드에 실패했습니다.</value>
-  </data>
   <data name="Upload Secure File" xml:space="preserve">
     <value>보안 파일 업로드</value>
   </data>
-  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
-    <value>보관이 포맷되어 공장 초기화 상태로 재설정되었습니다.</value>
+  <data name="Upload failed." xml:space="preserve">
+    <value>업로드에 실패했습니다.</value>
   </data>
   <data name="Vault Locked" xml:space="preserve">
     <value>금고 잠김</value>
@@ -197,6 +191,9 @@
   </data>
   <data name="Vault Settings" xml:space="preserve">
     <value>보관함 설정</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>보관이 포맷되어 공장 초기화 상태로 재설정되었습니다.</value>
   </data>
   <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
     <value>경고: 이 작업은 귀하의 금고에 있는 모든 파일을 영구적으로 삭제하고 비밀번호를 재설정합니다. 정말로 확인하시겠습니까?</value>
@@ -212,6 +209,9 @@
   </data>
   <data name="Zero-Trust Architecture" xml:space="preserve">
     <value>제로 트러스트 아키텍처</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>이 폴더에 이미 있습니다. 덮어쓰시겠습니까?</value>
   </data>
 
 </root>

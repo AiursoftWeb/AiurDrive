@@ -21,9 +21,6 @@
       <data name="Actions" xml:space="preserve">
     <value>Tindakan</value>
   </data>
-  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
-    <value>sudah ada di folder ini. Timpa?</value>
-  </data>
   <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
     <value>Apakah Anda yakin ingin menghapus folder dan semua isinya?</value>
   </data>
@@ -180,14 +177,11 @@
   <data name="Updating" xml:space="preserve">
     <value>Memperbarui</value>
   </data>
-  <data name="Upload failed." xml:space="preserve">
-    <value>Upload gagal.</value>
-  </data>
   <data name="Upload Secure File" xml:space="preserve">
     <value>Unggah File Aman</value>
   </data>
-  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
-    <value>Vault telah diformat dan direset ke kondisi pabrik.</value>
+  <data name="Upload failed." xml:space="preserve">
+    <value>Upload gagal.</value>
   </data>
   <data name="Vault Locked" xml:space="preserve">
     <value>Brankas Terkunci</value>
@@ -197,6 +191,9 @@
   </data>
   <data name="Vault Settings" xml:space="preserve">
     <value>Pengaturan Brankas</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>Vault telah diformat dan direset ke kondisi pabrik.</value>
   </data>
   <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
     <value>PERINGATAN: Ini akan MENGHAPUS SELURUH file di brankas Anda secara PERMANEN dan mereset kata sandi Anda. Apakah Anda benar-benar yakin?</value>
@@ -212,6 +209,9 @@
   </data>
   <data name="Zero-Trust Architecture" xml:space="preserve">
     <value>Arsitektur Zero-Trust</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>sudah ada di folder ini. Timpa?</value>
   </data>
 
 </root>

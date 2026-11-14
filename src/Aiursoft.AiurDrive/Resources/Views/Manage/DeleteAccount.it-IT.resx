@@ -30,9 +30,6 @@
   <data name="Are you sure you want to permanently delete your account?" xml:space="preserve">
     <value>Sei sicuro di voler eliminare permanentemente il tuo account?</value>
   </data>
-  <data name="auth provider" xml:space="preserve">
-    <value>fornitore di autenticazione</value>
-  </data>
   <data name="Cancel" xml:space="preserve">
     <value>Annulla</value>
   </data>
@@ -57,9 +54,6 @@
   <data name="OIDC Account" xml:space="preserve">
     <value>Account OIDC</value>
   </data>
-  <data name="site(s)." xml:space="preserve">
-    <value>sito(i).</value>
-  </data>
   <data name="This action will permanently erase all your data from our servers. Your comments, likes, and favorites will be removed. This action cannot be undone." xml:space="preserve">
     <value>Questa azione cancellerà definitivamente tutti i tuoi dati dai nostri server. I tuoi commenti, like e preferiti verranno rimossi. Questa azione non può essere annullata.</value>
   </data>
@@ -80,6 +74,12 @@
   </data>
   <data name="Your account is synced from an external authentication provider. Deleting your data here will remove all your local records, but your account may be recreated the next time you log in. To permanently delete your account, please visit your" xml:space="preserve">
     <value>Il tuo account è sincronizzato da un provider di autenticazione esterno. Eliminando i tuoi dati qui verranno rimosse tutte le tue registrazioni locali, ma il tuo account potrebbe essere ricreato la prossima volta che accedi. Per eliminare definitivamente il tuo account, visita il tuo</value>
+  </data>
+  <data name="auth provider" xml:space="preserve">
+    <value>fornitore di autenticazione</value>
+  </data>
+  <data name="site(s)." xml:space="preserve">
+    <value>sito(i).</value>
   </data>
 
 </root>

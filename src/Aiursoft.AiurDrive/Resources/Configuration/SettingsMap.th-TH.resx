@@ -21,11 +21,11 @@
       <data name="Allow Image Preview" xml:space="preserve">
     <value>อนุญาตให้ดูตัวอย่างภาพ</value>
   </data>
-  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
-    <value>อนุญาตให้ดูตัวอย่างภาพในตัวจัดการไฟล์ ข้อนี้เป็นการเปิดใช้งานเฉพาะด้านหน้าเท่านั้น การประมวลผลภาพจะถูกเปิดใช้งานตลอดเวลา</value>
-  </data>
   <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>อนุญาตให้ผู้ใช้แก้ไขชื่อเล่น</value>
+  </data>
+  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
+    <value>อนุญาตให้ดูตัวอย่างภาพในตัวจัดการไฟล์ ข้อนี้เป็นการเปิดใช้งานเฉพาะด้านหน้าเท่านั้น การประมวลผลภาพจะถูกเปิดใช้งานตลอดเวลา</value>
   </data>
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>อนุญาตให้ผู้ใช้ปรับชื่อเล่นของตนเองได้ในหน้าจัดการโปรไฟล์</value>
@@ -45,11 +45,11 @@
   <data name="Max Sites Per Person" xml:space="preserve">
     <value>จำนวนไซต์สูงสุดต่อคน</value>
   </data>
-  <data name="Max storage size for each site in GB." xml:space="preserve">
-    <value>ขนาดพื้นที่จัดเก็บสูงสุดต่อไซต์แต่ละไซต์เป็นกิกะไบต์</value>
-  </data>
   <data name="Max Vault Storage In GB" xml:space="preserve">
     <value>ขนาดพื้นที่จัดเก็บ Vault สูงสุด (GB)</value>
+  </data>
+  <data name="Max storage size for each site in GB." xml:space="preserve">
+    <value>ขนาดพื้นที่จัดเก็บสูงสุดต่อไซต์แต่ละไซต์เป็นกิกะไบต์</value>
   </data>
   <data name="Maximum encrypted Vault storage per user in GB." xml:space="preserve">
     <value>พื้นที่จัดเก็บ Vault ที่เข้ารหัสสูงสุดต่อผู้ใช้ (หน่วยเป็น GB)</value>
@@ -63,20 +63,20 @@
   <data name="Project Name" xml:space="preserve">
     <value>ชื่อโปรเจกต์</value>
   </data>
-  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
-    <value>ชื่อแบรนด์ของบริษัทหรือโครงการ เช่น Aiursoft</value>
-  </data>
   <data name="The ICP license number for China mainland users. Leave empty to hide." xml:space="preserve">
     <value>หมายเลขใบอนุญาต ICP สำหรับผู้ใช้ในแผ่นดินใหญ่จีน ปล่อยว่างเปล่าเพื่อซ่อน</value>
+  </data>
+  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
+    <value>URL ของบริษัทหรือโปรเจกต์ ตัวอย่างเช่น https://www.aiursoft.com</value>
+  </data>
+  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
+    <value>ชื่อแบรนด์ของบริษัทหรือโครงการ เช่น Aiursoft</value>
   </data>
   <data name="The logo of the project displayed in the navbar and footer. Support jpg, png, svg." xml:space="preserve">
     <value>โลโก้ของโครงการที่แสดงในแถบนำทางและส่วนท้าย รองรับไฟล์ jpg, png, svg</value>
   </data>
   <data name="The name of the project displayed in the frontend." xml:space="preserve">
     <value>ชื่อโปรเจกต์ที่แสดงในส่วนหน้าเว็บไซต์</value>
-  </data>
-  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
-    <value>URL ของบริษัทหรือโปรเจกต์ ตัวอย่างเช่น https://www.aiursoft.com</value>
   </data>
 
 </root>

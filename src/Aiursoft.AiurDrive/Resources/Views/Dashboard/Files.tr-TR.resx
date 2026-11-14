@@ -60,11 +60,11 @@
   <data name="Files" xml:space="preserve">
     <value>Dosyalar</value>
   </data>
-  <data name="Folder is empty." xml:space="preserve">
-    <value>Klasör boş.</value>
-  </data>
   <data name="Folder Name" xml:space="preserve">
     <value>Klasör Adı</value>
+  </data>
+  <data name="Folder is empty." xml:space="preserve">
+    <value>Klasör boş.</value>
   </data>
   <data name="Manage Shares" xml:space="preserve">
     <value>Paylaşımı Yönet</value>

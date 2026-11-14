@@ -60,11 +60,11 @@
   <data name="Files" xml:space="preserve">
     <value>檔案</value>
   </data>
-  <data name="Folder is empty." xml:space="preserve">
-    <value>資料夾是空的。</value>
-  </data>
   <data name="Folder Name" xml:space="preserve">
     <value>資料夾名稱</value>
+  </data>
+  <data name="Folder is empty." xml:space="preserve">
+    <value>資料夾是空的。</value>
   </data>
   <data name="Manage Shares" xml:space="preserve">
     <value>管理共用</value>

@@ -30,6 +30,12 @@
   <data name="Reset Password (leave empty to keep the same password)" xml:space="preserve">
     <value>Επαναφορά κωδικού (αφήστε κενό για να διατηρήσετε τον ίδιο κωδικό)</value>
   </data>
+  <data name="The avatar file is invalid. Please upload it again." xml:space="preserve">
+    <value>Το αρχείο avatar δεν είναι έγκυρο. Παρακαλώ ανεβάστε το ξανά.</value>
+  </data>
+  <data name="The avatar file is required." xml:space="preserve">
+    <value>Το αρχείο avatar απαιτείται.</value>
+  </data>
   <data name="The {0} is not a valid domain name." xml:space="preserve">
     <value>Το {0} δεν είναι έγκυρο όνομα πεδίου.</value>
   </data>
@@ -44,12 +50,6 @@
   </data>
   <data name="The {0} must be at max {1} characters long." xml:space="preserve">
     <value>Το {0} πρέπει να είναι το πολύ {1} χαρακτήρες μακρύ.</value>
-  </data>
-  <data name="The avatar file is invalid. Please upload it again." xml:space="preserve">
-    <value>Το αρχείο avatar δεν είναι έγκυρο. Παρακαλώ ανεβάστε το ξανά.</value>
-  </data>
-  <data name="The avatar file is required." xml:space="preserve">
-    <value>Το αρχείο avatar απαιτείται.</value>
   </data>
   <data name="User ID" xml:space="preserve">
     <value>ID Χρήστη</value>

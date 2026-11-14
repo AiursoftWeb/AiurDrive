@@ -30,9 +30,6 @@
   <data name="Are you sure you want to permanently delete your account?" xml:space="preserve">
     <value>계정을 영구적으로 삭제하시겠습니까?</value>
   </data>
-  <data name="auth provider" xml:space="preserve">
-    <value>인증 제공자</value>
-  </data>
   <data name="Cancel" xml:space="preserve">
     <value>취소</value>
   </data>
@@ -57,9 +54,6 @@
   <data name="OIDC Account" xml:space="preserve">
     <value>OIDC 계정</value>
   </data>
-  <data name="site(s)." xml:space="preserve">
-    <value>사이트입니다.</value>
-  </data>
   <data name="This action will permanently erase all your data from our servers. Your comments, likes, and favorites will be removed. This action cannot be undone." xml:space="preserve">
     <value>이 작업은 서버에서 모든 데이터를 영구적으로 삭제합니다. 댓글, 좋아요, 즐겨찾기가 모두 제거됩니다. 이 작업은 되돌릴 수 없습니다.</value>
   </data>
@@ -80,6 +74,12 @@
   </data>
   <data name="Your account is synced from an external authentication provider. Deleting your data here will remove all your local records, but your account may be recreated the next time you log in. To permanently delete your account, please visit your" xml:space="preserve">
     <value>계정은 외부 인증 공급자에서 동기화됩니다. 여기서 데이터를 삭제하면 모든 로컬 기록이 삭제되지만, 다음 로그인 시 계정이 다시 생성될 수 있습니다. 계정을 영구적으로 삭제하려면 다음을 방문하십시오.</value>
+  </data>
+  <data name="auth provider" xml:space="preserve">
+    <value>인증 제공자</value>
+  </data>
+  <data name="site(s)." xml:space="preserve">
+    <value>사이트입니다.</value>
   </data>
 
 </root>
