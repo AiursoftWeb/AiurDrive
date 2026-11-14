@@ -21,11 +21,11 @@
       <data name="Allow Image Preview" xml:space="preserve">
     <value>छवि पूर्वावलोकन की अनुमति दें</value>
   </data>
-  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
-    <value>फ़ाइल मैनेजर में छवि पूर्वावलोकन की अनुमति दें। यह केवल फ्रंट-एंड स्विच है। छवि प्रोसेसिंग हमेशा सक्षम रहती है।</value>
-  </data>
   <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>उपयोगकर्ता नाम समायोजित करने की अनुमति दें</value>
+  </data>
+  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
+    <value>फ़ाइल मैनेजर में छवि पूर्वावलोकन की अनुमति दें। यह केवल फ्रंट-एंड स्विच है। छवि प्रोसेसिंग हमेशा सक्षम रहती है।</value>
   </data>
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>प्रोफ़ाइल प्रबंधन पेज में उपयोगकर्ताओं को अपना निकनेम समायोजित करने की अनुमति दें।</value>
@@ -45,11 +45,11 @@
   <data name="Max Sites Per Person" xml:space="preserve">
     <value>प्रति व्यक्ति अधिकतम साइट्स</value>
   </data>
-  <data name="Max storage size for each site in GB." xml:space="preserve">
-    <value>प्रत्येक साइट के लिए अधिकतम स्टोरेज आकार जीबी में।</value>
-  </data>
   <data name="Max Vault Storage In GB" xml:space="preserve">
     <value>अधिकतम वॉल्ट स्टोरेज GB में</value>
+  </data>
+  <data name="Max storage size for each site in GB." xml:space="preserve">
+    <value>प्रत्येक साइट के लिए अधिकतम स्टोरेज आकार जीबी में।</value>
   </data>
   <data name="Maximum encrypted Vault storage per user in GB." xml:space="preserve">
     <value>प्रत्येक उपयोगकर्ता के लिए अधिकतम एन्क्रिप्टेड वॉल्ट संग्रहण (GB में)।</value>
@@ -63,20 +63,20 @@
   <data name="Project Name" xml:space="preserve">
     <value>प्रोजेक्ट नाम</value>
   </data>
-  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
-    <value>कंपनी या प्रोजेक्ट का ब्रांड नाम। उदाहरण के लिए: Aiursoft।</value>
-  </data>
   <data name="The ICP license number for China mainland users. Leave empty to hide." xml:space="preserve">
     <value>चीन मुख्यभूमि के उपयोगकर्ताओं के लिए ICP लाइसेंस नंबर। छिपाने के लिए खाली छोड़ दें।</value>
+  </data>
+  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
+    <value>कंपनी या प्रोजेक्ट का URL। उदाहरण के लिए https://www.aiursoft.com</value>
+  </data>
+  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
+    <value>कंपनी या प्रोजेक्ट का ब्रांड नाम। उदाहरण के लिए: Aiursoft।</value>
   </data>
   <data name="The logo of the project displayed in the navbar and footer. Support jpg, png, svg." xml:space="preserve">
     <value>प्रोजेक्ट का लोगो नेवबार और फुटर में प्रदर्शित किया जाता है। jpg, png, svg समर्थित हैं।</value>
   </data>
   <data name="The name of the project displayed in the frontend." xml:space="preserve">
     <value>फ्रंटएंड में प्रदर्शित प्रोजेक्ट का नाम।</value>
-  </data>
-  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
-    <value>कंपनी या प्रोजेक्ट का URL। उदाहरण के लिए https://www.aiursoft.com</value>
   </data>
 
 </root>

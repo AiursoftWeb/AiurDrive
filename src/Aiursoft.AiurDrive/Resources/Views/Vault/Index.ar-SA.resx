@@ -21,9 +21,6 @@
       <data name="Actions" xml:space="preserve">
     <value>إجراءات</value>
   </data>
-  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
-    <value>موجود بالفعل في هذا المجلد. هل تريد استبداله؟</value>
-  </data>
   <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
     <value>هل أنت متأكد أنك تريد حذف المجلد وكل محتوياته؟</value>
   </data>
@@ -180,14 +177,11 @@
   <data name="Updating" xml:space="preserve">
     <value>جاري التحديث</value>
   </data>
-  <data name="Upload failed." xml:space="preserve">
-    <value>فشل الرفع.</value>
-  </data>
   <data name="Upload Secure File" xml:space="preserve">
     <value>تحميل ملف آمن</value>
   </data>
-  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
-    <value>تم تنسيق الخزنة وإعادة ضبطها إلى حالة المصنع.</value>
+  <data name="Upload failed." xml:space="preserve">
+    <value>فشل الرفع.</value>
   </data>
   <data name="Vault Locked" xml:space="preserve">
     <value>الخزنة مقفلة</value>
@@ -197,6 +191,9 @@
   </data>
   <data name="Vault Settings" xml:space="preserve">
     <value>إعدادات المخزن</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>تم تنسيق الخزنة وإعادة ضبطها إلى حالة المصنع.</value>
   </data>
   <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
     <value>تحذير: سيؤدي هذا إلى حذف جميع الملفات في مخزنك بشكل دائم وإعادة تعيين كلمة مرورك. هل أنت متأكد تمامًا؟</value>
@@ -212,6 +209,9 @@
   </data>
   <data name="Zero-Trust Architecture" xml:space="preserve">
     <value>بنية الثقة الصفرية</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>موجود بالفعل في هذا المجلد. هل تريد استبداله؟</value>
   </data>
 
 </root>

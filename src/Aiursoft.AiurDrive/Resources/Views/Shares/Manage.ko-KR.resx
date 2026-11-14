@@ -18,34 +18,7 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="{0} and {1} other user" xml:space="preserve">
-    <value>{0}님 외 {1}명의 사용자</value>
-  </data>
-  <data name="{0} and {1} other users" xml:space="preserve">
-    <value>{0} 외 {1}명의 다른 사용자</value>
-  </data>
-  <data name="{0} can edit." xml:space="preserve">
-    <value>{0} 님은 수정할 수 있습니다.</value>
-  </data>
-  <data name="{0} can view." xml:space="preserve">
-    <value>{0}님이 볼 수 있습니다.</value>
-  </data>
-  <data name="{0} role" xml:space="preserve">
-    <value>{0}개 역할</value>
-  </data>
-  <data name="{0} roles" xml:space="preserve">
-    <value>역할 {0}개</value>
-  </data>
-  <data name="{0} user" xml:space="preserve">
-    <value>사용자 {0}명</value>
-  </data>
-  <data name="{0} users" xml:space="preserve">
-    <value>사용자 {0}명</value>
-  </data>
-  <data name="{0}, {1}" xml:space="preserve">
-    <value>{0}, {1}</value>
-  </data>
-  <data name="About access" xml:space="preserve">
+      <data name="About access" xml:space="preserve">
     <value>액세스 정보</value>
   </data>
   <data name="Actions" xml:space="preserve">
@@ -54,11 +27,11 @@
   <data name="Add" xml:space="preserve">
     <value>추가</value>
   </data>
-  <data name="Add access" xml:space="preserve">
-    <value>액세스 추가</value>
-  </data>
   <data name="Add New Share" xml:space="preserve">
     <value>새 공유 추가</value>
+  </data>
+  <data name="Add access" xml:space="preserve">
+    <value>액세스 추가</value>
   </data>
   <data name="Allow anonymous viewing (Public)" xml:space="preserve">
     <value>익명 보기 허용 (공개)</value>
@@ -69,9 +42,6 @@
   <data name="Anonymous viewing does not change the user or role permissions above." xml:space="preserve">
     <value>익명으로 열람해도 위에 설정된 사용자 또는 역할 권한은 변경되지 않습니다.</value>
   </data>
-  <data name="Anyone — view only" xml:space="preserve">
-    <value>모든 사용자 — 보기 전용</value>
-  </data>
   <data name="Anyone with the link can view and download files without signing in." xml:space="preserve">
     <value>링크가 있는 사람은 누구나 로그인하지 않고 파일을 보고 다운로드할 수 있습니다.</value>
   </data>
@@ -80,6 +50,9 @@
   </data>
   <data name="Anyone with the link can view without signing in." xml:space="preserve">
     <value>링크가 있는 사람은 누구나 로그인하지 않고 볼 수 있습니다.</value>
+  </data>
+  <data name="Anyone — view only" xml:space="preserve">
+    <value>모든 사용자 — 보기 전용</value>
   </data>
   <data name="Are you sure you want to remove this share?" xml:space="preserve">
     <value>이 공유를 삭제하시겠습니까?</value>
@@ -228,11 +201,11 @@
   <data name="Share with" xml:space="preserve">
     <value>공유 대상</value>
   </data>
-  <data name="Shared access" xml:space="preserve">
-    <value>공유 액세스</value>
-  </data>
   <data name="Shared With" xml:space="preserve">
     <value>공유된 사용자</value>
+  </data>
+  <data name="Shared access" xml:space="preserve">
+    <value>공유 액세스</value>
   </data>
   <data name="Sign-in and existing access are required. Copying a link does not grant access." xml:space="preserve">
     <value>로그인해야 하며 기존에 액세스 권한이 있어야 합니다. 링크를 복사해도 액세스 권한이 부여되지는 않습니다.</value>
@@ -269,6 +242,33 @@
   </data>
   <data name="Who can use the link?" xml:space="preserve">
     <value>누가 링크를 사용할 수 있나요?</value>
+  </data>
+  <data name="{0} and {1} other user" xml:space="preserve">
+    <value>{0}님 외 {1}명의 사용자</value>
+  </data>
+  <data name="{0} and {1} other users" xml:space="preserve">
+    <value>{0} 외 {1}명의 다른 사용자</value>
+  </data>
+  <data name="{0} can edit." xml:space="preserve">
+    <value>{0} 님은 수정할 수 있습니다.</value>
+  </data>
+  <data name="{0} can view." xml:space="preserve">
+    <value>{0}님이 볼 수 있습니다.</value>
+  </data>
+  <data name="{0} role" xml:space="preserve">
+    <value>{0}개 역할</value>
+  </data>
+  <data name="{0} roles" xml:space="preserve">
+    <value>역할 {0}개</value>
+  </data>
+  <data name="{0} user" xml:space="preserve">
+    <value>사용자 {0}명</value>
+  </data>
+  <data name="{0} users" xml:space="preserve">
+    <value>사용자 {0}명</value>
+  </data>
+  <data name="{0}, {1}" xml:space="preserve">
+    <value>{0}, {1}</value>
   </data>
 
 </root>

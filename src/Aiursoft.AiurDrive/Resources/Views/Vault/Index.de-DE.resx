@@ -21,9 +21,6 @@
       <data name="Actions" xml:space="preserve">
     <value>Aktionen</value>
   </data>
-  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
-    <value>existiert bereits in diesem Ordner. Überschreiben?</value>
-  </data>
   <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
     <value>Möchten Sie den Ordner und seinen gesamten Inhalt wirklich löschen?</value>
   </data>
@@ -180,14 +177,11 @@
   <data name="Updating" xml:space="preserve">
     <value>Aktualisieren</value>
   </data>
-  <data name="Upload failed." xml:space="preserve">
-    <value>Upload fehlgeschlagen.</value>
-  </data>
   <data name="Upload Secure File" xml:space="preserve">
     <value>Sichere Datei hochladen</value>
   </data>
-  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
-    <value>Das Vault wurde formatiert und auf den Werkszustand zurückgesetzt.</value>
+  <data name="Upload failed." xml:space="preserve">
+    <value>Upload fehlgeschlagen.</value>
   </data>
   <data name="Vault Locked" xml:space="preserve">
     <value>Tresor gesperrt</value>
@@ -197,6 +191,9 @@
   </data>
   <data name="Vault Settings" xml:space="preserve">
     <value>Tresoreinstellungen</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>Das Vault wurde formatiert und auf den Werkszustand zurückgesetzt.</value>
   </data>
   <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
     <value>WARNUNG: Dies wird ALLE Dateien in Ihrem Tresor ENDGÜLTIG löschen und Ihr Passwort zurücksetzen. Sind Sie absolut sicher?</value>
@@ -212,6 +209,9 @@
   </data>
   <data name="Zero-Trust Architecture" xml:space="preserve">
     <value>Zero-Trust-Architektur</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>existiert bereits in diesem Ordner. Überschreiben?</value>
   </data>
 
 </root>

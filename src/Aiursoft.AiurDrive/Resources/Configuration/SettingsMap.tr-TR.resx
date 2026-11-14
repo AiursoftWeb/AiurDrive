@@ -21,11 +21,11 @@
       <data name="Allow Image Preview" xml:space="preserve">
     <value>Görüntü Önizlemesine İzin Ver</value>
   </data>
-  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
-    <value>Dosya yöneticisinde resim önizlemesine izin ver. Bu sadece arka yüz anahtarıdır. Resim işleme her zaman etkin durumdadır.</value>
-  </data>
   <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>Kullanıcı Adını Ayarlamaya İzin Ver</value>
+  </data>
+  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
+    <value>Dosya yöneticisinde resim önizlemesine izin ver. Bu sadece arka yüz anahtarıdır. Resim işleme her zaman etkin durumdadır.</value>
   </data>
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>Kullanıcıların profil yönetimi sayfasında takma adlarını ayarlamasına izin verin.</value>
@@ -45,11 +45,11 @@
   <data name="Max Sites Per Person" xml:space="preserve">
     <value>Kişi Başına Maksimum Site Sayısı</value>
   </data>
-  <data name="Max storage size for each site in GB." xml:space="preserve">
-    <value>Her site için maksimum depolama boyutu GB cinsinden.</value>
-  </data>
   <data name="Max Vault Storage In GB" xml:space="preserve">
     <value>Maksimum Kasada Depolama (GB)</value>
+  </data>
+  <data name="Max storage size for each site in GB." xml:space="preserve">
+    <value>Her site için maksimum depolama boyutu GB cinsinden.</value>
   </data>
   <data name="Maximum encrypted Vault storage per user in GB." xml:space="preserve">
     <value>Kullanıcı başına maksimum şifreli Vault depolama alanı (GB).</value>
@@ -63,20 +63,20 @@
   <data name="Project Name" xml:space="preserve">
     <value>Proje Adı</value>
   </data>
-  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
-    <value>Şirketin veya projenin marka adı. Örnek: Aiursoft.</value>
-  </data>
   <data name="The ICP license number for China mainland users. Leave empty to hide." xml:space="preserve">
     <value>Çin ana karasına yönelik ICP lisans numarası. Gizlemek için boş bırakın.</value>
+  </data>
+  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
+    <value>Şirketin veya projenin URL&apos;si. Örneğin: https://www.aiursoft.com</value>
+  </data>
+  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
+    <value>Şirketin veya projenin marka adı. Örnek: Aiursoft.</value>
   </data>
   <data name="The logo of the project displayed in the navbar and footer. Support jpg, png, svg." xml:space="preserve">
     <value>Projenin navbar ve footer&apos;da görünen logosu. jpg, png, svg formatlarını destekler.</value>
   </data>
   <data name="The name of the project displayed in the frontend." xml:space="preserve">
     <value>Ön yüzte görüntülenen proje adı.</value>
-  </data>
-  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
-    <value>Şirketin veya projenin URL&apos;si. Örneğin: https://www.aiursoft.com</value>
   </data>
 
 </root>

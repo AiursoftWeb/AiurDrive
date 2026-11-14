@@ -48,11 +48,11 @@
   <data name="Modify user details or manage their assigned roles below." xml:space="preserve">
     <value>Zmodyfikuj dane użytkownika lub zarządzaj przypisanymi mu rolami poniżej.</value>
   </data>
-  <data name="New avatar file" xml:space="preserve">
-    <value>Nowy plik awatara</value>
-  </data>
   <data name="New Password" xml:space="preserve">
     <value>Nowe hasło</value>
+  </data>
+  <data name="New avatar file" xml:space="preserve">
+    <value>Nowy plik awatara</value>
   </data>
   <data name="OpenID Connect (OIDC) is enabled. Users are synchronized from an external identity provider. We strongly recommend managing users on your OIDC provider. Changes made here might be overwritten during the next synchronization." xml:space="preserve">
     <value>OpenID Connect (OIDC) jest włączony. Użytkownicy są synchronizowani z zewnętrznego dostawcy tożsamości. Zalecamy silnie zarządzanie użytkownikami na swoim dostawcy OIDC. Zmiany dokonane tutaj mogą zostać nadpisane podczas następnej synchronizacji.</value>

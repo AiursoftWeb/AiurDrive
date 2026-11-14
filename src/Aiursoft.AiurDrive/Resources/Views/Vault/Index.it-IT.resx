@@ -21,9 +21,6 @@
       <data name="Actions" xml:space="preserve">
     <value>Azioni</value>
   </data>
-  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
-    <value>è già presente in questa cartella. Sovrascriverlo?</value>
-  </data>
   <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
     <value>Sei sicuro di voler eliminare la cartella e tutto il suo contenuto?</value>
   </data>
@@ -180,14 +177,11 @@
   <data name="Updating" xml:space="preserve">
     <value>Aggiornamento in corso</value>
   </data>
-  <data name="Upload failed." xml:space="preserve">
-    <value>Caricamento non riuscito.</value>
-  </data>
   <data name="Upload Secure File" xml:space="preserve">
     <value>Carica file sicuro</value>
   </data>
-  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
-    <value>Il Vault è stato formattato e reimpostato allo stato di fabbrica.</value>
+  <data name="Upload failed." xml:space="preserve">
+    <value>Caricamento non riuscito.</value>
   </data>
   <data name="Vault Locked" xml:space="preserve">
     <value>Vault Bloccato</value>
@@ -197,6 +191,9 @@
   </data>
   <data name="Vault Settings" xml:space="preserve">
     <value>Impostazioni Vault</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>Il Vault è stato formattato e reimpostato allo stato di fabbrica.</value>
   </data>
   <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
     <value>ATTENZIONE: Questo eliminerà PERMANENTEMENTE tutti i file nel tuo vault e reimposterà la tua password. Sei assolutamente sicuro?</value>
@@ -212,6 +209,9 @@
   </data>
   <data name="Zero-Trust Architecture" xml:space="preserve">
     <value>Architettura Zero-Trust</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>è già presente in questa cartella. Sovrascriverlo?</value>
   </data>
 
 </root>

@@ -21,9 +21,6 @@
       <data name="Actions" xml:space="preserve">
     <value>Ενέργειες</value>
   </data>
-  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
-    <value>υπάρχει ήδη σε αυτόν τον φάκελο. Θέλετε να το αντικαταστήσετε;</value>
-  </data>
   <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
     <value>Είστε σίγουροι ότι θέλετε να διαγράψετε τον φάκελο και όλα τα περιεχόμενά του;</value>
   </data>
@@ -180,14 +177,11 @@
   <data name="Updating" xml:space="preserve">
     <value>Ενημέρωση</value>
   </data>
-  <data name="Upload failed." xml:space="preserve">
-    <value>Αποστολή απέτυχε.</value>
-  </data>
   <data name="Upload Secure File" xml:space="preserve">
     <value>Ανέβασμα Ασφαλούς Αρχείου</value>
   </data>
-  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
-    <value>Το Vault έχει μορφοποιηθεί και επαναφερθεί στην εργοστασιακή κατάσταση.</value>
+  <data name="Upload failed." xml:space="preserve">
+    <value>Αποστολή απέτυχε.</value>
   </data>
   <data name="Vault Locked" xml:space="preserve">
     <value>Αποθήκη Κλειδωμένη</value>
@@ -197,6 +191,9 @@
   </data>
   <data name="Vault Settings" xml:space="preserve">
     <value>Ρυθμίσεις Αποθήκης</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>Το Vault έχει μορφοποιηθεί και επαναφερθεί στην εργοστασιακή κατάσταση.</value>
   </data>
   <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
     <value>ΠΡΟΕΙΔΟΠΟΙΗΣΗ: Αυτό θα ΔΙΑΓΡΑΨΕΙ ΟΡΙΣΤΙΚΑ όλα τα αρχεία στο θησαυροφυλάκιό σας και θα επαναφέρει τον κωδικό πρόσβασής σας. Είστε απόλυτα σίγουροι;</value>
@@ -212,6 +209,9 @@
   </data>
   <data name="Zero-Trust Architecture" xml:space="preserve">
     <value>Αρχιτεκτονική Μηδενικής Εμπιστοσύνης</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>υπάρχει ήδη σε αυτόν τον φάκελο. Θέλετε να το αντικαταστήσετε;</value>
   </data>
 
 </root>

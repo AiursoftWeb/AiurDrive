@@ -30,9 +30,6 @@
   <data name="Are you sure you want to permanently delete your account?" xml:space="preserve">
     <value>Är du säker på att du vill ta bort ditt konto permanent?</value>
   </data>
-  <data name="auth provider" xml:space="preserve">
-    <value>autentiseringsleverantör</value>
-  </data>
   <data name="Cancel" xml:space="preserve">
     <value>Avbryt</value>
   </data>
@@ -57,9 +54,6 @@
   <data name="OIDC Account" xml:space="preserve">
     <value>OIDC-konto</value>
   </data>
-  <data name="site(s)." xml:space="preserve">
-    <value>plats(er).</value>
-  </data>
   <data name="This action will permanently erase all your data from our servers. Your comments, likes, and favorites will be removed. This action cannot be undone." xml:space="preserve">
     <value>Denna åtgärd raderar permanent all din data från våra servrar. Dina kommentarer, gillningar och favoriter kommer att tas bort. Denna åtgärd kan inte ångras.</value>
   </data>
@@ -80,6 +74,12 @@
   </data>
   <data name="Your account is synced from an external authentication provider. Deleting your data here will remove all your local records, but your account may be recreated the next time you log in. To permanently delete your account, please visit your" xml:space="preserve">
     <value>Ditt konto synkroniseras från en extern autentiseringsleverantör. Om du raderar dina data här tas alla dina lokala poster bort, men ditt konto kan återställas nästa gång du loggar in. För att permanent radera ditt konto, besök din</value>
+  </data>
+  <data name="auth provider" xml:space="preserve">
+    <value>autentiseringsleverantör</value>
+  </data>
+  <data name="site(s)." xml:space="preserve">
+    <value>plats(er).</value>
   </data>
 
 </root>

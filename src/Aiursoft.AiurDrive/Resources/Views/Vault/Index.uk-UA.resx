@@ -21,9 +21,6 @@
       <data name="Actions" xml:space="preserve">
     <value>Дії</value>
   </data>
-  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
-    <value>вже існує в цій папці. Перезаписати його?</value>
-  </data>
   <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
     <value>Ви впевнені, що хочете видалити цю папку та всі її вміст?</value>
   </data>
@@ -180,14 +177,11 @@
   <data name="Updating" xml:space="preserve">
     <value>Оновлення</value>
   </data>
-  <data name="Upload failed." xml:space="preserve">
-    <value>Завантаження не вдалося.</value>
-  </data>
   <data name="Upload Secure File" xml:space="preserve">
     <value>Завантажити захищений файл</value>
   </data>
-  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
-    <value>Сховище було відформатовано та скинуто до заводських налаштувань.</value>
+  <data name="Upload failed." xml:space="preserve">
+    <value>Завантаження не вдалося.</value>
   </data>
   <data name="Vault Locked" xml:space="preserve">
     <value>Сейф заблоковано</value>
@@ -197,6 +191,9 @@
   </data>
   <data name="Vault Settings" xml:space="preserve">
     <value>Налаштування сховища</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>Сховище було відформатовано та скинуто до заводських налаштувань.</value>
   </data>
   <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
     <value>УВАГА: Це НАЗАВЖДИ видалить усі файли у вашому сховищі та скине пароль. Ви дійсно впевнені?</value>
@@ -212,6 +209,9 @@
   </data>
   <data name="Zero-Trust Architecture" xml:space="preserve">
     <value>Архітектура нульового довіри</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>вже існує в цій папці. Перезаписати його?</value>
   </data>
 
 </root>

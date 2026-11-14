@@ -21,9 +21,6 @@
       <data name="Actions" xml:space="preserve">
     <value>Acties</value>
   </data>
-  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
-    <value>bestaat al in deze map. Overschrijven?</value>
-  </data>
   <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
     <value>Weet u zeker dat u de map en alle inhoud wilt verwijderen?</value>
   </data>
@@ -180,14 +177,11 @@
   <data name="Updating" xml:space="preserve">
     <value>Bijwerken</value>
   </data>
-  <data name="Upload failed." xml:space="preserve">
-    <value>Upload mislukt.</value>
-  </data>
   <data name="Upload Secure File" xml:space="preserve">
     <value>Veilig bestand uploaden</value>
   </data>
-  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
-    <value>De kluis is geformatteerd en teruggezet naar de fabrieksinstellingen.</value>
+  <data name="Upload failed." xml:space="preserve">
+    <value>Upload mislukt.</value>
   </data>
   <data name="Vault Locked" xml:space="preserve">
     <value>Kluizen Vergrendeld</value>
@@ -197,6 +191,9 @@
   </data>
   <data name="Vault Settings" xml:space="preserve">
     <value>Vault-instellingen</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>De kluis is geformatteerd en teruggezet naar de fabrieksinstellingen.</value>
   </data>
   <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
     <value>WAARSCHUWING: Dit zal ALLE bestanden in uw kluis PERMANENT verwijderen en uw wachtwoord resetten. Weet u dit zeker?</value>
@@ -212,6 +209,9 @@
   </data>
   <data name="Zero-Trust Architecture" xml:space="preserve">
     <value>Zero-Trust-architectuur</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>bestaat al in deze map. Overschrijven?</value>
   </data>
 
 </root>

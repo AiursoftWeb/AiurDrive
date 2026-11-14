@@ -21,9 +21,6 @@
       <data name="Actions" xml:space="preserve">
     <value>Actions</value>
   </data>
-  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
-    <value>already exists in this folder. Overwrite it?</value>
-  </data>
   <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
     <value>Are you sure you want to delete the folder and all its contents?</value>
   </data>
@@ -180,14 +177,11 @@
   <data name="Updating" xml:space="preserve">
     <value>Updating</value>
   </data>
-  <data name="Upload failed." xml:space="preserve">
-    <value>Upload failed.</value>
-  </data>
   <data name="Upload Secure File" xml:space="preserve">
     <value>Upload Secure File</value>
   </data>
-  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
-    <value>Vault has been formatted and reset to factory state.</value>
+  <data name="Upload failed." xml:space="preserve">
+    <value>Upload failed.</value>
   </data>
   <data name="Vault Locked" xml:space="preserve">
     <value>Vault Locked</value>
@@ -197,6 +191,9 @@
   </data>
   <data name="Vault Settings" xml:space="preserve">
     <value>Vault Settings</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>Vault has been formatted and reset to factory state.</value>
   </data>
   <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
     <value>WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?</value>
@@ -212,6 +209,9 @@
   </data>
   <data name="Zero-Trust Architecture" xml:space="preserve">
     <value>Zero-Trust Architecture</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>already exists in this folder. Overwrite it?</value>
   </data>
 
 </root>

@@ -168,9 +168,6 @@
   <data name="Sites" xml:space="preserve">
     <value>Seiten</value>
   </data>
-  <data name="sites max" xml:space="preserve">
-    <value>sites max</value>
-  </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>Intelligente Konfigurationsoverrides</value>
   </data>
@@ -203,6 +200,9 @@
   </data>
   <data name="Zero Trust Vault" xml:space="preserve">
     <value>Zero Trust Vault</value>
+  </data>
+  <data name="sites max" xml:space="preserve">
+    <value>sites max</value>
   </data>
 
 </root>

@@ -21,11 +21,11 @@
       <data name="Allow Image Preview" xml:space="preserve">
     <value>Tillad billedvise visning</value>
   </data>
-  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
-    <value>Tillad billedforhåndsvise i filhåndteringen. Dette er kun en front-end-skift. Billedbehandling er altid aktiveret.</value>
-  </data>
   <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>Tillad bruger at justere nickname</value>
+  </data>
+  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
+    <value>Tillad billedforhåndsvise i filhåndteringen. Dette er kun en front-end-skift. Billedbehandling er altid aktiveret.</value>
   </data>
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>Tillad brugere at ændre deres kælenavn på siden til profilhåndtering.</value>
@@ -45,11 +45,11 @@
   <data name="Max Sites Per Person" xml:space="preserve">
     <value>Maks. antal websteder pr. person</value>
   </data>
-  <data name="Max storage size for each site in GB." xml:space="preserve">
-    <value>Maks. lagerstørrelse pr. side i GB.</value>
-  </data>
   <data name="Max Vault Storage In GB" xml:space="preserve">
     <value>Maks. Vault-opbevaring i GB</value>
+  </data>
+  <data name="Max storage size for each site in GB." xml:space="preserve">
+    <value>Maks. lagerstørrelse pr. side i GB.</value>
   </data>
   <data name="Maximum encrypted Vault storage per user in GB." xml:space="preserve">
     <value>Maksimal krypteret Vault-opbevaring pr. bruger i GB.</value>
@@ -63,20 +63,20 @@
   <data name="Project Name" xml:space="preserve">
     <value>Projektnavn</value>
   </data>
-  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
-    <value>Det brandnavn, som virksomheden eller projektet har. F.eks. Aiursoft.</value>
-  </data>
   <data name="The ICP license number for China mainland users. Leave empty to hide." xml:space="preserve">
     <value>ICP-licensnummeret for brugere i Kina. Lad være tom for at skjule.</value>
+  </data>
+  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
+    <value>URL&apos;en for virksomheden eller projektet. F.eks. https://www.aiursoft.com</value>
+  </data>
+  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
+    <value>Det brandnavn, som virksomheden eller projektet har. F.eks. Aiursoft.</value>
   </data>
   <data name="The logo of the project displayed in the navbar and footer. Support jpg, png, svg." xml:space="preserve">
     <value>Logoet for projektet vises i navigationen og i bunden af siden. Støtter jpg, png, svg.</value>
   </data>
   <data name="The name of the project displayed in the frontend." xml:space="preserve">
     <value>Navnet på projektet, der vises i brugergrænsefladen.</value>
-  </data>
-  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
-    <value>URL&apos;en for virksomheden eller projektet. F.eks. https://www.aiursoft.com</value>
   </data>
 
 </root>

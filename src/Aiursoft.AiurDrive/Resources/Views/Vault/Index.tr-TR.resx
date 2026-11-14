@@ -21,9 +21,6 @@
       <data name="Actions" xml:space="preserve">
     <value>İşlemler</value>
   </data>
-  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
-    <value>Bu klasörde zaten var. Üzerine yazılsın mı?</value>
-  </data>
   <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
     <value>Klasörü ve tüm içeriğini silmek istediğinizden emin misiniz?</value>
   </data>
@@ -180,14 +177,11 @@
   <data name="Updating" xml:space="preserve">
     <value>Güncelleniyor</value>
   </data>
-  <data name="Upload failed." xml:space="preserve">
-    <value>Yükleme başarısız oldu.</value>
-  </data>
   <data name="Upload Secure File" xml:space="preserve">
     <value>Güvenli Dosya Yükle</value>
   </data>
-  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
-    <value>Kasa biçimlendirildi ve fabrika ayarlarına sıfırlandı.</value>
+  <data name="Upload failed." xml:space="preserve">
+    <value>Yükleme başarısız oldu.</value>
   </data>
   <data name="Vault Locked" xml:space="preserve">
     <value>Kasa Kilitli</value>
@@ -197,6 +191,9 @@
   </data>
   <data name="Vault Settings" xml:space="preserve">
     <value>Kasa Ayarları</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>Kasa biçimlendirildi ve fabrika ayarlarına sıfırlandı.</value>
   </data>
   <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
     <value>UYARI: Bu işlem, kasanızdaki tüm dosyaları SÜREKLİ olarak siler ve şifrenizi sıfırlar. Emin misiniz?</value>
@@ -212,6 +209,9 @@
   </data>
   <data name="Zero-Trust Architecture" xml:space="preserve">
     <value>Sıfır Güven Mimarisi</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>Bu klasörde zaten var. Üzerine yazılsın mı?</value>
   </data>
 
 </root>

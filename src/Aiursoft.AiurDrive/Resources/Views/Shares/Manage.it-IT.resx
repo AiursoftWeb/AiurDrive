@@ -18,34 +18,7 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="{0} and {1} other user" xml:space="preserve">
-    <value>{0} e un altro utente</value>
-  </data>
-  <data name="{0} and {1} other users" xml:space="preserve">
-    <value>{0} e {1} altri utenti</value>
-  </data>
-  <data name="{0} can edit." xml:space="preserve">
-    <value>{0} può modificare.</value>
-  </data>
-  <data name="{0} can view." xml:space="preserve">
-    <value>{0} può visualizzare.</value>
-  </data>
-  <data name="{0} role" xml:space="preserve">
-    <value>{0} ruolo</value>
-  </data>
-  <data name="{0} roles" xml:space="preserve">
-    <value>{0} ruoli</value>
-  </data>
-  <data name="{0} user" xml:space="preserve">
-    <value>{0} utente</value>
-  </data>
-  <data name="{0} users" xml:space="preserve">
-    <value>{0} utenti</value>
-  </data>
-  <data name="{0}, {1}" xml:space="preserve">
-    <value>{0}, {1}</value>
-  </data>
-  <data name="About access" xml:space="preserve">
+      <data name="About access" xml:space="preserve">
     <value>Informazioni sull’accesso</value>
   </data>
   <data name="Actions" xml:space="preserve">
@@ -54,11 +27,11 @@
   <data name="Add" xml:space="preserve">
     <value>Aggiungi</value>
   </data>
-  <data name="Add access" xml:space="preserve">
-    <value>Aggiungi accesso</value>
-  </data>
   <data name="Add New Share" xml:space="preserve">
     <value>Aggiungi Nuovo Accesso</value>
+  </data>
+  <data name="Add access" xml:space="preserve">
+    <value>Aggiungi accesso</value>
   </data>
   <data name="Allow anonymous viewing (Public)" xml:space="preserve">
     <value>Consenti la visualizzazione anonima (Pubblico)</value>
@@ -69,9 +42,6 @@
   <data name="Anonymous viewing does not change the user or role permissions above." xml:space="preserve">
     <value>La visualizzazione anonima non modifica le autorizzazioni dell’utente o dei ruoli indicate sopra.</value>
   </data>
-  <data name="Anyone — view only" xml:space="preserve">
-    <value>Chiunque — solo visualizzazione</value>
-  </data>
   <data name="Anyone with the link can view and download files without signing in." xml:space="preserve">
     <value>Chiunque disponga del link può visualizzare e scaricare i file senza effettuare l&apos;accesso.</value>
   </data>
@@ -80,6 +50,9 @@
   </data>
   <data name="Anyone with the link can view without signing in." xml:space="preserve">
     <value>Chiunque abbia il link può visualizzare senza effettuare l’accesso.</value>
+  </data>
+  <data name="Anyone — view only" xml:space="preserve">
+    <value>Chiunque — solo visualizzazione</value>
   </data>
   <data name="Are you sure you want to remove this share?" xml:space="preserve">
     <value>Sei sicuro di voler rimuovere questa condivisione?</value>
@@ -228,11 +201,11 @@
   <data name="Share with" xml:space="preserve">
     <value>Condividi con</value>
   </data>
-  <data name="Shared access" xml:space="preserve">
-    <value>Accesso condiviso</value>
-  </data>
   <data name="Shared With" xml:space="preserve">
     <value>Condiviso con</value>
+  </data>
+  <data name="Shared access" xml:space="preserve">
+    <value>Accesso condiviso</value>
   </data>
   <data name="Sign-in and existing access are required. Copying a link does not grant access." xml:space="preserve">
     <value>Per accedere è necessario effettuare l’accesso e disporre già delle autorizzazioni. Copiare un link non concede l’accesso.</value>
@@ -269,6 +242,33 @@
   </data>
   <data name="Who can use the link?" xml:space="preserve">
     <value>Chi può usare il link?</value>
+  </data>
+  <data name="{0} and {1} other user" xml:space="preserve">
+    <value>{0} e un altro utente</value>
+  </data>
+  <data name="{0} and {1} other users" xml:space="preserve">
+    <value>{0} e {1} altri utenti</value>
+  </data>
+  <data name="{0} can edit." xml:space="preserve">
+    <value>{0} può modificare.</value>
+  </data>
+  <data name="{0} can view." xml:space="preserve">
+    <value>{0} può visualizzare.</value>
+  </data>
+  <data name="{0} role" xml:space="preserve">
+    <value>{0} ruolo</value>
+  </data>
+  <data name="{0} roles" xml:space="preserve">
+    <value>{0} ruoli</value>
+  </data>
+  <data name="{0} user" xml:space="preserve">
+    <value>{0} utente</value>
+  </data>
+  <data name="{0} users" xml:space="preserve">
+    <value>{0} utenti</value>
+  </data>
+  <data name="{0}, {1}" xml:space="preserve">
+    <value>{0}, {1}</value>
   </data>
 
 </root>

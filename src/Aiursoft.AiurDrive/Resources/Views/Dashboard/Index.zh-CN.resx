@@ -168,9 +168,6 @@
   <data name="Sites" xml:space="preserve">
     <value>站点</value>
   </data>
-  <data name="sites max" xml:space="preserve">
-    <value>个站点上限</value>
-  </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>智能配置覆盖</value>
   </data>
@@ -206,6 +203,9 @@
   </data>
   <data name="Zero Trust Vault" xml:space="preserve">
     <value>零信任保险柜</value>
+  </data>
+  <data name="sites max" xml:space="preserve">
+    <value>个站点上限</value>
   </data>
 
 </root>

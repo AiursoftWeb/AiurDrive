@@ -168,9 +168,6 @@
   <data name="Sites" xml:space="preserve">
     <value>Ιστότοποι</value>
   </data>
-  <data name="sites max" xml:space="preserve">
-    <value>στοιχεία μέγιστο</value>
-  </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>Έξυπνες Αντικαταστάσεις Ρυθμίσεων</value>
   </data>
@@ -203,6 +200,9 @@
   </data>
   <data name="Zero Trust Vault" xml:space="preserve">
     <value>Αποθήκη Μηδενικής Εμπιστοσύνης</value>
+  </data>
+  <data name="sites max" xml:space="preserve">
+    <value>στοιχεία μέγιστο</value>
   </data>
 
 </root>

@@ -21,9 +21,6 @@
       <data name="Actions" xml:space="preserve">
     <value>क्रियाएँ</value>
   </data>
-  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
-    <value>इस फ़ोल्डर में पहले से मौजूद है। इसे ओवरराइट करें?</value>
-  </data>
   <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
     <value>क्या आप वाकई फ़ोल्डर और इसका सभी सामग्री हटाना चाहते हैं?</value>
   </data>
@@ -180,14 +177,11 @@
   <data name="Updating" xml:space="preserve">
     <value>अपडेट हो रहा है...</value>
   </data>
-  <data name="Upload failed." xml:space="preserve">
-    <value>अपलोड विफल रहा।</value>
-  </data>
   <data name="Upload Secure File" xml:space="preserve">
     <value>सुरक्षित फ़ाइल अपलोड करें</value>
   </data>
-  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
-    <value>वॉल्ट को प्रारूपित कर दिया गया है और इसे कारखाने की स्थिति में रीसेट कर दिया गया है।</value>
+  <data name="Upload failed." xml:space="preserve">
+    <value>अपलोड विफल रहा।</value>
   </data>
   <data name="Vault Locked" xml:space="preserve">
     <value>खजाना ताले में</value>
@@ -197,6 +191,9 @@
   </data>
   <data name="Vault Settings" xml:space="preserve">
     <value>कूप सेटिंग्स</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>वॉल्ट को प्रारूपित कर दिया गया है और इसे कारखाने की स्थिति में रीसेट कर दिया गया है।</value>
   </data>
   <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
     <value>चेतावनी: इससे आपके वॉल्ट में सभी फ़ाइलें स्थायी रूप से हटा दी जाएंगी और आपका पासवर्ड रीसेट हो जाएगा। क्या आप बिल्कुल यकीन करते हैं?</value>
@@ -212,6 +209,9 @@
   </data>
   <data name="Zero-Trust Architecture" xml:space="preserve">
     <value>शून्य-विश्वास वास्तुकला</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>इस फ़ोल्डर में पहले से मौजूद है। इसे ओवरराइट करें?</value>
   </data>
 
 </root>

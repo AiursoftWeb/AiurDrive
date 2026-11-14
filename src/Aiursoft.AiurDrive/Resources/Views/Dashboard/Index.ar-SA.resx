@@ -168,9 +168,6 @@
   <data name="Sites" xml:space="preserve">
     <value>المواقع</value>
   </data>
-  <data name="sites max" xml:space="preserve">
-    <value>المواقع الحد الأقصى</value>
-  </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>الإعادة تعيين الإعدادات الذكية</value>
   </data>
@@ -203,6 +200,9 @@
   </data>
   <data name="Zero Trust Vault" xml:space="preserve">
     <value>خزنة الثقة الصفرية</value>
+  </data>
+  <data name="sites max" xml:space="preserve">
+    <value>المواقع الحد الأقصى</value>
   </data>
 
 </root>

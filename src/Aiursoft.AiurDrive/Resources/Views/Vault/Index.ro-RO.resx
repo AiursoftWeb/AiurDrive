@@ -21,9 +21,6 @@
       <data name="Actions" xml:space="preserve">
     <value>Acțiuni</value>
   </data>
-  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
-    <value>există deja în acest dosar. Suprascrieți?</value>
-  </data>
   <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
     <value>Ești sigur că dorești să ștergi dosarul și toate conținutul său?</value>
   </data>
@@ -180,14 +177,11 @@
   <data name="Updating" xml:space="preserve">
     <value>Actualizare</value>
   </data>
-  <data name="Upload failed." xml:space="preserve">
-    <value>Încărcarea a eșuat.</value>
-  </data>
   <data name="Upload Secure File" xml:space="preserve">
     <value>Încarcă fișier securizat</value>
   </data>
-  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
-    <value>Vault-ul a fost formatat și resetat la starea fabricii.</value>
+  <data name="Upload failed." xml:space="preserve">
+    <value>Încărcarea a eșuat.</value>
   </data>
   <data name="Vault Locked" xml:space="preserve">
     <value>Seif Încuiat</value>
@@ -197,6 +191,9 @@
   </data>
   <data name="Vault Settings" xml:space="preserve">
     <value>Setări Depozit</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>Vault-ul a fost formatat și resetat la starea fabricii.</value>
   </data>
   <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
     <value>ATENȚIE: Aceasta va ȘTERGE PERMANENT toate fișierele din depozitul dumneavoastră și va reseta parola. Sunteți absolut sigur?</value>
@@ -212,6 +209,9 @@
   </data>
   <data name="Zero-Trust Architecture" xml:space="preserve">
     <value>Arhitectură Zero-Trust</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>există deja în acest dosar. Suprascrieți?</value>
   </data>
 
 </root>

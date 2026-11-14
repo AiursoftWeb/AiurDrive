@@ -18,34 +18,7 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="{0} and {1} other user" xml:space="preserve">
-    <value>{0} și {1} alt utilizator</value>
-  </data>
-  <data name="{0} and {1} other users" xml:space="preserve">
-    <value>{0} și {1} alți utilizatori</value>
-  </data>
-  <data name="{0} can edit." xml:space="preserve">
-    <value>{0} poate edita.</value>
-  </data>
-  <data name="{0} can view." xml:space="preserve">
-    <value>{0} poate vizualiza.</value>
-  </data>
-  <data name="{0} role" xml:space="preserve">
-    <value>rolul {0}</value>
-  </data>
-  <data name="{0} roles" xml:space="preserve">
-    <value>{0} roluri</value>
-  </data>
-  <data name="{0} user" xml:space="preserve">
-    <value>{0} utilizator</value>
-  </data>
-  <data name="{0} users" xml:space="preserve">
-    <value>{0} de utilizatori</value>
-  </data>
-  <data name="{0}, {1}" xml:space="preserve">
-    <value>{0}, {1}</value>
-  </data>
-  <data name="About access" xml:space="preserve">
+      <data name="About access" xml:space="preserve">
     <value>Despre acces</value>
   </data>
   <data name="Actions" xml:space="preserve">
@@ -54,11 +27,11 @@
   <data name="Add" xml:space="preserve">
     <value>Adaugă</value>
   </data>
-  <data name="Add access" xml:space="preserve">
-    <value>Adăugați acces</value>
-  </data>
   <data name="Add New Share" xml:space="preserve">
     <value>Adaugă Împărtășire Nouă</value>
+  </data>
+  <data name="Add access" xml:space="preserve">
+    <value>Adăugați acces</value>
   </data>
   <data name="Allow anonymous viewing (Public)" xml:space="preserve">
     <value>Permite vizualizarea anonimă (Public)</value>
@@ -69,9 +42,6 @@
   <data name="Anonymous viewing does not change the user or role permissions above." xml:space="preserve">
     <value>Vizualizarea anonimă nu modifică permisiunile utilizatorilor sau ale rolurilor de mai sus.</value>
   </data>
-  <data name="Anyone — view only" xml:space="preserve">
-    <value>Oricine — doar vizualizare</value>
-  </data>
   <data name="Anyone with the link can view and download files without signing in." xml:space="preserve">
     <value>Oricine are linkul poate vizualiza și descărca fișierele fără să se conecteze.</value>
   </data>
@@ -80,6 +50,9 @@
   </data>
   <data name="Anyone with the link can view without signing in." xml:space="preserve">
     <value>Oricine are linkul poate vizualiza fără să se conecteze.</value>
+  </data>
+  <data name="Anyone — view only" xml:space="preserve">
+    <value>Oricine — doar vizualizare</value>
   </data>
   <data name="Are you sure you want to remove this share?" xml:space="preserve">
     <value>Ești sigur că vrei să elimini această partajare?</value>
@@ -228,11 +201,11 @@
   <data name="Share with" xml:space="preserve">
     <value>Împărtășește cu</value>
   </data>
-  <data name="Shared access" xml:space="preserve">
-    <value>Acces partajat</value>
-  </data>
   <data name="Shared With" xml:space="preserve">
     <value>Împărtășit cu</value>
+  </data>
+  <data name="Shared access" xml:space="preserve">
+    <value>Acces partajat</value>
   </data>
   <data name="Sign-in and existing access are required. Copying a link does not grant access." xml:space="preserve">
     <value>Este necesar să vă conectați și să aveți deja acces. Copierea unui link nu vă oferă acces.</value>
@@ -269,6 +242,33 @@
   </data>
   <data name="Who can use the link?" xml:space="preserve">
     <value>Cine poate folosi linkul?</value>
+  </data>
+  <data name="{0} and {1} other user" xml:space="preserve">
+    <value>{0} și {1} alt utilizator</value>
+  </data>
+  <data name="{0} and {1} other users" xml:space="preserve">
+    <value>{0} și {1} alți utilizatori</value>
+  </data>
+  <data name="{0} can edit." xml:space="preserve">
+    <value>{0} poate edita.</value>
+  </data>
+  <data name="{0} can view." xml:space="preserve">
+    <value>{0} poate vizualiza.</value>
+  </data>
+  <data name="{0} role" xml:space="preserve">
+    <value>rolul {0}</value>
+  </data>
+  <data name="{0} roles" xml:space="preserve">
+    <value>{0} roluri</value>
+  </data>
+  <data name="{0} user" xml:space="preserve">
+    <value>{0} utilizator</value>
+  </data>
+  <data name="{0} users" xml:space="preserve">
+    <value>{0} de utilizatori</value>
+  </data>
+  <data name="{0}, {1}" xml:space="preserve">
+    <value>{0}, {1}</value>
   </data>
 
 </root>

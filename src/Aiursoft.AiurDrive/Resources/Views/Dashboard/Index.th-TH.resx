@@ -168,9 +168,6 @@
   <data name="Sites" xml:space="preserve">
     <value>ไซต์</value>
   </data>
-  <data name="sites max" xml:space="preserve">
-    <value>สูงสุด {{sites}}</value>
-  </data>
   <data name="Smart Configuration Overrides" xml:space="preserve">
     <value>การแทนที่การตั้งค่าอัจฉริยะ</value>
   </data>
@@ -203,6 +200,9 @@
   </data>
   <data name="Zero Trust Vault" xml:space="preserve">
     <value>คลังข้อมูลแบบ Zero Trust</value>
+  </data>
+  <data name="sites max" xml:space="preserve">
+    <value>สูงสุด {{sites}}</value>
   </data>
 
 </root>

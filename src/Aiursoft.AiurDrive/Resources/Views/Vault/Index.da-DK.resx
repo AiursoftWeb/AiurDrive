@@ -21,9 +21,6 @@
       <data name="Actions" xml:space="preserve">
     <value>Handlinger</value>
   </data>
-  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
-    <value>eksisterer allerede i denne mappe. Ønsker du at overskrive den?</value>
-  </data>
   <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
     <value>Er du sikker på, at du vil slette mappen og alt dens indhold?</value>
   </data>
@@ -180,14 +177,11 @@
   <data name="Updating" xml:space="preserve">
     <value>Opdaterer</value>
   </data>
-  <data name="Upload failed." xml:space="preserve">
-    <value>Upload mislykkedes.</value>
-  </data>
   <data name="Upload Secure File" xml:space="preserve">
     <value>Upload sikker fil</value>
   </data>
-  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
-    <value>Vault er blevet formateret og nulstillet til fabriksindstillingerne.</value>
+  <data name="Upload failed." xml:space="preserve">
+    <value>Upload mislykkedes.</value>
   </data>
   <data name="Vault Locked" xml:space="preserve">
     <value>Bænk låst</value>
@@ -197,6 +191,9 @@
   </data>
   <data name="Vault Settings" xml:space="preserve">
     <value>Lagerindstillinger</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>Vault er blevet formateret og nulstillet til fabriksindstillingerne.</value>
   </data>
   <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
     <value>ADVARSEL: Dette vil PERMANENT slette alle filer i dit depot og nulstille din adgangskode. Er du helt sikker?</value>
@@ -212,6 +209,9 @@
   </data>
   <data name="Zero-Trust Architecture" xml:space="preserve">
     <value>Zero-Trust Arkitektur</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>eksisterer allerede i denne mappe. Ønsker du at overskrive den?</value>
   </data>
 
 </root>

@@ -18,34 +18,7 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="{0} and {1} other user" xml:space="preserve">
-    <value>{0}さんと他{1}人のユーザー</value>
-  </data>
-  <data name="{0} and {1} other users" xml:space="preserve">
-    <value>{0}さんと他{1}人のユーザー</value>
-  </data>
-  <data name="{0} can edit." xml:space="preserve">
-    <value>{0}は編集できます。</value>
-  </data>
-  <data name="{0} can view." xml:space="preserve">
-    <value>{0}は閲覧できます。</value>
-  </data>
-  <data name="{0} role" xml:space="preserve">
-    <value>{0} 個のロール</value>
-  </data>
-  <data name="{0} roles" xml:space="preserve">
-    <value>{0} 個のロール</value>
-  </data>
-  <data name="{0} user" xml:space="preserve">
-    <value>{0}人のユーザー</value>
-  </data>
-  <data name="{0} users" xml:space="preserve">
-    <value>{0} 人のユーザー</value>
-  </data>
-  <data name="{0}, {1}" xml:space="preserve">
-    <value>{0}、{1}</value>
-  </data>
-  <data name="About access" xml:space="preserve">
+      <data name="About access" xml:space="preserve">
     <value>アクセスについて</value>
   </data>
   <data name="Actions" xml:space="preserve">
@@ -54,11 +27,11 @@
   <data name="Add" xml:space="preserve">
     <value>追加</value>
   </data>
-  <data name="Add access" xml:space="preserve">
-    <value>アクセスを追加</value>
-  </data>
   <data name="Add New Share" xml:space="preserve">
     <value>新しい共有を追加</value>
+  </data>
+  <data name="Add access" xml:space="preserve">
+    <value>アクセスを追加</value>
   </data>
   <data name="Allow anonymous viewing (Public)" xml:space="preserve">
     <value>匿名表示を許可する (パブリック)</value>
@@ -69,9 +42,6 @@
   <data name="Anonymous viewing does not change the user or role permissions above." xml:space="preserve">
     <value>匿名での閲覧によって、上記のユーザーまたはロールの権限が変更されることはありません。</value>
   </data>
-  <data name="Anyone — view only" xml:space="preserve">
-    <value>全員 — 閲覧のみ</value>
-  </data>
   <data name="Anyone with the link can view and download files without signing in." xml:space="preserve">
     <value>リンクを知っている人は、サインインせずにファイルを閲覧・ダウンロードできます。</value>
   </data>
@@ -80,6 +50,9 @@
   </data>
   <data name="Anyone with the link can view without signing in." xml:space="preserve">
     <value>リンクを知っている人は、サインインせずに閲覧できます。</value>
+  </data>
+  <data name="Anyone — view only" xml:space="preserve">
+    <value>全員 — 閲覧のみ</value>
   </data>
   <data name="Are you sure you want to remove this share?" xml:space="preserve">
     <value>この共有を削除してもよろしいですか？</value>
@@ -228,11 +201,11 @@
   <data name="Share with" xml:space="preserve">
     <value>共有するユーザー</value>
   </data>
-  <data name="Shared access" xml:space="preserve">
-    <value>共有アクセス</value>
-  </data>
   <data name="Shared With" xml:space="preserve">
     <value>共有者</value>
+  </data>
+  <data name="Shared access" xml:space="preserve">
+    <value>共有アクセス</value>
   </data>
   <data name="Sign-in and existing access are required. Copying a link does not grant access." xml:space="preserve">
     <value>サインインと既存のアクセス権が必要です。リンクをコピーしてもアクセス権は付与されません。</value>
@@ -269,6 +242,33 @@
   </data>
   <data name="Who can use the link?" xml:space="preserve">
     <value>このリンクを利用できるユーザー：</value>
+  </data>
+  <data name="{0} and {1} other user" xml:space="preserve">
+    <value>{0}さんと他{1}人のユーザー</value>
+  </data>
+  <data name="{0} and {1} other users" xml:space="preserve">
+    <value>{0}さんと他{1}人のユーザー</value>
+  </data>
+  <data name="{0} can edit." xml:space="preserve">
+    <value>{0}は編集できます。</value>
+  </data>
+  <data name="{0} can view." xml:space="preserve">
+    <value>{0}は閲覧できます。</value>
+  </data>
+  <data name="{0} role" xml:space="preserve">
+    <value>{0} 個のロール</value>
+  </data>
+  <data name="{0} roles" xml:space="preserve">
+    <value>{0} 個のロール</value>
+  </data>
+  <data name="{0} user" xml:space="preserve">
+    <value>{0}人のユーザー</value>
+  </data>
+  <data name="{0} users" xml:space="preserve">
+    <value>{0} 人のユーザー</value>
+  </data>
+  <data name="{0}, {1}" xml:space="preserve">
+    <value>{0}、{1}</value>
   </data>
 
 </root>

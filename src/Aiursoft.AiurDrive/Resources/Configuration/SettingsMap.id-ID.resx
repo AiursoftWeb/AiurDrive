@@ -21,11 +21,11 @@
       <data name="Allow Image Preview" xml:space="preserve">
     <value>Izinkan Pratinjau Gambar</value>
   </data>
-  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
-    <value>Izinkan pratinjau gambar di manajer file. Ini hanya merupakan saklar antarmuka pengguna. Pemrosesan gambar selalu diaktifkan.</value>
-  </data>
   <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>Izinkan Pengguna Mengatur Nama Panggilan</value>
+  </data>
+  <data name="Allow image preview in the file manager. This is only a front-end switch. Image processing is always enabled." xml:space="preserve">
+    <value>Izinkan pratinjau gambar di manajer file. Ini hanya merupakan saklar antarmuka pengguna. Pemrosesan gambar selalu diaktifkan.</value>
   </data>
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>Izinkan pengguna menyesuaikan nama panggilan mereka di halaman manajemen profil.</value>
@@ -45,11 +45,11 @@
   <data name="Max Sites Per Person" xml:space="preserve">
     <value>Maksimal Situs Per Orang</value>
   </data>
-  <data name="Max storage size for each site in GB." xml:space="preserve">
-    <value>Ukuran penyimpanan maksimum untuk setiap situs dalam GB.</value>
-  </data>
   <data name="Max Vault Storage In GB" xml:space="preserve">
     <value>Penyimpanan Vault Maksimum dalam GB</value>
+  </data>
+  <data name="Max storage size for each site in GB." xml:space="preserve">
+    <value>Ukuran penyimpanan maksimum untuk setiap situs dalam GB.</value>
   </data>
   <data name="Maximum encrypted Vault storage per user in GB." xml:space="preserve">
     <value>Penyimpanan Vault terenkripsi maksimum per pengguna dalam GB.</value>
@@ -63,20 +63,20 @@
   <data name="Project Name" xml:space="preserve">
     <value>Nama Proyek</value>
   </data>
-  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
-    <value>Nama merek perusahaan atau proyek. Contoh: Aiursoft.</value>
-  </data>
   <data name="The ICP license number for China mainland users. Leave empty to hide." xml:space="preserve">
     <value>Nomor izin ICP untuk pengguna daratan Tiongkok. Biarkan kosong untuk menyembunyikan.</value>
+  </data>
+  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
+    <value>URL perusahaan atau proyek. Contoh: https://www.aiursoft.com</value>
+  </data>
+  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
+    <value>Nama merek perusahaan atau proyek. Contoh: Aiursoft.</value>
   </data>
   <data name="The logo of the project displayed in the navbar and footer. Support jpg, png, svg." xml:space="preserve">
     <value>Logo proyek yang ditampilkan di navbar dan footer. Mendukung jpg, png, svg.</value>
   </data>
   <data name="The name of the project displayed in the frontend." xml:space="preserve">
     <value>Nama proyek yang ditampilkan di antarmuka pengguna.</value>
-  </data>
-  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
-    <value>URL perusahaan atau proyek. Contoh: https://www.aiursoft.com</value>
   </data>
 
 </root>

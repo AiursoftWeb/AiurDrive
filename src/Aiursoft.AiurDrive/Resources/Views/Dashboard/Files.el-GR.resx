@@ -60,11 +60,11 @@
   <data name="Files" xml:space="preserve">
     <value>Αρχεία</value>
   </data>
-  <data name="Folder is empty." xml:space="preserve">
-    <value>Η φωλιά είναι άδεια.</value>
-  </data>
   <data name="Folder Name" xml:space="preserve">
     <value>Όνομα Φακέλου</value>
+  </data>
+  <data name="Folder is empty." xml:space="preserve">
+    <value>Η φωλιά είναι άδεια.</value>
   </data>
   <data name="Manage Shares" xml:space="preserve">
     <value>Διαχείριση Μορφωτικών Αντικειμένων</value>

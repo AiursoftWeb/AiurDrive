@@ -60,11 +60,11 @@
   <data name="Files" xml:space="preserve">
     <value>Ficheiros</value>
   </data>
-  <data name="Folder is empty." xml:space="preserve">
-    <value>A pasta está vazia.</value>
-  </data>
   <data name="Folder Name" xml:space="preserve">
     <value>Nome da Pasta</value>
+  </data>
+  <data name="Folder is empty." xml:space="preserve">
+    <value>A pasta está vazia.</value>
   </data>
   <data name="Manage Shares" xml:space="preserve">
     <value>Gerir Partilhas</value>
