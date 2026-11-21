@@ -619,7 +619,7 @@
                     </a>
                 </td>
                 <td>${formatBytes(f.Size)}</td>
-                <td class="small">${new Date(f.LastWriteTime).toLocaleString()}</td>
+                <td class="small"><span data-utc-time="${escapeHtml(f.LastWriteTime || '').replaceAll('"', '&quot;')}"></span></td>
                 <td class="text-end pe-3">
                     ${viewable ? `<button class="btn btn-sm btn-light text-info me-1" onclick="viewFile('${f.Uuid}')" title="${L.preview}"><i class="fas fa-eye"></i></button>` : ''}
                     <button class="btn btn-sm btn-light text-success me-1" onclick="downloadFile('${f.Uuid}')" title="Download"><i class="fas fa-download"></i></button>
