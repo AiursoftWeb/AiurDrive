@@ -1121,13 +1121,13 @@
 
     // Startup
     window.onload = async () => {
-        const response = await fetch('/VaultApi/GetConfig');
+        const response = await fetch('/VaultApi/GetConfig?allowUninitialized=true');
         if (response.status === 401) {
             // Unauthorized - redirect to login
             window.location.href = '/Account/Login?ReturnUrl=' + encodeURIComponent(window.location.pathname);
             return;
         }
-        if (response.status === 404) {
+        if (response.status === 204) {
             showView('vault-init');
         } else if (response.ok) {
             vaultConfig = await response.json();
