@@ -10,7 +10,6 @@ using Aiursoft.AiurDrive.InMemory;
 using Aiursoft.AiurDrive.MySql;
 using Aiursoft.AiurDrive.Services.Authentication;
 using Aiursoft.AiurDrive.Sqlite;
-using Aiursoft.UiStack;
 using Aiursoft.UiStack.Layout;
 using Aiursoft.UiStack.Navigation;
 using Microsoft.AspNetCore.Mvc.Razor;
@@ -83,7 +82,6 @@ public class Startup : IWebStartup
     {
         app.UseExceptionHandler("/Error/Code500");
         app.UseStatusCodePagesWithReExecute("/Error/Code{0}");
-        app.UseUIStack();
         app.UseStaticFiles();
         app.UseRouting();
         app.UseAuthentication();
