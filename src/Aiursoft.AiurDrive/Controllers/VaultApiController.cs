@@ -40,14 +40,14 @@ public class VaultApiController(
 
     [HttpGet]
     [Route("GetConfig")]
-    public async Task<IActionResult> GetConfig()
+    public async Task<IActionResult> GetConfig(bool allowUninitialized = false)
     {
         var user = await userManager.GetUserAsync(User);
         if (user == null) return Unauthorized();
 
         if (string.IsNullOrEmpty(user.VaultSaltBase64))
         {
-            return NotFound();
+            return allowUninitialized ? NoContent() : NotFound();
         }
 
         return Json(new

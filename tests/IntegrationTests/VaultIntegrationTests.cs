@@ -40,6 +40,9 @@ public class VaultIntegrationTests : TestBase
         // Should be 404 since it's a new user
         Assert.AreEqual(HttpStatusCode.NotFound, configResponse.StatusCode);
 
+        var initialPageStatus = await Http.GetAsync("/VaultApi/GetConfig?allowUninitialized=true");
+        Assert.AreEqual(HttpStatusCode.NoContent, initialPageStatus.StatusCode);
+
         // 6. Test Init API (Fixes the 500 error reported)
         var initContent = new
         {
@@ -52,7 +55,7 @@ public class VaultIntegrationTests : TestBase
         Assert.AreEqual(HttpStatusCode.OK, initResponse.StatusCode, "Init API failed.");
 
         // 7. Test GetConfig again
-        var configAfterInitResponse = await Http.GetAsync("/VaultApi/GetConfig");
+        var configAfterInitResponse = await Http.GetAsync("/VaultApi/GetConfig?allowUninitialized=true");
         Assert.AreEqual(HttpStatusCode.OK, configAfterInitResponse.StatusCode);
         var configJson = await configAfterInitResponse.Content.ReadAsStringAsync();
         Assert.IsTrue(configJson.Contains("VaultSaltBase64"), "Config content is invalid.");
@@ -79,6 +82,8 @@ public class VaultIntegrationTests : TestBase
         // 11. Verify it's back to factory state
         var configAfterResetResponse = await Http.GetAsync("/VaultApi/GetConfig");
         Assert.AreEqual(HttpStatusCode.NotFound, configAfterResetResponse.StatusCode, "Config should be gone after reset.");
+        var resetPageStatus = await Http.GetAsync("/VaultApi/GetConfig?allowUninitialized=true");
+        Assert.AreEqual(HttpStatusCode.NoContent, resetPageStatus.StatusCode);
     }
 
     [TestMethod]
