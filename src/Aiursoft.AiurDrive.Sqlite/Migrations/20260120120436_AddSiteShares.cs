@@ -1,4 +1,5 @@
-﻿using System;
+using System.Diagnostics.CodeAnalysis;
+using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -6,6 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Aiursoft.AiurDrive.Sqlite.Migrations
 {
     /// <inheritdoc />
+    [ExcludeFromCodeCoverage]
     public partial class AddSiteShares : Migration
     {
         /// <inheritdoc />
