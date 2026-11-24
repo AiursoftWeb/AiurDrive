@@ -24,6 +24,8 @@ public abstract class TestBase
         Http = new HttpClient(handler);
     }
 
+    protected virtual string[] ServerArguments => [];
+
     [TestInitialize]
     public virtual async Task CreateServer()
     {
@@ -32,7 +34,7 @@ public abstract class TestBase
         _storagePath = Directory.CreateTempSubdirectory("AiursoftTests-").FullName;
         try
         {
-            Server = await AppAsync<Startup>([$"Storage:Path={_storagePath}", "Storage:RequireDedicatedInlineOrigin=false"], port: reservation.Port);
+            Server = await AppAsync<Startup>([..ServerArguments, $"Storage:Path={_storagePath}", "Storage:RequireDedicatedInlineOrigin=false"], port: reservation.Port);
             reservation.ConfigureServer(Server);
             await Server.UpdateDbAsync<AiurDriveDbContext>();
             await Server.SeedAsync();
