@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Actions" xml:space="preserve">
+    <value>Radnje</value>
+  </data>
+  <data name="Are you sure you want to delete the folder and all its contents?" xml:space="preserve">
+    <value>Jeste li sigurni da želite izbrisati mapu i sav njezin sadržaj?</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Odustani</value>
+  </data>
+  <data name="Choose a file to encrypt and store. Maximum size depends on your browser&apos;s memory." xml:space="preserve">
+    <value>Odaberite datoteku za šifriranje i spremanje. Maksimalna veličina ovisi o memoriji vašeg preglednika.</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Zatvori</value>
+  </data>
+  <data name="Confirm Password" xml:space="preserve">
+    <value>Potvrdite lozinku</value>
+  </data>
+  <data name="Connecting to secure vault..." xml:space="preserve">
+    <value>Povezivanje na sigurni sef...</value>
+  </data>
+  <data name="Create Secure Vault" xml:space="preserve">
+    <value>Stvori sigurni sef</value>
+  </data>
+  <data name="Decrypting file list..." xml:space="preserve">
+    <value>Otključavanje popisa datoteka...</value>
+  </data>
+  <data name="Decryption failed: " xml:space="preserve">
+    <value>Neuspjelo odšifriravanje:</value>
+  </data>
+  <data name="Decryption happens entirely on your device using your password. We never see your password or your raw data. Without your password, your files are &lt;strong&gt;forever inaccessible&lt;/strong&gt;." xml:space="preserve">
+    <value>Otključavanje se potpuno događa na vašem uređaju pomoću vaše lozinke. Nikad ne vidimo vašu lozinku niti vaše sirove podatke. Bez vaše lozinke, vaši datoteke su &lt;strong&gt;zauvijek nedostupne&lt;/strong&gt;.</value>
+  </data>
+  <data name="Delete this encrypted file?" xml:space="preserve">
+    <value>Obrisati ovaj šifrirani datoteku?</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Preuzmi</value>
+  </data>
+  <data name="Download Folder" xml:space="preserve">
+    <value>Preuzmi mapu</value>
+  </data>
+  <data name="Downloading" xml:space="preserve">
+    <value>Preuzimanje</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value>Prazno</value>
+  </data>
+  <data name="Encrypted" xml:space="preserve">
+    <value>Šifrirano</value>
+  </data>
+  <data name="Encrypting..." xml:space="preserve">
+    <value>Šifriranje...</value>
+  </data>
+  <data name="Enter new folder name:" xml:space="preserve">
+    <value>Unesite novi naziv mape:</value>
+  </data>
+  <data name="Failed to create folder." xml:space="preserve">
+    <value>Neuspjelo stvaranje mape.</value>
+  </data>
+  <data name="Failed to init: " xml:space="preserve">
+    <value>Pokušaj inicijalizacije nije uspio:</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>Datoteke</value>
+  </data>
+  <data name="Folder" xml:space="preserve">
+    <value>Mapa</value>
+  </data>
+  <data name="Folder is empty." xml:space="preserve">
+    <value>Mapa je prazna.</value>
+  </data>
+  <data name="Folder name cannot contain slashes." xml:space="preserve">
+    <value>Ime mape ne smije sadržavati kose crte.</value>
+  </data>
+  <data name="Initialize Vault" xml:space="preserve">
+    <value>Inicijaliziraj Vault</value>
+  </data>
+  <data name="Invalid name." xml:space="preserve">
+    <value>Neispravan naziv.</value>
+  </data>
+  <data name="Invalid password." xml:space="preserve">
+    <value>Neispravna lozinka.</value>
+  </data>
+  <data name="LAST CHANCE: All your data will be wiped. This action cannot be undone. Confirm formatting?" xml:space="preserve">
+    <value>POSLEDNJA ŠANSA: Svi vaši podaci bit će obrisani. Ova radnja se ne može poništiti. Potvrdite formatiranje?</value>
+  </data>
+  <data name="Lock Vault" xml:space="preserve">
+    <value>Zaključaj sefa</value>
+  </data>
+  <data name="Minimum 8 characters" xml:space="preserve">
+    <value>Najmanje 8 znakova</value>
+  </data>
+  <data name="Modified" xml:space="preserve">
+    <value>Izmijenjeno</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Ime</value>
+  </data>
+  <data name="New Folder" xml:space="preserve">
+    <value>Nova mapa</value>
+  </data>
+  <data name="New Name" xml:space="preserve">
+    <value>Novi naziv</value>
+  </data>
+  <data name="Password too short." xml:space="preserve">
+    <value>Lozinka je prekratka.</value>
+  </data>
+  <data name="Passwords do not match." xml:space="preserve">
+    <value>Lozinke se ne podudaraju.</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Pregled</value>
+  </data>
+  <data name="Ready to Decrypt?" xml:space="preserve">
+    <value>Spremni za dešifriranje?</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Osvježi</value>
+  </data>
+  <data name="Remember for this session" xml:space="preserve">
+    <value>Zapamti za ovu sesiju</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Preimenuj</value>
+  </data>
+  <data name="Rename failed: " xml:space="preserve">
+    <value>Promjena imena nije uspjela:</value>
+  </data>
+  <data name="Renaming..." xml:space="preserve">
+    <value>Preimenuje se...</value>
+  </data>
+  <data name="Reset and Wipe Vault" xml:space="preserve">
+    <value>Resetiraj i obriši sigurnosni spremnik</value>
+  </data>
+  <data name="Root" xml:space="preserve">
+    <value>Korijen</value>
+  </data>
+  <data name="Set Vault Password" xml:space="preserve">
+    <value>Postavi lozinku za vault</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Veličina</value>
+  </data>
+  <data name="Start Upload" xml:space="preserve">
+    <value>Započni učitavanje</value>
+  </data>
+  <data name="Synchronizing..." xml:space="preserve">
+    <value>Sinhronizacija...</value>
+  </data>
+  <data name="Unlock" xml:space="preserve">
+    <value>Otključaj</value>
+  </data>
+  <data name="Up Level" xml:space="preserve">
+    <value>Gornja razina</value>
+  </data>
+  <data name="Updating" xml:space="preserve">
+    <value>Ažuriranje</value>
+  </data>
+  <data name="Upload Secure File" xml:space="preserve">
+    <value>Prenesi sigurnu datoteku</value>
+  </data>
+  <data name="Upload failed." xml:space="preserve">
+    <value>Prijenos nije uspio.</value>
+  </data>
+  <data name="Vault Locked" xml:space="preserve">
+    <value>Trezor zaključan</value>
+  </data>
+  <data name="Vault Password" xml:space="preserve">
+    <value>Lozinka za sef</value>
+  </data>
+  <data name="Vault Settings" xml:space="preserve">
+    <value>Postavke sefa</value>
+  </data>
+  <data name="Vault has been formatted and reset to factory state." xml:space="preserve">
+    <value>Sigurnosni spremište je formatirano i vraćeno na tvorničko stanje.</value>
+  </data>
+  <data name="WARNING: This will PERMANENTLY delete all files in your vault and reset your password. Are you absolutely sure?" xml:space="preserve">
+    <value>UPORUJENJE: Ovo će TRAJNO obrisati sve datoteke u vašem sefu i ponovno postaviti vašu lozinku. Jeste li apsolutno sigurni?</value>
+  </data>
+  <data name="Wipe All Data" xml:space="preserve">
+    <value>Izbriši sve podatke</value>
+  </data>
+  <data name="Your files are encrypted &lt;strong&gt;locally&lt;/strong&gt; in your browser before upload. We never see your password, and without it, recovery is &lt;strong&gt;mathematically impossible&lt;/strong&gt;. Raw data is &lt;strong&gt;never&lt;/strong&gt; uploaded to our server." xml:space="preserve">
+    <value>Vaši datoteke se šifriraju &lt;strong&gt;lokalno&lt;/strong&gt; u vašem pregledniku prije otpremanja. Nikada ne vidimo vašu lozinku, a bez nje je oporavak &lt;strong&gt;matematički nemoguć&lt;/strong&gt;. Sirovi podaci se &lt;strong&gt;nikada&lt;/strong&gt; ne otpremaju na naš poslužitelj.</value>
+  </data>
+  <data name="Zero-Trust" xml:space="preserve">
+    <value>Zero-Trust</value>
+  </data>
+  <data name="Zero-Trust Architecture" xml:space="preserve">
+    <value>Arhitektura nultog povjerenja</value>
+  </data>
+  <data name="already exists in this folder. Overwrite it?" xml:space="preserve">
+    <value>već postoji u ovoj mapi. Prepisati?</value>
+  </data>
+
+</root>

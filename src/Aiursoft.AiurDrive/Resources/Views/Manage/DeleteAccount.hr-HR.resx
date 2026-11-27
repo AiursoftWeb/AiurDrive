@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Action Required!" xml:space="preserve">
+    <value>Potrebna akcija!</value>
+  </data>
+  <data name="After deletion, you may still be able to log in again, which will create a new account with no data. To permanently delete your account, please visit your auth provider." xml:space="preserve">
+    <value>Nakon brisanja, možda ćete moći ponovno se prijaviti, što će stvoriti novi račun bez podataka. Za trajno brisanje računa, posjetite svog davatelja autentikacije.</value>
+  </data>
+  <data name="Are you sure you want to delete all your data?" xml:space="preserve">
+    <value>Jeste li sigurni da želite obrisati sve svoje podatke?</value>
+  </data>
+  <data name="Are you sure you want to permanently delete your account?" xml:space="preserve">
+    <value>Jeste li sigurni da želite trajno izbrisati svoj račun?</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Odustani</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Zatvori</value>
+  </data>
+  <data name="Danger Zone" xml:space="preserve">
+    <value>Zona opasnosti</value>
+  </data>
+  <data name="Delete Account" xml:space="preserve">
+    <value>Obriši račun</value>
+  </data>
+  <data name="Delete Account Data" xml:space="preserve">
+    <value>Izbriši podatke računa</value>
+  </data>
+  <data name="Go Back" xml:space="preserve">
+    <value>Natrag</value>
+  </data>
+  <data name="Manage My Sites" xml:space="preserve">
+    <value>Upravljaj mojim stranicama</value>
+  </data>
+  <data name="OIDC Account" xml:space="preserve">
+    <value>OIDC račun</value>
+  </data>
+  <data name="This action will permanently erase all your data from our servers. Your comments, likes, and favorites will be removed. This action cannot be undone." xml:space="preserve">
+    <value>Ova radnja trajno će obrisati sva vaša podataka s naših poslužitelja. Vaši komentari, sviđanja i omiljeni sadržaji bit će uklonjeni. Ovaj postupak ne može se poništiti.</value>
+  </data>
+  <data name="This action will permanently erase your profile and all associated data from our servers. This action cannot be undone." xml:space="preserve">
+    <value>Ova radnja trajno će izbrisati vaš profil i sve povezane podatke s naših poslužitelja. Ova radnja ne može se poništiti.</value>
+  </data>
+  <data name="To prevent breaking downstream dependencies or losing team assets, you must manually delete them or transfer their ownership to another user before you can delete your account." xml:space="preserve">
+    <value>Da biste spriječili ometanje ovisnosti nadolazećih sustava ili gubitak imovine tima, morate ih ručno obrisati ili prebaciti njihovo vlasništvo drugom korisniku prije nego što možete obrisati svoj račun.</value>
+  </data>
+  <data name="Yes, delete all my data" xml:space="preserve">
+    <value>Da, obriši sve moje podatke</value>
+  </data>
+  <data name="Yes, delete my account" xml:space="preserve">
+    <value>Da, obriši moj račun</value>
+  </data>
+  <data name="You still own" xml:space="preserve">
+    <value>Još uvijek posjedujete</value>
+  </data>
+  <data name="Your account is synced from an external authentication provider. Deleting your data here will remove all your local records, but your account may be recreated the next time you log in. To permanently delete your account, please visit your" xml:space="preserve">
+    <value>Vaš je račun usklađen s vanjskim pružateljem autentifikacije. Brisanjem vaših podataka ovdje uklonit će se svi vaši lokalni zapisi, ali vaš račun može biti ponovno stvoren sljedeći put kada se prijavite. Da biste trajno izbrisali svoj račun, posjetite svoju</value>
+  </data>
+  <data name="auth provider" xml:space="preserve">
+    <value>davatelja autentifikacije</value>
+  </data>
+  <data name="site(s)." xml:space="preserve">
+    <value>stranica(e).</value>
+  </data>
+
+</root>
