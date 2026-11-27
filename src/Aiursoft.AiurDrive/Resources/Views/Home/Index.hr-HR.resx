@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="A free, flexible file sharing center designed for local deployment." xml:space="preserve">
+    <value>Bespladan, fleksibilni centar za dijeljenje datoteka namijenjen lokalnom postavljanju.</value>
+  </data>
+  <data name="Advanced Privacy &amp; Security" xml:space="preserve">
+    <value>Napredna privatnost i sigurnost</value>
+  </data>
+  <data name="Automatically clear EXIF metadata from uploaded images to prevent accidental leakage of GPS and device information." xml:space="preserve">
+    <value>Automatski uklonite EXIF metapodatke s učitanih slika kako biste spriječili slučajno otkrivanje GPS i podataka o uređaju.</value>
+  </data>
+  <data name="Control storage consumption with global site capacity limits, featuring real-time usage monitoring." xml:space="preserve">
+    <value>Upravljajte potrošnjom pohrane pomoću globalnih limita kapaciteta stranice, s praćenjem upotrebe u stvarnom vremenu.</value>
+  </data>
+  <data name="Core Values" xml:space="preserve">
+    <value>Osnovne vrijednosti</value>
+  </data>
+  <data name="Dockerized architecture means you can get up and running in seconds. Low maintenance, high reliability." xml:space="preserve">
+    <value>Dockerizirana arhitektura omogućuje brzo pokretanje u nekoliko sekundi. Niska potreba za održavanjem, visoka pouzdanost.</value>
+  </data>
+  <data name="Easy to Deploy" xml:space="preserve">
+    <value>Jednostavno postavljanje</value>
+  </data>
+  <data name="Explore" xml:space="preserve">
+    <value>Istraži</value>
+  </data>
+  <data name="Flexible" xml:space="preserve">
+    <value>Fleksibilno</value>
+  </data>
+  <data name="Freedom" xml:space="preserve">
+    <value>Sloboda</value>
+  </data>
+  <data name="Fully open-source and MIT licensed. No vendor lock-in, no hidden costs. Your server, your rules." xml:space="preserve">
+    <value>Potpuno otvorenog koda i MIT licenciran. Bez vezanosti za dobavljača, bez skrivenih troškova. Vaš poslužitelj, vaša pravila.</value>
+  </data>
+  <data name="Join thousands of users who trust AiurDrive for their local file management needs." xml:space="preserve">
+    <value>Pridružite se tisućama korisnika koji vjeruju u AiurDrive za svoje potrebe lokalnog upravljanja datotekama.</value>
+  </data>
+  <data name="MIT Licence" xml:space="preserve">
+    <value>MIT licence</value>
+  </data>
+  <data name="Open Source" xml:space="preserve">
+    <value>Otvoreni izvor</value>
+  </data>
+  <data name="Physically isolated storage modes (Workspace &amp; Vault), automatic image optimization, and robust path traversal protection." xml:space="preserve">
+    <value>Fizički izolirani načini pohrane (Radni prostor i Vauč), automatsko optimiziranje slika i robusna zaštita od putanja za prolazak.</value>
+  </data>
+  <data name="Powerful" xml:space="preserve">
+    <value>Moćan</value>
+  </data>
+  <data name="Privacy by Default" xml:space="preserve">
+    <value>Privatnost po zadanoj postavci</value>
+  </data>
+  <data name="Quota Management" xml:space="preserve">
+    <value>Upravljanje kvotama</value>
+  </data>
+  <data name="Ready to own your cloud?" xml:space="preserve">
+    <value>Spremni preuzeti vlastiti cloud?</value>
+  </data>
+  <data name="Secure your sensitive documents in an isolated area accessible only via time-limited, cryptographically signed tokens." xml:space="preserve">
+    <value>Zaštitite svoje osjetljive dokumente u izoliranom području dostupnom isključivo putem vremenski ograničenih, kriptografski potpisanih tokena.</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Samostan host</value>
+  </data>
+  <data name="Self-Hosted" xml:space="preserve">
+    <value>Samostalni hosting</value>
+  </data>
+  <data name="Start Now" xml:space="preserve">
+    <value>Započni odmah</value>
+  </data>
+  <data name="Support for SQLite, MySQL, and SQL Server. Switch between List and Grid views to manage your files comfortably." xml:space="preserve">
+    <value>Podrška za SQLite, MySQL i SQL Server. Prebacujte se između prikaza Popis i Mreža kako biste udobno upravljali svojim datotekama.</value>
+  </data>
+  <data name="Take full control of your data with industry-grade security and modern management features." xml:space="preserve">
+    <value>Preuzmite potpunu kontrolu nad svojim podacima s industrijskom razinom sigurnosti i modernim funkcijama upravljanja.</value>
+  </data>
+  <data name="The ultimate solution for personal and enterprise file distribution." xml:space="preserve">
+    <value>Konačno rješenje za osobnu i poduzećku distribuciju datoteka.</value>
+  </data>
+  <data name="Vault Storage" xml:space="preserve">
+    <value>Skladište u sefu</value>
+  </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>Pogledaj na GitHubu</value>
+  </data>
+  <data name="Why Choose AiurDrive?" xml:space="preserve">
+    <value>Zašto odabrati AiurDrive?</value>
+  </data>
+  <data name="Your Private Cloud" xml:space="preserve">
+    <value>Vaš privatni cloud</value>
+  </data>
+
+</root>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Are you sure?" xml:space="preserve">
+    <value>Jeste li sigurni?</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Odustani</value>
+  </data>
+  <data name="Delete Role" xml:space="preserve">
+    <value>Brisanje uloge</value>
+  </data>
+  <data name="OpenID Connect (OIDC) is enabled. Roles are synchronized from an external identity provider. We strongly recommend deleting roles or groups on your OIDC provider to ensure they are managed centrally. Deleting this local role will not affect the external provider but may cause permission issues for synchronized users." xml:space="preserve">
+    <value>OpenID Connect (OIDC) je omogućen. Uloge se sinkroniziraju iz vanjskog pružatelja identiteta. Preporučujemo da obrišete uloge ili grupe na svom OIDC pružatelju kako biste osigurali njihovo centralno upravljanje. Brisanje ove lokalne uloge neće utjecati na vanjskog pružatelja, ali može uzrokovati probleme s dopuštenjima za sinkronizirane korisnike.</value>
+  </data>
+  <data name="This action is irreversible. You are about to permanently delete the following role:" xml:space="preserve">
+    <value>Ova radnja je nepovratna. Upravo ćete trajno izbrisati sljedeću ulogu:</value>
+  </data>
+  <data name="Warning!" xml:space="preserve">
+    <value>Upozorenje!</value>
+  </data>
+  <data name="Yes, delete this role" xml:space="preserve">
+    <value>Da, obriši ovu ulogu</value>
+  </data>
+
+</root>

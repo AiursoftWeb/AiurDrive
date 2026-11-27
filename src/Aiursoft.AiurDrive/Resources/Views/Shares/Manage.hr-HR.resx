@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="About access" xml:space="preserve">
+    <value>O pristupu</value>
+  </data>
+  <data name="Add access" xml:space="preserve">
+    <value>Dodaj pristup</value>
+  </data>
+  <data name="Anonymous viewing does not change the user or role permissions above." xml:space="preserve">
+    <value>Anonimno pregledavanje ne mijenja gore navedena korisnička ili ulogovna dopuštenja.</value>
+  </data>
+  <data name="Anyone with the link can view and download files without signing in." xml:space="preserve">
+    <value>Svatko tko ima poveznicu može pregledavati i preuzimati datoteke bez prijave.</value>
+  </data>
+  <data name="Anyone with the link can view without signing in." xml:space="preserve">
+    <value>Svatko s poveznicom može pregledavati bez prijave.</value>
+  </data>
+  <data name="Anyone — view only" xml:space="preserve">
+    <value>Svatko — samo pregled</value>
+  </data>
+  <data name="Back to Files" xml:space="preserve">
+    <value>Natrag na datoteke</value>
+  </data>
+  <data name="Can edit" xml:space="preserve">
+    <value>Može uređivati</value>
+  </data>
+  <data name="Can view" xml:space="preserve">
+    <value>Može pregledavati</value>
+  </data>
+  <data name="Can view allows reading and downloading files. Can edit also allows uploading, changing and deleting files, but does not grant site administration." xml:space="preserve">
+    <value>Prikaz omogućuje čitanje i preuzimanje datoteka. Uređivanje također omogućuje učitavanje, promjenu i brisanje datoteka, ali ne dodjeljuje administraciju mjesta.</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Promijeni</value>
+  </data>
+  <data name="Change link access" xml:space="preserve">
+    <value>Promijeni pristup poveznici</value>
+  </data>
+  <data name="Copy link" xml:space="preserve">
+    <value>Kopiraj vezu</value>
+  </data>
+  <data name="Could not confirm the change. Your input is kept. Try again, or reload to check the saved state." xml:space="preserve">
+    <value>Promjena se nije mogla potvrditi. Vaš unos je zadržan. Pokušajte ponovno ili osvježite stranicu da biste provjerili spremljeno stanje.</value>
+  </data>
+  <data name="Could not copy. Select and copy the link above." xml:space="preserve">
+    <value>Kopiranje nije uspjelo. Odaberite i kopirajte gornju vezu.</value>
+  </data>
+  <data name="Current access" xml:space="preserve">
+    <value>Trenutni pristup</value>
+  </data>
+  <data name="Link access" xml:space="preserve">
+    <value>Pristup putem poveznice</value>
+  </data>
+  <data name="Link copied." xml:space="preserve">
+    <value>Poveznica je kopirana.</value>
+  </data>
+  <data name="Manage Shares" xml:space="preserve">
+    <value>Upravljanje dijeljenjem</value>
+  </data>
+  <data name="Name or email (3+ characters)" xml:space="preserve">
+    <value>Ime ili e-pošta (3+ znaka)</value>
+  </data>
+  <data name="No users found. Try another name or email." xml:space="preserve">
+    <value>Nema pronađenih korisnika. Pokušajte s drugim imenom ili e-poštom.</value>
+  </data>
+  <data name="No users or roles added." xml:space="preserve">
+    <value>Nema dodanih korisnika ili uloga.</value>
+  </data>
+  <data name="Not saved. The link above still uses the current access setting." xml:space="preserve">
+    <value>Nije spremljeno. Poveznica gore i dalje koristi trenutna postavke pristupa.</value>
+  </data>
+  <data name="Only authorized people can access." xml:space="preserve">
+    <value>Pristup imaju samo ovlaštene osobe.</value>
+  </data>
+  <data name="Only the owner and authorized administrators have access." xml:space="preserve">
+    <value>Pristup imaju samo vlasnik i ovlaštene administratorke.</value>
+  </data>
+  <data name="People with access" xml:space="preserve">
+    <value>Osobe s pristupom</value>
+  </data>
+  <data name="Permission" xml:space="preserve">
+    <value>Dozvola</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Ukloni</value>
+  </data>
+  <data name="Remove this share? Other access may still apply." xml:space="preserve">
+    <value>Ukloniti ovo dijeljenje? Moguće je da se i dalje primjenjuje drugi pristup.</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Uloga</value>
+  </data>
+  <data name="Role {0}" xml:space="preserve">
+    <value>Uloga {0}</value>
+  </data>
+  <data name="Role {0} and {1} other role" xml:space="preserve">
+    <value>Uloga {0} i {1} druga uloga</value>
+  </data>
+  <data name="Role {0} and {1} other roles" xml:space="preserve">
+    <value>Uloga {0} i {1} druge uloge</value>
+  </data>
+  <data name="Save access" xml:space="preserve">
+    <value>Spremi pristup</value>
+  </data>
+  <data name="Search failed. Change the search text to try again." xml:space="preserve">
+    <value>Pretraga nije uspjela. Promijenite tekst pretrage i pokušajte ponovno.</value>
+  </data>
+  <data name="Searching..." xml:space="preserve">
+    <value>Pretraživanje...</value>
+  </data>
+  <data name="Select a role..." xml:space="preserve">
+    <value>Odaberite ulogu...</value>
+  </data>
+  <data name="Select a user from the search results or choose a role." xml:space="preserve">
+    <value>Odaberite korisnika iz rezultata pretrage ili odaberite ulogu.</value>
+  </data>
+  <data name="Share Link" xml:space="preserve">
+    <value>Poveznica za dijeljenje</value>
+  </data>
+  <data name="Share with" xml:space="preserve">
+    <value>Dijeli s</value>
+  </data>
+  <data name="Shared access" xml:space="preserve">
+    <value>Dijeljeni pristup</value>
+  </data>
+  <data name="Sign-in and existing access are required. Copying a link does not grant access." xml:space="preserve">
+    <value>Prijava i postojeći pristup su obavezni. Kopiranje veze ne dodjeljuje pristup.</value>
+  </data>
+  <data name="The owner and authorized site administrators also have access. Role access applies to its members; permissions from other roles or direct shares still apply after removing one share." xml:space="preserve">
+    <value>Vlasnik i ovlašteni administratori stranice također imaju pristup. Pristup ulozi primjenjuje se na njezine članove; dopuštenja iz drugih uloga ili izravnih dijeljenja i dalje vrijede nakon uklanjanja jednog dijeljenja.</value>
+  </data>
+  <data name="This user or role already has access to this site." xml:space="preserve">
+    <value>Ovaj korisnik ili uloga već ima pristup ovoj web-lokaciji.</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Korisnik</value>
+  </data>
+  <data name="Who can use the link?" xml:space="preserve">
+    <value>Tko može koristiti vezu?</value>
+  </data>
+  <data name="{0} and {1} other user" xml:space="preserve">
+    <value>{0} i {1} drugi korisnik</value>
+  </data>
+  <data name="{0} and {1} other users" xml:space="preserve">
+    <value>{0} i još {1} korisnika</value>
+  </data>
+  <data name="{0} can edit." xml:space="preserve">
+    <value>{0} može uređivati.</value>
+  </data>
+  <data name="{0} can view." xml:space="preserve">
+    <value>{0} može pregledavati.</value>
+  </data>
+  <data name="{0} role" xml:space="preserve">
+    <value>{0} uloga</value>
+  </data>
+  <data name="{0} roles" xml:space="preserve">
+    <value>{0} uloga</value>
+  </data>
+  <data name="{0} user" xml:space="preserve">
+    <value>{0} korisnik</value>
+  </data>
+  <data name="{0} users" xml:space="preserve">
+    <value>{0} korisnika</value>
+  </data>
+  <data name="{0}, {1}" xml:space="preserve">
+    <value>{0}, {1}</value>
+  </data>
+
+</root>
